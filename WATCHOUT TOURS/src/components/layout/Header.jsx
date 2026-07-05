@@ -1,22 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import './Header.css'
+import logoImg from '../../images/logo-header-watchout.png'
+
 const navLinks = [
   { to: '/',               label: 'Inicio' },
   { to: '/sobre-nosotras', label: 'Nosotras' },
   { to: '/productos',      label: 'Viajes' },
   { to: '/blog',           label: 'Blog' },
-  { to: '/contacto',       label: 'Escríbenos' },
 ]
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <header className="site-header" role="banner">
+    <header className={`site-header${scrolled ? ' site-header--scrolled' : ''}`} role="banner">
       <div className="site-header__inner">
         <Link to="/" aria-label="WatchOut! Sensory Tours — Inicio" className="site-logo">
-          <img src="src/images/logo-header-watchout.png" alt="Logo de WatchOut! Sensory Tours" className="site-logo-image" />
+          <img src={logoImg} alt="Logo de WatchOut! Sensory Tours" className="site-logo-image" />
           WatchOut! <span>Sensory Tours</span>
         </Link>
       </div>
@@ -42,6 +50,18 @@ export function Header() {
                 </NavLink>
               </li>
             ))}
+              <li>
+                <NavLink
+                  to="/contacto"
+                  className={({ isActive }) =>
+                    `site-nav__link nav__link_contact${isActive ? ' site-nav__link--active' : ''}`
+                  }
+                  aria-current={({ isActive }) => isActive ? 'page' : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Contacto
+                </NavLink>
+              </li>
           </ul>
         </nav>
         </div>

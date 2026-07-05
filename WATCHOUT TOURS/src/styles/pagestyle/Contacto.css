@@ -1,0 +1,352 @@
+/* ── Página de contacto ─────────────────────────────── */
+
+.contacto-page {
+  padding-block: 4rem 5rem;
+}
+
+/* Cabecera */
+.contacto-header {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
+
+.contacto-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-link);
+  margin: 0 0 0.75rem;
+}
+
+.contacto-titulo {
+  font-family: var(--font-family-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+  color: var(--color-text);
+}
+
+.contacto-intro {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-alt);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Tres canales ───────────────────────────────────── */
+.contacto-canales {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
+
+.canal-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.canal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.canal-card:focus-visible {
+  outline: 3px solid var(--color-focus-outline-bright);
+  outline-offset: 3px;
+}
+
+/* WhatsApp — destacado */
+.canal-card--whatsapp {
+  border-color: #25D366;
+  background-color: rgba(37, 211, 102, 0.06);
+}
+
+.canal-card--whatsapp .canal-card__icono {
+  background-color: #25D366;
+  color: #fff;
+}
+
+.canal-card--email .canal-card__icono {
+  background-color: rgba(72, 184, 144, 0.12);
+  color: var(--color-link);
+}
+
+.canal-card__icono {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(72, 184, 144, 0.12);
+  color: var(--color-link);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem;
+}
+
+.canal-card__icono svg {
+  width: 100%;
+  height: 100%;
+}
+
+.canal-card__titulo {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.canal-card__desc {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-alt);
+  line-height: 1.4;
+}
+
+/* ── Formulario ─────────────────────────────────────── */
+.contacto-form-wrap {
+  max-width: 600px;
+  margin-inline: auto;
+  background-color: var(--color-background-alt);
+  border: 1px solid rgba(216, 182, 106, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.contacto-form-titulo {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  margin: 0 0 2rem;
+  color: var(--color-text);
+}
+
+.form-field-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-field-group .form-field {
+  margin-bottom: 0;
+}
+
+.form-error--group {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+/* Campos */
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-field:last-of-type {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.form-optional {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--color-text-alt);
+}
+
+.required-marker {
+  color: var(--color-btn-primary);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  background-color: var(--color-background);
+  border: 1px solid rgba(216, 182, 106, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-link);
+  box-shadow: 0 0 0 3px rgba(72, 184, 144, 0.2);
+}
+
+.form-control--error {
+  border-color: #e05555;
+}
+
+.form-control--error:focus {
+  box-shadow: 0 0 0 3px rgba(224, 85, 85, 0.2);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Radio groups */
+.form-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.form-radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-background);
+  border: 1px solid rgba(216, 182, 106, 0.3);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--color-text-alt);
+  transition: border-color 0.2s, color 0.2s;
+  min-height: 44px;
+}
+
+.form-radio-label:has(input:checked) {
+  border-color: var(--color-link);
+  color: var(--color-text);
+  background-color: rgba(72, 184, 144, 0.08);
+}
+
+.form-radio-label input[type="radio"] {
+  accent-color: var(--color-link);
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* fieldset reset */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Errores */
+.form-error {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  color: #e05555;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+/* Botón enviar */
+.btn--wide {
+  width: 100%;
+  min-height: 52px;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.btn--wide:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Estados de respuesta */
+.form-status--success {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: rgba(72, 184, 144, 0.1);
+  border: 1px solid var(--color-link);
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+}
+
+.form-status--error {
+  margin-top: 1rem;
+  color: #e05555;
+  font-size: 0.9rem;
+}
+
+.form-field--textarea {
+    margin-top: 1.5rem;
+}
+
+/* sr-only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contacto-canales {
+    grid-template-columns: 1fr;
+  }
+
+  .canal-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacto-page {
+    padding-block: 2.5rem 3rem;
+  }
+
+  .contacto-form-wrap {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .form-radio-group {
+    flex-direction: column;
+  }
+
+  .form-field-group {
+    grid-template-columns: 1fr;
+  }
+}
