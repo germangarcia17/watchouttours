@@ -1,10 +1,9 @@
 :root {
-  --color-primary: #ff6f61;
-  --color-secondary: #4caf50;
-  --color-text: #F7F3EC;
-  --color-text-alt: #C9C4BC;
-  --color-background: #0E0E10;
-  --color-background-alt: #1A1A1D;
+
+  --color-text: #15140F;
+  --color-text-alt: #4A453B;
+  --color-background: #ECE7DD;
+  --color-background-alt: #DDD4BF;
   --color-border: #D8B66A;
   --color-btn-primary: #F2A65A;
   --color-btn-primary-hover: #e6a55a;
@@ -30,7 +29,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  /* overflow-x: hidden aquí rompe position: sticky — no ponerlo en html */
 }
 
 body {
@@ -45,14 +44,13 @@ body {
 /* Contenedor centrado reutilizable */
 .container {
   width: 100%;
-  max-width: var(--max-width);
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
 /* ── Footer ─────────────────────────────────────────── */
 .site-footer {
-  background-color: #0a0a0c;
+  background-color: var(--color-background-alt);
   border-top: 1px solid rgba(216, 182, 106, 0.25);
   margin-top: 2rem;
 }
@@ -111,8 +109,9 @@ body {
   gap: 0.5rem;
   font-size: 0.875rem;
   color: #25D366;
+  background-color: rgba(37, 211, 102, 0.08);
   text-decoration: none;
-  border: 1px solid rgba(37, 211, 102, 0.3);
+  border: 2px solid #25D366;
   border-radius: 6px;
   padding: 0.5rem 0.75rem;
   width: fit-content;
@@ -137,7 +136,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-border);
+  color: var(--color-text-alt);
   margin: 0 0 1rem;
 }
 

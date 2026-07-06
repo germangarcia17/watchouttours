@@ -12,16 +12,11 @@ const navLinks = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  
 
   return (
-    <header className={`site-header${scrolled ? ' site-header--scrolled' : ''}`} role="banner">
+    <header className="site-header" role="banner">
       <div className="site-header__inner">
         <Link to="/" aria-label="WatchOut! Sensory Tours — Inicio" className="site-logo">
           <img src={logoImg} alt="Logo de WatchOut! Sensory Tours" className="site-logo-image" />

@@ -70,10 +70,8 @@ export default function Home() {
   return (
     <>
     {/* Hero */}
-        <section className="section" aria-labelledby="intro-video-heading">
-        <div className="video-container">
-            <video controls src="" poster="/videos/intro-poster.jpg" controls />
-        </div>
+        <section className="section hero-section" aria-labelledby="intro-video-heading">
+        
         <div className="container hero-container">
           <h1 id="hero-heading" className="hero__title"> No toda visión necesita ojos </h1>
           <div className="hero__actions">

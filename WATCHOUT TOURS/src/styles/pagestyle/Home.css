@@ -11,8 +11,7 @@ body {
     padding: 2rem;
     margin: 2rem 1rem;
     border-radius: 12px;
-    background-color: var(--color-background-alt);
-    border: 1px solid rgba(216, 182, 106, 0.15);
+    background-color: var(--color-background);
 }
 
 p {
@@ -53,32 +52,30 @@ p {
     margin: 2rem 1rem;
 }
 
-.video-container {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 8px;
-}
 
-.video-container video {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    display: block;
-    object-fit: cover;
+.hero-section {
+        background-color: #ece7dc; /* color beige de fondo */
+  background-image: radial-gradient(
+    circle,
+    #d8d2c3 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px; /* separación entre puntos */
+  margin: 0;
+  padding: 0;
 }
-
 
 
 .hero-container {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     text-align: center;
     margin-top: 2rem;
     gap: 1rem;
     margin-inline: 0;
+    
 }
 
 h1 {
@@ -183,13 +180,12 @@ h3{
 }
 
 .testimonio-link {
-    color: var(--color-link);
+    color: #ECE7DD;
     text-decoration: underline;
     margin-left: 2rem;
     background-color: var(--color-btn-secondary);
     padding: 1rem 1.5rem;
     border-radius: 8px;
-    color: var(--color-text);
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
@@ -304,12 +300,11 @@ a:focus-visible {
 }
 
 .blog-link {
-    color: var(--color-link);
     text-decoration: underline;
     background-color: var(--color-btn-secondary);
     padding: 1rem 1.5rem;
     border-radius: 8px;
-    color: var(--color-text);
+    color: #ECE7DD;
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
@@ -443,14 +438,14 @@ a:focus-visible {
   font-family: var(--font-family-heading);
   font-size: 2.25rem;
   line-height: 1.2;
-  color: var(--color-text);
+  color: #ECE7DD;
   max-width: 640px;
 }
 
 .cta-section__subtitulo {
   margin: 0;
   font-size: var(--font-size-lg);
-  color: var(--color-text-alt);
+  color: #ECE7DD;
   line-height: 1.7;
   max-width: 500px;
 }
