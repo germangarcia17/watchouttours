@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": []
+  },
+  "mcpServers": {
+    "21st-dev": {
+      "type": "url",
+      "url": "https://21st.dev/api/mcp"
+    }
+  }
+}

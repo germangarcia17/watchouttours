@@ -1,65 +1,45 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import './Header.css'
 import logoImg from '../../images/logo-header-watchout.png'
 
 const navLinks = [
-  { to: '/',               label: 'Inicio' },
+  { to: '/productos',      label: 'Rutas' },
   { to: '/sobre-nosotras', label: 'Nosotras' },
-  { to: '/productos',      label: 'Viajes' },
   { to: '/blog',           label: 'Blog' },
+  { to: '/contacto',       label: 'Contacto' },
 ]
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  
-
   return (
     <header className="site-header" role="banner">
-      <div className="site-header__inner">
-        <Link to="/" aria-label="WatchOut! Sensory Tours — Inicio" className="site-logo">
-          <img src={logoImg} alt="Logo de WatchOut! Sensory Tours" className="site-logo-image" />
-          WatchOut! <span>Sensory Tours</span>
+      <div className="wrap nav-inner">
+        <Link to="/" aria-label="WatchOut! Sensory Tours — Inicio" className="brand-badge">
+          <img src={logoImg} alt="Logo de WatchOut! Sensory Tours" className="brand-badge__img" />
+          <span className="brand-word">WatchOutTours</span>
         </Link>
-      </div>
-      <div>
+
         <nav
           id="site-nav"
           aria-label="Navegación principal"
-          className={`site-nav${menuOpen ? ' site-nav--open' : ''}`}
+          className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}
         >
-          <ul role="list" className="site-nav-list">
-            {navLinks.map(({ to, label }) => (
-              <li key={to}>
-                <NavLink
-                  to={to}
-                  end={to === '/'}
-                  className={({ isActive }) =>
-                    `site-nav__link${isActive ? ' site-nav__link--active' : ''}`
-                  }
-                  aria-current={({ isActive }) => isActive ? 'page' : undefined}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-              <li>
-                <NavLink
-                  to="/contacto"
-                  className={({ isActive }) =>
-                    `site-nav__link nav__link_contact${isActive ? ' site-nav__link--active' : ''}`
-                  }
-                  aria-current={({ isActive }) => isActive ? 'page' : undefined}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Contacto
-                </NavLink>
-              </li>
-          </ul>
+          {navLinks.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) =>
+                `nav-link${isActive ? ' nav-link--active' : ''}`
+              }
+              onClick={() => setMenuOpen(false)}
+            >
+              {label}
+            </NavLink>
+          ))}
         </nav>
-        </div>
 
         <button
           className="menu-toggle"
@@ -70,7 +50,7 @@ export function Header() {
         >
           {menuOpen ? '✕' : '☰'}
         </button>
-
+      </div>
     </header>
   )
 }
