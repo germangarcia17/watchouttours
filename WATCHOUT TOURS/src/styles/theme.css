@@ -1,0 +1,211 @@
+/* ── Tokens de diseño WatchOut! — compartidos por toda la web ── */
+:root {
+  --paper: #ECE7DD;
+  --paper-deep: #DDD4BF;
+  --ink: #15140F;
+  --ink-soft: #4A453B;
+  --muted: #7A7364;
+  --jade: #2E7F60;
+  --jade-soft: #48B890;
+  --gold: #9C7A38;
+  --gold-soft: #D8B66A;
+  --amber: #F2A65A;
+  --line: #CFC4A8;
+  --radius: 18px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+h1, h2, h3 {
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -.01em;
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+section {
+  padding: 66px 0;
+  position: relative;
+}
+
+/* ── Textura táctil (motivo braille de la marca) ─────── */
+.dots-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(var(--line) 1.6px, transparent 1.6px);
+  background-size: 18px 18px;
+  opacity: .35;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+/* ── Cabeceras de sección ────────────────────────────── */
+.sec-eyebrow {
+  font-size: 12px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--jade);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sec-title {
+  font-size: clamp(26px, 3.6vw, 36px);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.sec-sub {
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin-bottom: 34px;
+  font-size: 15.5px;
+}
+
+/* ── Botones ─────────────────────────────────────────── */
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 26px;
+  border-radius: 100px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.btn-solid {
+  background: var(--amber);
+  color: var(--ink);
+  box-shadow: 0 6px 18px rgba(242, 166, 90, .35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--jade);
+  border-color: var(--jade-soft);
+}
+
+.btn-whatsapp {
+  color: #25D366;
+  border-color: #25D366;
+}
+
+.btn-whatsapp svg {
+  fill: #25D366;
+  flex-shrink: 0;
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── Links ───────────────────────────────────────────── */
+a {
+  text-decoration: none;
+  color: var(--jade);
+  transition: color .2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Tarjeta genérica sobre papel ────────────────────── */
+.card-deep {
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+
+/* ── Bloque oscuro con textura (firma de la marca) ───── */
+.ink-block {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 24px;
+  padding: 52px 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ink-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
+  background-size: 20px 20px;
+  opacity: .08;
+}
+
+.ink-block > * {
+  position: relative;
+}
+
+.ink-block h2,
+.ink-block h3 {
+  color: var(--paper);
+}
+
+.ink-block p {
+  color: #D8D2C2;
+}
+
+@media (max-width: 760px) {
+  .ink-block {
+    padding: 32px 24px;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn {
+    transition: none;
+  }
+}
