@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { supabase } from '../lib/supabase'
+import '../styles/pagestyle/BlogPost.css'
 
 export default function BlogPost() {
   const { slug }          = useParams()
@@ -26,16 +27,25 @@ export default function BlogPost() {
       })
   }, [slug])
 
-  if (loading)   return <p style={{ padding: '3rem 1.5rem' }}>Cargando…</p>
-  if (notFound)  return (
-    <div className="container" style={{ paddingBlock: '3rem' }}>
-      <h1>Artículo no encontrado</h1>
-      <Link to="/blog">← Volver al blog</Link>
-    </div>
+  if (loading) return (
+    <section className="post-estado-section">
+      <div className="wrap"><p className="post-estado" role="status">Cargando…</p></div>
+    </section>
+  )
+
+  if (notFound) return (
+    <section className="post-estado-section">
+      <div className="wrap post-notfound">
+        <span className="sec-eyebrow">Ups</span>
+        <h1 className="post-notfound__titulo">Artículo no encontrado</h1>
+        <p className="post-estado">Puede que el enlace haya cambiado o que el artículo ya no exista.</p>
+        <Link to="/blog" className="btn btn-outline">← Volver al blog</Link>
+      </div>
+    </section>
   )
 
   return (
-    <article aria-labelledby="post-heading" className="blog-post">
+    <article aria-labelledby="post-heading">
       <Helmet>
         <title>{post.meta_title ?? post.title} | WatchOut! Sensory Tours</title>
         {post.meta_description && <meta name="description" content={post.meta_description} />}
@@ -61,24 +71,46 @@ export default function BlogPost() {
           <meta name="twitter:image" content={post.og_image_url ?? post.cover_image_url} />
         )}
       </Helmet>
-      <div className="blog-post__meta">
-        {post.published_at && (
-          <time dateTime={post.published_at}>
-            {new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(post.published_at))}
-            {post.reading_time && ` · ${post.reading_time} min de lectura`}
-          </time>
-        )}
+
+      {/* ── Cabecera del artículo ────────────────────── */}
+      <header className="post-hero">
+        <div className="dots-texture"></div>
+        <div className="wrap post-hero-inner">
+          <p className="post-meta">
+            <Link to="/blog" className="post-meta__volver">← Blog</Link>
+            {post.published_at && (
+              <time dateTime={post.published_at}>
+                {new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(post.published_at))}
+              </time>
+            )}
+            {post.reading_time && <span>· {post.reading_time} min de lectura</span>}
+          </p>
+          <h1 id="post-heading" className="post-titulo">{post.title}</h1>
+          {post.excerpt && <p className="post-excerpt">{post.excerpt}</p>}
+        </div>
+      </header>
+
+      {/* ── Portada ──────────────────────────────────── */}
+      {post.cover_image_url && (
+        <div className="wrap">
+          <figure className="post-cover">
+            <img src={post.cover_image_url} alt={post.cover_image_alt ?? ''} />
+          </figure>
+        </div>
+      )}
+
+      {/* ── Contenido ────────────────────────────────── */}
+      <div className="wrap">
+        <div
+          className="post-contenido"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+
+        <footer className="post-footer">
+          <Link to="/blog" className="btn btn-outline">← Volver al blog</Link>
+          <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
+        </footer>
       </div>
-      <h1 id="post-heading" className="blog-post__title">{post.title}</h1>
-      <p className="blog-post__excerpt">{post.excerpt}</p>
-      <hr />
-      <div
-        className="blog-post__content"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
-      <p style={{ marginTop: '3rem' }}>
-        <Link to="/blog">← Volver al blog</Link>
-      </p>
     </article>
   )
 }

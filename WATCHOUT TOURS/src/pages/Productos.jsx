@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import '../styles/pagestyle/Productos.css'
 
 const experiencias = [
   {
@@ -10,6 +11,7 @@ const experiencias = [
     descripcion: 'El recorrido completo por Aotearoa. Desde las playas de arena negra de la Isla Norte hasta los fiordos del sur. Grupos de máximo 6 personas.',
     incluye: ['Vuelos internos', 'Alojamiento boutique 5 estrellas', 'Todas las comidas', 'Guía especializada', 'Experiencias con comunidades maorí', 'Materiales táctiles'],
     destinos: ['Auckland', 'Rotorua', 'Waitomo', 'Wellington', 'Kaikōura', 'Queenstown', 'Milford Sound'],
+    destacada: true,
   },
   {
     id: 'escapada-norte',
@@ -35,47 +37,91 @@ export default function Productos() {
   useEffect(() => { document.title = 'Experiencias | WatchOut! Sensory Tours' }, [])
 
   return (
-    <div className="container" style={{ paddingBlock: '3rem' }}>
-      <div className="page-intro">
-        <h1>Experiencias de viaje</h1>
-        <p>Cada itinerario ha sido diseñado desde cero pensando en quienes viajan sin vista.</p>
-      </div>
+    <>
+      {/* ── Cabecera ─────────────────────────────────── */}
+      <section className="prod-hero">
+        <div className="dots-texture"></div>
+        <div className="wrap prod-hero-inner">
+          <span className="sec-eyebrow">Las experiencias</span>
+          <h1 className="prod-titulo">Tu viaje, a tu manera</h1>
+          <p className="prod-intro">
+            Cada itinerario ha sido diseñado desde cero pensando en quienes viajan sin vista.
+            Elige el formato y nosotras nos encargamos del resto.
+          </p>
+        </div>
+      </section>
 
-      <ul role="list" className="products-list">
-        {experiencias.map(({ id, titulo, duracion, precio, descripcion, incluye, destinos }) => (
-          <li key={id}>
-            <article id={id} aria-labelledby={`${id}-heading`} className="product-card">
-              <div className="product-badges">
-                <span className="product-badge">{duracion}</span>
-                <span className="product-badge product-badge--price">{precio}</span>
-              </div>
-              <h2 id={`${id}-heading`} className="product-card__title">{titulo}</h2>
-              <p className="product-card__desc">{descripcion}</p>
+      {/* ── Experiencias ─────────────────────────────── */}
+      <section className="prod-listado">
+        <div className="wrap">
+          <ul role="list" className="prod-list">
+            {experiencias.map(({ id, titulo, duracion, precio, descripcion, incluye, destinos, destacada }) => (
+              <li key={id}>
+                <article
+                  id={id}
+                  aria-labelledby={`${id}-heading`}
+                  className={`prod-card${destacada ? ' prod-card--destacada' : ''}`}
+                >
+                  {destacada && <span className="prod-card__ribbon">La experiencia completa</span>}
 
-              <p className="product-card__section-title">Destinos</p>
-              <ul role="list" className="tag-list">
-                {destinos.map(d => (
-                  <li key={d} className="tag"><span lang="en">{d}</span></li>
-                ))}
-              </ul>
+                  <div className="prod-card__head">
+                    <span className="prod-card__etiqueta">{duracion}</span>
+                    <h2 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h2>
+                    <p className="prod-card__desc">{descripcion}</p>
+                  </div>
 
-              <p className="product-card__section-title">Incluye</p>
-              <ul className="product-card__includes">
-                {incluye.map(item => <li key={item}>{item}</li>)}
-              </ul>
+                  <div className="prod-card__body">
+                    <p className="prod-card__seccion">Destinos</p>
+                    <ul role="list" className="hl">
+                      {destinos.map(d => (
+                        <li key={d} className="hl-pill"><span lang="en">{d}</span></li>
+                      ))}
+                    </ul>
 
-              <div className="product-card__actions">
-                <Link to="/contacto" className="btn btn--primary">
-                  Reservar <span className="sr-only">{titulo}</span>
-                </Link>
-                <Link to="/contacto" className="btn btn--outline">
-                  Preguntar <span className="sr-only">sobre {titulo}</span>
-                </Link>
-              </div>
-            </article>
-          </li>
-        ))}
-      </ul>
-    </div>
+                    <p className="prod-card__seccion">Incluye</p>
+                    <ul role="list" className="prod-card__incluye">
+                      {incluye.map(item => (
+                        <li key={item}>
+                          <span className="prod-card__check" aria-hidden="true">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="prod-card__footer">
+                    <p className="prod-card__precio">{precio} <span>por persona · todo incluido</span></p>
+                    <div className="cta-row">
+                      <Link to="/contacto" className="btn btn-solid">
+                        Reservar<span className="sr-only"> {titulo}</span>
+                      </Link>
+                      <Link to="/contacto" className="btn btn-outline">
+                        Preguntar<span className="sr-only"> sobre {titulo}</span>
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── CTA a medida ─────────────────────────────── */}
+      <section className="prod-cta-section">
+        <div className="wrap">
+          <div className="ink-block prod-cta">
+            <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>¿Ninguna te encaja?</div>
+            <h2 className="prod-cta__titulo">Te lo hacemos a medida, como un traje.</h2>
+            <p>
+              Tus días, tu energía, tu ritmo. Si quieres más calma, más calma.
+              Si quieres más adrenalina, más adrenalina. Cuéntanos qué tienes en la
+              cabeza y te preparamos una propuesta sin compromiso.
+            </p>
+            <Link to="/contacto" className="btn btn-solid">Diseñemos el tuyo</Link>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
