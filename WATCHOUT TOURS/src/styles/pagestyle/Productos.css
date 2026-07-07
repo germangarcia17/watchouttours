@@ -1,5 +1,5 @@
-/* ── Productos / Experiencias — estilos propios ──────── */
-/* Tokens y utilidades compartidas viven en styles/theme.css */
+/* ── Rutas y viajes — estilos propios ─────────────────── */
+/* Tokens en styles/theme.css; .route y .hl base en Home.css */
 
 /* ── Cabecera ────────────────────────────────────────── */
 .prod-hero {
@@ -28,8 +28,54 @@
   max-width: 54ch;
 }
 
-/* ── Listado ─────────────────────────────────────────── */
-.prod-listado {
+/* ── Rutas ───────────────────────────────────────────── */
+.prod-rutas {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.prod-rutas .route {
+  position: relative;
+}
+
+.route--destacada {
+  border-color: var(--jade-soft);
+  border-top: 3px solid var(--jade-soft);
+}
+
+.route__ribbon {
+  position: absolute;
+  top: -13px;
+  left: 24px;
+  background: var(--jade);
+  color: var(--paper);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  padding: 5px 14px;
+}
+
+.route-desc {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 6px;
+  max-width: 62ch;
+}
+
+.hl-pill {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 6px 13px;
+}
+
+/* ── Formatos ────────────────────────────────────────── */
+.prod-formatos {
   padding-top: 24px;
   padding-bottom: 24px;
 }
@@ -39,13 +85,9 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: stretch;
-}
-
-.prod-list > li {
-  display: flex;
 }
 
 .prod-card {
@@ -66,25 +108,6 @@
   box-shadow: 0 8px 24px rgba(21, 20, 15, .12);
 }
 
-.prod-card--destacada {
-  border-color: var(--jade-soft);
-  border-top: 3px solid var(--jade-soft);
-}
-
-.prod-card__ribbon {
-  position: absolute;
-  top: -13px;
-  left: 24px;
-  background: var(--jade);
-  color: var(--paper);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  border-radius: 100px;
-  padding: 5px 14px;
-}
-
 .prod-card__etiqueta {
   display: inline-block;
   font-size: 12.5px;
@@ -95,6 +118,7 @@
   border-left: 3px solid var(--jade-soft);
   padding-left: 10px;
   margin-bottom: 12px;
+  line-height: 1.5;
 }
 
 .prod-card__titulo {
@@ -110,72 +134,6 @@
   margin: 0;
 }
 
-.prod-card__seccion {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 18px 0 10px;
-}
-
-.prod-card__body .prod-card__seccion:first-child {
-  margin-top: 0;
-}
-
-/* Pills de destinos (mismo look que rutas de Home) */
-.hl {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.hl-pill {
-  font-size: 12.5px;
-  color: var(--ink-soft);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  padding: 6px 13px;
-}
-
-/* Checklist incluye */
-.prod-card__incluye {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.prod-card__incluye li {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 13.5px;
-  color: var(--ink-soft);
-  line-height: 1.5;
-}
-
-.prod-card__check {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: rgba(72, 184, 144, .15);
-  color: var(--jade);
-  font-weight: 700;
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
-}
-
 /* Footer con precio */
 .prod-card__footer {
   margin-top: auto;
@@ -188,24 +146,32 @@
   font-size: 19px;
   font-weight: 800;
   color: var(--jade);
-  margin: 0 0 16px;
+  margin: 0 0 8px;
 }
 
-.prod-card__precio span {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
+.prod-card__precio-nota {
+  font-size: 13.5px;
   color: var(--muted);
-  margin-top: 2px;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.prod-card__incluye-nota {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  background: rgba(72, 184, 144, .08);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 0 0 18px;
 }
 
 .prod-card__footer .btn {
-  padding: 11px 20px;
+  padding: 12px 22px;
   font-size: 14px;
 }
 
-/* ── CTA a medida ────────────────────────────────────── */
+/* ── CTA final ───────────────────────────────────────── */
 .prod-cta-section {
   padding-top: 24px;
   padding-bottom: 90px;
@@ -232,7 +198,7 @@
 }
 
 /* ── Responsive ──────────────────────────────────────── */
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .prod-list {
     grid-template-columns: 1fr;
     max-width: 560px;
