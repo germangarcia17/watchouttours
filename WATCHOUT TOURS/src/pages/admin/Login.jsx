@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../lib/auth'
+import '../../styles/admin.css'
 
 export default function AdminLogin() {
   const { signIn }          = useAuth()
@@ -9,6 +10,8 @@ export default function AdminLogin() {
   const [password, setPass] = useState('')
   const [error, setError]   = useState(null)
   const [loading, setLoad]  = useState(false)
+
+  useEffect(() => { document.title = 'Iniciar sesión | WatchOut! Admin' }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -27,23 +30,24 @@ export default function AdminLogin() {
 
   return (
     <div className="login-page">
+      <div className="dots-texture"></div>
       <div className="login-box">
         <div className="login-box__logo">
-          <span>WatchOut! <em>Admin</em></span>
+          <span className="login-box__badge">WatchOut! <em>Admin</em></span>
         </div>
         <h1>Iniciar sesión</h1>
 
         <form onSubmit={handleSubmit} noValidate aria-label="Formulario de inicio de sesión">
           <div className="form-field">
             <label htmlFor="login-email" className="form-label">
-              Correo electrónico <span aria-hidden="true">*</span>
+              Correo electrónico <span aria-hidden="true" className="required-marker">*</span>
             </label>
             <input id="login-email" type="email" value={email} onChange={e => setEmail(e.target.value)} required autoComplete="email" aria-required="true" className="form-control" />
           </div>
 
           <div className="form-field">
             <label htmlFor="login-password" className="form-label">
-              Contraseña <span aria-hidden="true">*</span>
+              Contraseña <span aria-hidden="true" className="required-marker">*</span>
             </label>
             <input id="login-password" type="password" value={password} onChange={e => setPass(e.target.value)} required autoComplete="current-password" aria-required="true" className="form-control" />
           </div>

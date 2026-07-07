@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/pagestyle/SobreNosotras.css'
+import imgNosotras from '../images/sobre-nosotras.webp'
 
 const MONICA = [
   { emoji: '❤️', text: 'Cree que las mejores conversaciones aparecen caminando.' },
@@ -38,155 +39,169 @@ export default function SobreNosotras() {
   useEffect(() => { document.title = 'Sobre nosotras | WatchOut! Sensory Tours' }, [])
 
   return (
-    <div className="sn-page">
-
+    <>
       {/* ── Hero ─────────────────────────────────────── */}
-      <div className="container sn-hero">
-        <p className="sn-eyebrow">El corazón del proyecto</p>
-        <h1 className="sn-titulo">Mucho más que un viaje.</h1>
-        <p className="sn-intro">
-          Watchout nace del deseo de crear experiencias donde las personas ciegas o con
-          discapacidad visual puedan descubrir Nueva Zelanda desde un lugar más sensorial,
-          humano y auténtico.
-        </p>
-        <p className="sn-intro">
-          Pero también nace con otro propósito: ayudar a abrir conversaciones, generar
-          conciencia de lo invisible y despertar nuevas formas de viajar que las personas
-          quieran compartir.
-        </p>
-        <p className="sn-intro">
-          Creemos que muchas veces el mundo no necesita más velocidad, sino saber apreciar
-          lo que ya tenemos de una forma más real.
-        </p>
-      </div>
-
-      {/* ── Lo que hemos aprendido ───────────────────── */}
-      <div className="sn-aprendizaje">
-        <div className="container sn-aprendizaje__inner">
-          <h2 className="sn-aprendizaje__titulo">
-            Los viajeros nos han enseñado a cambiar nuestra manera de mirar el mundo.
-          </h2>
-          <div className="sn-aprendizaje__cols">
-            <p>
-              Cuando dejamos de vivir únicamente desde la vista, empezamos a conectar de
-              forma mucho más profunda con las personas, los lugares y los pequeños detalles.
+      <section className="sn-hero">
+        <div className="dots-texture"></div>
+        <div className="wrap sn-hero-grid">
+          <div className="sn-hero-inner">
+            <span className="sec-eyebrow">El corazón del proyecto</span>
+            <h1 className="sn-titulo">Mucho más<br />que un viaje.</h1>
+            <p className="sn-intro">
+              Watchout nace del deseo de crear experiencias donde las personas ciegas o con
+              discapacidad visual puedan descubrir Nueva Zelanda desde un lugar más sensorial,
+              humano y auténtico.
             </p>
-            <p>
-              Los viajeros ciegos no solo viven la experiencia, sino que muchas veces también
-              transforman la de quienes les rodean. Nos recuerdan otras formas de escuchar,
-              sentir, confiar y estar presentes. Y eso tiene un impacto humano enorme.
+            <p className="sn-intro">
+              Pero también nace con otro propósito: ayudar a abrir conversaciones, generar
+              conciencia de lo invisible y despertar nuevas formas de viajar que las personas
+              quieran compartir.
             </p>
           </div>
+          <div className="sn-hero-photo">
+            <img src={imgNosotras} alt="Mónica y Sylvie en Nueva Zelanda" />
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* ── Lo que hemos aprendido — bloque oscuro ───── */}
+      <section>
+        <div className="wrap">
+          <div className="ink-block">
+            <div className="sec-eyebrow sn-eyebrow-jade">Lo que hemos aprendido</div>
+            <h2 className="sn-aprendizaje-titulo">
+              Los viajeros nos han enseñado a cambiar nuestra manera de mirar el mundo.
+            </h2>
+            <div className="sn-aprendizaje-cols">
+              <p>
+                Cuando dejamos de vivir únicamente desde la vista, empezamos a conectar de
+                forma mucho más profunda con las personas, los lugares y los pequeños detalles.
+              </p>
+              <p>
+                Los viajeros ciegos no solo viven la experiencia, sino que muchas veces también
+                transforman la de quienes les rodean. Nos recuerdan otras formas de escuchar,
+                sentir, confiar y estar presentes. Y eso tiene un impacto humano enorme.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Hola, somos Mónica y Sylvie ─────────────── */}
-      <div className="container sn-hola">
-        <p className="sn-eyebrow">👋 Hola</p>
-        <h2 className="sn-section-titulo">Somos Mónica y Sylvie.</h2>
-        <p className="sn-text">
-          Dos españolas que llegaron a Nueva Zelanda hace siete años con una mochila llena
-          de ilusión... y que todavía siguen sorprendiéndose con este país.
-        </p>
-        <p className="sn-text">
-          Nos encanta madrugar para ver un amanecer, improvisar una parada porque alguien
-          ha escuchado un río escondido, reírnos durante horas en la furgoneta y terminar
-          el día compartiendo historias alrededor de una mesa.
-        </p>
-        <blockquote className="sn-quote">
-          <p>"Nunca había vivido algo así."</p>
-          <cite>— Lo que más nos emociona escuchar</cite>
-        </blockquote>
-        <p className="sn-text">
-          Somos curiosas por naturaleza. Nos encanta preguntar, escuchar historias y
-          descubrir cómo vive el mundo cada persona. Quizá por eso Watchout nació de
-          forma tan natural.
-        </p>
-      </div>
+      <section>
+        <div className="wrap sn-hola">
+          <div className="sec-eyebrow">👋 Hola</div>
+          <h2 className="sec-title">Somos Mónica y Sylvie.</h2>
+          <p className="sn-text">
+            Dos españolas que llegaron a Nueva Zelanda hace siete años con una mochila llena
+            de ilusión... y que todavía siguen sorprendiéndose con este país.
+          </p>
+          <p className="sn-text">
+            Nos encanta madrugar para ver un amanecer, improvisar una parada porque alguien
+            ha escuchado un río escondido, reírnos durante horas en la furgoneta y terminar
+            el día compartiendo historias alrededor de una mesa.
+          </p>
+          <blockquote className="sn-quote">
+            <p>"Nunca había vivido algo así."</p>
+            <cite>— Lo que más nos emociona escuchar</cite>
+          </blockquote>
+          <p className="sn-text">
+            Somos curiosas por naturaleza. Nos encanta preguntar, escuchar historias y
+            descubrir cómo vive el mundo cada persona. Quizá por eso Watchout nació de
+            forma tan natural.
+          </p>
+        </div>
+      </section>
 
       {/* ── 5 cosas sobre nosotras ───────────────────── */}
-      <div className="container sn-cinco">
-        <h2 className="sn-section-titulo">Cinco cosas sobre nosotras</h2>
-        <div className="sn-cinco__grid">
+      <section>
+        <div className="wrap">
+          <div className="sec-eyebrow">De tú a tú</div>
+          <h2 className="sec-title">Cinco cosas sobre nosotras</h2>
+          <div className="sn-cinco-grid">
 
-          <div className="sn-persona-card">
-            <h3 className="sn-persona-card__nombre">Mónica</h3>
-            <ul role="list" className="sn-cinco__lista">
-              {MONICA.map(({ emoji, text }) => (
-                <li key={text} className="sn-cinco__item">
-                  <span aria-hidden="true">{emoji}</span>
-                  <span>{text}</span>
-                </li>
-              ))}
-            </ul>
+            <article className="sn-persona-card">
+              <h3 className="sn-persona-nombre">Mónica</h3>
+              <ul role="list" className="sn-lista">
+                {MONICA.map(({ emoji, text }) => (
+                  <li key={text} className="sn-lista__item">
+                    <span aria-hidden="true" className="sn-lista__emoji">{emoji}</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="sn-persona-card">
+              <h3 className="sn-persona-nombre">Sylvie</h3>
+              <ul role="list" className="sn-lista">
+                {SYLVIE.map(({ emoji, text }) => (
+                  <li key={text} className="sn-lista__item">
+                    <span aria-hidden="true" className="sn-lista__emoji">{emoji}</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
           </div>
-
-          <div className="sn-persona-card">
-            <h3 className="sn-persona-card__nombre">Sylvie</h3>
-            <ul role="list" className="sn-cinco__lista">
-              {SYLVIE.map(({ emoji, text }) => (
-                <li key={text} className="sn-cinco__item">
-                  <span aria-hidden="true">{emoji}</span>
-                  <span>{text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
         </div>
-      </div>
+      </section>
 
       {/* ── Si viajaras con nosotras ─────────────────── */}
-      <div className="container sn-viajando">
-        <h2 className="sn-section-titulo">Si viajaras con nosotras descubrirías que…</h2>
-        <ul role="list" className="sn-viajando__lista">
-          {VIAJANDO_CON_NOSOTRAS.map(({ emoji, text }) => (
-            <li key={text} className="sn-viajando__item">
-              <span aria-hidden="true" className="sn-viajando__emoji">{emoji}</span>
-              <span>{text}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* ── Lo que encontrarás ───────────────────────── */}
-      <div className="sn-valores">
-        <div className="container">
-          <h2 className="sn-section-titulo">Lo que encontrarás si viajas con nosotras</h2>
-          <ul role="list" className="sn-valores__lista">
-            {VALORES.map(v => (
-              <li key={v} className="sn-valores__item">
-                <span className="sn-valores__check" aria-hidden="true">✓</span>
-                <span>{v}</span>
+      <section>
+        <div className="wrap">
+          <div className="sec-eyebrow">Aviso honesto</div>
+          <h2 className="sec-title">Si viajaras con nosotras descubrirías que…</h2>
+          <ul role="list" className="sn-pills">
+            {VIAJANDO_CON_NOSOTRAS.map(({ emoji, text }) => (
+              <li key={text} className="sn-pill">
+                <span aria-hidden="true">{emoji}</span>
+                <span>{text}</span>
               </li>
             ))}
           </ul>
         </div>
-      </div>
+      </section>
+
+      {/* ── Lo que encontrarás ───────────────────────── */}
+      <section>
+        <div className="wrap">
+          <div className="sn-valores-card">
+            <h2 className="sn-valores-titulo">Lo que encontrarás si viajas con nosotras</h2>
+            <ul role="list" className="sn-valores-lista">
+              {VALORES.map(v => (
+                <li key={v} className="sn-valores-item">
+                  <span className="sn-valores-check" aria-hidden="true">✓</span>
+                  <span>{v}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* ── Cierre ───────────────────────────────────── */}
-      <div className="container sn-cierre">
-        <p className="sn-text">
-          Pensábamos que íbamos a enseñar Nueva Zelanda. Y al final ha sido Nueva
-          Zelanda —y las personas con las que hemos compartido el camino— quien nos
-          ha enseñado a nosotras.
-        </p>
-        <p className="sn-cierre__deseo">
-          Nuestra mayor ilusión es que cuando vuelvas a casa no solo recuerdes los
-          lugares que visitaste. Que también descubras que prestas atención a cosas
-          que antes pasaban desapercibidas.
-        </p>
-        <p className="sn-text">
-          Porque quizá ese sea el mejor souvenir que puedas llevarte.
-        </p>
+      <section className="sn-cierre">
+        <div className="wrap">
+          <p className="sn-cierre-texto">
+            Pensábamos que íbamos a enseñar Nueva Zelanda. Y al final ha sido Nueva
+            Zelanda —y las personas con las que hemos compartido el camino— quien nos
+            ha enseñado a nosotras.
+          </p>
+          <p className="sn-cierre-deseo">
+            Nuestra mayor ilusión es que cuando vuelvas a casa no solo recuerdes los
+            lugares que visitaste. Que también descubras que prestas atención a cosas
+            que antes pasaban desapercibidas.
+          </p>
+          <p className="sn-cierre-texto">Porque quizá ese sea el mejor souvenir que puedas llevarte.</p>
 
-        <div className="sn-cierre__ctas">
-          <Link to="/contacto" className="btn btn--primary btn--hero">Hablemos</Link>
-          <Link to="/filosofia" className="sn-cierre__link">Conoce nuestra filosofía →</Link>
+          <div className="cta-row sn-cierre-ctas">
+            <Link to="/contacto" className="btn btn-solid">Hablemos</Link>
+            <Link to="/filosofia" className="btn btn-outline">Conoce nuestra filosofía</Link>
+          </div>
         </div>
-      </div>
-
-    </div>
+      </section>
+    </>
   )
 }
-

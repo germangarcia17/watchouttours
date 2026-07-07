@@ -81,7 +81,7 @@ export default function SeoAdmin() {
       </p>
 
       {PAGE_TYPES.map(pt => (
-        <section key={pt} aria-labelledby={`seo-${pt}-heading`} style={{ marginBottom: '2.5rem', borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>
+        <section key={pt} aria-labelledby={`seo-${pt}-heading`} style={{ marginBottom: '2.5rem', borderTop: '1px solid var(--line)', paddingTop: '1.5rem' }}>
           <h2 id={`seo-${pt}-heading`} style={{ textTransform: 'capitalize', marginBottom: '1rem' }}>{pt}</h2>
 
           <div className="blog-editor">
@@ -130,7 +130,7 @@ export default function SeoAdmin() {
               >
                 {saving[pt] ? 'Guardando…' : 'Guardar'}
               </button>
-              {saved[pt] && <span style={{ color: 'var(--color-success)', fontSize: '0.875rem' }}>✓ Guardado</span>}
+              {saved[pt] && <span style={{ color: 'var(--jade)', fontSize: '0.875rem', fontWeight: 600 }}>✓ Guardado</span>}
             </div>
           </div>
         </section>

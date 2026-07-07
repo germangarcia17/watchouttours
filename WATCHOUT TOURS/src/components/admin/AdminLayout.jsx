@@ -1,5 +1,6 @@
 import { NavLink, Link, Outlet } from 'react-router-dom'
 import { useAuth } from '../../lib/auth'
+import '../../styles/admin.css'
 
 const adminLinks = [
   { to: '/admin',           label: 'Dashboard' },
