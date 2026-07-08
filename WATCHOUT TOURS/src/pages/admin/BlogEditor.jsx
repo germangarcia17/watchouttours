@@ -186,7 +186,7 @@ export default function BlogEditor() {
             <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{uploadError.cover_image_url}</p>
           )}
           {form.cover_image_url && (
-            <img src={form.cover_image_url} alt="" className="editor-image-preview" />
+            <img src={form.cover_image_url} alt={form.cover_image_alt || 'Vista previa de la imagen de portada subida'} className="editor-image-preview" />
           )}
         </Field>
 

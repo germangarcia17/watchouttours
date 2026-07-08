@@ -159,7 +159,7 @@ export default function Home() {
               <div className="sec-eyebrow">Así se siente, no se ve</div>
               <p className="callout">¿Quién dice que los ciegos no se tiran en parapente? <em>Aquí no venimos a ver pasar la vida — venimos a disfrutarla a 1000 por hora.</em></p>
               <p>Uno de nuestros viajeros volando por todo lo alto sobre Queenstown. Subid el volumen: lo mejor de este vídeo no se ve, se escucha.</p>
-              <a className="btn btn-outline" href="https://www.instagram.com/watchouttours/" target="_blank" rel="noopener noreferrer">Ver más en Instagram</a>
+              <a className="btn btn-outline" href="https://www.instagram.com/watchouttours/" target="_blank" rel="noopener noreferrer">Ver más en Instagram<span className="sr-only"> (se abre en una pestaña nueva)</span></a>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@ export default function Home() {
               ))}
             </div>
             <p style={{ textAlign: 'center', marginTop: '2rem' }}>
-              <Link to="/resenas">Leer más reseñas →</Link>
+              <Link to="/resenas">Leer más reseñas<span aria-hidden="true"> →</span></Link>
             </p>
           </div>
         </section>
@@ -275,7 +275,7 @@ export default function Home() {
           <div className="origin">
             <div className="origin-grid">
               <div className="origin-photo">
-                <img src={imgNosotras} alt="Sylvie y Moni, guías de WatchOut! Sensory Tours" />
+                <img src={imgNosotras} alt="Sylvie y Moni, guías de WatchOut!, sonriendo frente a un géiser humeante en Rotorua" />
               </div>
               <div className="origin-inner">
                 <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>Nuestra historia</div>
@@ -300,7 +300,7 @@ export default function Home() {
               <Link to={`/blog/${posts.slug}`} className="btn btn-outline">Leer artículo</Link>
             </div>
             <p style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-              <Link to="/blog">Ver todos los artículos →</Link>
+              <Link to="/blog">Ver todos los artículos<span aria-hidden="true"> →</span></Link>
             </p>
           </div>
         </section>

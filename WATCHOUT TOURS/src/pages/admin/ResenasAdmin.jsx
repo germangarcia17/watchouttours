@@ -98,7 +98,7 @@ export default function ResenasAdmin() {
                 className={`toggle-btn${r.published ? ' toggle-btn--published' : ''}`}
                 aria-pressed={r.published}
               >
-                {r.published ? '✓ Publicada' : 'Publicar'}
+                {r.published ? <><span aria-hidden="true">✓ </span>Publicada</> : 'Publicar'}
                 <span className="sr-only"> reseña de {r.author_name}</span>
               </button>
               <button
@@ -106,7 +106,7 @@ export default function ResenasAdmin() {
                 className={`toggle-btn${r.featured ? ' toggle-btn--featured' : ''}`}
                 aria-pressed={r.featured}
               >
-                {r.featured ? '★ Destacada' : 'Destacar'}
+                {r.featured ? <><span aria-hidden="true">★ </span>Destacada</> : 'Destacar'}
                 <span className="sr-only"> reseña de {r.author_name}</span>
               </button>
               <button onClick={() => deleteResena(r.id)} className="btn btn--danger btn--sm">

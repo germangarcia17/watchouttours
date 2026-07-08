@@ -53,7 +53,7 @@ export default function BlogAdmin() {
                 <td>
                   <span className={`status-badge status-badge--${post.status}`}>{post.status}</span>
                 </td>
-                <td>{post.featured ? '★' : '—'}</td>
+                <td>{post.featured ? <><span aria-hidden="true">★</span><span className="sr-only">Sí</span></> : <><span aria-hidden="true">—</span><span className="sr-only">No</span></>}</td>
                 <td>
                   {post.published_at
                     ? new Intl.DateTimeFormat('es-ES').format(new Date(post.published_at))
@@ -61,7 +61,7 @@ export default function BlogAdmin() {
                 </td>
                 <td>
                   <div className="table-actions">
-                    <Link to={`/admin/blog/${post.id}`}>Editar</Link>
+                    <Link to={`/admin/blog/${post.id}`}>Editar<span className="sr-only">: {post.title}</span></Link>
                     <button onClick={() => deletePost(post.id)} className="delete-btn">
                       Eliminar<span className="sr-only">: {post.title}</span>
                     </button>

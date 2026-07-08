@@ -59,7 +59,7 @@ export default function SobreNosotras() {
             </p>
           </div>
           <div className="sn-hero-photo">
-            <img src={imgNosotras} alt="Mónica y Sylvie en Nueva Zelanda" />
+            <img src={imgNosotras} alt="Mónica y Sylvie sonriendo en un selfie frente a un géiser humeante en Rotorua, Nueva Zelanda" />
           </div>
         </div>
       </section>
@@ -90,7 +90,7 @@ export default function SobreNosotras() {
       {/* ── Hola, somos Mónica y Sylvie ─────────────── */}
       <section>
         <div className="wrap sn-hola">
-          <div className="sec-eyebrow">👋 Hola</div>
+          <div className="sec-eyebrow"><span aria-hidden="true">👋 </span>Hola</div>
           <h2 className="sec-title">Somos Mónica y Sylvie.</h2>
           <p className="sn-text">
             Dos españolas que llegaron a Nueva Zelanda hace siete años con una mochila llena
