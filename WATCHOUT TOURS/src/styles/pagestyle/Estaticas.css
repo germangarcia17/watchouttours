@@ -1,0 +1,87 @@
+/* ── Páginas estáticas (Accesibilidad, Privacidad) ────── */
+/* Tokens y utilidades compartidas viven en styles/theme.css */
+
+.static-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 16px;
+}
+
+.static-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.static-titulo {
+  font-size: clamp(30px, 4.2vw, 42px);
+  font-weight: 800;
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+
+.static-intro {
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  margin: 0;
+}
+
+.static-body {
+  padding-top: 8px;
+  padding-bottom: 90px;
+}
+
+.static-body .wrap {
+  max-width: 736px;
+}
+
+.static-body section {
+  padding: 0;
+  margin-top: 36px;
+}
+
+.static-body h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.static-body p {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+
+.static-body ul {
+  margin: 0 0 14px;
+  padding-left: 22px;
+  color: var(--ink-soft);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+.static-body li {
+  margin-bottom: 6px;
+}
+
+.static-body a {
+  color: var(--jade);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.static-fecha {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 6px 14px;
+  margin-top: 28px;
+}

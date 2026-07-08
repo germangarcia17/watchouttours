@@ -1,0 +1,121 @@
+/* ── Filosofía — estilos propios ──────────────────────── */
+/* Tokens y utilidades compartidas viven en styles/theme.css */
+
+/* ── Cabecera ────────────────────────────────────────── */
+.filo-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 24px;
+}
+
+.filo-hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 680px;
+}
+
+.filo-titulo {
+  font-size: clamp(34px, 4.6vw, 48px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
+
+.filo-intro {
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  margin: 0 auto;
+  max-width: 52ch;
+}
+
+/* ── Principios ──────────────────────────────────────── */
+.filo-principios {
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+.filo-lista {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filo-principio {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.filo-principio:last-child {
+  border-bottom: none;
+}
+
+.filo-principio__num {
+  font-family: 'Sora', sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--jade-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.filo-principio__titulo {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 4px 0 10px;
+}
+
+.filo-principio__texto {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 58ch;
+}
+
+/* ── Cierre ──────────────────────────────────────────── */
+.filo-cierre {
+  padding-top: 24px;
+  padding-bottom: 90px;
+}
+
+.filo-cierre-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+.ink-block .filo-cierre-frase {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(20px, 2.8vw, 26px);
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 26ch;
+  margin: 0;
+  color: var(--paper);
+}
+
+.filo-btn-claro {
+  color: var(--paper);
+  border-color: var(--gold-soft);
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  .filo-principio {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .filo-principio__num {
+    font-size: 32px;
+  }
+}
