@@ -4,22 +4,41 @@
   --paper-deep: #DDD4BF;
   --ink: #15140F;
   --ink-soft: #4A453B;
-  --muted: #7A7364;
-  --jade: #2E7F60;
-  --jade-soft: #48B890;
-  --gold: #9C7A38;
+  /* Tonos oscurecidos para cumplir WCAG AA (4.5:1) como texto sobre crema */
+  --muted: #5F584B;
+  --jade: #1F5F45;
+  --jade-soft: #48B890; /* solo sobre fondos oscuros o como decoración */
+  --gold: #6E5526;
   --gold-soft: #D8B66A;
   --amber: #F2A65A;
   --line: #CFC4A8;
+  /* Borde de controles interactivos: 3:1 sobre crema (WCAG 1.4.11) */
+  --border-input: #8A8170;
+  /* Verde WhatsApp accesible sobre fondos claros (el original 1.6:1) */
+  --ws-green: #0C6B34;
+  /* Color del anillo de foco; los bloques oscuros lo redefinen a crema */
+  --focus: #15140F;
   --radius: 18px;
 }
 
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Atkinson Hyperlegible: tipografía diseñada para lectores con baja visión */
+  font-family: 'Atkinson Hyperlegible', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ── Foco visible universal ──────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* El foco programático de main (skip link / cambio de ruta) no necesita anillo */
+main[tabindex="-1"]:focus {
+  outline: none;
 }
 
 .wrap {
@@ -54,7 +73,7 @@ section {
 
 /* ── Cabeceras de sección ────────────────────────────── */
 .sec-eyebrow {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--jade);
@@ -97,7 +116,7 @@ section {
 }
 
 .btn:focus-visible {
-  outline: 3px solid var(--amber);
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -110,17 +129,29 @@ section {
 .btn-outline {
   background: transparent;
   color: var(--jade);
-  border-color: var(--jade-soft);
+  border-color: var(--jade);
 }
 
 .btn-whatsapp {
+  color: var(--ws-green);
+  border-color: var(--ws-green);
+}
+
+.btn-whatsapp svg {
+  fill: var(--ws-green);
+  flex-shrink: 0;
+}
+
+/* Sobre fondo oscuro el verde WhatsApp original sí contrasta */
+.final-cta .btn-whatsapp,
+.ink-block .btn-whatsapp {
   color: #25D366;
   border-color: #25D366;
 }
 
-.btn-whatsapp svg {
+.final-cta .btn-whatsapp svg,
+.ink-block .btn-whatsapp svg {
   fill: #25D366;
-  flex-shrink: 0;
 }
 
 .cta-row {
@@ -141,7 +172,7 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 3px solid var(--amber);
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -199,6 +230,18 @@ a:focus-visible {
   color: #D8D2C2;
 }
 
+/* Los bloques oscuros usan anillo de foco claro para que sea visible */
+.ink-block,
+.intro-card,
+.origin,
+.final-cta,
+.blog-destacado,
+.rs-destacada,
+.admin-nav,
+.brand-badge {
+  --focus: #ECE7DD;
+}
+
 @media (max-width: 760px) {
   .ink-block {
     padding: 32px 24px;
@@ -216,9 +259,14 @@ a:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: auto !important;
   }
-  .btn {
-    transition: none;
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export function AudioPlayer({ src, playerId, playingId, setPlayingId }) {
+export function AudioPlayer({ src, playerId, playingId, setPlayingId, label = 'audio' }) {
   const audioRef = useRef(null)
   const progressRef = useRef(null)
   const playing = playingId === playerId
@@ -49,11 +49,40 @@ export function AudioPlayer({ src, playerId, playingId, setPlayingId }) {
     audioRef.current.currentTime = ratio * duration
   }
 
+  function handleProgressKeyDown(e) {
+    const audio = audioRef.current
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+      e.preventDefault()
+      audio.currentTime = Math.min(duration, currentTime + 5)
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+      e.preventDefault()
+      audio.currentTime = Math.max(0, currentTime - 5)
+    }
+    if (e.key === 'Home') {
+      e.preventDefault()
+      audio.currentTime = 0
+    }
+    if (e.key === 'End') {
+      e.preventDefault()
+      audio.currentTime = duration
+    }
+  }
+
   function formatTime(s) {
     if (!s || isNaN(s)) return '0:00'
     const m = Math.floor(s / 60)
     const sec = Math.floor(s % 60)
     return `${m}:${String(sec).padStart(2, '0')}`
+  }
+
+  /* Tiempo legible para lectores de pantalla ("1 minuto y 5 segundos") */
+  function speakTime(s) {
+    if (!s || isNaN(s)) return '0 segundos'
+    const m = Math.floor(s / 60)
+    const sec = Math.floor(s % 60)
+    if (m === 0) return `${sec} segundos`
+    return `${m} ${m === 1 ? 'minuto' : 'minutos'} y ${sec} segundos`
   }
 
   const progress = duration ? (currentTime / duration) * 100 : 0
@@ -65,7 +94,7 @@ export function AudioPlayer({ src, playerId, playingId, setPlayingId }) {
       <button
         className="audio-player__btn"
         onClick={togglePlay}
-        aria-label={playing ? 'Pausar' : 'Reproducir'}
+        aria-label={`${playing ? 'Pausar' : 'Reproducir'}: ${label}`}
       >
         {playing ? (
           /* Pause icon */
@@ -87,21 +116,19 @@ export function AudioPlayer({ src, playerId, playingId, setPlayingId }) {
           ref={progressRef}
           onClick={handleProgressClick}
           role="slider"
-          aria-label="Progreso de reproducción"
+          aria-label={`Progreso de ${label}. Flechas para avanzar o retroceder 5 segundos`}
           aria-valuenow={Math.round(currentTime)}
           aria-valuemin={0}
           aria-valuemax={Math.round(duration) || 0}
+          aria-valuetext={`${speakTime(currentTime)} de ${speakTime(duration)}`}
           tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'ArrowRight') audioRef.current.currentTime = Math.min(duration, currentTime + 5)
-            if (e.key === 'ArrowLeft') audioRef.current.currentTime = Math.max(0, currentTime - 5)
-          }}
+          onKeyDown={handleProgressKeyDown}
         >
           <div className="audio-player__progress-fill" style={{ width: `${progress}%` }} />
           <div className="audio-player__progress-thumb" style={{ left: `${progress}%` }} />
         </div>
 
-        <div className="audio-player__time">
+        <div className="audio-player__time" aria-hidden="true">
           <span>{formatTime(currentTime)}</span>
           <span>{formatTime(duration)}</span>
         </div>

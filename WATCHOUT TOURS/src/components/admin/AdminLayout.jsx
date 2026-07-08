@@ -1,5 +1,6 @@
 import { NavLink, Link, Outlet } from 'react-router-dom'
 import { useAuth } from '../../lib/auth'
+import { SkipLink } from '../layout/SkipLink'
 import '../../styles/admin.css'
 
 const adminLinks = [
@@ -15,6 +16,7 @@ export function AdminLayout() {
 
   return (
     <>
+      <SkipLink />
       <nav className="admin-nav" aria-label="Navegación del panel de administración">
         <div className="admin-nav__inner">
           <Link to="/admin" className="admin-nav__brand">WatchOut! Admin</Link>

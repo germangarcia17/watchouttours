@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import './Header.css'
 import logoImg from '../../images/logo-header-watchout.png'
@@ -12,12 +12,22 @@ const navLinks = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const toggleRef = useRef(null)
+
+  /* Escape cierra el menú móvil y devuelve el foco al botón que lo abrió */
+  function handleNavKeyDown(e) {
+    if (e.key === 'Escape' && menuOpen) {
+      setMenuOpen(false)
+      toggleRef.current?.focus()
+    }
+  }
 
   return (
     <header className="site-header" role="banner">
       <div className="wrap nav-inner">
-        <Link to="/" aria-label="WatchOut! Sensory Tours — Inicio" className="brand-badge">
-          <img src={logoImg} alt="Logo de WatchOut! Sensory Tours" className="brand-badge__img" />
+        {/* El enlace ya tiene texto visible; la imagen es decorativa */}
+        <Link to="/" className="brand-badge" aria-label="WatchOutTours — Ir al inicio">
+          <img src={logoImg} alt="" aria-hidden="true" className="brand-badge__img" />
           <span className="brand-word">WatchOutTours</span>
         </Link>
 
@@ -25,6 +35,7 @@ export function Header() {
           id="site-nav"
           aria-label="Navegación principal"
           className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}
+          onKeyDown={handleNavKeyDown}
         >
           {navLinks.map(({ to, label }) => (
             <NavLink
@@ -42,13 +53,14 @@ export function Header() {
         </nav>
 
         <button
+          ref={toggleRef}
           className="menu-toggle"
           aria-controls="site-nav"
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           onClick={() => setMenuOpen(v => !v)}
         >
-          {menuOpen ? '✕' : '☰'}
+          <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
         </button>
       </div>
     </header>

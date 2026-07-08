@@ -83,7 +83,7 @@ export default function ResenasAdmin() {
 
       <section aria-labelledby="lista-resenas-heading">
         <h2 id="lista-resenas-heading">Lista de reseñas</h2>
-        {loading && <p>Cargando…</p>}
+        {loading && <p role="status">Cargando…</p>}
         {!loading && resenas.length === 0 && <p>No hay reseñas todavía.</p>}
         {resenas.map(r => (
           <div key={r.id} className="resena-item">
@@ -93,14 +93,24 @@ export default function ResenasAdmin() {
             </div>
             <p className="resena-item__quote">&ldquo;{r.content}&rdquo;</p>
             <div className="resena-item__actions">
-              <button onClick={() => toggle(r.id, 'published', r.published)} className={`toggle-btn${r.published ? ' toggle-btn--published' : ''}`}>
+              <button
+                onClick={() => toggle(r.id, 'published', r.published)}
+                className={`toggle-btn${r.published ? ' toggle-btn--published' : ''}`}
+                aria-pressed={r.published}
+              >
                 {r.published ? '✓ Publicada' : 'Publicar'}
+                <span className="sr-only"> reseña de {r.author_name}</span>
               </button>
-              <button onClick={() => toggle(r.id, 'featured', r.featured)} className={`toggle-btn${r.featured ? ' toggle-btn--featured' : ''}`}>
+              <button
+                onClick={() => toggle(r.id, 'featured', r.featured)}
+                className={`toggle-btn${r.featured ? ' toggle-btn--featured' : ''}`}
+                aria-pressed={r.featured}
+              >
                 {r.featured ? '★ Destacada' : 'Destacar'}
+                <span className="sr-only"> reseña de {r.author_name}</span>
               </button>
               <button onClick={() => deleteResena(r.id)} className="btn btn--danger btn--sm">
-                Eliminar
+                Eliminar<span className="sr-only"> reseña de {r.author_name}</span>
               </button>
             </div>
           </div>

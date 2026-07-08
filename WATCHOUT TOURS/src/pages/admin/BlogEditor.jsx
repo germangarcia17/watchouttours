@@ -119,7 +119,7 @@ export default function BlogEditor() {
     else alert(`Error al guardar: ${error.message}`)
   }
 
-  if (loadingPost) return <p style={{ padding: '2rem' }}>Cargando…</p>
+  if (loadingPost) return <p role="status" style={{ padding: '2rem' }}>Cargando…</p>
 
   return (
     <div className="admin-page">

@@ -30,7 +30,7 @@ export default function BlogAdmin() {
         <Link to="/admin/blog/nuevo" className="btn btn--primary btn--sm">Nuevo artículo</Link>
       </div>
 
-      {loading && <p>Cargando…</p>}
+      {loading && <p role="status">Cargando…</p>}
       {!loading && posts.length === 0 && <p>No hay artículos todavía.</p>}
 
       {posts.length > 0 && (

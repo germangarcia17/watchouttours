@@ -38,7 +38,7 @@
 
 .eyebrow {
   display: inline-block;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--jade);
@@ -91,7 +91,7 @@
 }
 
 .stat .l {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .04em;
   color: var(--ink-soft);
   margin-top: 6px;
@@ -141,7 +141,7 @@
 .intro-card .tag {
   position: relative;
   color: var(--jade-soft);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .14em;
   text-transform: uppercase;
   margin-top: 18px;
@@ -256,7 +256,7 @@
 }
 
 .testi .who {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--gold);
   text-transform: capitalize;
@@ -309,7 +309,7 @@
 }
 
 .hl span {
-  font-size: 12.5px;
+  font-size: 13px;
   color: var(--ink-soft);
   background: var(--paper);
   border: 1px solid var(--line);
@@ -461,7 +461,7 @@
 }
 
 .audio-player__btn:focus-visible {
-  outline: 3px solid var(--amber);
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -488,7 +488,7 @@
 }
 
 .audio-player__progress-track:focus-visible {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -660,7 +660,8 @@
 .whatsapp-fab svg {
   width: 2rem;
   height: 2rem;
-  fill: #fff;
+  /* Icono oscuro: el blanco sobre el verde #25D366 da 2:1 (falla 1.4.11) */
+  fill: #0E0E10;
 }
 
 /* ── Responsive: 760px ───────────────────────────────── */

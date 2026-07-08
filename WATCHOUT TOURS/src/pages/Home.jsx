@@ -84,7 +84,7 @@ export default function Home() {
             </svg>
           </div>
           <div className="hero-photo-panel">
-            <img src={imgHero} alt="Paisaje de Nueva Zelanda" />
+            <img src={imgHero} alt="Dos manos acercándose hasta casi tocarse, recortadas contra un cielo de atardecer" />
           </div>
         </div>
 
@@ -147,7 +147,13 @@ export default function Home() {
         <div className="wrap">
           <div className="reel-grid">
             <div className="reel-frame">
-              <video src={videoParapente} controls playsInline preload="metadata" />
+              <video
+                src={videoParapente}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. Se escucha al instructor gritar «corre, corre, corre», el despegue y la emoción del vuelo."
+              />
             </div>
             <div className="reel-copy">
               <div className="sec-eyebrow">Así se siente, no se ve</div>
@@ -211,9 +217,13 @@ export default function Home() {
 
           <div className="contador-aviso">
             <p className="contador-aviso__texto">¡Nuestro próximo viaje en grupo comienza en:</p>
-            <div className="contador">
+            <div
+              className="contador"
+              role="timer"
+              aria-label={`${tiempo.dias} días y ${tiempo.horas} horas para el próximo viaje en grupo`}
+            >
               {unidades.map(({ label, valor }) => (
-                <div key={label} className="contador__bloque">
+                <div key={label} className="contador__bloque" aria-hidden="true">
                   <span className="contador__numero">{String(valor).padStart(2, '0')}</span>
                   <span className="contador__label">{label}</span>
                 </div>
@@ -240,7 +250,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="audio-card__descripcion">El viento en la cara, la sensación de libertad, el corazón latiendo al ritmo de la aventura.</p>
-              <AudioPlayer src={audioParapente} playerId="parapente" playingId={playingAudio} setPlayingId={setPlayingAudio} />
+              <AudioPlayer src={audioParapente} playerId="parapente" playingId={playingAudio} setPlayingId={setPlayingAudio} label="Salto en parapente" />
             </div>
             <div className="audio-card">
               <div className="audio-card__header">
@@ -253,7 +263,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="audio-card__descripcion">Ni siquiera en Nueva Zelanda estás a salvo de una alpaca curiosa.</p>
-              <AudioPlayer src={audioAlpaca} playerId="alpaca" playingId={playingAudio} setPlayingId={setPlayingAudio} />
+              <AudioPlayer src={audioAlpaca} playerId="alpaca" playingId={playingAudio} setPlayingId={setPlayingAudio} label="La mordida de una alpaca" />
             </div>
           </div>
         </div>
