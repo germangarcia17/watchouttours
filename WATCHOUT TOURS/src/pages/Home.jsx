@@ -7,6 +7,7 @@ import imgNosotras from '../images/sobre-nosotras.webp'
 import logoImg from '../images/logo-header-watchout.png'
 import videoParapente from '../images/parapente-teaser.mp4'
 import { AudioPlayer } from '../components/AudioPlayer'
+import { useSiteImage } from '../lib/siteImages'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 
@@ -27,6 +28,11 @@ export default function Home() {
   const [posts, setPosts] = useState([])
   const [tiempo, setTiempo] = useState(calcularTiempo())
   const [playingAudio, setPlayingAudio] = useState(null)
+
+  const heroImg = useSiteImage('home', 'hero', imgHero,
+    'Dos manos acercándose hasta casi tocarse, recortadas contra un cielo de atardecer')
+  const nosotrasImg = useSiteImage('home', 'nosotras', imgNosotras,
+    'Sylvie y Moni, guías de WatchOut!, sonriendo frente a un géiser humeante en Rotorua')
 
   useEffect(() => {
     document.title = 'WatchOut! Sensory Tours — Viajes de lujo sensorial por Nueva Zelanda'
@@ -84,7 +90,7 @@ export default function Home() {
             </svg>
           </div>
           <div className="hero-photo-panel">
-            <img src={imgHero} alt="Dos manos acercándose hasta casi tocarse, recortadas contra un cielo de atardecer" />
+            <img src={heroImg.src} alt={heroImg.alt} />
           </div>
         </div>
 
@@ -275,7 +281,7 @@ export default function Home() {
           <div className="origin">
             <div className="origin-grid">
               <div className="origin-photo">
-                <img src={imgNosotras} alt="Sylvie y Moni, guías de WatchOut!, sonriendo frente a un géiser humeante en Rotorua" />
+                <img src={nosotrasImg.src} alt={nosotrasImg.alt} />
               </div>
               <div className="origin-inner">
                 <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>Nuestra historia</div>

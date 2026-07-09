@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/pagestyle/SobreNosotras.css'
 import imgNosotras from '../images/sobre-nosotras.webp'
+import { useSiteImage } from '../lib/siteImages'
 
 const MONICA = [
   { emoji: '❤️', text: 'Cree que las mejores conversaciones aparecen caminando.' },
@@ -38,6 +39,9 @@ const VALORES = [
 export default function SobreNosotras() {
   useEffect(() => { document.title = 'Sobre nosotras | WatchOut! Sensory Tours' }, [])
 
+  const heroImg = useSiteImage('sobre-nosotras', 'hero', imgNosotras,
+    'Mónica y Sylvie sonriendo en un selfie frente a un géiser humeante en Rotorua, Nueva Zelanda')
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────── */}
@@ -59,7 +63,7 @@ export default function SobreNosotras() {
             </p>
           </div>
           <div className="sn-hero-photo">
-            <img src={imgNosotras} alt="Mónica y Sylvie sonriendo en un selfie frente a un géiser humeante en Rotorua, Nueva Zelanda" />
+            <img src={heroImg.src} alt={heroImg.alt} />
           </div>
         </div>
       </section>
