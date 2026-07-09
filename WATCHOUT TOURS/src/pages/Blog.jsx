@@ -83,7 +83,7 @@ export default function Blog() {
                     <h2 className="blog-card__titulo">{post.title}</h2>
                     <p className="blog-card__excerpt">{post.excerpt}</p>
                     <Link to={`/blog/${post.slug}`} className="blog-card__link">
-                      Leer artículo<span className="sr-only">: {post.title}</span> →
+                      Leer artículo<span className="sr-only">: {post.title}</span><span aria-hidden="true"> →</span>
                     </Link>
                   </article>
                 </li>

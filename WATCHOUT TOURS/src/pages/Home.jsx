@@ -7,6 +7,7 @@ import imgNosotras from '../images/sobre-nosotras.webp'
 import logoImg from '../images/logo-header-watchout.png'
 import videoParapente from '../images/parapente-teaser.mp4'
 import { AudioPlayer } from '../components/AudioPlayer'
+import { useSiteImage } from '../lib/siteImages'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 
@@ -27,6 +28,11 @@ export default function Home() {
   const [posts, setPosts] = useState([])
   const [tiempo, setTiempo] = useState(calcularTiempo())
   const [playingAudio, setPlayingAudio] = useState(null)
+
+  const heroImg = useSiteImage('home', 'hero', imgHero,
+    'Dos manos acercándose hasta casi tocarse, recortadas contra un cielo de atardecer')
+  const nosotrasImg = useSiteImage('home', 'nosotras', imgNosotras,
+    'Sylvie y Moni, guías de WatchOut!, sonriendo frente a un géiser humeante en Rotorua')
 
   useEffect(() => {
     document.title = 'WatchOut! Sensory Tours — Viajes de lujo sensorial por Nueva Zelanda'
@@ -84,7 +90,7 @@ export default function Home() {
             </svg>
           </div>
           <div className="hero-photo-panel">
-            <img src={imgHero} alt="Paisaje de Nueva Zelanda" />
+            <img src={heroImg.src} alt={heroImg.alt} />
           </div>
         </div>
 
@@ -147,13 +153,19 @@ export default function Home() {
         <div className="wrap">
           <div className="reel-grid">
             <div className="reel-frame">
-              <video src={videoParapente} controls playsInline preload="metadata" />
+              <video
+                src={videoParapente}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. Se escucha al instructor gritar «corre, corre, corre», el despegue y la emoción del vuelo."
+              />
             </div>
             <div className="reel-copy">
               <div className="sec-eyebrow">Así se siente, no se ve</div>
               <p className="callout">¿Quién dice que los ciegos no se tiran en parapente? <em>Aquí no venimos a ver pasar la vida — venimos a disfrutarla a 1000 por hora.</em></p>
               <p>Uno de nuestros viajeros volando por todo lo alto sobre Queenstown. Subid el volumen: lo mejor de este vídeo no se ve, se escucha.</p>
-              <a className="btn btn-outline" href="https://www.instagram.com/watchouttours/" target="_blank" rel="noopener noreferrer">Ver más en Instagram</a>
+              <a className="btn btn-outline" href="https://www.instagram.com/watchouttours/" target="_blank" rel="noopener noreferrer">Ver más en Instagram<span className="sr-only"> (se abre en una pestaña nueva)</span></a>
             </div>
           </div>
         </div>
@@ -174,7 +186,7 @@ export default function Home() {
               ))}
             </div>
             <p style={{ textAlign: 'center', marginTop: '2rem' }}>
-              <Link to="/resenas">Leer más reseñas →</Link>
+              <Link to="/resenas">Leer más reseñas<span aria-hidden="true"> →</span></Link>
             </p>
           </div>
         </section>
@@ -211,9 +223,13 @@ export default function Home() {
 
           <div className="contador-aviso">
             <p className="contador-aviso__texto">¡Nuestro próximo viaje en grupo comienza en:</p>
-            <div className="contador">
+            <div
+              className="contador"
+              role="timer"
+              aria-label={`${tiempo.dias} días y ${tiempo.horas} horas para el próximo viaje en grupo`}
+            >
               {unidades.map(({ label, valor }) => (
-                <div key={label} className="contador__bloque">
+                <div key={label} className="contador__bloque" aria-hidden="true">
                   <span className="contador__numero">{String(valor).padStart(2, '0')}</span>
                   <span className="contador__label">{label}</span>
                 </div>
@@ -240,7 +256,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="audio-card__descripcion">El viento en la cara, la sensación de libertad, el corazón latiendo al ritmo de la aventura.</p>
-              <AudioPlayer src={audioParapente} playerId="parapente" playingId={playingAudio} setPlayingId={setPlayingAudio} />
+              <AudioPlayer src={audioParapente} playerId="parapente" playingId={playingAudio} setPlayingId={setPlayingAudio} label="Salto en parapente" />
             </div>
             <div className="audio-card">
               <div className="audio-card__header">
@@ -253,7 +269,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="audio-card__descripcion">Ni siquiera en Nueva Zelanda estás a salvo de una alpaca curiosa.</p>
-              <AudioPlayer src={audioAlpaca} playerId="alpaca" playingId={playingAudio} setPlayingId={setPlayingAudio} />
+              <AudioPlayer src={audioAlpaca} playerId="alpaca" playingId={playingAudio} setPlayingId={setPlayingAudio} label="La mordida de una alpaca" />
             </div>
           </div>
         </div>
@@ -265,7 +281,7 @@ export default function Home() {
           <div className="origin">
             <div className="origin-grid">
               <div className="origin-photo">
-                <img src={imgNosotras} alt="Sylvie y Moni, guías de WatchOut! Sensory Tours" />
+                <img src={nosotrasImg.src} alt={nosotrasImg.alt} />
               </div>
               <div className="origin-inner">
                 <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>Nuestra historia</div>
@@ -290,7 +306,7 @@ export default function Home() {
               <Link to={`/blog/${posts.slug}`} className="btn btn-outline">Leer artículo</Link>
             </div>
             <p style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-              <Link to="/blog">Ver todos los artículos →</Link>
+              <Link to="/blog">Ver todos los artículos<span aria-hidden="true"> →</span></Link>
             </p>
           </div>
         </section>

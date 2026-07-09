@@ -9,6 +9,15 @@ export async function handler(event) {
     return { statusCode: 405, body: 'Method Not Allowed' }
   }
 
+  // Solo aceptar peticiones desde el propio sitio (si ALLOWED_ORIGIN está definido)
+  const allowedOrigin = process.env.ALLOWED_ORIGIN
+  if (allowedOrigin) {
+    const origin = event.headers.origin ?? event.headers.referer ?? ''
+    if (!origin.startsWith(allowedOrigin)) {
+      return { statusCode: 403, body: JSON.stringify({ error: 'Origen no permitido' }) }
+    }
+  }
+
   let body
   try {
     body = JSON.parse(event.body ?? '{}')

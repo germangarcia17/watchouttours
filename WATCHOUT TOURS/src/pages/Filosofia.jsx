@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import '../styles/pagestyle/Filosofia.css'
 
 const principios = [
   {
@@ -32,23 +34,51 @@ export default function Filosofia() {
   useEffect(() => { document.title = 'Filosofía | WatchOut! Sensory Tours' }, [])
 
   return (
-    <div className="container container--narrow" style={{ paddingBlock: '3rem' }}>
-      <div className="page-intro">
-        <h1>Filosofía</h1>
-        <p>Cinco principios que guían cada decisión, desde el diseño de un itinerario hasta la elección de un tejido de cama.</p>
-      </div>
+    <>
+      {/* ── Cabecera ─────────────────────────────────── */}
+      <section className="filo-hero">
+        <div className="dots-texture"></div>
+        <div className="wrap filo-hero-inner">
+          <span className="sec-eyebrow">Filosofía WatchOut!</span>
+          <h1 className="filo-titulo">Lo mejor de este viaje no se ve.</h1>
+          <p className="filo-intro">
+            Cinco principios que guían cada decisión, desde el diseño de un
+            itinerario hasta la elección de un tejido de cama.
+          </p>
+        </div>
+      </section>
 
-      <ol role="list" className="principles-list">
-        {principios.map(({ num, titulo, texto }) => (
-          <li key={num} className="principle">
-            <span aria-hidden="true" className="principle__num">{num}</span>
-            <div className="principle__content">
-              <h2>{titulo}</h2>
-              <p>{texto}</p>
+      {/* ── Principios ───────────────────────────────── */}
+      <section className="filo-principios">
+        <div className="wrap">
+          <ol role="list" className="filo-lista">
+            {principios.map(({ num, titulo, texto }) => (
+              <li key={num} className="filo-principio">
+                <span aria-hidden="true" className="filo-principio__num">{num}</span>
+                <div className="filo-principio__contenido">
+                  <h2 className="filo-principio__titulo">{titulo}</h2>
+                  <p className="filo-principio__texto">{texto}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ── Cierre ───────────────────────────────────── */}
+      <section className="filo-cierre">
+        <div className="wrap">
+          <div className="ink-block filo-cierre-block">
+            <p className="filo-cierre-frase">
+              "Lo mejor de este viaje no se ve — se escucha, se toca, se siente."
+            </p>
+            <div className="cta-row" style={{ justifyContent: 'center' }}>
+              <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
+              <Link to="/sobre-nosotras" className="btn btn-outline filo-btn-claro">Conócenos</Link>
             </div>
-          </li>
-        ))}
-      </ol>
-    </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

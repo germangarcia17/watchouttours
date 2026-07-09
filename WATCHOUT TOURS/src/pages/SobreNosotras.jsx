@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/pagestyle/SobreNosotras.css'
 import imgNosotras from '../images/sobre-nosotras.webp'
+import { useSiteImage } from '../lib/siteImages'
 
 const MONICA = [
   { emoji: '❤️', text: 'Cree que las mejores conversaciones aparecen caminando.' },
@@ -38,6 +39,9 @@ const VALORES = [
 export default function SobreNosotras() {
   useEffect(() => { document.title = 'Sobre nosotras | WatchOut! Sensory Tours' }, [])
 
+  const heroImg = useSiteImage('sobre-nosotras', 'hero', imgNosotras,
+    'Mónica y Sylvie sonriendo en un selfie frente a un géiser humeante en Rotorua, Nueva Zelanda')
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────── */}
@@ -59,7 +63,7 @@ export default function SobreNosotras() {
             </p>
           </div>
           <div className="sn-hero-photo">
-            <img src={imgNosotras} alt="Mónica y Sylvie en Nueva Zelanda" />
+            <img src={heroImg.src} alt={heroImg.alt} />
           </div>
         </div>
       </section>
@@ -90,7 +94,7 @@ export default function SobreNosotras() {
       {/* ── Hola, somos Mónica y Sylvie ─────────────── */}
       <section>
         <div className="wrap sn-hola">
-          <div className="sec-eyebrow">👋 Hola</div>
+          <div className="sec-eyebrow"><span aria-hidden="true">👋 </span>Hola</div>
           <h2 className="sec-title">Somos Mónica y Sylvie.</h2>
           <p className="sn-text">
             Dos españolas que llegaron a Nueva Zelanda hace siete años con una mochila llena

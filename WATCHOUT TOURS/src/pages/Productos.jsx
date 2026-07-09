@@ -79,13 +79,15 @@ export default function Productos() {
                 <span className="route-nights">· {noches}</span>
               </div>
               <p className="route-desc">{descripcion}</p>
-              <p className="route-path">
-                {camino.map((parada, i) => (
-                  <span key={parada}>
-                    {i > 0 && ' → '}
-                    <b>{parada}</b>
-                  </span>
-                ))}
+              <p className="route-path" aria-label={`Recorrido: ${camino.join(', luego ')}`}>
+                <span aria-hidden="true">
+                  {camino.map((parada, i) => (
+                    <span key={parada}>
+                      {i > 0 && ' → '}
+                      <b>{parada}</b>
+                    </span>
+                  ))}
+                </span>
               </p>
               <div className="hl">
                 {highlights.map(h => <span key={h} className="hl-pill">{h}</span>)}

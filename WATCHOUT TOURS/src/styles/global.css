@@ -15,9 +15,10 @@
   --font-size-base: 18px;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
-  --color-link: #48B890;
+  /* Oscurecido: el #48B890 original da 1.5:1 sobre crema como texto */
+  --color-link: #1F5F45;
   --color-link-hover: #0056b3;
-  --color-focus-outline-bright: #F2A65A;
+  --color-focus-outline-bright: #15140F; /* ámbar original 1.8:1 sobre crema */
   --color-focus-outline-dark: #0E0E10;
   --max-width: 1300px;
 }
@@ -108,10 +109,11 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  color: #25D366;
+  /* Verde oscurecido: el #25D366 original da 1.6:1 sobre crema */
+  color: var(--ws-green, #0C6B34);
   background-color: rgba(37, 211, 102, 0.08);
   text-decoration: none;
-  border: 2px solid #25D366;
+  border: 2px solid var(--ws-green, #0C6B34);
   border-radius: 6px;
   padding: 0.5rem 0.75rem;
   width: fit-content;
@@ -119,14 +121,13 @@ body {
 }
 
 .footer-whatsapp:hover {
-  background-color: rgba(37, 211, 102, 0.08);
-  border-color: #25D366;
+  background-color: rgba(37, 211, 102, 0.15);
 }
 
 .footer-whatsapp svg {
   width: 1rem;
   height: 1rem;
-  fill: #25D366;
+  fill: var(--ws-green, #0C6B34);
   flex-shrink: 0;
 }
 
@@ -209,14 +210,15 @@ body {
 .whatsapp-fab:focus-visible {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-  outline: 3px solid var(--color-focus-outline-bright);
+  outline: 3px solid #15140F;
   outline-offset: 3px;
 }
 
 .whatsapp-fab svg {
   width: 2rem;
   height: 2rem;
-  fill: #ffffff;
+  /* Icono oscuro: el blanco sobre el verde #25D366 da 2:1 (falla 1.4.11) */
+  fill: #0E0E10;
 }
 
 

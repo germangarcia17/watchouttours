@@ -50,7 +50,7 @@ export default function ImagenesAdmin() {
     }
   }
 
-  if (loading) return <div className="admin-page"><p>Cargando…</p></div>
+  if (loading) return <div className="admin-page"><p role="status">Cargando…</p></div>
 
   return (
     <div className="admin-page">

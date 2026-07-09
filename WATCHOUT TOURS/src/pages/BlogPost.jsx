@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import DOMPurify from 'dompurify'
 import { supabase } from '../lib/supabase'
 import '../styles/pagestyle/BlogPost.css'
 
@@ -39,7 +40,7 @@ export default function BlogPost() {
         <span className="sec-eyebrow">Ups</span>
         <h1 className="post-notfound__titulo">Artículo no encontrado</h1>
         <p className="post-estado">Puede que el enlace haya cambiado o que el artículo ya no exista.</p>
-        <Link to="/blog" className="btn btn-outline">← Volver al blog</Link>
+        <Link to="/blog" className="btn btn-outline"><span aria-hidden="true">← </span>Volver al blog</Link>
       </div>
     </section>
   )
@@ -77,7 +78,7 @@ export default function BlogPost() {
         <div className="dots-texture"></div>
         <div className="wrap post-hero-inner">
           <p className="post-meta">
-            <Link to="/blog" className="post-meta__volver">← Blog</Link>
+            <Link to="/blog" className="post-meta__volver"><span aria-hidden="true">← </span>Volver al blog</Link>
             {post.published_at && (
               <time dateTime={post.published_at}>
                 {new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(post.published_at))}
@@ -101,13 +102,15 @@ export default function BlogPost() {
 
       {/* ── Contenido ────────────────────────────────── */}
       <div className="wrap">
+        {/* Sanitizado con DOMPurify: el HTML viene de la base de datos y
+            sin limpieza permitiría XSS almacenado en cada visitante */}
         <div
           className="post-contenido"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
         />
 
         <footer className="post-footer">
-          <Link to="/blog" className="btn btn-outline">← Volver al blog</Link>
+          <Link to="/blog" className="btn btn-outline"><span aria-hidden="true">← </span>Volver al blog</Link>
           <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
         </footer>
       </div>
