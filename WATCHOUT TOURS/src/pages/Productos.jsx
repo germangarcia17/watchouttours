@@ -50,53 +50,7 @@ export default function Productos() {
 
   return (
     <>
-      {/* ── Cabecera ─────────────────────────────────── */}
-      <section className="prod-hero">
-        <div className="dots-texture"></div>
-        <div className="wrap prod-hero-inner">
-          <span className="sec-eyebrow">Las dos rutas</span>
-          <h1 className="prod-titulo">Qué viaje vendemos</h1>
-          <p className="prod-intro">
-            Ruta clásica de 11 noches y su extensión con Kaikōura.
-            Dos guías dedicadas de principio a fin.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Rutas ────────────────────────────────────── */}
-      <section className="prod-rutas">
-        <div className="wrap">
-          {rutas.map(({ id, tag, noches, camino, highlights, descripcion, destacada }) => (
-            <article
-              key={id}
-              id={id}
-              aria-labelledby={`${id}-heading`}
-              className={`route${destacada ? ' route--destacada' : ''}`}
-            >
-              {destacada && <span className="route__ribbon">Recomendada</span>}
-              <div className="route-head">
-                <h2 id={`${id}-heading`} className="route-tag">{tag}</h2>
-                <span className="route-nights">· {noches}</span>
-              </div>
-              <p className="route-desc">{descripcion}</p>
-              <p className="route-path" aria-label={`Recorrido: ${camino.join(', luego ')}`}>
-                <span aria-hidden="true">
-                  {camino.map((parada, i) => (
-                    <span key={parada}>
-                      {i > 0 && ' → '}
-                      <b>{parada}</b>
-                    </span>
-                  ))}
-                </span>
-              </p>
-              <div className="hl">
-                {highlights.map(h => <span key={h} className="hl-pill">{h}</span>)}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
+      
       {/* ── Formatos ─────────────────────────────────── */}
       <section className="prod-formatos">
         <div className="wrap">

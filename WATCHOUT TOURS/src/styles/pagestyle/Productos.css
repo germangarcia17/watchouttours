@@ -28,51 +28,7 @@
   max-width: 54ch;
 }
 
-/* ── Rutas ───────────────────────────────────────────── */
-.prod-rutas {
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
 
-.prod-rutas .route {
-  position: relative;
-}
-
-.route--destacada {
-  border-color: var(--jade-soft);
-  border-top: 3px solid var(--jade-soft);
-}
-
-.route__ribbon {
-  position: absolute;
-  top: -13px;
-  left: 24px;
-  background: var(--jade);
-  color: var(--paper);
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  border-radius: 100px;
-  padding: 5px 14px;
-}
-
-.route-desc {
-  font-size: 14.5px;
-  color: var(--ink-soft);
-  line-height: 1.65;
-  margin: 0 0 6px;
-  max-width: 62ch;
-}
-
-.hl-pill {
-  font-size: 12.5px;
-  color: var(--ink-soft);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  padding: 6px 13px;
-}
 
 /* ── Formatos ────────────────────────────────────────── */
 .prod-formatos {
