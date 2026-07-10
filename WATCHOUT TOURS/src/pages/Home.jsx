@@ -195,30 +195,29 @@ export default function Home() {
       {/* ── Rutas ────────────────────────────────────── */}
       <section id="rutas">
         <div className="wrap">
-          <div className="sec-eyebrow">Las dos rutas</div>
-          <h2 className="sec-title">Qué viaje vendemos</h2>
-          <p className="sec-sub">Ruta clásica de 11 noches y su extensión con Kaikōura. Dos guías dedicadas de principio a fin.</p>
+          <div className="sec-eyebrow">Nuestras opciones</div>
+          <h2 className="sec-title">Dos maneras de vivirlo</h2>
+          <p className="sec-sub">La misma ruta, tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.</p>
 
-          <div className="route">
-            <div className="route-head">
-              <span className="route-tag">Ruta A</span>
-              <span className="route-nights">· 11 noches</span>
-            </div>
-            <p className="route-path"><b>Auckland</b> → <b>Rotorua</b> → <b>Queenstown</b> → <b>Tekapo</b> → <b>Christchurch</b></p>
-            <div className="hl">
-              <span>Wētā Workshop</span><span>Hobbiton</span><span>Te Puia · hāngi</span><span>Milford Sound</span><span>Onsen</span><span>Stargazing</span>
-            </div>
-          </div>
+          <div className="prod-list">
+            {formatos.map(({ id, etiqueta, titulo, cuerpo, precioTitulo, precioNota, incluye, cta }) => (
+              <article key={id} id={id} aria-labelledby={`${id}-heading`} className="prod-card">
+                <div className="prod-card__head">
+                  <span className="prod-card__etiqueta">{etiqueta}</span>
+                  <h3 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h3>
+                  <p className="prod-card__desc">{cuerpo}</p>
+                </div>
 
-          <div className="route">
-            <div className="route-head">
-              <span className="route-tag">Ruta B</span>
-              <span className="route-nights">· 13 noches · con Kaikōura</span>
-            </div>
-            <p className="route-path">Todo lo de la Ruta A + <b>Kaikōura</b> → vuelta a <b>Christchurch</b></p>
-            <div className="hl">
-              <span>Todo lo de la Ruta A</span><span>Whale Watch · oír a las ballenas</span>
-            </div>
+                <div className="prod-card__footer">
+                  <p className="prod-card__precio">{precioTitulo}</p>
+                  <p className="prod-card__precio-nota">{precioNota}</p>
+                  <p className="prod-card__incluye-nota"><strong>Todo incluido:</strong> {incluye}</p>
+                  <div className="cta-row">
+                    <Link to="/contacto" className="btn btn-solid">{cta}</Link>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
 
           <div className="contador-aviso">
@@ -286,7 +285,7 @@ export default function Home() {
               <div className="origin-inner">
                 <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>Nuestra historia</div>
                 <p>Hace casi 8 años llegamos a Nueva Zelanda con una mochila llena de sueños e incertidumbre. Hoy somos Sylvie y Moni, las guías de WatchOut! — porque nadie como nosotras para contar, más allá de lo visual, la magia de este país que llamamos casa.</p>
-                <Link to="/filosofia" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>Conoce nuestra historia completa</Link>
+                <Link to="/sobreNosotras" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>Conoce nuestra historia completa</Link>
               </div>
             </div>
           </div>
