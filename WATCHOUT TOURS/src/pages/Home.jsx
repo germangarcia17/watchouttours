@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import '../styles/pagestyle/Home.css'
+import imgHero from '../images/hero-home.webp'
 import imgNosotras from '../images/sobre-nosotras.webp'
 import logoImg from '../images/logo-header-watchout.png'
 import videoParapente from '../images/parapente-teaser.mp4'
@@ -29,7 +30,7 @@ export default function Home() {
   const [playingAudio, setPlayingAudio] = useState(null)
 
   const heroImg = useSiteImage('home', 'hero', imgHero,
-    'La montaña más alta de Nueva Zelanda, Aoraki / Mount Cook, una montaña nevada e imponente que sobresale entre los demás picos.')
+    'La montaña más alta de Nueva Zelanda, Aoraki / Mount Cook, una montaña nevada e imponente que sobresale entre los demás')
   const nosotrasImg = useSiteImage('home', 'nosotras', imgNosotras,
     'Sylvie y Moni, guías de WatchOut!, sonriendo frente a un géiser humeante en Rotorua')
 
