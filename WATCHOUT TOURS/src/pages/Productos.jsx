@@ -2,25 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/pagestyle/Productos.css'
 
-const rutas = [
-  {
-    id: 'ruta-a',
-    tag: 'Ruta A',
-    noches: '11 noches',
-    camino: ['Auckland', 'Rotorua', 'Queenstown', 'Tekapo', 'Christchurch'],
-    highlights: ['Wētā Workshop', 'Hobbiton', 'Te Puia · hāngi', 'Milford Sound', 'Onsen', 'Stargazing'],
-    descripcion: 'La ruta clásica: la geotermia de Rotorua, la Tierra Media de Hobbiton, la adrenalina de Queenstown y las estrellas de Tekapo.',
-  },
-  {
-    id: 'ruta-b',
-    tag: 'Ruta B',
-    noches: '13 noches · con Kaikōura',
-    camino: ['Todo lo de la Ruta A', 'Kaikōura', 'vuelta a Christchurch'],
-    highlights: ['Todo lo de la Ruta A', 'Whale Watch · oír a las ballenas'],
-    descripcion: 'La extensión con Kaikōura: dos noches más para escuchar a las ballenas por hidrófono en mar abierto.',
-    destacada: true,
-  },
-]
+
 
 const formatos = [
   {

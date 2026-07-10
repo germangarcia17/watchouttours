@@ -308,7 +308,7 @@ const formatos = [
               <div className="origin-inner">
                 <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>Nuestra historia</div>
                 <p>Hace casi 8 años llegamos a Nueva Zelanda con una mochila llena de sueños e incertidumbre. Hoy somos Sylvie y Moni, las guías de WatchOut! — porque nadie como nosotras para contar, más allá de lo visual, la magia de este país que llamamos casa.</p>
-                <Link to="/sobreNosotras" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>Conoce nuestra historia completa</Link>
+                <Link to="/sobre-nosotras" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>Conoce nuestra historia completa</Link>
               </div>
             </div>
           </div>
