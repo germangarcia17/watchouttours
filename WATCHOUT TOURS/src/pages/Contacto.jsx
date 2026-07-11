@@ -7,7 +7,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const SPAM_DELAY_MS = 60_000 // 1 minuto entre envíos
 
 export default function Contacto() {
-  const [state, handleFormspreeSubmit] = useForm('xpqgbwnj')
+  const [state, handleFormspreeSubmit] = useForm('xykqrkjq')
   const [errors, setErrors] = useState({})
 
   useEffect(() => { document.title = 'Contacto | WatchOut! Sensory Tours' }, [])
@@ -81,7 +81,7 @@ export default function Contacto() {
       <section className="contacto-canales-section">
         <div className="wrap contacto-canales">
           <a
-            href="https://wa.me/64XXXXXXXXX"
+            href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20información%20sobre%20los%20viajes%20de%20WatchOut!"
             className="canal-card canal-card--whatsapp"
             target="_blank"
             rel="noopener noreferrer"
@@ -97,7 +97,7 @@ export default function Contacto() {
             </div>
           </a>
 
-          <a href="mailto:hola@watchouttours.com" className="canal-card canal-card--email">
+          <a href="mailto:info@watchouttours.nz" className="canal-card canal-card--email">
             <span className="canal-card__icono" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2"/>

@@ -13,7 +13,7 @@ export function Layout() {
       </main>
       <Footer />
       <a
-        href="https://wa.me/64XXXXXXXXX"
+        href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20información%20sobre%20los%20viajes%20de%20WatchOut!"
         className="whatsapp-fab"
         target="_blank"
         rel="noopener noreferrer"

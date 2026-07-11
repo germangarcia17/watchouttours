@@ -2,25 +2,7 @@ import { Link } from 'react-router-dom'
 import { Seo } from '../components/Seo'
 import '../styles/pagestyle/Productos.css'
 
-const rutas = [
-  {
-    id: 'ruta-a',
-    tag: 'Ruta A',
-    noches: '11 noches',
-    camino: ['Auckland', 'Rotorua', 'Queenstown', 'Tekapo', 'Christchurch'],
-    highlights: ['Wētā Workshop', 'Hobbiton', 'Te Puia · hāngi', 'Milford Sound', 'Onsen', 'Stargazing'],
-    descripcion: 'La ruta clásica: la geotermia de Rotorua, la Tierra Media de Hobbiton, la adrenalina de Queenstown y las estrellas de Tekapo.',
-  },
-  {
-    id: 'ruta-b',
-    tag: 'Ruta B',
-    noches: '13 noches · con Kaikōura',
-    camino: ['Todo lo de la Ruta A', 'Kaikōura', 'vuelta a Christchurch'],
-    highlights: ['Todo lo de la Ruta A', 'Whale Watch · oír a las ballenas'],
-    descripcion: 'La extensión con Kaikōura: dos noches más para escuchar a las ballenas por hidrófono en mar abierto.',
-    destacada: true,
-  },
-]
+
 
 const formatos = [
   {
@@ -48,59 +30,7 @@ const formatos = [
 export default function Productos() {
   return (
     <>
-      <Seo
-        pageType="productos"
-        title="Rutas y viajes | WatchOut! Sensory Tours"
-        description="Ruta clásica de 11 noches y su extensión con Kaikōura por Nueva Zelanda, para personas ciegas y con baja visión. En grupo pequeño o privado a medida."
-      />
-
-      {/* ── Cabecera ─────────────────────────────────── */}
-      <section className="prod-hero">
-        <div className="dots-texture"></div>
-        <div className="wrap prod-hero-inner">
-          <span className="sec-eyebrow">Las dos rutas</span>
-          <h1 className="prod-titulo">Qué viaje vendemos</h1>
-          <p className="prod-intro">
-            Ruta clásica de 11 noches y su extensión con Kaikōura.
-            Dos guías dedicadas de principio a fin.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Rutas ────────────────────────────────────── */}
-      <section className="prod-rutas">
-        <div className="wrap">
-          {rutas.map(({ id, tag, noches, camino, highlights, descripcion, destacada }) => (
-            <article
-              key={id}
-              id={id}
-              aria-labelledby={`${id}-heading`}
-              className={`route${destacada ? ' route--destacada' : ''}`}
-            >
-              {destacada && <span className="route__ribbon">Recomendada</span>}
-              <div className="route-head">
-                <h2 id={`${id}-heading`} className="route-tag">{tag}</h2>
-                <span className="route-nights">· {noches}</span>
-              </div>
-              <p className="route-desc">{descripcion}</p>
-              <p className="route-path" aria-label={`Recorrido: ${camino.join(', luego ')}`}>
-                <span aria-hidden="true">
-                  {camino.map((parada, i) => (
-                    <span key={parada}>
-                      {i > 0 && ' → '}
-                      <b>{parada}</b>
-                    </span>
-                  ))}
-                </span>
-              </p>
-              <div className="hl">
-                {highlights.map(h => <span key={h} className="hl-pill">{h}</span>)}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
+      
       {/* ── Formatos ─────────────────────────────────── */}
       <section className="prod-formatos">
         <div className="wrap">

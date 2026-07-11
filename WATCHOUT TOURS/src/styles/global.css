@@ -218,7 +218,7 @@ body {
   width: 2rem;
   height: 2rem;
   /* Icono oscuro: el blanco sobre el verde #25D366 da 2:1 (falla 1.4.11) */
-  fill: #0E0E10;
+  fill: #ffffff;
 }
 
 

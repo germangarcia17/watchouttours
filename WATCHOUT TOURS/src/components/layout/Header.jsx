@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import './Header.css'
-import logoImg from '../../images/logo-header-watchout.png'
+import logoImg from '../../images/logo-header-watchout.webp'
 
 const navLinks = [
   { to: '/productos',      label: 'Rutas' },

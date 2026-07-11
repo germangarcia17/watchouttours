@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import '../styles/pagestyle/Home.css'
-import imgHero from '../images/farrinni-0dso2fC54ug-unsplash.webp'
+import imgHero from '../images/hero-home.webp'
 import imgNosotras from '../images/sobre-nosotras.webp'
 import logoImg from '../images/logo-header-watchout.png'
 import videoParapente from '../images/parapente-teaser.mp4'
@@ -30,8 +30,31 @@ export default function Home() {
   const [tiempo, setTiempo] = useState(calcularTiempo())
   const [playingAudio, setPlayingAudio] = useState(null)
 
+const formatos = [
+  {
+    id: 'grupo',
+    etiqueta: '14 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos',
+    titulo: 'La aventura compartida',
+    cuerpo: 'Un grupo pequeñito de gente con las mismas ganas que tú de comerse el mundo. 13 noches recorriendo Nueva Zelanda, riéndonos, flipando y sintiéndolo todo juntos. De esos viajes de los que vuelves con amigos para toda la vida. Y siempre nosotras dos pegadas al grupo, de principio a fin.',
+    precioTitulo: 'Desde 9.500 € por persona · todo incluido',
+    precioNota: 'Viajamos de 3 a 6 personas. Sin letra pequeña: te damos el número exacto en cuanto hablemos.',
+    incluye: 'Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 13 noches.',
+    cta: 'Quiero apuntarme',
+  },
+  {
+    id: 'privado',
+    etiqueta: 'Privado · solo para ti y los tuyos · duración a tu ritmo',
+    titulo: 'Tu viaje, a tu medida',
+    cuerpo: 'Un viaje pensado solo para ti, y para quien quieras traer contigo. Nosotras dos, en exclusiva, diseñándolo a tu ritmo: tus días, tu energía, tu tiempo. Si quieres más calma, más calma. Si quieres más adrenalina, más adrenalina. Aquí no hay molde. Hay un viaje que te hacemos a medida, como un traje.',
+    precioTitulo: 'Precio a medida',
+    precioNota: 'Como lo diseñamos contigo, el precio también depende de ti: de cuántos días, de qué quieras vivir, de cómo lo sueñes. Sin compromiso y sin rollos.',
+    incluye: 'Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo de principio a fin.',
+    cta: 'Diseñemos el tuyo',
+  },
+]
+
   const heroImg = useSiteImage('home', 'hero', imgHero,
-    'Dos manos acercándose hasta casi tocarse, recortadas contra un cielo de atardecer')
+    'La montaña más alta de Nueva Zelanda, Aoraki / Mount Cook, una montaña nevada e imponente que sobresale entre los demás')
   const nosotrasImg = useSiteImage('home', 'nosotras', imgNosotras,
     'Sylvie y Moni, guías de WatchOut!, sonriendo frente a un géiser humeante en Rotorua')
 
@@ -200,30 +223,29 @@ export default function Home() {
       {/* ── Rutas ────────────────────────────────────── */}
       <section id="rutas">
         <div className="wrap">
-          <div className="sec-eyebrow">Las dos rutas</div>
-          <h2 className="sec-title">Qué viaje vendemos</h2>
-          <p className="sec-sub">Ruta clásica de 11 noches y su extensión con Kaikōura. Dos guías dedicadas de principio a fin.</p>
+          <div className="sec-eyebrow">Nuestras opciones</div>
+          <h2 className="sec-title">Dos maneras de vivirlo</h2>
+          <p className="sec-sub">La misma ruta, tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.</p>
 
-          <div className="route">
-            <div className="route-head">
-              <span className="route-tag">Ruta A</span>
-              <span className="route-nights">· 11 noches</span>
-            </div>
-            <p className="route-path"><b>Auckland</b> → <b>Rotorua</b> → <b>Queenstown</b> → <b>Tekapo</b> → <b>Christchurch</b></p>
-            <div className="hl">
-              <span>Wētā Workshop</span><span>Hobbiton</span><span>Te Puia · hāngi</span><span>Milford Sound</span><span>Onsen</span><span>Stargazing</span>
-            </div>
-          </div>
+          <div className="prod-list">
+            {formatos.map(({ id, etiqueta, titulo, cuerpo, precioTitulo, precioNota, incluye, cta }) => (
+              <article key={id} id={id} aria-labelledby={`${id}-heading`} className="prod-card">
+                <div className="prod-card__head">
+                  <span className="prod-card__etiqueta">{etiqueta}</span>
+                  <h3 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h3>
+                  <p className="prod-card__desc">{cuerpo}</p>
+                </div>
 
-          <div className="route">
-            <div className="route-head">
-              <span className="route-tag">Ruta B</span>
-              <span className="route-nights">· 13 noches · con Kaikōura</span>
-            </div>
-            <p className="route-path">Todo lo de la Ruta A + <b>Kaikōura</b> → vuelta a <b>Christchurch</b></p>
-            <div className="hl">
-              <span>Todo lo de la Ruta A</span><span>Whale Watch · oír a las ballenas</span>
-            </div>
+                <div className="prod-card__footer">
+                  <p className="prod-card__precio">{precioTitulo}</p>
+                  <p className="prod-card__precio-nota">{precioNota}</p>
+                  <p className="prod-card__incluye-nota"><strong>Todo incluido:</strong> {incluye}</p>
+                  <div className="cta-row">
+                    <Link to="/contacto" className="btn btn-solid">{cta}</Link>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
 
           <div className="contador-aviso">
@@ -291,7 +313,7 @@ export default function Home() {
               <div className="origin-inner">
                 <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>Nuestra historia</div>
                 <p>Hace casi 8 años llegamos a Nueva Zelanda con una mochila llena de sueños e incertidumbre. Hoy somos Sylvie y Moni, las guías de WatchOut! — porque nadie como nosotras para contar, más allá de lo visual, la magia de este país que llamamos casa.</p>
-                <Link to="/filosofia" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>Conoce nuestra historia completa</Link>
+                <Link to="/sobre-nosotras" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>Conoce nuestra historia completa</Link>
               </div>
             </div>
           </div>
@@ -325,7 +347,7 @@ export default function Home() {
           <div className="cta-row" style={{ justifyContent: 'center' }}>
             <Link to="/contacto" className="btn btn-solid">Escríbenos</Link>
             <a
-              href="https://wa.me/64XXXXXXXXX"
+              href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber%20más%20sobre%20los%20viajes%20sensory%20tours%20de%20WatchOut!"
               className="btn btn-outline btn-whatsapp"
               target="_blank"
               rel="noopener noreferrer"
