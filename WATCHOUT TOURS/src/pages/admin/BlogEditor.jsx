@@ -5,7 +5,7 @@ import { uploadImage } from '../../lib/storage'
 
 const EMPTY = {
   title: '', slug: '', excerpt: '', content: '', status: 'draft',
-  reading_time: '', meta_title: '', meta_description: '', published_at: '',
+  reading_time: '', meta_title: '', meta_description: '', keywords: '', published_at: '',
   cover_image_url: '', cover_image_alt: '', og_image_url: '', category: '', tags: '',
   featured: false, archived: false,
 }
@@ -35,6 +35,7 @@ export default function BlogEditor() {
           reading_time:     data.reading_time ?? '',
           meta_title:       data.meta_title ?? '',
           meta_description: data.meta_description ?? '',
+          keywords:         data.keywords ?? '',
           published_at:     data.published_at ? data.published_at.slice(0, 16) : '',
           cover_image_url:  data.cover_image_url ?? '',
           cover_image_alt:  data.cover_image_alt ?? '',
@@ -99,6 +100,7 @@ export default function BlogEditor() {
       reading_time:     form.reading_time ? Number(form.reading_time) : null,
       meta_title:       form.meta_title.trim() || null,
       meta_description: form.meta_description.trim() || null,
+      keywords:         form.keywords.trim() || null,
       published_at:     form.published_at || null,
       cover_image_url:  form.cover_image_url.trim() || null,
       cover_image_alt:  form.cover_image_alt.trim() || null,
@@ -168,6 +170,10 @@ export default function BlogEditor() {
 
         <Field id="meta_description" label="Meta descripción (SEO)">
           <textarea id="meta_description" name="meta_description" rows={2} value={form.meta_description} onChange={handleChange} className="form-control" />
+        </Field>
+
+        <Field id="keywords" label="Palabras clave (separadas por coma)">
+          <input id="keywords" name="keywords" type="text" value={form.keywords} onChange={handleChange} className="form-control" placeholder="nueva zelanda, viaje accesible, personas ciegas" />
         </Field>
 
         <Field id="cover_image_file" label="Imagen de portada (subir archivo)">
