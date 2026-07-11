@@ -50,6 +50,7 @@ export default function BlogPost() {
       <Helmet>
         <title>{post.meta_title ?? post.title} | WatchOut! Sensory Tours</title>
         {post.meta_description && <meta name="description" content={post.meta_description} />}
+        {post.keywords && <meta name="keywords" content={post.keywords} />}
 
         {/* Open Graph */}
         <meta property="og:type"        content="article" />

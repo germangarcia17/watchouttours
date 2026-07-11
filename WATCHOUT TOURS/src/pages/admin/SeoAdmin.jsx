@@ -4,7 +4,7 @@ import { supabase } from '../../lib/supabase'
 const PAGE_TYPES = ['home', 'productos', 'reseñas', 'blog']
 
 const EMPTY_META = {
-  meta_title: '', meta_description: '', canonical_url: '',
+  meta_title: '', meta_description: '', keywords: '', canonical_url: '',
   og_title: '', og_description: '', og_image_url: '',
   twitter_title: '', twitter_description: '', twitter_image_url: '',
 }
@@ -88,6 +88,7 @@ export default function SeoAdmin() {
             {[
               ['meta_title',            'Meta título'],
               ['meta_description',      'Meta descripción'],
+              ['keywords',              'Palabras clave (separadas por coma)'],
               ['canonical_url',         'URL canónica'],
               ['og_title',              'OG título'],
               ['og_description',        'OG descripción'],
