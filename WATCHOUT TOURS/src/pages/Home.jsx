@@ -342,7 +342,7 @@ const formatos = [
           <div className="cta-row" style={{ justifyContent: 'center' }}>
             <Link to="/contacto" className="btn btn-solid">Escríbenos</Link>
             <a
-              href="https://wa.me/64XXXXXXXXX"
+              href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber%20más%20sobre%20los%20viajes%20sensory%20tours%20de%20WatchOut!"
               className="btn btn-outline btn-whatsapp"
               target="_blank"
               rel="noopener noreferrer"
