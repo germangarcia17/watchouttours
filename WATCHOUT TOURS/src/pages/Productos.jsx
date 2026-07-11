@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Seo } from '../components/Seo'
 import '../styles/pagestyle/Productos.css'
 
 const rutas = [
@@ -46,10 +46,14 @@ const formatos = [
 ]
 
 export default function Productos() {
-  useEffect(() => { document.title = 'Rutas y viajes | WatchOut! Sensory Tours' }, [])
-
   return (
     <>
+      <Seo
+        pageType="productos"
+        title="Rutas y viajes | WatchOut! Sensory Tours"
+        description="Ruta clásica de 11 noches y su extensión con Kaikōura por Nueva Zelanda, para personas ciegas y con baja visión. En grupo pequeño o privado a medida."
+      />
+
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="prod-hero">
         <div className="dots-texture"></div>

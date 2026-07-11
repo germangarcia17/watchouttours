@@ -8,6 +8,7 @@ import logoImg from '../images/logo-header-watchout.png'
 import videoParapente from '../images/parapente-teaser.mp4'
 import { AudioPlayer } from '../components/AudioPlayer'
 import { useSiteImage } from '../lib/siteImages'
+import { Seo } from '../components/Seo'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 
@@ -35,8 +36,6 @@ export default function Home() {
     'Sylvie y Moni, guías de WatchOut!, sonriendo frente a un géiser humeante en Rotorua')
 
   useEffect(() => {
-    document.title = 'WatchOut! Sensory Tours — Viajes de lujo sensorial por Nueva Zelanda'
-
     supabase
       .from('resenas')
       .select('id, author_name, author_context, content, featured')
@@ -68,6 +67,12 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        pageType="home"
+        title="WatchOut! Sensory Tours — Viajes de lujo sensorial por Nueva Zelanda"
+        description="Viajes sensoriales por Nueva Zelanda para personas ciegas y con baja visión. Dos guías, contigo de principio a fin."
+      />
+
       {/* ── Hero ──────────────────────────────────────── */}
       <section className="hero">
         <div className="dots-texture"></div>

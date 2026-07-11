@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
+import { Seo } from '../components/Seo'
 import '../styles/pagestyle/Resenas.css'
 
 export default function Resenas() {
@@ -8,8 +9,6 @@ export default function Resenas() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    document.title = 'Reseñas | WatchOut! Sensory Tours'
-
     supabase
       .from('resenas')
       .select('*')
@@ -27,6 +26,12 @@ export default function Resenas() {
 
   return (
     <>
+      <Seo
+        pageType="reseñas"
+        title="Reseñas | WatchOut! Sensory Tours"
+        description="Lo que cuentan quienes han viajado con nosotras por Nueva Zelanda. Sin filtros, sin actores."
+      />
+
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="rs-hero">
         <div className="dots-texture"></div>

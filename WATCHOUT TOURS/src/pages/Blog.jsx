@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
+import { Seo } from '../components/Seo'
 import '../styles/pagestyle/Blog.css'
 
 function formatearFecha(iso) {
@@ -14,8 +15,6 @@ export default function Blog() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    document.title = 'Blog sensorial | WatchOut! Sensory Tours'
-
     supabase
       .from('blog_posts')
       .select('id, title, slug, excerpt, reading_time, published_at')
@@ -32,6 +31,12 @@ export default function Blog() {
 
   return (
     <>
+      <Seo
+        pageType="blog"
+        title="Blog sensorial | WatchOut! Sensory Tours"
+        description="Reflexiones sobre viajar de forma diferente por Nueva Zelanda. Sobre escuchar mejor."
+      />
+
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="blog-hero">
         <div className="dots-texture"></div>
