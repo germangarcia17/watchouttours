@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import DOMPurify from 'dompurify'
+import { sanitizeHtml } from '../lib/sanitizeHtml'
 import { supabase } from '../lib/supabase'
 import '../styles/pagestyle/BlogPost.css'
 
@@ -106,7 +106,7 @@ export default function BlogPost() {
             sin limpieza permitiría XSS almacenado en cada visitante */}
         <div
           className="post-contenido"
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }}
         />
 
         <footer className="post-footer">

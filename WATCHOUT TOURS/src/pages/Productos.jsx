@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Seo } from '../components/Seo'
 import '../styles/pagestyle/Productos.css'
 
 
@@ -28,8 +28,6 @@ const formatos = [
 ]
 
 export default function Productos() {
-  useEffect(() => { document.title = 'Rutas y viajes | WatchOut! Sensory Tours' }, [])
-
   return (
     <>
       
