@@ -42,8 +42,8 @@ export default function Accesibilidad() {
             <h2 id="contacto-a11y-heading">Reportar un problema</h2>
             <p>
               Si encuentras alguna barrera, escríbenos a{' '}
-              <a href="mailto:accesibilidad@watchouttours.com">
-                accesibilidad@watchouttours.com
+              <a href="mailto:info@watchouttours.nz">
+                info@watchouttours.nz
               </a>.
               Respondemos en un máximo de 5 días laborables.
             </p>
