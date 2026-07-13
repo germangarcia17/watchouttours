@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 
-const EMPTY = { author_name: '', author_context: '', content: '' }
+const EMPTY = { author_name: '', author_context: '', content: '', video_url: '' }
 
 export default function ResenasAdmin() {
   const [resenas, setResenas]   = useState([])
@@ -11,7 +11,7 @@ export default function ResenasAdmin() {
   const [formError, setFormError] = useState(null)
 
   useEffect(() => {
-    document.title = 'Reseñas | WatchOut! Admin'
+    document.title = 'Reseñas | Watchout Tours Admin'
     loadResenas()
   }, [])
 
@@ -34,7 +34,12 @@ export default function ResenasAdmin() {
     }
     setSaving(true)
     setFormError(null)
-    const { error } = await supabase.from('resenas').insert({ ...form, published: false, featured: false })
+    const { error } = await supabase.from('resenas').insert({
+      ...form,
+      video_url: form.video_url.trim() || null,
+      published: false,
+      featured: false,
+    })
     setSaving(false)
     if (!error) {
       setForm(EMPTY)
@@ -74,6 +79,10 @@ export default function ResenasAdmin() {
             <label htmlFor="resena_content" className="form-label">Texto de la reseña <span aria-hidden="true">*</span></label>
             <textarea id="resena_content" name="content" rows={4} value={form.content} onChange={handleChange} aria-required="true" className="form-control" />
           </div>
+          <div className="form-field">
+            <label htmlFor="video_url" className="form-label">URL del vídeo del testimonio (opcional)</label>
+            <input id="video_url" name="video_url" type="url" value={form.video_url} onChange={handleChange} className="form-control" placeholder="https://…supabase.co/…/testimonio.mp4" />
+          </div>
           {formError && <p role="alert" aria-live="assertive" className="form-error" style={{ marginBottom: '0.75rem' }}>{formError}</p>}
           <button type="submit" disabled={saving} className="btn btn--primary btn--sm">
             {saving ? 'Guardando…' : 'Añadir reseña'}
@@ -92,6 +101,7 @@ export default function ResenasAdmin() {
               {r.author_context && <span> — {r.author_context}</span>}
             </div>
             <p className="resena-item__quote">&ldquo;{r.content}&rdquo;</p>
+            {r.video_url && <p className="resena-item__video">Con vídeo: <a href={r.video_url} target="_blank" rel="noopener noreferrer">{r.video_url.split('/').pop()}</a></p>}
             <div className="resena-item__actions">
               <button
                 onClick={() => toggle(r.id, 'published', r.published)}

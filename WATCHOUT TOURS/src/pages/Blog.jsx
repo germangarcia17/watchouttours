@@ -33,7 +33,7 @@ export default function Blog() {
     <>
       <Seo
         pageType="blog"
-        title="Blog sensorial | WatchOut! Sensory Tours"
+        title="Blog sensorial | Watchout Tours"
         description="Reflexiones sobre viajar de forma diferente por Nueva Zelanda. Sobre escuchar mejor."
       />
 

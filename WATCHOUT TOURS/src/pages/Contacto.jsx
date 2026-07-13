@@ -10,7 +10,7 @@ export default function Contacto() {
   const [state, handleFormspreeSubmit] = useForm('xykqrkjq')
   const [errors, setErrors] = useState({})
 
-  useEffect(() => { document.title = 'Contacto | WatchOut! Sensory Tours' }, [])
+  useEffect(() => { document.title = 'Contacto | Watchout Tours' }, [])
 
   function validate(data) {
     const e = {}
@@ -198,7 +198,7 @@ export default function Contacto() {
                 {/* Canal preferido */}
                 <fieldset className="form-field">
                   <legend className="form-label">
-                    ¿Cómo prefieres que te escribamos?
+                    ¿Cómo prefieres contactar?
                     <span aria-hidden="true" className="required-marker"> *</span>
                     <span className="sr-only">(obligatorio)</span>
                   </legend>
@@ -216,7 +216,7 @@ export default function Contacto() {
                 {/* Tipo de viaje */}
                 <fieldset className="form-field">
                   <legend className="form-label">
-                    ¿Qué te tira más? <span className="form-optional">(opcional)</span>
+                    ¿Qué tienes en mente? <span className="form-optional">(opcional)</span>
                   </legend>
                   <div className="form-radio-group">
                     {['Un viaje privado a medida', 'Un viaje en grupo', 'Aún no lo sé, cuéntame'].map(op => (
@@ -237,7 +237,7 @@ export default function Contacto() {
                 </div>
 
                 <button type="submit" disabled={state.submitting} className="btn btn-solid btn--wide">
-                  {state.submitting ? 'Enviando…' : 'Enviar y empezar a soñar'}
+                  {state.submitting ? 'Enviando…' : 'Enviar formulario'}
                 </button>
 
                 <ValidationError errors={state.errors} className="form-status--error" />

@@ -11,7 +11,7 @@ export default function AdminLogin() {
   const [error, setError]   = useState(null)
   const [loading, setLoad]  = useState(false)
 
-  useEffect(() => { document.title = 'Iniciar sesión | WatchOut! Admin' }, [])
+  useEffect(() => { document.title = 'Iniciar sesión | Watchout Tours Admin' }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()

@@ -765,3 +765,99 @@
     font-size: 2rem;
   }
 }
+
+/* ── Separador de secciones: bastón de movilidad ─────── */
+.separador-baston {
+  display: flex;
+  justify-content: center;
+  color: var(--gold-soft);
+  padding: 4px 0;
+}
+
+.separador-baston svg {
+  width: 220px;
+  height: 26px;
+}
+
+/* ── Botón de Instagram bajo el reel ─────────────────── */
+.reel-instagram {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* ── Testimonios en vídeo ────────────────────────────── */
+.testi-video {
+  margin-top: 14px;
+}
+
+.testi-video summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--jade);
+  border: 2px solid var(--jade);
+  border-radius: 100px;
+  padding: 9px 18px;
+  list-style: none;
+}
+
+.testi-video summary::-webkit-details-marker {
+  display: none;
+}
+
+.testi-video summary::before {
+  content: '▶';
+  font-size: 11px;
+}
+
+.testi-video[open] summary::before {
+  content: '⏸';
+}
+
+.testi-video summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.testi-video video {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 12px;
+  background: #000;
+}
+
+/* ── Rutas dentro del bloque oscuro ──────────────────── */
+/* Las tarjetas son claras: restaurar sus colores de texto, que
+   .ink-block h3/p pondría en crema (ilegible sobre crema) */
+.rutas-black .prod-card h3 {
+  color: var(--ink);
+}
+
+.rutas-black .prod-card p {
+  color: var(--ink-soft);
+}
+
+.rutas-black .prod-card__precio {
+  color: var(--jade);
+}
+
+.rutas-black .prod-card__precio-nota {
+  color: var(--muted);
+}
+
+.rutas-black .contador-aviso__texto,
+.rutas-black .contador__label {
+  color: #D8D2C2;
+}
+
+.rutas-black .contador__numero {
+  color: var(--jade-soft);
+}
+
+.rutas-black .contador-aviso {
+  background: rgba(236, 231, 221, .04);
+}

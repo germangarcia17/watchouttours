@@ -51,11 +51,16 @@
 }
 
 .sn-aprendizaje-titulo {
+  font-family: 'Sora', sans-serif;
   font-size: clamp(22px, 3vw, 30px);
   font-weight: 700;
-  margin-bottom: 24px;
-  max-width: 30ch;
+  margin: 0 0 24px;
+  max-width: 34ch;
   line-height: 1.25;
+}
+
+.ink-block .sn-aprendizaje-titulo {
+  color: var(--paper);
 }
 
 .sn-aprendizaje-cols {
@@ -285,4 +290,24 @@
   .sn-valores-card {
     padding: 24px;
   }
+}
+
+/* ── Cierre del bloque "Lo que hemos aprendido" ──────── */
+.sn-aprendizaje-final {
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin: 24px 0 0;
+  max-width: 68ch;
+}
+
+.ink-block .sn-aprendizaje-negrita {
+  margin: 20px 0 0;
+  font-size: 16.5px;
+  line-height: 1.6;
+  max-width: 64ch;
+  color: var(--paper);
+}
+
+.ink-block .sn-aprendizaje-negrita strong {
+  color: var(--paper);
 }

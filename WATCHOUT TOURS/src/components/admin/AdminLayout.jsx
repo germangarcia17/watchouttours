@@ -19,7 +19,7 @@ export function AdminLayout() {
       <SkipLink />
       <nav className="admin-nav" aria-label="Navegación del panel de administración">
         <div className="admin-nav__inner">
-          <Link to="/admin" className="admin-nav__brand">WatchOut! Admin</Link>
+          <Link to="/admin" className="admin-nav__brand">Watchout Tours Admin</Link>
           <ul role="list" className="admin-nav__list">
             {adminLinks.map(({ to, label }) => (
               <li key={to}>

@@ -26,6 +26,19 @@
   text-decoration: none;
 }
 
+/* Variante clara: logo de letras negras sobre fondo blanco */
+.brand-badge--light {
+  background: #ffffff;
+  border: 1px solid var(--line, #CFC4A8);
+  --focus: #15140F;
+}
+
+.brand-badge__letras {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
 .brand-badge__img {
   height: 44px;
   width: auto;

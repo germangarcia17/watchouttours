@@ -6,7 +6,7 @@ export default function Dashboard() {
   const [stats, setStats] = useState({ posts: null, resenas: null })
 
   useEffect(() => {
-    document.title = 'Dashboard | WatchOut! Admin'
+    document.title = 'Dashboard | Watchout Tours Admin'
 
     Promise.all([
       supabase.from('blog_posts').select('id', { count: 'exact', head: true }),

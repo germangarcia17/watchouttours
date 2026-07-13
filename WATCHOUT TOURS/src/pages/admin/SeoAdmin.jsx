@@ -17,7 +17,7 @@ export default function SeoAdmin() {
   const [loading, setLoading]   = useState(true)
 
   useEffect(() => {
-    document.title = 'SEO | WatchOut! Admin'
+    document.title = 'SEO | Watchout Tours Admin'
 
     supabase
       .from('seo_metadata')

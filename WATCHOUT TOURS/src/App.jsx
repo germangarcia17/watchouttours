@@ -1,11 +1,10 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
 import { AdminLayout } from './components/admin/AdminLayout'
 import { ProtectedRoute } from './components/admin/ProtectedRoute'
 
 import Home            from './pages/Home'
 import SobreNosotras   from './pages/SobreNosotras'
-import Filosofia       from './pages/Filosofia'
 import Productos       from './pages/Productos'
 import Resenas         from './pages/Resenas'
 import Blog            from './pages/Blog'
@@ -30,7 +29,8 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/"                 element={<Home />} />
         <Route path="/sobre-nosotras"   element={<SobreNosotras />} />
-        <Route path="/filosofia"        element={<Filosofia />} />
+        {/* La filosofía vive ahora dentro de Sobre Nosotras */}
+        <Route path="/filosofia"        element={<Navigate to="/sobre-nosotras" replace />} />
         <Route path="/productos"        element={<Productos />} />
         <Route path="/resenas"          element={<Resenas />} />
         <Route path="/blog"             element={<Blog />} />

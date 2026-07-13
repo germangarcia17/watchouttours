@@ -48,7 +48,7 @@ export default function BlogPost() {
   return (
     <article aria-labelledby="post-heading">
       <Helmet>
-        <title>{post.meta_title ?? post.title} | WatchOut! Sensory Tours</title>
+        <title>{post.meta_title ?? post.title} | Watchout Tours</title>
         {post.meta_description && <meta name="description" content={post.meta_description} />}
         {post.keywords && <meta name="keywords" content={post.keywords} />}
 
