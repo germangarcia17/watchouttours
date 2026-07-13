@@ -22,7 +22,7 @@ export default function Privacidad() {
         <div className="wrap">
           <section aria-labelledby="responsable-heading">
             <h2 id="responsable-heading">Responsable del tratamiento</h2>
-            <p>WatchOut! Sensory Tours Ltd., <span lang="en">Auckland, Nueva Zelanda</span>. Contacto: <a href="mailto:privacidad@watchouttours.com">privacidad@watchouttours.com</a></p>
+            <p>WatchOut! Sensory Tours Ltd., <span lang="en">Picton, Nueva Zelanda</span>. Contacto: <a href="mailto:info@watchouttours.nz">info@watchouttours.nz</a></p>
           </section>
 
           <section aria-labelledby="datos-heading">
@@ -42,7 +42,7 @@ export default function Privacidad() {
             <p>
               Tienes derecho de acceso, rectificación, supresión, oposición y portabilidad. Escribe a{' '}
               <a href="mailto:privacidad@watchouttours.com">
-                privacidad@watchouttours.com
+                info@watchouttours.nz
               </a>.
             </p>
           </section>
