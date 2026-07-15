@@ -46,7 +46,7 @@
   margin-bottom: 18px;
 }
 
-.hero h1 {
+.hero-big-text  {
   font-size: clamp(38px, 5.4vw, 58px);
   font-weight: 800;
   margin-bottom: 20px;

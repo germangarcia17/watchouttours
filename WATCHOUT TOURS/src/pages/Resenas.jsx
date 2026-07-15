@@ -37,7 +37,7 @@ export default function Resenas() {
         <div className="dots-texture"></div>
         <div className="wrap rs-hero-inner">
           <span className="sec-eyebrow">Lo que cuentan</span>
-          <h1 className="rs-titulo">Reseñas de viajeras</h1>
+          <h1 className="rs-titulo">Reseñas de viajeros</h1>
           <p className="rs-intro">
             Sin filtros. Sin actores. Solo las palabras de quienes han viajado con nosotras.
           </p>

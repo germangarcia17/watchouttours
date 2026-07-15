@@ -34,8 +34,8 @@ export default function Productos() {
       {/* ── Formatos ─────────────────────────────────── */}
       <section className="prod-formatos">
         <div className="wrap">
-          <div className="sec-eyebrow">Nuestras opciones</div>
-          <h1 className="sec-title">Dos maneras de vivirlo</h1>
+          <h1 className="sec-eyebrow">Nuestras opciones</h1>
+          <p className="sec-title">Dos maneras de vivirlo</p>
           <p className="sec-sub">La misma ruta, tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.</p>
 
           <div className="prod-list">
