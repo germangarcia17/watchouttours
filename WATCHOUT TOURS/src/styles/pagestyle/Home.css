@@ -771,12 +771,12 @@
   display: flex;
   justify-content: center;
   color: var(--gold-soft);
-  padding: 4px 0;
+  padding: 8px 24px;
 }
 
 .separador-baston svg {
-  width: 220px;
-  height: 26px;
+  width: min(880px, 100%);
+  height: auto;
 }
 
 /* ── Botón de Instagram bajo el reel ─────────────────── */
