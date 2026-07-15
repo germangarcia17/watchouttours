@@ -15,7 +15,7 @@
   /* Borde de controles interactivos: 3:1 sobre crema (WCAG 1.4.11) */
   --border-input: #8A8170;
   /* Verde WhatsApp accesible sobre fondos claros (el original 1.6:1) */
-  --ws-green: #0C6B34;
+  --ws-green: #0A5C2D; /* 5.3:1 sobre el fondo del botón del footer (mínimo 4.5:1) */
   /* Color del anillo de foco; los bloques oscuros lo redefinen a crema */
   --focus: #15140F;
   --radius: 18px;

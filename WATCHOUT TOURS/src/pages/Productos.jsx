@@ -35,7 +35,7 @@ export default function Productos() {
       <section className="prod-formatos">
         <div className="wrap">
           <div className="sec-eyebrow">Nuestras opciones</div>
-          <h2 className="sec-title">Dos maneras de vivirlo</h2>
+          <h1 className="sec-title">Dos maneras de vivirlo</h1>
           <p className="sec-sub">La misma ruta, tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.</p>
 
           <div className="prod-list">
