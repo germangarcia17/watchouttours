@@ -7,7 +7,7 @@ export default function BlogAdmin() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    document.title = 'Blog | WatchOut! Admin'
+    document.title = 'Blog | Watchout Tours Admin'
     loadPosts()
   }, [])
 

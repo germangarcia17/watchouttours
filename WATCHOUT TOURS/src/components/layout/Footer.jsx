@@ -10,15 +10,12 @@ export function Footer() {
 
         {/* Columna marca */}
         <div className="footer-brand">
-          <Link to="/" className="footer-brand__logo" aria-label="WatchOut! Sensory Tours — Inicio">
+          <Link to="/" className="footer-brand__logo" aria-label="Watchout Tours — Inicio">
             <img src={logoImg} alt="" aria-hidden="true" className="footer-brand__img" />
-            <span className="footer-brand__name">WatchOut! <em>Sensory Tours</em></span>
+            <span className="footer-brand__name">Watchout Tours</span>
           </Link>
-          <p className="footer-brand__tagline">
-            Viajes de lujo sensorial por Nueva Zelanda para personas ciegas y con baja visión.
-          </p>
           <a
-            href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20información%20sobre%20los%20viajes%20de%20WatchOut!"
+            href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20información%20sobre%20los%20viajes%20de%20Watchout%20Tours"
             className="footer-whatsapp"
             target="_blank"
             rel="noopener noreferrer"
@@ -36,7 +33,6 @@ export function Footer() {
           <h3 className="footer-col__heading">Nosotras</h3>
           <ul role="list" className="footer-col__list">
             <li><Link to="/sobre-nosotras">Sobre nosotras</Link></li>
-            <li><Link to="/filosofia">Filosofía</Link></li>
             <li><Link to="/resenas">Reseñas</Link></li>
             <li><Link to="/blog">Blog</Link></li>
           </ul>
@@ -64,7 +60,7 @@ export function Footer() {
 
       <div className="site-footer__bottom">
         <p className="footer-copy">
-          &copy; {year} WatchOut! Sensory Tours. Todos los derechos reservados.
+          &copy; {year} Watchout Tours. Todos los derechos reservados.
         </p>
       </div>
     </footer>

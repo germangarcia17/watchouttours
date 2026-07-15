@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import '../styles/pagestyle/Estaticas.css'
 
 export default function Privacidad() {
-  useEffect(() => { document.title = 'Privacidad | WatchOut! Sensory Tours' }, [])
+  useEffect(() => { document.title = 'Privacidad | Watchout Tours' }, [])
 
   return (
     <>
@@ -22,7 +22,7 @@ export default function Privacidad() {
         <div className="wrap">
           <section aria-labelledby="responsable-heading">
             <h2 id="responsable-heading">Responsable del tratamiento</h2>
-            <p>WatchOut! Sensory Tours Ltd., <span lang="en">Picton, Nueva Zelanda</span>. Contacto: <a href="mailto:info@watchouttours.nz">info@watchouttours.nz</a></p>
+            <p>Watchout Tours Ltd., <span lang="en">Picton, Nueva Zelanda</span>. Contacto: <a href="mailto:info@watchouttours.nz">info@watchouttours.nz</a></p>
           </section>
 
           <section aria-labelledby="datos-heading">

@@ -28,7 +28,7 @@ export default function Resenas() {
     <>
       <Seo
         pageType="reseñas"
-        title="Reseñas | WatchOut! Sensory Tours"
+        title="Reseñas | Watchout Tours"
         description="Lo que cuentan quienes han viajado con nosotras por Nueva Zelanda. Sin filtros, sin actores."
       />
 
@@ -65,6 +65,12 @@ export default function Resenas() {
                       <strong>{r.author_name}</strong>
                       {r.author_context && <span> — {r.author_context}</span>}
                     </footer>
+                    {r.video_url && (
+                      <details className="testi-video testi-video--claro">
+                        <summary>Escuchar testimonio</summary>
+                        <video src={r.video_url} controls playsInline preload="metadata" aria-label={`Testimonio en vídeo de ${r.author_name}`} />
+                      </details>
+                    )}
                   </article>
                 </li>
               ))}
@@ -84,6 +90,12 @@ export default function Resenas() {
                       <strong>{r.author_name}</strong>
                       {r.author_context && <span> — {r.author_context}</span>}
                     </footer>
+                    {r.video_url && (
+                      <details className="testi-video">
+                        <summary>Escuchar testimonio</summary>
+                        <video src={r.video_url} controls playsInline preload="metadata" aria-label={`Testimonio en vídeo de ${r.author_name}`} />
+                      </details>
+                    )}
                   </article>
                 </li>
               ))}

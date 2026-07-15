@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import '../styles/pagestyle/Estaticas.css'
 
 export default function Accesibilidad() {
-  useEffect(() => { document.title = 'Accesibilidad | WatchOut! Sensory Tours' }, [])
+  useEffect(() => { document.title = 'Accesibilidad | Watchout Tours' }, [])
 
   return (
     <>
@@ -12,7 +12,7 @@ export default function Accesibilidad() {
           <span className="sec-eyebrow">Legal</span>
           <h1 className="static-titulo">Declaración de accesibilidad</h1>
           <p className="static-intro">
-            WatchOut! Sensory Tours se compromete a garantizar la accesibilidad
+            Watchout Tours se compromete a garantizar la accesibilidad
             digital para todas las personas.
           </p>
         </div>

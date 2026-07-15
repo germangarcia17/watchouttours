@@ -15,7 +15,7 @@
   /* Borde de controles interactivos: 3:1 sobre crema (WCAG 1.4.11) */
   --border-input: #8A8170;
   /* Verde WhatsApp accesible sobre fondos claros (el original 1.6:1) */
-  --ws-green: #0C6B34;
+  --ws-green: #0A5C2D; /* 5.3:1 sobre el fondo del botón del footer (mínimo 4.5:1) */
   /* Color del anillo de foco; los bloques oscuros lo redefinen a crema */
   --focus: #15140F;
   --radius: 18px;
@@ -72,19 +72,26 @@ section {
 }
 
 /* ── Cabeceras de sección ────────────────────────────── */
+/* Intercambio semántico: el eyebrow es el encabezado (h2) y el título
+   visual es un párrafo destacado. La apariencia no cambia. */
 .sec-eyebrow {
   font-size: 13px;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--jade);
   font-weight: 700;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
+  line-height: 1.4;
 }
 
 .sec-title {
+  font-family: 'Sora', sans-serif;
   font-size: clamp(26px, 3.6vw, 36px);
   font-weight: 800;
-  margin-bottom: 14px;
+  letter-spacing: -.01em;
+  line-height: 1.08;
+  color: var(--ink);
+  margin: 0 0 14px;
 }
 
 .sec-sub {
@@ -228,6 +235,14 @@ a:focus-visible {
 
 .ink-block p {
   color: #D8D2C2;
+}
+
+.ink-block .sec-title {
+  color: var(--paper);
+}
+
+.ink-block .sec-eyebrow {
+  color: var(--jade-soft);
 }
 
 /* Los bloques oscuros usan anillo de foco claro para que sea visible */

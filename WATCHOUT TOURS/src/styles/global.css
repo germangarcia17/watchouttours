@@ -110,10 +110,10 @@ body {
   gap: 0.5rem;
   font-size: 0.875rem;
   /* Verde oscurecido: el #25D366 original da 1.6:1 sobre crema */
-  color: var(--ws-green, #0C6B34);
+  color: var(--ws-green, #0A5C2D);
   background-color: rgba(37, 211, 102, 0.08);
   text-decoration: none;
-  border: 2px solid var(--ws-green, #0C6B34);
+  border: 2px solid var(--ws-green, #0A5C2D);
   border-radius: 6px;
   padding: 0.5rem 0.75rem;
   width: fit-content;
@@ -127,7 +127,7 @@ body {
 .footer-whatsapp svg {
   width: 1rem;
   height: 1rem;
-  fill: var(--ws-green, #0C6B34);
+  fill: var(--ws-green, #0A5C2D);
   flex-shrink: 0;
 }
 

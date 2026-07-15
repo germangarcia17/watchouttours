@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function NotFound() {
-  useEffect(() => { document.title = 'Página no encontrada | WatchOut! Sensory Tours' }, [])
+  useEffect(() => { document.title = 'Página no encontrada | Watchout Tours' }, [])
 
   return (
     <div className="not-found">

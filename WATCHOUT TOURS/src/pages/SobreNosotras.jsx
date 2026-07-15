@@ -1,43 +1,36 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/pagestyle/SobreNosotras.css'
+import '../styles/pagestyle/Filosofia.css'
 import imgNosotras from '../images/sobre-nosotras.webp'
 import { useSiteImage } from '../lib/siteImages'
 
 const MONICA = [
-  { emoji: '❤️', text: 'Cree que las mejores conversaciones aparecen caminando.' },
-  { emoji: '☕', text: 'Nunca dice que no a un café con vistas.' },
-  { emoji: '🌿', text: 'Siempre encuentra una excusa para parar cinco minutos más en la naturaleza.' },
-  { emoji: '😂', text: 'Se ríe muy fuerte.' },
-  { emoji: '🎧', text: 'Es capaz de emocionarse escuchando una historia.' },
+  { emoji: '❤️', text: 'Cree que los mejores recuerdos nacen de las conversaciones que no estaban planeadas.' },
+  { emoji: '☕', text: 'Un café con vistas siempre le parece un buen plan.' },
+  { emoji: '🌿', text: 'Es de las que se detiene para escuchar un río, sentir el viento o simplemente respirar.' },
+  { emoji: '😂', text: 'Tiene una risa contagiosa.' },
+  { emoji: '🎧', text: 'Le fascina escuchar las historias de las personas, porque está convencida de que cada una tiene algo que enseñar.' },
 ]
 
 const SYLVIE = [
-  { emoji: '⛷️', text: 'Creció viendo a su padre guiar a personas ciegas en la nieve.' },
-  { emoji: '🧭', text: 'Tiene un talento especial para encontrar lugares únicos.' },
-  { emoji: '🍰', text: 'Siempre sabe dónde está el mejor café... o el mejor postre.' },
-  { emoji: '🌊', text: 'Transmite calma incluso cuando el plan cambia.' },
-  { emoji: '🤍', text: 'Cree que las personas siempre están por delante del itinerario.' },
+  { emoji: '❄️', text: 'Creció viendo a su padre guiar a personas ciegas en la nieve, aprendiendo el verdadero valor de la confianza.' },
+  { emoji: '🧭', text: 'Tiene un talento natural para salirse de la ruta y descubrir lugares únicos y secretos.' },
+  { emoji: '☕', text: 'Su intuición nunca falla: siempre sabe dónde está el mejor café o el postre más espectacular.' },
+  { emoji: '🌊', text: 'Transmite una calma contagiosa que transforma cualquier imprevisto en una nueva aventura.' },
+  { emoji: '🤍', text: 'Lo tiene claro: las personas y sus emociones siempre van por delante del itinerario.' },
 ]
 
-const VIAJANDO_CON_NOSOTRAS = [
-  { emoji: '☕', text: 'Siempre hay tiempo para un buen café.' },
-  { emoji: '🥾', text: 'Nos cuesta pasar de largo cuando un lugar merece cinco minutos más.' },
-  { emoji: '😂', text: 'Creemos que el sentido del humor hace cualquier viaje mejor.' },
-  { emoji: '🌿', text: 'Somos unas enamoradas de la naturaleza.' },
-  { emoji: '❤️', text: 'Disfrutamos muchísimo viendo cómo un grupo de desconocidos acaba sintiéndose como un equipo.' },
-]
-
-const VALORES = [
-  'Mucho sentido del humor.',
-  'Conversaciones que probablemente recordarás durante años.',
-  'Flexibilidad, porque los mejores momentos casi nunca están en el itinerario.',
-  'Respeto por cada persona y su manera de vivir el mundo.',
-  'Ganas de compartir, aprender y sorprendernos juntos.',
+const PRINCIPIOS = [
+  { num: '01', titulo: 'Diseñado para, no adaptado desde', texto: 'Construimos cada viaje desde el primer paso pensando en quién viaja con nosotras.' },
+  { num: '02', titulo: 'El lujo es sensorial, no visual', texto: 'El silencio de un fiordo al amanecer es opulento para cualquier sentido.' },
+  { num: '03', titulo: 'Grupos de máximo seis', texto: 'Porque la experiencia sensorial requiere espacio y cada persona tiene su ritmo.' },
+  { num: '04', titulo: 'Respeto a la cultura maorí', texto: 'Trabajamos con las comunidades locales, no sobre ellas.' },
+  { num: '05', titulo: 'Cero condescendencia', texto: 'Nuestras viajeras son adultas que han decidido vivir una aventura extraordinaria.' },
 ]
 
 export default function SobreNosotras() {
-  useEffect(() => { document.title = 'Sobre nosotras | WatchOut! Sensory Tours' }, [])
+  useEffect(() => { document.title = 'Sobre nosotras | Watchout Tours' }, [])
 
   const heroImg = useSiteImage('sobre-nosotras', 'hero', imgNosotras,
     'Mónica y Sylvie sonriendo en un selfie frente a un géiser humeante en Rotorua, Nueva Zelanda')
@@ -71,22 +64,37 @@ export default function SobreNosotras() {
       {/* ── Lo que hemos aprendido — bloque oscuro ───── */}
       <section>
         <div className="wrap">
-          <div className="ink-block">
-            <div className="sec-eyebrow sn-eyebrow-jade">Lo que hemos aprendido</div>
-            <h2 className="sn-aprendizaje-titulo">
-              Los viajeros nos han enseñado a cambiar nuestra manera de mirar el mundo.
-            </h2>
+          <div className="ink-block sn-aprendizaje">
+            <h2 className="sec-eyebrow">Lo que hemos aprendido</h2>
+            <p className="sn-aprendizaje-titulo">
+              Antes de empezar esta aventura pensábamos que estábamos creando viajes
+              accesibles. Hoy sabemos que es mucho más que eso.
+            </p>
             <div className="sn-aprendizaje-cols">
               <p>
-                Cuando dejamos de vivir únicamente desde la vista, empezamos a conectar de
-                forma mucho más profunda con las personas, los lugares y los pequeños detalles.
+                Cada viaje nos recuerda que existen muchas maneras de percibir el mundo.
+                Cuando compartimos esas formas de sentir, escuchar, tocar y descubrir,
+                algo cambia en todos los que estamos allí.
               </p>
               <p>
-                Los viajeros ciegos no solo viven la experiencia, sino que muchas veces también
-                transforman la de quienes les rodean. Nos recuerdan otras formas de escuchar,
-                sentir, confiar y estar presentes. Y eso tiene un impacto humano enorme.
+                Hemos visto cómo personas que no se conocían terminan conectando de una
+                forma profundamente humana. Cómo un pequeño detalle pasa a tener un gran
+                significado. Cómo aprendemos a confiar más, a escuchar mejor y a estar
+                realmente presentes.
               </p>
             </div>
+            <p className="sn-aprendizaje-final">
+              Por eso creemos que el verdadero impacto de estos viajes no está solo en los
+              lugares que visitamos. Está en las personas en las que nos convertimos cuando
+              los vivimos juntos.
+            </p>
+            <p className="sn-aprendizaje-negrita">
+              <strong>
+                Nuestra mayor ilusión es que vuelvas a casa con la sensación de haber vivido
+                algo que recordarás toda la vida. Porque los mejores viajes no se miden por
+                los kilómetros recorridos, sino por lo que dejan dentro de nosotros.
+              </strong>
+            </p>
           </div>
         </div>
       </section>
@@ -94,8 +102,8 @@ export default function SobreNosotras() {
       {/* ── Hola, somos Mónica y Sylvie ─────────────── */}
       <section>
         <div className="wrap sn-hola">
-          <div className="sec-eyebrow"><span aria-hidden="true">👋 </span>Hola</div>
-          <h2 className="sec-title">Somos Mónica y Sylvie.</h2>
+          <h2 className="sec-eyebrow"><span aria-hidden="true">👋 </span>Hola</h2>
+          <p className="sec-title">Somos Mónica y Sylvie.</p>
           <p className="sn-text">
             Dos españolas que llegaron a Nueva Zelanda hace siete años con una mochila llena
             de ilusión... y que todavía siguen sorprendiéndose con este país.
@@ -120,8 +128,8 @@ export default function SobreNosotras() {
       {/* ── 5 cosas sobre nosotras ───────────────────── */}
       <section>
         <div className="wrap">
-          <div className="sec-eyebrow">De tú a tú</div>
-          <h2 className="sec-title">Cinco cosas sobre nosotras</h2>
+          <h2 className="sec-eyebrow">De tú a tú</h2>
+          <p className="sec-title">Cinco cosas sobre nosotras</p>
           <div className="sn-cinco-grid">
 
             <article className="sn-persona-card">
@@ -152,36 +160,22 @@ export default function SobreNosotras() {
         </div>
       </section>
 
-      {/* ── Si viajaras con nosotras ─────────────────── */}
-      <section>
+      {/* ── Nuestra filosofía (integrada) ────────────── */}
+      <section aria-labelledby="filosofia-heading">
         <div className="wrap">
-          <div className="sec-eyebrow">Aviso honesto</div>
-          <h2 className="sec-title">Si viajaras con nosotras descubrirías que…</h2>
-          <ul role="list" className="sn-pills">
-            {VIAJANDO_CON_NOSOTRAS.map(({ emoji, text }) => (
-              <li key={text} className="sn-pill">
-                <span aria-hidden="true">{emoji}</span>
-                <span>{text}</span>
+          <h2 id="filosofia-heading" className="sec-eyebrow">Nuestra filosofía</h2>
+          <p className="sec-title">Cinco principios que guían cada decisión</p>
+          <ol role="list" className="filo-lista">
+            {PRINCIPIOS.map(({ num, titulo, texto }) => (
+              <li key={num} className="filo-principio">
+                <span aria-hidden="true" className="filo-principio__num">{num}</span>
+                <div className="filo-principio__contenido">
+                  <h3 className="filo-principio__titulo">{titulo}</h3>
+                  <p className="filo-principio__texto">{texto}</p>
+                </div>
               </li>
             ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ── Lo que encontrarás ───────────────────────── */}
-      <section>
-        <div className="wrap">
-          <div className="sn-valores-card">
-            <h2 className="sn-valores-titulo">Lo que encontrarás si viajas con nosotras</h2>
-            <ul role="list" className="sn-valores-lista">
-              {VALORES.map(v => (
-                <li key={v} className="sn-valores-item">
-                  <span className="sn-valores-check" aria-hidden="true">✓</span>
-                  <span>{v}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -201,8 +195,7 @@ export default function SobreNosotras() {
           <p className="sn-cierre-texto">Porque quizá ese sea el mejor souvenir que puedas llevarte.</p>
 
           <div className="cta-row sn-cierre-ctas">
-            <Link to="/contacto" className="btn btn-solid">Hablemos</Link>
-            <Link to="/filosofia" className="btn btn-outline">Conoce nuestra filosofía</Link>
+            <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
           </div>
         </div>
       </section>

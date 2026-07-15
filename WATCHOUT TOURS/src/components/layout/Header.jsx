@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import './Header.css'
-import logoImg from '../../images/logo-header-watchout.webp'
+import logoLetras from '../../images/logo-watchout-negro.png'
 
 const navLinks = [
   { to: '/productos',      label: 'Rutas' },
@@ -25,10 +25,10 @@ export function Header() {
   return (
     <header className="site-header" role="banner">
       <div className="wrap nav-inner">
-        {/* El enlace ya tiene texto visible; la imagen es decorativa */}
-        <Link to="/" className="brand-badge" aria-label="WatchOutTours — Ir al inicio">
-          <img src={logoImg} alt="" aria-hidden="true" className="brand-badge__img" />
-          <span className="brand-word">WatchOutTours</span>
+        {/* Logo de letras negras sobre fondo claro; el nombre accesible
+            lo da el aria-label del enlace */}
+        <Link to="/" className="brand-badge brand-badge--light" aria-label="Watchout Tours — Ir al inicio">
+          <img src={logoLetras} alt="" aria-hidden="true" className="brand-badge__letras" />
         </Link>
 
         <nav

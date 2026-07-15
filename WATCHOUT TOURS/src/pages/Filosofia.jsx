@@ -31,7 +31,7 @@ const principios = [
 ]
 
 export default function Filosofia() {
-  useEffect(() => { document.title = 'Filosofía | WatchOut! Sensory Tours' }, [])
+  useEffect(() => { document.title = 'Filosofía | Watchout Tours' }, [])
 
   return (
     <>
@@ -39,7 +39,7 @@ export default function Filosofia() {
       <section className="filo-hero">
         <div className="dots-texture"></div>
         <div className="wrap filo-hero-inner">
-          <span className="sec-eyebrow">Filosofía WatchOut!</span>
+          <span className="sec-eyebrow">Filosofía Watchout</span>
           <h1 className="filo-titulo">Lo mejor de este viaje no se ve.</h1>
           <p className="filo-intro">
             Cinco principios que guían cada decisión, desde el diseño de un
