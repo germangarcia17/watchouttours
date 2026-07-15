@@ -41,7 +41,7 @@ export default function Privacidad() {
             <h2 id="derechos-heading">Tus derechos</h2>
             <p>
               Tienes derecho de acceso, rectificación, supresión, oposición y portabilidad. Escribe a{' '}
-              <a href="mailto:privacidad@watchouttours.com">
+              <a href="mailto:info@watchouttours.nz">
                 info@watchouttours.nz
               </a>.
             </p>
