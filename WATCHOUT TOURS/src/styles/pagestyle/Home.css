@@ -46,9 +46,16 @@
   margin-bottom: 18px;
 }
 
-.hero-big-text  {
+/* Texto protagonista del hero (visualmente es el título aunque el h1
+   semántico sea el eyebrow). Selector con `p` para ganar a `.hero p`. */
+.hero p.hero-big-text {
+  font-family: 'Sora', sans-serif;
   font-size: clamp(38px, 5.4vw, 58px);
   font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  max-width: none;
   margin-bottom: 20px;
 }
 
