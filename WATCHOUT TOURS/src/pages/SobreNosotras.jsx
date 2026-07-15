@@ -21,28 +21,12 @@ const SYLVIE = [
   { emoji: '🤍', text: 'Lo tiene claro: las personas y sus emociones siempre van por delante del itinerario.' },
 ]
 
-const VIAJANDO_CON_NOSOTRAS = [
-  { emoji: '☕', text: 'Siempre hay tiempo para un buen café.' },
-  { emoji: '🥾', text: 'Nos cuesta pasar de largo cuando un lugar merece cinco minutos más.' },
-  { emoji: '😂', text: 'Creemos que el sentido del humor hace cualquier viaje mejor.' },
-  { emoji: '🌿', text: 'Somos unas enamoradas de la naturaleza.' },
-  { emoji: '❤️', text: 'Disfrutamos muchísimo viendo cómo un grupo de desconocidos acaba sintiéndose como un equipo.' },
-]
-
 const PRINCIPIOS = [
   { num: '01', titulo: 'Diseñado para, no adaptado desde', texto: 'Construimos cada viaje desde el primer paso pensando en quién viaja con nosotras.' },
   { num: '02', titulo: 'El lujo es sensorial, no visual', texto: 'El silencio de un fiordo al amanecer es opulento para cualquier sentido.' },
   { num: '03', titulo: 'Grupos de máximo seis', texto: 'Porque la experiencia sensorial requiere espacio y cada persona tiene su ritmo.' },
   { num: '04', titulo: 'Respeto a la cultura maorí', texto: 'Trabajamos con las comunidades locales, no sobre ellas.' },
   { num: '05', titulo: 'Cero condescendencia', texto: 'Nuestras viajeras son adultas que han decidido vivir una aventura extraordinaria.' },
-]
-
-const VALORES = [
-  'Mucho sentido del humor.',
-  'Conversaciones que probablemente recordarás durante años.',
-  'Flexibilidad, porque los mejores momentos casi nunca están en el itinerario.',
-  'Respeto por cada persona y su manera de vivir el mundo.',
-  'Ganas de compartir, aprender y sorprendernos juntos.',
 ]
 
 export default function SobreNosotras() {
@@ -80,7 +64,7 @@ export default function SobreNosotras() {
       {/* ── Lo que hemos aprendido — bloque oscuro ───── */}
       <section>
         <div className="wrap">
-          <div className="ink-block">
+          <div className="ink-block sn-aprendizaje">
             <h2 className="sec-eyebrow">Lo que hemos aprendido</h2>
             <p className="sn-aprendizaje-titulo">
               Antes de empezar esta aventura pensábamos que estábamos creando viajes
@@ -172,39 +156,6 @@ export default function SobreNosotras() {
               </ul>
             </article>
 
-          </div>
-        </div>
-      </section>
-
-      {/* ── Si viajaras con nosotras ─────────────────── */}
-      <section>
-        <div className="wrap">
-          <h2 className="sec-eyebrow">Aviso honesto</h2>
-          <p className="sec-title">Si viajaras con nosotras descubrirías que…</p>
-          <ul role="list" className="sn-pills">
-            {VIAJANDO_CON_NOSOTRAS.map(({ emoji, text }) => (
-              <li key={text} className="sn-pill">
-                <span aria-hidden="true">{emoji}</span>
-                <span>{text}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ── Lo que encontrarás ───────────────────────── */}
-      <section>
-        <div className="wrap">
-          <div className="sn-valores-card">
-            <h2 className="sn-valores-titulo">Lo que encontrarás si viajas con nosotras</h2>
-            <ul role="list" className="sn-valores-lista">
-              {VALORES.map(v => (
-                <li key={v} className="sn-valores-item">
-                  <span className="sn-valores-check" aria-hidden="true">✓</span>
-                  <span>{v}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>

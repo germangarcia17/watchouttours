@@ -50,12 +50,16 @@
   color: var(--jade-soft);
 }
 
+.sn-aprendizaje {
+  padding: 72px 64px;
+}
+
 .sn-aprendizaje-titulo {
   font-family: 'Sora', sans-serif;
   font-size: clamp(22px, 3vw, 30px);
   font-weight: 700;
-  margin: 0 0 24px;
-  max-width: 34ch;
+  margin: 0 0 32px;
+  max-width: 38ch;
   line-height: 1.25;
 }
 
@@ -66,7 +70,7 @@
 .sn-aprendizaje-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 48px;
 }
 
 .sn-aprendizaje-cols p {
@@ -160,74 +164,6 @@
   font-size: 14px;
 }
 
-/* ── Pills "si viajaras con nosotras" ────────────────── */
-.sn-pills {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.sn-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--ink-soft);
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  padding: 12px 20px;
-  line-height: 1.4;
-}
-
-/* ── Valores ─────────────────────────────────────────── */
-.sn-valores-card {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 36px;
-}
-
-.sn-valores-titulo {
-  font-size: clamp(20px, 2.6vw, 26px);
-  font-weight: 800;
-  margin-bottom: 22px;
-}
-
-.sn-valores-lista {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.sn-valores-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  font-size: 15px;
-  color: var(--ink-soft);
-}
-
-.sn-valores-check {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--jade-soft);
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* ── Cierre ──────────────────────────────────────────── */
 .sn-cierre {
   text-align: center;
@@ -270,25 +206,17 @@
     aspect-ratio: 4/3;
   }
 
+  .sn-aprendizaje {
+    padding: 40px 26px;
+  }
+
   .sn-aprendizaje-cols {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
 
   .sn-cinco-grid {
     grid-template-columns: 1fr;
-  }
-
-  .sn-pills {
-    flex-direction: column;
-  }
-
-  .sn-pill {
-    border-radius: var(--radius);
-  }
-
-  .sn-valores-card {
-    padding: 24px;
   }
 }
 
