@@ -113,9 +113,9 @@ export default function Home() {
         <div className="dots-texture"></div>
         <div className="wrap hero-grid">
           <div className="hero-inner">
-            <span className="eyebrow">Watchout Tours · Nueva Zelanda</span>
-            <h1>No toda visión<br />necesita ojos.</h1>
-            <p>Viajes sensoriales por Nueva Zelanda para personas ciegas y con baja visión. Dos guías, contigo de principio a fin. Sin límites.</p>
+            <h1 className="eyebrow">Viajes sensoriales por Nueva Zelanda para personas ciegas y con baja visión</h1>
+            <p className='hero-big-text'>No toda visión<br />necesita ojos.</p>
+            <p>Dos guías, contigo de principio a fin. Sin límites.</p>
             <div className="cta-row">
               <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
               <Link to="/resenas" className="btn btn-outline">Mira cómo lo vivimos</Link>
@@ -296,8 +296,8 @@ export default function Home() {
       {/* ── Audio clips ──────────────────────────────── */}
       <section aria-labelledby="audio-clips-heading">
         <div className="wrap">
-          <h2 id="audio-clips-heading" className="sec-eyebrow">El país por los sentidos</h2>
-          <p className="sec-title">Escucha nuestros momentos más top</p>
+          <h2 id="audio-clips-heading" className="sec-eyebrow">Escucha nuestros momentos más top</h2>
+          <p className="sec-title">El país por los sentidos</p>
           <div className="audio-cards">
             <div className="audio-card">
               <div className="audio-card__header">
@@ -353,8 +353,8 @@ export default function Home() {
       {posts && posts.title && (
         <section>
           <div className="wrap">
-            <h2 className="sec-eyebrow">Del blog</h2>
-            <p className="sec-title">¿Cómo se vive? El país por los sentidos</p>
+            <h2 className="sec-eyebrow">¿Cómo se vive?</h2>
+            <p className="sec-title">Por si quieres saber más</p>
             <div className="blog-preview-card">
               <h3>{posts.title}</h3>
               <p>{posts.excerpt}</p>

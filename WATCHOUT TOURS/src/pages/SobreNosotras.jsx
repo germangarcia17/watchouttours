@@ -42,8 +42,8 @@ export default function SobreNosotras() {
         <div className="dots-texture"></div>
         <div className="wrap sn-hero-grid">
           <div className="sn-hero-inner">
-            <span className="sec-eyebrow">El corazón del proyecto</span>
-            <h1 className="sn-titulo">Mucho más<br />que un viaje.</h1>
+            <h1 className="sec-eyebrow">El corazón del proyecto</h1>
+            <p className="sn-titulo">Mucho más<br />que un viaje.</p>
             <p className="sn-intro">
               Watchout nace del deseo de crear experiencias donde las personas ciegas o con
               discapacidad visual puedan descubrir Nueva Zelanda desde un lugar más sensorial,
