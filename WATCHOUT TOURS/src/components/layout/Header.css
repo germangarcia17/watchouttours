@@ -13,35 +13,35 @@
 }
 
 .brand-badge {
-  background: var(--ink, #15140F);
-  border-radius: 16px;
-  padding: 10px 20px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  --focus: #15140F;
 }
 
 .brand-badge:hover {
   text-decoration: none;
 }
 
-/* Variante clara: logo de letras negras sobre fondo blanco */
-.brand-badge--light {
+/* Emblema circular sobre fondo blanco */
+.brand-badge__circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   background: #ffffff;
   border: 1px solid var(--line, #CFC4A8);
-  --focus: #15140F;
-}
-
-.brand-badge__letras {
-  height: 34px;
-  width: auto;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
 .brand-badge__img {
-  height: 44px;
-  width: auto;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
   display: block;
 }
 
@@ -49,7 +49,7 @@
   font-family: 'Sora', sans-serif;
   font-weight: 800;
   font-size: 18px;
-  color: var(--paper, #ECE7DD);
+  color: var(--ink, #15140F);
   letter-spacing: -.01em;
   white-space: nowrap;
 }
