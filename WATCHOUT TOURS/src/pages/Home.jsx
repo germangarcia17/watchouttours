@@ -27,10 +27,10 @@ function calcularTiempo() {
 function SeparadorBaston() {
   return (
     <div className="separador-baston" aria-hidden="true">
-      <svg viewBox="0 0 240 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 880 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M18 14 q-8 -10 4 -10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-        <line x1="20" y1="13" x2="212" y2="19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="219" cy="19.5" r="5" fill="currentColor" />
+        <line x1="20" y1="13" x2="852" y2="19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+        <circle cx="859" cy="19.5" r="5" fill="currentColor" />
       </svg>
     </div>
   )
