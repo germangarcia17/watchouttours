@@ -12,6 +12,7 @@ import BlogPost        from './pages/BlogPost'
 import Contacto        from './pages/Contacto'
 import Accesibilidad   from './pages/Accesibilidad'
 import Privacidad      from './pages/Privacidad'
+import AvisoLegal      from './pages/AvisoLegal'
 import NotFound        from './pages/NotFound'
 
 import AdminLogin      from './pages/admin/Login'
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/contacto"         element={<Contacto />} />
         <Route path="/accesibilidad"    element={<Accesibilidad />} />
         <Route path="/privacidad"       element={<Privacidad />} />
+        <Route path="/aviso-legal"      element={<AvisoLegal />} />
         <Route path="*"                 element={<NotFound />} />
       </Route>
 

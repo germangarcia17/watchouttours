@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useForm, ValidationError } from '@formspree/react'
 import '../styles/pagestyle/Contacto.css'
 
@@ -28,6 +29,9 @@ export default function Contacto() {
 
     if (!data.get('canal'))
       e.canal = 'Elige cómo prefieres que te escribamos.'
+
+    if (!data.get('privacidad'))
+      e.privacidad = 'Para poder responderte necesitamos que aceptes la política de privacidad.'
 
     return e
   }
@@ -234,6 +238,29 @@ export default function Contacto() {
                     Cuéntanos un poco <span className="form-optional">(si te apetece)</span>
                   </label>
                   <textarea id="mensaje" name="mensaje" rows={4} placeholder="¿Qué te gustaría vivir? ¿Viajas solo o acompañado? ¿Tienes fechas en mente?" className="form-control" />
+                </div>
+
+                {/* Consentimiento de privacidad (RGPD) */}
+                <div className="form-field form-consent">
+                  <label className="form-consent-label">
+                    <input
+                      type="checkbox"
+                      name="privacidad"
+                      value="aceptada"
+                      aria-describedby="privacidad-info"
+                      aria-invalid={errors.privacidad ? 'true' : undefined}
+                    />
+                    <span>He leído y acepto la <Link to="/privacidad">política de privacidad</Link>.</span>
+                  </label>
+                  {errors.privacidad && (
+                    <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{errors.privacidad}</p>
+                  )}
+                  <p id="privacidad-info" className="form-consent-info">
+                    Responsable: Watchout Tours Ltd. · Finalidad: responder a tu consulta y hablar
+                    contigo sobre tu viaje. No usamos tus datos para publicidad ni los cedemos a
+                    terceros. Puedes ejercer tus derechos de acceso, rectificación y supresión
+                    escribiendo a info@watchouttours.nz.
+                  </p>
                 </div>
 
                 <button type="submit" disabled={state.submitting} className="btn btn-solid btn--wide">

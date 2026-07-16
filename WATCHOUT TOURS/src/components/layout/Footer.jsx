@@ -53,6 +53,7 @@ export function Footer() {
           <ul role="list" className="footer-col__list">
             <li><Link to="/accesibilidad">Accesibilidad</Link></li>
             <li><Link to="/privacidad">Privacidad</Link></li>
+            <li><Link to="/aviso-legal">Aviso legal</Link></li>
           </ul>
         </nav>
 
