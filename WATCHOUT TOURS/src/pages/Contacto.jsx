@@ -71,7 +71,7 @@ export default function Contacto() {
       <section className="contacto-hero">
         <div className="dots-texture"></div>
         <div className="wrap contacto-hero-inner">
-          <span className="sec-eyebrow">Sin compromiso · sin prisa · sin rollos</span>
+          <span className="sec-eyebrow" aria-hidden="true">Sin compromiso · sin prisa · sin rollos</span>
           <h1 className="contacto-titulo">¿Lo hacemos realidad?</h1>
           <p className="contacto-intro">
             Escríbenos y nos tomamos un café virtual, de tú a tú. Nos cuentas qué sueñas,
@@ -121,10 +121,11 @@ export default function Contacto() {
         <div className="wrap contacto-form-wrap">
           <div className="contacto-form-card">
             <h2 className="contacto-form-titulo">Cuéntanoslo por aquí</h2>
+            <span className="sr-only">inicio del formulario</span>
 
             {state.succeeded ? (
               <p role="status" aria-live="polite" className="form-status--success">
-                ¡Recibido! Te escribimos en menos de 48 horas para ponernos cara (o voz).
+                ¡Recibido! Nos pondremos en contacto contigo en menos de 48 horas.
               </p>
             ) : (
               <form onSubmit={handleSubmit} aria-label="Formulario de contacto">

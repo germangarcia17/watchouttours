@@ -60,6 +60,7 @@ export default function Blog() {
           {destacado && (
             <article className="blog-destacado">
               <div className="blog-destacado__meta">
+                <span className="sr-only">articulo destacado:</span>
                 {destacado.published_at && (
                   <time dateTime={destacado.published_at}>{formatearFecha(destacado.published_at)}</time>
                 )}
@@ -79,6 +80,7 @@ export default function Blog() {
               {resto.map(post => (
                 <li key={post.id}>
                   <article className="blog-card">
+                    <span className="sr-only">siguiente artículo</span>
                     <div className="blog-card__meta">
                       {post.published_at && (
                         <time dateTime={post.published_at}>{formatearFecha(post.published_at)}</time>
