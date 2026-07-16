@@ -128,8 +128,9 @@ export default function Home() {
 
         <div className="wrap">
           <div className="stats">
+            <span className="sr-only">Separador de estadísticas</span>
             <div className="stat"><div className="n">2</div><div className="l">Formatos: viajes en grupo y a medida</div></div>
-            <div className="stat"><div className="n">3–6</div><div className="l">Viajeros por salida</div></div>
+            <div className="stat"><div className="n">3 a 6</div><div className="l">Viajeros por salida</div></div>
             <div className="stat"><div className="n">2</div><div className="l">Guías full-time, todo el viaje</div></div>
           </div>
         </div>
@@ -149,8 +150,9 @@ export default function Home() {
               <p>Porque la mejor forma de conocer Nueva Zelanda no siempre es con la vista, sino con todos los sentidos.</p>
             </div>
             <div className="intro-card">
-              <p>"Lo mejor de este viaje no se ve — se escucha, se toca, se siente."</p>
               <span className="tag">Filosofía Watchout</span>
+              <p>"Lo mejor de este viaje no se ve — se escucha, se toca, se siente."</p>
+              
             </div>
           </div>
         </div>
@@ -164,6 +166,7 @@ export default function Home() {
           <h2 className="sec-eyebrow">Lo que van a vivir</h2>
           <p className="sec-title">Nuestra forma de explorar Nueva Zelanda</p>
           <p className="sec-sub">No ponemos límites a la aventura. Cada ruta combina adrenalina, inmersión sensorial y auténtica cultura maorí.</p>
+          <span className="sr-only">¿qué vas a sentir?</span>
           <div className="pillars">
             <div className="pillar">
               <div className="ico" aria-hidden="true">🪂</div>
@@ -196,7 +199,7 @@ export default function Home() {
                 controls
                 playsInline
                 preload="metadata"
-                aria-label="Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. Se escucha al instructor gritar «corre, corre, corre», el despegue y la emoción del vuelo."
+                aria-label="Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. nuestro valiente aventurero corre hacia un barranco y ¡salta!, el despegue y la emoción de tocar el cielo por primera vez."
               />
             </div>
             <div className="reel-copy">
@@ -223,12 +226,14 @@ export default function Home() {
             <div className="testi-grid">
               {resenaDestacada.map(resena => (
                 <div key={resena.id} className="testi">
+                  <span className="sr-only">contenido de la reseña</span>
                   <q>{resena.content}</q>
+                  <span className="sr-only">reseña de:</span>
                   <div className="who">{resena.author_name}</div>
                   {resena.video_url && (
                     <details className="testi-video">
                       <summary>Escuchar testimonio</summary>
-                      <video src={resena.video_url} controls playsInline preload="metadata" aria-label={`Testimonio en vídeo de ${resena.author_name}`} />
+                      <video src={resena.video_url} controls playsInline preload="metadata" aria-label={`Testimonio en vídeo de ${resena.author_name} sobre su experiencia`} />
                     </details>
                   )}
                 </div>
@@ -249,14 +254,14 @@ export default function Home() {
           <div className="ink-block rutas-black">
             <h2 className="sec-eyebrow">Nuestras opciones</h2>
             <p className="sec-title">Dos maneras de vivirlo</p>
-            <p className="sec-sub">La misma ruta, tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.</p>
+            <p className="sec-sub">La misma ruta, tu escojes tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.</p>
 
             <div className="prod-list">
               {formatos.map(({ id, etiqueta, titulo, cuerpo, precioTitulo, precioNota, incluye, cta }) => (
                 <article key={id} id={id} aria-labelledby={`${id}-heading`} className="prod-card">
                   <div className="prod-card__head">
-                    <span className="prod-card__etiqueta">{etiqueta}</span>
                     <h3 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h3>
+                    <span className="prod-card__etiqueta">{etiqueta}</span>
                     <p className="prod-card__desc">{cuerpo}</p>
                   </div>
 
@@ -277,7 +282,7 @@ export default function Home() {
               <div
                 className="contador"
                 role="timer"
-                aria-label={`${tiempo.dias} días y ${tiempo.horas} horas para el próximo viaje en grupo`}
+                aria-hidden="true"
               >
                 {unidades.map(({ label, valor }) => (
                   <div key={label} className="contador__bloque" aria-hidden="true">
@@ -300,11 +305,13 @@ export default function Home() {
           <p className="sec-title">El país por los sentidos</p>
           <div className="audio-cards">
             <div className="audio-card">
+              <span className="sr-only">primer audio</span>
               <div className="audio-card__header">
                 <span className="audio-card__icono" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
                 </span>
                 <div>
+                  
                   <h3 className="audio-card__titulo">¡Salto en parapente!</h3>
                   <span className="audio-card__etiqueta">Así suena volar por primera vez</span>
                 </div>
@@ -313,6 +320,7 @@ export default function Home() {
               <AudioPlayer src={audioParapente} playerId="parapente" playingId={playingAudio} setPlayingId={setPlayingAudio} label="Salto en parapente" />
             </div>
             <div className="audio-card">
+              <span className="sr-only">segundo audio</span>
               <div className="audio-card__header">
                 <span className="audio-card__icono" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
