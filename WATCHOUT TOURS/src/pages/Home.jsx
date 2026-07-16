@@ -130,7 +130,8 @@ export default function Home() {
           <div className="stats">
             <span className="sr-only">Separador de estadísticas</span>
             <div className="stat"><div className="n">2</div><div className="l">Formatos: viajes en grupo y a medida</div></div>
-            <div className="stat"><div className="n">3 a 6</div><div className="l">Viajeros por salida</div></div>
+            <span className="sr-only">3-6 Viajeros por salida</span>
+            <div className="stat" aria-hidden="true"><div className="n">3 - 6</div><div className="l">Viajeros por salida</div></div>
             <div className="stat"><div className="n">2</div><div className="l">Guías full-time, todo el viaje</div></div>
           </div>
         </div>
