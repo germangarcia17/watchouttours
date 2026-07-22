@@ -23,14 +23,20 @@ function calcularTiempo() {
   }
 }
 
-/* Separador de secciones: un bastón de movilidad estilizado (decorativo) */
+/* Separador de secciones: un pequeño bastón de ciego estilizado (decorativo).
+   Mango curvo arriba, caña diagonal y puntera esférica abajo. */
 function SeparadorBaston() {
   return (
     <div className="separador-baston" aria-hidden="true">
-      <svg viewBox="0 0 880 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 14 q-8 -10 4 -10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-        <line x1="20" y1="13" x2="852" y2="19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="859" cy="19.5" r="5" fill="currentColor" />
+      <svg viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M24 7 q-9 0 -9 9 L33 46"
+          stroke="currentColor"
+          strokeWidth="3.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="34" cy="48.5" r="4.6" fill="currentColor" />
       </svg>
     </div>
   )

@@ -26,6 +26,20 @@ export function Footer() {
             </svg>
             Escríbenos por WhatsApp
           </a>
+          <a
+            href="https://www.instagram.com/watchouttours/"
+            className="footer-instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Síguenos en Instagram"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="2" y="2" width="20" height="20" rx="5.5" ry="5.5" fill="none" stroke="currentColor" strokeWidth="2" />
+              <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="2" />
+              <circle cx="17.6" cy="6.4" r="1.4" fill="currentColor" />
+            </svg>
+            Síguenos en Instagram
+          </a>
         </div>
 
         {/* Columna Nosotras */}

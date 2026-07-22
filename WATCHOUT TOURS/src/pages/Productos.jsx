@@ -10,7 +10,7 @@ const formatos = [
     etiqueta: '14 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos',
     titulo: 'La aventura compartida',
     cuerpo: 'Un grupo pequeñito de gente con las mismas ganas que tú de comerse el mundo. 13 noches recorriendo Nueva Zelanda, riéndonos, flipando y sintiéndolo todo juntos. De esos viajes de los que vuelves con amigos para toda la vida. Y siempre nosotras dos pegadas al grupo, de principio a fin.',
-    precioTitulo: 'Desde 9.500 € por persona · todo incluido',
+    precioTitulo: 'Desde 9.500 € por persona',
     precioNota: 'Viajamos de 3 a 6 personas. Sin letra pequeña: te damos el número exacto en cuanto hablemos.',
     incluye: 'Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 13 noches.',
     cta: 'Quiero apuntarme',
@@ -50,7 +50,7 @@ export default function Productos() {
                 <div className="prod-card__footer">
                   <p className="prod-card__precio">{precioTitulo}</p>
                   <p className="prod-card__precio-nota">{precioNota}</p>
-                  <p className="prod-card__incluye-nota"><strong>Todo incluido:</strong> {incluye}</p>
+                  <p className="prod-card__incluye-nota"><strong>Incluye:</strong> {incluye}</p>
                   <div className="cta-row">
                     <Link to="/contacto" className="btn btn-solid">{cta}</Link>
                   </div>

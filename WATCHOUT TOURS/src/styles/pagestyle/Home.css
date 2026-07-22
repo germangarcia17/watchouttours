@@ -783,7 +783,7 @@
 }
 
 .separador-baston svg {
-  width: min(880px, 100%);
+  width: 40px;
   height: auto;
 }
 

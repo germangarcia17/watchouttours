@@ -131,6 +131,34 @@ body {
   flex-shrink: 0;
 }
 
+.footer-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  font-size: 0.875rem;
+  /* Magenta oscurecido de Instagram: 4.9:1 sobre el fondo del footer */
+  color: #A21C68;
+  background-color: rgba(162, 28, 104, 0.06);
+  text-decoration: none;
+  border: 2px solid #A21C68;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  width: fit-content;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.footer-instagram:hover {
+  background-color: rgba(162, 28, 104, 0.13);
+}
+
+.footer-instagram svg {
+  width: 1rem;
+  height: 1rem;
+  color: #A21C68;
+  flex-shrink: 0;
+}
+
 .footer-col__heading {
   font-family: var(--font-family-heading);
   font-size: 0.75rem;
