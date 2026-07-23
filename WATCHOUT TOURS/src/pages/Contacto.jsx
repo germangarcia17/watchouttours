@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useForm, ValidationError } from '@formspree/react'
 import { L } from '../i18n/routing'
@@ -12,8 +12,15 @@ export default function Contacto() {
   const { t } = useTranslation()
   const [state, handleFormspreeSubmit] = useForm('xykqrkjq')
   const [errors, setErrors] = useState({})
+  const successRef = useRef(null)
 
   useEffect(() => { document.title = t('contacto.docTitle') }, [t])
+
+  // Al enviarse con éxito, movemos el foco al mensaje de confirmación para
+  // que el lector de pantalla lo lea (además de la región aria-live).
+  useEffect(() => {
+    if (state.succeeded) successRef.current?.focus()
+  }, [state.succeeded])
 
   const canales = t('contacto.canalesOpciones', { returnObjects: true })
   const tiposViaje = t('contacto.tiposViaje', { returnObjects: true })
@@ -124,14 +131,25 @@ export default function Contacto() {
         <div className="wrap contacto-form-wrap">
           <div className="contacto-form-card">
             <h2 className="contacto-form-titulo">{t('contacto.formTitle')}</h2>
-            <span className="sr-only">{t('contacto.formStartSr')}</span>
 
-            {state.succeeded ? (
-              <p role="status" aria-live="polite" className="form-status--success">
-                {t('contacto.success')}
-              </p>
-            ) : (
+            {/* Región viva SIEMPRE presente en el DOM: así, cuando su contenido
+                pasa de vacío al mensaje de éxito, el lector de pantalla lo
+                anuncia. (Si se montara solo al enviar, no se anunciaría.) */}
+            <p
+              ref={successRef}
+              tabIndex={-1}
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+              className={state.succeeded ? 'form-status--success' : 'sr-only'}
+            >
+              {state.succeeded ? t('contacto.success') : ''}
+            </p>
+
+            {!state.succeeded && (
               <form onSubmit={handleSubmit} aria-label={t('contacto.formAria')}>
+                <span className="sr-only">{t('contacto.formStartSr')}</span>
+
 
                 {/* Honeypot antibot */}
                 <div aria-hidden="true" style={{ display: 'none' }}>
