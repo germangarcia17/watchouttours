@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { Seo } from '../components/Seo'
+import { L } from '../i18n/routing'
 import '../styles/pagestyle/Resenas.css'
 
 export default function Resenas() {
+  const { t } = useTranslation()
   const [resenas, setResenas] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -28,27 +30,27 @@ export default function Resenas() {
     <>
       <Seo
         pageType="reseñas"
-        title="Reseñas | Watchout Tours"
-        description="Lo que cuentan quienes han viajado con nosotras por Nueva Zelanda. Sin filtros, sin actores."
+        title={t('resenas.seo.title')}
+        description={t('resenas.seo.description')}
       />
 
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="rs-hero">
         <div className="dots-texture"></div>
         <div className="wrap rs-hero-inner">
-          <span className="sec-eyebrow">Lo que cuentan</span>
-          <h1 className="rs-titulo">Reseñas de viajeros</h1>
+          <span className="sec-eyebrow">{t('resenas.eyebrow')}</span>
+          <h1 className="rs-titulo">{t('resenas.title')}</h1>
           <p className="rs-intro">
-            Sin filtros. Sin actores. Solo las palabras de quienes han viajado con nosotras.
+            {t('resenas.intro')}
           </p>
         </div>
       </section>
 
       <section className="rs-listado">
         <div className="wrap">
-          {loading && <p className="rs-estado" role="status">Cargando reseñas…</p>}
+          {loading && <p className="rs-estado" role="status">{t('resenas.loading')}</p>}
           {!loading && resenas.length === 0 && (
-            <p className="rs-estado">Las reseñas se publicarán próximamente.</p>
+            <p className="rs-estado">{t('resenas.empty')}</p>
           )}
 
           {/* ── Destacadas ─────────────────────────────── */}
@@ -57,7 +59,7 @@ export default function Resenas() {
               {destacadas.map(r => (
                 <li key={r.id}>
                   <article className="rs-destacada">
-                    <span className="rs-destacada__label">Reseña destacada</span>
+                    <span className="rs-destacada__label">{t('resenas.featuredLabel')}</span>
                     <blockquote className="rs-destacada__quote">
                       <p>&ldquo;{r.content}&rdquo;</p>
                     </blockquote>
@@ -67,8 +69,8 @@ export default function Resenas() {
                     </footer>
                     {r.video_url && (
                       <details className="testi-video testi-video--claro">
-                        <summary>Escuchar testimonio</summary>
-                        <video src={r.video_url} controls playsInline preload="metadata" aria-label={`Testimonio en vídeo de ${r.author_name}`} />
+                        <summary>{t('resenas.listen')}</summary>
+                        <video src={r.video_url} controls playsInline preload="metadata" aria-label={t('resenas.videoAria', { name: r.author_name })} />
                       </details>
                     )}
                   </article>
@@ -92,8 +94,8 @@ export default function Resenas() {
                     </footer>
                     {r.video_url && (
                       <details className="testi-video">
-                        <summary>Escuchar testimonio</summary>
-                        <video src={r.video_url} controls playsInline preload="metadata" aria-label={`Testimonio en vídeo de ${r.author_name}`} />
+                        <summary>{t('resenas.listen')}</summary>
+                        <video src={r.video_url} controls playsInline preload="metadata" aria-label={t('resenas.videoAria', { name: r.author_name })} />
                       </details>
                     )}
                   </article>
@@ -107,10 +109,10 @@ export default function Resenas() {
       {/* ── CTA ──────────────────────────────────────── */}
       <section className="rs-cta">
         <div className="wrap rs-cta-inner">
-          <h2 className="sec-title">¿La próxima reseña será la tuya?</h2>
+          <h2 className="sec-title">{t('resenas.ctaTitle')}</h2>
           <div className="cta-row" style={{ justifyContent: 'center' }}>
-            <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
-            <Link to="/productos" className="btn btn-outline">Ver las rutas</Link>
+            <L to="/contacto" className="btn btn-solid">{t('resenas.ctaPrimary')}</L>
+            <L to="/productos" className="btn btn-outline">{t('resenas.ctaSecondary')}</L>
           </div>
         </div>
       </section>

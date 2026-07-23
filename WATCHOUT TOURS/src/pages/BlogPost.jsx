@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import { sanitizeHtml } from '../lib/sanitizeHtml'
 import { supabase } from '../lib/supabase'
+import { L, useLang } from '../i18n/routing'
 import '../styles/pagestyle/BlogPost.css'
 
 export default function BlogPost() {
+  const { t } = useTranslation()
+  const lang = useLang()
   const { slug }          = useParams()
   const [post, setPost]   = useState(null)
   const [loading, setLoading] = useState(true)
@@ -30,17 +34,17 @@ export default function BlogPost() {
 
   if (loading) return (
     <section className="post-estado-section">
-      <div className="wrap"><p className="post-estado" role="status">Cargando…</p></div>
+      <div className="wrap"><p className="post-estado" role="status">{t('post.loading')}</p></div>
     </section>
   )
 
   if (notFound) return (
     <section className="post-estado-section">
       <div className="wrap post-notfound">
-        <span className="sec-eyebrow">Ups</span>
-        <h1 className="post-notfound__titulo">Artículo no encontrado</h1>
-        <p className="post-estado">Puede que el enlace haya cambiado o que el artículo ya no exista.</p>
-        <Link to="/blog" className="btn btn-outline"><span aria-hidden="true">← </span>Volver al blog</Link>
+        <span className="sec-eyebrow">{t('post.oops')}</span>
+        <h1 className="post-notfound__titulo">{t('post.notFoundTitle')}</h1>
+        <p className="post-estado">{t('post.notFoundText')}</p>
+        <L to="/blog" className="btn btn-outline"><span aria-hidden="true">← </span>{t('post.backToBlog')}</L>
       </div>
     </section>
   )
@@ -79,13 +83,13 @@ export default function BlogPost() {
         <div className="dots-texture"></div>
         <div className="wrap post-hero-inner">
           <p className="post-meta">
-            <Link to="/blog" className="post-meta__volver"><span aria-hidden="true">← </span>Volver al blog</Link>
+            <L to="/blog" className="post-meta__volver"><span aria-hidden="true">← </span>{t('post.backToBlog')}</L>
             {post.published_at && (
               <time dateTime={post.published_at}>
-                {new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(post.published_at))}
+                {new Intl.DateTimeFormat(lang === 'en' ? 'en-NZ' : 'es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(post.published_at))}
               </time>
             )}
-            {post.reading_time && <span>· {post.reading_time} min de lectura</span>}
+            {post.reading_time && <span>· {t('post.readTime', { count: post.reading_time })}</span>}
           </p>
           <h1 id="post-heading" className="post-titulo">{post.title}</h1>
           {post.excerpt && <p className="post-excerpt">{post.excerpt}</p>}
@@ -111,8 +115,8 @@ export default function BlogPost() {
         />
 
         <footer className="post-footer">
-          <Link to="/blog" className="btn btn-outline"><span aria-hidden="true">← </span>Volver al blog</Link>
-          <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
+          <L to="/blog" className="btn btn-outline"><span aria-hidden="true">← </span>{t('post.backToBlog')}</L>
+          <L to="/contacto" className="btn btn-solid">{t('post.cta')}</L>
         </footer>
       </div>
     </article>

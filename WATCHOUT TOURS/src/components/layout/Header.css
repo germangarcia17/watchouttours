@@ -81,6 +81,34 @@
   border-color: var(--ink, #15140F);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--ink, #15140F);
+  text-decoration: none;
+  border: 1px solid var(--line, #CFC4A8);
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color .2s, background-color .2s;
+}
+
+.lang-switch:hover {
+  border-color: var(--ink, #15140F);
+  text-decoration: none;
+}
+
 .menu-toggle {
   display: none;
   background: none;

@@ -23,24 +23,39 @@ import AdminResenas    from './pages/admin/ResenasAdmin'
 import AdminImagenes   from './pages/admin/ImagenesAdmin'
 import AdminSeo        from './pages/admin/SeoAdmin'
 
+/* Rutas públicas (hijas del Layout). Se renderizan dos veces: sin prefijo
+   (español, por defecto) y bajo /en (inglés). Los slugs se mantienen; solo
+   cambia el prefijo de idioma. `prefix` es '' para ES y '/en' para EN, y se
+   usa para que los redirects apunten al idioma correcto. */
+function paginasPublicas(prefix) {
+  return [
+    <Route key="home"    index                    element={<Home />} />,
+    <Route key="sn"      path="sobre-nosotras"    element={<SobreNosotras />} />,
+    <Route key="prod"    path="productos"         element={<Productos />} />,
+    <Route key="res"     path="resenas"           element={<Resenas />} />,
+    <Route key="blog"    path="blog"              element={<Blog />} />,
+    <Route key="post"    path="blog/:slug"        element={<BlogPost />} />,
+    <Route key="cont"    path="contacto"          element={<Contacto />} />,
+    <Route key="acc"     path="accesibilidad"     element={<Accesibilidad />} />,
+    <Route key="priv"    path="privacidad"        element={<Privacidad />} />,
+    <Route key="aviso"   path="aviso-legal"       element={<AvisoLegal />} />,
+    /* La filosofía vive ahora dentro de Sobre Nosotras */
+    <Route key="filo"    path="filosofia"         element={<Navigate to={`${prefix}/sobre-nosotras`} replace />} />,
+    <Route key="404"     path="*"                 element={<NotFound />} />,
+  ]
+}
+
 export default function App() {
   return (
     <Routes>
-      {/* Rutas públicas con layout principal */}
-      <Route element={<Layout />}>
-        <Route path="/"                 element={<Home />} />
-        <Route path="/sobre-nosotras"   element={<SobreNosotras />} />
-        {/* La filosofía vive ahora dentro de Sobre Nosotras */}
-        <Route path="/filosofia"        element={<Navigate to="/sobre-nosotras" replace />} />
-        <Route path="/productos"        element={<Productos />} />
-        <Route path="/resenas"          element={<Resenas />} />
-        <Route path="/blog"             element={<Blog />} />
-        <Route path="/blog/:slug"       element={<BlogPost />} />
-        <Route path="/contacto"         element={<Contacto />} />
-        <Route path="/accesibilidad"    element={<Accesibilidad />} />
-        <Route path="/privacidad"       element={<Privacidad />} />
-        <Route path="/aviso-legal"      element={<AvisoLegal />} />
-        <Route path="*"                 element={<NotFound />} />
+      {/* Rutas públicas en español (por defecto) */}
+      <Route path="/" element={<Layout />}>
+        {paginasPublicas('')}
+      </Route>
+
+      {/* Rutas públicas en inglés bajo /en */}
+      <Route path="/en" element={<Layout />}>
+        {paginasPublicas('/en')}
       </Route>
 
       {/* Login admin (sin layout principal ni protección) */}

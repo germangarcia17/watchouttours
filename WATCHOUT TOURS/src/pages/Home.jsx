@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import '../styles/pagestyle/Home.css'
 import imgHero from '../images/hero-home.webp'
@@ -8,6 +8,7 @@ import videoParapente from '../images/parapente-teaser.mp4'
 import { AudioPlayer } from '../components/AudioPlayer'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
+import { L } from '../i18n/routing'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 
@@ -42,39 +43,17 @@ function SeparadorBaston() {
   )
 }
 
-const formatos = [
-  {
-    id: 'grupo',
-    etiqueta: '14 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos',
-    titulo: 'La aventura compartida',
-    cuerpo: 'Un grupo reducido de viajeros con las mismas ganas que tú de descubrir el mundo. Durante 14 días recorreremos juntos Nueva Zelanda, compartiendo aventuras, risas y momentos que recordarás toda la vida. Porque algunos viajes terminan… y otros te regalan amistades para siempre. Nosotras estaremos a vuestro lado en cada paso del camino, desde el primer día hasta el último.',
-    precioTitulo: 'Desde 9.500 € por persona',
-    precioNota: 'Viajamos de 3 a 6 personas. Sin letra pequeña: te damos el número exacto en cuanto hablemos.',
-    incluye: 'Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 13 noches.',
-    cta: 'Quiero más información',
-  },
-  {
-    id: 'privado',
-    etiqueta: 'Privado · solo para ti y los tuyos · duración a tu ritmo',
-    titulo: 'Tu viaje, a tu medida',
-    cuerpo: 'Un viaje pensado solo para ti, y para quien quieras traer contigo. Nosotras dos, en exclusiva, diseñándolo a tu ritmo: tus días, tu energía, tu tiempo. Si quieres más calma, más calma. Si quieres más adrenalina, más adrenalina. Aquí no hay molde. Hay un viaje que te hacemos a medida, como un traje.',
-    precioTitulo: 'Precio a medida',
-    precioNota: 'Como lo diseñamos contigo, el precio también depende de ti: de cuántos días, de qué quieras vivir, de cómo lo sueñes. Sin compromiso.',
-    incluye: 'Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo de principio a fin.',
-    cta: 'Quiero más información',
-  },
-]
-
 export default function Home() {
+  const { t } = useTranslation()
   const [resenaDestacada, setResenaDestacada] = useState(null)
   const [posts, setPosts] = useState([])
   const [tiempo, setTiempo] = useState(calcularTiempo())
   const [playingAudio, setPlayingAudio] = useState(null)
 
-  const heroImg = useSiteImage('home', 'hero', imgHero,
-    'La montaña más alta de Nueva Zelanda, Aoraki / Mount Cook, una montaña nevada e imponente que sobresale entre los demás')
-  const nosotrasImg = useSiteImage('home', 'nosotras', imgNosotras,
-    'Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua')
+  const formatos = t('home.rutas.formatos', { returnObjects: true })
+
+  const heroImg = useSiteImage('home', 'hero', imgHero, t('home.heroImgAlt'))
+  const nosotrasImg = useSiteImage('home', 'nosotras', imgNosotras, t('home.nosotras.imgAlt'))
 
   useEffect(() => {
     supabase
@@ -102,16 +81,16 @@ export default function Home() {
   }, [])
 
   const unidades = [
-    { label: 'Días', valor: tiempo.dias },
-    { label: 'Horas', valor: tiempo.horas },
+    { label: t('home.rutas.dias'), valor: tiempo.dias },
+    { label: t('home.rutas.horas'), valor: tiempo.horas },
   ]
 
   return (
     <>
       <Seo
         pageType="home"
-        title="Watchout Tours — Viajes sensoriales por Nueva Zelanda"
-        description="Viajes sensoriales por Nueva Zelanda para personas ciegas y con baja visión. Dos guías, contigo de principio a fin."
+        title={t('home.seo.title')}
+        description={t('home.seo.description')}
       />
 
       {/* ── Hero ──────────────────────────────────────── */}
@@ -119,12 +98,12 @@ export default function Home() {
         <div className="dots-texture"></div>
         <div className="wrap hero-grid">
           <div className="hero-inner">
-            <h1 className="eyebrow">Viajes sensoriales por Nueva Zelanda para personas ciegas y con baja visión</h1>
-            <p className='hero-big-text'>No toda visión<br />necesita ojos.</p>
-            <p>Dos guías, contigo de principio a fin. Sin límites.</p>
+            <h1 className="eyebrow">{t('home.hero.eyebrow')}</h1>
+            <p className="hero-big-text">{t('home.hero.big1')}<br />{t('home.hero.big2')}</p>
+            <p>{t('home.hero.sub')}</p>
             <div className="cta-row">
-              <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
-              <Link to="/resenas" className="btn btn-outline">Mira cómo lo vivimos</Link>
+              <L to="/contacto" className="btn btn-solid">{t('home.hero.ctaPrimary')}</L>
+              <L to="/resenas" className="btn btn-outline">{t('home.hero.ctaSecondary')}</L>
             </div>
           </div>
           <div className="hero-photo-panel">
@@ -134,11 +113,11 @@ export default function Home() {
 
         <div className="wrap">
           <div className="stats">
-            <span className="sr-only">Separador de estadísticas</span>
-            <div className="stat"><div className="n">2</div><div className="l">Formatos: viajes en grupo y a medida</div></div>
-            <span className="sr-only">3-6 Viajeros por salida</span>
-            <div className="stat" aria-hidden="true"><div className="n">3 - 6</div><div className="l">Viajeros por salida</div></div>
-            <div className="stat"><div className="n">2</div><div className="l">Guías full-time, todo el viaje</div></div>
+            <span className="sr-only">{t('home.stats.sep')}</span>
+            <div className="stat"><div className="n">2</div><div className="l">{t('home.stats.l1')}</div></div>
+            <span className="sr-only">{t('home.stats.sr2')}</span>
+            <div className="stat" aria-hidden="true"><div className="n">3 - 6</div><div className="l">{t('home.stats.l2')}</div></div>
+            <div className="stat"><div className="n">2</div><div className="l">{t('home.stats.l3')}</div></div>
           </div>
         </div>
       </section>
@@ -148,18 +127,17 @@ export default function Home() {
         <div className="wrap">
           <div className="intro-grid">
             <div>
-              <h2 className="sec-eyebrow">¿Cómo son nuestros viajes?</h2>
-              <p className="sec-title">Se vive con las manos, el oído y la piel</p>
-              <p>Nueva Zelanda está lejos. Pero no tiene por qué sentirse inalcanzable.</p>
-              <p>Hemos diseñado experiencias para que las personas ciegas y con baja visión puedan descubrir este país con seguridad, autonomía y emoción.</p>
-              <p>Sentir la brisa y el agua fría en el rostro en Milford Sound. Notar el calor geotermal de Rotorua. Recorrer con las manos el tallado de los diseños maoríes. Cruzar la puerta de la casa de Bilbo y adentrarte en Hobbiton como un auténtico hobbit.</p>
-              <p>Y esto es solo el principio.</p>
-              <p>Porque la mejor forma de conocer Nueva Zelanda no siempre es con la vista, sino con todos los sentidos.</p>
+              <h2 className="sec-eyebrow">{t('home.viajes.eyebrow')}</h2>
+              <p className="sec-title">{t('home.viajes.title')}</p>
+              <p>{t('home.viajes.p1')}</p>
+              <p>{t('home.viajes.p2')}</p>
+              <p>{t('home.viajes.p3')}</p>
+              <p>{t('home.viajes.p4')}</p>
+              <p>{t('home.viajes.p5')}</p>
             </div>
             <div className="intro-card">
-              <span className="tag">Filosofía Watchout</span>
-              <p>"Lo mejor de este viaje no se ve — se escucha, se toca, se siente."</p>
-              
+              <span className="tag">{t('home.viajes.tag')}</span>
+              <p>{t('home.viajes.quote')}</p>
             </div>
           </div>
         </div>
@@ -170,25 +148,25 @@ export default function Home() {
       {/* ── Nuestra forma de explorar ─────────────────── */}
       <section>
         <div className="wrap">
-          <h2 className="sec-eyebrow">Lo que van a vivir</h2>
-          <p className="sec-title">Nuestra forma de explorar Nueva Zelanda</p>
-          <p className="sec-sub">No ponemos límites a la aventura. Cada ruta combina adrenalina, inmersión sensorial y auténtica cultura maorí.</p>
-          <span className="sr-only">¿qué vas a sentir?</span>
+          <h2 className="sec-eyebrow">{t('home.explorar.eyebrow')}</h2>
+          <p className="sec-title">{t('home.explorar.title')}</p>
+          <p className="sec-sub">{t('home.explorar.sub')}</p>
+          <span className="sr-only">{t('home.explorar.srQ')}</span>
           <div className="pillars">
             <div className="pillar">
               <div className="ico" aria-hidden="true">🪂</div>
-              <h3>Adrenalina y superación</h3>
-              <p>Parapente en Queenstown, kayak en Kaikōura, lanchas rápidas. Sin límites mentales.</p>
+              <h3>{t('home.explorar.p1Title')}</h3>
+              <p>{t('home.explorar.p1Text')}</p>
             </div>
             <div className="pillar">
               <div className="ico" aria-hidden="true">✋</div>
-              <h3>Inmersión sensorial</h3>
-              <p>El tacto, el olfato y el oído como guía: Hobbiton, Rotorua, Milford Sound, Te Puia.</p>
+              <h3>{t('home.explorar.p2Title')}</h3>
+              <p>{t('home.explorar.p2Text')}</p>
             </div>
             <div className="pillar">
               <div className="ico" aria-hidden="true">🌊</div>
-              <h3>Cultura y conexión</h3>
-              <p>El moko, el hāngi, el canto de las ballenas por hidrófono en Kaikōura.</p>
+              <h3>{t('home.explorar.p3Title')}</h3>
+              <p>{t('home.explorar.p3Text')}</p>
             </div>
           </div>
         </div>
@@ -206,18 +184,18 @@ export default function Home() {
                 controls
                 playsInline
                 preload="metadata"
-                aria-label="Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. nuestro valiente aventurero corre hacia un barranco y ¡salta!, el despegue y la emoción de tocar el cielo por primera vez."
+                aria-label={t('home.reel.videoAria')}
               />
             </div>
             <div className="reel-copy">
-              <h2 className="sec-eyebrow">Así se vive la aventura</h2>
-              <p className="callout">¿Quién dijo que el parapente era solo para algunos?</p>
-              <p>En Watchout creemos que la aventura no entiende de límites. Entiende de curiosidad, de emoción y de personas con ganas de lanzarse a vivir experiencias que recordarán toda la vida.</p>
-              <p>Este es uno de nuestros viajeros sobrevolando Queenstown. El viento en la cara, la sensación de libertad y esa mezcla de nervios y emoción justo antes de despegar… hay momentos que se quedan contigo para siempre.</p>
+              <h2 className="sec-eyebrow">{t('home.reel.eyebrow')}</h2>
+              <p className="callout">{t('home.reel.callout')}</p>
+              <p>{t('home.reel.p1')}</p>
+              <p>{t('home.reel.p2')}</p>
             </div>
           </div>
           <div className="reel-instagram">
-            <a className="btn btn-outline" href="https://www.instagram.com/watchouttours/" target="_blank" rel="noopener noreferrer">Ver más en Instagram<span className="sr-only"> (se abre en una pestaña nueva)</span></a>
+            <a className="btn btn-outline" href="https://www.instagram.com/watchouttours/" target="_blank" rel="noopener noreferrer">{t('home.reel.instagram')}<span className="sr-only"> {t('home.reel.newTab')}</span></a>
           </div>
         </div>
       </section>
@@ -228,26 +206,26 @@ export default function Home() {
       {resenaDestacada && resenaDestacada.length > 0 && (
         <section>
           <div className="wrap">
-            <h2 className="sec-eyebrow">Lo que cuentan</h2>
-            <p className="sec-title">Así lo viven nuestros viajeros</p>
+            <h2 className="sec-eyebrow">{t('home.testi.eyebrow')}</h2>
+            <p className="sec-title">{t('home.testi.title')}</p>
             <div className="testi-grid">
               {resenaDestacada.map(resena => (
                 <div key={resena.id} className="testi">
-                  <span className="sr-only">contenido de la reseña</span>
+                  <span className="sr-only">{t('home.testi.srContent')}</span>
                   <q>{resena.content}</q>
-                  <span className="sr-only">reseña de:</span>
+                  <span className="sr-only">{t('home.testi.srWho')}</span>
                   <div className="who">{resena.author_name}</div>
                   {resena.video_url && (
                     <details className="testi-video">
-                      <summary>Escuchar testimonio</summary>
-                      <video src={resena.video_url} controls playsInline preload="metadata" aria-label={`Testimonio en vídeo de ${resena.author_name} sobre su experiencia`} />
+                      <summary>{t('home.testi.listen')}</summary>
+                      <video src={resena.video_url} controls playsInline preload="metadata" aria-label={t('home.testi.videoAria', { name: resena.author_name })} />
                     </details>
                   )}
                 </div>
               ))}
             </div>
             <p style={{ textAlign: 'center', marginTop: '2rem' }}>
-              <Link to="/resenas">Leer más reseñas<span aria-hidden="true"> →</span></Link>
+              <L to="/resenas">{t('home.testi.more')}<span aria-hidden="true"> →</span></L>
             </p>
           </div>
         </section>
@@ -259,9 +237,9 @@ export default function Home() {
       <section id="rutas">
         <div className="wrap">
           <div className="ink-block rutas-black">
-            <h2 className="sec-eyebrow">Nuestras opciones</h2>
-            <p className="sec-title">Dos maneras de vivirlo</p>
-            <p className="sec-sub">La misma ruta, tu escojes tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.</p>
+            <h2 className="sec-eyebrow">{t('home.rutas.eyebrow')}</h2>
+            <p className="sec-title">{t('home.rutas.title')}</p>
+            <p className="sec-sub">{t('home.rutas.sub')}</p>
 
             <div className="prod-list">
               {formatos.map(({ id, etiqueta, titulo, cuerpo, precioTitulo, precioNota, incluye, cta }) => (
@@ -275,9 +253,9 @@ export default function Home() {
                   <div className="prod-card__footer">
                     <p className="prod-card__precio">{precioTitulo}</p>
                     <p className="prod-card__precio-nota">{precioNota}</p>
-                    <p className="prod-card__incluye-nota"><strong>Incluido:</strong> {incluye}</p>
+                    <p className="prod-card__incluye-nota"><strong>{t('home.rutas.incluido')}</strong> {incluye}</p>
                     <div className="cta-row">
-                      <Link to="/contacto" className="btn btn-solid">{cta}</Link>
+                      <L to="/contacto" className="btn btn-solid">{cta}</L>
                     </div>
                   </div>
                 </article>
@@ -285,7 +263,7 @@ export default function Home() {
             </div>
 
             <div className="contador-aviso">
-              <p className="contador-aviso__texto">¡Nuestro próximo viaje en grupo comienza en:</p>
+              <p className="contador-aviso__texto">{t('home.rutas.contadorAviso')}</p>
               <div
                 className="contador"
                 role="timer"
@@ -308,37 +286,36 @@ export default function Home() {
       {/* ── Audio clips ──────────────────────────────── */}
       <section aria-labelledby="audio-clips-heading">
         <div className="wrap">
-          <h2 id="audio-clips-heading" className="sec-eyebrow">Escucha nuestros momentos más top</h2>
-          <p className="sec-title">El país por los sentidos</p>
+          <h2 id="audio-clips-heading" className="sec-eyebrow">{t('home.audio.eyebrow')}</h2>
+          <p className="sec-title">{t('home.audio.title')}</p>
           <div className="audio-cards">
             <div className="audio-card">
-              <span className="sr-only">primer audio</span>
+              <span className="sr-only">{t('home.audio.sr1')}</span>
               <div className="audio-card__header">
                 <span className="audio-card__icono" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
                 </span>
                 <div>
-                  
-                  <h3 className="audio-card__titulo">¡Salto en parapente!</h3>
-                  <span className="audio-card__etiqueta">Así suena volar por primera vez</span>
+                  <h3 className="audio-card__titulo">{t('home.audio.card1Title')}</h3>
+                  <span className="audio-card__etiqueta">{t('home.audio.card1Tag')}</span>
                 </div>
               </div>
-              <p className="audio-card__descripcion">El viento en la cara, la sensación de libertad, el corazón latiendo al ritmo de la aventura.</p>
-              <AudioPlayer src={audioParapente} playerId="parapente" playingId={playingAudio} setPlayingId={setPlayingAudio} label="Salto en parapente" />
+              <p className="audio-card__descripcion">{t('home.audio.card1Desc')}</p>
+              <AudioPlayer src={audioParapente} playerId="parapente" playingId={playingAudio} setPlayingId={setPlayingAudio} label={t('home.audio.card1Label')} />
             </div>
             <div className="audio-card">
-              <span className="sr-only">segundo audio</span>
+              <span className="sr-only">{t('home.audio.sr2')}</span>
               <div className="audio-card__header">
                 <span className="audio-card__icono" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
                 </span>
                 <div>
-                  <h3 className="audio-card__titulo">La mordida de una alpaca</h3>
-                  <span className="audio-card__etiqueta">Un ataque inesperado</span>
+                  <h3 className="audio-card__titulo">{t('home.audio.card2Title')}</h3>
+                  <span className="audio-card__etiqueta">{t('home.audio.card2Tag')}</span>
                 </div>
               </div>
-              <p className="audio-card__descripcion">Ni siquiera en Nueva Zelanda estás a salvo de una alpaca curiosa.</p>
-              <AudioPlayer src={audioAlpaca} playerId="alpaca" playingId={playingAudio} setPlayingId={setPlayingAudio} label="La mordida de una alpaca" />
+              <p className="audio-card__descripcion">{t('home.audio.card2Desc')}</p>
+              <AudioPlayer src={audioAlpaca} playerId="alpaca" playingId={playingAudio} setPlayingId={setPlayingAudio} label={t('home.audio.card2Label')} />
             </div>
           </div>
         </div>
@@ -355,9 +332,9 @@ export default function Home() {
                 <img src={nosotrasImg.src} alt={nosotrasImg.alt} />
               </div>
               <div className="origin-inner">
-                <h2 className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>Nuestra historia</h2>
-                <p>Hace casi 8 años llegamos a Nueva Zelanda con una mochila llena de sueños e incertidumbre. Hoy somos Sylvie y Moni, las guías de Watchout — porque nadie como nosotras para contar, más allá de lo visual, la magia de este país que llamamos casa.</p>
-                <Link to="/sobre-nosotras" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>Conoce nuestra historia completa</Link>
+                <h2 className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('home.nosotras.eyebrow')}</h2>
+                <p>{t('home.nosotras.p')}</p>
+                <L to="/sobre-nosotras" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>{t('home.nosotras.cta')}</L>
               </div>
             </div>
           </div>
@@ -368,16 +345,16 @@ export default function Home() {
       {posts && posts.title && (
         <section>
           <div className="wrap">
-            <h2 className="sec-eyebrow">¿Cómo se vive?</h2>
-            <p className="sec-title">Por si quieres saber más</p>
+            <h2 className="sec-eyebrow">{t('home.blog.eyebrow')}</h2>
+            <p className="sec-title">{t('home.blog.title')}</p>
             <div className="blog-preview-card">
               <h3>{posts.title}</h3>
               <p>{posts.excerpt}</p>
-              <p className="reading-time">Tiempo de lectura: {posts.reading_time} mins</p>
-              <Link to={`/blog/${posts.slug}`} className="btn btn-outline">Leer artículo</Link>
+              <p className="reading-time">{t('home.blog.readingTime', { count: posts.reading_time })}</p>
+              <L to={`/blog/${posts.slug}`} className="btn btn-outline">{t('home.blog.readArticle')}</L>
             </div>
             <p style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-              <Link to="/blog">Ver todos los artículos<span aria-hidden="true"> →</span></Link>
+              <L to="/blog">{t('home.blog.seeAll')}<span aria-hidden="true"> →</span></L>
             </p>
           </div>
         </section>
@@ -386,17 +363,17 @@ export default function Home() {
       {/* ── CTA final ────────────────────────────────── */}
       <section className="final-cta">
         <div className="wrap">
-          <h2>¿No sabes por dónde empezar?</h2>
-          <p>Organizar un viaje accesible puede generar muchas preguntas.</p>
-          <p>Escríbenos. Resolveremos tus dudas y veremos juntas qué opción encaja mejor contigo.</p>
+          <h2>{t('home.finalCta.title')}</h2>
+          <p>{t('home.finalCta.p1')}</p>
+          <p>{t('home.finalCta.p2')}</p>
           <div className="cta-row" style={{ justifyContent: 'center' }}>
-            <Link to="/contacto" className="btn btn-solid">Cuéntanos qué necesitas</Link>
+            <L to="/contacto" className="btn btn-solid">{t('home.finalCta.ctaPrimary')}</L>
             <a
               href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber%20más%20sobre%20los%20viajes%20de%20Watchout%20Tours"
               className="btn btn-outline btn-whatsapp"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Contáctanos por WhatsApp"
+              aria-label={t('common.whatsappFab')}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" focusable="false" width="18" height="18">
                 <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.471 2.027 7.77L0 32l8.43-2.008A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.772-1.852l-.486-.29-5.007 1.193 1.215-4.878-.317-.5A13.268 13.268 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.862c-.398-.199-2.352-1.16-2.717-1.292-.364-.133-.63-.199-.895.199-.265.398-1.028 1.292-1.26 1.558-.232.265-.464.298-.862.1-.398-.199-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.398-.025-.613.174-.811.178-.177.398-.464.597-.696.199-.232.265-.398.398-.663.133-.265.066-.497-.033-.696-.1-.199-.895-2.158-1.226-2.956-.323-.776-.65-.671-.895-.683l-.762-.013c-.265 0-.696.1-1.061.497-.364.398-1.393 1.36-1.393 3.317s1.427 3.847 1.626 4.112c.199.265 2.808 4.287 6.803 6.013.951.41 1.693.655 2.272.839.955.303 1.824.26 2.511.158.766-.114 2.352-.962 2.684-1.89.332-.928.332-1.724.232-1.89-.1-.166-.364-.265-.762-.464z" fill="currentColor"/>

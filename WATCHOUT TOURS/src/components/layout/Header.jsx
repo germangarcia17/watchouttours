@@ -1,16 +1,42 @@
 import { useState, useRef } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import './Header.css'
 import logoImg from '../../images/logo-header-watchout.png'
+import { L, LNav, useLang, useLocalize, stripLang, localizePath } from '../../i18n/routing'
 
 const navLinks = [
-  { to: '/productos',      label: 'Rutas' },
-  { to: '/sobre-nosotras', label: 'Nosotras' },
-  { to: '/blog',           label: 'Blog' },
-  { to: '/contacto',       label: 'Contacto' },
+  { to: '/productos',      key: 'rutas' },
+  { to: '/sobre-nosotras', key: 'nosotras' },
+  { to: '/blog',           key: 'blog' },
+  { to: '/contacto',       key: 'contacto' },
 ]
 
+/* Selector de idioma: enlaza a la misma página en el otro idioma,
+   conservando la ruta, la query y el ancla. */
+function LanguageSwitcher() {
+  const { t } = useTranslation()
+  const { pathname, search, hash } = useLocation()
+  const lang = useLang()
+  const base = stripLang(pathname)
+  const target = lang === 'es' ? localizePath(base, 'en') : base
+
+  return (
+    <Link
+      to={`${target}${search}${hash}`}
+      className="lang-switch"
+      hrefLang={lang === 'es' ? 'en' : 'es'}
+      lang={lang === 'es' ? 'en' : 'es'}
+      aria-label={t('nav.switchLang')}
+    >
+      {lang === 'es' ? 'EN' : 'ES'}
+    </Link>
+  )
+}
+
 export function Header() {
+  const { t } = useTranslation()
+  const localize = useLocalize()
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleRef = useRef(null)
 
@@ -26,7 +52,7 @@ export function Header() {
     <header className="site-header" role="banner">
       <div className="wrap nav-inner">
         {/* El enlace ya tiene texto visible; la imagen es decorativa */}
-        <Link to="/" className="brand-badge" aria-label="Watchout Tours — Ir al inicio">
+        <Link to={localize('/')} className="brand-badge" aria-label={t('nav.brandHome')}>
           <span className="brand-badge__circle">
             <img src={logoImg} alt="" aria-hidden="true" className="brand-badge__img" />
           </span>
@@ -35,12 +61,12 @@ export function Header() {
 
         <nav
           id="site-nav"
-          aria-label="Navegación principal"
+          aria-label={t('nav.main')}
           className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}
           onKeyDown={handleNavKeyDown}
         >
-          {navLinks.map(({ to, label }) => (
-            <NavLink
+          {navLinks.map(({ to, key }) => (
+            <LNav
               key={to}
               to={to}
               end={to === '/'}
@@ -49,21 +75,24 @@ export function Header() {
               }
               onClick={() => setMenuOpen(false)}
             >
-              {label}
-            </NavLink>
+              {t(`nav.${key}`)}
+            </LNav>
           ))}
         </nav>
 
-        <button
-          ref={toggleRef}
-          className="menu-toggle"
-          aria-controls="site-nav"
-          aria-expanded={menuOpen}
-          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-          onClick={() => setMenuOpen(v => !v)}
-        >
-          <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
-        </button>
+        <div className="nav-actions">
+          <LanguageSwitcher />
+          <button
+            ref={toggleRef}
+            className="menu-toggle"
+            aria-controls="site-nav"
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+            onClick={() => setMenuOpen(v => !v)}
+          >
+            <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
+          </button>
+        </div>
       </div>
     </header>
   )

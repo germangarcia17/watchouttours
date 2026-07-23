@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { Seo } from '../components/Seo'
+import { L, useLang } from '../i18n/routing'
 import '../styles/pagestyle/Blog.css'
 
-function formatearFecha(iso) {
-  return new Intl.DateTimeFormat('es-ES', {
+function formatearFecha(iso, lang) {
+  return new Intl.DateTimeFormat(lang === 'en' ? 'en-NZ' : 'es-ES', {
     day: 'numeric', month: 'long', year: 'numeric',
   }).format(new Date(iso))
 }
 
 export default function Blog() {
+  const { t } = useTranslation()
+  const lang = useLang()
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -33,44 +36,44 @@ export default function Blog() {
     <>
       <Seo
         pageType="blog"
-        title="Blog sensorial | Watchout Tours"
-        description="Reflexiones sobre viajar de forma diferente por Nueva Zelanda. Sobre escuchar mejor."
+        title={t('blog.seo.title')}
+        description={t('blog.seo.description')}
       />
 
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="blog-hero">
         <div className="dots-texture"></div>
         <div className="wrap blog-hero-inner">
-          <span className="sec-eyebrow">El país por los sentidos</span>
-          <h1 className="blog-titulo">Blog sensorial</h1>
+          <span className="sec-eyebrow">{t('blog.eyebrow')}</span>
+          <h1 className="blog-titulo">{t('blog.title')}</h1>
           <p className="blog-intro">
-            Reflexiones sobre viajar de forma diferente. Sobre escuchar mejor.
+            {t('blog.intro')}
           </p>
         </div>
       </section>
 
       <section className="blog-listado">
         <div className="wrap">
-          {loading && <p className="blog-estado" role="status">Cargando artículos…</p>}
+          {loading && <p className="blog-estado" role="status">{t('blog.loading')}</p>}
           {!loading && posts.length === 0 && (
-            <p className="blog-estado">Los artículos estarán disponibles próximamente.</p>
+            <p className="blog-estado">{t('blog.empty')}</p>
           )}
 
           {/* ── Artículo destacado ─────────────────────── */}
           {destacado && (
             <article className="blog-destacado">
               <div className="blog-destacado__meta">
-                <span className="sr-only">articulo destacado:</span>
+                <span className="sr-only">{t('blog.featuredSr')}</span>
                 {destacado.published_at && (
-                  <time dateTime={destacado.published_at}>{formatearFecha(destacado.published_at)}</time>
+                  <time dateTime={destacado.published_at}>{formatearFecha(destacado.published_at, lang)}</time>
                 )}
-                {destacado.reading_time && <span>· {destacado.reading_time} min de lectura</span>}
+                {destacado.reading_time && <span>· {t('blog.readTimeLong', { count: destacado.reading_time })}</span>}
               </div>
               <h2 className="blog-destacado__titulo">{destacado.title}</h2>
               <p className="blog-destacado__excerpt">{destacado.excerpt}</p>
-              <Link to={`/blog/${destacado.slug}`} className="btn btn-solid">
-                Leer artículo<span className="sr-only">: {destacado.title}</span>
-              </Link>
+              <L to={`/blog/${destacado.slug}`} className="btn btn-solid">
+                {t('blog.readArticle')}<span className="sr-only">: {destacado.title}</span>
+              </L>
             </article>
           )}
 
@@ -80,18 +83,18 @@ export default function Blog() {
               {resto.map(post => (
                 <li key={post.id}>
                   <article className="blog-card">
-                    <span className="sr-only">siguiente artículo</span>
+                    <span className="sr-only">{t('blog.nextArticleSr')}</span>
                     <div className="blog-card__meta">
                       {post.published_at && (
-                        <time dateTime={post.published_at}>{formatearFecha(post.published_at)}</time>
+                        <time dateTime={post.published_at}>{formatearFecha(post.published_at, lang)}</time>
                       )}
-                      {post.reading_time && <span>· {post.reading_time} min</span>}
+                      {post.reading_time && <span>· {t('blog.readTimeShort', { count: post.reading_time })}</span>}
                     </div>
                     <h2 className="blog-card__titulo">{post.title}</h2>
                     <p className="blog-card__excerpt">{post.excerpt}</p>
-                    <Link to={`/blog/${post.slug}`} className="blog-card__link">
-                      Leer artículo<span className="sr-only">: {post.title}</span><span aria-hidden="true"> →</span>
-                    </Link>
+                    <L to={`/blog/${post.slug}`} className="blog-card__link">
+                      {t('blog.readArticle')}<span className="sr-only">: {post.title}</span><span aria-hidden="true"> →</span>
+                    </L>
                   </article>
                 </li>
               ))}
