@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { Seo } from '../components/Seo'
 import { L, useLang } from '../i18n/routing'
+import { pickLocalized } from '../i18n/content'
 import '../styles/pagestyle/Blog.css'
 
 function formatearFecha(iso, lang) {
@@ -20,7 +21,7 @@ export default function Blog() {
   useEffect(() => {
     supabase
       .from('blog_posts')
-      .select('id, title, slug, excerpt, reading_time, published_at')
+      .select('*')
       .eq('status', 'published')
       .lte('published_at', new Date().toISOString())
       .order('published_at', { ascending: false })
@@ -69,10 +70,10 @@ export default function Blog() {
                 )}
                 {destacado.reading_time && <span>· {t('blog.readTimeLong', { count: destacado.reading_time })}</span>}
               </div>
-              <h2 className="blog-destacado__titulo">{destacado.title}</h2>
-              <p className="blog-destacado__excerpt">{destacado.excerpt}</p>
+              <h2 className="blog-destacado__titulo">{pickLocalized(destacado, 'title', lang)}</h2>
+              <p className="blog-destacado__excerpt">{pickLocalized(destacado, 'excerpt', lang)}</p>
               <L to={`/blog/${destacado.slug}`} className="btn btn-solid">
-                {t('blog.readArticle')}<span className="sr-only">: {destacado.title}</span>
+                {t('blog.readArticle')}<span className="sr-only">: {pickLocalized(destacado, 'title', lang)}</span>
               </L>
             </article>
           )}
@@ -90,10 +91,10 @@ export default function Blog() {
                       )}
                       {post.reading_time && <span>· {t('blog.readTimeShort', { count: post.reading_time })}</span>}
                     </div>
-                    <h2 className="blog-card__titulo">{post.title}</h2>
-                    <p className="blog-card__excerpt">{post.excerpt}</p>
+                    <h2 className="blog-card__titulo">{pickLocalized(post, 'title', lang)}</h2>
+                    <p className="blog-card__excerpt">{pickLocalized(post, 'excerpt', lang)}</p>
                     <L to={`/blog/${post.slug}`} className="blog-card__link">
-                      {t('blog.readArticle')}<span className="sr-only">: {post.title}</span><span aria-hidden="true"> →</span>
+                      {t('blog.readArticle')}<span className="sr-only">: {pickLocalized(post, 'title', lang)}</span><span aria-hidden="true"> →</span>
                     </L>
                   </article>
                 </li>

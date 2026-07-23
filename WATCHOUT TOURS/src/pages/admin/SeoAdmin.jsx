@@ -7,7 +7,33 @@ const EMPTY_META = {
   meta_title: '', meta_description: '', keywords: '', canonical_url: '',
   og_title: '', og_description: '', og_image_url: '',
   twitter_title: '', twitter_description: '', twitter_image_url: '',
+  meta_title_en: '', meta_description_en: '', keywords_en: '',
+  og_title_en: '', og_description_en: '',
+  twitter_title_en: '', twitter_description_en: '',
 }
+
+const FIELDS_ES = [
+  ['meta_title',            'Meta título'],
+  ['meta_description',      'Meta descripción'],
+  ['keywords',              'Palabras clave (separadas por coma)'],
+  ['canonical_url',         'URL canónica'],
+  ['og_title',              'OG título'],
+  ['og_description',        'OG descripción'],
+  ['og_image_url',          'OG imagen URL'],
+  ['twitter_title',         'Twitter título'],
+  ['twitter_description',   'Twitter descripción'],
+  ['twitter_image_url',     'Twitter imagen URL'],
+]
+
+const FIELDS_EN = [
+  ['meta_title_en',          'Meta título (inglés)'],
+  ['meta_description_en',    'Meta descripción (inglés)'],
+  ['keywords_en',            'Palabras clave (inglés)'],
+  ['og_title_en',            'OG título (inglés)'],
+  ['og_description_en',      'OG descripción (inglés)'],
+  ['twitter_title_en',       'Twitter título (inglés)'],
+  ['twitter_description_en', 'Twitter descripción (inglés)'],
+]
 
 export default function SeoAdmin() {
   const [rows, setRows]         = useState({}) // { page_type: row }
@@ -85,42 +111,15 @@ export default function SeoAdmin() {
           <h2 id={`seo-${pt}-heading`} style={{ textTransform: 'capitalize', marginBottom: '1rem' }}>{pt}</h2>
 
           <div className="blog-editor">
-            {[
-              ['meta_title',            'Meta título'],
-              ['meta_description',      'Meta descripción'],
-              ['keywords',              'Palabras clave (separadas por coma)'],
-              ['canonical_url',         'URL canónica'],
-              ['og_title',              'OG título'],
-              ['og_description',        'OG descripción'],
-              ['og_image_url',          'OG imagen URL'],
-              ['twitter_title',         'Twitter título'],
-              ['twitter_description',   'Twitter descripción'],
-              ['twitter_image_url',     'Twitter imagen URL'],
-            ].map(([field, label]) => (
-              <div key={field} className="form-field">
-                <label htmlFor={`${pt}-${field}`} className="form-label">{label}</label>
-                {field.includes('description') ? (
-                  <textarea
-                    id={`${pt}-${field}`}
-                    name={field}
-                    rows={2}
-                    value={forms[pt]?.[field] ?? ''}
-                    onChange={e => handleChange(pt, e)}
-                    className="form-control"
-                  />
-                ) : (
-                  <input
-                    id={`${pt}-${field}`}
-                    name={field}
-                    type={field.includes('url') ? 'url' : 'text'}
-                    value={forms[pt]?.[field] ?? ''}
-                    onChange={e => handleChange(pt, e)}
-                    className="form-control"
-                    placeholder={field.includes('url') ? 'https://…' : ''}
-                  />
-                )}
-              </div>
-            ))}
+            {FIELDS_ES.map(([field, label]) => renderField(pt, field, label, forms, handleChange))}
+
+            <fieldset style={{ border: '1px solid var(--line)', borderRadius: 8, padding: '1rem 1.25rem', margin: '1rem 0' }}>
+              <legend style={{ fontWeight: 700, padding: '0 0.5rem' }}>Versión en inglés (opcional)</legend>
+              <p style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: '0 0 1rem' }}>
+                Lo que dejes vacío usará el texto en español en la web en inglés (<code>/en</code>). La URL canónica y las imágenes son comunes a ambos idiomas.
+              </p>
+              {FIELDS_EN.map(([field, label]) => renderField(pt, field, label, forms, handleChange))}
+            </fieldset>
 
             <div className="form-actions">
               <button
@@ -136,6 +135,36 @@ export default function SeoAdmin() {
           </div>
         </section>
       ))}
+    </div>
+  )
+}
+
+function renderField(pt, field, label, forms, handleChange) {
+  const isDesc = field.includes('description')
+  const isUrl = field.includes('url')
+  return (
+    <div key={field} className="form-field">
+      <label htmlFor={`${pt}-${field}`} className="form-label">{label}</label>
+      {isDesc ? (
+        <textarea
+          id={`${pt}-${field}`}
+          name={field}
+          rows={2}
+          value={forms[pt]?.[field] ?? ''}
+          onChange={e => handleChange(pt, e)}
+          className="form-control"
+        />
+      ) : (
+        <input
+          id={`${pt}-${field}`}
+          name={field}
+          type={isUrl ? 'url' : 'text'}
+          value={forms[pt]?.[field] ?? ''}
+          onChange={e => handleChange(pt, e)}
+          className="form-control"
+          placeholder={isUrl ? 'https://…' : ''}
+        />
+      )}
     </div>
   )
 }

@@ -8,6 +8,8 @@ const EMPTY = {
   reading_time: '', meta_title: '', meta_description: '', keywords: '', published_at: '',
   cover_image_url: '', cover_image_alt: '', og_image_url: '', category: '', tags: '',
   featured: false, archived: false,
+  title_en: '', excerpt_en: '', content_en: '', meta_title_en: '', meta_description_en: '',
+  keywords_en: '', cover_image_alt_en: '',
 }
 
 export default function BlogEditor() {
@@ -44,6 +46,13 @@ export default function BlogEditor() {
           tags:             (data.tags ?? []).join(', '),
           featured:         data.featured ?? false,
           archived:         data.archived ?? false,
+          title_en:            data.title_en ?? '',
+          excerpt_en:          data.excerpt_en ?? '',
+          content_en:          data.content_en ?? '',
+          meta_title_en:       data.meta_title_en ?? '',
+          meta_description_en: data.meta_description_en ?? '',
+          keywords_en:         data.keywords_en ?? '',
+          cover_image_alt_en:  data.cover_image_alt_en ?? '',
         })
         setLoadingPost(false)
       })
@@ -109,6 +118,13 @@ export default function BlogEditor() {
       tags:             form.tags ? form.tags.split(',').map(t => t.trim()).filter(Boolean) : [],
       featured:         form.featured,
       archived:         form.archived,
+      title_en:            form.title_en.trim() || null,
+      excerpt_en:          form.excerpt_en.trim() || null,
+      content_en:          form.content_en.trim() || null,
+      meta_title_en:       form.meta_title_en.trim() || null,
+      meta_description_en: form.meta_description_en.trim() || null,
+      keywords_en:         form.keywords_en.trim() || null,
+      cover_image_alt_en:  form.cover_image_alt_en.trim() || null,
     }
 
     const query = isEdit
@@ -224,6 +240,41 @@ export default function BlogEditor() {
         <Field id="og_image_url" label="URL imagen Open Graph">
           <input id="og_image_url" name="og_image_url" type="url" value={form.og_image_url ?? ''} onChange={handleChange} className="form-control" placeholder="https://… (se rellena sola al subir un archivo)" />
         </Field>
+
+        <fieldset style={{ border: '1px solid var(--line)', borderRadius: 8, padding: '1rem 1.25rem', margin: '0.5rem 0 1.5rem' }}>
+          <legend style={{ fontWeight: 700, padding: '0 0.5rem' }}>Versión en inglés (opcional)</legend>
+          <p style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: '0 0 1rem' }}>
+            Cada campo que dejes vacío usará automáticamente el texto en español en la web en inglés (<code>/en</code>).
+          </p>
+
+          <Field id="title_en" label="Título (inglés)">
+            <input id="title_en" name="title_en" type="text" value={form.title_en} onChange={handleChange} className="form-control" />
+          </Field>
+
+          <Field id="excerpt_en" label="Extracto (inglés)">
+            <textarea id="excerpt_en" name="excerpt_en" rows={2} value={form.excerpt_en} onChange={handleChange} className="form-control" />
+          </Field>
+
+          <Field id="content_en" label="Contenido HTML (inglés)">
+            <textarea id="content_en" name="content_en" rows={14} value={form.content_en} onChange={handleChange} className="form-control form-control--mono" />
+          </Field>
+
+          <Field id="cover_image_alt_en" label="Texto alternativo de portada (inglés)">
+            <input id="cover_image_alt_en" name="cover_image_alt_en" type="text" value={form.cover_image_alt_en} onChange={handleChange} className="form-control" />
+          </Field>
+
+          <Field id="meta_title_en" label="Meta título SEO (inglés)">
+            <input id="meta_title_en" name="meta_title_en" type="text" value={form.meta_title_en} onChange={handleChange} className="form-control" />
+          </Field>
+
+          <Field id="meta_description_en" label="Meta descripción SEO (inglés)">
+            <textarea id="meta_description_en" name="meta_description_en" rows={2} value={form.meta_description_en} onChange={handleChange} className="form-control" />
+          </Field>
+
+          <Field id="keywords_en" label="Palabras clave (inglés, separadas por coma)">
+            <input id="keywords_en" name="keywords_en" type="text" value={form.keywords_en} onChange={handleChange} className="form-control" />
+          </Field>
+        </fieldset>
 
         <Field id="category" label="Categoría">
           <input id="category" name="category" type="text" value={form.category} onChange={handleChange} className="form-control" />

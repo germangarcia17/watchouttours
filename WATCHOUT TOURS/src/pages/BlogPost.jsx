@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { sanitizeHtml } from '../lib/sanitizeHtml'
 import { supabase } from '../lib/supabase'
 import { L, useLang } from '../i18n/routing'
+import { pickLocalized } from '../i18n/content'
 import '../styles/pagestyle/BlogPost.css'
 
 export default function BlogPost() {
@@ -49,19 +50,31 @@ export default function BlogPost() {
     </section>
   )
 
+  const title       = pickLocalized(post, 'title', lang)
+  const excerpt     = pickLocalized(post, 'excerpt', lang)
+  const content     = pickLocalized(post, 'content', lang)
+  const metaTitle   = pickLocalized(post, 'meta_title', lang) ?? title
+  const metaDesc    = pickLocalized(post, 'meta_description', lang)
+  const keywords    = pickLocalized(post, 'keywords', lang)
+  const coverAlt    = pickLocalized(post, 'cover_image_alt', lang) ?? ''
+
+  const origin      = typeof window !== 'undefined' ? window.location.origin : ''
+  const esUrl       = `${origin}/blog/${post.slug}`
+  const enUrl       = `${origin}/en/blog/${post.slug}`
+
   return (
     <article aria-labelledby="post-heading">
       <Helmet>
-        <title>{post.meta_title ?? post.title} | Watchout Tours</title>
-        {post.meta_description && <meta name="description" content={post.meta_description} />}
-        {post.keywords && <meta name="keywords" content={post.keywords} />}
+        <title>{metaTitle} | Watchout Tours</title>
+        {metaDesc && <meta name="description" content={metaDesc} />}
+        {keywords && <meta name="keywords" content={keywords} />}
+        <link rel="canonical" href={lang === 'en' ? enUrl : esUrl} />
 
         {/* Open Graph */}
         <meta property="og:type"        content="article" />
-        <meta property="og:title"       content={post.og_title ?? post.meta_title ?? post.title} />
-        {(post.og_description ?? post.meta_description) && (
-          <meta property="og:description" content={post.og_description ?? post.meta_description} />
-        )}
+        <meta property="og:locale"      content={lang === 'en' ? 'en_NZ' : 'es_ES'} />
+        <meta property="og:title"       content={metaTitle} />
+        {metaDesc && <meta property="og:description" content={metaDesc} />}
         {(post.og_image_url ?? post.cover_image_url) && (
           <meta property="og:image" content={post.og_image_url ?? post.cover_image_url} />
         )}
@@ -69,10 +82,8 @@ export default function BlogPost() {
 
         {/* Twitter */}
         <meta name="twitter:card"        content="summary_large_image" />
-        <meta name="twitter:title"       content={post.og_title ?? post.meta_title ?? post.title} />
-        {(post.og_description ?? post.meta_description) && (
-          <meta name="twitter:description" content={post.og_description ?? post.meta_description} />
-        )}
+        <meta name="twitter:title"       content={metaTitle} />
+        {metaDesc && <meta name="twitter:description" content={metaDesc} />}
         {(post.og_image_url ?? post.cover_image_url) && (
           <meta name="twitter:image" content={post.og_image_url ?? post.cover_image_url} />
         )}
@@ -91,8 +102,8 @@ export default function BlogPost() {
             )}
             {post.reading_time && <span>· {t('post.readTime', { count: post.reading_time })}</span>}
           </p>
-          <h1 id="post-heading" className="post-titulo">{post.title}</h1>
-          {post.excerpt && <p className="post-excerpt">{post.excerpt}</p>}
+          <h1 id="post-heading" className="post-titulo">{title}</h1>
+          {excerpt && <p className="post-excerpt">{excerpt}</p>}
         </div>
       </header>
 
@@ -100,7 +111,7 @@ export default function BlogPost() {
       {post.cover_image_url && (
         <div className="wrap">
           <figure className="post-cover">
-            <img src={post.cover_image_url} alt={post.cover_image_alt ?? ''} />
+            <img src={post.cover_image_url} alt={coverAlt} />
           </figure>
         </div>
       )}
@@ -111,7 +122,7 @@ export default function BlogPost() {
             sin limpieza permitiría XSS almacenado en cada visitante */}
         <div
           className="post-contenido"
-          dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}
         />
 
         <footer className="post-footer">

@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { SkipLink } from './SkipLink'
 import { Header } from './Header'
 import { Footer } from './Footer'
-import { useLang } from '../../i18n/routing'
+import { useLang, stripLang } from '../../i18n/routing'
 
 /* Sincroniza el idioma de i18next y el atributo lang del <html> con la URL.
    El lang del documento es clave para que los lectores de pantalla pronuncien
@@ -19,11 +20,30 @@ function LangSync() {
   return null
 }
 
+/* Etiquetas hreflang para todas las páginas: enlazan cada URL con su
+   equivalente en el otro idioma (misma ruta, distinto prefijo). Válido para
+   toda página bajo el Layout, use o no el componente Seo. */
+function AlternateLinks() {
+  const { pathname } = useLocation()
+  const basePath = stripLang(pathname)
+  const origin = typeof window !== 'undefined' ? window.location.origin : ''
+  const esUrl = `${origin}${basePath}`
+  const enUrl = `${origin}${basePath === '/' ? '/en' : `/en${basePath}`}`
+  return (
+    <Helmet>
+      <link rel="alternate" hrefLang="es" href={esUrl} />
+      <link rel="alternate" hrefLang="en" href={enUrl} />
+      <link rel="alternate" hrefLang="x-default" href={esUrl} />
+    </Helmet>
+  )
+}
+
 export function Layout() {
   const { t } = useTranslation()
   return (
     <>
       <LangSync />
+      <AlternateLinks />
       <SkipLink />
       <Header />
       <main id="main-content" tabIndex={-1}>

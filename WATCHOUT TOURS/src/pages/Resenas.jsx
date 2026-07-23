@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { Seo } from '../components/Seo'
-import { L } from '../i18n/routing'
+import { L, useLang } from '../i18n/routing'
+import { pickLocalized } from '../i18n/content'
 import '../styles/pagestyle/Resenas.css'
 
 export default function Resenas() {
   const { t } = useTranslation()
+  const lang = useLang()
   const [resenas, setResenas] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -61,11 +63,11 @@ export default function Resenas() {
                   <article className="rs-destacada">
                     <span className="rs-destacada__label">{t('resenas.featuredLabel')}</span>
                     <blockquote className="rs-destacada__quote">
-                      <p>&ldquo;{r.content}&rdquo;</p>
+                      <p>&ldquo;{pickLocalized(r, 'content', lang)}&rdquo;</p>
                     </blockquote>
                     <footer className="rs-destacada__who">
                       <strong>{r.author_name}</strong>
-                      {r.author_context && <span> — {r.author_context}</span>}
+                      {pickLocalized(r, 'author_context', lang) && <span> — {pickLocalized(r, 'author_context', lang)}</span>}
                     </footer>
                     {r.video_url && (
                       <details className="testi-video testi-video--claro">
@@ -86,11 +88,11 @@ export default function Resenas() {
                 <li key={r.id}>
                   <article className="rs-card">
                     <blockquote className="rs-card__quote">
-                      <p>&ldquo;{r.content}&rdquo;</p>
+                      <p>&ldquo;{pickLocalized(r, 'content', lang)}&rdquo;</p>
                     </blockquote>
                     <footer className="rs-card__who">
                       <strong>{r.author_name}</strong>
-                      {r.author_context && <span> — {r.author_context}</span>}
+                      {pickLocalized(r, 'author_context', lang) && <span> — {pickLocalized(r, 'author_context', lang)}</span>}
                     </footer>
                     {r.video_url && (
                       <details className="testi-video">
