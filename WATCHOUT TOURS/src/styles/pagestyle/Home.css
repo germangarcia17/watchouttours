@@ -783,7 +783,7 @@
 }
 
 .separador-baston svg {
-  width: 40px;
+  width: 52px;
   height: auto;
 }
 
@@ -832,10 +832,21 @@
 
 .testi-video video {
   display: block;
-  width: 100%;
-  margin-top: 12px;
+  /* El vídeo se ajusta a un marco controlado: nunca más ancho que la tarjeta
+     ni más alto que 360px, para que los verticales o de gran formato no
+     agranden el recuadro. El ancho se calcula según su proporción. */
+  width: auto;
+  max-width: 100%;
+  max-height: 360px;
+  margin: 12px auto 0;
   border-radius: 12px;
   background: #000;
+}
+
+@media (max-width: 760px) {
+  .testi-video video {
+    max-height: 60vh;
+  }
 }
 
 /* ── Rutas dentro del bloque oscuro ──────────────────── */
