@@ -5,6 +5,7 @@ import '../styles/pagestyle/Filosofia.css'
 import imgNosotras from '../images/sobre-nosotras.webp'
 import { useSiteImage } from '../lib/siteImages'
 import { L } from '../i18n/routing'
+import { bucketUrl } from '../lib/bucket'
 
 export default function SobreNosotras() {
   const { t } = useTranslation()
@@ -104,20 +105,29 @@ export default function SobreNosotras() {
 
       {/* ── Nuestra filosofía (integrada) ────────────── */}
       <section aria-labelledby="filosofia-heading">
-        <div className="wrap">
-          <h2 id="filosofia-heading" className="sec-eyebrow">{t('sobre.filoEyebrow')}</h2>
-          <p className="sec-title">{t('sobre.filoTitle')}</p>
-          <ol role="list" className="filo-lista">
-            {PRINCIPIOS.map(({ num, titulo, texto }) => (
-              <li key={num} className="filo-principio">
-                <span aria-hidden="true" className="filo-principio__num">{num}</span>
-                <div className="filo-principio__contenido">
-                  <h3 className="filo-principio__titulo">{titulo}</h3>
-                  <p className="filo-principio__texto">{texto}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+        <div className="wrap sn-filo-grid">
+          <div className="sn-filo-main">
+            <h2 id="filosofia-heading" className="sec-eyebrow">{t('sobre.filoEyebrow')}</h2>
+            <p className="sec-title">{t('sobre.filoTitle')}</p>
+            <ol role="list" className="filo-lista">
+              {PRINCIPIOS.map(({ num, titulo, texto }) => (
+                <li key={num} className="filo-principio">
+                  <span aria-hidden="true" className="filo-principio__num">{num}</span>
+                  <div className="filo-principio__contenido">
+                    <h3 className="filo-principio__titulo">{titulo}</h3>
+                    <p className="filo-principio__texto">{texto}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="sn-filo-foto">
+            <img
+              src={bucketUrl('foto-en-la-montana.webp')}
+              alt={t('sobre.filoFotoAlt')}
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 

@@ -73,7 +73,8 @@
       "p4": "Y esto es solo el principio.",
       "p5": "Porque la mejor forma de conocer Nueva Zelanda no siempre es con la vista, sino con todos los sentidos.",
       "tag": "Filosofía Watchout",
-      "quote": "\"Lo mejor de este viaje no se ve — se escucha, se toca, se siente.\""
+      "quote": "\"Lo mejor de este viaje no se ve — se escucha, se toca, se siente.\"",
+      "fotoAlt": "Un grupo de viajeros de Watchout Tours posando juntos y sonriendo durante su viaje por Nueva Zelanda"
     },
     "explorar": {
       "eyebrow": "Lo que van a vivir",
@@ -327,6 +328,7 @@
     ],
     "filoEyebrow": "Nuestra filosofía",
     "filoTitle": "Cinco principios que guían cada decisión",
+    "filoFotoAlt": "Una viajera de Watchout Tours en lo alto de una montaña de Nueva Zelanda, con un amplio paisaje al fondo",
     "principios": [
       { "num": "01", "titulo": "Diseñado para, no adaptado desde", "texto": "Construimos cada viaje desde el primer paso pensando en quién viaja con nosotras." },
       { "num": "02", "titulo": "El lujo es sensorial, no visual", "texto": "El silencio de un fiordo al amanecer es opulento para cualquier sentido." },

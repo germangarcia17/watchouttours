@@ -6,6 +6,7 @@ export default function ImagenesAdmin() {
   const [images, setImages]     = useState([])
   const [loading, setLoading]   = useState(true)
   const [editing, setEditing]   = useState({})
+  const [editingEn, setEditingEn] = useState({})
   const [saving, setSaving]     = useState({})
   const [uploading, setUploading] = useState({})
   const [uploadError, setUploadError] = useState({})
@@ -23,13 +24,25 @@ export default function ImagenesAdmin() {
     setEditing(prev => ({ ...prev, [id]: value }))
   }
 
+  function handleAltEnChange(id, value) {
+    setEditingEn(prev => ({ ...prev, [id]: value }))
+  }
+
   async function saveAlt(image) {
-    const newAlt = editing[image.id]
-    if (newAlt === undefined || newAlt === image.image_alt) return
+    const newAlt   = editing[image.id]
+    const newAltEn = editingEn[image.id]
+    const altChanged   = newAlt   !== undefined && newAlt   !== (image.image_alt ?? '')
+    const altEnChanged = newAltEn !== undefined && newAltEn !== (image.image_alt_en ?? '')
+    if (!altChanged && !altEnChanged) return
+
     setSaving(prev => ({ ...prev, [image.id]: true }))
-    await supabase.from('site_images').update({ image_alt: newAlt }).eq('id', image.id)
-    setImages(prev => prev.map(img => img.id === image.id ? { ...img, image_alt: newAlt } : img))
+    const payload = {}
+    if (altChanged)   payload.image_alt    = newAlt
+    if (altEnChanged) payload.image_alt_en = newAltEn
+    await supabase.from('site_images').update(payload).eq('id', image.id)
+    setImages(prev => prev.map(img => img.id === image.id ? { ...img, ...payload } : img))
     setEditing(prev => { const next = { ...prev }; delete next[image.id]; return next })
+    setEditingEn(prev => { const next = { ...prev }; delete next[image.id]; return next })
     setSaving(prev => { const next = { ...prev }; delete next[image.id]; return next })
   }
 
@@ -94,18 +107,28 @@ export default function ImagenesAdmin() {
                   <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{uploadError[img.id]}</p>
                 )}
 
-                <label htmlFor={`alt-${img.id}`} className="form-label" style={{ marginTop: '14px' }}>Texto alternativo</label>
+                <label htmlFor={`alt-${img.id}`} className="form-label" style={{ marginTop: '14px' }}>Texto alternativo (español)</label>
+                <textarea
+                  id={`alt-${img.id}`}
+                  rows={2}
+                  value={editing[img.id] !== undefined ? editing[img.id] : (img.image_alt ?? '')}
+                  onChange={e => handleAltChange(img.id, e.target.value)}
+                  className="form-control"
+                />
+
+                <label htmlFor={`alt-en-${img.id}`} className="form-label" style={{ marginTop: '10px' }}>Texto alternativo (inglés)</label>
+                <p style={{ fontSize: '0.8rem', color: 'var(--muted)', margin: '0 0 6px' }}>Si lo dejas vacío, en la web en inglés se usa el texto en español.</p>
                 <div className="image-item__alt-row">
                   <textarea
-                    id={`alt-${img.id}`}
+                    id={`alt-en-${img.id}`}
                     rows={2}
-                    value={editing[img.id] !== undefined ? editing[img.id] : (img.image_alt ?? '')}
-                    onChange={e => handleAltChange(img.id, e.target.value)}
+                    value={editingEn[img.id] !== undefined ? editingEn[img.id] : (img.image_alt_en ?? '')}
+                    onChange={e => handleAltEnChange(img.id, e.target.value)}
                     className="form-control"
                   />
                   <button
                     onClick={() => saveAlt(img)}
-                    disabled={saving[img.id] || editing[img.id] === undefined}
+                    disabled={saving[img.id] || (editing[img.id] === undefined && editingEn[img.id] === undefined)}
                     className="btn btn--primary btn--sm"
                   >
                     {saving[img.id] ? '…' : 'Guardar'}

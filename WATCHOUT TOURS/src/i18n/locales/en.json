@@ -73,7 +73,8 @@
       "p4": "And this is only the beginning.",
       "p5": "Because the best way to get to know New Zealand isn't always with your sight, but with all your senses.",
       "tag": "The Watchout philosophy",
-      "quote": "\"The best of this trip can't be seen — it's heard, touched, felt.\""
+      "quote": "\"The best of this trip can't be seen — it's heard, touched, felt.\"",
+      "fotoAlt": "A group of Watchout Tours travellers posing together and smiling during their trip through New Zealand"
     },
     "explorar": {
       "eyebrow": "What you'll live",
@@ -327,6 +328,7 @@
     ],
     "filoEyebrow": "Our philosophy",
     "filoTitle": "Five principles that guide every decision",
+    "filoFotoAlt": "A Watchout Tours traveller at the top of a New Zealand mountain, with a wide landscape behind her",
     "principios": [
       { "num": "01", "titulo": "Designed for, not adapted from", "texto": "We build every trip from the very first step thinking about who travels with us." },
       { "num": "02", "titulo": "Luxury is sensory, not visual", "texto": "The silence of a fjord at dawn is opulent for any sense." },
