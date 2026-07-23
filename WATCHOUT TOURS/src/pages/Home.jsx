@@ -10,6 +10,7 @@ import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
+import { bucketUrl } from '../lib/bucket'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 
@@ -133,6 +134,12 @@ export default function Home() {
               <p>{t('home.viajes.p5')}</p>
             </div>
             <div className="intro-card">
+              <img
+                className="intro-card__foto"
+                src={bucketUrl('foto-grupo.jpg')}
+                alt={t('home.viajes.fotoAlt')}
+                loading="lazy"
+              />
               <span className="tag">{t('home.viajes.tag')}</span>
               <p>{t('home.viajes.quote')}</p>
             </div>
