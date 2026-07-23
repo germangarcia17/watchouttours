@@ -1,7 +1,19 @@
 {
   "common": {
     "whatsappFab": "Contáctanos por WhatsApp",
-    "newTab": "(se abre en una pestaña nueva)"
+    "newTab": "(se abre en una pestaña nueva)",
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "audioPlayer": {
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "progress": "Progreso de {{label}}. Flechas para avanzar o retroceder 5 segundos",
+    "valueText": "{{current}} de {{total}}",
+    "seconds_one": "{{count}} segundo",
+    "seconds_other": "{{count}} segundos",
+    "minutes_one": "{{count}} minuto",
+    "minutes_other": "{{count}} minutos",
+    "minutesSeconds": "{{minutes}} y {{seconds}}"
   },
   "nav": {
     "main": "Navegación principal",

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { Seo } from '../components/Seo'
 import { L, useLang } from '../i18n/routing'
-import { pickLocalized } from '../i18n/content'
+import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import '../styles/pagestyle/Resenas.css'
 
 export default function Resenas() {
@@ -63,7 +63,7 @@ export default function Resenas() {
                   <article className="rs-destacada">
                     <span className="rs-destacada__label">{t('resenas.featuredLabel')}</span>
                     <blockquote className="rs-destacada__quote">
-                      <p>&ldquo;{pickLocalized(r, 'content', lang)}&rdquo;</p>
+                      <p lang={fieldLangAttr(r, 'content', lang)}>&ldquo;{pickLocalized(r, 'content', lang)}&rdquo;</p>
                     </blockquote>
                     <footer className="rs-destacada__who">
                       <strong>{r.author_name}</strong>
@@ -88,7 +88,7 @@ export default function Resenas() {
                 <li key={r.id}>
                   <article className="rs-card">
                     <blockquote className="rs-card__quote">
-                      <p>&ldquo;{pickLocalized(r, 'content', lang)}&rdquo;</p>
+                      <p lang={fieldLangAttr(r, 'content', lang)}>&ldquo;{pickLocalized(r, 'content', lang)}&rdquo;</p>
                     </blockquote>
                     <footer className="rs-card__who">
                       <strong>{r.author_name}</strong>

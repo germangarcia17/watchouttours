@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { sanitizeHtml } from '../lib/sanitizeHtml'
 import { supabase } from '../lib/supabase'
 import { L, useLang } from '../i18n/routing'
-import { pickLocalized } from '../i18n/content'
+import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import '../styles/pagestyle/BlogPost.css'
 
 export default function BlogPost() {
@@ -57,6 +57,9 @@ export default function BlogPost() {
   const metaDesc    = pickLocalized(post, 'meta_description', lang)
   const keywords    = pickLocalized(post, 'keywords', lang)
   const coverAlt    = pickLocalized(post, 'cover_image_alt', lang) ?? ''
+  const titleLang   = fieldLangAttr(post, 'title', lang)
+  const excerptLang = fieldLangAttr(post, 'excerpt', lang)
+  const contentLang = fieldLangAttr(post, 'content', lang)
 
   const origin      = typeof window !== 'undefined' ? window.location.origin : ''
   const esUrl       = `${origin}/blog/${post.slug}`
@@ -102,8 +105,8 @@ export default function BlogPost() {
             )}
             {post.reading_time && <span>· {t('post.readTime', { count: post.reading_time })}</span>}
           </p>
-          <h1 id="post-heading" className="post-titulo">{title}</h1>
-          {excerpt && <p className="post-excerpt">{excerpt}</p>}
+          <h1 id="post-heading" className="post-titulo" lang={titleLang}>{title}</h1>
+          {excerpt && <p className="post-excerpt" lang={excerptLang}>{excerpt}</p>}
         </div>
       </header>
 
@@ -122,6 +125,7 @@ export default function BlogPost() {
             sin limpieza permitiría XSS almacenado en cada visitante */}
         <div
           className="post-contenido"
+          lang={contentLang}
           dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}
         />
 

@@ -9,7 +9,7 @@ import { AudioPlayer } from '../components/AudioPlayer'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
 import { L, useLang } from '../i18n/routing'
-import { pickLocalized } from '../i18n/content'
+import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 
@@ -214,7 +214,7 @@ export default function Home() {
               {resenaDestacada.map(resena => (
                 <div key={resena.id} className="testi">
                   <span className="sr-only">{t('home.testi.srContent')}</span>
-                  <q>{pickLocalized(resena, 'content', lang)}</q>
+                  <q lang={fieldLangAttr(resena, 'content', lang)}>{pickLocalized(resena, 'content', lang)}</q>
                   <span className="sr-only">{t('home.testi.srWho')}</span>
                   <div className="who">{resena.author_name}</div>
                   {resena.video_url && (
@@ -350,8 +350,8 @@ export default function Home() {
             <h2 className="sec-eyebrow">{t('home.blog.eyebrow')}</h2>
             <p className="sec-title">{t('home.blog.title')}</p>
             <div className="blog-preview-card">
-              <h3>{pickLocalized(posts, 'title', lang)}</h3>
-              <p>{pickLocalized(posts, 'excerpt', lang)}</p>
+              <h3 lang={fieldLangAttr(posts, 'title', lang)}>{pickLocalized(posts, 'title', lang)}</h3>
+              <p lang={fieldLangAttr(posts, 'excerpt', lang)}>{pickLocalized(posts, 'excerpt', lang)}</p>
               <p className="reading-time">{t('home.blog.readingTime', { count: posts.reading_time })}</p>
               <L to={`/blog/${posts.slug}`} className="btn btn-outline">{t('home.blog.readArticle')}</L>
             </div>

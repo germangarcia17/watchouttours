@@ -1,7 +1,19 @@
 {
   "common": {
     "whatsappFab": "Contact us on WhatsApp",
-    "newTab": "(opens in a new tab)"
+    "newTab": "(opens in a new tab)",
+    "skipToContent": "Skip to main content"
+  },
+  "audioPlayer": {
+    "play": "Play",
+    "pause": "Pause",
+    "progress": "Progress of {{label}}. Use arrow keys to skip forward or back 5 seconds",
+    "valueText": "{{current}} of {{total}}",
+    "seconds_one": "{{count}} second",
+    "seconds_other": "{{count}} seconds",
+    "minutes_one": "{{count}} minute",
+    "minutes_other": "{{count}} minutes",
+    "minutesSeconds": "{{minutes}} and {{seconds}}"
   },
   "nav": {
     "main": "Main navigation",
