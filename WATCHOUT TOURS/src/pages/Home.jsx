@@ -13,6 +13,8 @@ import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import { bucketUrl } from '../lib/bucket'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
+import audioBarro from '../images/barro-burbujeante-rotorua.mp3'
+import audioKauri from '../images/bienvenida-al-kauri.mp3'
 
 const TARGET_DATE = new Date('2026-09-20T00:00:00')
 
@@ -320,6 +322,34 @@ export default function Home() {
               </div>
               <p className="audio-card__descripcion">{t('home.audio.card2Desc')}</p>
               <AudioPlayer src={audioAlpaca} playerId="alpaca" playingId={playingAudio} setPlayingId={setPlayingAudio} label={t('home.audio.card2Label')} />
+            </div>
+            <div className="audio-card">
+              <span className="sr-only">{t('home.audio.sr3')}</span>
+              <div className="audio-card__header">
+                <span className="audio-card__icono" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
+                </span>
+                <div>
+                  <h3 className="audio-card__titulo">{t('home.audio.card3Title')}</h3>
+                  <span className="audio-card__etiqueta">{t('home.audio.card3Tag')}</span>
+                </div>
+              </div>
+              <p className="audio-card__descripcion">{t('home.audio.card3Desc')}</p>
+              <AudioPlayer src={audioBarro} playerId="barro" playingId={playingAudio} setPlayingId={setPlayingAudio} label={t('home.audio.card3Label')} />
+            </div>
+            <div className="audio-card">
+              <span className="sr-only">{t('home.audio.sr4')}</span>
+              <div className="audio-card__header">
+                <span className="audio-card__icono" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
+                </span>
+                <div>
+                  <h3 className="audio-card__titulo">{t('home.audio.card4Title')}</h3>
+                  <span className="audio-card__etiqueta">{t('home.audio.card4Tag')}</span>
+                </div>
+              </div>
+              <p className="audio-card__descripcion">{t('home.audio.card4Desc')}</p>
+              <AudioPlayer src={audioKauri} playerId="kauri" playingId={playingAudio} setPlayingId={setPlayingAudio} label={t('home.audio.card4Label')} />
             </div>
           </div>
         </div>
