@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useForm, ValidationError } from '@formspree/react'
+import { L } from '../i18n/routing'
 import '../styles/pagestyle/Contacto.css'
 
 const PHONE_RE = /^[+\d][\d\s\-().]{4,19}$/
@@ -8,30 +9,34 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const SPAM_DELAY_MS = 60_000 // 1 minuto entre envíos
 
 export default function Contacto() {
+  const { t } = useTranslation()
   const [state, handleFormspreeSubmit] = useForm('xykqrkjq')
   const [errors, setErrors] = useState({})
 
-  useEffect(() => { document.title = 'Contacto | Watchout Tours' }, [])
+  useEffect(() => { document.title = t('contacto.docTitle') }, [t])
+
+  const canales = t('contacto.canalesOpciones', { returnObjects: true })
+  const tiposViaje = t('contacto.tiposViaje', { returnObjects: true })
 
   function validate(data) {
     const e = {}
     if (!data.get('nombre')?.trim() || data.get('nombre').trim().length < 2)
-      e.nombre = 'El nombre debe tener al menos 2 caracteres.'
+      e.nombre = t('contacto.err.nombre')
 
     const tel   = data.get('telefono')?.trim()
     const email = data.get('email')?.trim()
     if (!tel && !email)
-      e.contacto = 'Introduce al menos un teléfono o correo para que podamos responderte.'
+      e.contacto = t('contacto.err.contacto')
     if (tel && !PHONE_RE.test(tel))
-      e.telefono = 'El teléfono solo puede contener números, +, espacios y guiones.'
+      e.telefono = t('contacto.err.telefono')
     if (email && !EMAIL_RE.test(email))
-      e.email = 'Introduce un correo electrónico válido (debe contener @).'
+      e.email = t('contacto.err.email')
 
     if (!data.get('canal'))
-      e.canal = 'Elige cómo prefieres que te escribamos.'
+      e.canal = t('contacto.err.canal')
 
     if (!data.get('privacidad'))
-      e.privacidad = 'Para poder responderte necesitamos que aceptes la política de privacidad.'
+      e.privacidad = t('contacto.err.privacidad')
 
     return e
   }
@@ -42,7 +47,7 @@ export default function Contacto() {
     // Rate limit antispam
     const last = Number(localStorage.getItem('wot_last_submit') || 0)
     if (Date.now() - last < SPAM_DELAY_MS) {
-      setErrors({ _spam: 'Por favor, espera un momento antes de volver a enviar.' })
+      setErrors({ _spam: t('contacto.err.spam') })
       return
     }
 
@@ -71,12 +76,10 @@ export default function Contacto() {
       <section className="contacto-hero">
         <div className="dots-texture"></div>
         <div className="wrap contacto-hero-inner">
-          <span className="sec-eyebrow" aria-hidden="true">Sin compromiso · sin prisa · sin rollos</span>
-          <h1 className="contacto-titulo">¿Lo hacemos realidad?</h1>
+          <span className="sec-eyebrow" aria-hidden="true">{t('contacto.eyebrow')}</span>
+          <h1 className="contacto-titulo">{t('contacto.title')}</h1>
           <p className="contacto-intro">
-            Escríbenos y nos tomamos un café virtual, de tú a tú. Nos cuentas qué sueñas,
-            te resolvemos <strong>todas</strong> las dudas —por raras que te parezcan— y vemos
-            juntas cómo darle forma. Hablar es gratis.&nbsp;😊
+            {t('contacto.intro1')} <strong>{t('contacto.introStrong')}</strong> {t('contacto.intro2')}&nbsp;😊
           </p>
         </div>
       </section>
@@ -97,7 +100,7 @@ export default function Contacto() {
             </span>
             <div>
               <span className="canal-card__titulo">WhatsApp</span>
-              <span className="canal-card__desc">Mándanos un mensaje o un audio</span>
+              <span className="canal-card__desc">{t('contacto.canalWhatsappDesc')}</span>
             </div>
           </a>
 
@@ -109,8 +112,8 @@ export default function Contacto() {
               </svg>
             </span>
             <div>
-              <span className="canal-card__titulo">Email</span>
-              <span className="canal-card__desc">Prefiero escribir un correo</span>
+              <span className="canal-card__titulo">{t('contacto.canalEmail')}</span>
+              <span className="canal-card__desc">{t('contacto.canalEmailDesc')}</span>
             </div>
           </a>
         </div>
@@ -120,15 +123,15 @@ export default function Contacto() {
       <section className="contacto-form-section">
         <div className="wrap contacto-form-wrap">
           <div className="contacto-form-card">
-            <h2 className="contacto-form-titulo">Cuéntanoslo por aquí</h2>
-            <span className="sr-only">inicio del formulario</span>
+            <h2 className="contacto-form-titulo">{t('contacto.formTitle')}</h2>
+            <span className="sr-only">{t('contacto.formStartSr')}</span>
 
             {state.succeeded ? (
               <p role="status" aria-live="polite" className="form-status--success">
-                ¡Recibido! Nos pondremos en contacto contigo en menos de 48 horas.
+                {t('contacto.success')}
               </p>
             ) : (
-              <form onSubmit={handleSubmit} aria-label="Formulario de contacto">
+              <form onSubmit={handleSubmit} aria-label={t('contacto.formAria')}>
 
                 {/* Honeypot antibot */}
                 <div aria-hidden="true" style={{ display: 'none' }}>
@@ -144,9 +147,9 @@ export default function Contacto() {
                 {/* Nombre */}
                 <div className="form-field">
                   <label htmlFor="nombre" className="form-label">
-                    ¿Cómo te llamas?
+                    {t('contacto.nombreLabel')}
                     <span aria-hidden="true" className="required-marker"> *</span>
-                    <span className="sr-only">(obligatorio)</span>
+                    <span className="sr-only">{t('contacto.requiredSr')}</span>
                   </label>
                   <input
                     id="nombre" name="nombre" type="text" autoComplete="given-name"
@@ -163,12 +166,12 @@ export default function Contacto() {
                 <div className="form-field-group">
                   <div className="form-field">
                     <label htmlFor="telefono" className="form-label">
-                      Teléfono móvil
-                      <span className="form-optional"> (al menos uno)</span>
+                      {t('contacto.telefonoLabel')}
+                      <span className="form-optional"> {t('contacto.atLeastOne')}</span>
                     </label>
                     <input
                       id="telefono" name="telefono" type="tel"
-                      placeholder="Ej: +34 600 000 000"
+                      placeholder={t('contacto.telefonoPlaceholder')}
                       autoComplete="tel"
                       aria-invalid={!!errors.telefono}
                       aria-describedby={errors.telefono ? 'tel-err' : undefined}
@@ -179,8 +182,8 @@ export default function Contacto() {
 
                   <div className="form-field">
                     <label htmlFor="email" className="form-label">
-                      Correo electrónico
-                      <span className="form-optional"> (al menos uno)</span>
+                      {t('contacto.emailLabel')}
+                      <span className="form-optional"> {t('contacto.atLeastOne')}</span>
                     </label>
                     <input
                       id="email" name="email" type="text"
@@ -203,12 +206,12 @@ export default function Contacto() {
                 {/* Canal preferido */}
                 <fieldset className="form-field">
                   <legend className="form-label">
-                    ¿Cómo prefieres contactar?
+                    {t('contacto.canalLegend')}
                     <span aria-hidden="true" className="required-marker"> *</span>
-                    <span className="sr-only">(obligatorio)</span>
+                    <span className="sr-only">{t('contacto.requiredSr')}</span>
                   </legend>
                   <div className="form-radio-group">
-                    {['WhatsApp', 'Llamada', 'Email'].map(op => (
+                    {canales.map(op => (
                       <label key={op} className="form-radio-label">
                         <input type="radio" name="canal" value={op} />
                         {op}
@@ -221,10 +224,10 @@ export default function Contacto() {
                 {/* Tipo de viaje */}
                 <fieldset className="form-field">
                   <legend className="form-label">
-                    ¿Qué tienes en mente? <span className="form-optional">(opcional)</span>
+                    {t('contacto.tipoLegend')} <span className="form-optional">{t('contacto.optional')}</span>
                   </legend>
                   <div className="form-radio-group">
-                    {['Un viaje privado a medida', 'Un viaje en grupo', 'Aún no lo sé, cuéntame'].map(op => (
+                    {tiposViaje.map(op => (
                       <label key={op} className="form-radio-label">
                         <input type="radio" name="tipo_viaje" value={op} />
                         {op}
@@ -236,9 +239,9 @@ export default function Contacto() {
                 {/* Texto libre */}
                 <div className="form-field form-field--textarea">
                   <label htmlFor="mensaje" className="form-label">
-                    Cuéntanos un poco <span className="form-optional">(si te apetece)</span>
+                    {t('contacto.mensajeLabel')} <span className="form-optional">{t('contacto.mensajeOptional')}</span>
                   </label>
-                  <textarea id="mensaje" name="mensaje" rows={4} placeholder="¿Qué te gustaría vivir? ¿Viajas solo o acompañado? ¿Tienes fechas en mente?" className="form-control" />
+                  <textarea id="mensaje" name="mensaje" rows={4} placeholder={t('contacto.mensajePlaceholder')} className="form-control" />
                 </div>
 
                 {/* Consentimiento de privacidad (RGPD) */}
@@ -251,21 +254,18 @@ export default function Contacto() {
                       aria-describedby="privacidad-info"
                       aria-invalid={errors.privacidad ? 'true' : undefined}
                     />
-                    <span>He leído y acepto la <Link to="/privacidad">política de privacidad</Link>.</span>
+                    <span>{t('contacto.consentPre')} <L to="/privacidad">{t('contacto.consentLink')}</L>.</span>
                   </label>
                   {errors.privacidad && (
                     <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{errors.privacidad}</p>
                   )}
                   <p id="privacidad-info" className="form-consent-info">
-                    Responsable: Watchout Tours Ltd. · Finalidad: responder a tu consulta y hablar
-                    contigo sobre tu viaje. No usamos tus datos para publicidad ni los cedemos a
-                    terceros. Puedes ejercer tus derechos de acceso, rectificación y supresión
-                    escribiendo a info@watchouttours.nz.
+                    {t('contacto.consentInfo')}
                   </p>
                 </div>
 
                 <button type="submit" disabled={state.submitting} className="btn btn-solid btn--wide">
-                  {state.submitting ? 'Enviando…' : 'Enviar formulario'}
+                  {state.submitting ? t('contacto.submitting') : t('contacto.submit')}
                 </button>
 
                 <ValidationError errors={state.errors} className="form-status--error" />

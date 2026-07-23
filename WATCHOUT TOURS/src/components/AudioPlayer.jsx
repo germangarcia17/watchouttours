@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function AudioPlayer({ src, playerId, playingId, setPlayingId, label = 'audio' }) {
+  const { t } = useTranslation()
   const audioRef = useRef(null)
   const progressRef = useRef(null)
   const playing = playingId === playerId
@@ -78,11 +80,14 @@ export function AudioPlayer({ src, playerId, playingId, setPlayingId, label = 'a
 
   /* Tiempo legible para lectores de pantalla ("1 minuto y 5 segundos") */
   function speakTime(s) {
-    if (!s || isNaN(s)) return '0 segundos'
+    if (!s || isNaN(s)) return t('audioPlayer.seconds', { count: 0 })
     const m = Math.floor(s / 60)
     const sec = Math.floor(s % 60)
-    if (m === 0) return `${sec} segundos`
-    return `${m} ${m === 1 ? 'minuto' : 'minutos'} y ${sec} segundos`
+    if (m === 0) return t('audioPlayer.seconds', { count: sec })
+    return t('audioPlayer.minutesSeconds', {
+      minutes: t('audioPlayer.minutes', { count: m }),
+      seconds: t('audioPlayer.seconds', { count: sec }),
+    })
   }
 
   const progress = duration ? (currentTime / duration) * 100 : 0
@@ -94,7 +99,7 @@ export function AudioPlayer({ src, playerId, playingId, setPlayingId, label = 'a
       <button
         className="audio-player__btn"
         onClick={togglePlay}
-        aria-label={`${playing ? 'Pausar' : 'Reproducir'}: ${label}`}
+        aria-label={`${playing ? t('audioPlayer.pause') : t('audioPlayer.play')}: ${label}`}
       >
         {playing ? (
           /* Pause icon */
@@ -116,11 +121,11 @@ export function AudioPlayer({ src, playerId, playingId, setPlayingId, label = 'a
           ref={progressRef}
           onClick={handleProgressClick}
           role="slider"
-          aria-label={`Progreso de ${label}. Flechas para avanzar o retroceder 5 segundos`}
+          aria-label={t('audioPlayer.progress', { label })}
           aria-valuenow={Math.round(currentTime)}
           aria-valuemin={0}
           aria-valuemax={Math.round(duration) || 0}
-          aria-valuetext={`${speakTime(currentTime)} de ${speakTime(duration)}`}
+          aria-valuetext={t('audioPlayer.valueText', { current: speakTime(currentTime), total: speakTime(duration) })}
           tabIndex={0}
           onKeyDown={handleProgressKeyDown}
         >

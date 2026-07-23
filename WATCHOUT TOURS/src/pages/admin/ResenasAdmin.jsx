@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 
-const EMPTY = { author_name: '', author_context: '', content: '', video_url: '' }
+const EMPTY = { author_name: '', author_context: '', content: '', video_url: '', content_en: '', author_context_en: '' }
 
 export default function ResenasAdmin() {
   const [resenas, setResenas]   = useState([])
@@ -37,6 +37,8 @@ export default function ResenasAdmin() {
     const { error } = await supabase.from('resenas').insert({
       ...form,
       video_url: form.video_url.trim() || null,
+      content_en: form.content_en.trim() || null,
+      author_context_en: form.author_context_en.trim() || null,
       published: false,
       featured: false,
     })
@@ -83,6 +85,19 @@ export default function ResenasAdmin() {
             <label htmlFor="video_url" className="form-label">URL del vídeo del testimonio (opcional)</label>
             <input id="video_url" name="video_url" type="url" value={form.video_url} onChange={handleChange} className="form-control" placeholder="https://…supabase.co/…/testimonio.mp4" />
           </div>
+
+          <fieldset className="form-field" style={{ border: '1px solid var(--line)', borderRadius: 8, padding: '1rem', marginTop: '1rem' }}>
+            <legend style={{ fontWeight: 600, padding: '0 0.5rem' }}>Versión en inglés (opcional)</legend>
+            <p style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: '0 0 0.75rem' }}>Si lo dejas vacío, en la web en inglés se mostrará el texto en español.</p>
+            <div className="form-field">
+              <label htmlFor="content_en" className="form-label">Texto de la reseña (inglés)</label>
+              <textarea id="content_en" name="content_en" rows={4} value={form.content_en} onChange={handleChange} className="form-control" />
+            </div>
+            <div className="form-field">
+              <label htmlFor="author_context_en" className="form-label">Contexto (inglés)</label>
+              <input id="author_context_en" name="author_context_en" type="text" value={form.author_context_en} onChange={handleChange} className="form-control" />
+            </div>
+          </fieldset>
           {formError && <p role="alert" aria-live="assertive" className="form-error" style={{ marginBottom: '0.75rem' }}>{formError}</p>}
           <button type="submit" disabled={saving} className="btn btn--primary btn--sm">
             {saving ? 'Guardando…' : 'Añadir reseña'}
