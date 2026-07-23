@@ -136,7 +136,7 @@ export default function Home() {
             <div className="intro-card">
               <img
                 className="intro-card__foto"
-                src={bucketUrl('foto-grupo.jpg')}
+                src={bucketUrl('foto-grupo.webp')}
                 alt={t('home.viajes.fotoAlt')}
                 loading="lazy"
               />

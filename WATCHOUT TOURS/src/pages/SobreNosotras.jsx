@@ -123,7 +123,7 @@ export default function SobreNosotras() {
           </div>
           <div className="sn-filo-foto">
             <img
-              src={bucketUrl('foto-en-la-montana.jpg')}
+              src={bucketUrl('foto-en-la-montana.webp')}
               alt={t('sobre.filoFotoAlt')}
               loading="lazy"
             />
