@@ -258,6 +258,10 @@
   },
   "contacto": {
     "docTitle": "Contact | Watchout Tours",
+    "seo": {
+      "title": "Contact | Watchout Tours",
+      "description": "Tell us about your dream trip to New Zealand. No commitment: we'll answer your questions and figure out together how to make it happen. Email or WhatsApp us."
+    },
     "eyebrow": "No commitment · no rush · no fuss",
     "title": "Shall we make it happen?",
     "intro1": "Write to us and let's grab a virtual coffee, just the two of us. Tell us what you dream of, we'll answer",
@@ -301,6 +305,10 @@
   },
   "sobre": {
     "docTitle": "About us | Watchout Tours",
+    "seo": {
+      "title": "About us — Mónica and Sylvie | Watchout Tours",
+      "description": "We're Mónica and Sylvie, two Spanish guides in New Zealand. We create sensory trips for blind and low-vision travellers. This is our story."
+    },
     "heroImgAlt": "Mónica and Sylvie smiling in a selfie in front of a steaming geyser in Rotorua, New Zealand",
     "heroEyebrow": "The heart of the project",
     "heroTitle1": "Much more",
