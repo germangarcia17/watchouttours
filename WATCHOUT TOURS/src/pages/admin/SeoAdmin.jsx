@@ -1,7 +1,17 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 
-const PAGE_TYPES = ['home', 'productos', 'reseñas', 'blog']
+const PAGE_TYPES = ['home', 'productos', 'reseñas', 'blog', 'sobre-nosotras', 'contacto']
+
+/* Nombre legible de cada página para las cabeceras del panel */
+const PAGE_LABELS = {
+  'home': 'Home',
+  'productos': 'Rutas (Productos)',
+  'reseñas': 'Reseñas',
+  'blog': 'Blog',
+  'sobre-nosotras': 'Sobre nosotras',
+  'contacto': 'Contacto',
+}
 
 const EMPTY_META = {
   meta_title: '', meta_description: '', keywords: '', canonical_url: '',
@@ -108,7 +118,7 @@ export default function SeoAdmin() {
 
       {PAGE_TYPES.map(pt => (
         <section key={pt} aria-labelledby={`seo-${pt}-heading`} style={{ marginBottom: '2.5rem', borderTop: '1px solid var(--line)', paddingTop: '1.5rem' }}>
-          <h2 id={`seo-${pt}-heading`} style={{ textTransform: 'capitalize', marginBottom: '1rem' }}>{pt}</h2>
+          <h2 id={`seo-${pt}-heading`} style={{ marginBottom: '1rem' }}>{PAGE_LABELS[pt] ?? pt}</h2>
 
           <div className="blog-editor">
             {FIELDS_ES.map(([field, label]) => renderField(pt, field, label, forms, handleChange))}

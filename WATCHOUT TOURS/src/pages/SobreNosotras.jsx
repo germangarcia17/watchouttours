@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import '../styles/pagestyle/SobreNosotras.css'
 import '../styles/pagestyle/Filosofia.css'
@@ -6,10 +5,10 @@ import imgNosotras from '../images/sobre-nosotras.webp'
 import { useSiteImage } from '../lib/siteImages'
 import { L } from '../i18n/routing'
 import { bucketUrl } from '../lib/bucket'
+import { Seo } from '../components/Seo'
 
 export default function SobreNosotras() {
   const { t } = useTranslation()
-  useEffect(() => { document.title = t('sobre.docTitle') }, [t])
 
   const MONICA = t('sobre.monica', { returnObjects: true })
   const SYLVIE = t('sobre.sylvie', { returnObjects: true })
@@ -19,6 +18,12 @@ export default function SobreNosotras() {
 
   return (
     <>
+      <Seo
+        pageType="sobre-nosotras"
+        title={t('sobre.seo.title')}
+        description={t('sobre.seo.description')}
+      />
+
       {/* ── Hero ─────────────────────────────────────── */}
       <section className="sn-hero">
         <div className="dots-texture"></div>

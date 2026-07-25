@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useForm, ValidationError } from '@formspree/react'
 import { L } from '../i18n/routing'
+import { Seo } from '../components/Seo'
 import '../styles/pagestyle/Contacto.css'
 
 const PHONE_RE = /^[+\d][\d\s\-().]{4,19}$/
@@ -13,8 +14,6 @@ export default function Contacto() {
   const [state, handleFormspreeSubmit] = useForm('xykqrkjq')
   const [errors, setErrors] = useState({})
   const successRef = useRef(null)
-
-  useEffect(() => { document.title = t('contacto.docTitle') }, [t])
 
   // Al enviarse con éxito, movemos el foco al mensaje de confirmación para
   // que el lector de pantalla lo lea (además de la región aria-live).
@@ -79,6 +78,12 @@ export default function Contacto() {
 
   return (
     <>
+      <Seo
+        pageType="contacto"
+        title={t('contacto.seo.title')}
+        description={t('contacto.seo.description')}
+      />
+
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="contacto-hero">
         <div className="dots-texture"></div>

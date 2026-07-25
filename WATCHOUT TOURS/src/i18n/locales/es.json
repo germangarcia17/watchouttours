@@ -258,6 +258,10 @@
   },
   "contacto": {
     "docTitle": "Contacto | Watchout Tours",
+    "seo": {
+      "title": "Contacto | Watchout Tours",
+      "description": "Cuéntanos tu viaje soñado por Nueva Zelanda. Sin compromiso: resolvemos tus dudas y vemos juntas cómo hacerlo realidad. Escríbenos por email o WhatsApp."
+    },
     "eyebrow": "Sin compromiso · sin prisa · sin rollos",
     "title": "¿Lo hacemos realidad?",
     "intro1": "Escríbenos y nos tomamos un café virtual, de tú a tú. Nos cuentas qué sueñas, te resolvemos",
@@ -301,6 +305,10 @@
   },
   "sobre": {
     "docTitle": "Sobre nosotras | Watchout Tours",
+    "seo": {
+      "title": "Sobre nosotras — Mónica y Sylvie | Watchout Tours",
+      "description": "Somos Mónica y Sylvie, dos guías españolas en Nueva Zelanda. Creamos viajes sensoriales para personas ciegas y con baja visión. Esta es nuestra historia."
+    },
     "heroImgAlt": "Mónica y Sylvie sonriendo en un selfie frente a un géiser humeante en Rotorua, Nueva Zelanda",
     "heroEyebrow": "El corazón del proyecto",
     "heroTitle1": "Mucho más",

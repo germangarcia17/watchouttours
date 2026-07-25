@@ -2,6 +2,11 @@
   command   = "npm run build"
   publish   = "dist"
   functions = "netlify/functions"
+  # Fuerza el build en cada deploy automático. El directorio base
+  # ("WATCHOUT TOURS", con espacio) rompe la comprobación de cambios por
+  # defecto de Netlify y hace que cancele los deploys automáticos; con esto
+  # el comando "ignore" devuelve siempre != 0, así que nunca se omite.
+  ignore    = "/bin/false"
 
 [[redirects]]
   from   = "/*"
