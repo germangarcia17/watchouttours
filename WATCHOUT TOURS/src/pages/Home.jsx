@@ -111,15 +111,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="wrap">
-          <div className="stats">
-            <span className="sr-only">{t('home.stats.sep')}</span>
-            <div className="stat"><div className="n">2</div><div className="l">{t('home.stats.l1')}</div></div>
-            <span className="sr-only">{t('home.stats.sr2')}</span>
-            <div className="stat" aria-hidden="true"><div className="n">3 - 6</div><div className="l">{t('home.stats.l2')}</div></div>
-            <div className="stat"><div className="n">2</div><div className="l">{t('home.stats.l3')}</div></div>
-          </div>
-        </div>
       </section>
 
       {/* ── Cómo son nuestros viajes ──────────────────── */}
@@ -292,8 +283,7 @@ export default function Home() {
       {/* ── Audio clips ──────────────────────────────── */}
       <section aria-labelledby="audio-clips-heading">
         <div className="wrap">
-          <h2 id="audio-clips-heading" className="sec-eyebrow">{t('home.audio.eyebrow')}</h2>
-          <p className="sec-title">{t('home.audio.title')}</p>
+          <h2 id="audio-clips-heading" className="sec-title">{t('home.audio.eyebrow')}</h2>
           <div className="audio-cards">
             <div className="audio-card">
               <span className="sr-only">{t('home.audio.sr1')}</span>

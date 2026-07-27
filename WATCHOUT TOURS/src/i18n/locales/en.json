@@ -57,13 +57,6 @@
       "ctaPrimary": "Tell us your dream",
       "ctaSecondary": "See how we live it"
     },
-    "stats": {
-      "sep": "Statistics separator",
-      "l1": "Formats: group and tailor-made trips",
-      "sr2": "3-6 travellers per departure",
-      "l2": "Travellers per departure",
-      "l3": "Full-time guides, the whole trip"
-    },
     "viajes": {
       "eyebrow": "What are our trips like?",
       "title": "Lived through your hands, your ears and your skin",
@@ -139,7 +132,6 @@
     },
     "audio": {
       "eyebrow": "Listen to our top moments",
-      "title": "The country through the senses",
       "sr1": "first audio",
       "sr2": "second audio",
       "card1Title": "Paragliding jump!",

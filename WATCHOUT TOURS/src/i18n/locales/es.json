@@ -57,13 +57,6 @@
       "ctaPrimary": "Cuéntanos tu sueño",
       "ctaSecondary": "Mira cómo lo vivimos"
     },
-    "stats": {
-      "sep": "Separador de estadísticas",
-      "l1": "Formatos: viajes en grupo y a medida",
-      "sr2": "3-6 Viajeros por salida",
-      "l2": "Viajeros por salida",
-      "l3": "Guías full-time, todo el viaje"
-    },
     "viajes": {
       "eyebrow": "¿Cómo son nuestros viajes?",
       "title": "Se vive con las manos, el oído y la piel",
@@ -139,7 +132,6 @@
     },
     "audio": {
       "eyebrow": "Escucha nuestros momentos más top",
-      "title": "El país por los sentidos",
       "sr1": "primer audio",
       "sr2": "segundo audio",
       "card1Title": "¡Salto en parapente!",
