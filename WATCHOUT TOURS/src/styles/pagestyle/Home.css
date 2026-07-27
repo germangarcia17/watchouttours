@@ -38,8 +38,9 @@
 
 .eyebrow {
   display: inline-block;
+  font-family: 'Lexend', 'Atkinson Hyperlegible', sans-serif;
   font-size: clamp(15px, 1.6vw, 19px);
-  letter-spacing: .15em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--jade);
   font-weight: 700;
