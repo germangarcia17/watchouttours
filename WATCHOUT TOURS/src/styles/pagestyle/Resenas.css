@@ -87,7 +87,7 @@
 }
 
 .rs-destacada__quote p {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-size: clamp(18px, 2.4vw, 23px);
   font-weight: 600;
   line-height: 1.45;

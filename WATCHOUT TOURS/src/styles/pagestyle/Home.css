@@ -37,7 +37,9 @@
 }
 
 .eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: clamp(15px, 1.6vw, 19px);
   letter-spacing: .15em;
   text-transform: uppercase;
@@ -46,10 +48,20 @@
   margin-bottom: 18px;
 }
 
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--jade);
+  flex-shrink: 0;
+}
+
 /* Texto protagonista del hero (visualmente es el título aunque el h1
    semántico sea el eyebrow). Selector con `p` para ganar a `.hero p`. */
 .hero p.hero-big-text {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-size: clamp(38px, 5.4vw, 58px);
   font-weight: 800;
   line-height: 1.08;
@@ -93,7 +105,7 @@
 }
 
 .stat .n {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-mono);
   font-weight: 800;
   font-size: 25px;
 }
@@ -149,7 +161,7 @@
 
 .intro-card p {
   position: relative;
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-size: 19px;
   font-weight: 600;
   line-height: 1.4;
@@ -236,7 +248,7 @@
 }
 
 .reel-copy .callout {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-weight: 700;
   font-size: 20px;
   color: var(--ink);
@@ -349,7 +361,8 @@
 }
 
 .prod-card__precio {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-mono);
+  letter-spacing: -.01em;
   font-size: 19px;
   font-weight: 800;
   color: var(--jade);
@@ -412,7 +425,7 @@
 }
 
 .contador__numero {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-mono);
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--jade);
@@ -468,7 +481,7 @@
 }
 
 .audio-card__titulo {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-size: 1.1rem;
   margin: 0 0 .25rem;
   color: var(--ink);
@@ -631,7 +644,7 @@
   font-size: 16.5px;
   color: #D8D2C2;
   margin-bottom: 22px;
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-weight: 500;
   line-height: 1.5;
 }

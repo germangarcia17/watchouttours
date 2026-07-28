@@ -2,8 +2,8 @@
 
   --color-text: #15140F;
   --color-text-alt: #4A453B;
-  --color-background: #ECE7DD;
-  --color-background-alt: #DDD4BF;
+  --color-background: #FFFFFF;
+  --color-background-alt: #F4F1EA;
   --color-border: #D8B66A;
   --color-btn-primary: #F2A65A;
   --color-btn-primary-hover: #e6a55a;
@@ -11,7 +11,8 @@
   --color-btn-secondary: #0E0E10;
   --color-btn-secondary-hover: #C9C4BC;
   --font-family: 'Atkinson Hyperlegible', sans-serif;
-  --font-family-heading: 'Sora', sans-serif;
+  --font-family-heading: 'Bricolage Grotesque', sans-serif;
+  --font-family-mono: 'Space Mono', monospace;
   --font-size-base: 18px;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;

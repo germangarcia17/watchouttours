@@ -69,7 +69,7 @@
   background: var(--ink);
   border-radius: 14px;
   padding: 10px 20px;
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-weight: 800;
   font-size: 16px;
   color: var(--paper);
@@ -105,7 +105,7 @@
 }
 
 .admin-nav__brand {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-weight: 800;
   font-size: 15px;
   color: var(--paper);
@@ -234,7 +234,7 @@
 }
 
 .stat-card__value {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-size: 34px;
   font-weight: 800;
   color: var(--ink);
@@ -482,7 +482,7 @@
 }
 
 .image-item__key {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-weight: 700;
   font-size: 15px;
   margin: 0 0 4px;
