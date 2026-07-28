@@ -75,8 +75,8 @@ section {
 /* Intercambio semántico: el eyebrow es el encabezado (h2) y el título
    visual es un párrafo destacado. La apariencia no cambia. */
 .sec-eyebrow {
-  font-size: 13px;
-  letter-spacing: .2em;
+  font-size: 17px;
+  letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--jade);
   font-weight: 700;
