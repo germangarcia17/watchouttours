@@ -113,19 +113,12 @@ export default function Home() {
 
       </section>
 
+      <SeparadorBaston />
+
       {/* ── Cómo son nuestros viajes ──────────────────── */}
       <section id="viajes">
         <div className="wrap">
           <div className="intro-grid">
-            <div>
-              <h2 className="sec-eyebrow">{t('home.viajes.eyebrow')}</h2>
-              <p className="sec-title">{t('home.viajes.title')}</p>
-              <p>{t('home.viajes.p1')}</p>
-              <p>{t('home.viajes.p2')}</p>
-              <p>{t('home.viajes.p3')}</p>
-              <p>{t('home.viajes.p4')}</p>
-              <p>{t('home.viajes.p5')}</p>
-            </div>
             <div className="intro-card">
               <img
                 className="intro-card__foto"
@@ -135,6 +128,15 @@ export default function Home() {
               />
               <span className="tag">{t('home.viajes.tag')}</span>
               <p>{t('home.viajes.quote')}</p>
+            </div>
+            <div>
+              <h2 className="sec-eyebrow">{t('home.viajes.eyebrow')}</h2>
+              <p className="sec-title">{t('home.viajes.title')}</p>
+              <p>{t('home.viajes.p1')}</p>
+              <p>{t('home.viajes.p2')}</p>
+              <p>{t('home.viajes.p3')}</p>
+              <p>{t('home.viajes.p4')}</p>
+              <p>{t('home.viajes.p5')}</p>
             </div>
           </div>
         </div>
