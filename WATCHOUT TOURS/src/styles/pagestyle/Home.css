@@ -39,7 +39,8 @@
 .eyebrow {
   display: inline-block;
   font-size: clamp(15px, 1.6vw, 19px);
-  letter-spacing: .15em;
+  letter-spacing: .08em;
+  line-height: 1.5;
   text-transform: uppercase;
   color: var(--jade);
   font-weight: 700;
