@@ -38,6 +38,7 @@
 
 .eyebrow {
   display: inline-block;
+  font-family: 'Jost', sans-serif;
   font-size: clamp(15px, 1.6vw, 19px);
   letter-spacing: .08em;
   line-height: 1.5;
