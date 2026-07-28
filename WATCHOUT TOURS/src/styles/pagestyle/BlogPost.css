@@ -153,7 +153,7 @@
   background: var(--paper-deep);
   border-left: 3px solid var(--jade-soft);
   border-radius: 0 var(--radius) var(--radius) 0;
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-size: 18px;
   font-weight: 600;
 }

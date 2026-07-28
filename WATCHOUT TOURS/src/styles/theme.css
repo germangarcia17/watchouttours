@@ -1,7 +1,9 @@
 /* ── Tokens de diseño WatchOut! — compartidos por toda la web ── */
 :root {
-  --paper: #ECE7DD;
-  --paper-deep: #DDD4BF;
+  --paper: #FFFFFF;
+  --paper-deep: #F4F1EA;
+  --font-family-heading: 'Bricolage Grotesque', sans-serif;
+  --font-family-mono: 'Space Mono', monospace;
   --ink: #15140F;
   --ink-soft: #4A453B;
   /* Tonos oscurecidos para cumplir WCAG AA (4.5:1) como texto sobre crema */
@@ -48,7 +50,7 @@ main[tabindex="-1"]:focus {
 }
 
 h1, h2, h3 {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   letter-spacing: -.01em;
   line-height: 1.08;
   color: var(--ink);
@@ -75,6 +77,9 @@ section {
 /* Intercambio semántico: el eyebrow es el encabezado (h2) y el título
    visual es un párrafo destacado. La apariencia no cambia. */
 .sec-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 17px;
   letter-spacing: .15em;
   text-transform: uppercase;
@@ -84,8 +89,19 @@ section {
   line-height: 1.4;
 }
 
+/* Firma de marca: un pequeño trazo jade — la "voz" que abre cada sección */
+.sec-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--jade);
+  flex-shrink: 0;
+}
+
 .sec-title {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-family-heading);
   font-size: clamp(26px, 3.6vw, 36px);
   font-weight: 800;
   letter-spacing: -.01em;
@@ -254,7 +270,7 @@ a:focus-visible {
 .rs-destacada,
 .admin-nav,
 .brand-badge {
-  --focus: #ECE7DD;
+  --focus: #F4F1EA;
 }
 
 @media (max-width: 760px) {
