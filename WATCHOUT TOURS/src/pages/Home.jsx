@@ -358,9 +358,9 @@ export default function Home() {
                 <img src={nosotrasImg.src} alt={nosotrasImg.alt} />
               </div>
               <div className="origin-inner">
-                <h2 className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('home.nosotras.eyebrow')}</h2>
+                <h2 className="sec-eyebrow">{t('home.nosotras.eyebrow')}</h2>
                 <p>{t('home.nosotras.p')}</p>
-                <L to="/sobre-nosotras" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>{t('home.nosotras.cta')}</L>
+                <L to="/sobre-nosotras" className="btn btn-outline">{t('home.nosotras.cta')}</L>
               </div>
             </div>
           </div>
