@@ -42,8 +42,8 @@
 
 /* ── Artículo destacado ──────────────────────────────── */
 .blog-destacado {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
   border-radius: 24px;
   padding: 44px;
   position: relative;
@@ -55,9 +55,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
+  background-image: radial-gradient(var(--line) 1.4px, transparent 1.4px);
   background-size: 20px 20px;
-  opacity: .08;
+  opacity: .3;
 }
 
 .blog-destacado > * {
@@ -71,12 +71,11 @@
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--jade-soft);
+  color: var(--jade);
   margin-bottom: 14px;
 }
 
 .blog-destacado__titulo {
-  color: var(--paper);
   font-size: clamp(24px, 3.4vw, 32px);
   font-weight: 800;
   margin-bottom: 14px;
@@ -84,7 +83,7 @@
 }
 
 .blog-destacado__excerpt {
-  color: #D8D2C2;
+  color: var(--ink-soft);
   font-size: 15.5px;
   max-width: 62ch;
   margin-bottom: 26px;

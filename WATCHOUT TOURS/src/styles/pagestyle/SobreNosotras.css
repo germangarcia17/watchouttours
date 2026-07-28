@@ -31,10 +31,11 @@
 }
 
 .sn-hero-photo {
-  background: var(--ink);
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
   border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(21, 20, 15, .2);
+  box-shadow: 0 20px 50px rgba(21, 20, 15, .12);
   aspect-ratio: 4/5;
 }
 
@@ -61,10 +62,6 @@
   margin: 0 0 32px;
   max-width: 38ch;
   line-height: 1.25;
-}
-
-.ink-block .sn-aprendizaje-titulo {
-  color: var(--paper);
 }
 
 .sn-aprendizaje-cols {
@@ -262,14 +259,10 @@
   max-width: 68ch;
 }
 
-.ink-block .sn-aprendizaje-negrita {
+.sn-aprendizaje-negrita {
   margin: 20px 0 0;
   font-size: 16.5px;
   line-height: 1.6;
   max-width: 64ch;
-  color: var(--paper);
-}
-
-.ink-block .sn-aprendizaje-negrita strong {
-  color: var(--paper);
+  color: var(--ink);
 }
