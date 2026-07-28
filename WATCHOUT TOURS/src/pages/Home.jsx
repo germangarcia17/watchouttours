@@ -95,8 +95,11 @@ export default function Home() {
 
       {/* ── Hero ──────────────────────────────────────── */}
       <section className="hero">
+        <div className="hero-photo-panel">
+          <img src={heroImg.src} alt={heroImg.alt} />
+        </div>
         <div className="dots-texture"></div>
-        <div className="wrap hero-grid">
+        <div className="wrap">
           <div className="hero-inner">
             <h1 className="eyebrow">{t('home.hero.eyebrow')}</h1>
             <p className="hero-big-text">{t('home.hero.big1')}<br />{t('home.hero.big2')}</p>
@@ -106,11 +109,7 @@ export default function Home() {
               <L to="/resenas" className="btn btn-outline">{t('home.hero.ctaSecondary')}</L>
             </div>
           </div>
-          <div className="hero-photo-panel">
-            <img src={heroImg.src} alt={heroImg.alt} />
-          </div>
         </div>
-
       </section>
 
       <SeparadorBaston />
