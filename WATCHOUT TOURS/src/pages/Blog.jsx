@@ -43,7 +43,6 @@ export default function Blog() {
 
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="blog-hero">
-        <div className="dots-texture"></div>
         <div className="wrap blog-hero-inner">
           <span className="sec-eyebrow">{t('blog.eyebrow')}</span>
           <h1 className="blog-titulo">{t('blog.title')}</h1>

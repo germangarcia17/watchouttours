@@ -37,7 +37,6 @@ export default function Filosofia() {
     <>
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="filo-hero">
-        <div className="dots-texture"></div>
         <div className="wrap filo-hero-inner">
           <span className="sec-eyebrow">Filosofía Watchout</span>
           <h1 className="filo-titulo">Lo mejor de este viaje no se ve.</h1>

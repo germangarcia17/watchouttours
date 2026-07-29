@@ -98,7 +98,6 @@ export default function Home() {
         <div className="hero-photo-panel">
           <img src={heroImg.src} alt={heroImg.alt} />
         </div>
-        <div className="dots-texture"></div>
         <div className="wrap">
           <div className="hero-inner">
             <h1 className="eyebrow">{t('home.hero.eyebrow')}</h1>

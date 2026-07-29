@@ -9,7 +9,6 @@ export default function Accesibilidad() {
   return (
     <>
       <section className="static-hero">
-        <div className="dots-texture"></div>
         <div className="wrap static-hero-inner">
           <span className="sec-eyebrow">{t('legalCommon.eyebrow')}</span>
           <h1 className="static-titulo">{t('accesibilidad.title')}</h1>

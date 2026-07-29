@@ -10,7 +10,6 @@ export default function AvisoLegal() {
   return (
     <>
       <section className="static-hero">
-        <div className="dots-texture"></div>
         <div className="wrap static-hero-inner">
           <span className="sec-eyebrow">{t('legalCommon.eyebrow')}</span>
           <h1 className="static-titulo">{t('avisoLegal.title')}</h1>

@@ -6,11 +6,12 @@
   --font-family-mono: 'Space Mono', monospace;
   --ink: #15140F;
   --ink-soft: #4A453B;
-  --night: #14213D;
+  --night: #0E5F73;
   /* Tonos oscurecidos para cumplir WCAG AA (4.5:1) como texto sobre blanco */
   --muted: #5F584B;
-  --jade: #0B5D4C;
-  --jade-soft: #48B890; /* solo sobre fondos oscuros o como decoración */
+  /* Mostaza (antes jade): 4.7:1 sobre blanco */
+  --jade: #9A6B00;
+  --jade-soft: #F0C868; /* mostaza clara: 4.5:1 sobre --night, solo fondos oscuros o decoración */
   --coral: #FF6B4A;
   /* Coral oscurecido: 4.9:1 sobre blanco, para texto y enlaces */
   --coral-text: #C8441C;
@@ -64,18 +65,6 @@ h1, h2, h3 {
 section {
   padding: 66px 0;
   position: relative;
-}
-
-/* ── Textura táctil (motivo braille de la marca) ─────── */
-.dots-texture {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(var(--line) 1.6px, transparent 1.6px);
-  background-size: 18px 18px;
-  opacity: .35;
-  mask-image: linear-gradient(to bottom, black, transparent 85%);
-  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
 /* ── Cabeceras de sección ────────────────────────────── */

@@ -26,7 +26,6 @@ export default function SobreNosotras() {
 
       {/* ── Hero ─────────────────────────────────────── */}
       <section className="sn-hero">
-        <div className="dots-texture"></div>
         <div className="wrap sn-hero-grid">
           <div className="sn-hero-inner">
             <h1 className="sec-eyebrow">{t('sobre.heroEyebrow')}</h1>

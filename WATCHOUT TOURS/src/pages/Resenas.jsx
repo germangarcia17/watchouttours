@@ -38,7 +38,6 @@ export default function Resenas() {
 
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="rs-hero">
-        <div className="dots-texture"></div>
         <div className="wrap rs-hero-inner">
           <span className="sec-eyebrow">{t('resenas.eyebrow')}</span>
           <h1 className="rs-titulo">{t('resenas.title')}</h1>
