@@ -141,11 +141,9 @@
   font-size: 15.5px;
 }
 
-/* Antes una tarjeta oscura con marco y relleno alrededor de la foto;
-   ahora la foto ocupa toda la columna y el texto vive en una leyenda
-   con degradado sobre la propia imagen (sin caja ni borde visibles). */
+/* Antes una tarjeta oscura con marco, relleno y una cita superpuesta;
+   ahora es solo la foto, sin caja ni texto encima. */
 .intro-card {
-  position: relative;
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -156,34 +154,6 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 75%;
-}
-
-.intro-card__caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 70px 28px 28px;
-  background: linear-gradient(to top, rgba(14, 15, 12, .85) 0%, rgba(14, 15, 12, .45) 55%, transparent 100%);
-}
-
-.intro-card p {
-  font-family: var(--font-family-heading);
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--paper);
-  margin: 0;
-}
-
-.intro-card .tag {
-  color: var(--jade-soft);
-  font-size: 13px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  display: block;
-  font-weight: 700;
 }
 
 /* ── Pilares sensoriales ─────────────────────────────── */
