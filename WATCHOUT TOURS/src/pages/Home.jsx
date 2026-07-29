@@ -128,8 +128,10 @@ export default function Home() {
                 alt={t('home.viajes.fotoAlt')}
                 loading="lazy"
               />
-              <span className="tag">{t('home.viajes.tag')}</span>
-              <p>{t('home.viajes.quote')}</p>
+              <div className="intro-card__caption">
+                <span className="tag">{t('home.viajes.tag')}</span>
+                <p>{t('home.viajes.quote')}</p>
+              </div>
             </div>
             <div>
               <h2 className="sec-eyebrow">{t('home.viajes.eyebrow')}</h2>
