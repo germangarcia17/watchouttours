@@ -74,7 +74,7 @@ export default function Filosofia() {
             </p>
             <div className="cta-row" style={{ justifyContent: 'center' }}>
               <Link to="/contacto" className="btn btn-solid">Cuéntanos tu sueño</Link>
-              <Link to="/sobre-nosotras" className="btn btn-outline">Conócenos</Link>
+              <Link to="/sobre-nosotras" className="btn btn-outline filo-btn-claro">Conócenos</Link>
             </div>
           </div>
         </div>
