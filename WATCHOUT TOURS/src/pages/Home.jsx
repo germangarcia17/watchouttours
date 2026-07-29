@@ -146,47 +146,45 @@ export default function Home() {
 
       <SeparadorBaston />
 
-      {/* ── Nuestra forma de explorar ─────────────────── */}
-      <section>
+      {/* ── Nuestra forma de explorar (+ foto del haka) ─── */}
+      <section id="cultura">
         <div className="wrap">
-          <h2 className="sec-eyebrow">{t('home.explorar.eyebrow')}</h2>
-          <p className="sec-title">{t('home.explorar.title')}</p>
-          <p className="sec-sub">{t('home.explorar.sub')}</p>
-          <span className="sr-only">{t('home.explorar.srQ')}</span>
-          <div className="pillars">
-            <div className="pillar">
-              <div className="ico" aria-hidden="true">🪂</div>
-              <h3>{t('home.explorar.p1Title')}</h3>
-              <p>{t('home.explorar.p1Text')}</p>
+          <div className="explorar-grid">
+            <div>
+              <h2 className="sec-eyebrow">{t('home.explorar.eyebrow')}</h2>
+              <p className="sec-title">{t('home.explorar.title')}</p>
+              <p className="sec-sub">{t('home.explorar.sub')}</p>
+              <span className="sr-only">{t('home.explorar.srQ')}</span>
+              <div className="pillars">
+                <div className="pillar">
+                  <div className="ico" aria-hidden="true">🪂</div>
+                  <h3>{t('home.explorar.p1Title')}</h3>
+                  <p>{t('home.explorar.p1Text')}</p>
+                </div>
+                <div className="pillar">
+                  <div className="ico" aria-hidden="true">✋</div>
+                  <h3>{t('home.explorar.p2Title')}</h3>
+                  <p>{t('home.explorar.p2Text')}</p>
+                </div>
+                <div className="pillar">
+                  <div className="ico" aria-hidden="true">🌊</div>
+                  <h3>{t('home.explorar.p3Title')}</h3>
+                  <p>{t('home.explorar.p3Text')}</p>
+                </div>
+              </div>
             </div>
-            <div className="pillar">
-              <div className="ico" aria-hidden="true">✋</div>
-              <h3>{t('home.explorar.p2Title')}</h3>
-              <p>{t('home.explorar.p2Text')}</p>
-            </div>
-            <div className="pillar">
-              <div className="ico" aria-hidden="true">🌊</div>
-              <h3>{t('home.explorar.p3Title')}</h3>
-              <p>{t('home.explorar.p3Text')}</p>
-            </div>
+            <figure className="cultura-foto">
+              <img src={imgHaka} alt={t('home.cultura.fotoAlt')} loading="lazy" />
+              <figcaption>
+                <span className="tag">{t('home.cultura.tag')}</span>
+                <p>{t('home.cultura.caption')}</p>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
       <SeparadorBaston />
-
-      {/* ── Momento cultural: haka ─────────────────────── */}
-      <section id="cultura">
-        <div className="wrap">
-          <figure className="cultura-foto">
-            <img src={imgHaka} alt={t('home.cultura.fotoAlt')} loading="lazy" />
-            <figcaption>
-              <span className="tag">{t('home.cultura.tag')}</span>
-              <p>{t('home.cultura.caption')}</p>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
 
       <SeparadorBaston />
 
