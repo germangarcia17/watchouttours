@@ -94,7 +94,6 @@ export default function BlogPost() {
 
       {/* ── Cabecera del artículo ────────────────────── */}
       <header className="post-hero">
-        <div className="dots-texture"></div>
         <div className="wrap post-hero-inner">
           <p className="post-meta">
             <L to="/blog" className="post-meta__volver"><span aria-hidden="true">← </span>{t('post.backToBlog')}</L>

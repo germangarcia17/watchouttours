@@ -86,7 +86,6 @@ export default function Contacto() {
 
       {/* ── Cabecera ─────────────────────────────────── */}
       <section className="contacto-hero">
-        <div className="dots-texture"></div>
         <div className="wrap contacto-hero-inner">
           <span className="sec-eyebrow" aria-hidden="true">{t('contacto.eyebrow')}</span>
           <h1 className="contacto-titulo">{t('contacto.title')}</h1>

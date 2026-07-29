@@ -30,7 +30,6 @@ export default function AdminLogin() {
 
   return (
     <main className="login-page" id="main-content" tabIndex={-1}>
-      <div className="dots-texture" aria-hidden="true"></div>
       <div className="login-box">
         <div className="login-box__logo">
           <span className="login-box__badge">WatchOut! <em>Admin</em></span>

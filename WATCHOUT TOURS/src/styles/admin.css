@@ -41,12 +41,6 @@
   background: var(--paper);
 }
 
-.login-page .dots-texture {
-  mask-image: none;
-  -webkit-mask-image: none;
-  opacity: .3;
-}
-
 .login-box {
   position: relative;
   z-index: 2;
