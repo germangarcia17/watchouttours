@@ -4,13 +4,14 @@ import { supabase } from '../lib/supabase'
 import '../styles/pagestyle/Home.css'
 import imgHero from '../images/hero-home.webp'
 import imgNosotras from '../images/sobre-nosotras.webp'
+import imgKayak from '../images/kayak-kaikoura.jpg'
+import imgHaka from '../images/haka-cultura-maori.jpg'
 import videoParapente from '../images/parapente-teaser.mp4'
 import { AudioPlayer } from '../components/AudioPlayer'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
-import { bucketUrl } from '../lib/bucket'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 import audioBarro from '../images/barro-burbujeante-rotorua.mp3'
@@ -124,7 +125,7 @@ export default function Home() {
             <div className="intro-card">
               <img
                 className="intro-card__foto"
-                src={bucketUrl('foto-grupo.webp')}
+                src={imgKayak}
                 alt={t('home.viajes.fotoAlt')}
                 loading="lazy"
               />
@@ -172,6 +173,21 @@ export default function Home() {
               <p>{t('home.explorar.p3Text')}</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <SeparadorBaston />
+
+      {/* ── Momento cultural: haka ─────────────────────── */}
+      <section id="cultura">
+        <div className="wrap">
+          <figure className="cultura-foto">
+            <img src={imgHaka} alt={t('home.cultura.fotoAlt')} loading="lazy" />
+            <figcaption>
+              <span className="tag">{t('home.cultura.tag')}</span>
+              <p>{t('home.cultura.caption')}</p>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

@@ -249,6 +249,47 @@
   max-width: 52ch;
 }
 
+/* ── Momento cultural (foto) ──────────────────────────── */
+.cultura-foto {
+  margin: 0 auto;
+  max-width: 380px;
+  text-align: center;
+}
+
+.cultura-foto img {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(21, 20, 15, .18);
+  display: block;
+}
+
+.cultura-foto figcaption {
+  margin-top: 22px;
+}
+
+.cultura-foto .tag {
+  display: block;
+  color: var(--jade);
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cultura-foto p {
+  font-family: var(--font-family-heading);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 42ch;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
 /* ── Video reel ──────────────────────────────────────── */
 .reel-grid {
   display: grid;
