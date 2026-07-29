@@ -7,6 +7,7 @@ import imgNosotras from '../images/sobre-nosotras.webp'
 import imgKayak from '../images/kayak-kaikoura.jpg'
 import imgHaka from '../images/haka-cultura-maori.jpg'
 import videoParapente from '../images/parapente-teaser.mp4'
+import imgParapentePoster from '../images/parapente-poster.jpg'
 import { AudioPlayer } from '../components/AudioPlayer'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
@@ -196,6 +197,7 @@ export default function Home() {
             <div className="reel-frame">
               <video
                 src={videoParapente}
+                poster={imgParapentePoster}
                 controls
                 playsInline
                 preload="metadata"
