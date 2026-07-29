@@ -156,6 +156,16 @@
   object-position: center 75%;
 }
 
+/* ── Explorar + foto del haka ─────────────────────────── */
+/* En escritorio la foto va a la derecha del texto, en vez de quedar
+   como una sección aparte, centrada y sola con hueco vacío a los lados. */
+.explorar-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .95fr;
+  gap: 56px;
+  align-items: start;
+}
+
 /* ── Pilares sensoriales ─────────────────────────────── */
 .pillars {
   display: flex;
@@ -222,8 +232,8 @@
 
 /* ── Momento cultural (foto) ──────────────────────────── */
 .cultura-foto {
-  margin: 0 auto;
-  max-width: 380px;
+  max-width: 340px;
+  margin: 0 0 0 auto;
   text-align: center;
 }
 
@@ -855,6 +865,16 @@
   .pillars,
   .testi-grid {
     grid-template-columns: 1fr;
+  }
+
+  .explorar-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cultura-foto {
+    max-width: 380px;
+    margin: 0 auto;
   }
 
   .stats {
