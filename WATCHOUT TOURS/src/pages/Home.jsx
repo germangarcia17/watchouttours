@@ -102,11 +102,15 @@ export default function Home() {
         <div className="wrap">
           <div className="hero-inner">
             <h1 className="eyebrow">{t('home.hero.eyebrow')}</h1>
-            <p className="hero-big-text">{t('home.hero.big1')}<br />{t('home.hero.big2')}</p>
-            <p>{t('home.hero.sub')}</p>
-            <div className="cta-row">
-              <L to="/contacto" className="btn btn-solid">{t('home.hero.ctaPrimary')}</L>
-              <L to="/resenas" className="btn btn-outline">{t('home.hero.ctaSecondary')}</L>
+            <div className="hero-headline-row">
+              <p className="hero-big-text">{t('home.hero.big1')}<br />{t('home.hero.big2')}</p>
+              <div className="hero-headline-side">
+                <p>{t('home.hero.sub')}</p>
+                <div className="cta-row">
+                  <L to="/contacto" className="btn btn-solid">{t('home.hero.ctaPrimary')}</L>
+                  <L to="/resenas" className="btn btn-outline">{t('home.hero.ctaSecondary')}</L>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -226,23 +226,44 @@ a:focus-visible {
   padding: 28px 24px;
 }
 
-/* ── Bloque oscuro con textura (firma de la marca) ───── */
+/* ── Banda oscura a sangre (firma de la marca) ───────── */
+/* Antes era una tarjeta redondeada flotando dentro de .wrap; ahora el
+   color se extiende a los bordes del viewport con un pseudo-elemento
+   (::before/::after "escapan" del ancho de .wrap) mientras el
+   contenido se mantiene alineado a la cuadrícula normal. */
 .ink-block {
-  background: var(--night);
-  color: var(--paper);
-  border-radius: 24px;
-  padding: 52px 44px;
   position: relative;
-  overflow: hidden;
+  color: var(--paper);
+  padding: 52px 0;
 }
 
 .ink-block::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--night);
+  z-index: -2;
+}
+
+.ink-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
   background-size: 20px 20px;
   opacity: .08;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .ink-block > * {
@@ -280,7 +301,7 @@ a:focus-visible {
 
 @media (max-width: 760px) {
   .ink-block {
-    padding: 32px 24px;
+    padding: 32px 0;
   }
 
   .cta-row {

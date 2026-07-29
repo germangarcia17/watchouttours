@@ -51,21 +51,38 @@
 }
 
 .rs-destacada {
-  background: var(--night);
-  color: var(--paper);
-  border-radius: 24px;
-  padding: 40px 44px;
   position: relative;
-  overflow: hidden;
+  color: var(--paper);
+  padding: 40px 0;
 }
 
 .rs-destacada::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--night);
+  z-index: -2;
+}
+
+.rs-destacada::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
   background-size: 20px 20px;
   opacity: .08;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .rs-destacada > * {
@@ -116,21 +133,20 @@
 }
 
 /* ── Grid del resto ──────────────────────────────────── */
+/* Antes tarjetas con caja completa; ahora citas sueltas con un
+   acento a la izquierda, sin fondo ni borde, más aireadas. */
 .rs-grid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px 40px;
 }
 
 .rs-card {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px;
-  border-top: 3px solid var(--jade-soft);
+  padding-left: 18px;
+  border-left: 3px solid var(--jade-soft);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -178,7 +194,7 @@
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 760px) {
   .rs-destacada {
-    padding: 28px 24px;
+    padding: 28px 0;
   }
 }
 

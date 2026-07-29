@@ -92,10 +92,8 @@
 
 .sn-quote {
   margin: 28px 0;
-  padding: 24px 28px;
-  background: var(--paper-deep);
+  padding: 4px 0 4px 28px;
   border-left: 3px solid var(--jade-soft);
-  border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .sn-quote p {
@@ -117,21 +115,39 @@
 .sn-cinco-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 0;
 }
 
 .sn-persona-card {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px;
-  border-top: 3px solid var(--jade-soft);
+  padding: 0 36px;
+}
+
+.sn-persona-card:first-child {
+  padding-left: 0;
+  border-right: 1px solid var(--line);
+}
+
+.sn-persona-card:last-child {
+  padding-right: 0;
 }
 
 .sn-persona-nombre {
   font-size: 21px;
   font-weight: 800;
   margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.sn-persona-nombre::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--jade-soft);
 }
 
 .sn-lista {
@@ -251,6 +267,17 @@
 
   .sn-cinco-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sn-persona-card {
+    padding: 0;
+  }
+
+  .sn-persona-card:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
   }
 }
 
