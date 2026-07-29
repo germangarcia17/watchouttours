@@ -223,6 +223,39 @@
     "eyebrow": "Nuestras opciones",
     "title": "Dos maneras de vivirlo",
     "sub": "La misma ruta, tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.",
+    "mapa": {
+      "eyebrow": "El itinerario",
+      "title": "Así es la ruta, parada a parada",
+      "sub": "Un mapa esquemático para hacerte una idea de conjunto — y, justo debajo, cada parada contada con detalle.",
+      "navAria": "Mapa de la ruta por Nueva Zelanda",
+      "paradas": [
+        {
+          "id": "auckland",
+          "nombre": "Auckland",
+          "resumen": "Empezamos tocando texturas de efectos especiales en Wētā Workshop y sintiendo la altura y la velocidad desde lo alto de la Sky Tower."
+        },
+        {
+          "id": "rotorua",
+          "nombre": "Waikato y Rotorua",
+          "resumen": "El tacto de las puertas redondas de Hobbiton, el estruendo del géiser Pōhutu en Te Puia, el haka retumbando en el pecho y el barro geotermal de Hells Gate en la piel."
+        },
+        {
+          "id": "kaikoura",
+          "nombre": "Kaikōura y Christchurch",
+          "resumen": "El soplido de las ballenas y sus clics de ecolocalización bajo el agua, y el frío extremo de una tormenta antártica real en el Antarctic Centre."
+        },
+        {
+          "id": "tekapo",
+          "nombre": "Tekapo y Mt Cook",
+          "resumen": "Un baño termal bajo un cielo que se cuenta, estrella a estrella, con un guiado astronómico narrado."
+        },
+        {
+          "id": "queenstown",
+          "nombre": "Queenstown, Milford Sound y Stewart Island",
+          "resumen": "El rugido de las cascadas de Milford Sound salpicando la cubierta, el vapor de las Onsen Hot Pools y el aislamiento salvaje de Stewart Island."
+        }
+      ]
+    },
     "incluye": "Incluye:",
     "ctaEyebrow": "¿Dudas?",
     "ctaTitle": "Cuéntanos que necesitas.",
@@ -276,10 +309,18 @@
     "telefonoPlaceholder": "Ej: +34 600 000 000",
     "emailLabel": "Correo electrónico",
     "canalLegend": "¿Cómo prefieres contactar?",
-    "canalesOpciones": ["WhatsApp", "Llamada", "Email"],
+    "canalesOpciones": [
+      "WhatsApp",
+      "Llamada",
+      "Email"
+    ],
     "tipoLegend": "¿Qué tienes en mente?",
     "optional": "(opcional)",
-    "tiposViaje": ["Un viaje privado a medida", "Un viaje en grupo", "Aún no lo sé, cuéntame"],
+    "tiposViaje": [
+      "Un viaje privado a medida",
+      "Un viaje en grupo",
+      "Aún no lo sé, cuéntame"
+    ],
     "mensajeLabel": "Cuéntanos un poco",
     "mensajeOptional": "(si te apetece)",
     "mensajePlaceholder": "¿Qué te gustaría vivir? ¿Viajas solo o acompañado? ¿Tienes fechas en mente?",
@@ -326,28 +367,78 @@
     "cincoEyebrow": "De tú a tú",
     "cincoTitle": "Cinco cosas sobre nosotras",
     "monica": [
-      { "emoji": "❤️", "text": "Cree que los mejores recuerdos nacen de las conversaciones que no estaban planeadas." },
-      { "emoji": "☕", "text": "Un café con vistas siempre le parece un buen plan." },
-      { "emoji": "🌿", "text": "Es de las que se detiene para escuchar un río, sentir el viento o simplemente respirar." },
-      { "emoji": "😂", "text": "Tiene una risa contagiosa." },
-      { "emoji": "🎧", "text": "Le fascina escuchar las historias de las personas, porque está convencida de que cada una tiene algo que enseñar." }
+      {
+        "emoji": "❤️",
+        "text": "Cree que los mejores recuerdos nacen de las conversaciones que no estaban planeadas."
+      },
+      {
+        "emoji": "☕",
+        "text": "Un café con vistas siempre le parece un buen plan."
+      },
+      {
+        "emoji": "🌿",
+        "text": "Es de las que se detiene para escuchar un río, sentir el viento o simplemente respirar."
+      },
+      {
+        "emoji": "😂",
+        "text": "Tiene una risa contagiosa."
+      },
+      {
+        "emoji": "🎧",
+        "text": "Le fascina escuchar las historias de las personas, porque está convencida de que cada una tiene algo que enseñar."
+      }
     ],
     "sylvie": [
-      { "emoji": "❄️", "text": "Creció viendo a su padre guiar a personas ciegas en la nieve, aprendiendo el verdadero valor de la confianza." },
-      { "emoji": "🧭", "text": "Tiene un talento natural para salirse de la ruta y descubrir lugares únicos y secretos." },
-      { "emoji": "☕", "text": "Su intuición nunca falla: siempre sabe dónde está el mejor café o el postre más espectacular." },
-      { "emoji": "🌊", "text": "Transmite una calma contagiosa que transforma cualquier imprevisto en una nueva aventura." },
-      { "emoji": "🤍", "text": "Lo tiene claro: las personas y sus emociones siempre van por delante del itinerario." }
+      {
+        "emoji": "❄️",
+        "text": "Creció viendo a su padre guiar a personas ciegas en la nieve, aprendiendo el verdadero valor de la confianza."
+      },
+      {
+        "emoji": "🧭",
+        "text": "Tiene un talento natural para salirse de la ruta y descubrir lugares únicos y secretos."
+      },
+      {
+        "emoji": "☕",
+        "text": "Su intuición nunca falla: siempre sabe dónde está el mejor café o el postre más espectacular."
+      },
+      {
+        "emoji": "🌊",
+        "text": "Transmite una calma contagiosa que transforma cualquier imprevisto en una nueva aventura."
+      },
+      {
+        "emoji": "🤍",
+        "text": "Lo tiene claro: las personas y sus emociones siempre van por delante del itinerario."
+      }
     ],
     "filoEyebrow": "Nuestra filosofía",
     "filoTitle": "Cinco principios que guían cada decisión",
     "filoFotoAlt": "Una viajera de Watchout Tours en lo alto de una montaña de Nueva Zelanda, con un amplio paisaje al fondo",
     "principios": [
-      { "num": "01", "titulo": "Diseñado para, no adaptado desde", "texto": "Construimos cada viaje desde el primer paso pensando en quién viaja con nosotras." },
-      { "num": "02", "titulo": "El lujo es sensorial, no visual", "texto": "El silencio de un fiordo al amanecer es opulento para cualquier sentido." },
-      { "num": "03", "titulo": "Grupos de máximo seis", "texto": "Porque la experiencia sensorial requiere espacio y cada persona tiene su ritmo." },
-      { "num": "04", "titulo": "Respeto a la cultura maorí", "texto": "Trabajamos con las comunidades locales, no sobre ellas." },
-      { "num": "05", "titulo": "Cero condescendencia", "texto": "Nuestras viajeras son adultas que han decidido vivir una aventura extraordinaria." }
+      {
+        "num": "01",
+        "titulo": "Diseñado para, no adaptado desde",
+        "texto": "Construimos cada viaje desde el primer paso pensando en quién viaja con nosotras."
+      },
+      {
+        "num": "02",
+        "titulo": "El lujo es sensorial, no visual",
+        "texto": "El silencio de un fiordo al amanecer es opulento para cualquier sentido."
+      },
+      {
+        "num": "03",
+        "titulo": "Grupos de máximo seis",
+        "texto": "Porque la experiencia sensorial requiere espacio y cada persona tiene su ritmo."
+      },
+      {
+        "num": "04",
+        "titulo": "Respeto a la cultura maorí",
+        "texto": "Trabajamos con las comunidades locales, no sobre ellas."
+      },
+      {
+        "num": "05",
+        "titulo": "Cero condescendencia",
+        "texto": "Nuestras viajeras son adultas que han decidido vivir una aventura extraordinaria."
+      }
     ],
     "cierre1": "Pensábamos que íbamos a enseñar Nueva Zelanda. Y al final ha sido Nueva Zelanda —y las personas con las que hemos compartido el camino— quien nos ha enseñado a nosotras.",
     "cierreDeseo": "Nuestra mayor ilusión es que cuando vuelvas a casa no solo recuerdes los lugares que visitaste. Que también descubras que prestas atención a cosas que antes pasaban desapercibidas.",

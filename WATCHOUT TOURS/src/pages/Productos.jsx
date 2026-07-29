@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
+import RutaMapa from '../components/RutaMapa'
 import '../styles/pagestyle/Productos.css'
 
 export default function Productos() {
@@ -44,6 +45,8 @@ export default function Productos() {
           </div>
         </div>
       </section>
+
+      <RutaMapa />
 
       {/* ── CTA final ────────────────────────────────── */}
       <section className="prod-cta-section">

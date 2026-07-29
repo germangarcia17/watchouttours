@@ -1,0 +1,127 @@
+/* ── Mapa de ruta accesible ──────────────────────────────
+   El mapa visual es un apoyo, no la fuente de información: la lista de
+   paradas de al lado/debajo contiene el mismo contenido en texto real,
+   navegable con teclado y lector de pantalla. */
+
+.ruta-mapa {
+  padding: 24px 0 56px;
+}
+
+.ruta-mapa__grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+/* ── Mapa esquemático ─────────────────────────────────── */
+.ruta-mapa__svg-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.ruta-mapa__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ruta-mapa__isla {
+  fill: var(--paper-deep);
+  stroke: var(--night);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.ruta-mapa__pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--amber2));
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-mono);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(21, 20, 15, .25);
+  border: 2px solid var(--paper);
+  transition: transform .15s ease;
+}
+
+.ruta-mapa__pin:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+/* ── Lista de paradas (contenido real y equivalente) ─────── */
+.ruta-mapa__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.ruta-mapa__parada {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  scroll-margin-top: 100px;
+  padding: 4px 8px 4px 4px;
+  border-radius: 8px;
+}
+
+.ruta-mapa__parada:target {
+  background: var(--paper-deep);
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+
+.ruta-mapa__numero {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--amber2));
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-mono);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.ruta-mapa__nombre {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.ruta-mapa__resumen {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 62ch;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 780px) {
+  .ruta-mapa__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ruta-mapa__svg-wrap {
+    max-width: 220px;
+  }
+}
