@@ -129,8 +129,8 @@
 }
 
 .intro-card {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
+  background: var(--night);
+  color: var(--paper);
   border-radius: var(--radius);
   padding: 34px;
   position: relative;
@@ -141,9 +141,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(var(--line) 1.4px, transparent 1.4px);
+  background-image: radial-gradient(var(--gold-soft) 1.4px, transparent 1.4px);
   background-size: 16px 16px;
-  opacity: .3;
+  opacity: .12;
 }
 
 .intro-card__foto {
@@ -162,12 +162,12 @@
   font-size: 19px;
   font-weight: 600;
   line-height: 1.4;
-  color: var(--ink);
+  color: var(--paper);
 }
 
 .intro-card .tag {
   position: relative;
-  color: var(--jade);
+  color: var(--jade-soft);
   font-size: 13px;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -178,38 +178,66 @@
 
 /* ── Pilares sensoriales ─────────────────────────────── */
 .pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  counter-reset: pillar;
+  margin-top: 12px;
 }
 
 .pillar {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px 24px;
+  position: relative;
+  counter-increment: pillar;
+  padding: 32px 0 32px 68px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pillar:first-child {
+  padding-top: 8px;
+}
+
+.pillar:last-child {
+  border-bottom: none;
+  padding-bottom: 8px;
+}
+
+.pillar::before {
+  content: counter(pillar, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 32px;
+  font-family: var(--font-family-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--jade);
+}
+
+.pillar:first-child::before {
+  top: 8px;
 }
 
 .pillar .ico {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--jade-soft);
+  background: transparent;
+  border: 1px solid var(--jade-soft);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   font-size: 18px;
 }
 
 .pillar h3 {
-  font-size: 17px;
-  margin-bottom: 8px;
+  font-size: 19px;
+  margin-bottom: 10px;
 }
 
 .pillar p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--ink-soft);
+  max-width: 52ch;
 }
 
 /* ── Video reel ──────────────────────────────────────── */
@@ -221,11 +249,10 @@
 }
 
 .reel-frame {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
+  background: var(--night);
   border-radius: 32px;
   padding: 10px;
-  box-shadow: 0 20px 50px rgba(21, 20, 15, .12);
+  box-shadow: 0 20px 50px rgba(21, 20, 15, .25);
   max-width: 280px;
   margin: 0 auto;
 }
@@ -262,8 +289,8 @@
 /* ── Testimonios ─────────────────────────────────────── */
 .testi-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
 .testi {
@@ -272,6 +299,23 @@
   border-radius: var(--radius);
   padding: 26px;
   border-top: 3px solid var(--jade-soft);
+}
+
+/* La primera reseña (cuando hay 3 o más) se destaca a todo el ancho,
+   con cita más grande, para romper la cuadrícula de cajas iguales. */
+.testi:first-child:nth-last-child(n+3) {
+  grid-column: 1 / -1;
+  padding: 40px 44px;
+  border-top: none;
+  border-left: 3px solid var(--jade-soft);
+}
+
+.testi:first-child:nth-last-child(n+3) q {
+  font-family: var(--font-family-heading);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 62ch;
 }
 
 .testi q {
@@ -286,7 +330,7 @@
 .testi .who {
   font-size: 13.5px;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--coral-text);
   text-transform: capitalize;
 }
 
@@ -438,20 +482,39 @@
 }
 
 /* ── Audio cards ─────────────────────────────────────── */
+/* Antes una cuadrícula 2×2 de tarjetas idénticas. Ahora una lista con
+   más aire: el primer audio se destaca (tarjeta propia, icono mayor) y
+   el resto son filas compactas separadas por un divisor, sin ocultar
+   ningún contenido (título, descripción y reproductor siguen completos
+   para quienes usan lector de pantalla). */
 .audio-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 8px;
 }
 
 .audio-card {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 1.75rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0 0 1.75rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.audio-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.audio-card:first-child {
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem;
 }
 
 .audio-card__header {
@@ -473,6 +536,12 @@
   padding: .4rem;
 }
 
+.audio-card:first-child .audio-card__icono {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 12px;
+}
+
 .audio-card__icono svg {
   width: 100%;
   height: 100%;
@@ -483,6 +552,10 @@
   font-size: 1.1rem;
   margin: 0 0 .25rem;
   color: var(--ink);
+}
+
+.audio-card:first-child .audio-card__titulo {
+  font-size: 1.3rem;
 }
 
 .audio-card__etiqueta {
@@ -596,8 +669,8 @@
 
 /* ── Nosotras / Origin ───────────────────────────────── */
 .origin {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
+  background: var(--night);
+  color: var(--paper);
   border-radius: 24px;
   padding: 52px 44px;
   position: relative;
@@ -608,9 +681,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(var(--line) 1.4px, transparent 1.4px);
+  background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
   background-size: 20px 20px;
-  opacity: .3;
+  opacity: .08;
 }
 
 .origin-grid {
@@ -624,7 +697,7 @@
 .origin-photo {
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(236, 231, 221, .15);
 }
 
 .origin-photo img {
@@ -640,7 +713,7 @@
 
 .origin-inner p {
   font-size: 16.5px;
-  color: var(--ink-soft);
+  color: #D8D2C2;
   margin-bottom: 22px;
   font-family: var(--font-family-heading);
   font-weight: 500;
@@ -677,8 +750,7 @@
 .final-cta {
   text-align: center;
   padding: 70px 0 90px;
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
+  background: linear-gradient(135deg, #1B2A5C 0%, var(--night) 100%);
   border-radius: 16px;
   margin: 0 1rem 2rem;
   position: relative;
@@ -689,20 +761,19 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(var(--line) 1.4px, transparent 1.4px);
-  background-size: 20px 20px;
-  opacity: .3;
+  background: radial-gradient(ellipse at 60% 40%, rgba(255, 107, 74, .22) 0%, rgba(255, 180, 84, .08) 45%, transparent 72%);
   pointer-events: none;
 }
 
 .final-cta h2 {
   font-size: clamp(28px, 4vw, 40px);
   margin-bottom: 16px;
+  color: var(--paper);
   position: relative;
 }
 
 .final-cta p {
-  color: var(--ink-soft);
+  color: #D8D2C2;
   max-width: 48ch;
   margin: 0 auto 30px;
   position: relative;
@@ -781,10 +852,6 @@
 
   .origin {
     padding: 32px 24px;
-  }
-
-  .audio-cards {
-    grid-template-columns: 1fr;
   }
 
   .final-cta {
@@ -871,13 +938,34 @@
   }
 }
 
-/* ── Rutas dentro del bloque con textura ─────────────── */
-/* .ink-block p tiene más especificidad que .prod-card__precio/-nota:
-   restaurar sus colores propios para que no queden en ink-soft */
+/* ── Rutas dentro del bloque oscuro ──────────────────── */
+/* Las tarjetas son claras: restaurar sus colores de texto, que
+   .ink-block h3/p pondría en crema (ilegible sobre crema) */
+.rutas-black .prod-card h3 {
+  color: var(--ink);
+}
+
+.rutas-black .prod-card p {
+  color: var(--ink-soft);
+}
+
 .rutas-black .prod-card__precio {
   color: var(--jade);
 }
 
 .rutas-black .prod-card__precio-nota {
   color: var(--muted);
+}
+
+.rutas-black .contador-aviso__texto,
+.rutas-black .contador__label {
+  color: #D8D2C2;
+}
+
+.rutas-black .contador__numero {
+  color: var(--jade-soft);
+}
+
+.rutas-black .contador-aviso {
+  background: rgba(236, 231, 221, .04);
 }

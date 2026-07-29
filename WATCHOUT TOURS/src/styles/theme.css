@@ -6,10 +6,15 @@
   --font-family-mono: 'Space Mono', monospace;
   --ink: #15140F;
   --ink-soft: #4A453B;
-  /* Tonos oscurecidos para cumplir WCAG AA (4.5:1) como texto sobre crema */
+  --night: #14213D;
+  /* Tonos oscurecidos para cumplir WCAG AA (4.5:1) como texto sobre blanco */
   --muted: #5F584B;
-  --jade: #1F5F45;
+  --jade: #0B5D4C;
   --jade-soft: #48B890; /* solo sobre fondos oscuros o como decoración */
+  --coral: #FF6B4A;
+  /* Coral oscurecido: 4.9:1 sobre blanco, para texto y enlaces */
+  --coral-text: #C8441C;
+  --amber2: #FFB454;
   --gold: #6E5526;
   --gold-soft: #D8B66A;
   --amber: #F2A65A;
@@ -144,9 +149,9 @@ section {
 }
 
 .btn-solid {
-  background: var(--amber);
+  background: linear-gradient(135deg, var(--coral), var(--amber2));
   color: var(--ink);
-  box-shadow: 0 6px 18px rgba(242, 166, 90, .35);
+  box-shadow: 0 6px 18px rgba(255, 107, 74, .35);
 }
 
 .btn-outline {
@@ -163,6 +168,18 @@ section {
 .btn-whatsapp svg {
   fill: var(--ws-green);
   flex-shrink: 0;
+}
+
+/* Sobre fondo oscuro el verde WhatsApp original sí contrasta */
+.final-cta .btn-whatsapp,
+.ink-block .btn-whatsapp {
+  color: #25D366;
+  border-color: #25D366;
+}
+
+.final-cta .btn-whatsapp svg,
+.ink-block .btn-whatsapp svg {
+  fill: #25D366;
 }
 
 .cta-row {
@@ -209,10 +226,10 @@ a:focus-visible {
   padding: 28px 24px;
 }
 
-/* ── Bloque con textura (firma de la marca) ──────────── */
+/* ── Bloque oscuro con textura (firma de la marca) ───── */
 .ink-block {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
+  background: var(--night);
+  color: var(--paper);
   border-radius: 24px;
   padding: 52px 44px;
   position: relative;
@@ -223,20 +240,39 @@ a:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(var(--line) 1.4px, transparent 1.4px);
+  background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
   background-size: 20px 20px;
-  opacity: .3;
+  opacity: .08;
 }
 
 .ink-block > * {
   position: relative;
 }
 
-.ink-block p {
-  color: var(--ink-soft);
+.ink-block h2,
+.ink-block h3 {
+  color: var(--paper);
 }
 
-/* Los bloques oscuros del panel de administración usan anillo de foco claro */
+.ink-block p {
+  color: #D8D2C2;
+}
+
+.ink-block .sec-title {
+  color: var(--paper);
+}
+
+.ink-block .sec-eyebrow {
+  color: var(--jade-soft);
+}
+
+/* Los bloques oscuros usan anillo de foco claro para que sea visible */
+.ink-block,
+.intro-card,
+.origin,
+.final-cta,
+.blog-destacado,
+.rs-destacada,
 .admin-nav,
 .brand-badge {
   --focus: #F4F1EA;

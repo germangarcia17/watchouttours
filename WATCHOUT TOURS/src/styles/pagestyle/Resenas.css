@@ -51,8 +51,8 @@
 }
 
 .rs-destacada {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
+  background: var(--night);
+  color: var(--paper);
   border-radius: 24px;
   padding: 40px 44px;
   position: relative;
@@ -63,9 +63,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(var(--line) 1.4px, transparent 1.4px);
+  background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
   background-size: 20px 20px;
-  opacity: .3;
+  opacity: .08;
 }
 
 .rs-destacada > * {
@@ -78,7 +78,7 @@
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--jade);
+  color: var(--jade-soft);
   margin-bottom: 16px;
 }
 
@@ -91,22 +91,28 @@
   font-size: clamp(18px, 2.4vw, 23px);
   font-weight: 600;
   line-height: 1.45;
-  color: var(--ink);
+  color: var(--paper);
   margin: 0;
   max-width: 40ch;
 }
 
 .rs-destacada__who {
   font-size: 14px;
+  color: var(--gold-soft);
 }
 
 .rs-destacada__who strong {
   font-weight: 700;
-  color: var(--gold);
 }
 
 .rs-destacada__who span {
-  color: var(--muted);
+  color: #B9B2A3;
+}
+
+/* ── Testimonios en vídeo (botón sobre tarjeta oscura) ── */
+.rs-destacada .testi-video summary {
+  color: var(--jade-soft);
+  border-color: var(--jade-soft);
 }
 
 /* ── Grid del resto ──────────────────────────────────── */

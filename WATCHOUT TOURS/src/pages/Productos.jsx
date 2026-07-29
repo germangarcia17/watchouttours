@@ -49,7 +49,7 @@ export default function Productos() {
       <section className="prod-cta-section">
         <div className="wrap">
           <div className="ink-block prod-cta">
-            <div className="sec-eyebrow">{t('productos.ctaEyebrow')}</div>
+            <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('productos.ctaEyebrow')}</div>
             <h2 className="prod-cta__titulo">{t('productos.ctaTitle')}</h2>
             <p>{t('productos.ctaText')}</p>
             <L to="/contacto" className="btn btn-solid">{t('productos.ctaBtn')}</L>
