@@ -42,22 +42,39 @@
 
 /* ── Artículo destacado ──────────────────────────────── */
 .blog-destacado {
-  background: var(--night);
-  color: var(--paper);
-  border-radius: 24px;
-  padding: 44px;
   position: relative;
-  overflow: hidden;
+  color: var(--paper);
+  padding: 44px 0;
   margin-bottom: 28px;
 }
 
 .blog-destacado::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--night);
+  z-index: -2;
+}
+
+.blog-destacado::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
   background-size: 20px 20px;
   opacity: .08;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .blog-destacado > * {
@@ -90,31 +107,31 @@
   margin-bottom: 26px;
 }
 
-/* ── Grid de tarjetas ────────────────────────────────── */
+/* ── Lista de artículos ──────────────────────────────── */
+/* Antes una cuadrícula de tarjetas iguales; ahora un índice editorial
+   en lista, separado por líneas finas, con más aire entre entradas. */
 .blog-grid {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-card {
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px;
-  border-top: 3px solid var(--jade-soft);
-  height: 100%;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.blog-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(21, 20, 15, .12);
+.blog-grid li:first-child .blog-card {
+  padding-top: 0;
+}
+
+.blog-grid li:last-child .blog-card {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .blog-card__meta {
@@ -152,6 +169,6 @@
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 760px) {
   .blog-destacado {
-    padding: 28px 24px;
+    padding: 28px 0;
   }
 }
