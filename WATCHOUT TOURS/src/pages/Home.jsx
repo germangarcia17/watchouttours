@@ -186,8 +186,6 @@ export default function Home() {
 
       <SeparadorBaston />
 
-      <SeparadorBaston />
-
       {/* ── Video reel — Parapente ────────────────────── */}
       <section id="en-accion">
         <div className="wrap">
