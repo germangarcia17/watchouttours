@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import '../styles/pagestyle/SobreNosotras.css'
 import '../styles/pagestyle/Filosofia.css'
-import imgNosotras from '../images/sobre-nosotras.webp'
+import imgNosotras from '../images/sobre-nosotras-hero.webp'
 import { useSiteImage } from '../lib/siteImages'
 import { L } from '../i18n/routing'
 import { bucketUrl } from '../lib/bucket'
