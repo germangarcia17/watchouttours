@@ -109,7 +109,6 @@ export default function Home() {
                 <p>{t('home.hero.sub')}</p>
                 <div className="cta-row">
                   <L to="/contacto" className="btn btn-solid">{t('home.hero.ctaPrimary')}</L>
-                  <L to="/resenas" className="btn btn-outline">{t('home.hero.ctaSecondary')}</L>
                 </div>
               </div>
             </div>
@@ -374,7 +373,7 @@ export default function Home() {
               <div className="origin-inner">
                 <h2 className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('home.nosotras.eyebrow')}</h2>
                 <p>{t('home.nosotras.p')}</p>
-                <L to="/sobre-nosotras" className="btn btn-outline" style={{ color: 'var(--paper)', borderColor: 'var(--gold-soft)' }}>{t('home.nosotras.cta')}</L>
+                <L to="/sobre-nosotras" className="btn btn-outline">{t('home.nosotras.cta')}</L>
               </div>
             </div>
           </div>

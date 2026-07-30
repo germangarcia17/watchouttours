@@ -144,31 +144,15 @@ section {
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--jade);
-  border-color: var(--jade);
-}
-
-.btn-whatsapp {
-  color: var(--ws-green);
-  border-color: var(--ws-green);
+  background: linear-gradient(135deg, var(--coral), var(--amber2));
+  color: var(--ink);
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(255, 107, 74, .35);
 }
 
 .btn-whatsapp svg {
-  fill: var(--ws-green);
+  fill: currentColor;
   flex-shrink: 0;
-}
-
-/* Sobre fondo oscuro el verde WhatsApp original sí contrasta */
-.final-cta .btn-whatsapp,
-.ink-block .btn-whatsapp {
-  color: #25D366;
-  border-color: #25D366;
-}
-
-.final-cta .btn-whatsapp svg,
-.ink-block .btn-whatsapp svg {
-  fill: #25D366;
 }
 
 .cta-row {

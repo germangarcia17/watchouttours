@@ -2,8 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--paper, #FFFFFF);
-  border-bottom: 1px solid var(--line, #CFC4A8);
+  background: var(--night, #0E5F73);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  --focus: #F4F1EA;
 }
 
 .nav-inner {
@@ -51,7 +52,7 @@
   font-family: var(--font-family-heading);
   font-weight: 800;
   font-size: 18px;
-  color: var(--ink, #15140F);
+  color: var(--paper, #FFFFFF);
   letter-spacing: -.01em;
   white-space: nowrap;
 }
@@ -61,12 +62,12 @@
   gap: 28px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--ink-soft, #4A453B);
+  color: #D8D2C2;
 }
 
 .nav-link {
   text-decoration: none;
-  color: var(--ink-soft, #4A453B);
+  color: #D8D2C2;
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
   transition: border-color .2s;
@@ -79,8 +80,8 @@
 
 .nav-link--active {
   font-weight: 700;
-  color: var(--ink, #15140F);
-  border-color: var(--ink, #15140F);
+  color: var(--paper, #FFFFFF);
+  border-color: var(--paper, #FFFFFF);
 }
 
 .nav-actions {
@@ -98,16 +99,16 @@
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .04em;
-  color: var(--ink, #15140F);
+  color: var(--paper, #FFFFFF);
   text-decoration: none;
-  border: 1px solid var(--line, #CFC4A8);
+  border: 1px solid rgba(255, 255, 255, .4);
   border-radius: 8px;
-  background: #fff;
+  background: rgba(255, 255, 255, .08);
   transition: border-color .2s, background-color .2s;
 }
 
 .lang-switch:hover {
-  border-color: var(--ink, #15140F);
+  border-color: var(--paper, #FFFFFF);
   text-decoration: none;
 }
 
@@ -116,7 +117,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--ink, #15140F);
+  color: var(--paper, #FFFFFF);
   font-size: 1.5rem;
   line-height: 1;
   padding: .25em;
@@ -146,6 +147,12 @@
     padding-block: .75rem;
     border-bottom: 1px solid var(--line, #CFC4A8);
     font-size: 16px;
+    color: var(--ink-soft, #4A453B);
+  }
+
+  .nav-link--active {
+    color: var(--ink, #15140F);
+    border-color: var(--ink, #15140F);
   }
 
   .menu-toggle {

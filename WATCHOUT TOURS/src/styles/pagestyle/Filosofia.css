@@ -104,11 +104,6 @@
   color: var(--paper);
 }
 
-.filo-btn-claro {
-  color: var(--paper);
-  border-color: var(--gold-soft);
-}
-
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 600px) {
   .filo-principio {
