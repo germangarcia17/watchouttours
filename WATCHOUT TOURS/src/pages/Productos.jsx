@@ -21,7 +21,6 @@ export default function Productos() {
         <div className="wrap">
           <h1 className="sec-eyebrow">{t('productos.eyebrow')}</h1>
           <p className="sec-title">{t('productos.title')}</p>
-          <p className="sec-sub">{t('productos.sub')}</p>
 
           <div className="prod-list">
             {formatos.map(({ id, etiqueta, titulo, cuerpo, precioTitulo, precioNota, incluye, cta }) => (
