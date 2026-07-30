@@ -54,8 +54,8 @@
       "big1": "No toda visión",
       "big2": "necesita ojos.",
       "sub": "Dos guías, contigo de principio a fin. Sin límites.",
-      "ctaPrimary": "Cuéntanos tu sueño",
-      "ctaSecondary": "Mira cómo lo vivimos"
+      "ctaPrimary": "Me apunto",
+      "ctaSecondary": "Cómo lo han vivido"
     },
     "viajes": {
       "eyebrow": "¿Cómo son nuestros viajes?",
@@ -172,7 +172,7 @@
     "finalCta": {
       "title": "¿No sabes por dónde empezar?",
       "p1": "Organizar un viaje accesible puede generar muchas preguntas.",
-      "p2": "Escríbenos. Resolveremos tus dudas y veremos juntas qué opción encaja mejor contigo.",
+      "p2": "Resolvemos tus dudas y vemos qué opción encaja mejor contigo.",
       "ctaPrimary": "Cuéntanos qué necesitas"
     }
   },
@@ -222,7 +222,6 @@
     },
     "eyebrow": "Nuestras opciones",
     "title": "Dos maneras de vivirlo",
-    "sub": "La misma ruta, tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.",
     "mapa": {
       "eyebrow": "El itinerario",
       "title": "Así es la ruta, parada a parada",
@@ -259,7 +258,7 @@
     "incluye": "Incluye:",
     "ctaEyebrow": "¿Dudas?",
     "ctaTitle": "Cuéntanos que necesitas.",
-    "ctaText": "Cuéntanos qué tienes en la cabeza y vemos juntas cómo darle forma. Sin compromiso, sin prisa y sin rollos.",
+    "ctaText": "Cuéntanos qué tienes en mente y nosotras le damos forma. Sin compromiso, sin prisas.",
     "ctaBtn": "Contáctanos",
     "formatos": [
       {
@@ -290,11 +289,11 @@
       "title": "Contacto | Watchout Tours",
       "description": "Cuéntanos tu viaje soñado por Nueva Zelanda. Sin compromiso: resolvemos tus dudas y vemos juntas cómo hacerlo realidad. Escríbenos por email o WhatsApp."
     },
-    "eyebrow": "Sin compromiso · sin prisa · sin rollos",
+    "eyebrow": "Sin compromiso · sin prisa",
     "title": "¿Lo hacemos realidad?",
-    "intro1": "Escríbenos y nos tomamos un café virtual, de tú a tú. Nos cuentas qué sueñas, te resolvemos",
+    "intro1": "Escríbenos y nos tomamos un café virtual, de tú a tú. Nos cuentas qué tienes en mente y te resolvemos",
     "introStrong": "todas",
-    "intro2": "las dudas —por raras que te parezcan— y vemos juntas cómo darle forma. Hablar es gratis.",
+    "intro2": "las dudas. ¡Estamos deseando conocerte!",
     "canalWhatsappDesc": "Mándanos un mensaje o un audio",
     "canalEmail": "Email",
     "canalEmailDesc": "Prefiero escribir un correo",
@@ -443,7 +442,7 @@
     "cierre1": "Pensábamos que íbamos a enseñar Nueva Zelanda. Y al final ha sido Nueva Zelanda —y las personas con las que hemos compartido el camino— quien nos ha enseñado a nosotras.",
     "cierreDeseo": "Nuestra mayor ilusión es que cuando vuelvas a casa no solo recuerdes los lugares que visitaste. Que también descubras que prestas atención a cosas que antes pasaban desapercibidas.",
     "cierre2": "Porque quizá ese sea el mejor souvenir que puedas llevarte.",
-    "cierreCta": "Cuéntanos tu sueño"
+    "cierreCta": "Quiero saber más"
   },
   "post": {
     "loading": "Cargando…",

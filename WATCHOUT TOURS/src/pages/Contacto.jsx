@@ -90,7 +90,7 @@ export default function Contacto() {
           <span className="sec-eyebrow" aria-hidden="true">{t('contacto.eyebrow')}</span>
           <h1 className="contacto-titulo">{t('contacto.title')}</h1>
           <p className="contacto-intro">
-            {t('contacto.intro1')} <strong>{t('contacto.introStrong')}</strong> {t('contacto.intro2')}&nbsp;😊
+            {t('contacto.intro1')} <strong>{t('contacto.introStrong')}</strong> {t('contacto.intro2')}
           </p>
         </div>
       </section>
