@@ -343,7 +343,7 @@
       "title": "Sobre nosotras — Mónica y Sylvie | Watchout Tours",
       "description": "Somos Mónica y Sylvie, dos guías españolas en Nueva Zelanda. Creamos viajes sensoriales para personas ciegas y con baja visión. Esta es nuestra historia."
     },
-    "heroImgAlt": "Mónica y Sylvie sonriendo en un selfie frente a un géiser humeante en Rotorua, Nueva Zelanda",
+    "heroImgAlt": "Mónica y Sylvie sonriendo en un selfie junto a la bahía de Sídney al atardecer, con la Ópera de Sídney al fondo",
     "heroEyebrow": "El corazón del proyecto",
     "heroTitle1": "Mucho más",
     "heroTitle2": "que un viaje.",
@@ -362,52 +362,6 @@
     "holaQuote": "\"Nunca había vivido algo así.\"",
     "holaQuoteCite": "— Lo que más nos emociona escuchar",
     "holaP3": "Somos curiosas por naturaleza. Nos encanta preguntar, escuchar historias y descubrir cómo vive el mundo cada persona. Quizá por eso Watchout nació de forma tan natural.",
-    "cincoEyebrow": "De tú a tú",
-    "cincoTitle": "Cinco cosas sobre nosotras",
-    "monica": [
-      {
-        "emoji": "❤️",
-        "text": "Cree que los mejores recuerdos nacen de las conversaciones que no estaban planeadas."
-      },
-      {
-        "emoji": "☕",
-        "text": "Un café con vistas siempre le parece un buen plan."
-      },
-      {
-        "emoji": "🌿",
-        "text": "Es de las que se detiene para escuchar un río, sentir el viento o simplemente respirar."
-      },
-      {
-        "emoji": "😂",
-        "text": "Tiene una risa contagiosa."
-      },
-      {
-        "emoji": "🎧",
-        "text": "Le fascina escuchar las historias de las personas, porque está convencida de que cada una tiene algo que enseñar."
-      }
-    ],
-    "sylvie": [
-      {
-        "emoji": "❄️",
-        "text": "Creció viendo a su padre guiar a personas ciegas en la nieve, aprendiendo el verdadero valor de la confianza."
-      },
-      {
-        "emoji": "🧭",
-        "text": "Tiene un talento natural para salirse de la ruta y descubrir lugares únicos y secretos."
-      },
-      {
-        "emoji": "☕",
-        "text": "Su intuición nunca falla: siempre sabe dónde está el mejor café o el postre más espectacular."
-      },
-      {
-        "emoji": "🌊",
-        "text": "Transmite una calma contagiosa que transforma cualquier imprevisto en una nueva aventura."
-      },
-      {
-        "emoji": "🤍",
-        "text": "Lo tiene claro: las personas y sus emociones siempre van por delante del itinerario."
-      }
-    ],
     "filoEyebrow": "Nuestra filosofía",
     "filoTitle": "Cinco principios que guían cada decisión",
     "filoFotoAlt": "Una viajera de Watchout Tours en lo alto de una montaña de Nueva Zelanda, con un amplio paisaje al fondo",

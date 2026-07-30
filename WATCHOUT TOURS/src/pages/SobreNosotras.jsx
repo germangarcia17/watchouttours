@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import '../styles/pagestyle/SobreNosotras.css'
 import '../styles/pagestyle/Filosofia.css'
-import imgNosotras from '../images/sobre-nosotras.webp'
+import imgNosotras from '../images/sobre-nosotras-hero.webp'
 import { useSiteImage } from '../lib/siteImages'
 import { L } from '../i18n/routing'
 import { bucketUrl } from '../lib/bucket'
@@ -10,8 +10,6 @@ import { Seo } from '../components/Seo'
 export default function SobreNosotras() {
   const { t } = useTranslation()
 
-  const MONICA = t('sobre.monica', { returnObjects: true })
-  const SYLVIE = t('sobre.sylvie', { returnObjects: true })
   const PRINCIPIOS = t('sobre.principios', { returnObjects: true })
 
   const heroImg = useSiteImage('sobre-nosotras', 'hero', imgNosotras, t('sobre.heroImgAlt'))
@@ -69,41 +67,6 @@ export default function SobreNosotras() {
             <cite>{t('sobre.holaQuoteCite')}</cite>
           </blockquote>
           <p className="sn-text">{t('sobre.holaP3')}</p>
-        </div>
-      </section>
-
-      {/* ── 5 cosas sobre nosotras ───────────────────── */}
-      <section>
-        <div className="wrap">
-          <h2 className="sec-eyebrow">{t('sobre.cincoEyebrow')}</h2>
-          <p className="sec-title">{t('sobre.cincoTitle')}</p>
-          <div className="sn-cinco-grid">
-
-            <article className="sn-persona-card">
-              <h3 className="sn-persona-nombre">Mónica</h3>
-              <ul role="list" className="sn-lista">
-                {MONICA.map(({ emoji, text }) => (
-                  <li key={text} className="sn-lista__item">
-                    <span aria-hidden="true" className="sn-lista__emoji">{emoji}</span>
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-
-            <article className="sn-persona-card">
-              <h3 className="sn-persona-nombre">Sylvie</h3>
-              <ul role="list" className="sn-lista">
-                {SYLVIE.map(({ emoji, text }) => (
-                  <li key={text} className="sn-lista__item">
-                    <span aria-hidden="true" className="sn-lista__emoji">{emoji}</span>
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-
-          </div>
         </div>
       </section>
 
