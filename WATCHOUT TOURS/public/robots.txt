@@ -1,0 +1,9 @@
+# robots.txt — Watchout Tours
+# Permite el rastreo de todo el sitio público y bloquea el panel de administración.
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+
+Sitemap: https://watchouttours.nz/sitemap.xml
