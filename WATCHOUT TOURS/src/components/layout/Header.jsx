@@ -56,7 +56,10 @@ export function Header() {
           <span className="brand-badge__circle">
             <img src={logoImg} alt="" aria-hidden="true" className="brand-badge__img" />
           </span>
-          <span className="brand-word">Watchout Tours</span>
+          <span className="brand-word-col">
+            <span className="brand-word">Watchout Tours</span>
+            <span className="brand-word-braille" aria-hidden="true">⠺⠁⠞⠉⠓⠕⠥⠞⠀⠞⠕⠥⠗⠎</span>
+          </span>
         </Link>
 
         <nav
