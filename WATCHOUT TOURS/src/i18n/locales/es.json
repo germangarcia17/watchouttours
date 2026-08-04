@@ -221,6 +221,7 @@
     },
     "eyebrow": "Nuestras opciones",
     "title": "Dos maneras de vivirlo",
+    "sub": "La misma ruta, tu formato: en grupo pequeño con fechas fijas, o privada y a tu ritmo.",
     "mapa": {
       "eyebrow": "El itinerario",
       "title": "Así es la ruta, parada a parada",
@@ -306,6 +307,7 @@
     "telefonoLabel": "Teléfono móvil",
     "telefonoPlaceholder": "Ej: +34 600 000 000",
     "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@correo.com",
     "canalLegend": "¿Cómo prefieres contactar?",
     "canalesOpciones": [
       "WhatsApp",

@@ -27,7 +27,7 @@ export default function Productos() {
               <article key={id} id={id} aria-labelledby={`${id}-heading`} className="prod-card">
                 <div className="prod-card__head">
                   <span className="prod-card__etiqueta">{etiqueta}</span>
-                  <h3 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h3>
+                  <h2 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h2>
                   <p className="prod-card__desc">{cuerpo}</p>
                 </div>
 

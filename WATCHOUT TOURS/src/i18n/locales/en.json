@@ -307,6 +307,7 @@
     "telefonoLabel": "Mobile phone",
     "telefonoPlaceholder": "E.g. +34 600 000 000",
     "emailLabel": "Email address",
+    "emailPlaceholder": "you@email.com",
     "canalLegend": "How would you prefer we contact you?",
     "canalesOpciones": [
       "WhatsApp",
