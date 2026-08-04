@@ -32,7 +32,7 @@ export default function SobreNosotras() {
             <p className="sn-intro">{t('sobre.heroIntro2')}</p>
           </div>
           <div className="sn-hero-photo">
-            <img src={heroImg.src} alt={heroImg.alt} />
+            <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
           </div>
         </div>
       </section>
