@@ -48,12 +48,31 @@
   display: block;
 }
 
+.brand-word-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
 .brand-word {
-  font-family: var(--font-family-heading);
-  font-weight: 800;
-  font-size: 18px;
+  font-family: 'Big Shoulders Display', var(--font-family-heading);
+  font-weight: 700;
+  font-size: 22px;
   color: var(--paper, #FFFFFF);
-  letter-spacing: -.01em;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Guiño decorativo: el wordmark transcrito a braille. No es braille
+   funcional (nadie lo "lee" en pantalla) — es un elemento de marca,
+   por eso va aria-hidden en el JSX. */
+.brand-word-braille {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #F0C868;
+  line-height: 1;
   white-space: nowrap;
 }
 
