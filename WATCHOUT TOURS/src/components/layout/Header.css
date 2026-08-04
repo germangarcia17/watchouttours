@@ -143,6 +143,36 @@
 }
 
 @media (max-width: 760px) {
+  /* El wordmark completo + braille decorativo no entra junto al botón
+     de menú en pantallas de móvil reales (320-430px); se compacta el
+     bloque de marca para que el toggle quede siempre visible. */
+  .nav-inner {
+    padding-inline: 16px;
+  }
+
+  .brand-badge {
+    gap: 8px;
+  }
+
+  .brand-badge__circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-badge__img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-word {
+    font-size: 16px;
+  }
+
+  .brand-word-braille {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
