@@ -39,12 +39,16 @@ export function useSiteImage(section, key, fallbackSrc, fallbackAlt) {
   // Se calcula en cada render para que el alt siga al idioma activo aunque
   // no haya fila en la base de datos.
   const altEn = row?.image_alt_en
-  const dbAlt = (lang === 'en' && altEn && String(altEn).trim() !== '')
-    ? altEn
-    : row?.image_alt
+  const hasAltEn = lang === 'en' && altEn && String(altEn).trim() !== ''
+  const dbAlt = hasAltEn ? altEn : row?.image_alt
+
+  // Si en inglés no hay image_alt_en y se cae al alt en español, lo marcamos
+  // con lang="es" para que el lector de pantalla lo pronuncie correctamente.
+  const fellBackToSpanish = lang === 'en' && !hasAltEn && dbAlt
 
   return {
     src: row?.src || fallbackSrc,
     alt: dbAlt || fallbackAlt,
+    lang: fellBackToSpanish ? 'es' : undefined,
   }
 }

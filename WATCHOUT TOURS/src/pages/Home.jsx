@@ -98,7 +98,7 @@ export default function Home() {
       {/* ── Hero ──────────────────────────────────────── */}
       <section className="hero">
         <div className="hero-photo-panel">
-          <img src={heroImg.src} alt={heroImg.alt} />
+          <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
         </div>
         <div className="wrap">
           <div className="hero-inner">
@@ -368,7 +368,7 @@ export default function Home() {
           <div className="origin">
             <div className="origin-grid">
               <div className="origin-photo">
-                <img src={nosotrasImg.src} alt={nosotrasImg.alt} />
+                <img src={nosotrasImg.src} alt={nosotrasImg.alt} lang={nosotrasImg.lang} />
               </div>
               <div className="origin-inner">
                 <h2 className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('home.nosotras.eyebrow')}</h2>

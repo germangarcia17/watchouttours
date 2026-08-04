@@ -60,6 +60,11 @@ export default function BlogPost() {
   const titleLang   = fieldLangAttr(post, 'title', lang)
   const excerptLang = fieldLangAttr(post, 'excerpt', lang)
   const contentLang = fieldLangAttr(post, 'content', lang)
+  // Si cae al alt en español (o al título) lo marcamos con lang="es" para
+  // que el lector de pantalla lo pronuncie en español aunque la página esté en inglés.
+  const coverAltLang = pickLocalized(post, 'cover_image_alt', lang)
+    ? fieldLangAttr(post, 'cover_image_alt', lang)
+    : titleLang
 
   const origin      = typeof window !== 'undefined' ? window.location.origin : ''
   const esUrl       = `${origin}/blog/${post.slug}`
@@ -113,7 +118,7 @@ export default function BlogPost() {
       {post.cover_image_url && (
         <div className="wrap">
           <figure className="post-cover">
-            <img src={post.cover_image_url} alt={coverAlt} />
+            <img src={post.cover_image_url} alt={coverAlt} lang={coverAltLang} />
           </figure>
         </div>
       )}
