@@ -23,6 +23,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 82%;
   display: block;
 }
 
@@ -846,6 +847,10 @@
   .hero-photo-panel {
     height: 48vh;
     min-height: 280px;
+  }
+
+  .hero-photo-panel img {
+    object-position: center;
   }
 
   .hero-inner {
