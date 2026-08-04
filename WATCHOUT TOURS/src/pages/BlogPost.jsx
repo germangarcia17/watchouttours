@@ -56,7 +56,7 @@ export default function BlogPost() {
   const metaTitle   = pickLocalized(post, 'meta_title', lang) ?? title
   const metaDesc    = pickLocalized(post, 'meta_description', lang)
   const keywords    = pickLocalized(post, 'keywords', lang)
-  const coverAlt    = pickLocalized(post, 'cover_image_alt', lang) ?? ''
+  const coverAlt    = pickLocalized(post, 'cover_image_alt', lang) || title
   const titleLang   = fieldLangAttr(post, 'title', lang)
   const excerptLang = fieldLangAttr(post, 'excerpt', lang)
   const contentLang = fieldLangAttr(post, 'content', lang)

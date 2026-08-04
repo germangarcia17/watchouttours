@@ -181,7 +181,9 @@ export default function Contacto() {
                     className={fieldClass('nombre')}
                   />
                   {errors.nombre && <p id="nombre-err" role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{errors.nombre}</p>}
-                  <ValidationError field="nombre" errors={state.errors} className="form-error" />
+                  <div role="alert" aria-live="assertive">
+                    <ValidationError field="nombre" errors={state.errors} className="form-error" />
+                  </div>
                 </div>
 
                 {/* Teléfono + Email (al menos uno obligatorio) */}
@@ -208,8 +210,8 @@ export default function Contacto() {
                       <span className="form-optional"> {t('contacto.atLeastOne')}</span>
                     </label>
                     <input
-                      id="email" name="email" type="text"
-                      placeholder="tu@email.com"
+                      id="email" name="email" type="email"
+                      placeholder={t('contacto.emailPlaceholder')}
                       autoComplete="email"
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? 'email-err' : undefined}
@@ -226,7 +228,7 @@ export default function Contacto() {
                 </div>
 
                 {/* Canal preferido */}
-                <fieldset className="form-field">
+                <fieldset className="form-field" aria-describedby={errors.canal ? 'canal-err' : undefined}>
                   <legend className="form-label">
                     {t('contacto.canalLegend')}
                     <span aria-hidden="true" className="required-marker"> *</span>
@@ -240,7 +242,7 @@ export default function Contacto() {
                       </label>
                     ))}
                   </div>
-                  {errors.canal && <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{errors.canal}</p>}
+                  {errors.canal && <p id="canal-err" role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{errors.canal}</p>}
                 </fieldset>
 
                 {/* Tipo de viaje */}
@@ -290,7 +292,9 @@ export default function Contacto() {
                   {state.submitting ? t('contacto.submitting') : t('contacto.submit')}
                 </button>
 
-                <ValidationError errors={state.errors} className="form-status--error" />
+                <div role="alert" aria-live="assertive">
+                  <ValidationError errors={state.errors} className="form-status--error" />
+                </div>
               </form>
             )}
           </div>
