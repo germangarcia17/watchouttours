@@ -73,6 +73,10 @@ function buildHtmlDocument(template, { url, lang, html, titleStr, linkStr, metaS
   let doc = template.replace(/<html lang="[^"]*">/, `<html lang="${lang}">`)
 
   doc = doc.replace(/<title[^>]*>[\s\S]*?<\/title>/, () => titleStr)
+  // Quita la meta description genérica por defecto: Helmet añade la suya,
+  // propia de cada página, más abajo (headExtras). Si se deja la genérica,
+  // queda duplicada y algunos crawlers usan la primera que encuentran.
+  doc = doc.replace(/\s*<meta name="description"[^>]*\/>\n?/, '')
 
   const headExtras = [linkStr, metaStr, scriptStr].filter(Boolean).join('\n    ')
   doc = doc.replace('</head>', () => `    ${headExtras}\n  </head>`)
