@@ -72,7 +72,7 @@ export default function BlogPost() {
   const esUrl       = `${SITE_URL}/blog/${post.slug}`
   const enUrl       = `${SITE_URL}/en/blog/${post.slug}`
   const canonicalUrl = lang === 'en' ? enUrl : esUrl
-  const coverImage  = post.og_image_url ?? post.cover_image_url
+  const coverImage  = post.og_image_url ?? post.cover_image_url ?? `${SITE_URL}/favicon-512.png`
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -113,16 +113,17 @@ export default function BlogPost() {
         {/* Open Graph */}
         <meta property="og:type"        content="article" />
         <meta property="og:locale"      content={lang === 'en' ? 'en_NZ' : 'es_ES'} />
+        <meta property="og:url"         content={canonicalUrl} />
         <meta property="og:title"       content={metaTitle} />
         {metaDesc && <meta property="og:description" content={metaDesc} />}
-        {coverImage && <meta property="og:image" content={coverImage} />}
+        <meta property="og:image" content={coverImage} />
         {post.published_at && <meta property="article:published_time" content={post.published_at} />}
 
         {/* Twitter */}
         <meta name="twitter:card"        content="summary_large_image" />
         <meta name="twitter:title"       content={metaTitle} />
         {metaDesc && <meta name="twitter:description" content={metaDesc} />}
-        {coverImage && <meta name="twitter:image" content={coverImage} />}
+        <meta name="twitter:image" content={coverImage} />
 
         {/* Datos estructurados: artículo + ruta de navegación */}
         <script type="application/ld+json">{JSON.stringify(articleJsonLd)}</script>

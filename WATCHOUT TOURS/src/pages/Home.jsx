@@ -369,7 +369,7 @@ export default function Home() {
           <div className="origin">
             <div className="origin-grid">
               <div className="origin-photo">
-                <img src={nosotrasImg.src} alt={nosotrasImg.alt} lang={nosotrasImg.lang} />
+                <img src={nosotrasImg.src} alt={nosotrasImg.alt} lang={nosotrasImg.lang} loading="lazy" />
               </div>
               <div className="origin-inner">
                 <h2 className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('home.nosotras.eyebrow')}</h2>

@@ -14,7 +14,7 @@ export function Footer() {
         {/* Columna marca */}
         <div className="footer-brand">
           <L to="/" className="footer-brand__logo" aria-label={t('footer.brandHome')}>
-            <img src={logoImg} alt="" aria-hidden="true" className="footer-brand__img" />
+            <img src={logoImg} alt="" aria-hidden="true" className="footer-brand__img" loading="lazy" />
             <span className="footer-brand__name">Watchout Tours</span>
           </L>
           <a

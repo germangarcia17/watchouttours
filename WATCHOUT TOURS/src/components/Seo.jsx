@@ -24,7 +24,10 @@ export function Seo({ pageType, title, description, keywords }) {
   const metaKeys    = pickLocalized(row, 'keywords', lang) || keywords || null
   const ogTitle     = pickLocalized(row, 'og_title', lang) || metaTitle
   const ogDesc      = pickLocalized(row, 'og_description', lang) || metaDesc
-  const ogImage     = row?.og_image_url || null
+  // Imagen social por defecto (el logo) para que ninguna página se comparta
+  // sin imagen cuando aún no se ha subido una específica desde /admin/seo.
+  const defaultImage = `${SITE_URL}/favicon-512.png`
+  const ogImage     = row?.og_image_url || defaultImage
   const twTitle     = pickLocalized(row, 'twitter_title', lang) || ogTitle
   const twDesc      = pickLocalized(row, 'twitter_description', lang) || ogDesc
   const twImage     = row?.twitter_image_url || ogImage
@@ -43,9 +46,10 @@ export function Seo({ pageType, title, description, keywords }) {
 
       <meta property="og:type" content="website" />
       <meta property="og:locale" content={lang === 'en' ? 'en_NZ' : 'es_ES'} />
+      <meta property="og:url" content={canonical} />
       <meta property="og:title" content={ogTitle} />
       {ogDesc && <meta property="og:description" content={ogDesc} />}
-      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:image" content={ogImage} />
 
       <meta name="twitter:card" content={twImage ? 'summary_large_image' : 'summary'} />
       <meta name="twitter:title" content={twTitle} />
