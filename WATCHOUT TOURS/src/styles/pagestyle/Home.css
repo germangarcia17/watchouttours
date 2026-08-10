@@ -51,7 +51,9 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  font-family: var(--font-family-heading);
   font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.08;
   letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--jade);
@@ -69,9 +71,8 @@
   flex-shrink: 0;
 }
 
-/* Texto protagonista del hero (visualmente es el título aunque el h1
-   semántico sea el eyebrow). Selector con `p` para ganar a `.hero p`. */
-.hero p.hero-big-text {
+/* Texto protagonista del hero: es el h1 semántico de la página. */
+.hero h1.hero-big-text {
   font-family: var(--font-family-heading);
   font-size: clamp(38px, 5.4vw, 58px);
   font-weight: 800;

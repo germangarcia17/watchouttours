@@ -102,9 +102,9 @@ export default function Home() {
         </div>
         <div className="wrap">
           <div className="hero-inner">
-            <h1 className="eyebrow">{t('home.hero.eyebrow')}</h1>
+            <span className="eyebrow">{t('home.hero.eyebrow')}</span>
             <div className="hero-headline-row">
-              <p className="hero-big-text">{t('home.hero.big1')}<br />{t('home.hero.big2')}</p>
+              <h1 className="hero-big-text">{t('home.hero.big1')}<br />{t('home.hero.big2')}</h1>
               <div className="hero-headline-side">
                 <p>{t('home.hero.sub')}</p>
                 <div className="cta-row">

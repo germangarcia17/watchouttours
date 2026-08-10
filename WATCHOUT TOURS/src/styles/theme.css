@@ -74,6 +74,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  font-family: var(--font-family-heading);
   font-size: 17px;
   letter-spacing: .15em;
   text-transform: uppercase;
