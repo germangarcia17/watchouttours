@@ -45,8 +45,8 @@
   },
   "home": {
     "seo": {
-      "title": "Watchout Tours — Sensory trips through New Zealand",
-      "description": "Sensory trips through New Zealand for blind and low-vision travellers. Two guides, with you from start to finish."
+      "title": "Accessible New Zealand Tours for Blind Travellers | Watchout Tours",
+      "description": "Small-group guided tours across New Zealand designed for blind and visually impaired travellers. Sensory experiences, independence, adventure and local connection."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
@@ -183,8 +183,8 @@
   },
   "blog": {
     "seo": {
-      "title": "Sensory blog | Watchout Tours",
-      "description": "Reflections on travelling differently through New Zealand. On listening better."
+      "title": "Sensory Travel Blog — New Zealand | Watchout Tours",
+      "description": "Reflections on sensory, accessible travel through New Zealand: real stories from blind and low-vision travellers."
     },
     "eyebrow": "The country through the senses",
     "title": "Sensory blog",
@@ -199,8 +199,8 @@
   },
   "resenas": {
     "seo": {
-      "title": "Reviews | Watchout Tours",
-      "description": "What those who have travelled with us through New Zealand have to say. No filters, no actors."
+      "title": "Reviews from Blind Travellers in New Zealand | Watchout Tours",
+      "description": "What blind and low-vision travellers say about touring New Zealand with us. No filters, no actors."
     },
     "eyebrow": "What they say",
     "title": "Traveller reviews",
@@ -216,8 +216,8 @@
   },
   "productos": {
     "seo": {
-      "title": "Trips | Watchout Tours",
-      "description": "Two ways to experience New Zealand with us: in a small group or on a private, tailor-made trip."
+      "title": "Guided New Zealand Tours for Blind Travellers | Watchout Tours",
+      "description": "Two ways to explore New Zealand with us: small-group or private guided tours, designed for blind and low-vision travellers."
     },
     "eyebrow": "Our options",
     "title": "Two ways to live it",
@@ -286,8 +286,8 @@
   "contacto": {
     "docTitle": "Contact | Watchout Tours",
     "seo": {
-      "title": "Contact | Watchout Tours",
-      "description": "Tell us about your dream trip to New Zealand. No commitment: we'll answer your questions and figure out together how to make it happen. Email or WhatsApp us."
+      "title": "Contact | Watchout Tours — Accessible New Zealand Travel",
+      "description": "Tell us about your dream trip to New Zealand. We'll answer your questions about our accessible tours for blind and visually impaired travellers. Email or WhatsApp us."
     },
     "eyebrow": "No commitment · no rush · no fuss",
     "title": "Shall we make it happen?",
@@ -342,8 +342,8 @@
   "sobre": {
     "docTitle": "About us | Watchout Tours",
     "seo": {
-      "title": "About us — Mónica and Sylvie | Watchout Tours",
-      "description": "We're Mónica and Sylvie, two Spanish guides in New Zealand. We create sensory trips for blind and low-vision travellers. This is our story."
+      "title": "About Us | Mónica and Sylvie — Watchout Tours",
+      "description": "We're Mónica and Sylvie, Spanish guides based in New Zealand. We create sensory, accessible trips for blind and low-vision travellers. This is our story."
     },
     "heroImgAlt": "Mónica and Sylvie smiling in a selfie by Sydney Harbour at dusk, with the Sydney Opera House in the background",
     "heroEyebrow": "The heart of the project",
@@ -413,6 +413,10 @@
   },
   "accesibilidad": {
     "docTitle": "Accessibility | Watchout Tours",
+    "seo": {
+      "title": "Accessibility Statement | Watchout Tours",
+      "description": "How we ensure the digital accessibility of watchouttours.nz for people with visual and other disabilities."
+    },
     "title": "Accessibility statement",
     "intro": "Watchout Tours is committed to ensuring digital accessibility for everyone.",
     "conformidadTitle": "Conformance level",
@@ -434,6 +438,10 @@
   },
   "privacidad": {
     "docTitle": "Privacy | Watchout Tours",
+    "seo": {
+      "title": "Privacy Policy | Watchout Tours",
+      "description": "How we handle your personal data when you contact Watchout Tours through our website form."
+    },
     "title": "Privacy policy",
     "intro": "We only collect the data you give us voluntarily so we can reply to you. We never use it for advertising or share it with third parties.",
     "responsableTitle": "Data controller",
@@ -477,6 +485,10 @@
   },
   "avisoLegal": {
     "docTitle": "Legal notice | Watchout Tours",
+    "seo": {
+      "title": "Legal Notice | Watchout Tours",
+      "description": "Legal information about Watchout Tours Ltd., the owner of this website, and its terms of use."
+    },
     "title": "Legal notice",
     "intro": "Who we are and the terms under which you can use this website.",
     "titularTitle": "Website owner",

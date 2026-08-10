@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 
-const PAGE_TYPES = ['home', 'productos', 'reseñas', 'blog', 'sobre-nosotras', 'contacto']
+const PAGE_TYPES = ['home', 'productos', 'reseñas', 'blog', 'sobre-nosotras', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal']
 
 /* Nombre legible de cada página para las cabeceras del panel */
 const PAGE_LABELS = {
@@ -11,6 +11,9 @@ const PAGE_LABELS = {
   'blog': 'Blog',
   'sobre-nosotras': 'Sobre nosotras',
   'contacto': 'Contacto',
+  'accesibilidad': 'Accesibilidad',
+  'privacidad': 'Privacidad',
+  'aviso-legal': 'Aviso legal',
 }
 
 const EMPTY_META = {

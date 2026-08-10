@@ -1,14 +1,19 @@
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { L } from '../i18n/routing'
+import { Seo } from '../components/Seo'
 import '../styles/pagestyle/Estaticas.css'
 
 export default function Privacidad() {
   const { t } = useTranslation()
-  useEffect(() => { document.title = t('privacidad.docTitle') }, [t])
 
   return (
     <>
+      <Seo
+        pageType="privacidad"
+        title={t('privacidad.seo.title')}
+        description={t('privacidad.seo.description')}
+      />
+
       <section className="static-hero">
         <div className="wrap static-hero-inner">
           <span className="sec-eyebrow">{t('legalCommon.eyebrow')}</span>

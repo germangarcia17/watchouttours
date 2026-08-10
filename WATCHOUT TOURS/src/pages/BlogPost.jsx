@@ -6,6 +6,7 @@ import { sanitizeHtml } from '../lib/sanitizeHtml'
 import { supabase } from '../lib/supabase'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
+import { SITE_URL } from '../lib/site'
 import '../styles/pagestyle/BlogPost.css'
 
 export default function BlogPost() {
@@ -66,9 +67,38 @@ export default function BlogPost() {
     ? fieldLangAttr(post, 'cover_image_alt', lang)
     : titleLang
 
-  const origin      = typeof window !== 'undefined' ? window.location.origin : ''
-  const esUrl       = `${origin}/blog/${post.slug}`
-  const enUrl       = `${origin}/en/blog/${post.slug}`
+  const esUrl       = `${SITE_URL}/blog/${post.slug}`
+  const enUrl       = `${SITE_URL}/en/blog/${post.slug}`
+  const canonicalUrl = lang === 'en' ? enUrl : esUrl
+  const coverImage  = post.og_image_url ?? post.cover_image_url
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: metaTitle,
+    ...(metaDesc && { description: metaDesc }),
+    ...(coverImage && { image: [coverImage] }),
+    ...(post.published_at && { datePublished: post.published_at }),
+    dateModified: post.updated_at || post.published_at,
+    inLanguage: lang === 'en' ? 'en' : 'es',
+    author: { '@type': 'Organization', name: 'Watchout Tours', url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Watchout Tours',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon-512.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: lang === 'en' ? 'Home' : 'Inicio', item: lang === 'en' ? `${SITE_URL}/en` : SITE_URL },
+      { '@type': 'ListItem', position: 2, name: t('blog.title'), item: lang === 'en' ? `${SITE_URL}/en/blog` : `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: title, item: canonicalUrl },
+    ],
+  }
 
   return (
     <article aria-labelledby="post-heading">
@@ -76,25 +106,25 @@ export default function BlogPost() {
         <title>{metaTitle} | Watchout Tours</title>
         {metaDesc && <meta name="description" content={metaDesc} />}
         {keywords && <meta name="keywords" content={keywords} />}
-        <link rel="canonical" href={lang === 'en' ? enUrl : esUrl} />
+        <link rel="canonical" href={canonicalUrl} />
 
         {/* Open Graph */}
         <meta property="og:type"        content="article" />
         <meta property="og:locale"      content={lang === 'en' ? 'en_NZ' : 'es_ES'} />
         <meta property="og:title"       content={metaTitle} />
         {metaDesc && <meta property="og:description" content={metaDesc} />}
-        {(post.og_image_url ?? post.cover_image_url) && (
-          <meta property="og:image" content={post.og_image_url ?? post.cover_image_url} />
-        )}
+        {coverImage && <meta property="og:image" content={coverImage} />}
         {post.published_at && <meta property="article:published_time" content={post.published_at} />}
 
         {/* Twitter */}
         <meta name="twitter:card"        content="summary_large_image" />
         <meta name="twitter:title"       content={metaTitle} />
         {metaDesc && <meta name="twitter:description" content={metaDesc} />}
-        {(post.og_image_url ?? post.cover_image_url) && (
-          <meta name="twitter:image" content={post.og_image_url ?? post.cover_image_url} />
-        )}
+        {coverImage && <meta name="twitter:image" content={coverImage} />}
+
+        {/* Datos estructurados: artículo + ruta de navegación */}
+        <script type="application/ld+json">{JSON.stringify(articleJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       </Helmet>
 
       {/* ── Cabecera del artículo ────────────────────── */}

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { useSeo } from '../lib/useSeo'
 import { useLang, stripLang } from '../i18n/routing'
 import { pickLocalized } from '../i18n/content'
+import { SITE_URL } from '../lib/site'
 
 /* Las etiquetas hreflang y el lang del <html> se gestionan globalmente en el
    Layout; aquí solo emitimos título, descripción, canónica y metadatos
@@ -28,10 +29,9 @@ export function Seo({ pageType, title, description, keywords }) {
   const twDesc      = pickLocalized(row, 'twitter_description', lang) || ogDesc
   const twImage     = row?.twitter_image_url || ogImage
 
-  const origin      = typeof window !== 'undefined' ? window.location.origin : ''
   const basePath    = stripLang(pathname)
-  const esUrl       = `${origin}${basePath}`
-  const enUrl       = `${origin}${basePath === '/' ? '/en' : `/en${basePath}`}`
+  const esUrl       = `${SITE_URL}${basePath}`
+  const enUrl       = `${SITE_URL}${basePath === '/' ? '/en' : `/en${basePath}`}`
   const canonical   = row?.canonical_url || (lang === 'en' ? enUrl : esUrl)
 
   return (

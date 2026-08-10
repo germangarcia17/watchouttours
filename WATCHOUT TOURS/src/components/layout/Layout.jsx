@@ -6,6 +6,7 @@ import { SkipLink } from './SkipLink'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { useLang, stripLang } from '../../i18n/routing'
+import { SITE_URL } from '../../lib/site'
 
 /* Sincroniza el idioma de i18next y el atributo lang del <html> con la URL.
    El lang del documento es clave para que los lectores de pantalla pronuncien
@@ -26,9 +27,8 @@ function LangSync() {
 function AlternateLinks() {
   const { pathname } = useLocation()
   const basePath = stripLang(pathname)
-  const origin = typeof window !== 'undefined' ? window.location.origin : ''
-  const esUrl = `${origin}${basePath}`
-  const enUrl = `${origin}${basePath === '/' ? '/en' : `/en${basePath}`}`
+  const esUrl = `${SITE_URL}${basePath}`
+  const enUrl = `${SITE_URL}${basePath === '/' ? '/en' : `/en${basePath}`}`
   return (
     <Helmet>
       <link rel="alternate" hrefLang="es" href={esUrl} />
