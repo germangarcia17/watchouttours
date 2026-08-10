@@ -11,6 +11,7 @@ import imgParapentePoster from '../images/parapente-poster.jpg'
 import { AudioPlayer } from '../components/AudioPlayer'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
+import { getPreload } from '../lib/preload'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import audioParapente from '../images/Saltando en parapente.mp3'
@@ -47,8 +48,8 @@ function SeparadorBaston() {
 export default function Home() {
   const { t } = useTranslation()
   const lang = useLang()
-  const [resenaDestacada, setResenaDestacada] = useState(null)
-  const [posts, setPosts] = useState([])
+  const [resenaDestacada, setResenaDestacada] = useState(getPreload().homeResenas ?? null)
+  const [posts, setPosts] = useState(getPreload().homeBlogPreview ?? [])
   const [tiempo, setTiempo] = useState(calcularTiempo())
   const [playingAudio, setPlayingAudio] = useState(null)
 

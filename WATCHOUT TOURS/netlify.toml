@@ -8,9 +8,30 @@
   # el comando "ignore" devuelve siempre != 0, así que nunca se omite.
   ignore    = "/bin/false"
 
+# La "filosofía" vive ahora dentro de Sobre Nosotras: redirect real (301)
+# para cualquier URL o backlink antiguo, en vez de depender del redirect
+# del lado del cliente.
+[[redirects]]
+  from   = "/filosofia"
+  to     = "/sobre-nosotras"
+  status = 301
+
+[[redirects]]
+  from   = "/en/filosofia"
+  to     = "/en/sobre-nosotras"
+  status = 301
+
+# Fallback de la SPA. Las páginas públicas y los artículos de blog se
+# prerenderizan en build (scripts/prerender.mjs) como archivos estáticos en
+# su ruta exacta (p. ej. /productos/index.html): Netlify los sirve
+# directamente porque un archivo existente tiene prioridad sobre cualquier
+# redirect. Este catch-all solo entra en juego para rutas no
+# prerenderizadas (/admin, rutas desconocidas) y usa app-shell.html — una
+# copia intacta del index.html genérico — para no pisar el contenido
+# prerenderizado de ninguna página real.
 [[redirects]]
   from   = "/*"
-  to     = "/index.html"
+  to     = "/app-shell.html"
   status = 200
 
 # ── Cabeceras de seguridad ─────────────────────────────────────────────

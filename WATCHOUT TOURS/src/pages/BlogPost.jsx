@@ -7,14 +7,16 @@ import { supabase } from '../lib/supabase'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import { SITE_URL } from '../lib/site'
+import { getPreload } from '../lib/preload'
 import '../styles/pagestyle/BlogPost.css'
 
 export default function BlogPost() {
   const { t } = useTranslation()
   const lang = useLang()
   const { slug }          = useParams()
-  const [post, setPost]   = useState(null)
-  const [loading, setLoading] = useState(true)
+  const preloaded         = getPreload().blogPosts?.[slug] ?? null
+  const [post, setPost]   = useState(preloaded)
+  const [loading, setLoading] = useState(!preloaded)
   const [notFound, setNotFound] = useState(false)
 
   useEffect(() => {
