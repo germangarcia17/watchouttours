@@ -13,26 +13,12 @@ import { createClient } from '@supabase/supabase-js'
 import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
+import { STATIC_ROUTES } from './routes.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 /* Dominio de producción. Configurable con SITE_URL por si cambia. Sin barra final. */
 const SITE_URL = (process.env.SITE_URL || 'https://watchouttours.nz').replace(/\/+$/, '')
-
-/* Rutas públicas indexables. changefreq/priority son orientativos para Google.
-   Se excluyen a propósito: /admin*, /filosofia (redirige) y las páginas legales
-   se marcan con prioridad baja. */
-const STATIC_ROUTES = [
-  { path: '/',               changefreq: 'weekly',  priority: '1.0' },
-  { path: '/sobre-nosotras', changefreq: 'monthly', priority: '0.8' },
-  { path: '/productos',      changefreq: 'weekly',  priority: '0.9' },
-  { path: '/resenas',        changefreq: 'weekly',  priority: '0.7' },
-  { path: '/blog',           changefreq: 'weekly',  priority: '0.7' },
-  { path: '/contacto',       changefreq: 'monthly', priority: '0.6' },
-  { path: '/accesibilidad',  changefreq: 'yearly',  priority: '0.4' },
-  { path: '/privacidad',     changefreq: 'yearly',  priority: '0.3' },
-  { path: '/aviso-legal',    changefreq: 'yearly',  priority: '0.3' },
-]
 
 /* URL española (sin prefijo) e inglesa (/en) para una ruta base dada. */
 function esUrl(path) {

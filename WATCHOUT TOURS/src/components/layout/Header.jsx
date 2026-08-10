@@ -8,6 +8,7 @@ import { L, LNav, useLang, useLocalize, stripLang, localizePath } from '../../i1
 const navLinks = [
   { to: '/productos',      key: 'rutas' },
   { to: '/sobre-nosotras', key: 'nosotras' },
+  { to: '/resenas',        key: 'resenas' },
   { to: '/blog',           key: 'blog' },
   { to: '/contacto',       key: 'contacto' },
 ]

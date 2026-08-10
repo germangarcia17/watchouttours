@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
 import { AdminLayout } from './components/admin/AdminLayout'
@@ -15,13 +16,15 @@ import Privacidad      from './pages/Privacidad'
 import AvisoLegal      from './pages/AvisoLegal'
 import NotFound        from './pages/NotFound'
 
-import AdminLogin      from './pages/admin/Login'
-import AdminDashboard  from './pages/admin/Dashboard'
-import AdminBlog       from './pages/admin/BlogAdmin'
-import AdminBlogEditor from './pages/admin/BlogEditor'
-import AdminResenas    from './pages/admin/ResenasAdmin'
-import AdminImagenes   from './pages/admin/ImagenesAdmin'
-import AdminSeo        from './pages/admin/SeoAdmin'
+/* El panel de administración no lo usa el público: se carga en un chunk
+   aparte (code-splitting) para no aumentar el peso de las páginas públicas. */
+const AdminLogin      = lazy(() => import('./pages/admin/Login'))
+const AdminDashboard  = lazy(() => import('./pages/admin/Dashboard'))
+const AdminBlog       = lazy(() => import('./pages/admin/BlogAdmin'))
+const AdminBlogEditor = lazy(() => import('./pages/admin/BlogEditor'))
+const AdminResenas    = lazy(() => import('./pages/admin/ResenasAdmin'))
+const AdminImagenes   = lazy(() => import('./pages/admin/ImagenesAdmin'))
+const AdminSeo        = lazy(() => import('./pages/admin/SeoAdmin'))
 
 /* Rutas públicas (hijas del Layout). Se renderizan dos veces: sin prefijo
    (español, por defecto) y bajo /en (inglés). Los slugs se mantienen; solo
@@ -59,18 +62,21 @@ export default function App() {
       </Route>
 
       {/* Login admin (sin layout principal ni protección) */}
-      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route
+        path="/admin/login"
+        element={<Suspense fallback={null}><AdminLogin /></Suspense>}
+      />
 
       {/* Panel admin — protegido */}
       <Route element={<ProtectedRoute />}>
         <Route element={<AdminLayout />}>
-          <Route path="/admin"              element={<AdminDashboard />} />
-          <Route path="/admin/blog"         element={<AdminBlog />} />
-          <Route path="/admin/blog/nuevo"   element={<AdminBlogEditor />} />
-          <Route path="/admin/blog/:id"     element={<AdminBlogEditor />} />
-          <Route path="/admin/resenas"      element={<AdminResenas />} />
-          <Route path="/admin/imagenes"     element={<AdminImagenes />} />
-          <Route path="/admin/seo"          element={<AdminSeo />} />
+          <Route path="/admin"              element={<Suspense fallback={null}><AdminDashboard /></Suspense>} />
+          <Route path="/admin/blog"         element={<Suspense fallback={null}><AdminBlog /></Suspense>} />
+          <Route path="/admin/blog/nuevo"   element={<Suspense fallback={null}><AdminBlogEditor /></Suspense>} />
+          <Route path="/admin/blog/:id"     element={<Suspense fallback={null}><AdminBlogEditor /></Suspense>} />
+          <Route path="/admin/resenas"      element={<Suspense fallback={null}><AdminResenas /></Suspense>} />
+          <Route path="/admin/imagenes"     element={<Suspense fallback={null}><AdminImagenes /></Suspense>} />
+          <Route path="/admin/seo"          element={<Suspense fallback={null}><AdminSeo /></Suspense>} />
         </Route>
       </Route>
     </Routes>

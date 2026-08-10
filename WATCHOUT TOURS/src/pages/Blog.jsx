@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase'
 import { Seo } from '../components/Seo'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
+import { getPreload } from '../lib/preload'
 import '../styles/pagestyle/Blog.css'
 
 function formatearFecha(iso, lang) {
@@ -15,8 +16,9 @@ function formatearFecha(iso, lang) {
 export default function Blog() {
   const { t } = useTranslation()
   const lang = useLang()
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const preloaded = getPreload().blogList ?? null
+  const [posts, setPosts] = useState(preloaded ?? [])
+  const [loading, setLoading] = useState(!preloaded)
 
   useEffect(() => {
     supabase

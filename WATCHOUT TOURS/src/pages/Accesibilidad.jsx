@@ -1,13 +1,18 @@
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Seo } from '../components/Seo'
 import '../styles/pagestyle/Estaticas.css'
 
 export default function Accesibilidad() {
   const { t } = useTranslation()
-  useEffect(() => { document.title = t('accesibilidad.docTitle') }, [t])
 
   return (
     <>
+      <Seo
+        pageType="accesibilidad"
+        title={t('accesibilidad.seo.title')}
+        description={t('accesibilidad.seo.description')}
+      />
+
       <section className="static-hero">
         <div className="wrap static-hero-inner">
           <span className="sec-eyebrow">{t('legalCommon.eyebrow')}</span>

@@ -11,6 +11,7 @@ import imgParapentePoster from '../images/parapente-poster.jpg'
 import { AudioPlayer } from '../components/AudioPlayer'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
+import { getPreload } from '../lib/preload'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import audioParapente from '../images/Saltando en parapente.mp3'
@@ -47,8 +48,8 @@ function SeparadorBaston() {
 export default function Home() {
   const { t } = useTranslation()
   const lang = useLang()
-  const [resenaDestacada, setResenaDestacada] = useState(null)
-  const [posts, setPosts] = useState([])
+  const [resenaDestacada, setResenaDestacada] = useState(getPreload().homeResenas ?? null)
+  const [posts, setPosts] = useState(getPreload().homeBlogPreview ?? [])
   const [tiempo, setTiempo] = useState(calcularTiempo())
   const [playingAudio, setPlayingAudio] = useState(null)
 
@@ -102,9 +103,9 @@ export default function Home() {
         </div>
         <div className="wrap">
           <div className="hero-inner">
-            <h1 className="eyebrow">{t('home.hero.eyebrow')}</h1>
+            <span className="eyebrow">{t('home.hero.eyebrow')}</span>
             <div className="hero-headline-row">
-              <p className="hero-big-text">{t('home.hero.big1')}<br />{t('home.hero.big2')}</p>
+              <h1 className="hero-big-text">{t('home.hero.big1')}<br />{t('home.hero.big2')}</h1>
               <div className="hero-headline-side">
                 <p>{t('home.hero.sub')}</p>
                 <div className="cta-row">
@@ -368,7 +369,7 @@ export default function Home() {
           <div className="origin">
             <div className="origin-grid">
               <div className="origin-photo">
-                <img src={nosotrasImg.src} alt={nosotrasImg.alt} lang={nosotrasImg.lang} />
+                <img src={nosotrasImg.src} alt={nosotrasImg.alt} lang={nosotrasImg.lang} loading="lazy" />
               </div>
               <div className="origin-inner">
                 <h2 className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('home.nosotras.eyebrow')}</h2>

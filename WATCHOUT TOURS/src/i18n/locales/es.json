@@ -20,6 +20,7 @@
     "brandHome": "Watchout Tours — Ir al inicio",
     "rutas": "Rutas",
     "nosotras": "Nosotras",
+    "resenas": "Reseñas",
     "blog": "Blog",
     "contacto": "Contacto",
     "openMenu": "Abrir menú",
@@ -45,8 +46,8 @@
   },
   "home": {
     "seo": {
-      "title": "Watchout Tours — Viajes sensoriales por Nueva Zelanda",
-      "description": "Viajes sensoriales por Nueva Zelanda para personas ciegas y con baja visión. Dos guías, contigo de principio a fin."
+      "title": "Viajes para Personas Ciegas por Nueva Zelanda | Watchout Tours",
+      "description": "Viajes guiados y accesibles por Nueva Zelanda para personas ciegas y con baja visión. Experiencias sensoriales, autonomía y aventura, con dos guías contigo de principio a fin."
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
@@ -183,8 +184,8 @@
   },
   "blog": {
     "seo": {
-      "title": "Blog sensorial | Watchout Tours",
-      "description": "Reflexiones sobre viajar de forma diferente por Nueva Zelanda. Sobre escuchar mejor."
+      "title": "Blog de Viajes Sensoriales por Nueva Zelanda | Watchout Tours",
+      "description": "Reflexiones sobre viajar de forma sensorial y accesible por Nueva Zelanda: historias reales de personas ciegas y con baja visión."
     },
     "eyebrow": "El país por los sentidos",
     "title": "Blog sensorial",
@@ -199,8 +200,8 @@
   },
   "resenas": {
     "seo": {
-      "title": "Reseñas | Watchout Tours",
-      "description": "Lo que cuentan quienes han viajado con nosotras por Nueva Zelanda. Sin filtros, sin actores."
+      "title": "Reseñas de Viajeros Ciegos por Nueva Zelanda | Watchout Tours",
+      "description": "Lo que cuentan las personas ciegas y con baja visión que han viajado con nosotras por Nueva Zelanda. Sin filtros, sin actores."
     },
     "eyebrow": "Lo que cuentan",
     "title": "Reseñas de viajeros",
@@ -216,8 +217,8 @@
   },
   "productos": {
     "seo": {
-      "title": "Rutas | Watchout Tours",
-      "description": "Dos maneras de vivir Nueva Zelanda con nosotras: en grupo pequeño o en un viaje privado a tu medida."
+      "title": "Viajes Guiados por Nueva Zelanda para Ciegos | Watchout Tours",
+      "description": "Dos maneras de recorrer Nueva Zelanda con nosotras: en grupo reducido o en viaje privado, diseñadas para personas ciegas y con baja visión."
     },
     "eyebrow": "Nuestras opciones",
     "title": "Dos maneras de vivirlo",
@@ -286,8 +287,8 @@
   "contacto": {
     "docTitle": "Contacto | Watchout Tours",
     "seo": {
-      "title": "Contacto | Watchout Tours",
-      "description": "Cuéntanos tu viaje soñado por Nueva Zelanda. Sin compromiso: resolvemos tus dudas y vemos juntas cómo hacerlo realidad. Escríbenos por email o WhatsApp."
+      "title": "Contacto | Watchout Tours — Viajes Accesibles a Nueva Zelanda",
+      "description": "Cuéntanos tu viaje soñado por Nueva Zelanda. Resolvemos tus dudas sobre nuestros viajes accesibles para personas ciegas y con baja visión. Escríbenos por email o WhatsApp."
     },
     "eyebrow": "Sin compromiso · sin prisa",
     "title": "¿Lo hacemos realidad?",
@@ -342,8 +343,8 @@
   "sobre": {
     "docTitle": "Sobre nosotras | Watchout Tours",
     "seo": {
-      "title": "Sobre nosotras — Mónica y Sylvie | Watchout Tours",
-      "description": "Somos Mónica y Sylvie, dos guías españolas en Nueva Zelanda. Creamos viajes sensoriales para personas ciegas y con baja visión. Esta es nuestra historia."
+      "title": "Sobre Nosotras | Mónica y Sylvie — Watchout Tours",
+      "description": "Somos Mónica y Sylvie, guías españolas afincadas en Nueva Zelanda. Creamos viajes sensoriales y accesibles para personas ciegas y con baja visión. Esta es nuestra historia."
     },
     "heroImgAlt": "Mónica y Sylvie sonriendo en un selfie junto a la bahía de Sídney al atardecer, con la Ópera de Sídney al fondo",
     "heroEyebrow": "El corazón del proyecto",
@@ -413,6 +414,10 @@
   },
   "accesibilidad": {
     "docTitle": "Accesibilidad | Watchout Tours",
+    "seo": {
+      "title": "Declaración de Accesibilidad | Watchout Tours",
+      "description": "Cómo garantizamos la accesibilidad digital de watchouttours.nz para personas con discapacidad visual y otras necesidades."
+    },
     "title": "Declaración de accesibilidad",
     "intro": "Watchout Tours se compromete a garantizar la accesibilidad digital para todas las personas.",
     "conformidadTitle": "Nivel de conformidad",
@@ -434,6 +439,10 @@
   },
   "privacidad": {
     "docTitle": "Privacidad | Watchout Tours",
+    "seo": {
+      "title": "Política de Privacidad | Watchout Tours",
+      "description": "Cómo tratamos tus datos personales cuando nos escribes desde el formulario de contacto de Watchout Tours."
+    },
     "title": "Política de privacidad",
     "intro": "Solo recogemos los datos que nos das voluntariamente para poder responderte. Nunca los usamos para publicidad ni los cedemos a terceros.",
     "responsableTitle": "Responsable del tratamiento",
@@ -477,6 +486,10 @@
   },
   "avisoLegal": {
     "docTitle": "Aviso legal | Watchout Tours",
+    "seo": {
+      "title": "Aviso Legal | Watchout Tours",
+      "description": "Información legal sobre Watchout Tours Ltd., titular de este sitio web, y las condiciones de uso."
+    },
     "title": "Aviso legal",
     "intro": "Quiénes somos y en qué condiciones puedes usar esta web.",
     "titularTitle": "Titular del sitio web",

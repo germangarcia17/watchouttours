@@ -22,8 +22,8 @@ export default function RutaMapa() {
   return (
     <section className="ruta-mapa" aria-labelledby="ruta-mapa-heading">
       <div className="wrap">
-        <h2 className="sec-eyebrow">{t('productos.mapa.eyebrow')}</h2>
-        <p id="ruta-mapa-heading" className="sec-title">{t('productos.mapa.title')}</p>
+        <span className="sec-eyebrow">{t('productos.mapa.eyebrow')}</span>
+        <h2 id="ruta-mapa-heading" className="sec-title">{t('productos.mapa.title')}</h2>
         <p className="sec-sub">{t('productos.mapa.sub')}</p>
 
         <div className="ruta-mapa__grid">
