@@ -1,9 +1,11 @@
 // scripts/generate-sitemap.mjs
 // Genera dist/sitemap.xml tras el build de Vite.
 //
-// Incluye las páginas públicas indexables en sus dos idiomas (español, sin
-// prefijo, e inglés bajo /en) con enlaces alternos hreflang, y los artículos
-// del blog publicados, que se leen en tiempo de build desde Supabase.
+// Incluye las páginas públicas indexables en los idiomas en que existan
+// (español sin prefijo, inglés bajo /en — ver src/i18n/pageLanguages.js
+// para las páginas que solo existen en un idioma) con enlaces alternos
+// hreflang, y los artículos del blog publicados, que se leen en tiempo de
+// build desde Supabase.
 //
 // Se ejecuta con las mismas variables de entorno que el build de Vite
 // (VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY). Si no puede leer Supabase,
@@ -14,6 +16,7 @@ import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { STATIC_ROUTES } from './routes.mjs'
+import { availableLangs } from '../src/i18n/pageLanguages.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -28,31 +31,36 @@ function enUrl(path) {
   return `${SITE_URL}${path === '/' ? '/en' : `/en${path}`}`
 }
 
-/* Bloque <url> con enlaces alternos hreflang (es, en y x-default→es). */
-function urlEntry({ loc, path, lastmod, changefreq, priority }) {
+/* Bloque <url> con enlaces alternos hreflang, solo para los idiomas en que
+   la página exista realmente (ver availableLangs). x-default apunta al
+   español cuando existe, o al inglés si la página es solo-inglés. */
+function urlEntry({ loc, path, langs, lastmod, changefreq, priority }) {
   const es = esUrl(path)
   const en = enUrl(path)
+  const defaultHref = langs.includes('es') ? es : en
   const lines = [
     '  <url>',
     `    <loc>${loc}</loc>`,
     lastmod ? `    <lastmod>${lastmod}</lastmod>` : null,
     changefreq ? `    <changefreq>${changefreq}</changefreq>` : null,
     priority ? `    <priority>${priority}</priority>` : null,
-    `    <xhtml:link rel="alternate" hreflang="es" href="${es}"/>`,
-    `    <xhtml:link rel="alternate" hreflang="en" href="${en}"/>`,
-    `    <xhtml:link rel="alternate" hreflang="x-default" href="${es}"/>`,
+    langs.includes('es') ? `    <xhtml:link rel="alternate" hreflang="es" href="${es}"/>` : null,
+    langs.includes('en') ? `    <xhtml:link rel="alternate" hreflang="en" href="${en}"/>` : null,
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${defaultHref}"/>`,
     '  </url>',
   ]
   return lines.filter(Boolean).join('\n')
 }
 
-/* Cada ruta produce dos entradas (una por idioma), ambas con los mismos
-   enlaces alternos. */
+/* Cada ruta produce una entrada por idioma en que exista (ver
+   availableLangs en src/i18n/pageLanguages.js), todas con los mismos
+   enlaces alternos. Por defecto ese es ['es', 'en']. */
 function routeToEntries({ path, changefreq, priority, lastmod }) {
-  return [
-    urlEntry({ loc: esUrl(path), path, changefreq, priority, lastmod }),
-    urlEntry({ loc: enUrl(path), path, changefreq, priority, lastmod }),
-  ]
+  const langs = availableLangs(path)
+  const entries = []
+  if (langs.includes('es')) entries.push(urlEntry({ loc: esUrl(path), path, langs, changefreq, priority, lastmod }))
+  if (langs.includes('en')) entries.push(urlEntry({ loc: enUrl(path), path, langs, changefreq, priority, lastmod }))
+  return entries
 }
 
 async function fetchBlogRoutes() {
@@ -86,7 +94,8 @@ async function main() {
   const blogRoutes = await fetchBlogRoutes()
   const allRoutes = [...STATIC_ROUTES, ...blogRoutes]
 
-  const entries = allRoutes.flatMap(routeToEntries).join('\n')
+  const urlEntries = allRoutes.flatMap(routeToEntries)
+  const entries = urlEntries.join('\n')
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -97,7 +106,9 @@ ${entries}
 
   const out = resolve(__dirname, '..', 'dist', 'sitemap.xml')
   writeFileSync(out, xml, 'utf8')
-  console.log(`[sitemap] Generado ${out} con ${allRoutes.length} rutas (${allRoutes.length * 2} URLs).`)
+  // No siempre son el doble de rutas: las páginas solo-idioma (ver
+  // src/i18n/pageLanguages.js) aportan una única URL en vez de dos.
+  console.log(`[sitemap] Generado ${out} con ${allRoutes.length} rutas (${urlEntries.length} URLs).`)
 }
 
 main()

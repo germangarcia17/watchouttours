@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import './Header.css'
 import logoImg from '../../images/logo-header-watchout.png'
 import { L, LNav, useLang, useLocalize, stripLang, localizePath } from '../../i18n/routing'
+import { availableLangs } from '../../i18n/pageLanguages'
 
 const navLinks = [
   { to: '/productos',      key: 'rutas' },
@@ -14,12 +15,19 @@ const navLinks = [
 ]
 
 /* Selector de idioma: enlaza a la misma página en el otro idioma,
-   conservando la ruta, la query y el ancla. */
+   conservando la ruta, la query y el ancla. Si la página actual es
+   solo-idioma (ver availableLangs en ../../i18n/pageLanguages) y no tiene
+   versión en el otro idioma, no se renderiza: no hay a dónde enlazar sin
+   generar un 404. */
 function LanguageSwitcher() {
   const { t } = useTranslation()
   const { pathname, search, hash } = useLocation()
   const lang = useLang()
   const base = stripLang(pathname)
+  const otherLang = lang === 'es' ? 'en' : 'es'
+
+  if (!availableLangs(base).includes(otherLang)) return null
+
   const target = lang === 'es' ? localizePath(base, 'en') : base
 
   return (

@@ -14,7 +14,7 @@ import { SITE_URL } from '../lib/site'
    procede y, si algún campo está vacío, cae a los valores por defecto que le
    pasa la página. Añade también las etiquetas hreflang para las dos versiones
    de idioma (fase 4). */
-export function Seo({ pageType, title, description, keywords }) {
+export function Seo({ pageType, title, description, keywords, ogTitle, ogDescription, image, robots }) {
   const row = useSeo(pageType)
   const lang = useLang()
   const { pathname } = useLocation()
@@ -22,14 +22,17 @@ export function Seo({ pageType, title, description, keywords }) {
   const metaTitle   = pickLocalized(row, 'meta_title', lang) || title
   const metaDesc    = pickLocalized(row, 'meta_description', lang) || description
   const metaKeys    = pickLocalized(row, 'keywords', lang) || keywords || null
-  const ogTitle     = pickLocalized(row, 'og_title', lang) || metaTitle
-  const ogDesc      = pickLocalized(row, 'og_description', lang) || metaDesc
-  // Imagen social por defecto (el logo) para que ninguna página se comparta
-  // sin imagen cuando aún no se ha subido una específica desde /admin/seo.
+  // ogTitle/ogDescription: fallback propio de la página (prop), antes de
+  // caer al título/descripción genéricos. La fila de /admin/seo, si existe,
+  // siempre tiene prioridad sobre ambos.
+  const resolvedOgTitle = pickLocalized(row, 'og_title', lang) || ogTitle || metaTitle
+  const resolvedOgDesc  = pickLocalized(row, 'og_description', lang) || ogDescription || metaDesc
+  // Imagen social: fila de /admin/seo > imagen propia de la página (prop) >
+  // logo por defecto, para que ninguna página se comparta nunca sin imagen.
   const defaultImage = `${SITE_URL}/favicon-512.png`
-  const ogImage     = row?.og_image_url || defaultImage
-  const twTitle     = pickLocalized(row, 'twitter_title', lang) || ogTitle
-  const twDesc      = pickLocalized(row, 'twitter_description', lang) || ogDesc
+  const ogImage     = row?.og_image_url || image || defaultImage
+  const twTitle     = pickLocalized(row, 'twitter_title', lang) || resolvedOgTitle
+  const twDesc      = pickLocalized(row, 'twitter_description', lang) || resolvedOgDesc
   const twImage     = row?.twitter_image_url || ogImage
 
   const basePath    = stripLang(pathname)
@@ -42,13 +45,14 @@ export function Seo({ pageType, title, description, keywords }) {
       <title>{metaTitle}</title>
       {metaDesc && <meta name="description" content={metaDesc} />}
       {metaKeys && <meta name="keywords" content={metaKeys} />}
+      {robots && <meta name="robots" content={robots} />}
       <link rel="canonical" href={canonical} />
 
       <meta property="og:type" content="website" />
       <meta property="og:locale" content={lang === 'en' ? 'en_NZ' : 'es_ES'} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:title" content={ogTitle} />
-      {ogDesc && <meta property="og:description" content={ogDesc} />}
+      <meta property="og:title" content={resolvedOgTitle} />
+      {resolvedOgDesc && <meta property="og:description" content={resolvedOgDesc} />}
       <meta property="og:image" content={ogImage} />
 
       <meta name="twitter:card" content={twImage ? 'summary_large_image' : 'summary'} />

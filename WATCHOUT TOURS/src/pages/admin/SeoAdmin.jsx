@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 
-const PAGE_TYPES = ['home', 'productos', 'reseñas', 'blog', 'sobre-nosotras', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal']
+const PAGE_TYPES = ['home', 'productos', 'reseñas', 'blog', 'sobre-nosotras', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal', 'blind-travel-new-zealand']
 
 /* Nombre legible de cada página para las cabeceras del panel */
 const PAGE_LABELS = {
@@ -14,6 +14,10 @@ const PAGE_LABELS = {
   'accesibilidad': 'Accesibilidad',
   'privacidad': 'Privacidad',
   'aviso-legal': 'Aviso legal',
+  // Página solo en inglés: el formulario ES/EN es el mismo para todas las
+  // páginas, pero aquí solo se usarán realmente los campos "(inglés)" — ver
+  // src/i18n/pageLanguages.js.
+  'blind-travel-new-zealand': 'Blind Travel New Zealand (solo inglés)',
 }
 
 const EMPTY_META = {

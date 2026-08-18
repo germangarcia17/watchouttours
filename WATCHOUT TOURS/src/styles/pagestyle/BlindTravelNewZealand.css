@@ -1,7 +1,10 @@
 /* ── Blind Travel in New Zealand — guía pilar (estilos propios) ───────── */
 /* Reutiliza .static-hero / .static-body (Estaticas.css) y los tokens de
-   theme.css. Solo se añade aquí lo que esas hojas no cubren: bloque de cita
-   (mismo patrón visual que .sn-quote en SobreNosotras.css) y FAQ. */
+   theme.css — incluida .card-deep ("tarjeta genérica sobre papel", ya
+   definida mas sin usar en el proyecto) para los bloques editoriales
+   (Before/During/After y el CTA de cierre), en vez de reinventar el mismo
+   fondo/borde/radio. Solo se añade aquí lo que esas hojas no cubren: cita,
+   FAQ, jerarquía de H2 propia de esta página y listas editoriales. */
 
 .btnz-quote {
   margin: 28px 0;
@@ -32,4 +35,229 @@
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 6px;
+}
+
+/* ── Jerarquía de H2 (más grandes y más espaciados que en las páginas
+   estáticas cortas — Accesibilidad/Privacidad/Aviso legal — que también
+   usan Estaticas.css) para que se puedan localizar fácilmente al hacer
+   scroll por un artículo largo. Anulamos solo dentro de .btnz-body para
+   no tocar esas otras páginas. */
+.static-body.btnz-body h2 {
+  font-size: 25px;
+  margin-top: 52px;
+  margin-bottom: 16px;
+  padding-top: 28px;
+  scroll-margin-top: 20px;
+}
+
+/* ── Listas editoriales: enumeraciones que ya existían como párrafos
+   cortos independientes (p. ej. "Bed. Bathroom. Door…"), ahora agrupadas
+   semánticamente en <ul>. Sin viñetas por defecto ni tarjetas: un simple
+   guion en el color de marca, tipografía idéntica al resto del cuerpo. */
+.btnz-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.btnz-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 8px;
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.btnz-list li::before {
+  content: "–";
+  position: absolute;
+  left: 2px;
+  color: var(--jade);
+}
+
+/* ── Bloque "Before / During / After": tres columnas relacionadas dentro
+   de un único bloque editorial (.card-deep), no tres tarjetas separadas.
+   El orden del DOM (Before, During, After) no cambia entre desktop y
+   móvil — en móvil el grid simplemente pasa a una columna. */
+.btnz-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 28px 0 32px;
+}
+
+.btnz-steps h3 {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--jade);
+  margin: 0 0 10px;
+}
+
+.btnz-steps p {
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+
+.btnz-steps .btnz-step + .btnz-step {
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+}
+
+/* ── Byline / última revisión (en el hero, bajo el H1) ────────────────── */
+.btnz-byline {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+/* ── Bloque de procedencia editorial (entre la intro y el primer H2) ──── */
+.btnz-provenance {
+  margin: 8px 0 32px;
+  padding: 16px 20px;
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.btnz-provenance p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ── CTA: cierre editorial del artículo (tras el contenido principal,
+   antes de los recursos). Usa .card-deep para el fondo/borde suaves —
+   mismo lenguaje visual que el bloque de procedencia y el de Before/
+   During/After — con más aire para que se sienta como un cierre, no como
+   un párrafo más. */
+.btnz-cta {
+  margin: 48px 0 40px;
+  text-align: center;
+}
+
+.btnz-cta.card-deep {
+  padding: 44px 32px;
+}
+
+.btnz-cta-lead {
+  font-family: var(--font-family-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  max-width: 46ch;
+  margin: 0 auto 8px;
+}
+
+.btnz-cta p:not(.btnz-cta-lead) {
+  color: var(--ink-soft);
+  margin: 0 0 22px;
+}
+
+.btnz-cta .cta-row {
+  justify-content: center;
+}
+
+/* ── Recursos externos (sección claramente secundaria, al final) ──────── */
+.btnz-sources p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.btnz-sources ul {
+  font-size: 14.5px;
+}
+
+/* ── Fotografías reales del viaje piloto ───────────────────────────────
+   Hero: mismo patrón que .sn-hero-grid/.sn-hero-photo en SobreNosotras.css
+   (texto + foto en grid, aspect-ratio para que no salte el layout).
+   Imágenes de cuerpo: recuadro dentro de la columna de .static-body
+   (736px), con max-height + object-fit:cover para que una foto en vertical
+   no domine el ancho de la columna sin necesidad de deformarla. */
+.btnz-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.btnz-hero-photo {
+  margin: 0;
+  background: var(--night);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(21, 20, 15, .2);
+  aspect-ratio: 3 / 4;
+}
+
+.btnz-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btnz-inline-photo {
+  margin: 24px 0 32px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(21, 20, 15, .15);
+}
+
+.btnz-inline-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* En desktop, la foto "respira" un poco más que la columna de texto:
+   ocupa el ancho completo de .wrap (736px) comiéndose su propio padding
+   lateral (28px, ver .wrap en theme.css) en vez del ancho de lectura
+   (680px). Nunca puede desbordar: sigue acotada por el propio .wrap. */
+@media (min-width: 761px) {
+  .btnz-inline-photo {
+    margin-left: -28px;
+    margin-right: -28px;
+  }
+
+  .btnz-inline-photo img {
+    max-height: 520px;
+  }
+}
+
+@media (max-width: 760px) {
+  .btnz-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btnz-hero-photo {
+    max-width: 320px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .btnz-inline-photo img {
+    max-height: 360px;
+  }
+
+  .btnz-steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .btnz-steps .btnz-step + .btnz-step {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  .btnz-cta.card-deep {
+    padding: 32px 24px;
+  }
 }

@@ -2,10 +2,11 @@
 //
 // Prerenderizado estático (SSG) del sitio ya compilado por Vite.
 //
-// Renderiza cada página pública (español + inglés) y cada artículo de blog
-// publicado con react-dom/server, usando los mismos componentes React que
-// la app cliente, y escribe el HTML resultante en dist/ en la ruta exacta
-// de cada URL (p. ej. dist/productos/index.html). Netlify sirve un archivo
+// Renderiza cada página pública (en los idiomas en que exista — ver
+// src/i18n/pageLanguages.js) y cada artículo de blog publicado con
+// react-dom/server, usando los mismos componentes React que la app cliente,
+// y escribe el HTML resultante en dist/ en la ruta exacta de cada URL
+// (p. ej. dist/productos/index.html). Netlify sirve un archivo
 // estático existente antes de aplicar cualquier redirect, así que estas
 // páginas llegan a Googlebot con el título, meta description, canonical,
 // hreflang, encabezados y JSON-LD ya en el HTML inicial, sin depender de
@@ -26,6 +27,7 @@ import { writeFileSync, readFileSync, mkdirSync, copyFileSync, existsSync } from
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve, join } from 'node:path'
 import { STATIC_ROUTES } from './routes.mjs'
+import { availableLangs } from '../src/i18n/pageLanguages.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DIST_DIR = resolve(__dirname, '..', 'dist')
@@ -132,8 +134,9 @@ async function main() {
     if (await writeRoute(template, render, url, outFile)) ok++
   }
 
-  // ── Páginas estáticas (ES + EN) ──────────────────────────────────────
+  // ── Páginas estáticas (ES + EN, o solo el idioma en que existan) ─────
   for (const { path } of STATIC_ROUTES) {
+    const langs = availableLangs(path)
     const preloadEs = path === '/'
       ? { homeResenas: data.homeResenas, homeBlogPreview: data.homeBlogPreview }
       : path === '/resenas' ? { resenas: data.resenas }
@@ -143,8 +146,8 @@ async function main() {
     const esOut = path === '/' ? join(DIST_DIR, 'index.html') : join(DIST_DIR, path.slice(1), 'index.html')
     const enOut = path === '/' ? join(DIST_DIR, 'en', 'index.html') : join(DIST_DIR, 'en', path.slice(1), 'index.html')
 
-    await render1(path, preloadEs, esOut)
-    await render1(enPath(path), preloadEs, enOut)
+    if (langs.includes('es')) await render1(path, preloadEs, esOut)
+    if (langs.includes('en')) await render1(enPath(path), preloadEs, enOut)
   }
 
   // ── Artículos del blog (ES + EN) ─────────────────────────────────────
