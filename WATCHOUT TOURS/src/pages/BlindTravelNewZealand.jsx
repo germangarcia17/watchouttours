@@ -134,12 +134,14 @@ export default function BlindTravelNewZealand() {
             <p>But we also learned something important:</p>
             <p>Being able to participate in an activity doesn’t necessarily mean that the experience has been designed with a blind traveller in mind.</p>
             <p>And often, the difference isn’t expensive infrastructure.</p>
-            <p>It’s information.</p>
-            <p>Time.</p>
-            <p>Orientation.</p>
-            <p>Communication.</p>
-            <p>Permission to touch.</p>
-            <p>Someone knowing when to help — and when not to.</p>
+            <ul className="btnz-list">
+              <li>It’s information.</li>
+              <li>Time.</li>
+              <li>Orientation.</li>
+              <li>Communication.</li>
+              <li>Permission to touch.</li>
+              <li>Someone knowing when to help — and when not to.</li>
+            </ul>
             <p>This guide is based on what we learned travelling through New Zealand with blind travellers during our first Watchout Tours journey.</p>
             <p>It isn’t intended to describe every blind person’s experience. Blindness and low vision are different for everyone.</p>
             <p>It’s simply what the road taught us.</p>
@@ -169,12 +171,14 @@ export default function BlindTravelNewZealand() {
             <h2 id="btnz-orientation-heading">Orientation changes everything</h2>
             <p>Think about walking into a hotel room.</p>
             <p>A sighted traveller can usually understand the room within seconds.</p>
-            <p>Bed.</p>
-            <p>Bathroom.</p>
-            <p>Door.</p>
-            <p>Sockets.</p>
-            <p>Lights.</p>
-            <p>Wardrobe.</p>
+            <ul className="btnz-list">
+              <li>Bed.</li>
+              <li>Bathroom.</li>
+              <li>Door.</li>
+              <li>Sockets.</li>
+              <li>Lights.</li>
+              <li>Wardrobe.</li>
+            </ul>
             <p>For somebody who can’t obtain all of that information visually, that mental map may need to be built differently.</p>
             <p>So whenever we arrived at a new accommodation, we would orient our travellers.</p>
             <p>We would show them the room, bathroom, sockets and important features.</p>
@@ -220,14 +224,16 @@ export default function BlindTravelNewZealand() {
             <p>This was one of our biggest lessons.</p>
             <p>Our original timings simply didn’t work.</p>
             <p>During our first journey, many everyday transitions took considerably longer than we had anticipated.</p>
-            <p>Getting ready.</p>
-            <p>Breakfast.</p>
-            <p>Finding belongings.</p>
-            <p>Leaving a restaurant.</p>
-            <p>Packing.</p>
-            <p>Checking a hotel room before departure.</p>
-            <p>Orienting to a new location.</p>
-            <p>Moving from the van into an activity.</p>
+            <ul className="btnz-list">
+              <li>Getting ready.</li>
+              <li>Breakfast.</li>
+              <li>Finding belongings.</li>
+              <li>Leaving a restaurant.</li>
+              <li>Packing.</li>
+              <li>Checking a hotel room before departure.</li>
+              <li>Orienting to a new location.</li>
+              <li>Moving from the van into an activity.</li>
+            </ul>
             <p>None of these things was necessarily difficult.</p>
             <p>They simply required time.</p>
             <p>We eventually realised that an accessible itinerary cannot always be created by taking a conventional tour and adding accessibility on top.</p>
@@ -292,17 +298,23 @@ export default function BlindTravelNewZealand() {
             <p>Trying to describe every visual detail while the performance is happening could mean talking over the very experience the traveller is trying to hear.</p>
             <p>So we’ve begun developing a different approach:</p>
 
-            <h3>Before</h3>
-            <p>Provide context.</p>
-            <p>Explain the environment and important visual information before the experience begins.</p>
-
-            <h3>During</h3>
-            <p>Describe selectively.</p>
-            <p>Give information when it genuinely adds something, but leave space for the traveller to listen and experience.</p>
-
-            <h3>After</h3>
-            <p>Fill in the gaps.</p>
-            <p>Talk about movements, expressions and visual moments that couldn’t reasonably be communicated while they were happening.</p>
+            <div className="btnz-steps card-deep">
+              <div className="btnz-step">
+                <h3>Before</h3>
+                <p>Provide context.</p>
+                <p>Explain the environment and important visual information before the experience begins.</p>
+              </div>
+              <div className="btnz-step">
+                <h3>During</h3>
+                <p>Describe selectively.</p>
+                <p>Give information when it genuinely adds something, but leave space for the traveller to listen and experience.</p>
+              </div>
+              <div className="btnz-step">
+                <h3>After</h3>
+                <p>Fill in the gaps.</p>
+                <p>Talk about movements, expressions and visual moments that couldn’t reasonably be communicated while they were happening.</p>
+              </div>
+            </div>
 
             <p>We are still learning.</p>
             <p>But one thing became clear:</p>
@@ -365,11 +377,13 @@ export default function BlindTravelNewZealand() {
             <p>There were activities our travellers could absolutely participate in, but where staff weren’t necessarily experienced in supporting blind visitors.</p>
             <p>The activity itself wasn’t inaccessible.</p>
             <p>The transitions around it were.</p>
-            <p>Getting to the correct place.</p>
-            <p>Boarding.</p>
-            <p>Finding the seat.</p>
-            <p>Understanding where to move.</p>
-            <p>Getting off afterwards.</p>
+            <ul className="btnz-list">
+              <li>Getting to the correct place.</li>
+              <li>Boarding.</li>
+              <li>Finding the seat.</li>
+              <li>Understanding where to move.</li>
+              <li>Getting off afterwards.</li>
+            </ul>
             <p>At times, we as guides provided most of that support.</p>
             <p>That taught us another important lesson:</p>
             <blockquote className="btnz-quote">
@@ -418,12 +432,14 @@ export default function BlindTravelNewZealand() {
             <p>What useful landmarks or information could help them return?</p>
             <p>Is there a simple route to a café or waterfront?</p>
             <p>And then the traveller decides.</p>
-            <p>Explore.</p>
-            <p>Stay in.</p>
-            <p>Work on their computer.</p>
-            <p>Sleep.</p>
-            <p>Have coffee.</p>
-            <p>Do absolutely nothing.</p>
+            <ul className="btnz-list">
+              <li>Explore.</li>
+              <li>Stay in.</li>
+              <li>Work on their computer.</li>
+              <li>Sleep.</li>
+              <li>Have coffee.</li>
+              <li>Do absolutely nothing.</li>
+            </ul>
             <p>Because independence isn’t forcing someone to explore either.</p>
             <p>It’s having a genuine choice.</p>
           </section>
@@ -456,16 +472,18 @@ export default function BlindTravelNewZealand() {
             <p>If you’re considering travelling around New Zealand blind or with low vision, we believe it’s worth asking a tour provider more than simply:</p>
             <p>“Is this accessible?”</p>
             <p>Ask:</p>
-            <p>How will you orient me in unfamiliar environments?</p>
-            <p>How much assistance will I receive?</p>
-            <p>Can I choose when I want help?</p>
-            <p>How are visual experiences described?</p>
-            <p>Will I have opportunities to touch and physically experience things?</p>
-            <p>Do the activity providers know blind travellers are coming?</p>
-            <p>What happens during free time?</p>
-            <p>How much downtime is built into the itinerary?</p>
-            <p>How are meals organised?</p>
-            <p>Can I travel without bringing my own sighted companion?</p>
+            <ul className="btnz-list">
+              <li>How will you orient me in unfamiliar environments?</li>
+              <li>How much assistance will I receive?</li>
+              <li>Can I choose when I want help?</li>
+              <li>How are visual experiences described?</li>
+              <li>Will I have opportunities to touch and physically experience things?</li>
+              <li>Do the activity providers know blind travellers are coming?</li>
+              <li>What happens during free time?</li>
+              <li>How much downtime is built into the itinerary?</li>
+              <li>How are meals organised?</li>
+              <li>Can I travel without bringing my own sighted companion?</li>
+            </ul>
             <p>And perhaps most importantly:</p>
             <p>Will I be treated as a traveller first?</p>
           </section>
@@ -555,8 +573,8 @@ export default function BlindTravelNewZealand() {
             </div>
           </section>
 
-          {/* ── CTA discreto ─────────────────────────────────────────── */}
-          <div className="btnz-cta">
+          {/* ── CTA: cierre editorial del artículo ────────────────────── */}
+          <div className="btnz-cta card-deep">
             <p className="btnz-cta-lead">Thinking about experiencing New Zealand beyond sight?</p>
             <p>Explore how Watchout is designing small-group journeys for blind and low-vision travellers.</p>
             <div className="cta-row">
