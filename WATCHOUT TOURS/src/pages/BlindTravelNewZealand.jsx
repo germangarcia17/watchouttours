@@ -9,14 +9,12 @@ import '../styles/pagestyle/BlindTravelNewZealand.css'
  * @graph, dentro de un <Helmet> (mismo patrón que ya usa BlogPost.jsx, el
  * único otro sitio del proyecto con Schema).
  *
- * IMPORTANTE — Organization pendiente de decisión (ver informe): index.html
- * ya define una entidad TravelAgency (subtipo de Organization) y una
- * WebSite globales para todo el sitio, pero NINGUNA de las dos tiene un
- * @id — por eso Article no puede referenciarlas todavía con {"@id": ...}.
- * Para no duplicar esa entidad (con otro nombre/URL/logo), author/publisher
- * se dejan sin asignar hasta decidir si se añade un @id estable a esos dos
- * bloques de index.html. */
+ * Organization/WebSite globales: index.html define TravelAgency (@id
+ * .../#organization) y WebSite (@id .../#website) para todo el sitio.
+ * Aquí solo los referenciamos por @id — no se duplican sus datos. */
 const PAGE_URL = `${SITE_URL}/en/blind-travel-new-zealand`
+const ORGANIZATION_ID = `${SITE_URL}/#organization`
+const WEBSITE_ID = `${SITE_URL}/#website`
 
 const pageJsonLd = {
   '@context': 'https://schema.org',
@@ -28,6 +26,7 @@ const pageJsonLd = {
       name: 'Blind Travel in New Zealand: A Practical Guide for Blind and Low-Vision Travellers',
       description: 'A practical guide to blind travel in New Zealand, based on 23 days travelling with blind travellers. Accessibility, independence and sensory travel.',
       inLanguage: 'en',
+      isPartOf: { '@id': WEBSITE_ID },
       mainEntity: { '@id': `${PAGE_URL}#article` },
       breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
     },
@@ -37,7 +36,10 @@ const pageJsonLd = {
       headline: 'Blind Travel in New Zealand: A Practical Guide for Blind and Low-Vision Travellers',
       description: 'What 23 days on the road with blind travellers taught us about accessibility, independence and experiencing New Zealand beyond sight.',
       inLanguage: 'en',
+      isPartOf: { '@id': WEBSITE_ID },
       mainEntityOfPage: { '@id': `${PAGE_URL}#webpage` },
+      author: { '@id': ORGANIZATION_ID },
+      publisher: { '@id': ORGANIZATION_ID },
       about: [
         { '@type': 'Thing', name: 'Blind travel' },
         { '@type': 'Thing', name: 'Low vision travel' },
