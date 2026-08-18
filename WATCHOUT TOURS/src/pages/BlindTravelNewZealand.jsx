@@ -11,12 +11,15 @@ import '../styles/pagestyle/BlindTravelNewZealand.css'
 export default function BlindTravelNewZealand() {
   return (
     <>
-      {/* pageType nuevo: no está aún en PAGE_TYPES de /admin/seo, así que
-          hoy no es editable desde el panel; usa el H1 como <title> temporal
-          hasta que haya copy de SEO definitivo. */}
+      {/* pageType editable desde /admin/seo (fila 'blind-travel-new-zealand');
+          estos son los valores de respaldo mientras no haya fila guardada. */}
       <Seo
         pageType="blind-travel-new-zealand"
-        title="Blind Travel in New Zealand: A Practical Guide for Blind and Low-Vision Travellers"
+        title="Blind Travel in New Zealand | Blind & Low-Vision Guide"
+        description="A practical guide to blind travel in New Zealand, based on 23 days travelling with blind travellers. Accessibility, independence and sensory travel."
+        ogTitle="Blind Travel in New Zealand: A Practical Guide"
+        ogDescription="What 23 days on the road with blind travellers taught us about accessibility, independence and experiencing New Zealand beyond sight."
+        robots="index, follow"
       />
 
       <section className="static-hero">

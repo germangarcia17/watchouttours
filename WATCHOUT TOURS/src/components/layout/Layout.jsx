@@ -6,6 +6,7 @@ import { SkipLink } from './SkipLink'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { useLang, stripLang } from '../../i18n/routing'
+import { availableLangs } from '../../i18n/pageLanguages'
 import { SITE_URL } from '../../lib/site'
 
 /* Sincroniza el idioma de i18next y el atributo lang del <html> con la URL.
@@ -23,17 +24,21 @@ function LangSync() {
 
 /* Etiquetas hreflang para todas las páginas: enlazan cada URL con su
    equivalente en el otro idioma (misma ruta, distinto prefijo). Válido para
-   toda página bajo el Layout, use o no el componente Seo. */
+   toda página bajo el Layout, use o no el componente Seo. Si la página es
+   solo-idioma (ver availableLangs en ../../i18n/pageLanguages), se omite la
+   alternativa que no existe y x-default apunta a la que sí existe. */
 function AlternateLinks() {
   const { pathname } = useLocation()
   const basePath = stripLang(pathname)
+  const langs = availableLangs(basePath)
   const esUrl = `${SITE_URL}${basePath}`
   const enUrl = `${SITE_URL}${basePath === '/' ? '/en' : `/en${basePath}`}`
+  const defaultUrl = langs.includes('es') ? esUrl : enUrl
   return (
     <Helmet>
-      <link rel="alternate" hrefLang="es" href={esUrl} />
-      <link rel="alternate" hrefLang="en" href={enUrl} />
-      <link rel="alternate" hrefLang="x-default" href={esUrl} />
+      {langs.includes('es') && <link rel="alternate" hrefLang="es" href={esUrl} />}
+      {langs.includes('en') && <link rel="alternate" hrefLang="en" href={enUrl} />}
+      <link rel="alternate" hrefLang="x-default" href={defaultUrl} />
     </Helmet>
   )
 }
