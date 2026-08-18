@@ -14,7 +14,7 @@ import { SITE_URL } from '../lib/site'
    procede y, si algún campo está vacío, cae a los valores por defecto que le
    pasa la página. Añade también las etiquetas hreflang para las dos versiones
    de idioma (fase 4). */
-export function Seo({ pageType, title, description, keywords, ogTitle, ogDescription, robots }) {
+export function Seo({ pageType, title, description, keywords, ogTitle, ogDescription, image, robots }) {
   const row = useSeo(pageType)
   const lang = useLang()
   const { pathname } = useLocation()
@@ -27,10 +27,10 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
   // siempre tiene prioridad sobre ambos.
   const resolvedOgTitle = pickLocalized(row, 'og_title', lang) || ogTitle || metaTitle
   const resolvedOgDesc  = pickLocalized(row, 'og_description', lang) || ogDescription || metaDesc
-  // Imagen social por defecto (el logo) para que ninguna página se comparta
-  // sin imagen cuando aún no se ha subido una específica desde /admin/seo.
+  // Imagen social: fila de /admin/seo > imagen propia de la página (prop) >
+  // logo por defecto, para que ninguna página se comparta nunca sin imagen.
   const defaultImage = `${SITE_URL}/favicon-512.png`
-  const ogImage     = row?.og_image_url || defaultImage
+  const ogImage     = row?.og_image_url || image || defaultImage
   const twTitle     = pickLocalized(row, 'twitter_title', lang) || resolvedOgTitle
   const twDesc      = pickLocalized(row, 'twitter_description', lang) || resolvedOgDesc
   const twImage     = row?.twitter_image_url || ogImage

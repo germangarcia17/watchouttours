@@ -82,3 +82,63 @@
 .btnz-sources ul {
   font-size: 14.5px;
 }
+
+/* ── Fotografías reales del viaje piloto ───────────────────────────────
+   Hero: mismo patrón que .sn-hero-grid/.sn-hero-photo en SobreNosotras.css
+   (texto + foto en grid, aspect-ratio para que no salte el layout).
+   Imágenes de cuerpo: recuadro dentro de la columna de .static-body
+   (736px), con max-height + object-fit:cover para que una foto en vertical
+   no domine el ancho de la columna sin necesidad de deformarla. */
+.btnz-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.btnz-hero-photo {
+  margin: 0;
+  background: var(--night);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(21, 20, 15, .2);
+  aspect-ratio: 3 / 4;
+}
+
+.btnz-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btnz-inline-photo {
+  margin: 24px 0 32px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(21, 20, 15, .15);
+}
+
+.btnz-inline-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .btnz-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btnz-hero-photo {
+    max-width: 320px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .btnz-inline-photo img {
+    max-height: 360px;
+  }
+}
