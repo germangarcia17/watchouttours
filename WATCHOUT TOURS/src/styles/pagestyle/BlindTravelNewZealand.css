@@ -1,0 +1,35 @@
+/* ── Blind Travel in New Zealand — guía pilar (estilos propios) ───────── */
+/* Reutiliza .static-hero / .static-body (Estaticas.css) y los tokens de
+   theme.css. Solo se añade aquí lo que esas hojas no cubren: bloque de cita
+   (mismo patrón visual que .sn-quote en SobreNosotras.css) y FAQ. */
+
+.btnz-quote {
+  margin: 28px 0;
+  padding: 4px 0 4px 28px;
+  border-left: 3px solid var(--jade-soft);
+}
+
+.btnz-quote p {
+  font-family: var(--font-family-heading);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.btnz-quote cite {
+  font-style: normal;
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.btnz-faq-item {
+  margin-top: 28px;
+}
+
+.btnz-faq-item h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
