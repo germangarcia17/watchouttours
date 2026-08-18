@@ -15,6 +15,7 @@ import Accesibilidad   from './pages/Accesibilidad'
 import Privacidad      from './pages/Privacidad'
 import AvisoLegal      from './pages/AvisoLegal'
 import NotFound        from './pages/NotFound'
+import BlindTravelNewZealand from './pages/BlindTravelNewZealand'
 
 /* El panel de administración no lo usa el público: se carga en un chunk
    aparte (code-splitting) para no aumentar el peso de las páginas públicas. */
@@ -58,6 +59,10 @@ export default function App() {
 
       {/* Rutas públicas en inglés bajo /en */}
       <Route path="/en" element={<Layout />}>
+        {/* Página pilar SEO/GEO solo en inglés (sin equivalente en español,
+            a diferencia del resto de páginas públicas): va fuera de
+            paginasPublicas() para no generar una versión ES inexistente. */}
+        <Route path="blind-travel-new-zealand" element={<BlindTravelNewZealand />} />
         {paginasPublicas('/en')}
       </Route>
 
