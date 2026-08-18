@@ -1,13 +1,67 @@
+import { Helmet } from 'react-helmet-async'
 import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
+import { SITE_URL } from '../lib/site'
 import '../styles/pagestyle/Estaticas.css'
 import '../styles/pagestyle/BlindTravelNewZealand.css'
+
+/* JSON-LD de esta página: WebPage + Article + BreadcrumbList en un único
+ * @graph, dentro de un <Helmet> (mismo patrón que ya usa BlogPost.jsx, el
+ * único otro sitio del proyecto con Schema).
+ *
+ * IMPORTANTE — Organization pendiente de decisión (ver informe): index.html
+ * ya define una entidad TravelAgency (subtipo de Organization) y una
+ * WebSite globales para todo el sitio, pero NINGUNA de las dos tiene un
+ * @id — por eso Article no puede referenciarlas todavía con {"@id": ...}.
+ * Para no duplicar esa entidad (con otro nombre/URL/logo), author/publisher
+ * se dejan sin asignar hasta decidir si se añade un @id estable a esos dos
+ * bloques de index.html. */
+const PAGE_URL = `${SITE_URL}/en/blind-travel-new-zealand`
+
+const pageJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${PAGE_URL}#webpage`,
+      url: PAGE_URL,
+      name: 'Blind Travel in New Zealand: A Practical Guide for Blind and Low-Vision Travellers',
+      description: 'A practical guide to blind travel in New Zealand, based on 23 days travelling with blind travellers. Accessibility, independence and sensory travel.',
+      inLanguage: 'en',
+      mainEntity: { '@id': `${PAGE_URL}#article` },
+      breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+    },
+    {
+      '@type': 'Article',
+      '@id': `${PAGE_URL}#article`,
+      headline: 'Blind Travel in New Zealand: A Practical Guide for Blind and Low-Vision Travellers',
+      description: 'What 23 days on the road with blind travellers taught us about accessibility, independence and experiencing New Zealand beyond sight.',
+      inLanguage: 'en',
+      mainEntityOfPage: { '@id': `${PAGE_URL}#webpage` },
+      about: [
+        { '@type': 'Thing', name: 'Blind travel' },
+        { '@type': 'Thing', name: 'Low vision travel' },
+        { '@type': 'Thing', name: 'Accessible tourism' },
+        { '@type': 'Thing', name: 'New Zealand travel' },
+        { '@type': 'Thing', name: 'Sensory travel' },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/en` },
+        { '@type': 'ListItem', position: 2, name: 'Blind Travel in New Zealand', item: PAGE_URL },
+      ],
+    },
+  ],
+}
 
 /* ────────────────────────────────────────────────────────────────────────
  * Guía pilar "Blind Travel in New Zealand" (solo en inglés, sin equivalente
  * en español). Contenido editorial basado en el primer viaje piloto de
- * Watchout Tours. No tiene Schema/JSON-LD todavía (se añadirá en un paso
- * posterior) y no está enlazada desde la navegación.
+ * Watchout Tours. No tiene FAQPage Schema todavía (a propósito) y no está
+ * enlazada desde la navegación.
  * ──────────────────────────────────────────────────────────────────────── */
 export default function BlindTravelNewZealand() {
   return (
@@ -22,6 +76,10 @@ export default function BlindTravelNewZealand() {
         ogDescription="What 23 days on the road with blind travellers taught us about accessibility, independence and experiencing New Zealand beyond sight."
         robots="index, follow"
       />
+
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(pageJsonLd)}</script>
+      </Helmet>
 
       <section className="static-hero">
         <div className="wrap static-hero-inner">
