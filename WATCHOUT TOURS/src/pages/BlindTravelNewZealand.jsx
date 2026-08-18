@@ -464,8 +464,8 @@ export default function BlindTravelNewZealand() {
                 </a>
               </li>
               <li>
-                <a href="https://www.airnewzealand.com/accessibility-and-assistance" target="_blank" rel="noopener noreferrer">
-                  Air New Zealand: accessibility and assistance
+                <a href="https://www.airnewzealand.com/special-assistance-blind-and-visually-impaired" target="_blank" rel="noopener noreferrer">
+                  Air New Zealand — assistance for blind and visually impaired passengers
                 </a>
               </li>
               <li>
