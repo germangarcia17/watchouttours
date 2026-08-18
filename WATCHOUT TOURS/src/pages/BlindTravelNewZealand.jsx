@@ -1,4 +1,5 @@
 import { Seo } from '../components/Seo'
+import { L } from '../i18n/routing'
 import '../styles/pagestyle/Estaticas.css'
 import '../styles/pagestyle/BlindTravelNewZealand.css'
 
@@ -30,6 +31,9 @@ export default function BlindTravelNewZealand() {
           <p className="static-intro">
             What 23 days on the road with blind travellers taught us about accessibility, independence and experiencing New Zealand beyond sight.
           </p>
+          <p className="btnz-byline">
+            By Watchout Tours — First-hand travel insights from our New Zealand pilot journey. Last reviewed: <time dateTime="2026-08">August 2026</time>.
+          </p>
         </div>
       </section>
 
@@ -56,6 +60,11 @@ export default function BlindTravelNewZealand() {
             <p>It isn’t intended to describe every blind person’s experience. Blindness and low vision are different for everyone.</p>
             <p>It’s simply what the road taught us.</p>
           </div>
+
+          {/* ── Procedencia editorial: de dónde viene este contenido ──── */}
+          <aside className="btnz-provenance" aria-label="Editorial provenance">
+            <p>Based on the first Watchout Tours journey across New Zealand: 23 days travelling alongside blind travellers, learning directly from what worked, what didn’t, and what we would design differently next time.</p>
+          </aside>
 
           <section aria-labelledby="btnz-yes-heading">
             <h2 id="btnz-yes-heading">Yes, blind people can travel around New Zealand</h2>
@@ -379,6 +388,7 @@ export default function BlindTravelNewZealand() {
             <p>And through all of them:</p>
             <p>Choice.</p>
             <p>Because we don’t believe there’s one correct way to travel blind.</p>
+            <p>Read more <L to="/sobre-nosotras">about Watchout Tours and how we started</L>.</p>
           </section>
 
           <section aria-labelledby="btnz-not-for-you-heading">
@@ -396,6 +406,7 @@ export default function BlindTravelNewZealand() {
             <p>And perhaps that’s exactly how accessible travel should evolve.</p>
             <p>Not by assuming what people need.</p>
             <p>By travelling together, asking, listening and designing better.</p>
+            <p>This guide is about our travel experience; for details on how this website itself is built to be accessible, see our <L to="/accesibilidad">website accessibility statement</L>.</p>
           </section>
 
           {/* ── FAQ (preparado para GEO/AEO) ─────────────────────────── */}
@@ -431,6 +442,43 @@ export default function BlindTravelNewZealand() {
               <h3>Is New Zealand completely accessible for blind travellers?</h3>
               <p>No destination is uniformly accessible. Experiences vary between transport providers, accommodation, attractions and individual locations. Preparation and direct communication with providers can make a substantial difference.</p>
             </div>
+          </section>
+
+          {/* ── CTA discreto ─────────────────────────────────────────── */}
+          <div className="btnz-cta">
+            <p className="btnz-cta-lead">Thinking about experiencing New Zealand beyond sight?</p>
+            <p>Explore how Watchout is designing small-group journeys for blind and low-vision travellers.</p>
+            <div className="cta-row">
+              <L to="/productos" className="btn btn-solid">Explore Watchout journeys</L>
+            </div>
+          </div>
+
+          {/* ── Recursos externos: sección claramente secundaria ─────── */}
+          <section aria-labelledby="btnz-sources-heading" className="btnz-sources">
+            <h2 id="btnz-sources-heading">Useful New Zealand accessibility resources</h2>
+            <p>These external resources are provided for general trip planning and are not part of our pilot journey account:</p>
+            <ul>
+              <li>
+                <a href="https://www.nzta.govt.nz/travelling-on-our-roads/public-transport/travelling-with-a-disability/" target="_blank" rel="noopener noreferrer">
+                  New Zealand Transport Agency (Waka Kotahi): travelling with a disability
+                </a>
+              </li>
+              <li>
+                <a href="https://www.airnewzealand.com/accessibility-and-assistance" target="_blank" rel="noopener noreferrer">
+                  Air New Zealand: accessibility and assistance
+                </a>
+              </li>
+              <li>
+                <a href="https://blindlowvision.org.nz/" target="_blank" rel="noopener noreferrer">
+                  Blind Low Vision NZ
+                </a>
+              </li>
+              <li>
+                <a href="https://www.msd.govt.nz/about-msd-and-our-work/work-programmes/accessibility/quick-reference-guides/disability-etiquette.html" target="_blank" rel="noopener noreferrer">
+                  New Zealand Ministry of Social Development: disability etiquette guide
+                </a>
+              </li>
+            </ul>
           </section>
 
         </div>

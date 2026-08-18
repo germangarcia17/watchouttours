@@ -33,3 +33,52 @@
   font-weight: 700;
   margin-bottom: 6px;
 }
+
+/* ── Byline / última revisión (en el hero, bajo el H1) ────────────────── */
+.btnz-byline {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+/* ── Bloque de procedencia editorial (entre la intro y el primer H2) ──── */
+.btnz-provenance {
+  margin: 8px 0 32px;
+  padding: 16px 20px;
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.btnz-provenance p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ── CTA discreto (tras el contenido principal, antes de los recursos) ─ */
+.btnz-cta {
+  margin-top: 40px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.btnz-cta-lead {
+  font-family: var(--font-family-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+/* ── Recursos externos (sección claramente secundaria, al final) ──────── */
+.btnz-sources p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.btnz-sources ul {
+  font-size: 14.5px;
+}
