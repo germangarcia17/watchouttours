@@ -24,15 +24,15 @@ export default function SobreNosotras() {
 
       {/* ── Hero ─────────────────────────────────────── */}
       <section className="sn-hero">
-        <div className="wrap sn-hero-grid">
+        <div className="sn-hero-photo">
+          <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
+        </div>
+        <div className="wrap">
           <div className="sn-hero-inner">
             <span className="sec-eyebrow">{t('sobre.heroEyebrow')}</span>
             <h1 className="sn-titulo">{t('sobre.heroTitle1')}<br />{t('sobre.heroTitle2')}</h1>
             <p className="sn-intro">{t('sobre.heroIntro1')}</p>
             <p className="sn-intro">{t('sobre.heroIntro2')}</p>
-          </div>
-          <div className="sn-hero-photo">
-            <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
           </div>
         </div>
       </section>
