@@ -32,8 +32,12 @@ export default function Productos() {
                 </div>
 
                 <div className="prod-card__footer">
-                  <p className="prod-card__precio">{precioTitulo}</p>
-                  <p className="prod-card__precio-nota">{precioNota}</p>
+                  {id !== 'grupo' && (
+                    <>
+                      <p className="prod-card__precio">{precioTitulo}</p>
+                      <p className="prod-card__precio-nota">{precioNota}</p>
+                    </>
+                  )}
                   <p className="prod-card__incluye-nota"><strong>{t('productos.incluye')}</strong> {incluye}</p>
                   <div className="cta-row">
                     <L to="/contacto" className="btn btn-solid">{cta}</L>
