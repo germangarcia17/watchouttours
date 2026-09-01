@@ -590,21 +590,25 @@ export default function BlindTravelNewZealand() {
               <li>
                 <a href="https://www.nzta.govt.nz/travelling-on-our-roads/public-transport/travelling-with-a-disability/" target="_blank" rel="noopener noreferrer">
                   New Zealand Transport Agency (Waka Kotahi): travelling with a disability
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.airnewzealand.com/special-assistance-blind-and-visually-impaired" target="_blank" rel="noopener noreferrer">
                   Air New Zealand — assistance for blind and visually impaired passengers
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </li>
               <li>
                 <a href="https://blindlowvision.org.nz/" target="_blank" rel="noopener noreferrer">
                   Blind Low Vision NZ
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.msd.govt.nz/about-msd-and-our-work/work-programmes/accessibility/quick-reference-guides/disability-etiquette.html" target="_blank" rel="noopener noreferrer">
                   New Zealand Ministry of Social Development: disability etiquette guide
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </li>
             </ul>

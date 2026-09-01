@@ -112,6 +112,7 @@ export default function Contacto() {
             <div>
               <span className="canal-card__titulo">WhatsApp</span>
               <span className="canal-card__desc">{t('contacto.canalWhatsappDesc')}</span>
+              <span className="sr-only"> {t('common.newTab')}</span>
             </div>
           </a>
 
