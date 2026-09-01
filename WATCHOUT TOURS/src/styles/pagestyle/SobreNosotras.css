@@ -147,6 +147,74 @@
   margin-top: 32px;
 }
 
+/* ── Equipo ───────────────────────────────────────────── */
+.sn-equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.sn-equipo-card {
+  text-align: center;
+}
+
+.sn-equipo-foto {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(21, 20, 15, .18);
+}
+
+.sn-equipo-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sn-equipo-nombre {
+  font-family: var(--font-family-heading);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.sn-equipo-rol {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 12px;
+}
+
+.sn-equipo-bio {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.sn-equipo-links {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 14px;
+}
+
+.sn-equipo-links a {
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .sn-equipo-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 /* ── Filosofía con foto lateral ──────────────────────── */
 .sn-filo-grid {
   display: grid;
