@@ -2,6 +2,24 @@ import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 import { uploadImage } from '../../lib/storage'
 
+const NUEVAS_IMAGENES_SUGERIDAS = [
+  {
+    section: 'sobre-nosotras', key: 'equipo-moni',
+    image_alt: 'Moni, cofundadora y guía de Watchout Tours, en Nueva Zelanda',
+    image_alt_en: 'Moni, co-founder and guide at Watchout Tours, in New Zealand',
+  },
+  {
+    section: 'sobre-nosotras', key: 'equipo-sylvie',
+    image_alt: 'Sylvie, cofundadora y guía de Watchout Tours, en Nueva Zelanda',
+    image_alt_en: 'Sylvie, co-founder and guide at Watchout Tours, in New Zealand',
+  },
+  {
+    section: 'sobre-nosotras', key: 'equipo-nuria',
+    image_alt: 'Nuria sonriendo durante su viaje piloto por Nueva Zelanda con Watchout Tours',
+    image_alt_en: 'Nuria smiling during her pilot trip across New Zealand with Watchout Tours',
+  },
+]
+
 export default function ImagenesAdmin() {
   const [images, setImages]     = useState([])
   const [loading, setLoading]   = useState(true)
@@ -10,6 +28,8 @@ export default function ImagenesAdmin() {
   const [saving, setSaving]     = useState({})
   const [uploading, setUploading] = useState({})
   const [uploadError, setUploadError] = useState({})
+  const [creating, setCreating] = useState({})
+  const [createError, setCreateError] = useState({})
 
   useEffect(() => {
     document.title = 'Imágenes | Watchout Tours Admin'
@@ -63,7 +83,30 @@ export default function ImagenesAdmin() {
     }
   }
 
+  async function crearImagen(nueva) {
+    const key = `${nueva.section}:${nueva.key}`
+    setCreating(prev => ({ ...prev, [key]: true }))
+    setCreateError(prev => { const next = { ...prev }; delete next[key]; return next })
+    try {
+      const { data, error } = await supabase
+        .from('site_images')
+        .insert({ section: nueva.section, key: nueva.key, image_alt: nueva.image_alt, image_alt_en: nueva.image_alt_en })
+        .select()
+        .single()
+      if (error) throw error
+      setImages(prev => [...prev, data].sort((a, b) => a.section.localeCompare(b.section)))
+    } catch (err) {
+      console.error('[imagenes] error al crear:', err)
+      setCreateError(prev => ({ ...prev, [key]: err.message ?? 'Error al crear la imagen.' }))
+    } finally {
+      setCreating(prev => { const next = { ...prev }; delete next[key]; return next })
+    }
+  }
+
   if (loading) return <div className="admin-page"><p role="status">Cargando…</p></div>
+
+  const existentes = new Set(images.map(img => `${img.section}:${img.key}`))
+  const pendientes = NUEVAS_IMAGENES_SUGERIDAS.filter(n => !existentes.has(`${n.section}:${n.key}`))
 
   return (
     <div className="admin-page">
@@ -71,6 +114,34 @@ export default function ImagenesAdmin() {
         <h1>Imágenes del sitio</h1>
       </div>
       <p>Sube una imagen nueva para reemplazarla en la web y edita su texto alternativo. Los archivos se guardan en el bucket <code>imagenes</code> de Supabase.</p>
+
+      {pendientes.length > 0 && (
+        <div className="admin-page-header" style={{ marginTop: '1.5rem' }}>
+          <h2>Espacios de imagen nuevos por crear</h2>
+          <p>Estos espacios ya están referenciados en el código de la web pero aún no tienen fila en la base de datos. Créalos aquí para poder subirles foto.</p>
+          <ul role="list" style={{ listStyle: 'none', padding: 0 }}>
+            {pendientes.map(n => {
+              const key = `${n.section}:${n.key}`
+              return (
+                <li key={key} style={{ marginBottom: '10px' }}>
+                  <strong>{n.section} — {n.key}</strong>
+                  {' '}
+                  <button
+                    onClick={() => crearImagen(n)}
+                    disabled={creating[key]}
+                    className="btn btn--primary btn--sm"
+                  >
+                    {creating[key] ? 'Creando…' : 'Crear'}
+                  </button>
+                  {createError[key] && (
+                    <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{createError[key]}</p>
+                  )}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )}
 
       {images.length === 0 && <p>No hay imágenes registradas.</p>}
 

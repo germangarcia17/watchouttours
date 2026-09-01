@@ -13,6 +13,9 @@ export default function SobreNosotras() {
   const PRINCIPIOS = t('sobre.principios', { returnObjects: true })
 
   const heroImg = useSiteImage('sobre-nosotras', 'hero', imgNosotras, t('sobre.heroImgAlt'))
+  const moniImg = useSiteImage('sobre-nosotras', 'equipo-moni', imgNosotras, t('sobre.equipoMoniFotoAlt'))
+  const sylvieImg = useSiteImage('sobre-nosotras', 'equipo-sylvie', imgNosotras, t('sobre.equipoSylvieFotoAlt'))
+  const nuriaImg = useSiteImage('sobre-nosotras', 'equipo-nuria', imgNosotras, t('sobre.equipoNuriaFotoAlt'))
 
   return (
     <>
@@ -67,6 +70,50 @@ export default function SobreNosotras() {
             <cite>{t('sobre.holaQuoteCite')}</cite>
           </blockquote>
           <p className="sn-text">{t('sobre.holaP3')}</p>
+        </div>
+      </section>
+
+      {/* ── Equipo ─────────────────────────────────────── */}
+      <section aria-labelledby="equipo-heading">
+        <div className="wrap">
+          <span className="sec-eyebrow">{t('sobre.equipoEyebrow')}</span>
+          <h2 id="equipo-heading" className="sec-title">{t('sobre.equipoTitle')}</h2>
+          <div className="sn-equipo-grid">
+            <article className="sn-equipo-card">
+              <div className="sn-equipo-foto">
+                <img src={moniImg.src} alt={moniImg.alt} lang={moniImg.lang} loading="lazy" />
+              </div>
+              <h3 className="sn-equipo-nombre">{t('sobre.equipoMoniNombre')}</h3>
+              <p className="sn-equipo-rol">{t('sobre.equipoMoniRol')}</p>
+              <p className="sn-equipo-bio">{t('sobre.equipoMoniBio')}</p>
+            </article>
+
+            <article className="sn-equipo-card">
+              <div className="sn-equipo-foto">
+                <img src={sylvieImg.src} alt={sylvieImg.alt} lang={sylvieImg.lang} loading="lazy" />
+              </div>
+              <h3 className="sn-equipo-nombre">{t('sobre.equipoSylvieNombre')}</h3>
+              <p className="sn-equipo-rol">{t('sobre.equipoSylvieRol')}</p>
+              <p className="sn-equipo-bio">{t('sobre.equipoSylvieBio')}</p>
+            </article>
+
+            <article className="sn-equipo-card">
+              <div className="sn-equipo-foto">
+                <img src={nuriaImg.src} alt={nuriaImg.alt} lang={nuriaImg.lang} loading="lazy" />
+              </div>
+              <h3 className="sn-equipo-nombre">{t('sobre.equipoNuriaNombre')}</h3>
+              <p className="sn-equipo-rol">{t('sobre.equipoNuriaRol')}</p>
+              <p className="sn-equipo-bio">{t('sobre.equipoNuriaBio')}</p>
+              <p className="sn-equipo-links">
+                <a href="mailto:nuria@watchouttours.nz">nuria@watchouttours.nz</a>
+                {' · '}
+                <a href="https://blog.sixsense.travel" target="_blank" rel="noopener noreferrer">
+                  {t('sobre.equipoBlogLabel')}
+                  <span className="sr-only"> {t('common.newTab')}</span>
+                </a>
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
