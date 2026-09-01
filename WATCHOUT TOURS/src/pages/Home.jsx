@@ -19,18 +19,6 @@ import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 import audioBarro from '../images/barro-burbujeante-rotorua.mp3'
 import audioKauri from '../images/bienvenida-al-kauri.mp3'
 
-const TARGET_DATE = new Date('2026-09-20T00:00:00')
-
-function calcularTiempo() {
-  const ahora = new Date()
-  const diferencia = TARGET_DATE - ahora
-  if (diferencia <= 0) return { dias: 0, horas: 0 }
-  return {
-    dias: Math.floor(diferencia / (1000 * 60 * 60 * 24)),
-    horas: Math.floor((diferencia / (1000 * 60 * 60)) % 24),
-  }
-}
-
 /* Separador de secciones: icono decorativo de una persona caminando con
    bastón. Es puramente decorativo (aria-hidden).
    Icono: Font Awesome Free 6 "person-walking-with-cane" — CC BY 4.0
@@ -50,7 +38,6 @@ export default function Home() {
   const lang = useLang()
   const [resenaDestacada, setResenaDestacada] = useState(getPreload().homeResenas ?? null)
   const [posts, setPosts] = useState(getPreload().homeBlogPreview ?? [])
-  const [tiempo, setTiempo] = useState(calcularTiempo())
   const [playingAudio, setPlayingAudio] = useState(null)
 
   const formatos = t('home.rutas.formatos', { returnObjects: true })
@@ -77,16 +64,6 @@ export default function Home() {
       .single()
       .then(({ data }) => setPosts(data ?? []))
   }, [])
-
-  useEffect(() => {
-    const intervalo = setInterval(() => setTiempo(calcularTiempo()), 1000)
-    return () => clearInterval(intervalo)
-  }, [])
-
-  const unidades = [
-    { label: t('home.rutas.dias'), valor: tiempo.dias },
-    { label: t('home.rutas.horas'), valor: tiempo.horas },
-  ]
 
   return (
     <>
@@ -279,19 +256,15 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="contador-aviso">
-              <p className="contador-aviso__texto">{t('home.rutas.contadorAviso')}</p>
-              <div
-                className="contador"
-                role="timer"
-                aria-hidden="true"
-              >
-                {unidades.map(({ label, valor }) => (
-                  <div key={label} className="contador__bloque" aria-hidden="true">
-                    <span className="contador__numero">{String(valor).padStart(2, '0')}</span>
-                    <span className="contador__label">{label}</span>
-                  </div>
-                ))}
+            <div className="anuncio-grupo">
+              <span className="anuncio-grupo__badge">
+                <span className="anuncio-grupo__punto" aria-hidden="true"></span>
+                {t('home.rutas.anuncioBadge')}
+              </span>
+              <p className="anuncio-grupo__fecha">{t('home.rutas.anuncioFecha')}</p>
+              <p className="anuncio-grupo__texto">{t('home.rutas.anuncioTexto')}</p>
+              <div className="cta-row" style={{ justifyContent: 'center' }}>
+                <L to="/contacto" className="btn btn-solid anuncio-grupo__cta">{t('home.rutas.anuncioCta')}<span aria-hidden="true"> →</span></L>
               </div>
             </div>
           </div>
