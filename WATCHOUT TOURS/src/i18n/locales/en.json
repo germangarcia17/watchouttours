@@ -107,9 +107,10 @@
       "title": "Two ways to live it",
       "sub": "Same route, you choose your format: in a small group with set dates, or private and at your own pace.",
       "incluido": "Included:",
-      "contadorAviso": "Our next group trip starts in:",
-      "dias": "Days",
-      "horas": "Hours",
+      "anuncioBadge": "We've got a date!",
+      "anuncioFecha": "New group trip: departing March 1",
+      "anuncioTexto": "A small group of 3 to 6 travellers exploring New Zealand for 16 days. Spots are held on a first-come basis — tell us you're in and we'll save yours.",
+      "anuncioCta": "I want my spot",
       "formatos": [
         {
           "id": "grupo",

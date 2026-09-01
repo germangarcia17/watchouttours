@@ -107,9 +107,10 @@
       "title": "Dos maneras de vivirlo",
       "sub": "La misma ruta, tú escoges tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.",
       "incluido": "Incluido:",
-      "contadorAviso": "¡Nuestro próximo viaje en grupo comienza en:",
-      "dias": "Días",
-      "horas": "Horas",
+      "anuncioBadge": "¡Ya tenemos fecha!",
+      "anuncioFecha": "Nuevo grupo: salimos el 1 de marzo",
+      "anuncioTexto": "Un grupo reducido de 3 a 6 viajeras recorriendo Nueva Zelanda durante 16 días. Las plazas se reservan por orden de llegada — cuéntanos que quieres venir y te guardamos la tuya.",
+      "anuncioCta": "Quiero mi plaza",
       "formatos": [
         {
           "id": "grupo",
