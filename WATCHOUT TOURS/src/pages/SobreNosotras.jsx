@@ -104,14 +104,24 @@ export default function SobreNosotras() {
               <h3 className="sn-equipo-nombre">{t('sobre.equipoNuriaNombre')}</h3>
               <p className="sn-equipo-rol">{t('sobre.equipoNuriaRol')}</p>
               <p className="sn-equipo-bio">{t('sobre.equipoNuriaBio')}</p>
-              <p className="sn-equipo-links">
-                <a href="mailto:nuria@watchouttours.nz">nuria@watchouttours.nz</a>
-                {' · '}
-                <a href="https://blog.sixsense.travel" target="_blank" rel="noopener noreferrer">
+              <div className="sn-equipo-chips">
+                <a href="mailto:nuria@watchouttours.nz" className="sn-equipo-chip">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                  nuria@watchouttours.nz
+                </a>
+                <a href="https://blog.sixsense.travel" target="_blank" rel="noopener noreferrer" className="sn-equipo-chip">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <path d="M15 3h6v6"/>
+                    <path d="M10 14 21 3"/>
+                  </svg>
                   {t('sobre.equipoBlogLabel')}
                   <span className="sr-only"> {t('common.newTab')}</span>
                 </a>
-              </p>
+              </div>
             </article>
           </div>
         </div>
