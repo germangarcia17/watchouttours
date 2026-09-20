@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
+import { uploadImage } from '../../lib/storage'
 
 const EMPTY = { author_name: '', author_context: '', content: '', video_url: '', content_en: '', author_context_en: '' }
 
@@ -9,6 +10,8 @@ export default function ResenasAdmin() {
   const [form, setForm]         = useState(EMPTY)
   const [saving, setSaving]     = useState(false)
   const [formError, setFormError] = useState(null)
+  const [uploadingVideo, setUploadingVideo] = useState(false)
+  const [videoUploadError, setVideoUploadError] = useState(null)
 
   useEffect(() => {
     document.title = 'Reseñas | Watchout Tours Admin'
@@ -24,6 +27,21 @@ export default function ResenasAdmin() {
   function handleChange(e) {
     const { name, value } = e.target
     setForm(prev => ({ ...prev, [name]: value }))
+  }
+
+  async function handleVideoFile(file) {
+    if (!file) return
+    setUploadingVideo(true)
+    setVideoUploadError(null)
+    try {
+      const { url } = await uploadImage(file, 'resenas')
+      setForm(prev => ({ ...prev, video_url: url }))
+    } catch (err) {
+      console.error('[resenas] error al subir el vídeo:', err)
+      setVideoUploadError(err.message ?? 'Error al subir el vídeo.')
+    } finally {
+      setUploadingVideo(false)
+    }
   }
 
   async function handleCreate(e) {
@@ -82,8 +100,27 @@ export default function ResenasAdmin() {
             <textarea id="resena_content" name="content" rows={4} value={form.content} onChange={handleChange} aria-required="true" className="form-control" />
           </div>
           <div className="form-field">
-            <label htmlFor="video_url" className="form-label">URL del vídeo del testimonio (opcional)</label>
+            <label htmlFor="video_file" className="form-label">Vídeo del testimonio (opcional)</label>
+            <p style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: '0 0 0.5rem' }}>
+              Sube el archivo directamente, o si ya tienes una URL (por ejemplo de YouTube) pégala abajo.
+            </p>
+            <input
+              id="video_file"
+              type="file"
+              accept="video/mp4,video/webm,video/quicktime"
+              onChange={e => handleVideoFile(e.target.files?.[0])}
+              disabled={uploadingVideo}
+              className="form-control form-control--file"
+            />
+            {uploadingVideo && <span role="status" style={{ display: 'block', marginTop: '0.5rem' }}>Subiendo vídeo…</span>}
+            {videoUploadError && (
+              <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{videoUploadError}</p>
+            )}
+          </div>
+          <div className="form-field">
+            <label htmlFor="video_url" className="form-label">URL del vídeo del testimonio</label>
             <input id="video_url" name="video_url" type="url" value={form.video_url} onChange={handleChange} className="form-control" placeholder="https://…supabase.co/…/testimonio.mp4" />
+            {form.video_url && <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginTop: '0.4rem' }}>Vídeo listo: {form.video_url}</p>}
           </div>
 
           <fieldset className="form-field" style={{ border: '1px solid var(--line)', borderRadius: 8, padding: '1rem', marginTop: '1rem' }}>
