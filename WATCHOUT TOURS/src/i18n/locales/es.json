@@ -175,6 +175,12 @@
       "p1": "Organizar un viaje accesible puede generar muchas preguntas.",
       "p2": "Resolvemos tus dudas y vemos qué opción encaja mejor contigo.",
       "ctaPrimary": "Cuéntanos qué necesitas"
+    },
+    "charlaAviso": {
+      "eyebrow": "Charla online gratuita · En español",
+      "title": "Descubre Nueva Zelanda a través de los sentidos",
+      "texto": "¿Cómo es viajar por Nueva Zelanda con ceguera o baja visión? Te lo contamos por Microsoft Teams:",
+      "cta": "Información e inscripción a la charla"
     }
   },
   "notFound": {
@@ -460,7 +466,7 @@
       "description": "Cómo tratamos tus datos personales cuando nos escribes desde el formulario de contacto de Watchout Tours."
     },
     "title": "Política de privacidad",
-    "intro": "Solo recogemos los datos que nos das voluntariamente para poder responderte. Nunca los usamos para publicidad ni los cedemos a terceros.",
+    "intro": "Solo recogemos los datos que nos das voluntariamente para poder responderte. Nunca los usamos para publicidad sin tu permiso ni los cedemos a terceros.",
     "responsableTitle": "Responsable del tratamiento",
     "responsableP1": ", sociedad limitada constituida en Nueva Zelanda, con domicilio en Picton, Nueva Zelanda. Contacto:",
     "responsableP2": "Aunque somos una empresa neozelandesa, nuestros servicios se dirigen a personas residentes en España y en la Unión Europea, por lo que tratamos tus datos conforme al Reglamento General de Protección de Datos (RGPD) y a la normativa de privacidad de Nueva Zelanda (Privacy Act 2020).",
@@ -498,7 +504,19 @@
     "verAvisoA": "Puedes consultar también nuestro",
     "verAvisoLink": "Aviso legal",
     "fecha": "Última actualización:",
-    "fechaValor": "16 de julio de 2026"
+    "fechaValor": "12 de octubre de 2026",
+    "charlaTitle": "Inscripción a la charla online",
+    "charlaDatos": "Si te inscribes a nuestra charla online «Descubre Nueva Zelanda a través de los sentidos», tratamos tu nombre, tu email, la fecha que elijas, la pregunta que quieras hacernos (opcional) y si quieres recibir noticias de futuros viajes (opcional).",
+    "charlaFinalidadLabel": "Finalidad y base jurídica:",
+    "charlaFinalidad": "gestionar tu inscripción y enviarte el email de confirmación con el enlace de Microsoft Teams, dos recordatorios (24 horas y 1 hora antes) y un email de seguimiento al día siguiente de la charla. La base jurídica es tu propia solicitud de inscripción (art. 6.1.b RGPD).",
+    "charlaNoticiasLabel": "Noticias de futuros viajes:",
+    "charlaNoticias": "solo te escribiremos con novedades de nuestros viajes si marcas esa casilla, que es opcional y aparece desmarcada. La base jurídica es tu consentimiento (art. 6.1.a RGPD), que puedes retirar en cualquier momento escribiendo a",
+    "charlaConservacionLabel": "Conservación:",
+    "charlaConservacion": "aplicamos el mismo plazo que al resto de datos (un máximo de 12 meses desde el último contacto). Si has pedido recibir noticias, los conservamos hasta que retires tu consentimiento.",
+    "charlaProveedoresLabel": "Proveedores:",
+    "charlaProveedores": "guardamos las inscripciones en Supabase y enviamos los emails con Resend, que actúan como encargados del tratamiento por cuenta nuestra. Cuando tratan datos fuera del Espacio Económico Europeo, la transferencia se ampara en las garantías previstas en el RGPD. La charla se celebra en Microsoft Teams: al conectarte, Microsoft trata los datos que introduzcas (por ejemplo, el nombre con el que entras) según su propia política de privacidad.",
+    "charlaGrabacionLabel": "Grabación:",
+    "charlaGrabacion": "grabaremos la charla y enviaremos el enlace a la grabación a las personas inscritas. La grabación incluye la voz y la imagen de quienes activen el micrófono o la cámara; puedes participar sin aparecer manteniéndolos apagados y escribiendo en el chat. La base jurídica es tu consentimiento, que das al activar el micrófono o la cámara."
   },
   "avisoLegal": {
     "docTitle": "Aviso legal | Watchout Tours",
@@ -527,5 +545,123 @@
     "leyPb": ") y de protección de las personas consumidoras.",
     "fecha": "Última actualización:",
     "fechaValor": "16 de julio de 2026"
+  },
+  "charla": {
+    "seo": {
+      "title": "Charla online gratuita: Nueva Zelanda a través de los sentidos | Watchout Tours",
+      "description": "Charla gratuita en español por Microsoft Teams sobre cómo es viajar por Nueva Zelanda con ceguera o baja visión. Sábado 24 de octubre (21:00) o sábado 7 de noviembre (20:00), hora de España peninsular.",
+      "ogTitle": "Descubre Nueva Zelanda a través de los sentidos · Charla online gratuita",
+      "ogDescription": "Charla gratuita en español por Microsoft Teams: viajar por Nueva Zelanda con ceguera o baja visión. Sábado 24 de octubre, 21:00, o sábado 7 de noviembre, 20:00 (hora de España peninsular). Inscríbete."
+    },
+    "eyebrow": "Charla online gratuita · En español",
+    "title": "Descubre Nueva Zelanda a través de los sentidos",
+    "intro": "¿Cómo es viajar por Nueva Zelanda con ceguera o baja visión? Te invitamos a una charla gratuita para descubrir sus experiencias sensoriales, conocer nuestro acompañamiento y resolver tus dudas sobre el viaje.",
+    "idiomaAviso": "La charla es en español.",
+    "resumenTitulo": "Dos fechas, la misma charla:",
+    "resumenItem": "{{fecha}}: {{hora}} en España peninsular ({{horaCanarias}} en Canarias)",
+    "cta": "Inscribirme a la charla gratuita",
+    "info": {
+      "title": "Información del encuentro",
+      "mismaCharla": "La charla se repite en dos fechas con el mismo contenido: elige la que mejor te venga.",
+      "espana": "España peninsular",
+      "canarias": "Canarias",
+      "duracionLabel": "Duración",
+      "duracion": "Aproximadamente una hora",
+      "plataformaLabel": "Plataforma",
+      "plataforma": "Microsoft Teams. Es una reunión online: no necesitas registrarte en Teams.",
+      "idiomaLabel": "Idioma",
+      "idioma": "Español",
+      "precioLabel": "Precio",
+      "precio": "Totalmente gratuita, con inscripción previa"
+    },
+    "horario": {
+      "title": "¿A qué hora es en tu país?",
+      "caption": "Hora de inicio de la charla en cada país o región, según la fecha",
+      "colRegion": "País o región",
+      "nota": "México tiene varias zonas horarias; la hora indicada corresponde a Ciudad de México.",
+      "local": "Según la configuración de tu dispositivo, en tu hora local la charla empieza:",
+      "localItem": "{{fecha}} a las {{hora}}"
+    },
+    "descubriras": {
+      "title": "Qué descubrirás",
+      "items": [
+        "La naturaleza, los sonidos, los sabores y la cultura maorí de Nueva Zelanda.",
+        "Cómo organizamos el viaje y acompañamos a personas ciegas o con baja visión, respetando su autonomía.",
+        "Las experiencias principales de nuestro próximo viaje.",
+        "Un espacio para preguntas y dudas."
+      ]
+    },
+    "paraQuien": {
+      "title": "Para quién es",
+      "intro": "La charla está pensada para:",
+      "items": [
+        "Personas ciegas o con baja visión.",
+        "Acompañantes.",
+        "Personas interesadas en esta propuesta de viaje."
+      ]
+    },
+    "nosotras": {
+      "title": "Quiénes somos",
+      "p1": "Somos Mónica y Sylvie, las fundadoras de WatchOut!: dos españolas que viven en Nueva Zelanda y que son las guías de cada viaje, de principio a fin.",
+      "p2": "La chispa del proyecto la encendió el padre de Sylvie, guía de esquí para ciegos en España. Hoy diseñamos viajes sensoriales para descubrir Nueva Zelanda a través del relato, el tacto y el sonido.",
+      "p3": "Nos conectaremos desde Nueva Zelanda, donde será domingo por la mañana: el 25 de octubre y el 8 de noviembre a las 8:00, hora de Auckland.",
+      "cta": "Conoce nuestra historia completa"
+    },
+    "entrar": {
+      "title": "Cómo entrar a la charla",
+      "enlace": "Al inscribirte te enviaremos por email el enlace de Microsoft Teams de tu sesión. Te lo recordaremos también 24 horas y 1 hora antes.",
+      "ordenadorLabel": "Desde ordenador:",
+      "ordenador": "entra por el navegador, sin cuenta de Microsoft y sin instalar nada. Abre el enlace y elige «Continuar en este explorador».",
+      "movilLabel": "Desde el móvil o la tableta:",
+      "movil": "necesitas la app gratuita Microsoft Teams. Instálala antes de la charla y entra con el enlace como invitado.",
+      "ayuda": "¿Necesitas ayuda técnica antes de la charla? Escríbenos y te ayudamos a conectarte:",
+      "ayudaEmail": "Escribir un email a info@watchouttours.nz",
+      "ayudaWhatsapp": "Escribir por WhatsApp al +64 27 267 7006"
+    },
+    "grabacion": {
+      "title": "Grabación",
+      "p": "Vamos a grabar la charla. En la grabación aparecerán la voz y la imagen de quien active el micrófono o la cámara. Si prefieres no aparecer, puedes mantenerlos apagados y escribir tus preguntas en el chat de la reunión.",
+      "privacidadPre": "Más información en nuestra",
+      "privacidadLink": "política de privacidad"
+    },
+    "final": {
+      "title": "¿Te apuntas?",
+      "p": "Es gratis y solo necesitas una conexión a internet. Reserva tu plaza y te enviamos por email el enlace para conectarte."
+    },
+    "form": {
+      "title": "Inscríbete a la charla",
+      "intro": "Rellena el formulario y te enviaremos un email con los detalles y el enlace de Teams de la fecha que elijas.",
+      "obligatorio": "(obligatorio)",
+      "opcional": "(opcional)",
+      "nombre": "Nombre",
+      "email": "Email",
+      "emailHint": "Aquí te enviaremos el enlace para conectarte.",
+      "sesionLegend": "Fecha",
+      "sesionHint": "Las dos sesiones tienen el mismo contenido.",
+      "pregunta": "¿Qué te gustaría saber sobre viajar por Nueva Zelanda?",
+      "noticias": "Quiero recibir noticias de futuros viajes",
+      "privacidadPre": "Usaremos tus datos solo para gestionar tu inscripción y enviarte los emails de la charla: la confirmación, dos recordatorios y un email de seguimiento. Más información en nuestra",
+      "privacidadLink": "política de privacidad",
+      "submit": "Completar inscripción",
+      "enviando": "Enviando tu inscripción…",
+      "success": "¡Gracias por apuntarte! Te hemos enviado un email con los detalles y el enlace para conectarte a la charla por Microsoft Teams.",
+      "successNota": "Si no lo ves en unos minutos, revisa la carpeta de correo no deseado o escríbenos a info@watchouttours.nz.",
+      "errResumen": "Revisa estos datos para completar la inscripción:",
+      "err": {
+        "nombre": "Escribe tu nombre.",
+        "email": "Escribe un email válido, por ejemplo: nombre@correo.com.",
+        "sesion": "Elige una fecha.",
+        "pregunta": "La pregunta no puede pasar de 1000 caracteres."
+      },
+      "fallo": {
+        "titulo": "No hemos podido completar tu inscripción.",
+        "email": "No hemos podido enviarte el email de confirmación.",
+        "generico": "Ha habido un problema técnico.",
+        "cerrada": "Esa sesión ya ha comenzado. Elige otra fecha.",
+        "noActiva": "Las inscripciones para esa fecha todavía no están abiertas.",
+        "contacto": "Vuelve a intentarlo en unos minutos o escríbenos y te inscribimos nosotras:"
+      },
+      "sinSesiones": "Las dos sesiones de la charla ya se han celebrado. Si quieres saber cuándo organizamos la próxima, escríbenos."
+    }
   }
 }

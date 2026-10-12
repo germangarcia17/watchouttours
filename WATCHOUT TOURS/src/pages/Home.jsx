@@ -14,10 +14,47 @@ import { Seo } from '../components/Seo'
 import { getPreload } from '../lib/preload'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
+import { CHARLA_PUBLICADA } from '../config/charlaPublicada'
+import { SESIONES } from '../config/charla'
+import '../styles/pagestyle/Charla.css'
 import audioParapente from '../images/Saltando en parapente.mp3'
 import audioAlpaca from '../images/Cuando la alpaca le mordió.mp3'
 import audioBarro from '../images/barro-burbujeante-rotorua.mp3'
 import audioKauri from '../images/bienvenida-al-kauri.mp3'
+
+/* Aviso de la charla online, justo después del hero. Solo aparece si la
+   página de la charla está publicada y hasta que termina la última sesión
+   (comprobado en el cliente, para que una portada prerenderizada antes no
+   siga anunciándola después). */
+function AvisoCharla() {
+  const { t } = useTranslation()
+  const lang = useLang()
+  const ultima = SESIONES[SESIONES.length - 1]
+  const [vigente, setVigente] = useState(true)
+  useEffect(() => {
+    setVigente(Date.now() < Date.parse(ultima.inicioUtc) + 60 * 60_000)
+  }, [ultima])
+  if (!CHARLA_PUBLICADA || !vigente) return null
+  return (
+    <section className="charla-aviso" aria-labelledby="charla-aviso-titulo">
+      <div className="wrap">
+        <div className="charla-aviso__card">
+          <p className="charla-aviso__eyebrow">{t('home.charlaAviso.eyebrow')}</p>
+          <h2 id="charla-aviso-titulo" className="charla-aviso__titulo">{t('home.charlaAviso.title')}</h2>
+          <p className="charla-aviso__texto">{t('home.charlaAviso.texto')}</p>
+          <ul>
+            {SESIONES.map(s => (
+              <li key={s.id}>{t('charla.resumenItem', { fecha: s.fecha[lang], hora: s.horas.es, horaCanarias: s.horas.ic })}</li>
+            ))}
+          </ul>
+          <div className="cta-row">
+            <L to="/charla-nueva-zelanda" className="btn btn-solid">{t('home.charlaAviso.cta')}</L>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 /* Separador de secciones: icono decorativo de una persona caminando con
    bastón. Es puramente decorativo (aria-hidden).
@@ -93,6 +130,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AvisoCharla />
 
       <SeparadorBaston />
 

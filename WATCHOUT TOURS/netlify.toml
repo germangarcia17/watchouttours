@@ -8,6 +8,16 @@
   # el comando "ignore" devuelve siempre != 0, así que nunca se omite.
   ignore    = "/bin/false"
 
+# Las funciones de la charla importan módulos compartidos con la web
+# (src/config/charla.js) y de netlify/lib/: esbuild los empaqueta.
+[functions]
+  node_bundler = "esbuild"
+
+# Recordatorios (24 h y 1 h antes) y seguimiento de la charla online.
+# La función no hace nada fuera de esas ventanas (ver charla-envios.js).
+[functions."charla-envios"]
+  schedule = "*/10 * * * *"
+
 # La "filosofía" vive ahora dentro de Sobre Nosotras: redirect real (301)
 # para cualquier URL o backlink antiguo, en vez de depender del redirect
 # del lado del cliente.

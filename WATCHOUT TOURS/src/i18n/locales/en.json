@@ -175,6 +175,12 @@
       "p1": "Planning an accessible trip can raise lots of questions.",
       "p2": "Write to us. We'll answer your questions and figure out together which option fits you best.",
       "ctaPrimary": "Tell us what you need"
+    },
+    "charlaAviso": {
+      "eyebrow": "Free online talk · In Spanish",
+      "title": "Discover New Zealand through the senses",
+      "texto": "What is it like to travel in New Zealand with blindness or low vision? Join our talk on Microsoft Teams:",
+      "cta": "Talk details and registration"
     }
   },
   "notFound": {
@@ -460,7 +466,7 @@
       "description": "How we handle your personal data when you contact Watchout Tours through our website form."
     },
     "title": "Privacy policy",
-    "intro": "We only collect the data you give us voluntarily so we can reply to you. We never use it for advertising or share it with third parties.",
+    "intro": "We only collect the data you give us voluntarily so we can reply to you. We never use it for advertising without your permission or share it with third parties.",
     "responsableTitle": "Data controller",
     "responsableP1": ", a limited company incorporated in New Zealand, with its address in Picton, New Zealand. Contact:",
     "responsableP2": "Although we are a New Zealand company, our services are aimed at people resident in Spain and the European Union, so we process your data in accordance with the General Data Protection Regulation (GDPR) and New Zealand's privacy legislation (Privacy Act 2020).",
@@ -498,7 +504,19 @@
     "verAvisoA": "You can also read our",
     "verAvisoLink": "Legal notice",
     "fecha": "Last updated:",
-    "fechaValor": "16 July 2026"
+    "fechaValor": "12 October 2026",
+    "charlaTitle": "Online talk registration",
+    "charlaDatos": "If you sign up for our online talk “Discover New Zealand through the senses”, we process your name, your email, the date you choose, any question you'd like to ask us (optional) and whether you'd like to receive news about future trips (optional).",
+    "charlaFinalidadLabel": "Purpose and legal basis:",
+    "charlaFinalidad": "to manage your registration and send you the confirmation email with the Microsoft Teams link, two reminders (24 hours and 1 hour before) and a follow-up email the day after the talk. The legal basis is your own registration request (Art. 6.1.b GDPR).",
+    "charlaNoticiasLabel": "News about future trips:",
+    "charlaNoticias": "we'll only write to you with news about our trips if you tick that box, which is optional and unticked by default. The legal basis is your consent (Art. 6.1.a GDPR), which you can withdraw at any time by writing to",
+    "charlaConservacionLabel": "Retention:",
+    "charlaConservacion": "we apply the same period as for all other data (a maximum of 12 months from our last contact). If you asked to receive news, we keep your data until you withdraw your consent.",
+    "charlaProveedoresLabel": "Providers:",
+    "charlaProveedores": "we store registrations in Supabase and send emails with Resend, which act as data processors on our behalf. Where they process data outside the European Economic Area, the transfer is covered by the safeguards provided for in the GDPR. The talk takes place on Microsoft Teams: when you join, Microsoft processes the data you enter (for example, the name you join with) under its own privacy policy.",
+    "charlaGrabacionLabel": "Recording:",
+    "charlaGrabacion": "we will record the talk and send the link to the recording to everyone registered. The recording includes the voice and image of anyone who turns on their microphone or camera; you can take part without appearing by keeping them off and typing in the chat. The legal basis is your consent, which you give by turning on your microphone or camera."
   },
   "avisoLegal": {
     "docTitle": "Legal notice | Watchout Tours",
@@ -527,5 +545,123 @@
     "leyPb": ") and consumer protection.",
     "fecha": "Last updated:",
     "fechaValor": "16 July 2026"
+  },
+  "charla": {
+    "seo": {
+      "title": "Free online talk: New Zealand through the senses | Watchout Tours",
+      "description": "Free talk in Spanish on Microsoft Teams about travelling in New Zealand with blindness or low vision. Saturday 24 October (21:00) or Saturday 7 November (20:00), mainland Spain time.",
+      "ogTitle": "Discover New Zealand through the senses · Free online talk (in Spanish)",
+      "ogDescription": "Free talk in Spanish on Microsoft Teams: travelling in New Zealand with blindness or low vision. Saturday 24 October, 21:00, or Saturday 7 November, 20:00 (mainland Spain time). Sign up."
+    },
+    "eyebrow": "Free online talk · In Spanish",
+    "title": "Discover New Zealand through the senses",
+    "intro": "What is it like to travel in New Zealand with blindness or low vision? Join our free talk to discover its sensory experiences, learn how we support travellers and get answers to your questions about the trip.",
+    "idiomaAviso": "Please note: the talk is in Spanish.",
+    "resumenTitulo": "Two dates, the same talk:",
+    "resumenItem": "{{fecha}}: {{hora}} mainland Spain time ({{horaCanarias}} in the Canary Islands)",
+    "cta": "Sign up for the free talk",
+    "info": {
+      "title": "About the talk",
+      "mismaCharla": "The talk takes place on two dates with the same content: choose whichever suits you best.",
+      "espana": "Mainland Spain",
+      "canarias": "Canary Islands",
+      "duracionLabel": "Length",
+      "duracion": "About one hour",
+      "plataformaLabel": "Platform",
+      "plataforma": "Microsoft Teams. It's an online meeting: you don't need to sign up to Teams.",
+      "idiomaLabel": "Language",
+      "idioma": "Spanish",
+      "precioLabel": "Price",
+      "precio": "Completely free; registration required"
+    },
+    "horario": {
+      "title": "What time is it in your country?",
+      "caption": "Start time of the talk in each country or region, by date",
+      "colRegion": "Country or region",
+      "nota": "Mexico has several time zones; the time shown is for Mexico City.",
+      "local": "According to your device settings, in your local time the talk starts:",
+      "localItem": "{{fecha}} at {{hora}}"
+    },
+    "descubriras": {
+      "title": "What you'll discover",
+      "items": [
+        "New Zealand's nature, sounds, flavours and Māori culture.",
+        "How we organise the trip and support blind and low-vision travellers, respecting their independence.",
+        "The main experiences of our next trip.",
+        "Time for your questions."
+      ]
+    },
+    "paraQuien": {
+      "title": "Who it's for",
+      "intro": "The talk is designed for:",
+      "items": [
+        "Blind and low-vision people.",
+        "Travel companions.",
+        "Anyone interested in this kind of trip."
+      ]
+    },
+    "nosotras": {
+      "title": "Who we are",
+      "p1": "We're Mónica and Sylvie, the founders of WatchOut!: two Spaniards who live in New Zealand and guide every trip, from start to finish.",
+      "p2": "The spark for the project came from Sylvie's father, a ski guide for blind skiers in Spain. Today we design sensory trips to discover New Zealand through storytelling, touch and sound.",
+      "p3": "We'll be joining from New Zealand, where it will be Sunday morning: 25 October and 8 November at 8:00, Auckland time.",
+      "cta": "Read our full story"
+    },
+    "entrar": {
+      "title": "How to join the talk",
+      "enlace": "When you sign up, we'll email you the Microsoft Teams link for your session. We'll remind you again 24 hours and 1 hour before.",
+      "ordenadorLabel": "On a computer:",
+      "ordenador": "join from your web browser, with no Microsoft account and nothing to install. Open the link and choose “Continue on this browser”.",
+      "movilLabel": "On a phone or tablet:",
+      "movil": "you'll need the free Microsoft Teams app. Install it before the talk and join with the link as a guest.",
+      "ayuda": "Need technical help before the talk? Message us and we'll help you connect:",
+      "ayudaEmail": "Email info@watchouttours.nz",
+      "ayudaWhatsapp": "Message us on WhatsApp at +64 27 267 7006"
+    },
+    "grabacion": {
+      "title": "Recording",
+      "p": "We are going to record the talk. The recording will include the voice and image of anyone who turns on their microphone or camera. If you'd rather not appear, keep them off and type your questions in the meeting chat.",
+      "privacidadPre": "More information in our",
+      "privacidadLink": "privacy policy"
+    },
+    "final": {
+      "title": "Will you join us?",
+      "p": "It's free and all you need is an internet connection. Save your place and we'll email you the link to join."
+    },
+    "form": {
+      "title": "Sign up for the talk",
+      "intro": "Fill in the form and we'll email you the details and the Teams link for the date you choose. The talk is in Spanish.",
+      "obligatorio": "(required)",
+      "opcional": "(optional)",
+      "nombre": "Name",
+      "email": "Email",
+      "emailHint": "We'll send the link to join to this address.",
+      "sesionLegend": "Date",
+      "sesionHint": "Both sessions have the same content.",
+      "pregunta": "What would you like to know about travelling in New Zealand?",
+      "noticias": "I'd like to receive news about future trips",
+      "privacidadPre": "We'll only use your data to manage your registration and send you the talk emails: the confirmation, two reminders and a follow-up email. More information in our",
+      "privacidadLink": "privacy policy",
+      "submit": "Complete registration",
+      "enviando": "Sending your registration…",
+      "success": "Thank you for signing up! We've sent you an email with the details and the link to join the talk on Microsoft Teams.",
+      "successNota": "If you can't see it in a few minutes, check your spam folder or email us at info@watchouttours.nz.",
+      "errResumen": "Please check the following to complete your registration:",
+      "err": {
+        "nombre": "Enter your name.",
+        "email": "Enter a valid email address, for example: name@example.com.",
+        "sesion": "Choose a date.",
+        "pregunta": "Your question can't be longer than 1000 characters."
+      },
+      "fallo": {
+        "titulo": "We couldn't complete your registration.",
+        "email": "We couldn't send you the confirmation email.",
+        "generico": "There was a technical problem.",
+        "cerrada": "That session has already started. Please choose another date.",
+        "noActiva": "Registration for that date isn't open yet.",
+        "contacto": "Please try again in a few minutes, or message us and we'll sign you up:"
+      },
+      "sinSesiones": "Both sessions of the talk have already taken place. If you'd like to hear about the next one, message us."
+    }
   }
 }
