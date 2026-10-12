@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { L } from '../i18n/routing'
 import { Seo } from '../components/Seo'
+import { CHARLA_PUBLICADA } from '../config/charlaPublicada'
+import { GRABACION_ACTIVADA } from '../config/charla'
 import '../styles/pagestyle/Estaticas.css'
 
 export default function Privacidad() {
@@ -51,6 +53,23 @@ export default function Privacidad() {
             <p><strong>{t('privacidad.finalidadLabel2')}</strong> {t('privacidad.finalidadText2')}</p>
           </section>
 
+          {CHARLA_PUBLICADA && (
+            <section aria-labelledby="charla-heading">
+              <h2 id="charla-heading">{t('privacidad.charlaTitle')}</h2>
+              <p>{t('privacidad.charlaDatos')}</p>
+              <p><strong>{t('privacidad.charlaFinalidadLabel')}</strong> {t('privacidad.charlaFinalidad')}</p>
+              <p>
+                <strong>{t('privacidad.charlaNoticiasLabel')}</strong> {t('privacidad.charlaNoticias')}{' '}
+                <a href="mailto:info@watchouttours.nz">info@watchouttours.nz</a>.
+              </p>
+              <p><strong>{t('privacidad.charlaConservacionLabel')}</strong> {t('privacidad.charlaConservacion')}</p>
+              <p><strong>{t('privacidad.charlaProveedoresLabel')}</strong> {t('privacidad.charlaProveedores')}</p>
+              {GRABACION_ACTIVADA && (
+                <p><strong>{t('privacidad.charlaGrabacionLabel')}</strong> {t('privacidad.charlaGrabacion')}</p>
+              )}
+            </section>
+          )}
+
           <section aria-labelledby="conservacion-heading">
             <h2 id="conservacion-heading">{t('privacidad.conservacionTitle')}</h2>
             <p>{t('privacidad.conservacionP')}</p>
@@ -95,7 +114,7 @@ export default function Privacidad() {
           </p>
 
           <p className="static-fecha">
-            {t('privacidad.fecha')} <time dateTime="2026-07-16">{t('privacidad.fechaValor')}</time>
+            {t('privacidad.fecha')} <time dateTime="2026-10-12">{t('privacidad.fechaValor')}</time>
           </p>
         </div>
       </div>

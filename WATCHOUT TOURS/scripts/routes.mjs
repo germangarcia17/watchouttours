@@ -22,4 +22,9 @@ export const STATIC_ROUTES = [
   { path: '/aviso-legal',    changefreq: 'yearly',  priority: '0.3' },
   // Solo en inglés (ver MONOLINGUAL_ROUTES en src/i18n/pageLanguages.js).
   { path: '/blind-travel-new-zealand', changefreq: 'monthly', priority: '0.8' },
+  // Charla online: solo se publica con VITE_CHARLA_PUBLICADA=true (ver
+  // src/config/charlaPublicada.js).
+  ...(process.env.VITE_CHARLA_PUBLICADA === 'true'
+    ? [{ path: '/charla-nueva-zelanda', changefreq: 'weekly', priority: '0.9' }]
+    : []),
 ]

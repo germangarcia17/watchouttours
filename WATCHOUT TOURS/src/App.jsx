@@ -16,6 +16,8 @@ import Privacidad      from './pages/Privacidad'
 import AvisoLegal      from './pages/AvisoLegal'
 import NotFound        from './pages/NotFound'
 import BlindTravelNewZealand from './pages/BlindTravelNewZealand'
+import CharlaNuevaZelanda from './pages/CharlaNuevaZelanda'
+import { CHARLA_PUBLICADA } from './config/charlaPublicada'
 
 /* El panel de administración no lo usa el público: se carga en un chunk
    aparte (code-splitting) para no aumentar el peso de las páginas públicas. */
@@ -26,6 +28,7 @@ const AdminBlogEditor = lazy(() => import('./pages/admin/BlogEditor'))
 const AdminResenas    = lazy(() => import('./pages/admin/ResenasAdmin'))
 const AdminImagenes   = lazy(() => import('./pages/admin/ImagenesAdmin'))
 const AdminSeo        = lazy(() => import('./pages/admin/SeoAdmin'))
+const AdminCharla     = lazy(() => import('./pages/admin/CharlaAdmin'))
 
 /* Rutas públicas (hijas del Layout). Se renderizan dos veces: sin prefijo
    (español, por defecto) y bajo /en (inglés). Los slugs se mantienen; solo
@@ -43,6 +46,11 @@ function paginasPublicas(prefix) {
     <Route key="acc"     path="accesibilidad"     element={<Accesibilidad />} />,
     <Route key="priv"    path="privacidad"        element={<Privacidad />} />,
     <Route key="aviso"   path="aviso-legal"       element={<AvisoLegal />} />,
+    /* Charla online: solo existe cuando está publicada (ver
+       src/config/charlaPublicada.js). */
+    ...(CHARLA_PUBLICADA
+      ? [<Route key="charla" path="charla-nueva-zelanda" element={<CharlaNuevaZelanda />} />]
+      : []),
     /* La filosofía vive ahora dentro de Sobre Nosotras */
     <Route key="filo"    path="filosofia"         element={<Navigate to={`${prefix}/sobre-nosotras`} replace />} />,
     <Route key="404"     path="*"                 element={<NotFound />} />,
@@ -82,6 +90,7 @@ export default function App() {
           <Route path="/admin/resenas"      element={<Suspense fallback={null}><AdminResenas /></Suspense>} />
           <Route path="/admin/imagenes"     element={<Suspense fallback={null}><AdminImagenes /></Suspense>} />
           <Route path="/admin/seo"          element={<Suspense fallback={null}><AdminSeo /></Suspense>} />
+          <Route path="/admin/charla"       element={<Suspense fallback={null}><AdminCharla /></Suspense>} />
         </Route>
       </Route>
     </Routes>
