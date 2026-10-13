@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es" data-api="https://lznilssdnhmorqgzwboy.supabase.co/functions/v1/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Descubre Nueva Zelanda con todos los sentidos · Directo gratuito | WatchOut!</title>
+<meta name="description" content="Directo gratuito en español por Microsoft Teams. Sylvie y Moni te cuentan desde Nueva Zelanda cómo es viajar por el país con ceguera o baja visión, a través del tacto, el oído, el olfato y el gusto.">
+<meta property="og:title" content="Descubre Nueva Zelanda con todos los sentidos">
+<meta property="og:description" content="Directo gratuito en español por Microsoft Teams. Apúntate con tu nombre y tu email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --text:#0B2A33;
+  --muted:#3C5A63;
+  --petrol:#0E5F73;
+  --petrol-ink:#FFFFFF;
+  --mustard:#9A6B00;
+  --mustard-light:#F0C868;
+  --coral:#FF6B4A;
+  --amber:#FFB454;
+  --line:#D7E3E6;
+  --panel:#F3F8F9;
+  --focus:#0B2A33;
+  --error:#B3261E;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#082F39;
+    --text:#F4F8F9;
+    --muted:#C3D6DB;
+    --petrol:#0E5F73;
+    --mustard:#F0C868;
+    --line:#1E5664;
+    --panel:#0B3C48;
+    --focus:#FFB454;
+    --error:#FFB4A8;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#082F39;
+  --text:#F4F8F9;
+  --muted:#C3D6DB;
+  --petrol:#0E5F73;
+  --mustard:#F0C868;
+  --line:#1E5664;
+  --panel:#0B3C48;
+  --focus:#FFB454;
+  --error:#FFB4A8;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;min-height:100%;
+  background:var(--bg);color:var(--text);
+  font-family:"Atkinson Hyperlegible",Verdana,"Segoe UI",Arial,sans-serif;
+  font-size:1.2rem;line-height:1.6;
+}
+img,svg{max-width:100%}
+a{color:inherit;text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:1rem;top:-12rem;background:var(--text);color:var(--bg);padding:.6rem 1rem;border-radius:6px;z-index:10;text-decoration:none;font-weight:700}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + .75rem)}
+.wrap{width:100%;max-width:46rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;line-height:1.1;margin:0}
+h2{font-size:clamp(1.7rem,4.5vw,2.3rem);font-weight:800;margin-bottom:1rem}
+h3{font-size:1.3rem;font-weight:700;margin-bottom:.3rem}
+p{margin:0 0 1rem}
+
+/* Header */
+.top{background:var(--petrol);color:var(--petrol-ink)}
+.top .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-top:1rem;padding-bottom:.25rem;flex-wrap:wrap}
+.brand{font-family:"Bricolage Grotesque",Arial,sans-serif;font-weight:800;font-size:1.35rem;text-decoration:none;color:#fff}
+.braille{color:var(--mustard-light);letter-spacing:.15em;font-size:1rem;margin-left:.5rem}
+.top a.web{color:#fff;font-size:1rem}
+
+/* Hero */
+.hero{background:var(--petrol);color:var(--petrol-ink);padding:2rem 0 3rem;overflow:hidden}
+.kicker{color:var(--mustard-light);font-weight:700;font-size:1.05rem;margin-bottom:.9rem}
+.hero h1{font-size:clamp(2.2rem,7.5vw,3.6rem);font-weight:800;letter-spacing:-.015em;margin-bottom:1.25rem;max-width:16ch}
+.lede{font-size:1.25rem;max-width:36ch;color:#E9F3F5}
+.wave{display:block;width:100%;height:auto;margin:1.75rem 0 1.5rem}
+.wave circle{fill:var(--mustard-light)}
+.wave circle.hot{fill:var(--amber)}
+@media (prefers-reduced-motion: no-preference){
+  .wave circle{transform-box:fill-box;transform-origin:center;animation:pop .5s ease-out both;animation-delay:calc(var(--i) * 18ms)}
+  @keyframes pop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+}
+.when{display:grid;gap:.15rem;margin-bottom:1.5rem}
+.when .day{font-family:"Bricolage Grotesque",Arial,sans-serif;font-weight:700;font-size:clamp(1.5rem,5vw,2rem);line-height:1.15}
+.when .hour{font-family:"Space Mono",ui-monospace,monospace;font-size:clamp(1.4rem,5vw,1.9rem);font-weight:700;color:var(--amber)}
+.when .where{font-size:1.1rem;color:#E9F3F5}
+.local{font-size:1.05rem;color:#E9F3F5;margin:0 0 1.5rem;min-height:1.6em}
+.local strong{font-family:"Space Mono",ui-monospace,monospace;color:#fff}
+
+.ctas{display:flex;flex-wrap:wrap;gap:.85rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.4rem;padding:.8rem 1.5rem;border-radius:999px;font-weight:700;font-size:1.15rem;text-decoration:none;line-height:1.2}
+.btn-main{background:linear-gradient(90deg,var(--coral),var(--amber));color:#0B2A33}
+.btn-alt{border:2px solid currentColor;color:inherit}
+.btn svg{width:1.3em;height:1.3em;flex:none}
+.hero .btn:focus-visible{outline-color:#fff}
+
+/* Sections */
+section.block{padding:3rem 0;border-bottom:1px solid var(--line)}
+.topics{list-style:none;margin:0;padding:0;display:grid;gap:1.4rem}
+.topics li{padding-left:1.4rem;border-left:4px solid var(--mustard)}
+.topics p{margin:0;color:var(--muted)}
+.hosts{display:grid;gap:1.5rem;margin-top:1.5rem}
+@media (min-width:720px){.hosts{grid-template-columns:repeat(3,1fr)}}
+.host p{color:var(--muted);margin:0}
+.steps{margin:0;padding-left:1.6rem;display:grid;gap:1rem}
+.steps li::marker{font-family:"Space Mono",monospace;font-weight:700;color:var(--mustard)}
+.note{background:var(--panel);border-radius:14px;padding:1.25rem 1.4rem;margin-top:1.75rem}
+.note p:last-child{margin:0}
+
+.tz-scroll{overflow-x:auto;margin-top:.5rem}
+table{border-collapse:collapse;width:100%;min-width:20rem;font-size:1.1rem}
+caption{text-align:left;color:var(--muted);padding-bottom:.75rem;font-size:1rem}
+th,td{text-align:left;padding:.7rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+th[scope="col"]{font-size:.95rem;color:var(--muted);font-weight:700}
+td.t{font-family:"Space Mono",ui-monospace,monospace;font-weight:700;white-space:nowrap}
+
+.closing{background:var(--petrol);color:#fff;padding:3rem 0}
+.closing h2{max-width:20ch}
+.closing p{color:#E9F3F5;max-width:40ch}
+.cal{margin-top:1.5rem;font-size:1.05rem}
+.cal a{color:#fff;margin-right:1.25rem;display:inline-block;padding:.35rem 0}
+
+footer{padding:2rem 0 2.5rem;font-size:1rem;color:var(--muted)}
+footer .tag{font-family:"Bricolage Grotesque",Arial,sans-serif;font-weight:700;font-size:1.2rem;color:var(--text);margin-bottom:.5rem}
+footer ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+
+/* Formulario */
+.signup{padding:3rem 0;border-bottom:1px solid var(--line)}
+.form-card{background:var(--panel);border-radius:18px;padding:1.5rem 1.25rem}
+@media (min-width:640px){.form-card{padding:2rem}}
+.intro-form{color:var(--muted);margin-bottom:1.5rem}
+.field{margin-bottom:1.35rem}
+.field label{display:block;font-weight:700;margin-bottom:.4rem}
+.field input{width:100%;min-height:3.4rem;font:inherit;font-size:1.2rem;padding:.7rem .95rem;border:2px solid var(--muted);border-radius:10px;background:var(--bg);color:var(--text)}
+.field input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.field input[aria-invalid="true"]{border-color:var(--error)}
+.err{color:var(--error);font-weight:700;margin:.45rem 0 0;font-size:1.05rem}
+.check{display:flex;gap:.8rem;align-items:flex-start;margin:1.5rem 0}
+.check input{width:1.7rem;height:1.7rem;flex:none;margin:.15rem 0 0;accent-color:var(--petrol)}
+.check label{font-weight:400}
+.check .hint{display:block;color:var(--muted);font-size:1rem}
+.hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+button.btn{border:0;cursor:pointer;font-family:inherit;width:100%}
+button.btn[aria-disabled="true"]{opacity:.7;cursor:progress}
+.privacy{font-size:1rem;color:var(--muted);margin:1rem 0 0}
+.form-error{margin-top:1rem}
+.success{background:var(--panel);border-left:6px solid var(--petrol);border-radius:14px;padding:1.5rem 1.4rem;font-size:1.25rem}
+.success:focus{outline:3px solid var(--focus);outline-offset:3px}
+.success p{margin:0}
+.success strong{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:1.6rem;display:block;margin-bottom:.4rem}
+.help{margin-top:1.25rem;font-size:1.05rem;color:var(--muted)}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#inscripcion">Ir directamente al formulario de inscripción</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://watchouttours.nz" lang="en">WatchOut! Sensory Tours<span class="braille" aria-hidden="true">⠺⠁⠞⠉⠓⠕⠥⠞</span></a>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">Directo online gratuito, en español</p>
+      <h1>Descubre Nueva Zelanda con todos los sentidos</h1>
+      <p class="lede">Cómo es viajar por Nueva Zelanda con ceguera o baja visión, en una hora y en directo. Sylvie y Moni te lo cuentan desde allí, y Nuria, que ya hizo el viaje, te explica cómo lo vivió: lo que se toca, lo que se oye, lo que se come y lo que acelera el pulso. Y respondemos a todo lo que quieras preguntar.</p>
+
+      <svg class="wave" viewBox="0 0 640 70" aria-hidden="true" focusable="false" id="wave"></svg>
+
+      <p class="when">
+        <span class="day" id="ev-day">Sábado 24 de octubre de 2026</span>
+        <span class="hour" id="ev-hour">21:00 hora de España</span>
+        <span class="where">Por Microsoft Teams. Duración aproximada: una hora.</span>
+      </p>
+      <p class="local" id="local"></p>
+
+      <div class="ctas">
+        <a class="btn btn-main" href="#inscripcion" data-focus-form>Reservar mi plaza</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="signup" id="inscripcion" aria-labelledby="h-insc">
+    <div class="wrap">
+      <h2 id="h-insc">Apúntate gratis</h2>
+      <div class="form-card">
+        <p class="intro-form" id="form-intro">Solo te pedimos tu nombre y tu email. Al momento te llega un correo con el enlace para entrar.</p>
+
+        <form id="form" action="https://lznilssdnhmorqgzwboy.supabase.co/functions/v1/directo-inscripcion" method="post" novalidate aria-describedby="form-intro">
+          <input type="hidden" name="evento" value="">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="given-name" required maxlength="80" aria-describedby="nombre-err">
+            <p class="err" id="nombre-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" required maxlength="254" aria-describedby="email-err">
+            <p class="err" id="email-err" hidden></p>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="web">No rellenes este campo</label>
+            <input id="web" name="web" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="check">
+            <input id="novedades" name="novedades" type="checkbox">
+            <label for="novedades">Quiero recibir por email novedades y viajes de WatchOut! Sensory Tours.
+              <span class="hint" id="novedades-hint">Opcional. Puedes darte de baja cuando quieras.</span></label>
+          </div>
+          <button class="btn btn-main" type="submit" id="enviar">Quiero asistir gratis</button>
+          <p class="err form-error" id="form-error" role="alert" hidden></p>
+          <p class="privacy">Usamos tu nombre y tu email para enviarte el enlace y los recordatorios de este directo. Las novedades, solo si marcas la casilla.</p>
+        </form>
+
+        <div class="success" id="ok" tabindex="-1" hidden>
+          <p><strong>¡Ya estás dentro!</strong> Te hemos enviado un correo con los detalles. Si no lo encuentras, revisa la carpeta de spam.</p>
+        </div>
+
+        <p class="help">¿Algún problema para apuntarte? Escríbenos por WhatsApp al <a href="https://wa.me/64272677006" target="_blank" rel="noopener">+64 27 267 7006</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-temas">
+    <div class="wrap">
+      <h2 id="h-temas">De qué vamos a hablar</h2>
+      <ul class="topics">
+        <li>
+          <h3>La ruta por los sentidos</h3>
+          <p>El rugido del parapente sobre Queenstown, el remo en el mar de Kaikōura, la corteza del gigante Tāne Mahuta bajo las manos, el agua caliente de Tekapo con el cielo más oscuro del país encima.</p>
+        </li>
+        <li>
+          <h3>La cultura maorí, de cerca</h3>
+          <p>Cantos, saludos, comida cocinada bajo tierra y las historias que dan sentido a cada lugar.</p>
+        </li>
+        <li>
+          <h3>Cómo guiamos</h3>
+          <p>Dos guías con el grupo todo el viaje, grupos de seis personas como máximo y descripción constante de lo que pasa alrededor.</p>
+        </li>
+        <li>
+          <h3>Lo práctico</h3>
+          <p>Vuelos, alojamientos, comidas servidas en mesa, el ritmo de cada día y qué conviene llevar en la maleta.</p>
+        </li>
+        <li>
+          <h3>El viaje en primera persona</h3>
+          <p>Nuria hizo la ruta con nosotras y te cuenta, sin adornos, qué le sorprendió, qué le costó y con qué se quedó.</p>
+        </li>
+        <li>
+          <h3>Tus preguntas</h3>
+          <p>Reservamos buena parte de la hora para ellas. Las que quieras, sin filtro.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-quien">
+    <div class="wrap">
+      <h2 id="h-quien">Quién te lo cuenta</h2>
+      <p>Sylvie y Moni llevan casi nueve años viviendo en Nueva Zelanda y ya han guiado a dos grupos de viajeros ciegos llegados desde España. Nuria fue una de las viajeras.</p>
+      <div class="hosts">
+        <div class="host">
+          <h3>Sylvie</h3>
+          <p>Cerca de cincuenta países a la espalda y años dirigiendo hoteles en Nueva Zelanda. Conoce la logística del país al milímetro.</p>
+        </div>
+        <div class="host">
+          <h3>Moni</h3>
+          <p>Coach de profesión. Se encarga de que el grupo funcione como grupo y de que nadie se quede con una duda dentro.</p>
+        </div>
+        <div class="host">
+          <h3>Nuria</h3>
+          <p>Hizo el viaje piloto con nosotras. Escribe el blog Six Sense Travel y es nuestra representante en Europa y consultora de accesibilidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-hora">
+    <div class="wrap">
+      <h2 id="h-hora">La hora en tu país</h2>
+      <div class="tz-scroll">
+        <table>
+          <caption>Hora de inicio del directo según el país</caption>
+          <thead><tr><th scope="col">País o zona</th><th scope="col">Hora</th></tr></thead>
+          <tbody id="tz-body">
+            <tr><th scope="row">España (península y Baleares)</th><td class="t">Sábado, 24 de octubre, 21:00</td></tr>
+            <tr><th scope="row">Canarias</th><td class="t">Sábado, 24 de octubre, 20:00</td></tr>
+            <tr><th scope="row">Argentina y Uruguay</th><td class="t">Sábado, 24 de octubre, 16:00</td></tr>
+            <tr><th scope="row">Chile</th><td class="t">Sábado, 24 de octubre, 16:00</td></tr>
+            <tr><th scope="row">Colombia, Perú y Ecuador</th><td class="t">Sábado, 24 de octubre, 14:00</td></tr>
+            <tr><th scope="row">México (Ciudad de México)</th><td class="t">Sábado, 24 de octubre, 13:00</td></tr>
+            <tr><th scope="row">Estados Unidos (costa este)</th><td class="t">Sábado, 24 de octubre, 15:00</td></tr>
+            <tr><th scope="row">Nueva Zelanda</th><td class="t">Domingo, 25 de octubre, 08:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-como">
+    <div class="wrap">
+      <h2 id="h-como">Cómo entrar</h2>
+      <ol class="steps">
+        <li>Rellena el formulario con tu nombre y tu email. Es un minuto.</li>
+        <li>Al momento te llega un correo con el botón «Entrar al directo». Te lo recordamos el día antes y dos horas antes.</li>
+        <li>A la hora del directo, toca el botón. En el ordenador funciona desde el navegador, sin instalar nada. En el móvil necesitas la app gratuita de Microsoft Teams.</li>
+      </ol>
+      <div class="note">
+        <p>Teams funciona con VoiceOver, TalkBack, JAWS y NVDA.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="h-final">
+    <div class="wrap">
+      <h2 id="h-final">Guarda tu sitio</h2>
+      <p>Es gratis y no te compromete a nada. Trae tus preguntas y, si quieres, a quien te acompañe en los viajes.</p>
+      <div class="ctas">
+        <a class="btn btn-main" href="#inscripcion" data-focus-form>Reservar mi plaza</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="tag" lang="en">Not all vision needs eyes.</p>
+    <ul>
+      <li><a href="https://watchouttours.nz">watchouttours.nz</a></li>
+      <li><a href="https://instagram.com/watchouttours">Instagram @watchouttours</a></li>
+      <li><a href="mailto:info@watchouttours.nz">info@watchouttours.nz</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="/directo/directo.js" defer></script>
+</body>
+</html>
