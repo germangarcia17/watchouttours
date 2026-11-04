@@ -1,31 +1,82 @@
 import { useTranslation } from 'react-i18next'
 import '../styles/pagestyle/Home.css'
-import '../styles/pagestyle/Productos.css'
 import '../styles/pagestyle/SinPrisa.css'
-// TODO(imagen): no hay en el proyecto una foto propia de Sin Prisa
-// (puerto, barco u Hobbiton). De momento se usa el paisaje del géiser de
-// Te Puia, el mismo de la home. Se puede sustituir sin tocar código desde
-// /admin/imagenes (sección "sin-prisa", clave "hero").
-import imgHeroProvisional from '../images/hero-home.webp'
+// TODO(imagen): todavía no hay fotos propias de Viajes +60 (puerto, barco,
+// Hobbiton, grupos de más de 60 años). De momento se usan las del
+// proyecto; cada hueco se cambia sin tocar código desde /admin/imagenes,
+// sección "sin-prisa" (las claves están junto a cada useSiteImage).
+import imgHero from '../images/hero-home.webp'
+import imgParaQuien from '../images/blind-travel-redwoods.webp'
+import imgPrivado from '../images/haka-cultura-maori.jpg'
+import imgSolo from '../images/blind-travel-maori-carving.webp'
+import imgFamilia from '../images/sobre-nosotras.webp'
+import imgRotorua from '../images/blind-travel-group-geyser.webp'
+import imgKaikoura from '../images/kayak-kaikoura.jpg'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
+import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
 import RutaMapa, { COORDS_SIN_PRISA } from '../components/RutaMapa'
-import { CtaFinal } from '../components/home/BloquesHome'
+import { HeroFoto, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
 
-/* ── Sin Prisa ───────────────────────────────────────────────────────────
- * Viajes +60: viajes tranquilos en grupos de máximo 6 personas
- * (/sin-prisa ↔ /en/unhurried).
- * Reutiliza el marcado y los estilos de la home (Home.css), de /productos
- * (Productos.css) y el mapa de ruta de /productos (RutaMapa). Sin precios
- * ni número de plazas.
+const ICONOS_INCLUYE = ['guias', 'hotel', 'comida', 'privado', 'transporte', 'asistencia']
+const ICONOS_DIA = ['amanecer', 'sol', 'atardecer', 'luna']
+
+/* Galería: imagen por defecto de cada lugar. Hobbiton, Milford Sound y
+   Tekapo aún no tienen foto en el proyecto: no se muestran hasta que se
+   suban desde /admin/imagenes (sección "sin-prisa", clave
+   "galeria-<lugar>"). */
+const GALERIA_POR_DEFECTO = {
+  rotorua: imgRotorua,
+  kaikoura: imgKaikoura,
+}
+
+/* Fila de texto + foto. `invertida` pone la foto a la izquierda; en móvil
+   la foto va siempre arriba. */
+function Fila({ id, clave, imgDefecto, ns, parrafos, invertida = false }) {
+  const { t } = useTranslation()
+  const img = useSiteImage('sin-prisa', clave, imgDefecto, t(`${ns}.imgAlt`))
+  return (
+    <div className={`fila${invertida ? ' fila--invertida' : ''}`}>
+      <figure className="fila__foto foto-marco">
+        <img src={img.src} alt={img.alt} lang={img.lang} loading="lazy" />
+      </figure>
+      <div className="fila__texto prosa">
+        <h2 id={id} className="sec-title">{t(`${ns}.title`)}</h2>
+        {parrafos.map(k => <p key={k}>{t(`${ns}.${k}`)}</p>)}
+      </div>
+    </div>
+  )
+}
+
+function FotoGaleria({ id, lugar, alt }) {
+  const img = useSiteImage('sin-prisa', `galeria-${id}`, GALERIA_POR_DEFECTO[id] ?? null, alt)
+  if (!img.src) return null
+  return (
+    <li className="galeria__item">
+      <figure>
+        <img src={img.src} alt={img.alt} lang={img.lang} loading="lazy" />
+        <figcaption>{lugar}</figcaption>
+      </figure>
+    </li>
+  )
+}
+
+/* ── Viajes +60 ──────────────────────────────────────────────────────────
+ * Viajes tranquilos en grupos de máximo 6 personas
+ * (/sin-prisa ↔ /en/unhurried). Orden: hero → filas en zigzag (para quién,
+ * casi todo solo para vosotros, si viajas por tu cuenta, para tu familia)
+ * → qué incluye → un día de viaje → la ruta → lo que te llevarás y
+ * galería → reseñas → preguntas frecuentes → CTA. Sin precios ni plazas.
  * ──────────────────────────────────────────────────────────────────────── */
 export default function SinPrisa() {
   const { t } = useTranslation()
   const incluye = t('sinPrisa.incluye.items', { returnObjects: true })
+  const momentos = t('sinPrisa.dia.momentos', { returnObjects: true })
+  const galeria = t('sinPrisa.galeria.items', { returnObjects: true })
   const faq = t('sinPrisa.faq.items', { returnObjects: true })
 
-  const heroImg = useSiteImage('sin-prisa', 'hero', imgHeroProvisional, t('sinPrisa.heroImgAlt'))
+  const heroImg = useSiteImage('sin-prisa', 'hero', imgHero, t('sinPrisa.heroImgAlt'))
 
   return (
     <>
@@ -37,103 +88,83 @@ export default function SinPrisa() {
         description={t('sinPrisa.seo.description')}
       />
 
-      {/* ── Hero ──────────────────────────────────────── */}
-      <section className="hero">
-        <div className="hero-photo-panel">
-          <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
-        </div>
-        <div className="wrap">
-          <div className="hero-inner">
-            <span className="eyebrow">{t('sinPrisa.hero.eyebrow')}</span>
-            <div className="hero-headline-row">
-              <h1 className="hero-big-text">{t('sinPrisa.hero.h1')}</h1>
-              <div className="hero-headline-side">
-                <p>{t('sinPrisa.hero.sub')}</p>
-                <div className="cta-row">
-                  <L to="/contacto" className="btn btn-solid">{t('sinPrisa.hero.cta')}</L>
-                </div>
-              </div>
-            </div>
-          </div>
+      <HeroFoto
+        imagen={heroImg}
+        antetitulo={t('sinPrisa.hero.eyebrow')}
+        titulo={t('sinPrisa.hero.h1')}
+        subtitulo={t('sinPrisa.hero.sub')}
+      >
+        <L to="/contacto" className="btn btn-solid">{t('sinPrisa.hero.cta')}</L>
+      </HeroFoto>
+
+      {/* ── Filas en zigzag ───────────────────────────── */}
+      <section className="filas">
+        <div className="wrap filas__lista">
+          <Fila id="sp-para-quien" clave="para-quien" imgDefecto={imgParaQuien} ns="sinPrisa.paraQuien" parrafos={['p1', 'p2']} />
+          <Fila id="sp-privado" clave="privado" imgDefecto={imgPrivado} ns="sinPrisa.privado" parrafos={['p']} invertida />
+          <Fila id="sp-solo" clave="solo" imgDefecto={imgSolo} ns="sinPrisa.solo" parrafos={['p']} />
+          <Fila id="sp-familia" clave="familia" imgDefecto={imgFamilia} ns="sinPrisa.familia" parrafos={['p']} invertida />
         </div>
       </section>
 
-      {/* ── Para quién es ─────────────────────────────── */}
-      <section aria-labelledby="sp-para-quien">
-        <div className="wrap">
-          <h2 id="sp-para-quien" className="sec-title">{t('sinPrisa.paraQuien.title')}</h2>
-          <p className="sec-sub">{t('sinPrisa.paraQuien.p1')}</p>
-          <p className="sec-sub">{t('sinPrisa.paraQuien.p2')}</p>
-        </div>
-      </section>
-
-      {/* ── Qué incluye ───────────────────────────────── */}
-      <section aria-labelledby="sp-incluye">
+      {/* ── Qué incluye: cuadrícula 3×2 ───────────────── */}
+      <section className="band-cream" aria-labelledby="sp-incluye">
         <div className="wrap">
           <h2 id="sp-incluye" className="sec-title">{t('sinPrisa.incluye.title')}</h2>
-          <ul className="pillars" style={{ paddingLeft: 0, listStyle: 'none' }}>
-            {incluye.map(item => (
-              <li key={item} className="pillar"><p>{item}</p></li>
+          <ul className="incluye">
+            {incluye.map((item, i) => (
+              <li key={item} className="incluye__item">
+                <span className="icono-circulo"><Icono nombre={ICONOS_INCLUYE[i]} /></span>
+                <p>{item}</p>
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* ── Casi todo, solo para vosotros — bloque oscuro ── */}
-      <section aria-labelledby="sp-privado">
-        <div className="wrap">
-          <div className="ink-block">
-            <h2 id="sp-privado" className="sec-title">{t('sinPrisa.privado.title')}</h2>
-            <p className="sec-sub">{t('sinPrisa.privado.p')}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Si viajas por tu cuenta · Para tu familia ─── */}
-      <section className="prod-formatos">
-        <div className="wrap">
-          <div className="prod-list">
-            <article aria-labelledby="sp-solo" className="prod-card">
-              <h2 id="sp-solo" className="prod-card__titulo">{t('sinPrisa.solo.title')}</h2>
-              <p className="prod-card__desc">{t('sinPrisa.solo.p')}</p>
-            </article>
-            <article aria-labelledby="sp-familia" className="prod-card">
-              <h2 id="sp-familia" className="prod-card__titulo">{t('sinPrisa.familia.title')}</h2>
-              <p className="prod-card__desc">{t('sinPrisa.familia.p')}</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Así es un día de viaje ────────────────────── */}
+      {/* ── Así es un día de viaje: línea de tiempo ──── */}
       <section aria-labelledby="sp-dia">
         <div className="wrap">
           <h2 id="sp-dia" className="sec-title">{t('sinPrisa.dia.title')}</h2>
-          <p className="sec-sub">{t('sinPrisa.dia.p')}</p>
+          <ol className="dia">
+            {momentos.map(({ etiqueta, texto }, i) => (
+              <li key={etiqueta} className="dia__momento">
+                <span className="dia__marca icono-circulo"><Icono nombre={ICONOS_DIA[i]} /></span>
+                <h3 className="dia__etiqueta">{etiqueta}</h3>
+                <p className="dia__texto">{texto}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       {/* ── La ruta (mismo mapa accesible que /productos) ── */}
-      <RutaMapa ns="sinPrisa.ruta" coords={COORDS_SIN_PRISA} />
+      <RutaMapa ns="sinPrisa.ruta" coords={COORDS_SIN_PRISA} className="band-cream" />
 
-      {/* ── Lo que te llevarás — bloque oscuro ────────── */}
+      {/* ── Lo que te llevarás + galería ──────────────── */}
       <section aria-labelledby="sp-llevaras">
         <div className="wrap">
-          <div className="ink-block">
+          <div className="llevaras">
             <h2 id="sp-llevaras" className="sec-title">{t('sinPrisa.llevaras.title')}</h2>
-            <p className="sec-sub">{t('sinPrisa.llevaras.p')}</p>
+            <p className="llevaras__texto">{t('sinPrisa.llevaras.p')}</p>
           </div>
+          <ul className="galeria" aria-label={t('sinPrisa.galeria.aria')}>
+            {galeria.map(item => <FotoGaleria key={item.id} {...item} />)}
+          </ul>
         </div>
       </section>
 
-      {/* ── Preguntas frecuentes (desplegables nativos) ── */}
+      {/* ── Reseñas: primero las que no se centran en la ceguera ── */}
+      <ResenasDestacadas tono="night" modo="sinCeguera" />
+
+      {/* ── Preguntas frecuentes ──────────────────────── */}
       <section aria-labelledby="sp-faq">
-        <div className="wrap">
+        <div className="wrap faq-grid">
           <h2 id="sp-faq" className="sec-title">{t('sinPrisa.faq.title')}</h2>
           <div className="sp-faq">
             {faq.map(({ q, a }) => (
               <details key={q} className="sp-faq__item">
-                <summary>{q}</summary>
+                <summary>{q}<span className="sp-faq__signo" aria-hidden="true" /></summary>
                 <p>{a}</p>
               </details>
             ))}
@@ -141,7 +172,6 @@ export default function SinPrisa() {
         </div>
       </section>
 
-      {/* ── CTA final ─────────────────────────────────── */}
       <CtaFinal
         titulo={t('sinPrisa.finalCta.title')}
         parrafos={[t('sinPrisa.finalCta.p')]}

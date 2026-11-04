@@ -27,6 +27,24 @@
   /* Color del anillo de foco; los bloques oscuros lo redefinen a crema */
   --focus: #15140F;
   --radius: 18px;
+
+  /* ── Escala tipográfica (renovación visual) ──
+     Pasos claros y un único tamaño por nivel. Ningún texto de lectura
+     baja de 18 px; las etiquetas en mayúsculas, de 15 px. */
+  --fs-h1: clamp(40px, 5.4vw, 72px);
+  --fs-h2: clamp(30px, 3.4vw, 44px);
+  --fs-h3: clamp(21px, 1.8vw, 24px);
+  --fs-lead: clamp(19px, 1.6vw, 21px);
+  --fs-body: 18px;
+  --fs-label: 15px;
+  /* Ancho cómodo de lectura */
+  --measure: 65ch;
+  /* Espacio vertical único entre secciones */
+  --section-space: clamp(64px, 8vw, 104px);
+  /* Sombra única para tarjetas y fotos */
+  --shadow-card: 0 1px 2px rgba(21, 20, 15, .06), 0 14px 34px rgba(21, 20, 15, .09);
+  /* Capa oscura de los heros a pantalla completa (azul noche muy oscuro) */
+  --hero-shade: 6, 26, 32;
 }
 
 body {
@@ -67,15 +85,70 @@ section {
   position: relative;
 }
 
+/* Todas las secciones de las páginas públicas usan el mismo espacio
+   vertical (el panel de admin no lleva .site-main). */
+.site-main > section {
+  padding-block: var(--section-space);
+}
+
+/* ── Bandas de fondo ─────────────────────────────────── */
+/* Tres fondos del tema para dar ritmo: blanco (por defecto), crema y
+   azul noche. El azul se reserva para los momentos fuertes. */
+.band-cream {
+  background: var(--paper-deep);
+}
+
+/* Sobre crema, --jade baja a 4,1:1: las etiquetas pequeñas usan --gold
+   (6,2:1). */
+.band-cream .sec-eyebrow {
+  color: var(--gold);
+}
+
+.band-cream .sec-eyebrow::before {
+  background: var(--gold);
+}
+
+.band-night {
+  background: var(--night);
+  color: var(--paper);
+  --focus: #F4F1EA;
+}
+
+.band-night h2,
+.band-night h3,
+.band-night .sec-title {
+  color: var(--paper);
+}
+
+.band-night p,
+.band-night li,
+.band-night .sec-sub {
+  color: #E6E1D6;
+}
+
+.band-night .sec-eyebrow {
+  color: var(--jade-soft);
+}
+
+.band-night .sec-eyebrow::before {
+  background: var(--jade-soft);
+}
+
+.band-night a:not(.btn) {
+  color: var(--jade-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ── Cabeceras de sección ────────────────────────────── */
-/* Intercambio semántico: el eyebrow es el encabezado (h2) y el título
-   visual es un párrafo destacado. La apariencia no cambia. */
+/* Patrón único en toda la web: el antetítulo (opcional) es un párrafo
+   pequeño en mayúsculas y el título grande es el h2. */
 .sec-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-family: var(--font-family-heading);
-  font-size: 17px;
+  font-size: var(--fs-label);
   letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--jade);
@@ -97,27 +170,54 @@ section {
 
 .sec-title {
   font-family: var(--font-family-heading);
-  font-size: clamp(26px, 3.6vw, 36px);
+  font-size: var(--fs-h2);
   font-weight: 800;
-  letter-spacing: -.01em;
+  letter-spacing: -.015em;
   line-height: 1.08;
   color: var(--ink);
-  margin: 0 0 14px;
+  margin: 0 0 18px;
+  text-wrap: balance;
 }
 
 .sec-sub {
   color: var(--ink-soft);
-  max-width: 60ch;
-  margin-bottom: 34px;
-  font-size: 15.5px;
+  max-width: var(--measure);
+  margin-bottom: 36px;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+}
+
+/* Cabecera de sección: antetítulo + título + entradilla */
+.sec-head {
+  max-width: var(--measure);
+  margin-bottom: 40px;
+}
+
+.sec-head .sec-sub {
+  margin-bottom: 0;
+}
+
+/* Párrafos de lectura dentro de las secciones */
+.prosa p {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+  margin: 0 0 18px;
+}
+
+.band-night .prosa p {
+  color: #E6E1D6;
 }
 
 /* ── Botones ─────────────────────────────────────────── */
 .btn {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 15px;
-  padding: 14px 26px;
+  font-size: 16px;
+  line-height: 1.3;
+  min-height: 48px;
+  padding: 12px 26px;
   border-radius: 100px;
   text-decoration: none;
   display: inline-flex;
@@ -144,11 +244,34 @@ section {
   box-shadow: 0 6px 18px rgba(255, 107, 74, .35);
 }
 
+/* Secundario de verdad: borde y fondo transparente, para que nunca se
+   confunda con el principal. Sobre fondos oscuros pasa a claro. */
 .btn-outline {
-  background: linear-gradient(135deg, var(--coral), var(--amber2));
+  background: transparent;
   color: var(--ink);
-  border-color: transparent;
-  box-shadow: 0 6px 18px rgba(255, 107, 74, .35);
+  border-color: var(--ink);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: rgba(21, 20, 15, .06);
+}
+
+.hero-full .btn-outline,
+.band-night .btn-outline,
+.final-cta .btn-outline,
+.ink-block .btn-outline,
+.origin .btn-outline {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+
+.hero-full .btn-outline:hover,
+.band-night .btn-outline:hover,
+.final-cta .btn-outline:hover,
+.ink-block .btn-outline:hover,
+.origin .btn-outline:hover {
+  background: rgba(255, 255, 255, .12);
 }
 
 .btn-whatsapp svg {
@@ -190,6 +313,118 @@ a:focus-visible {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* ── Tarjeta unificada ───────────────────────────────── */
+/* Un solo modelo: radio --radius, imagen 4:3 arriba, cuerpo con el botón
+   siempre al pie, y la misma altura en cada fila (grid + height 100%). */
+.tarjeta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.tarjeta__media {
+  margin: 0;
+  background: var(--paper-deep);
+}
+
+.tarjeta__media img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.tarjeta__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  padding: clamp(22px, 2.4vw, 32px);
+}
+
+.tarjeta__titulo {
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.tarjeta__texto {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.tarjeta__pie {
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+/* Tarjeta entera clicable con un único enlace accesible: el enlace (el
+   botón del pie) se estira sobre toda la tarjeta con ::after. */
+.tarjeta--enlace {
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.tarjeta--enlace:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+.tarjeta__enlace::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+@supports selector(:has(*)) {
+  .tarjeta__enlace:focus-visible {
+    outline: none;
+  }
+
+  .tarjeta--enlace:has(.tarjeta__enlace:focus-visible) {
+    outline: 3px solid var(--focus);
+    outline-offset: 4px;
+  }
+}
+
+/* ── Iconos de línea ─────────────────────────────────── */
+.icono {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.icono-circulo {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(240, 200, 104, .18);
+  color: var(--jade);
+}
+
+.band-cream .icono-circulo {
+  background: var(--paper);
+  color: var(--gold);
+}
+
+.band-night .icono-circulo {
+  background: rgba(255, 255, 255, .08);
+  color: var(--jade-soft);
 }
 
 /* ── Tarjeta genérica sobre papel ────────────────────── */

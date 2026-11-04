@@ -4,7 +4,6 @@
    (<details>/<summary>), con los tokens de theme.css. */
 
 .sp-faq {
-  max-width: 72ch;
   border-top: 1px solid var(--line);
 }
 
@@ -20,8 +19,9 @@
   padding: 18px 0;
   cursor: pointer;
   list-style: none;
+  min-height: 44px;
   font-family: var(--font-family-heading);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--ink);
 }
@@ -30,20 +30,22 @@
   display: none;
 }
 
-/* Indicador decorativo (texto alternativo vacío para que el lector de
-   pantalla no lo lea); el estado abierto/cerrado ya lo anuncia por ser un
+/* Indicador decorativo (+ / −) en un span con aria-hidden; el estado
+   abierto/cerrado ya lo anuncia el lector de pantalla por ser un
    <summary>. */
-.sp-faq__item summary::after {
-  content: '+';
-  content: '+' / '';
+.sp-faq__signo {
   flex-shrink: 0;
-  font-size: 22px;
+  font-size: 24px;
+  line-height: 1;
   color: var(--jade);
 }
 
-.sp-faq__item[open] summary::after {
+.sp-faq__signo::before {
+  content: '+';
+}
+
+.sp-faq__item[open] .sp-faq__signo::before {
   content: '−';
-  content: '−' / '';
 }
 
 .sp-faq__item summary:focus-visible {
@@ -52,7 +54,247 @@
 }
 
 .sp-faq__item p {
-  margin: 0 0 20px;
+  margin: 0 0 22px;
+  font-size: var(--fs-body);
+  line-height: 1.65;
   color: var(--ink-soft);
-  max-width: 60ch;
+  max-width: var(--measure);
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   Renovación visual: Viajes +60
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Filas de texto + foto en zigzag ─────────────────── */
+.filas__lista {
+  display: grid;
+  gap: var(--section-space);
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+}
+
+/* Por defecto la foto va a la derecha; en las filas invertidas, a la
+   izquierda. */
+.fila__foto {
+  order: 2;
+}
+
+.fila--invertida .fila__foto {
+  order: 0;
+}
+
+.fila__foto img {
+  max-height: 600px;
+}
+
+/* ── Qué incluye: cuadrícula 3 × 2 ───────────────────── */
+.incluye {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.incluye__item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(24px, 2.4vw, 32px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.incluye__item p {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* ── Así es un día de viaje: línea de tiempo ─────────── */
+.dia {
+  position: relative;
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+/* La línea une los cuatro iconos */
+.dia::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  left: 28px;
+  /* Termina en el centro del último icono */
+  right: calc((100% - 3 * 32px) / 4 - 28px);
+  height: 2px;
+  background: var(--line);
+}
+
+.dia__momento {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Círculo opaco para tapar la línea por detrás */
+.dia .dia__marca {
+  position: relative;
+  z-index: 1;
+  background: var(--paper-deep);
+  box-shadow: 0 0 0 8px var(--paper);
+}
+
+.dia__etiqueta {
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 8px 0 0;
+}
+
+.dia__texto {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* ── Lo que te llevarás + galería ────────────────────── */
+.llevaras {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(16px, 4vw, 64px);
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.llevaras__texto {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(20px, 1.9vw, 24px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: var(--measure);
+}
+
+.galeria {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.galeria figure {
+  margin: 0;
+  height: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.galeria img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* El nombre del lugar va debajo de la foto, nunca encima */
+.galeria figcaption {
+  padding: 14px 20px;
+  font-family: var(--font-family-heading);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* ── Preguntas frecuentes en dos columnas ────────────── */
+.faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(16px, 4vw, 64px);
+  align-items: start;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 960px) {
+  .incluye {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dia {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 40px;
+  }
+
+  .dia::before {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .fila,
+  .llevaras,
+  .faq-grid,
+  .incluye {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* En móvil, la foto siempre arriba y más baja */
+  .fila__foto,
+  .fila--invertida .fila__foto {
+    order: 0;
+  }
+
+  .fila__foto img {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Línea de tiempo vertical */
+  .dia {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 32px;
+  }
+
+  .dia::before {
+    display: block;
+    top: 28px;
+    bottom: 28px;
+    left: 27px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .dia__momento {
+    padding-left: 76px;
+    min-height: 56px;
+  }
+
+  .dia .dia__marca {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .dia__etiqueta {
+    margin-top: 12px;
+  }
 }

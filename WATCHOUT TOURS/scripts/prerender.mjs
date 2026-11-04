@@ -136,6 +136,9 @@ async function main() {
     const preloadEs = path === '/'
       ? { homeResenas: data.homeResenas, homeBlogPreview: data.homeBlogPreview }
       : path === '/mas-alla-de-la-vista' ? { homeResenas: data.homeResenas }
+      // Viajes +60 elige entre todas las reseñas publicadas (primero las que
+      // no se centran en la ceguera): ver ResenasDestacadas.
+      : path === '/sin-prisa' ? { resenas: data.resenas }
       : path === '/resenas' ? { resenas: data.resenas }
       : path === '/blog' ? { blogList: data.blogList }
       : {}

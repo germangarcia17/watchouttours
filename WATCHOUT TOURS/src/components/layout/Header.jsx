@@ -132,6 +132,13 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleRef = useRef(null)
 
+  // Con el menú móvil abierto, el botón flotante de WhatsApp se oculta
+  // (ver .menu-abierto en global.css) para no tapar las opciones.
+  useEffect(() => {
+    document.body.classList.toggle('menu-abierto', menuOpen)
+    return () => document.body.classList.remove('menu-abierto')
+  }, [menuOpen])
+
   /* Escape cierra el menú móvil y devuelve el foco al botón que lo abrió */
   function handleNavKeyDown(e) {
     if (e.key === 'Escape' && menuOpen) {
