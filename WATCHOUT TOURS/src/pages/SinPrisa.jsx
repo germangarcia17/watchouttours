@@ -14,7 +14,8 @@ import RutaMapa, { COORDS_SIN_PRISA } from '../components/RutaMapa'
 import { CtaFinal } from '../components/home/BloquesHome'
 
 /* ── Sin Prisa ───────────────────────────────────────────────────────────
- * Línea de viajes tranquilos en grupo pequeño (/sin-prisa ↔ /en/unhurried).
+ * Viajes +60: viajes tranquilos en grupos de máximo 6 personas
+ * (/sin-prisa ↔ /en/unhurried).
  * Reutiliza el marcado y los estilos de la home (Home.css), de /productos
  * (Productos.css) y el mapa de ruta de /productos (RutaMapa). Sin precios
  * ni número de plazas.

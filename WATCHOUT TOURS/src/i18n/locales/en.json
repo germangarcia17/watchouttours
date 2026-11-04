@@ -26,8 +26,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "switchLang": "Ver esta página en español",
-    "sinPrisa": "Unhurried",
-    "masAlla": "Beyond Sight",
+    "sinPrisa": "60+ Journeys",
+    "masAlla": "Journeys for blind and low-vision travellers",
     "todas": "All experiences"
   },
   "footer": {
@@ -40,8 +40,8 @@
     "sobreNosotras": "About us",
     "resenas": "Reviews",
     "blog": "Blog",
-    "sinPrisa": "Unhurried",
-    "masAlla": "Beyond Sight",
+    "sinPrisa": "60+ Journeys",
+    "masAlla": "Journeys for blind and low-vision travellers",
     "todasExperiencias": "All experiences",
     "disenaViaje": "Plan your trip",
     "accesibilidad": "Accessibility",
@@ -51,22 +51,22 @@
   },
   "home": {
     "seo": {
-      "title": "Sensory Small-Group Tours of New Zealand | Watchout Tours",
-      "description": "Small-group journeys around New Zealand at an easy pace, with two dedicated guides by your side from start to finish. For travellers who want total comfort, and for blind and low-vision travellers."
+      "title": "Sensory Tours of New Zealand in Groups of 6 at Most | Watchout Tours",
+      "description": "Journeys around New Zealand in groups of 6 at most, at an easy pace, with two dedicated guides by your side from start to finish. For travellers who want total comfort, and for blind and low-vision travellers."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
       "eyebrow": "Sensory journeys through Aotearoa New Zealand",
       "h1": "New Zealand with all your senses.",
-      "sub": "Small groups, a pace nobody rushes, and the two of us by your side every day of the trip.",
-      "ctaSinPrisa": "Unhurried journeys",
+      "sub": "Groups of 6 at most, a pace nobody rushes, and the two of us by your side every day of the trip.",
+      "ctaSinPrisa": "60+ Journeys",
       "ctaMasAlla": "Journeys for blind and low-vision travellers"
     },
     "asiViajamos": {
       "title": "How we travel",
       "puntos": [
         {
-          "titulo": "Small groups.",
+          "titulo": "Groups of 6 at most.",
           "texto": "Just a few people, so the trip fits you, not the other way round."
         },
         {
@@ -93,16 +93,16 @@
         {
           "id": "sin-prisa",
           "to": "/sin-prisa",
-          "titulo": "Unhurried",
+          "titulo": "60+ Journeys",
           "texto": "New Zealand at an easy pace, with nothing to organise. 4 and 5-star hotels, breakfast and dinner included, comfortable transport and the two of us with you from start to finish.",
-          "cta": "Discover Unhurried"
+          "cta": "Discover 60+ Journeys"
         },
         {
           "id": "mas-alla",
           "to": "/mas-alla-de-la-vista",
-          "titulo": "Beyond Sight",
+          "titulo": "Journeys for blind and low-vision travellers",
           "texto": "Not all vision needs eyes. A journey designed for blind and low-vision travellers, where every place is felt through your hands, your ears and your skin, and the adventure goes as far as you want it to.",
-          "cta": "Discover Beyond Sight"
+          "cta": "Discover journeys for blind and low-vision travellers"
         }
       ]
     },
@@ -160,7 +160,7 @@
   "masAlla": {
     "seo": {
       "title": "Accessible New Zealand Tours for Blind Travellers | Watchout Tours",
-      "description": "Small-group guided tours across New Zealand designed for blind and visually impaired travellers. Sensory experiences, independence, adventure and local connection."
+      "description": "Guided tours across New Zealand in groups of 6 at most, designed for blind and visually impaired travellers. Sensory experiences, independence, adventure and local connection."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
@@ -209,7 +209,7 @@
     "rutas": {
       "eyebrow": "Our options",
       "title": "Two ways to live it",
-      "sub": "Same route, you choose your format: in a small group with set dates, or private and at your own pace.",
+      "sub": "Same route, you choose your format: in a group of 6 at most, with set dates, or private and at your own pace.",
       "incluido": "Included:",
       "anuncioBadge": "We’ve got a date!",
       "anuncioFecha": "New group trip: departing March 1",
@@ -220,7 +220,7 @@
           "id": "grupo",
           "etiqueta": "15 days across New Zealand · group of 3 to 6 travellers + the two of us",
           "titulo": "The shared adventure",
-          "cuerpo": "A small group of travellers with the same eagerness as you to explore the world. Over 15 days we’ll travel New Zealand together, sharing adventures, laughter and moments you’ll remember for a lifetime. Because some trips end… and others give you friendships forever. We’ll be by your side every step of the way, from the first day to the last.",
+          "cuerpo": "A group of 6 travellers at most, with the same eagerness as you to explore the world. Over 15 days we’ll travel New Zealand together, sharing adventures, laughter and moments you’ll remember for a lifetime. Because some trips end… and others give you friendships forever. We’ll be by your side every step of the way, from the first day to the last.",
           "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you for all 14 nights.",
           "cta": "I’d like more information"
         },
@@ -243,14 +243,14 @@
   },
   "sinPrisa": {
     "seo": {
-      "title": "Unhurried · Easy-Paced Small-Group Tours of New Zealand | Watchout Tours",
-      "description": "Fifteen days around New Zealand at an easy pace, with private experiences, 4 and 5-star hotels, breakfast and dinner included and two dedicated guides throughout."
+      "title": "60+ Journeys around New Zealand in groups of 6 at most | Watchout Tours",
+      "description": "Fifteen days around New Zealand at an easy pace, in groups of 6 at most, with private experiences, 4 and 5-star hotels, breakfast and dinner included and two dedicated guides throughout."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
-      "eyebrow": "Unhurried · New Zealand with all your senses",
+      "eyebrow": "60+ Journeys · New Zealand with all your senses",
       "h1": "The trip you’ve been promising yourself for years.",
-      "sub": "Fifteen days around New Zealand in a small group, at an easy pace, with Moni and Sylvie by your side from the moment you land to the last hug at the airport.",
+      "sub": "Fifteen days around New Zealand in a group of 6 at most, at an easy pace, with Moni and Sylvie by your side from the moment you land to the last hug at the airport.",
       "cta": "Find out more"
     },
     "paraQuien": {
@@ -287,7 +287,7 @@
     },
     "ruta": {
       "title": "The route",
-      "navAria": "Map of the Unhurried route around New Zealand",
+      "navAria": "Map of the 60+ Journeys route around New Zealand",
       "paradas": [
         {
           "id": "sp-auckland",
