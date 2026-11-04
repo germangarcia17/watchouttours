@@ -17,6 +17,7 @@
 .brand-badge {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   gap: 12px;
   text-decoration: none;
   --focus: #15140F;
@@ -88,7 +89,13 @@
   text-decoration: none;
   color: #D8D2C2;
   border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
+  /* Zona táctil de 44 px de alto sin cambiar el aspecto */
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
   transition: border-color .2s;
 }
 
@@ -113,7 +120,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 38px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 6px 10px;
   font-size: 13px;
   font-weight: 700;
@@ -139,6 +147,10 @@
   color: var(--paper, #FFFFFF);
   font-size: 1.5rem;
   line-height: 1;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
   padding: .25em;
 }
 
@@ -190,6 +202,8 @@
 
   .nav-links--open {
     display: flex;
+    /* El menú móvil tiene fondo claro: el foco pasa a oscuro para verse */
+    --focus: #15140F;
   }
 
   .nav-link {
@@ -257,11 +271,11 @@
 }
 
 .nav-dropdown__menu li {
-  padding-block: 8px;
+  padding-block: 2px;
 }
 
 .nav-dropdown__link {
-  display: inline-block;
+  display: inline-flex;
   white-space: nowrap;
 }
 

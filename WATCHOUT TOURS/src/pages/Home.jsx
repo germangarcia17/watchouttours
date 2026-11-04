@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next'
 import '../styles/pagestyle/Home.css'
 import imgHero from '../images/hero-home.webp'
+import imgTarjeta60 from '../images/blind-travel-group-geyser.webp'
+import imgTarjetaCiegas from '../images/blind-travel-maori-carving.webp'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
+import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
 import {
+  HeroFoto,
   ResenasDestacadas,
   AudioClips,
   NuestraHistoria,
@@ -12,15 +16,47 @@ import {
   CtaFinal,
 } from '../components/home/BloquesHome'
 
+/* Iconos de la franja de confianza y de "Así viajamos", en el mismo orden
+   que los textos de los locales. */
+const ICONOS_CONFIANZA = ['grupo', 'guias', 'privado', 'casa']
+const ICONOS_ASI_VIAJAMOS = ['grupo', 'privado', 'guias', 'idioma', 'resuelto']
+
+/* Imagen de cada tarjeta de "Dos viajes", editable desde /admin/imagenes
+   (sección "home"). */
+const IMAGENES_TARJETAS = {
+  'sin-prisa': { clave: 'tarjeta-viajes-60', src: imgTarjeta60 },
+  'mas-alla':  { clave: 'tarjeta-personas-ciegas', src: imgTarjetaCiegas },
+}
+
+function TarjetaViaje({ id, to, titulo, texto, cta, imgAlt }) {
+  const { clave, src } = IMAGENES_TARJETAS[id]
+  const img = useSiteImage('home', clave, src, imgAlt)
+  return (
+    <article className="tarjeta tarjeta--enlace viaje-tarjeta" aria-labelledby={`${id}-heading`}>
+      <figure className="tarjeta__media">
+        <img src={img.src} alt={img.alt} lang={img.lang} loading="lazy" />
+      </figure>
+      <div className="tarjeta__cuerpo">
+        <h3 id={`${id}-heading`} className="tarjeta__titulo">{titulo}</h3>
+        <p className="tarjeta__texto">{texto}</p>
+        <div className="tarjeta__pie">
+          {/* Único enlace de la tarjeta; se estira sobre toda ella. */}
+          <L to={to} className="btn btn-solid tarjeta__enlace">{cta}<span aria-hidden="true"> →</span></L>
+        </div>
+      </div>
+    </article>
+  )
+}
+
 /* ── Home de marca ───────────────────────────────────────────────────────
- * Presenta Watchout Tours como marca madre y reparte hacia sus dos líneas
- * de viaje: Sin Prisa (/sin-prisa) y Más allá de la vista
- * (/mas-alla-de-la-vista). Orden: Hero → Así viajamos → Dos viajes, un
- * mismo método → Reseñas → Audios → Nuestra historia → Blog → CTA final.
- * Reutiliza el marcado y los estilos de la home anterior (Home.css).
+ * Presenta Watchout Tours como marca madre y reparte hacia sus dos líneas.
+ * Orden: Hero → franja de confianza → Así viajamos → Dos viajes →
+ * Reseñas → Audios → Nuestra historia → Blog → CTA final.
+ * Fondos alternos: blanco, crema y azul noche (reseñas y CTA).
  * ──────────────────────────────────────────────────────────────────────── */
 export default function Home() {
   const { t } = useTranslation()
+  const confianza = t('home.confianza.items', { returnObjects: true })
   const puntos = t('home.asiViajamos.puntos', { returnObjects: true })
   const tarjetas = t('home.dosViajes.tarjetas', { returnObjects: true })
 
@@ -34,25 +70,28 @@ export default function Home() {
         description={t('home.seo.description')}
       />
 
-      {/* ── Hero ──────────────────────────────────────── */}
-      <section className="hero">
-        <div className="hero-photo-panel">
-          <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
-        </div>
+      <HeroFoto
+        imagen={heroImg}
+        antetitulo={t('home.hero.eyebrow')}
+        titulo={t('home.hero.h1')}
+        subtitulo={t('home.hero.sub')}
+      >
+        <L to="/sin-prisa" className="btn btn-solid">{t('home.hero.ctaSinPrisa')}</L>
+        <L to="/mas-alla-de-la-vista" className="btn btn-outline">{t('home.hero.ctaMasAlla')}</L>
+      </HeroFoto>
+
+      {/* ── Franja de confianza ───────────────────────── */}
+      <section className="confianza band-cream" aria-labelledby="confianza-titulo">
         <div className="wrap">
-          <div className="hero-inner">
-            <span className="eyebrow">{t('home.hero.eyebrow')}</span>
-            <div className="hero-headline-row">
-              <h1 className="hero-big-text">{t('home.hero.h1')}</h1>
-              <div className="hero-headline-side">
-                <p>{t('home.hero.sub')}</p>
-                <div className="cta-row">
-                  <L to="/sin-prisa" className="btn btn-solid">{t('home.hero.ctaSinPrisa')}</L>
-                  <L to="/mas-alla-de-la-vista" className="btn btn-outline">{t('home.hero.ctaMasAlla')}</L>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2 id="confianza-titulo" className="sr-only">{t('home.confianza.titulo')}</h2>
+          <ul className="confianza__lista">
+            {confianza.map((texto, i) => (
+              <li key={texto} className="confianza__item">
+                <Icono nombre={ICONOS_CONFIANZA[i]} />
+                <span>{texto}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -60,41 +99,29 @@ export default function Home() {
       <section id="asi-viajamos" aria-labelledby="asi-viajamos-heading">
         <div className="wrap">
           <h2 id="asi-viajamos-heading" className="sec-title">{t('home.asiViajamos.title')}</h2>
-          <ul className="pillars" style={{ paddingLeft: 0, listStyle: 'none' }}>
-            {puntos.map(({ titulo, texto }) => (
-              <li key={titulo} className="pillar">
-                <p><strong>{titulo}</strong> {texto}</p>
+          <ul className="asi-viajamos">
+            {puntos.map(({ titulo, texto }, i) => (
+              <li key={titulo} className="asi-viajamos__item">
+                <span className="icono-circulo"><Icono nombre={ICONOS_ASI_VIAJAMOS[i]} /></span>
+                <h3 className="asi-viajamos__titulo">{titulo}</h3>
+                <p className="asi-viajamos__texto">{texto}</p>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* ── Dos viajes, un mismo método — bloque oscuro ── */}
-      <section id="dos-viajes">
+      {/* ── Dos viajes, un mismo método ───────────────── */}
+      <section id="dos-viajes" className="band-cream" aria-labelledby="dos-viajes-heading">
         <div className="wrap">
-          <div className="ink-block rutas-black">
-            <h2 className="sec-title">{t('home.dosViajes.title')}</h2>
-            <div className="prod-list">
-              {tarjetas.map(({ id, to, titulo, texto, cta }) => (
-                <article key={id} aria-labelledby={`${id}-heading`} className="prod-card">
-                  <div className="prod-card__head">
-                    <h3 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h3>
-                    <p className="prod-card__desc">{texto}</p>
-                  </div>
-                  <div className="prod-card__footer">
-                    <div className="cta-row">
-                      <L to={to} className="btn btn-solid">{cta}</L>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
+          <h2 id="dos-viajes-heading" className="sec-title">{t('home.dosViajes.title')}</h2>
+          <div className="dos-viajes">
+            {tarjetas.map(tarjeta => <TarjetaViaje key={tarjeta.id} {...tarjeta} />)}
           </div>
         </div>
       </section>
 
-      <ResenasDestacadas />
+      <ResenasDestacadas tono="night" />
       <AudioClips />
       <NuestraHistoria />
       <BlogPreview />

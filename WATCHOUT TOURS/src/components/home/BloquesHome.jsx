@@ -32,48 +32,102 @@ export function SeparadorBaston() {
   )
 }
 
+/* ── Hero a pantalla completa ───────────────────────── */
+/* Foto de fondo con el h1, el subtítulo y los botones encima. Una capa
+   degradada oscura garantiza contraste AA en todo el texto (más densa
+   donde está el texto, abajo). La foto es decorativa respecto al texto,
+   pero lleva su alt porque transmite el destino. */
+export function HeroFoto({ imagen, antetitulo, titulo, subtitulo, children }) {
+  return (
+    <section className="hero-full">
+      <img className="hero-full__img" src={imagen.src} alt={imagen.alt} lang={imagen.lang} fetchpriority="high" />
+      <div className="hero-full__capa" aria-hidden="true" />
+      <div className="wrap hero-full__contenido">
+        <p className="hero-full__antetitulo">{antetitulo}</p>
+        <h1 className="hero-full__titulo">{titulo}</h1>
+        <p className="hero-full__sub">{subtitulo}</p>
+        <div className="cta-row hero-full__botones">{children}</div>
+      </div>
+    </section>
+  )
+}
+
 /* ── Reseñas destacadas ─────────────────────────────── */
 /* En el prerender llegan precargadas (homeResenas, ver
    scripts/prerender.mjs); en el navegador se piden a Supabase. */
-export function ResenasDestacadas() {
+/* Palabras que indican que una reseña habla sobre todo de la ceguera. En
+   Viajes +60 se muestran primero las que no las contienen. */
+const TEMA_CEGUERA = /cieg|ceguera|baja visi|bast[oó]n|braille|discapacidad visual|blind|low[- ]vision|visually impaired|white cane/i
+
+function hablaDeCeguera(r) {
+  return TEMA_CEGUERA.test(`${r.content ?? ''} ${r.content_en ?? ''}`)
+}
+
+/* Elige hasta 3 reseñas. Por defecto, las destacadas. Con
+   modo="sinCeguera", entre todas las publicadas, primero las que no se
+   centran en la ceguera y, dentro de cada grupo, las destacadas. */
+function elegirResenas(lista, modo) {
+  if (!lista) return null
+  if (modo !== 'sinCeguera') return lista.slice(0, 3)
+  return [...lista]
+    .sort((a, b) => (hablaDeCeguera(a) - hablaDeCeguera(b)) || (b.featured - a.featured))
+    .slice(0, 3)
+}
+
+/* tono: 'night' (banda azul) o 'cream' (banda crema). */
+export function ResenasDestacadas({ tono = 'night', modo = 'destacadas' }) {
   const { t } = useTranslation()
   const lang = useLang()
-  const [resenas, setResenas] = useState(getPreload().homeResenas ?? null)
+  const preload = getPreload()
+  const [resenas, setResenas] = useState(
+    elegirResenas(modo === 'sinCeguera' ? preload.resenas : preload.homeResenas, modo) ?? null
+  )
 
   useEffect(() => {
-    supabase
-      .from('resenas')
-      .select('*')
-      .eq('published', true)
-      .eq('featured', true)
-      .limit(3)
-      .then(({ data }) => setResenas(data))
-  }, [])
+    let q = supabase.from('resenas').select('*').eq('published', true)
+    q = modo === 'sinCeguera'
+      ? q.order('featured', { ascending: false }).order('created_at', { ascending: false }).limit(30)
+      : q.eq('featured', true).limit(3)
+    q.then(({ data }) => setResenas(elegirResenas(data, modo)))
+  }, [modo])
 
   if (!resenas || resenas.length === 0) return null
 
   return (
-    <section>
+    <section className={`resenas band-${tono}`} aria-labelledby={`resenas-titulo-${modo}`}>
       <div className="wrap">
-        <h2 className="sec-eyebrow">{t('home.testi.eyebrow')}</h2>
-        <p className="sec-title">{t('home.testi.title')}</p>
-        <div className="testi-grid">
-          {resenas.map(resena => (
-            <div key={resena.id} className="testi">
-              <span className="sr-only">{t('home.testi.srContent')}</span>
-              <q lang={fieldLangAttr(resena, 'content', lang)}>{pickLocalized(resena, 'content', lang)}</q>
-              <span className="sr-only">{t('home.testi.srWho')}</span>
-              <div className="who">{resena.author_name}</div>
-              {resena.video_url && (
-                <details className="testi-video">
-                  <summary>{t('home.testi.listen')}</summary>
-                  <video src={resena.video_url} controls playsInline preload="metadata" aria-label={t('home.testi.videoAria', { name: resena.author_name })} />
-                </details>
-              )}
-            </div>
-          ))}
+        <div className="sec-head">
+          <p className="sec-eyebrow">{t('home.testi.eyebrow')}</p>
+          <h2 id={`resenas-titulo-${modo}`} className="sec-title">{t('home.testi.title')}</h2>
         </div>
-        <p style={{ textAlign: 'center', marginTop: '2rem' }}>
+        <div className={`resenas__grid resenas__grid--${resenas.length}`}>
+          {resenas.map((resena, i) => {
+            const contexto = pickLocalized(resena, 'author_context', lang)
+            return (
+              <figure key={resena.id} className={`resena${i === 0 ? ' resena--destacada' : ''}`}>
+                <span className="sr-only">{t('home.testi.srContent')}</span>
+                <span className="resena__comillas" aria-hidden="true">“</span>
+                <blockquote className="resena__cita" lang={fieldLangAttr(resena, 'content', lang)}>
+                  <p>{pickLocalized(resena, 'content', lang)}</p>
+                </blockquote>
+                <figcaption className="resena__autor">
+                  <span className="sr-only">{t('home.testi.srWho')}</span>
+                  <span className="resena__nombre">{resena.author_name}</span>
+                  {contexto && (
+                    <span className="resena__contexto" lang={fieldLangAttr(resena, 'author_context', lang)}>{contexto}</span>
+                  )}
+                </figcaption>
+                {resena.video_url && (
+                  <details className="testi-video">
+                    <summary>{t('home.testi.listen')}</summary>
+                    <video src={resena.video_url} controls playsInline preload="metadata" aria-label={t('home.testi.videoAria', { name: resena.author_name })} />
+                  </details>
+                )}
+              </figure>
+            )
+          })}
+        </div>
+        <p className="resenas__mas">
           <L to="/resenas">{t('home.testi.more')}<span aria-hidden="true"> →</span></L>
         </p>
       </div>
@@ -123,22 +177,20 @@ export function AudioClips() {
 /* ── Nuestra historia ───────────────────────────────── */
 export function NuestraHistoria() {
   const { t } = useTranslation()
+  // Hueco listo para una foto nueva: /admin/imagenes, sección "home",
+  // clave "nosotras". De momento, la actual.
   const nosotrasImg = useSiteImage('home', 'nosotras', imgNosotras, t('home.nosotras.imgAlt'))
 
   return (
-    <section id="nosotras">
-      <div className="wrap">
-        <div className="origin">
-          <div className="origin-grid">
-            <div className="origin-photo">
-              <img src={nosotrasImg.src} alt={nosotrasImg.alt} lang={nosotrasImg.lang} loading="lazy" />
-            </div>
-            <div className="origin-inner">
-              <h2 className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('home.nosotras.eyebrow')}</h2>
-              <p>{t('home.nosotras.p')}</p>
-              <L to="/sobre-nosotras" className="btn btn-outline">{t('home.nosotras.cta')}</L>
-            </div>
-          </div>
+    <section id="nosotras" className="historia band-cream" aria-labelledby="historia-titulo">
+      <div className="wrap historia__grid">
+        <figure className="historia__foto">
+          <img src={nosotrasImg.src} alt={nosotrasImg.alt} lang={nosotrasImg.lang} loading="lazy" />
+        </figure>
+        <div className="historia__texto">
+          <h2 id="historia-titulo" className="sec-title">{t('home.nosotras.eyebrow')}</h2>
+          <p className="historia__lead">{t('home.nosotras.p')}</p>
+          <L to="/sobre-nosotras" className="btn btn-outline">{t('home.nosotras.cta')}</L>
         </div>
       </div>
     </section>
@@ -166,19 +218,25 @@ export function BlogPreview() {
   if (!post || !post.title) return null
 
   return (
-    <section>
-      <div className="wrap">
-        <h2 className="sec-eyebrow">{t('home.blog.eyebrow')}</h2>
-        <p className="sec-title">{t('home.blog.title')}</p>
-        <div className="blog-preview-card">
-          <h3 lang={fieldLangAttr(post, 'title', lang)}>{pickLocalized(post, 'title', lang)}</h3>
-          <p lang={fieldLangAttr(post, 'excerpt', lang)}>{pickLocalized(post, 'excerpt', lang)}</p>
-          <p className="reading-time">{t('home.blog.readingTime', { count: post.reading_time })}</p>
-          <L to={`/blog/${post.slug}`} className="btn btn-outline">{t('home.blog.readArticle')}</L>
+    <section className="blog-home" aria-labelledby="blog-home-titulo">
+      <div className="wrap blog-home__grid">
+        <div>
+          <p className="sec-eyebrow">{t('home.blog.eyebrow')}</p>
+          <h2 id="blog-home-titulo" className="sec-title">{t('home.blog.title')}</h2>
+          <p className="blog-home__todos">
+            <L to="/blog">{t('home.blog.seeAll')}<span aria-hidden="true"> →</span></L>
+          </p>
         </div>
-        <p style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-          <L to="/blog">{t('home.blog.seeAll')}<span aria-hidden="true"> →</span></L>
-        </p>
+        <article className="tarjeta tarjeta--enlace blog-home__tarjeta">
+          <div className="tarjeta__cuerpo">
+            <h3 className="tarjeta__titulo" lang={fieldLangAttr(post, 'title', lang)}>{pickLocalized(post, 'title', lang)}</h3>
+            <p className="tarjeta__texto" lang={fieldLangAttr(post, 'excerpt', lang)}>{pickLocalized(post, 'excerpt', lang)}</p>
+            <p className="blog-home__lectura">{t('home.blog.readingTime', { count: post.reading_time })}</p>
+            <div className="tarjeta__pie">
+              <L to={`/blog/${post.slug}`} className="btn btn-outline tarjeta__enlace">{t('home.blog.readArticle')}</L>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   )

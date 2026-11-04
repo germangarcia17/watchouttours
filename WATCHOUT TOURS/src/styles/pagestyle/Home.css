@@ -1,103 +1,5 @@
-/* ── Home — estilos propios de la página ─────────────── */
+/* ── Home y páginas de línea — estilos compartidos ─────── */
 /* Tokens y utilidades compartidas viven en styles/theme.css */
-
-/* ── Hero ────────────────────────────────────────────── */
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding: 0 0 56px;
-}
-
-.hero-photo-panel {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 78vh;
-  min-height: 440px;
-  max-height: 760px;
-  background: var(--paper-deep);
-  overflow: hidden;
-}
-
-.hero-photo-panel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 82%;
-  display: block;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  padding-top: 48px;
-}
-
-/* Cabecera + apoyo en la misma fila para aprovechar el ancho en
-   escritorio (antes el bloque de texto quedaba a la izquierda con un
-   hueco vacío a la derecha). */
-.hero-headline-row {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 48px;
-  align-items: end;
-}
-
-.hero-headline-side {
-  padding-bottom: 6px;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-family-heading);
-  font-size: clamp(15px, 1.6vw, 19px);
-  line-height: 1.08;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--jade);
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-
-.eyebrow::before {
-  content: "";
-  display: inline-block;
-  width: 22px;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--jade);
-  flex-shrink: 0;
-}
-
-/* Texto protagonista del hero: es el h1 semántico de la página. */
-.hero h1.hero-big-text {
-  font-family: var(--font-family-heading);
-  font-size: clamp(38px, 5.4vw, 58px);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -.01em;
-  color: var(--ink);
-  max-width: none;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: clamp(18px, 2.1vw, 22px);
-  line-height: 1.55;
-  color: var(--ink-soft);
-  max-width: 46ch;
-  margin-bottom: 32px;
-}
-
-.wave {
-  display: block;
-  margin: 46px auto 0;
-  width: 130px;
-  height: 28px;
-}
-
 /* ── Stats ───────────────────────────────────────────── */
 .stats {
   display: grid;
@@ -139,15 +41,8 @@
 
 .intro-grid p {
   color: var(--ink-soft);
-  margin-bottom: 16px;
-  font-size: 15.5px;
-}
-
-/* Antes una tarjeta oscura con marco, relleno y una cita superpuesta;
-   ahora es solo la foto, sin caja ni texto encima. */
-.intro-card {
-  border-radius: var(--radius);
-  overflow: hidden;
+  margin-bottom: 18px;
+  font-size: var(--fs-body);
 }
 
 .intro-card__foto {
@@ -166,70 +61,6 @@
   grid-template-columns: 1.3fr .95fr;
   gap: 56px;
   align-items: start;
-}
-
-/* ── Pilares sensoriales ─────────────────────────────── */
-.pillars {
-  display: flex;
-  flex-direction: column;
-  counter-reset: pillar;
-  margin-top: 12px;
-}
-
-.pillar {
-  position: relative;
-  counter-increment: pillar;
-  padding: 32px 0 32px 68px;
-  border-bottom: 1px solid var(--line);
-}
-
-.pillar:first-child {
-  padding-top: 8px;
-}
-
-.pillar:last-child {
-  border-bottom: none;
-  padding-bottom: 8px;
-}
-
-.pillar::before {
-  content: counter(pillar, decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  top: 32px;
-  font-family: var(--font-family-mono);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .04em;
-  color: var(--jade);
-}
-
-.pillar:first-child::before {
-  top: 8px;
-}
-
-.pillar .ico {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: transparent;
-  border: 1px solid var(--jade-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-  font-size: 18px;
-}
-
-.pillar h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
-}
-
-.pillar p {
-  font-size: 15px;
-  color: var(--ink-soft);
-  max-width: 52ch;
 }
 
 /* ── Momento cultural (foto) ──────────────────────────── */
@@ -256,7 +87,7 @@
 .cultura-foto .tag {
   display: block;
   color: var(--jade);
-  font-size: 13px;
+  font-size: var(--fs-label);
   letter-spacing: .14em;
   text-transform: uppercase;
   font-weight: 700;
@@ -265,7 +96,7 @@
 
 .cultura-foto p {
   font-family: var(--font-family-heading);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   color: var(--ink);
   max-width: 42ch;
@@ -301,7 +132,7 @@
 
 .reel-copy p {
   color: var(--ink-soft);
-  font-size: 15.5px;
+  font-size: var(--fs-body);
   margin-bottom: 16px;
 }
 
@@ -319,13 +150,7 @@
   font-style: normal;
 }
 
-/* ── Testimonios ─────────────────────────────────────── */
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-}
-
+/* ── Testimonios (página de reseñas) ──────────────────── */
 .testi {
   padding: 4px 0 4px 20px;
   border-left: 3px solid var(--jade-soft);
@@ -399,7 +224,7 @@
 
 .prod-card__etiqueta {
   display: inline-block;
-  font-size: 12.5px;
+  font-size: var(--fs-label);
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -411,13 +236,13 @@
 }
 
 .prod-card__titulo {
-  font-size: 22px;
+  font-size: var(--fs-h3);
   font-weight: 800;
   margin-bottom: 10px;
 }
 
 .prod-card__desc {
-  font-size: 14.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   line-height: 1.65;
   margin: 0;
@@ -447,7 +272,7 @@
 }
 
 .prod-card__incluye-nota {
-  font-size: 13.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   line-height: 1.6;
   padding-left: 14px;
@@ -502,7 +327,7 @@
   border-radius: 999px;
   background: rgba(255, 107, 74, .12);
   color: var(--coral-text);
-  font-size: 12.5px;
+  font-size: var(--fs-label);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -528,7 +353,7 @@
 .anuncio-grupo__texto {
   margin: 0;
   max-width: 52ch;
-  font-size: .98rem;
+  font-size: var(--fs-body);
   line-height: 1.6;
   color: var(--ink-soft);
 }
@@ -619,17 +444,15 @@
 
 .audio-card__titulo {
   font-family: var(--font-family-heading);
-  font-size: 1.1rem;
+  font-size: var(--fs-h3);
   margin: 0 0 .25rem;
   color: var(--ink);
 }
 
-.audio-card:first-child .audio-card__titulo {
-  font-size: 1.3rem;
-}
+
 
 .audio-card__etiqueta {
-  font-size: .78rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -638,7 +461,7 @@
 
 .audio-card__descripcion {
   color: var(--ink-soft);
-  font-size: .95rem;
+  font-size: var(--fs-body);
   line-height: 1.7;
   margin: 0;
 }
@@ -657,8 +480,8 @@
 
 .audio-player__btn {
   flex-shrink: 0;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: var(--jade);
@@ -732,108 +555,15 @@
 .audio-player__time {
   display: flex;
   justify-content: space-between;
-  font-size: .72rem;
+  font-size: 14px;
   color: var(--ink-soft);
   font-variant-numeric: tabular-nums;
-}
-
-/* ── Nosotras / Origin ───────────────────────────────── */
-.origin {
-  position: relative;
-  color: var(--paper);
-  padding: 52px 0;
-}
-
-.origin::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background: var(--night);
-  z-index: -2;
-}
-
-.origin::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
-  background-size: 20px 20px;
-  opacity: .08;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.origin-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.origin-photo {
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(236, 231, 221, .15);
-}
-
-.origin-photo img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 3/4;
-}
-
-.origin-inner {
-  position: relative;
-}
-
-.origin-inner p {
-  font-size: 16.5px;
-  color: #D8D2C2;
-  margin-bottom: 22px;
-  font-family: var(--font-family-heading);
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-/* ── Blog preview ────────────────────────────────────── */
-.blog-preview-card {
-  padding-left: 24px;
-  border-left: 3px solid var(--jade-soft);
-}
-
-.blog-preview-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: .75rem;
-}
-
-.blog-preview-card p {
-  color: var(--ink-soft);
-  font-size: 15px;
-  margin-bottom: .5rem;
-}
-
-.blog-preview-card .reading-time {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 1rem;
 }
 
 /* ── CTA final ───────────────────────────────────────── */
 .final-cta {
   text-align: center;
-  padding: 70px 0 90px;
+  padding-block: var(--section-space);
   background: linear-gradient(135deg, #125F73 0%, var(--night) 100%);
   position: relative;
   overflow: hidden;
@@ -848,42 +578,21 @@
 }
 
 .final-cta h2 {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: var(--fs-h2);
   margin-bottom: 16px;
   color: var(--paper);
   position: relative;
 }
 
 .final-cta p {
-  color: #D8D2C2;
+  color: #E6E1D6;
+  font-size: var(--fs-lead);
   max-width: 48ch;
   margin: 0 auto 30px;
   position: relative;
 }
 
-/* ── WhatsApp FAB ────────────────────────────────────── */
-.whatsapp-fab {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 1000;
-  width: 3.5rem;
-  height: 3.5rem;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .35);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.whatsapp-fab:hover,
-.whatsapp-fab:focus-visible {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, .45);
-}
-
+/* ── WhatsApp FAB: icono oscuro (posición y estados en global.css) ── */
 .whatsapp-fab svg {
   width: 2rem;
   height: 2rem;
@@ -893,31 +602,7 @@
 
 /* ── Responsive: 760px ───────────────────────────────── */
 @media (max-width: 760px) {
-  .hero-photo-panel {
-    height: 48vh;
-    min-height: 280px;
-  }
-
-  .hero-photo-panel img {
-    object-position: center;
-  }
-
-  .hero-inner {
-    padding-top: 32px;
-  }
-
-  .hero-headline-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-    align-items: stretch;
-  }
-
   .intro-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pillars,
-  .testi-grid {
     grid-template-columns: 1fr;
   }
 
@@ -941,19 +626,6 @@
 
   .reel-frame {
     max-width: 240px;
-  }
-
-  .origin-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .origin-photo {
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
-  .origin {
-    padding: 32px 0;
   }
 
   .prod-list {
@@ -1051,31 +723,594 @@
   }
 }
 
-/* ── Rutas dentro del bloque oscuro ──────────────────── */
-/* Ya no son tarjetas claras flotando sobre el fondo oscuro: el texto
-   vive directamente sobre --night, así que usa los mismos tonos
-   claros que el resto del ink-block (título/párrafo heredan de
-   .ink-block h3/p) y solo el precio y la etiqueta necesitan su propio
-   verde claro para no perder el acento de marca. */
-.rutas-black .prod-card__etiqueta {
-  color: var(--jade-soft);
+/* ════════════════════════════════════════════════════════════════════
+   Renovación visual (prioridades 1 y 2)
+   Mismos colores y tipografías del tema; ver tokens en theme.css.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero a pantalla completa ────────────────────────── */
+/* Foto de fondo, texto encima y dos capas:
+   - .hero-full__capa: un velo suave sobre toda la foto.
+   - .hero-full__contenido::before: una capa oscura (88–90 %) pegada al
+     bloque de texto, desde un poco por encima del antetítulo hasta abajo.
+     Como va unida al texto y no a la altura de la pantalla, el contraste
+     AA del texto blanco está garantizado en cualquier tamaño, aunque
+     debajo haya una zona blanca de la foto. En escritorio ancho se aclara
+     hacia la derecha, donde no hay texto, para que respire el paisaje. */
+.site-main > .hero-full {
+  padding-block: 120px clamp(48px, 7vw, 88px);
 }
 
-.rutas-black .prod-card__precio {
-  color: var(--jade-soft);
+.hero-full {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(85vh, 900px);
+  background: var(--night);
+  color: var(--paper);
+  overflow: hidden;
+  --focus: #F4F1EA;
 }
 
-.rutas-black .prod-card__precio-nota {
-  color: #D8D2C2;
+@supports (min-height: 1svh) {
+  .hero-full {
+    min-height: min(85svh, 900px);
+  }
 }
 
-/* .anuncio-grupo es una tarjeta clara flotando sobre el fondo oscuro,
-   así que necesita sus propios colores oscuros en vez de heredar los
-   tonos claros de .ink-block p. */
-.rutas-black .anuncio-grupo__fecha {
+.hero-full__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.hero-full__capa {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(var(--hero-shade), .22);
+}
+
+.hero-full__contenido {
+  position: relative;
+  width: 100%;
+}
+
+.hero-full__contenido::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -96px;
+  bottom: calc(-1 * clamp(48px, 7vw, 88px));
+  left: calc(50% - 50vw);
+  width: 100vw;
+  background: linear-gradient(to top,
+    rgba(var(--hero-shade), .9) 0%,
+    rgba(var(--hero-shade), .88) calc(100% - 96px),
+    rgba(var(--hero-shade), 0) 100%);
+}
+
+@media (min-width: 1200px) {
+  .hero-full__contenido::before {
+    background: linear-gradient(to right,
+      rgba(var(--hero-shade), .9) 0%,
+      rgba(var(--hero-shade), .88) calc(50vw + 200px),
+      rgba(var(--hero-shade), .3) calc(50vw + 500px),
+      rgba(var(--hero-shade), 0) 100%);
+    -webkit-mask-image: linear-gradient(to top, #000 calc(100% - 96px), transparent);
+    mask-image: linear-gradient(to top, #000 calc(100% - 96px), transparent);
+  }
+}
+
+.hero-full__antetitulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  font-family: var(--font-family-heading);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.hero-full__antetitulo::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--jade-soft);
+  flex-shrink: 0;
+}
+
+.hero-full__titulo {
+  font-size: var(--fs-h1);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  color: var(--paper);
+  max-width: 17ch;
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+
+.hero-full__sub {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: #F1EDE4;
+  max-width: 50ch;
+  margin: 0 0 30px;
+}
+
+.hero-full__botones .btn {
+  min-height: 52px;
+  padding-inline: 28px;
+}
+
+@media (max-width: 760px) {
+  .site-main > .hero-full {
+    padding-block: 96px 40px;
+  }
+
+  .hero-full__contenido::before {
+    bottom: -40px;
+  }
+}
+
+/* ── Fotos con marco común ───────────────────────────── */
+.foto-marco {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper-deep);
+  box-shadow: var(--shadow-card);
+}
+
+.foto-marco img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.cultura-foto img {
+  box-shadow: var(--shadow-card);
+}
+
+/* Etiquetas y enlaces pequeños sobre crema: --gold (AA) */
+.band-cream .cultura-foto .tag {
+  color: var(--gold);
+}
+
+.band-cream a:not(.btn) {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.band-cream .tarjeta a:not(.btn) {
+  color: var(--gold);
+}
+
+/* Los pines del mapa no son enlaces de texto: sin subrayado */
+.band-cream .ruta-mapa__pin {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* ── Franja de confianza ─────────────────────────────── */
+.site-main > .confianza {
+  padding-block: 32px;
+}
+
+.confianza__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 32px;
+}
+
+.confianza__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-family-heading);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  line-height: 1.3;
   color: var(--ink);
 }
 
-.rutas-black .anuncio-grupo__texto {
+.confianza__item .icono {
+  width: 34px;
+  height: 34px;
+  color: var(--gold);
+}
+
+/* ── Así viajamos: tarjetas 3 + 2 ────────────────────── */
+.asi-viajamos {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.asi-viajamos__item {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(24px, 2.4vw, 32px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.asi-viajamos__item:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+.asi-viajamos__titulo {
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 4px 0 0;
+}
+
+.asi-viajamos__texto {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.6;
   color: var(--ink-soft);
+}
+
+/* ── Dos viajes: tarjetas grandes con foto ───────────── */
+.dos-viajes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.viaje-tarjeta .tarjeta__titulo {
+  font-size: clamp(24px, 2.4vw, 30px);
+}
+
+/* ── Reseñas ─────────────────────────────────────────── */
+.resenas__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.resenas__grid--1 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.resenas__grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.resena {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: clamp(24px, 3vw, 40px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* Sobre azul la tarjeta no lleva relleno: el texto queda directamente
+   sobre --night, donde los tonos claros cumplen AA. */
+.band-night .resena {
+  background: transparent;
+  border-color: rgba(255, 255, 255, .24);
+}
+
+.resenas__grid--3 .resena--destacada {
+  grid-row: span 2;
+  justify-content: center;
+}
+
+.resena--destacada .resena__autor {
+  margin-top: 8px;
+}
+
+.resena__cita {
+  margin: 0;
+}
+
+.resena__comillas {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-size: 80px;
+  font-weight: 800;
+  line-height: .7;
+  color: var(--jade);
+  margin-bottom: 6px;
+}
+
+.band-night .resena__comillas {
+  color: var(--jade-soft);
+}
+
+.band-cream .resena__comillas {
+  color: var(--gold);
+}
+
+.resena__cita p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.band-night .resena__cita p {
+  color: var(--paper);
+}
+
+.resena--destacada .resena__cita p {
+  font-family: var(--font-family-heading);
+  font-size: clamp(22px, 2.2vw, 27px);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.resena__autor {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.resena__nombre {
+  font-weight: 700;
+  font-size: var(--fs-body);
+  color: var(--ink);
+}
+
+.resena__contexto {
+  font-size: var(--fs-body);
+  color: var(--ink-soft);
+}
+
+.band-night .resena__nombre {
+  color: var(--paper);
+}
+
+.band-night .resena__contexto {
+  color: #E6E1D6;
+}
+
+.band-night .testi-video summary {
+  color: var(--jade-soft);
+  border-color: var(--jade-soft);
+}
+
+.resenas__mas {
+  margin: 32px 0 0;
+  font-size: var(--fs-body);
+}
+
+/* ── Nuestra historia ────────────────────────────────── */
+.historia__grid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.historia__foto {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.historia__foto img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.historia__lead {
+  font-family: var(--font-family-heading);
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: var(--measure);
+  margin: 0 0 28px;
+}
+
+/* ── Blog en la home ─────────────────────────────────── */
+.blog-home__grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.blog-home__todos {
+  margin: 8px 0 0;
+  font-size: var(--fs-body);
+}
+
+.blog-home__lectura {
+  margin: 0;
+  font-size: var(--fs-body);
+  color: var(--muted);
+}
+
+/* ── Lo que van a vivir: pilares con icono ───────────── */
+.pilares {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 28px;
+}
+
+.pilar {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.pilar__titulo {
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 6px 0 8px;
+}
+
+.pilar__texto {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+
+/* ── Dos maneras de vivirlo (sobre azul) ─────────────── */
+.formatos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.formato {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: var(--radius);
+}
+
+.formato__titulo {
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.formatos .formato__etiqueta {
+  margin: 0;
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: .06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--jade-soft);
+}
+
+.formato__texto {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.65;
+}
+
+.formato__pie {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+.formato__incluye {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+/* La tarjeta del anuncio es clara aunque esté sobre azul */
+.band-night .anuncio-grupo__fecha {
+  color: var(--ink);
+}
+
+.band-night .anuncio-grupo__texto {
+  color: var(--ink-soft);
+}
+
+/* El separador del bastón abre la primera sección de su página */
+.separador-baston {
+  margin-bottom: 32px;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 960px) {
+  .confianza__lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .asi-viajamos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .asi-viajamos__item,
+  .asi-viajamos__item:nth-child(n + 4) {
+    grid-column: auto;
+  }
+
+  .asi-viajamos__item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .asi-viajamos,
+  .dos-viajes,
+  .resenas__grid,
+  .resenas__grid--2,
+  .formatos,
+  .historia__grid,
+  .blog-home__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .resenas__grid--3 .resena--destacada {
+    grid-row: auto;
+  }
+
+  .historia__foto {
+    max-width: 420px;
+  }
+}
+
+/* En móvil la franja de confianza pone el icono encima del texto, para
+   que cada frase tenga más ancho. */
+@media (max-width: 480px) {
+  .confianza__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta--enlace:hover {
+    transform: none;
+  }
 }

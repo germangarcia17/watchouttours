@@ -22,7 +22,7 @@
 }
 
 .prod-intro {
-  font-size: 16.5px;
+  font-size: var(--fs-lead);
   color: var(--ink-soft);
   margin: 0 auto;
   max-width: 54ch;
@@ -66,7 +66,7 @@
 
 .prod-card__etiqueta {
   display: inline-block;
-  font-size: 12.5px;
+  font-size: var(--fs-label);
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -78,13 +78,13 @@
 }
 
 .prod-card__titulo {
-  font-size: 22px;
+  font-size: var(--fs-h3);
   font-weight: 800;
   margin-bottom: 10px;
 }
 
 .prod-card__desc {
-  font-size: 14.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   line-height: 1.65;
   margin: 0;
@@ -107,14 +107,14 @@
 }
 
 .prod-card__precio-nota {
-  font-size: 13.5px;
+  font-size: var(--fs-body);
   color: var(--muted);
   line-height: 1.6;
   margin: 0 0 14px;
 }
 
 .prod-card__incluye-nota {
-  font-size: 13.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   line-height: 1.6;
   padding-left: 14px;
@@ -124,7 +124,7 @@
 
 .prod-card__footer .btn {
   padding: 12px 22px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* ── CTA final ───────────────────────────────────────── */
@@ -148,7 +148,7 @@
 }
 
 .prod-cta p {
-  font-size: 15.5px;
+  font-size: var(--fs-body);
   max-width: 54ch;
   margin-bottom: 22px;
 }

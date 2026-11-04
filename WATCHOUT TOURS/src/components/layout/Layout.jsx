@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
@@ -43,21 +43,51 @@ function AlternateLinks() {
   )
 }
 
+/* Botón flotante de WhatsApp: visible solo cuando no tapa nada útil.
+   Se oculta mientras se ve el hero a pantalla completa (taparía sus
+   botones) y cuando está en pantalla el CTA final, que ya tiene su propio
+   botón de WhatsApp. Oculto, sale también del orden de tabulación y del
+   árbol de accesibilidad (visibility: hidden en el CSS). */
+function useFabVisible() {
+  const { pathname } = useLocation()
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    if (typeof IntersectionObserver === 'undefined') { setVisible(true); return }
+    const enVista = new Map()
+    let observer
+    // Espera un fotograma para que la página nueva ya esté en el DOM.
+    const id = requestAnimationFrame(() => {
+      const objetivos = document.querySelectorAll('.hero-full, .final-cta')
+      if (objetivos.length === 0) { setVisible(true); return }
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(e => enVista.set(e.target, e.isIntersecting))
+        setVisible(![...enVista.values()].some(Boolean))
+      }, { threshold: 0.05 })
+      objetivos.forEach(o => { enVista.set(o, false); observer.observe(o) })
+    })
+    return () => { cancelAnimationFrame(id); observer?.disconnect() }
+  }, [pathname])
+
+  return visible
+}
+
 export function Layout() {
   const { t } = useTranslation()
+  const fabVisible = useFabVisible()
   return (
     <>
       <LangSync />
       <AlternateLinks />
       <SkipLink />
       <Header />
-      <main id="main-content" tabIndex={-1}>
+      <main id="main-content" className="site-main" tabIndex={-1}>
         <Outlet />
       </main>
       <Footer />
       <a
         href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20información%20sobre%20los%20viajes%20de%20WatchOut!"
-        className="whatsapp-fab"
+        className={`whatsapp-fab${fabVisible ? '' : ' whatsapp-fab--oculto'}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${t('common.whatsappFab')} ${t('common.newTab')}`}

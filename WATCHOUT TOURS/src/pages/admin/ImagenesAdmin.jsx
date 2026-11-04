@@ -3,6 +3,95 @@ import { supabase } from '../../lib/supabase'
 import { uploadImage } from '../../lib/storage'
 
 const NUEVAS_IMAGENES_SUGERIDAS = [
+  // ── Renovación visual: huecos de imagen nuevos ──────────────────────
+  // Cada uno se puede sustituir sin tocar código. Mientras no se suba una
+  // foto, la web usa la imagen actual del proyecto (en la galería de
+  // Viajes +60, Hobbiton, Milford Sound y Tekapo no se muestran hasta que
+  // tengan foto).
+  // Home: tarjeta “Viajes +60”
+  {
+    section: 'home', key: 'tarjeta-viajes-60',
+    image_alt: 'Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás',
+    image_alt_en: 'Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them',
+  },
+  // Home: tarjeta de personas ciegas y con baja visión
+  {
+    section: 'home', key: 'tarjeta-personas-ciegas',
+    image_alt: 'Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos',
+    image_alt_en: 'A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it',
+  },
+  // Personas ciegas: hero
+  {
+    section: 'mas-alla-de-la-vista', key: 'hero',
+    image_alt: 'El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa',
+    image_alt_en: 'The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush',
+  },
+  // Personas ciegas: “¿Cómo son nuestros viajes?”
+  {
+    section: 'mas-alla-de-la-vista', key: 'como-viajamos',
+    image_alt: 'Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado',
+    image_alt_en: 'Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky',
+  },
+  // Personas ciegas: “Lo que van a vivir”
+  {
+    section: 'mas-alla-de-la-vista', key: 'cultura',
+    image_alt: 'Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial',
+    image_alt_en: 'Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge',
+  },
+  // Viajes +60: “Para quién es”
+  {
+    section: 'sin-prisa', key: 'para-quien',
+    image_alt: 'Tres personas bajo secuoyas altísimas levantan los brazos para tocar una rama baja mientras la luz se filtra entre las copas',
+    image_alt_en: 'Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy',
+  },
+  // Viajes +60: “Casi todo, solo para vosotros”
+  {
+    section: 'sin-prisa', key: 'privado',
+    image_alt: 'Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial',
+    image_alt_en: 'Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge',
+  },
+  // Viajes +60: “Si viajas por tu cuenta”
+  {
+    section: 'sin-prisa', key: 'solo',
+    image_alt: 'Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos',
+    image_alt_en: 'A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it',
+  },
+  // Viajes +60: “Para tu familia”
+  {
+    section: 'sin-prisa', key: 'familia',
+    image_alt: 'Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua',
+    image_alt_en: 'Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua',
+  },
+  // Viajes +60: galería, Hobbiton
+  {
+    section: 'sin-prisa', key: 'galeria-hobbiton',
+    image_alt: 'Hobbiton, en Matamata: casas hobbit entre colinas verdes',
+    image_alt_en: 'Hobbiton, Matamata: hobbit holes set among green hills',
+  },
+  // Viajes +60: galería, Rotorua
+  {
+    section: 'sin-prisa', key: 'galeria-rotorua',
+    image_alt: 'Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás',
+    image_alt_en: 'Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them',
+  },
+  // Viajes +60: galería, Milford Sound
+  {
+    section: 'sin-prisa', key: 'galeria-milford-sound',
+    image_alt: 'Milford Sound: paredes de roca verticales que se levantan sobre el agua del fiordo',
+    image_alt_en: 'Milford Sound: sheer rock walls rising straight out of the fiord',
+  },
+  // Viajes +60: galería, Tekapo
+  {
+    section: 'sin-prisa', key: 'galeria-tekapo',
+    image_alt: 'El lago Tekapo, de agua turquesa, con montañas al fondo',
+    image_alt_en: 'Lake Tekapo’s turquoise water with mountains behind',
+  },
+  // Viajes +60: galería, Kaikōura
+  {
+    section: 'sin-prisa', key: 'galeria-kaikoura',
+    image_alt: 'Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado',
+    image_alt_en: 'Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky',
+  },
   // Hero de /sin-prisa: de momento usa el paisaje del géiser de la home;
   // falta una foto propia (puerto, barco u Hobbiton).
   {

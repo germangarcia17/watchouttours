@@ -7,21 +7,26 @@ import videoParapente from '../images/parapente-teaser.mp4'
 import imgParapentePoster from '../images/parapente-poster.jpg'
 import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
+import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
-import { SeparadorBaston, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
+import { HeroFoto, SeparadorBaston, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
 
-/* ── Más allá de la vista ────────────────────────────────────────────────
- * Línea de viajes para personas ciegas y con baja visión
- * (/mas-alla-de-la-vista ↔ /en/beyond-sight). Es el contenido que tenía la
- * home antes de pasar a ser la home de marca: mismos textos (namespace
- * masAlla en los locales), mismas imágenes y mismos estilos (Home.css).
+/* Iconos de "Lo que van a vivir": adrenalina, sentidos y cultura. */
+const ICONOS_PILARES = ['parapente', 'sentidos', 'ola']
+
+/* ── Viajes para personas ciegas y con baja visión ───────────────────────
+ * (/mas-alla-de-la-vista ↔ /en/beyond-sight). Mismos textos que antes;
+ * maquetación renovada: hero a pantalla completa, un solo patrón de
+ * encabezado (antetítulo + h2) y fondos alternos.
+ * Imágenes editables desde /admin/imagenes, sección "mas-alla-de-la-vista".
  * ──────────────────────────────────────────────────────────────────────── */
 export default function MasAllaDeLaVista() {
   const { t } = useTranslation()
   const formatos = t('masAlla.rutas.formatos', { returnObjects: true })
 
-  // Misma imagen del hero que la home (editable desde /admin/imagenes).
-  const heroImg = useSiteImage('home', 'hero', imgHero, t('masAlla.heroImgAlt'))
+  const heroImg = useSiteImage('mas-alla-de-la-vista', 'hero', imgHero, t('masAlla.heroImgAlt'))
+  const viajesImg = useSiteImage('mas-alla-de-la-vista', 'como-viajamos', imgKayak, t('masAlla.viajes.fotoAlt'))
+  const culturaImg = useSiteImage('mas-alla-de-la-vista', 'cultura', imgHaka, t('masAlla.cultura.fotoAlt'))
 
   return (
     <>
@@ -33,44 +38,27 @@ export default function MasAllaDeLaVista() {
         description={t('masAlla.seo.description')}
       />
 
-      {/* ── Hero ──────────────────────────────────────── */}
-      <section className="hero">
-        <div className="hero-photo-panel">
-          <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
-        </div>
-        <div className="wrap">
-          <div className="hero-inner">
-            <span className="eyebrow">{t('masAlla.hero.eyebrow')}</span>
-            <div className="hero-headline-row">
-              <h1 className="hero-big-text">{t('masAlla.hero.big1')}<br />{t('masAlla.hero.big2')}</h1>
-              <div className="hero-headline-side">
-                <p>{t('masAlla.hero.sub')}</p>
-                <div className="cta-row">
-                  <L to="/contacto" className="btn btn-solid">{t('masAlla.hero.ctaPrimary')}</L>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SeparadorBaston />
+      <HeroFoto
+        imagen={heroImg}
+        antetitulo={t('masAlla.hero.eyebrow')}
+        titulo={<>{t('masAlla.hero.big1')}<br />{t('masAlla.hero.big2')}</>}
+        subtitulo={t('masAlla.hero.sub')}
+      >
+        <L to="/contacto" className="btn btn-solid">{t('masAlla.hero.ctaPrimary')}</L>
+      </HeroFoto>
 
       {/* ── Cómo son nuestros viajes ──────────────────── */}
-      <section id="viajes">
+      <section id="viajes" aria-labelledby="viajes-heading">
+        {/* Firma de esta línea: el bastón, una sola vez. */}
+        <SeparadorBaston />
         <div className="wrap">
           <div className="intro-grid">
-            <div className="intro-card">
-              <img
-                className="intro-card__foto"
-                src={imgKayak}
-                alt={t('masAlla.viajes.fotoAlt')}
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <h2 className="sec-eyebrow">{t('masAlla.viajes.eyebrow')}</h2>
-              <p className="sec-title">{t('masAlla.viajes.title')}</p>
+            <figure className="foto-marco">
+              <img src={viajesImg.src} alt={viajesImg.alt} lang={viajesImg.lang} loading="lazy" />
+            </figure>
+            <div className="prosa">
+              <p className="sec-eyebrow">{t('masAlla.viajes.eyebrow')}</p>
+              <h2 id="viajes-heading" className="sec-title">{t('masAlla.viajes.title')}</h2>
               <p>{t('masAlla.viajes.p1')}</p>
               <p>{t('masAlla.viajes.p2')}</p>
               <p>{t('masAlla.viajes.p3')}</p>
@@ -81,37 +69,31 @@ export default function MasAllaDeLaVista() {
         </div>
       </section>
 
-      <SeparadorBaston />
-
       {/* ── Lo que van a vivir (+ foto del haka) ──────── */}
-      <section id="cultura">
+      <section id="cultura" className="band-cream" aria-labelledby="cultura-heading">
         <div className="wrap">
           <div className="explorar-grid">
             <div>
-              <h2 className="sec-eyebrow">{t('masAlla.explorar.eyebrow')}</h2>
-              <p className="sec-title">{t('masAlla.explorar.title')}</p>
-              <p className="sec-sub">{t('masAlla.explorar.sub')}</p>
-              <span className="sr-only">{t('masAlla.explorar.srQ')}</span>
-              <div className="pillars">
-                <div className="pillar">
-                  <div className="ico" aria-hidden="true">🪂</div>
-                  <h3>{t('masAlla.explorar.p1Title')}</h3>
-                  <p>{t('masAlla.explorar.p1Text')}</p>
-                </div>
-                <div className="pillar">
-                  <div className="ico" aria-hidden="true">✋</div>
-                  <h3>{t('masAlla.explorar.p2Title')}</h3>
-                  <p>{t('masAlla.explorar.p2Text')}</p>
-                </div>
-                <div className="pillar">
-                  <div className="ico" aria-hidden="true">🌊</div>
-                  <h3>{t('masAlla.explorar.p3Title')}</h3>
-                  <p>{t('masAlla.explorar.p3Text')}</p>
-                </div>
+              <div className="sec-head">
+                <p className="sec-eyebrow">{t('masAlla.explorar.eyebrow')}</p>
+                <h2 id="cultura-heading" className="sec-title">{t('masAlla.explorar.title')}</h2>
+                <p className="sec-sub">{t('masAlla.explorar.sub')}</p>
               </div>
+              <span className="sr-only">{t('masAlla.explorar.srQ')}</span>
+              <ul className="pilares">
+                {[1, 2, 3].map((n, i) => (
+                  <li key={n} className="pilar">
+                    <span className="icono-circulo"><Icono nombre={ICONOS_PILARES[i]} /></span>
+                    <div>
+                      <h3 className="pilar__titulo">{t(`masAlla.explorar.p${n}Title`)}</h3>
+                      <p className="pilar__texto">{t(`masAlla.explorar.p${n}Text`)}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
             <figure className="cultura-foto">
-              <img src={imgHaka} alt={t('masAlla.cultura.fotoAlt')} loading="lazy" />
+              <img src={culturaImg.src} alt={culturaImg.alt} lang={culturaImg.lang} loading="lazy" />
               <figcaption>
                 <span className="tag">{t('masAlla.cultura.tag')}</span>
                 <p>{t('masAlla.cultura.caption')}</p>
@@ -121,10 +103,8 @@ export default function MasAllaDeLaVista() {
         </div>
       </section>
 
-      <SeparadorBaston />
-
       {/* ── Así se vive la aventura (vídeo del parapente) ── */}
-      <section id="en-accion">
+      <section id="en-accion" aria-labelledby="accion-heading">
         <div className="wrap">
           <div className="reel-grid">
             <div className="reel-frame">
@@ -137,67 +117,58 @@ export default function MasAllaDeLaVista() {
                 aria-label={t('masAlla.reel.videoAria')}
               />
             </div>
-            <div className="reel-copy">
-              <h2 className="sec-eyebrow">{t('masAlla.reel.eyebrow')}</h2>
-              <p className="callout">{t('masAlla.reel.callout')}</p>
+            <div className="reel-copy prosa">
+              <p className="sec-eyebrow">{t('masAlla.reel.eyebrow')}</p>
+              <h2 id="accion-heading" className="sec-title">{t('masAlla.reel.callout')}</h2>
               <p>{t('masAlla.reel.p1')}</p>
               <p>{t('masAlla.reel.p2')}</p>
-            </div>
-          </div>
-          <div className="reel-instagram">
-            <a className="btn btn-outline" href="https://www.instagram.com/watchouttours/" target="_blank" rel="noopener noreferrer">{t('masAlla.reel.instagram')}<span className="sr-only"> {t('masAlla.reel.newTab')}</span></a>
-          </div>
-        </div>
-      </section>
-
-      <SeparadorBaston />
-
-      {/* ── Dos maneras de vivirlo — bloque oscuro ────── */}
-      <section id="rutas">
-        <div className="wrap">
-          <div className="ink-block rutas-black">
-            <h2 className="sec-eyebrow">{t('masAlla.rutas.eyebrow')}</h2>
-            <p className="sec-title">{t('masAlla.rutas.title')}</p>
-            <p className="sec-sub">{t('masAlla.rutas.sub')}</p>
-
-            <div className="prod-list">
-              {formatos.map(({ id, etiqueta, titulo, cuerpo, incluye, cta }) => (
-                <article key={id} id={id} aria-labelledby={`${id}-heading`} className="prod-card">
-                  <div className="prod-card__head">
-                    <h3 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h3>
-                    <span className="prod-card__etiqueta">{etiqueta}</span>
-                    <p className="prod-card__desc">{cuerpo}</p>
-                  </div>
-
-                  <div className="prod-card__footer">
-                    <p className="prod-card__incluye-nota"><strong>{t('masAlla.rutas.incluido')}</strong> {incluye}</p>
-                    <div className="cta-row">
-                      <L to="/contacto" className="btn btn-solid">{cta}</L>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="anuncio-grupo">
-              <span className="anuncio-grupo__badge">
-                <span className="anuncio-grupo__punto" aria-hidden="true"></span>
-                {t('masAlla.rutas.anuncioBadge')}
-              </span>
-              <p className="anuncio-grupo__fecha">{t('masAlla.rutas.anuncioFecha')}</p>
-              <p className="anuncio-grupo__texto">{t('masAlla.rutas.anuncioTexto')}</p>
-              <div className="cta-row" style={{ justifyContent: 'center' }}>
-                <L to="/contacto" className="btn btn-solid anuncio-grupo__cta">{t('masAlla.rutas.anuncioCta')}<span aria-hidden="true"> →</span></L>
+              <div className="cta-row">
+                <a className="btn btn-outline" href="https://www.instagram.com/watchouttours/" target="_blank" rel="noopener noreferrer">{t('masAlla.reel.instagram')}<span className="sr-only"> {t('masAlla.reel.newTab')}</span></a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <SeparadorBaston />
+      {/* ── Dos maneras de vivirlo — banda azul ───────── */}
+      <section id="rutas" className="band-night" aria-labelledby="rutas-heading">
+        <div className="wrap">
+          <div className="sec-head">
+            <p className="sec-eyebrow">{t('masAlla.rutas.eyebrow')}</p>
+            <h2 id="rutas-heading" className="sec-title">{t('masAlla.rutas.title')}</h2>
+            <p className="sec-sub">{t('masAlla.rutas.sub')}</p>
+          </div>
 
-      {/* ── Reseñas ───────────────────────────────────── */}
-      <ResenasDestacadas />
+          <div className="formatos">
+            {formatos.map(({ id, etiqueta, titulo, cuerpo, incluye, cta }) => (
+              <article key={id} id={id} aria-labelledby={`${id}-heading`} className="formato">
+                <h3 id={`${id}-heading`} className="formato__titulo">{titulo}</h3>
+                <p className="formato__etiqueta">{etiqueta}</p>
+                <p className="formato__texto">{cuerpo}</p>
+                <div className="formato__pie">
+                  <p className="formato__incluye"><strong>{t('masAlla.rutas.incluido')}</strong> {incluye}</p>
+                  <L to="/contacto" className="btn btn-solid">{cta}</L>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="anuncio-grupo">
+            <span className="anuncio-grupo__badge">
+              <span className="anuncio-grupo__punto" aria-hidden="true"></span>
+              {t('masAlla.rutas.anuncioBadge')}
+            </span>
+            <p className="anuncio-grupo__fecha">{t('masAlla.rutas.anuncioFecha')}</p>
+            <p className="anuncio-grupo__texto">{t('masAlla.rutas.anuncioTexto')}</p>
+            <div className="cta-row" style={{ justifyContent: 'center' }}>
+              <L to="/contacto" className="btn btn-solid anuncio-grupo__cta">{t('masAlla.rutas.anuncioCta')}<span aria-hidden="true"> →</span></L>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Reseñas (banda crema) ─────────────────────── */}
+      <ResenasDestacadas tono="cream" />
 
       {/* ── CTA final ─────────────────────────────────── */}
       <CtaFinal

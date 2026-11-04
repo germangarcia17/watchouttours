@@ -176,11 +176,16 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0;
 }
 
+/* Zona táctil de 44 px por enlace */
 .footer-col__list a {
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 1rem;
   color: var(--color-text-alt);
   text-decoration: none;
   transition: color 0.2s;
@@ -254,5 +259,44 @@ body {
 @media (max-width: 768px) {
   .container {
     padding-inline: 1rem;
+  }
+}
+/* ── Renovación visual: pie y botón flotante de WhatsApp ── */
+/* Botones sociales del pie con zona táctil de 44 px */
+.footer-whatsapp,
+.footer-instagram {
+  min-height: 44px;
+}
+
+/* El botón flotante respeta las zonas seguras del teléfono */
+.whatsapp-fab {
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  right: calc(1.25rem + env(safe-area-inset-right, 0px));
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease, visibility .2s;
+}
+
+/* Oculto mientras se ve el hero o el CTA final (ver useFabVisible en
+   Layout.jsx) y con el menú móvil abierto. visibility lo saca también
+   del orden de tabulación y de los lectores de pantalla. */
+.whatsapp-fab--oculto,
+body.menu-abierto .whatsapp-fab {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+/* Margen al final de la página para que el botón nunca tape el último
+   contenido (el pie) en móvil. */
+@media (max-width: 760px) {
+  .site-footer__bottom {
+    padding-bottom: calc(1.25rem + 72px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab--oculto,
+  body.menu-abierto .whatsapp-fab {
+    transform: none;
   }
 }

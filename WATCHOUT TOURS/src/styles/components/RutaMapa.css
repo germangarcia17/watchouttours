@@ -3,13 +3,11 @@
    paradas de al lado/debajo contiene el mismo contenido en texto real,
    navegable con teclado y lector de pantalla. */
 
-.ruta-mapa {
-  padding: 24px 0 56px;
-}
+/* El espacio vertical lo pone .site-main > section (--section-space). */
 
 .ruta-mapa__grid {
   display: grid;
-  grid-template-columns: minmax(220px, 300px) 1fr;
+  grid-template-columns: minmax(220px, 340px) 1fr;
   gap: 40px;
   align-items: start;
   margin-top: 8px;
@@ -19,7 +17,7 @@
 .ruta-mapa__svg-wrap {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 340px;
   margin: 0 auto;
 }
 
@@ -32,32 +30,49 @@
 .ruta-mapa__isla {
   fill: var(--paper-deep);
   stroke: var(--night);
-  stroke-width: 3;
+  stroke-width: 2;
   stroke-linejoin: round;
 }
 
+/* Sobre la banda crema, las islas en blanco para que se distingan */
+.band-cream .ruta-mapa__isla {
+  fill: var(--paper);
+}
+
+/* Zona táctil de 44×44 px; el círculo visible mide 32 px. */
 .ruta-mapa__pin {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--coral), var(--amber2));
   color: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: var(--font-family-mono);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   text-decoration: none;
+}
+
+.ruta-mapa__pin span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--amber2));
   box-shadow: 0 2px 8px rgba(21, 20, 15, .25);
   border: 2px solid var(--paper);
   transition: transform .15s ease;
 }
 
+.ruta-mapa__pin:hover span {
+  transform: scale(1.12);
+}
+
 .ruta-mapa__pin:hover {
-  transform: translate(-50%, -50%) scale(1.12);
+  text-decoration: none;
 }
 
 /* ── Lista de paradas (contenido real y equivalente) ─────── */
@@ -87,8 +102,8 @@
 
 .ruta-mapa__numero {
   flex-shrink: 0;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--coral), var(--amber2));
   color: var(--ink);
@@ -101,13 +116,13 @@
 }
 
 .ruta-mapa__nombre {
-  font-size: 17px;
+  font-size: var(--fs-h3);
   font-weight: 800;
   margin: 0 0 4px;
 }
 
 .ruta-mapa__resumen {
-  font-size: 14.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   line-height: 1.6;
   margin: 0;

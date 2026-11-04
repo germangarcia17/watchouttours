@@ -62,6 +62,15 @@
       "ctaSinPrisa": "Viajes +60",
       "ctaMasAlla": "Viajes para personas ciegas y con baja visión"
     },
+    "confianza": {
+      "titulo": "Por qué viajar con Watchout Tours",
+      "items": [
+        "Máximo 6 personas",
+        "2 guías todo el viaje",
+        "Visitas privadas",
+        "8 años viviendo en Nueva Zelanda"
+      ]
+    },
     "asiViajamos": {
       "title": "Así viajamos",
       "puntos": [
@@ -95,14 +104,16 @@
           "to": "/sin-prisa",
           "titulo": "Viajes +60",
           "texto": "Nueva Zelanda con calma y sin ocuparte de nada. Hoteles de 4 y 5 estrellas, desayunos y cenas incluidos, un transporte cómodo y nosotras dos contigo de principio a fin.",
-          "cta": "Descubre los viajes +60"
+          "cta": "Descubre los viajes +60",
+          "imgAlt": "Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás"
         },
         {
           "id": "mas-alla",
           "to": "/mas-alla-de-la-vista",
           "titulo": "Viajes para personas ciegas y con baja visión",
           "texto": "No toda visión necesita ojos. Un viaje diseñado para personas ciegas y con baja visión, donde cada lugar se vive con las manos, el oído y la piel, y la aventura llega hasta donde tú quieras.",
-          "cta": "Descubre los viajes para personas ciegas y con baja visión"
+          "cta": "Descubre los viajes para personas ciegas y con baja visión",
+          "imgAlt": "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos"
         }
       ]
     },
@@ -256,7 +267,8 @@
     "paraQuien": {
       "title": "Para quién es",
       "p1": "Para quien siempre ha soñado con ir al otro lado del mundo y nunca ha encontrado el momento, la compañía o las ganas de organizarlo. Para parejas que por fin tienen tiempo, para grupos de amigos que llevan años diciendo “algún día” y para quien viaja por su cuenta y quiere volver con amigos nuevos.",
-      "p2": "Aquí no tienes que preocuparte del idioma, de las maletas, de los horarios ni de con quién cenar. De eso nos ocupamos nosotras."
+      "p2": "Aquí no tienes que preocuparte del idioma, de las maletas, de los horarios ni de con quién cenar. De eso nos ocupamos nosotras.",
+      "imgAlt": "Tres personas bajo secuoyas altísimas levantan los brazos para tocar una rama baja mientras la luz se filtra entre las copas"
     },
     "incluye": {
       "title": "Qué incluye",
@@ -271,19 +283,39 @@
     },
     "privado": {
       "title": "Casi todo, solo para vosotros",
-      "p": "En Hobbiton recorréis la Comarca con un guía para el grupo y coméis en la Taberna del Dragón Verde. En Rotorua, un guía maorí os acompaña durante todo el día. En Auckland navegáis por el puerto en un velero solo para vosotros. Sin colas, sin esperar a cuarenta personas y con todo el tiempo del mundo para preguntar."
+      "p": "En Hobbiton recorréis la Comarca con un guía para el grupo y coméis en la Taberna del Dragón Verde. En Rotorua, un guía maorí os acompaña durante todo el día. En Auckland navegáis por el puerto en un velero solo para vosotros. Sin colas, sin esperar a cuarenta personas y con todo el tiempo del mundo para preguntar.",
+      "imgAlt": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial"
     },
     "solo": {
       "title": "Si viajas por tu cuenta",
-      "p": "Mucha gente viaja con nosotras por su cuenta, y en dos días ya forma parte del grupo. Puedes tener tu propia habitación o, si lo prefieres, compartirla con otra persona del grupo que también viaje por su cuenta."
+      "p": "Mucha gente viaja con nosotras por su cuenta, y en dos días ya forma parte del grupo. Puedes tener tu propia habitación o, si lo prefieres, compartirla con otra persona del grupo que también viaje por su cuenta.",
+      "imgAlt": "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos"
     },
     "familia": {
       "title": "Para tu familia",
-      "p": "Moni y Sylvie viven en Nueva Zelanda desde hace ocho años y acompañan al grupo todos los días, con asistencia las 24 horas. Tu familia puede estar tranquila: estás con nosotras."
+      "p": "Moni y Sylvie viven en Nueva Zelanda desde hace ocho años y acompañan al grupo todos los días, con asistencia las 24 horas. Tu familia puede estar tranquila: estás con nosotras.",
+      "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua"
     },
     "dia": {
       "title": "Así es un día de viaje",
-      "p": "Desayuno tranquilo en el hotel. Salimos hacia el sur entre colinas verdes llenas de ovejas. A media mañana llegamos a Hobbiton, donde un guía espera solo a nuestro grupo para recorrer la Comarca. Comemos en la Taberna del Dragón Verde, con su postre y sin mirar el reloj. Por la tarde, carretera hasta Rotorua, donde el aire ya huele a azufre. Cena en el hotel y a descansar."
+      "momentos": [
+        {
+          "etiqueta": "Mañana",
+          "texto": "Desayuno tranquilo en el hotel. Salimos hacia el sur entre colinas verdes llenas de ovejas."
+        },
+        {
+          "etiqueta": "Mediodía",
+          "texto": "A media mañana llegamos a Hobbiton, donde un guía espera solo a nuestro grupo para recorrer la Comarca. Comemos en la Taberna del Dragón Verde, con su postre y sin mirar el reloj."
+        },
+        {
+          "etiqueta": "Tarde",
+          "texto": "Por la tarde, carretera hasta Rotorua, donde el aire ya huele a azufre."
+        },
+        {
+          "etiqueta": "Noche",
+          "texto": "Cena en el hotel y a descansar."
+        }
+      ]
     },
     "ruta": {
       "title": "La ruta",
@@ -318,6 +350,36 @@
     "llevaras": {
       "title": "Lo que te llevarás",
       "p": "El vapor de los géiseres en la piel. El canto de las ballenas por hidrófono en Kaikōura. Las estrellas de Tekapo contadas junto a una hoguera. El sabor del hāngi, cocinado bajo tierra con piedras volcánicas."
+    },
+    "galeria": {
+      "aria": "Momentos del viaje",
+      "items": [
+        {
+          "id": "hobbiton",
+          "lugar": "Hobbiton",
+          "alt": "Hobbiton, en Matamata: casas hobbit entre colinas verdes"
+        },
+        {
+          "id": "rotorua",
+          "lugar": "Rotorua",
+          "alt": "Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás"
+        },
+        {
+          "id": "milford-sound",
+          "lugar": "Milford Sound",
+          "alt": "Milford Sound: paredes de roca verticales que se levantan sobre el agua del fiordo"
+        },
+        {
+          "id": "tekapo",
+          "lugar": "Tekapo",
+          "alt": "El lago Tekapo, de agua turquesa, con montañas al fondo"
+        },
+        {
+          "id": "kaikoura",
+          "lugar": "Kaikōura",
+          "alt": "Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado"
+        }
+      ]
     },
     "faq": {
       "title": "¿Es este viaje para mí?",
