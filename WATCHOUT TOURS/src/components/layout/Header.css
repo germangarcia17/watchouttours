@@ -296,7 +296,12 @@
     padding-block: 0;
   }
 
+  /* Los nombres largos ("Viajes para personas ciegas y con baja visión")
+     pasan a dos líneas en vez de salirse de la pantalla. */
   .nav-dropdown__link {
     display: block;
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.35;
   }
 }

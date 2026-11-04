@@ -26,8 +26,8 @@
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "switchLang": "View this page in English",
-    "sinPrisa": "Sin Prisa",
-    "masAlla": "Más allá de la vista",
+    "sinPrisa": "Viajes +60",
+    "masAlla": "Viajes para personas ciegas y con baja visión",
     "todas": "Todas las experiencias"
   },
   "footer": {
@@ -40,8 +40,8 @@
     "sobreNosotras": "Sobre nosotras",
     "resenas": "Reseñas",
     "blog": "Blog",
-    "sinPrisa": "Sin Prisa",
-    "masAlla": "Más allá de la vista",
+    "sinPrisa": "Viajes +60",
+    "masAlla": "Viajes para personas ciegas y con baja visión",
     "todasExperiencias": "Todas las experiencias",
     "disenaViaje": "Diseña tu viaje",
     "accesibilidad": "Accesibilidad",
@@ -52,21 +52,21 @@
   "home": {
     "seo": {
       "title": "Viajes sensoriales por Nueva Zelanda en español | Watchout Tours",
-      "description": "Viajes en grupo pequeño por Nueva Zelanda, a ritmo tranquilo y con dos guías contigo de principio a fin. Para quien quiere comodidad total y para personas ciegas y con baja visión."
+      "description": "Viajes en grupos de máximo 6 personas por Nueva Zelanda, a ritmo tranquilo y con dos guías contigo de principio a fin. Para quien quiere comodidad total y para personas ciegas y con baja visión."
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
       "eyebrow": "Viajes sensoriales por Nueva Zelanda, en español",
       "h1": "Nueva Zelanda con todos los sentidos.",
-      "sub": "Grupos de pocas personas, un ritmo que nadie apresura y nosotras dos a tu lado cada día del viaje.",
-      "ctaSinPrisa": "Viajes Sin Prisa",
+      "sub": "Grupos de 6 personas como máximo, un ritmo que nadie apresura y nosotras dos a tu lado cada día del viaje.",
+      "ctaSinPrisa": "Viajes +60",
       "ctaMasAlla": "Viajes para personas ciegas y con baja visión"
     },
     "asiViajamos": {
       "title": "Así viajamos",
       "puntos": [
         {
-          "titulo": "Grupos pequeños.",
+          "titulo": "Grupos de 6 personas como máximo.",
           "texto": "Pocas personas, para que el viaje se adapte a vosotros y no al revés."
         },
         {
@@ -93,16 +93,16 @@
         {
           "id": "sin-prisa",
           "to": "/sin-prisa",
-          "titulo": "Sin Prisa",
+          "titulo": "Viajes +60",
           "texto": "Nueva Zelanda con calma y sin ocuparte de nada. Hoteles de 4 y 5 estrellas, desayunos y cenas incluidos, un transporte cómodo y nosotras dos contigo de principio a fin.",
-          "cta": "Descubre Sin Prisa"
+          "cta": "Descubre los viajes +60"
         },
         {
           "id": "mas-alla",
           "to": "/mas-alla-de-la-vista",
-          "titulo": "Más allá de la vista",
+          "titulo": "Viajes para personas ciegas y con baja visión",
           "texto": "No toda visión necesita ojos. Un viaje diseñado para personas ciegas y con baja visión, donde cada lugar se vive con las manos, el oído y la piel, y la aventura llega hasta donde tú quieras.",
-          "cta": "Descubre Más allá de la vista"
+          "cta": "Descubre los viajes para personas ciegas y con baja visión"
         }
       ]
     },
@@ -209,7 +209,7 @@
     "rutas": {
       "eyebrow": "Nuestras opciones",
       "title": "Dos maneras de vivirlo",
-      "sub": "La misma ruta, tú escoges tu formato: en grupo pequeño con fechas cerradas, o privado y a tu ritmo.",
+      "sub": "La misma ruta, tú escoges tu formato: en grupo de 6 personas como máximo, con fechas cerradas, o privado y a tu ritmo.",
       "incluido": "Incluido:",
       "anuncioBadge": "¡Ya tenemos fecha!",
       "anuncioFecha": "Nuevo grupo: salimos el 1 de marzo",
@@ -220,7 +220,7 @@
           "id": "grupo",
           "etiqueta": "15 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos",
           "titulo": "La aventura compartida",
-          "cuerpo": "Un grupo reducido de viajeros con las mismas ganas que tú de descubrir el mundo. Durante 15 días recorreremos juntos Nueva Zelanda, compartiendo aventuras, risas y momentos que recordarás toda la vida. Porque algunos viajes terminan… y otros te regalan amistades para siempre. Nosotras estaremos a vuestro lado en cada paso del camino, desde el primer día hasta el último.",
+          "cuerpo": "Un grupo de 6 viajeros como máximo, con las mismas ganas que tú de descubrir el mundo. Durante 15 días recorreremos juntos Nueva Zelanda, compartiendo aventuras, risas y momentos que recordarás toda la vida. Porque algunos viajes terminan… y otros te regalan amistades para siempre. Nosotras estaremos a vuestro lado en cada paso del camino, desde el primer día hasta el último.",
           "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 14 noches.",
           "cta": "Quiero más información"
         },
@@ -243,14 +243,14 @@
   },
   "sinPrisa": {
     "seo": {
-      "title": "Sin Prisa · Viajes tranquilos por Nueva Zelanda en grupo pequeño | Watchout Tours",
-      "description": "Quince días por Nueva Zelanda a ritmo tranquilo, con visitas privadas, hoteles de 4 y 5 estrellas, desayuno y cena incluidos y dos guías en español todo el viaje."
+      "title": "Viajes +60 por Nueva Zelanda en grupos de máximo 6 personas | Watchout Tours",
+      "description": "Quince días por Nueva Zelanda a ritmo tranquilo, en grupos de máximo 6 personas, con visitas privadas, hoteles de 4 y 5 estrellas, desayuno y cena incluidos y dos guías en español todo el viaje."
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
-      "eyebrow": "Sin Prisa · Nueva Zelanda con todos los sentidos",
+      "eyebrow": "Viajes +60 · Nueva Zelanda con todos los sentidos",
       "h1": "Ese viaje que llevas años prometiéndote.",
-      "sub": "Quince días por Nueva Zelanda en un grupo pequeño, a un ritmo tranquilo y con Moni y Sylvie a tu lado desde que aterrizas hasta el último abrazo en el aeropuerto.",
+      "sub": "Quince días por Nueva Zelanda en un grupo de 6 personas como máximo, a un ritmo tranquilo y con Moni y Sylvie a tu lado desde que aterrizas hasta el último abrazo en el aeropuerto.",
       "cta": "Quiero información"
     },
     "paraQuien": {
@@ -287,7 +287,7 @@
     },
     "ruta": {
       "title": "La ruta",
-      "navAria": "Mapa de la ruta Sin Prisa por Nueva Zelanda",
+      "navAria": "Mapa de la ruta de los viajes +60 por Nueva Zelanda",
       "paradas": [
         {
           "id": "sp-auckland",

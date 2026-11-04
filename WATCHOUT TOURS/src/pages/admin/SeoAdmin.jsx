@@ -9,8 +9,8 @@ const PAGE_LABELS = {
   // Las dos líneas de viaje: los campos ES son de /sin-prisa y
   // /mas-alla-de-la-vista, y los "(inglés)" de /en/unhurried y
   // /en/beyond-sight.
-  'sin-prisa': 'Sin Prisa (/sin-prisa · /en/unhurried)',
-  'mas-alla-de-la-vista': 'Más allá de la vista (/mas-alla-de-la-vista · /en/beyond-sight)',
+  'sin-prisa': 'Viajes +60 (/sin-prisa · /en/unhurried)',
+  'mas-alla-de-la-vista': 'Viajes para personas ciegas y con baja visión (/mas-alla-de-la-vista · /en/beyond-sight)',
   'productos': 'Rutas (Productos)',
   'reseñas': 'Reseñas',
   'blog': 'Blog',
