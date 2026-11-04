@@ -27,15 +27,11 @@ import { writeFileSync, readFileSync, mkdirSync, copyFileSync, existsSync } from
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve, join } from 'node:path'
 import { STATIC_ROUTES } from './routes.mjs'
-import { availableLangs } from '../src/i18n/pageLanguages.js'
+import { availableLangs, enPathFor } from '../src/i18n/pageLanguages.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DIST_DIR = resolve(__dirname, '..', 'dist')
 const SSR_ENTRY = resolve(__dirname, '..', 'dist-server', 'entry-server.js')
-
-function enPath(path) {
-  return path === '/' ? '/en' : `/en${path}`
-}
 
 async function fetchBuildTimeData() {
   const url  = process.env.VITE_SUPABASE_URL
@@ -139,15 +135,19 @@ async function main() {
     const langs = availableLangs(path)
     const preloadEs = path === '/'
       ? { homeResenas: data.homeResenas, homeBlogPreview: data.homeBlogPreview }
+      : path === '/mas-alla-de-la-vista' ? { homeResenas: data.homeResenas }
       : path === '/resenas' ? { resenas: data.resenas }
       : path === '/blog' ? { blogList: data.blogList }
       : {}
 
+    // La URL inglesa puede tener otro slug (ver LOCALIZED_SLUGS en
+    // src/i18n/pageLanguages.js): el archivo se escribe en su ruta real.
+    const enUrl = enPathFor(path)
     const esOut = path === '/' ? join(DIST_DIR, 'index.html') : join(DIST_DIR, path.slice(1), 'index.html')
-    const enOut = path === '/' ? join(DIST_DIR, 'en', 'index.html') : join(DIST_DIR, 'en', path.slice(1), 'index.html')
+    const enOut = join(DIST_DIR, enUrl.slice(1), 'index.html')
 
     if (langs.includes('es')) await render1(path, preloadEs, esOut)
-    if (langs.includes('en')) await render1(enPath(path), preloadEs, enOut)
+    if (langs.includes('en')) await render1(enUrl, preloadEs, enOut)
   }
 
   // ── Artículos del blog (ES + EN) ─────────────────────────────────────

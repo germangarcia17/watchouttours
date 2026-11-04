@@ -16,19 +16,21 @@ import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { STATIC_ROUTES } from './routes.mjs'
-import { availableLangs } from '../src/i18n/pageLanguages.js'
+import { availableLangs, enPathFor } from '../src/i18n/pageLanguages.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 /* Dominio de producción. Configurable con SITE_URL por si cambia. Sin barra final. */
 const SITE_URL = (process.env.SITE_URL || 'https://watchouttours.nz').replace(/\/+$/, '')
 
-/* URL española (sin prefijo) e inglesa (/en) para una ruta base dada. */
+/* URL española (sin prefijo) e inglesa (/en, con su slug inglés si lo
+   tiene) para una ruta base dada. */
 function esUrl(path) {
   return `${SITE_URL}${path}`
 }
 function enUrl(path) {
-  return `${SITE_URL}${path === '/' ? '/en' : `/en${path}`}`
+  // El slug inglés puede ser distinto (ver LOCALIZED_SLUGS).
+  return `${SITE_URL}${enPathFor(path)}`
 }
 
 /* Bloque <url> con enlaces alternos hreflang, solo para los idiomas en que

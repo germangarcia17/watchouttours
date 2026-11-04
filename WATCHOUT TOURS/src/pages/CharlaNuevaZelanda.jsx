@@ -37,7 +37,8 @@ function eventosJsonLd(lang, t) {
       isAccessibleForFree: true,
       image: OG_URL,
       organizer: { '@id': `${SITE_URL}/#organization` },
-      offers: { '@type': 'Offer', price: 0, priceCurrency: 'EUR', availability: 'https://schema.org/InStock', url: `${pageUrl}#${ANCLA_FORM}` },
+      // Sin `offers`/`price`: en la web no se publica ningún precio, ni
+      // siquiera 0. Que es gratuita ya lo indica isAccessibleForFree.
     })),
   }
 }

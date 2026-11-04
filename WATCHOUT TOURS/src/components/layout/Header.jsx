@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import './Header.css'
@@ -6,8 +6,16 @@ import logoImg from '../../images/logo-header-watchout.png'
 import { L, LNav, useLang, useLocalize, stripLang, localizePath } from '../../i18n/routing'
 import { availableLangs } from '../../i18n/pageLanguages'
 
+/* Submenú "Viajes" / "Journeys": las dos líneas de viaje y la página con
+   todas las experiencias. Las rutas son siempre las españolas: LNav las
+   traduce al slug inglés cuando toca (ver src/i18n/pageLanguages.js). */
+const viajesLinks = [
+  { to: '/sin-prisa',            key: 'sinPrisa' },
+  { to: '/mas-alla-de-la-vista', key: 'masAlla' },
+  { to: '/productos',            key: 'todas' },
+]
+
 const navLinks = [
-  { to: '/productos',      key: 'rutas' },
   { to: '/sobre-nosotras', key: 'nosotras' },
   { to: '/resenas',        key: 'resenas' },
   { to: '/blog',           key: 'blog' },
@@ -40,6 +48,81 @@ function LanguageSwitcher() {
     >
       {lang === 'es' ? 'EN' : 'ES'}
     </Link>
+  )
+}
+
+/* Desplegable "Viajes" (patrón disclosure: botón con aria-expanded que
+   muestra/oculta una lista de enlaces normales). Teclado: Intro/Espacio en
+   el botón lo abre y cierra, Tab recorre los enlaces, Escape lo cierra y
+   devuelve el foco al botón, y se cierra solo al salir el foco del bloque
+   o al hacer clic fuera. En móvil la lista aparece dentro del menú
+   hamburguesa, debajo del botón. */
+function ViajesDropdown({ onNavigate }) {
+  const { t } = useTranslation()
+  const { pathname } = useLocation()
+  const [open, setOpen] = useState(false)
+  const wrapRef = useRef(null)
+  const buttonRef = useRef(null)
+
+  const base = stripLang(pathname)
+  const active = viajesLinks.some(({ to }) => base === to)
+
+  // Al cambiar de página, el submenú se cierra.
+  useEffect(() => { setOpen(false) }, [pathname])
+
+  // Clic fuera del bloque: se cierra (Safari no enfoca los botones al
+  // hacer clic, así que no basta con onBlur).
+  useEffect(() => {
+    if (!open) return
+    function onPointerDown(e) {
+      if (!wrapRef.current?.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('mousedown', onPointerDown)
+    return () => document.removeEventListener('mousedown', onPointerDown)
+  }, [open])
+
+  function handleKeyDown(e) {
+    if (e.key === 'Escape' && open) {
+      // No cerrar también el menú móvil: primero solo el submenú.
+      e.stopPropagation()
+      setOpen(false)
+      buttonRef.current?.focus()
+    }
+  }
+
+  function handleBlur(e) {
+    if (!wrapRef.current?.contains(e.relatedTarget)) setOpen(false)
+  }
+
+  return (
+    <div className="nav-dropdown" ref={wrapRef} onKeyDown={handleKeyDown} onBlur={handleBlur}>
+      <button
+        ref={buttonRef}
+        type="button"
+        className={`nav-link nav-dropdown__toggle${active ? ' nav-link--active' : ''}`}
+        aria-expanded={open}
+        aria-controls="nav-viajes-submenu"
+        onClick={() => setOpen(v => !v)}
+      >
+        {t('nav.rutas')}
+        <span className="nav-dropdown__caret" aria-hidden="true">▾</span>
+      </button>
+      <ul id="nav-viajes-submenu" className="nav-dropdown__menu" hidden={!open}>
+        {viajesLinks.map(({ to, key }) => (
+          <li key={to}>
+            <LNav
+              to={to}
+              className={({ isActive }) =>
+                `nav-link nav-dropdown__link${isActive ? ' nav-link--active' : ''}`
+              }
+              onClick={() => { setOpen(false); onNavigate() }}
+            >
+              {t(`nav.${key}`)}
+            </LNav>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
@@ -77,6 +160,7 @@ export function Header() {
           className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}
           onKeyDown={handleNavKeyDown}
         >
+          <ViajesDropdown onNavigate={() => setMenuOpen(false)} />
           {navLinks.map(({ to, key }) => (
             <LNav
               key={to}

@@ -23,7 +23,7 @@ export default function Productos() {
           <h1 className="sec-title">{t('productos.title')}</h1>
 
           <div className="prod-list">
-            {formatos.map(({ id, etiqueta, titulo, cuerpo, precioTitulo, precioNota, incluye, cta }) => (
+            {formatos.map(({ id, etiqueta, titulo, cuerpo, incluye, cta }) => (
               <article key={id} id={id} aria-labelledby={`${id}-heading`} className="prod-card">
                 <div className="prod-card__head">
                   <span className="prod-card__etiqueta">{etiqueta}</span>
@@ -32,12 +32,6 @@ export default function Productos() {
                 </div>
 
                 <div className="prod-card__footer">
-                  {id !== 'grupo' && (
-                    <>
-                      <p className="prod-card__precio">{precioTitulo}</p>
-                      <p className="prod-card__precio-nota">{precioNota}</p>
-                    </>
-                  )}
                   <p className="prod-card__incluye-nota"><strong>{t('productos.incluye')}</strong> {incluye}</p>
                   <div className="cta-row">
                     <L to="/contacto" className="btn btn-solid">{cta}</L>

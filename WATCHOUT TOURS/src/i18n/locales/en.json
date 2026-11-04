@@ -18,25 +18,30 @@
   "nav": {
     "main": "Main navigation",
     "brandHome": "Watchout Tours — Go to home",
-    "rutas": "Trips",
+    "rutas": "Journeys",
     "nosotras": "About us",
     "resenas": "Reviews",
     "blog": "Blog",
     "contacto": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "switchLang": "Ver esta página en español"
+    "switchLang": "Ver esta página en español",
+    "sinPrisa": "Unhurried",
+    "masAlla": "Beyond Sight",
+    "todas": "All experiences"
   },
   "footer": {
     "brandHome": "Watchout Tours — Home",
     "whatsapp": "Message us on WhatsApp",
     "instagram": "Follow us on Instagram",
     "colNosotras": "About",
-    "colViajes": "Trips",
+    "colViajes": "Journeys",
     "colLegal": "Legal",
     "sobreNosotras": "About us",
     "resenas": "Reviews",
     "blog": "Blog",
+    "sinPrisa": "Unhurried",
+    "masAlla": "Beyond Sight",
     "todasExperiencias": "All experiences",
     "disenaViaje": "Plan your trip",
     "accesibilidad": "Accessibility",
@@ -45,6 +50,114 @@
     "rights": "All rights reserved."
   },
   "home": {
+    "seo": {
+      "title": "Sensory Small-Group Tours of New Zealand | Watchout Tours",
+      "description": "Small-group journeys around New Zealand at an easy pace, with two dedicated guides by your side from start to finish. For travellers who want total comfort, and for blind and low-vision travellers."
+    },
+    "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
+    "hero": {
+      "eyebrow": "Sensory journeys through Aotearoa New Zealand",
+      "h1": "New Zealand with all your senses.",
+      "sub": "Small groups, a pace nobody rushes, and the two of us by your side every day of the trip.",
+      "ctaSinPrisa": "Unhurried journeys",
+      "ctaMasAlla": "Journeys for blind and low-vision travellers"
+    },
+    "asiViajamos": {
+      "title": "How we travel",
+      "puntos": [
+        {
+          "titulo": "Small groups.",
+          "texto": "Just a few people, so the trip fits you, not the other way round."
+        },
+        {
+          "titulo": "Almost everything, just for you.",
+          "texto": "Hobbiton, sailing on Auckland’s harbour, a full day with a Māori guide in Rotorua: most experiences are private to the group."
+        },
+        {
+          "titulo": "The two of us, always.",
+          "texto": "Moni and Sylvie are with you from airport pick-up to the final farewell."
+        },
+        {
+          "titulo": "One language per group.",
+          "texto": "Every group travels in English or in Spanish, so nothing gets lost in translation."
+        },
+        {
+          "titulo": "All sorted.",
+          "texto": "Hotels, transfers, meals and activities. All you have to do is enjoy it."
+        }
+      ]
+    },
+    "dosViajes": {
+      "title": "Two journeys, one way of travelling",
+      "tarjetas": [
+        {
+          "id": "sin-prisa",
+          "to": "/sin-prisa",
+          "titulo": "Unhurried",
+          "texto": "New Zealand at an easy pace, with nothing to organise. 4 and 5-star hotels, breakfast and dinner included, comfortable transport and the two of us with you from start to finish.",
+          "cta": "Discover Unhurried"
+        },
+        {
+          "id": "mas-alla",
+          "to": "/mas-alla-de-la-vista",
+          "titulo": "Beyond Sight",
+          "texto": "Not all vision needs eyes. A journey designed for blind and low-vision travellers, where every place is felt through your hands, your ears and your skin, and the adventure goes as far as you want it to.",
+          "cta": "Discover Beyond Sight"
+        }
+      ]
+    },
+    "testi": {
+      "eyebrow": "What they say",
+      "title": "How our travellers live it",
+      "srContent": "review content",
+      "srWho": "review by:",
+      "listen": "Listen to testimonial",
+      "videoAria": "Video testimonial from {{name}} about their experience",
+      "more": "Read more reviews"
+    },
+    "audio": {
+      "eyebrow": "Listen to our top moments",
+      "sr1": "first audio",
+      "sr2": "second audio",
+      "card1Title": "Paragliding jump!",
+      "card1Tag": "This is what flying for the first time sounds like",
+      "card1Desc": "The wind on your face, the sense of freedom, your heart beating to the rhythm of adventure.",
+      "card1Label": "Paragliding jump",
+      "card2Title": "An alpaca’s bite",
+      "card2Tag": "An unexpected attack",
+      "card2Desc": "Not even in New Zealand are you safe from a curious alpaca.",
+      "card2Label": "An alpaca’s bite",
+      "sr3": "third audio",
+      "card3Title": "Bubbling mud",
+      "card3Tag": "The earth speaking in Rotorua",
+      "card3Desc": "The sound of geothermal mud bubbling in Rotorua: the living earth, breathing and speaking.",
+      "card3Label": "Bubbling mud in Rotorua",
+      "sr4": "fourth audio",
+      "card4Title": "Welcome to the kauri",
+      "card4Tag": "A Māori chant to the country’s most famous tree",
+      "card4Desc": "A Māori chant welcoming the kauri, New Zealand’s giant, sacred tree.",
+      "card4Label": "Māori chant welcoming the kauri"
+    },
+    "nosotras": {
+      "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua",
+      "eyebrow": "Our story",
+      "p": "Almost 8 years ago we arrived in New Zealand with a backpack full of dreams and uncertainty. Today we’re Sylvie and Moni, the Watchout guides — because no one better than us to tell, beyond the visual, the magic of this country we call home.",
+      "cta": "Discover our full story"
+    },
+    "blog": {
+      "eyebrow": "What’s it like?",
+      "title": "In case you’d like to know more",
+      "readingTime": "Reading time: {{count}} mins",
+      "readArticle": "Read article",
+      "seeAll": "See all articles"
+    },
+    "finalCta": {
+      "title": "Not sure where to start?",
+      "p": "Tell us what you have in mind and we’ll work out together which trip suits you best.",
+      "ctaPrimary": "Tell us what you need"
+    }
+  },
+  "masAlla": {
     "seo": {
       "title": "Accessible New Zealand Tours for Blind Travellers | Watchout Tours",
       "description": "Small-group guided tours across New Zealand designed for blind and visually impaired travellers. Sensory experiences, independence, adventure and local connection."
@@ -60,15 +173,15 @@
     "viajes": {
       "eyebrow": "What are our trips like?",
       "title": "Lived through your hands, your ears and your skin",
-      "p1": "New Zealand is far away. But it doesn't have to feel out of reach.",
-      "p2": "We've designed experiences so that blind and low-vision people can discover this country with safety, independence and excitement.",
-      "p3": "Feeling the breeze and cold water on your face at Milford Sound. Sensing the geothermal heat of Rotorua. Running your hands over the carvings of Māori designs. Stepping through the door of Bilbo's house and into Hobbiton like a real hobbit.",
+      "p1": "New Zealand is far away. But it doesn’t have to feel out of reach.",
+      "p2": "We’ve designed experiences so that blind and low-vision people can discover this country with safety, independence and excitement.",
+      "p3": "Feeling the breeze and cold water on your face at Milford Sound. Sensing the geothermal heat of Rotorua. Running your hands over the carvings of Māori designs. Stepping through the door of Bilbo’s house and into Hobbiton like a real hobbit.",
       "p4": "And this is only the beginning.",
-      "p5": "Because the best way to get to know New Zealand isn't always with your sight, but with all your senses.",
+      "p5": "Because the best way to get to know New Zealand isn’t always with your sight, but with all your senses.",
       "fotoAlt": "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky"
     },
     "explorar": {
-      "eyebrow": "What you'll live",
+      "eyebrow": "What you’ll live",
       "title": "Our way of exploring New Zealand",
       "sub": "We set no limits on adventure. Every route blends adrenaline, sensory immersion and authentic Māori culture.",
       "srQ": "what will you feel?",
@@ -88,105 +201,155 @@
       "videoAria": "Video: one of our blind travellers takes off paragliding over Queenstown. our brave adventurer runs towards a cliff edge and jumps!, the take-off and the thrill of touching the sky for the first time.",
       "eyebrow": "This is how the adventure feels",
       "callout": "Who said paragliding was only for some people?",
-      "p1": "At Watchout we believe adventure knows no limits. It knows curiosity, excitement, and people eager to throw themselves into experiences they'll remember for a lifetime.",
+      "p1": "At Watchout we believe adventure knows no limits. It knows curiosity, excitement, and people eager to throw themselves into experiences they’ll remember for a lifetime.",
       "p2": "This is one of our travellers flying over Queenstown. The wind on your face, the sense of freedom and that mix of nerves and excitement right before take-off… some moments stay with you forever.",
       "instagram": "See more on Instagram",
       "newTab": "(opens in a new tab)"
-    },
-    "testi": {
-      "eyebrow": "What they say",
-      "title": "How our travellers live it",
-      "srContent": "review content",
-      "srWho": "review by:",
-      "listen": "Listen to testimonial",
-      "videoAria": "Video testimonial from {{name}} about their experience",
-      "more": "Read more reviews"
     },
     "rutas": {
       "eyebrow": "Our options",
       "title": "Two ways to live it",
       "sub": "Same route, you choose your format: in a small group with set dates, or private and at your own pace.",
       "incluido": "Included:",
-      "anuncioBadge": "We've got a date!",
+      "anuncioBadge": "We’ve got a date!",
       "anuncioFecha": "New group trip: departing March 1",
-      "anuncioTexto": "A small group of 3 to 6 travellers exploring New Zealand for 16 days. Spots are held on a first-come basis — tell us you're in and we'll save yours.",
+      "anuncioTexto": "A small group of 3 to 6 travellers exploring New Zealand for 15 days. Spots are held on a first-come basis — tell us you’re in and we’ll save yours.",
       "anuncioCta": "I want my spot",
       "formatos": [
         {
           "id": "grupo",
-          "etiqueta": "16 days across New Zealand · group of 3 to 6 travellers + the two of us",
+          "etiqueta": "15 days across New Zealand · group of 3 to 6 travellers + the two of us",
           "titulo": "The shared adventure",
-          "cuerpo": "A small group of travellers with the same eagerness as you to explore the world. Over 16 days we'll travel New Zealand together, sharing adventures, laughter and moments you'll remember for a lifetime. Because some trips end… and others give you friendships forever. We'll be by your side every step of the way, from the first day to the last.",
-          "precioTitulo": "From €9,500 per person",
-          "precioNota": "We travel with 3 to 6 people. No small print: we'll give you the exact number as soon as we talk.",
-          "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you for all 15 nights.",
-          "cta": "I'd like more information"
+          "cuerpo": "A small group of travellers with the same eagerness as you to explore the world. Over 15 days we’ll travel New Zealand together, sharing adventures, laughter and moments you’ll remember for a lifetime. Because some trips end… and others give you friendships forever. We’ll be by your side every step of the way, from the first day to the last.",
+          "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you for all 14 nights.",
+          "cta": "I’d like more information"
         },
         {
           "id": "privado",
           "etiqueta": "Private · just for you and yours · length at your own pace",
           "titulo": "Your trip, tailor-made",
-          "cuerpo": "A trip designed just for you, and for whoever you want to bring along. The two of us, exclusively, designing it at your pace: your days, your energy, your time. If you want more calm, more calm. If you want more adrenaline, more adrenaline. There's no mould here. There's a trip we make to measure, like a tailored suit.",
-          "precioTitulo": "Tailor-made price",
-          "precioNota": "Since we design it with you, the price also depends on you: on how many days, on what you want to experience, on how you dream it. No commitment.",
+          "cuerpo": "A trip designed just for you, and for whoever you want to bring along. The two of us, exclusively, designing it at your pace: your days, your energy, your time. If you want more calm, more calm. If you want more adrenaline, more adrenaline. There’s no mould here. There’s a trip we make to measure, like a tailored suit.",
           "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you from start to finish.",
-          "cta": "I'd like more information"
+          "cta": "I’d like more information"
         }
       ]
-    },
-    "audio": {
-      "eyebrow": "Listen to our top moments",
-      "sr1": "first audio",
-      "sr2": "second audio",
-      "card1Title": "Paragliding jump!",
-      "card1Tag": "This is what flying for the first time sounds like",
-      "card1Desc": "The wind on your face, the sense of freedom, your heart beating to the rhythm of adventure.",
-      "card1Label": "Paragliding jump",
-      "card2Title": "An alpaca's bite",
-      "card2Tag": "An unexpected attack",
-      "card2Desc": "Not even in New Zealand are you safe from a curious alpaca.",
-      "card2Label": "An alpaca's bite",
-      "sr3": "third audio",
-      "card3Title": "Bubbling mud",
-      "card3Tag": "The earth speaking in Rotorua",
-      "card3Desc": "The sound of geothermal mud bubbling in Rotorua: the living earth, breathing and speaking.",
-      "card3Label": "Bubbling mud in Rotorua",
-      "sr4": "fourth audio",
-      "card4Title": "Welcome to the kauri",
-      "card4Tag": "A Māori chant to the country's most famous tree",
-      "card4Desc": "A Māori chant welcoming the kauri, New Zealand's giant, sacred tree.",
-      "card4Label": "Māori chant welcoming the kauri"
-    },
-    "nosotras": {
-      "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua",
-      "eyebrow": "Our story",
-      "p": "Almost 8 years ago we arrived in New Zealand with a backpack full of dreams and uncertainty. Today we're Sylvie and Moni, the Watchout guides — because no one better than us to tell, beyond the visual, the magic of this country we call home.",
-      "cta": "Discover our full story"
-    },
-    "blog": {
-      "eyebrow": "What's it like?",
-      "title": "In case you'd like to know more",
-      "readingTime": "Reading time: {{count}} mins",
-      "readArticle": "Read article",
-      "seeAll": "See all articles"
     },
     "finalCta": {
       "title": "Not sure where to start?",
       "p1": "Planning an accessible trip can raise lots of questions.",
-      "p2": "Write to us. We'll answer your questions and figure out together which option fits you best.",
+      "p2": "Write to us. We’ll answer your questions and figure out together which option fits you best.",
       "ctaPrimary": "Tell us what you need"
+    }
+  },
+  "sinPrisa": {
+    "seo": {
+      "title": "Unhurried · Easy-Paced Small-Group Tours of New Zealand | Watchout Tours",
+      "description": "Fifteen days around New Zealand at an easy pace, with private experiences, 4 and 5-star hotels, breakfast and dinner included and two dedicated guides throughout."
     },
-    "charlaAviso": {
-      "eyebrow": "Free online talk · In Spanish",
-      "title": "Discover New Zealand through the senses",
-      "texto": "What is it like to travel in New Zealand with blindness or low vision? Join our talk on Microsoft Teams:",
-      "cta": "Talk details and registration"
+    "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
+    "hero": {
+      "eyebrow": "Unhurried · New Zealand with all your senses",
+      "h1": "The trip you’ve been promising yourself for years.",
+      "sub": "Fifteen days around New Zealand in a small group, at an easy pace, with Moni and Sylvie by your side from the moment you land to the last hug at the airport.",
+      "cta": "Find out more"
+    },
+    "paraQuien": {
+      "title": "Who it’s for",
+      "p1": "For anyone who has always dreamed of going to the other side of the world and has never found the right time, the right company or the energy to organise it. For couples who finally have the time, for groups of friends who’ve been saying “one day” for years, and for solo travellers who’d like to come home with new friends.",
+      "p2": "You don’t need to worry about language, luggage, timetables or who to have dinner with. We take care of all that."
+    },
+    "incluye": {
+      "title": "What’s included",
+      "items": [
+        "Moni and Sylvie with you for all 15 days.",
+        "14 nights in 4 and 5-star hotels.",
+        "Breakfast and dinner every day, plus lunch on many days.",
+        "Private experiences, just for the group.",
+        "Comfortable transport throughout and the domestic flight between the islands.",
+        "Airport pick-up and 24-hour support."
+      ]
+    },
+    "privado": {
+      "title": "Almost everything, just for you",
+      "p": "At Hobbiton, you explore the Shire with a guide for your group and have lunch at the Green Dragon Inn. In Rotorua, a Māori guide spends the whole day with you. In Auckland, you sail the harbour on a yacht that’s yours for the afternoon. No queues, no waiting for forty other people, and all the time in the world for questions."
+    },
+    "solo": {
+      "title": "Travelling solo",
+      "p": "Plenty of people travel with us on their own, and within a couple of days they’re part of the group. You can have your own room or, if you prefer, share with another solo traveller in the group."
+    },
+    "familia": {
+      "title": "For your family",
+      "p": "Moni and Sylvie have lived in New Zealand for eight years and are with the group every single day, with 24-hour support. Your family can relax: you’re with us."
+    },
+    "dia": {
+      "title": "A day on the road",
+      "p": "A relaxed breakfast at the hotel. We head south through green hills dotted with sheep. Mid-morning we reach Hobbiton, where a guide is waiting just for our group to take us through the Shire. Lunch at the Green Dragon Inn, dessert included, with no one watching the clock. In the afternoon, an easy drive to Rotorua, where the air already smells of sulphur. Dinner at the hotel, then time to rest."
+    },
+    "ruta": {
+      "title": "The route",
+      "navAria": "Map of the Unhurried route around New Zealand",
+      "paradas": [
+        {
+          "id": "sp-auckland",
+          "nombre": "Auckland"
+        },
+        {
+          "id": "sp-rotorua",
+          "nombre": "Rotorua"
+        },
+        {
+          "id": "sp-queenstown",
+          "nombre": "Queenstown"
+        },
+        {
+          "id": "sp-tekapo",
+          "nombre": "Tekapo"
+        },
+        {
+          "id": "sp-christchurch",
+          "nombre": "Christchurch"
+        },
+        {
+          "id": "sp-kaikoura",
+          "nombre": "Kaikōura"
+        }
+      ]
+    },
+    "llevaras": {
+      "title": "What you’ll take home",
+      "p": "Steam from the geysers on your skin. Whale song through a hydrophone in Kaikōura. The stars of Tekapo, told around a campfire. The taste of hāngi, cooked underground on volcanic stones."
+    },
+    "faq": {
+      "title": "Is this trip for me?",
+      "items": [
+        {
+          "q": "What if I’ve never done such a long trip?",
+          "a": "Many of our travellers hadn’t either. We help you choose your flights and stopovers, and we’ll be waiting for you at Auckland airport."
+        },
+        {
+          "q": "Do I need to be fit?",
+          "a": "There are short walks most days, always at an easy pace with plenty of breaks. If you’re unsure about anything, give us a call and we’ll talk it through."
+        },
+        {
+          "q": "What’s not included?",
+          "a": "International flights (we’ll help you book them) and travel insurance, which is compulsory."
+        },
+        {
+          "q": "What if I fancy something a bit more lively?",
+          "a": "We can arrange optional extras: a helicopter flight over the glacier, a jet boat ride in Queenstown and a few more."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Shall we talk?",
+      "p": "Tell us what you have in mind and we’ll answer all your questions, no strings attached.",
+      "ctaPrimary": "Find out more"
     }
   },
   "notFound": {
     "docTitle": "Page not found | Watchout Tours",
     "title": "Page not found",
-    "text": "Sorry, the page you're looking for doesn't exist or has been moved.",
+    "text": "Sorry, the page you’re looking for doesn’t exist or has been moved.",
     "home": "Go to the home page"
   },
   "blog": {
@@ -232,7 +395,7 @@
     "sub": "Same route, your format: in a small group with set dates, or private and at your own pace.",
     "mapa": {
       "eyebrow": "The itinerary",
-      "title": "Here's the route, stop by stop",
+      "title": "Here’s the route, stop by stop",
       "sub": "A schematic map to give you the big picture — and, right below, every stop told in full detail.",
       "navAria": "Map of the New Zealand route",
       "paradas": [
@@ -244,7 +407,7 @@
         {
           "id": "rotorua",
           "nombre": "Waikato and Rotorua",
-          "resumen": "The touch of Hobbiton's round doors, the roar of the Pōhutu geyser at Te Puia, the haka rumbling in your chest, and the geothermal mud of Hells Gate on your skin."
+          "resumen": "The touch of Hobbiton’s round doors, the roar of the Pōhutu geyser at Te Puia, the haka rumbling in your chest, and the geothermal mud of Hells Gate on your skin."
         },
         {
           "id": "kaikoura",
@@ -259,35 +422,31 @@
         {
           "id": "queenstown",
           "nombre": "Queenstown, Milford Sound and Stewart Island",
-          "resumen": "The roar of Milford Sound's waterfalls splashing the deck, the steam of the Onsen Hot Pools, and the wild isolation of Stewart Island."
+          "resumen": "The roar of Milford Sound’s waterfalls splashing the deck, the steam of the Onsen Hot Pools, and the wild isolation of Stewart Island."
         }
       ]
     },
     "incluye": "Includes:",
     "ctaEyebrow": "Questions?",
     "ctaTitle": "Talking is free.",
-    "ctaText": "Tell us what you have in mind and we'll figure out together how to shape it. No commitment, no rush, no fuss.",
+    "ctaText": "Tell us what you have in mind and we’ll figure out together how to shape it. No commitment, no rush, no fuss.",
     "ctaBtn": "Tell us your dream",
     "formatos": [
       {
         "id": "grupo",
-        "etiqueta": "16 days across New Zealand · group of 3 to 6 travellers + the two of us",
+        "etiqueta": "15 days across New Zealand · group of 3 to 6 travellers + the two of us",
         "titulo": "The shared adventure",
-        "cuerpo": "A tiny group of people with the same eagerness as you to take on the world. 15 nights travelling New Zealand, laughing, being amazed and feeling it all together. The kind of trip you come back from with friends for life. And always the two of us right there with the group, from start to finish.",
-        "precioTitulo": "From €9,500 per person",
-        "precioNota": "We travel with 3 to 6 people. No small print: we'll give you the exact number as soon as we talk.",
-        "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you for all 15 nights.",
+        "cuerpo": "A tiny group of people with the same eagerness as you to take on the world. 14 nights travelling New Zealand, laughing, being amazed and feeling it all together. The kind of trip you come back from with friends for life. And always the two of us right there with the group, from start to finish.",
+        "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you for all 14 nights.",
         "cta": "I want to join"
       },
       {
         "id": "privado",
         "etiqueta": "Private · just for you and yours · length at your own pace",
         "titulo": "Your trip, tailor-made",
-        "cuerpo": "A trip designed just for you, and for whoever you want to bring along. The two of us, exclusively, designing it at your pace: your days, your energy, your time. If you want more calm, more calm. If you want more adrenaline, more adrenaline. There's no mould here. There's a trip we make to measure, like a tailored suit.",
-        "precioTitulo": "Tailor-made price",
-        "precioNota": "Since we design it with you, the price also depends on you: on how many days, on what you want to experience, on how you dream it. No commitment, no fuss.",
+        "cuerpo": "A trip designed just for you, and for whoever you want to bring along. The two of us, exclusively, designing it at your pace: your days, your energy, your time. If you want more calm, more calm. If you want more adrenaline, more adrenaline. There’s no mould here. There’s a trip we make to measure, like a tailored suit.",
         "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you from start to finish.",
-        "cta": "Let's design yours"
+        "cta": "Let’s design yours"
       }
     ]
   },
@@ -295,21 +454,21 @@
     "docTitle": "Contact | Watchout Tours",
     "seo": {
       "title": "Contact | Watchout Tours — Accessible New Zealand Travel",
-      "description": "Tell us about your dream trip to New Zealand. We'll answer your questions about our accessible tours for blind and visually impaired travellers. Email or WhatsApp us."
+      "description": "Tell us about your dream trip to New Zealand. We’ll answer your questions about our accessible tours for blind and visually impaired travellers. Email or WhatsApp us."
     },
     "eyebrow": "No commitment · no rush · no fuss",
     "title": "Shall we make it happen?",
-    "intro1": "Write to us and let's grab a virtual coffee, just the two of us. Tell us what you dream of, we'll answer",
+    "intro1": "Write to us and let’s grab a virtual coffee, just the two of us. Tell us what you dream of, we’ll answer",
     "introStrong": "all",
     "intro2": "your questions —however odd they may seem— and figure out together how to shape it. Talking is free.",
     "canalWhatsappDesc": "Send us a message or a voice note",
     "canalEmail": "Email",
-    "canalEmailDesc": "I'd rather write an email",
+    "canalEmailDesc": "I’d rather write an email",
     "formTitle": "Tell us here",
     "formStartSr": "start of the form",
     "formAria": "Contact form",
-    "success": "Got it! We'll get back to you within 48 hours.",
-    "nombreLabel": "What's your name?",
+    "success": "Got it! We’ll get back to you within 48 hours.",
+    "nombreLabel": "What’s your name?",
     "requiredSr": "(required)",
     "atLeastOne": "(at least one)",
     "telefonoLabel": "Mobile phone",
@@ -334,7 +493,7 @@
     "mensajePlaceholder": "What would you like to experience? Are you travelling alone or with others? Do you have dates in mind?",
     "consentPre": "I have read and accept the",
     "consentLink": "privacy policy",
-    "consentInfo": "Controller: Watchout Tours Ltd. · Purpose: to respond to your enquiry and talk with you about your trip. We don't use your data for advertising or share it with third parties. You can exercise your rights of access, rectification and erasure by writing to info@watchouttours.nz.",
+    "consentInfo": "Controller: Watchout Tours Ltd. · Purpose: to respond to your enquiry and talk with you about your trip. We don’t use your data for advertising or share it with third parties. You can exercise your rights of access, rectification and erasure by writing to info@watchouttours.nz.",
     "submit": "Send form",
     "submitting": "Sending…",
     "err": {
@@ -342,7 +501,7 @@
       "contacto": "Enter at least a phone number or an email so we can reply to you.",
       "telefono": "The phone number can only contain digits, +, spaces and hyphens.",
       "email": "Enter a valid email address (it must contain @).",
-      "canal": "Choose how you'd prefer us to contact you.",
+      "canal": "Choose how you’d prefer us to contact you.",
       "privacidad": "To be able to reply, we need you to accept the privacy policy.",
       "spam": "Please wait a moment before sending again."
     }
@@ -351,27 +510,27 @@
     "docTitle": "About us | Watchout Tours",
     "seo": {
       "title": "About Us | Mónica and Sylvie — Watchout Tours",
-      "description": "We're Mónica and Sylvie, Spanish guides based in New Zealand. We create sensory, accessible trips for blind and low-vision travellers. This is our story."
+      "description": "We’re Mónica and Sylvie, Spanish guides based in New Zealand. We create sensory, accessible trips for blind and low-vision travellers. This is our story."
     },
     "heroImgAlt": "Mónica and Sylvie smiling in a selfie by Sydney Harbour at dusk, with the Sydney Opera House in the background",
     "heroEyebrow": "The heart of the project",
     "heroTitle1": "Much more",
     "heroTitle2": "than a trip.",
     "heroIntro1": "Watchout was born from the desire to create experiences where blind or visually impaired people can discover New Zealand from a more sensory, human and authentic place.",
-    "heroIntro2": "But it's also born with another purpose: to help open conversations, raise awareness of the invisible and spark new ways of travelling that people want to share.",
-    "aprendidoEyebrow": "What we've learned",
-    "aprendidoTitulo": "Before starting this adventure we thought we were creating accessible trips. Today we know it's much more than that.",
+    "heroIntro2": "But it’s also born with another purpose: to help open conversations, raise awareness of the invisible and spark new ways of travelling that people want to share.",
+    "aprendidoEyebrow": "What we’ve learned",
+    "aprendidoTitulo": "Before starting this adventure we thought we were creating accessible trips. Today we know it’s much more than that.",
     "aprendidoCol1": "Every trip reminds us that there are many ways of perceiving the world. When we share those ways of feeling, listening, touching and discovering, something changes in all of us who are there.",
-    "aprendidoCol2": "We've seen how people who didn't know each other end up connecting in a deeply human way. How a small detail comes to hold great meaning. How we learn to trust more, to listen better and to be truly present.",
-    "aprendidoFinal": "That's why we believe the real impact of these trips isn't only in the places we visit. It's in the people we become when we live them together.",
-    "aprendidoNegrita": "Our greatest wish is that you go home with the feeling of having lived something you'll remember for a lifetime. Because the best trips aren't measured by the kilometres travelled, but by what they leave inside us.",
+    "aprendidoCol2": "We’ve seen how people who didn’t know each other end up connecting in a deeply human way. How a small detail comes to hold great meaning. How we learn to trust more, to listen better and to be truly present.",
+    "aprendidoFinal": "That’s why we believe the real impact of these trips isn’t only in the places we visit. It’s in the people we become when we live them together.",
+    "aprendidoNegrita": "Our greatest wish is that you go home with the feeling of having lived something you’ll remember for a lifetime. Because the best trips aren’t measured by the kilometres travelled, but by what they leave inside us.",
     "holaEyebrow": "Hello",
-    "holaTitle": "We're Mónica and Sylvie.",
+    "holaTitle": "We’re Mónica and Sylvie.",
     "holaP1": "Two Spaniards who arrived in New Zealand seven years ago with a backpack full of excitement... and who are still amazed by this country.",
     "holaP2": "We love getting up early to watch a sunrise, improvising a stop because someone heard a hidden river, laughing for hours in the van and ending the day sharing stories around a table.",
-    "holaQuote": "\"I'd never experienced anything like it.\"",
-    "holaQuoteCite": "— What we're most moved to hear",
-    "holaP3": "We're curious by nature. We love asking questions, listening to stories and discovering how each person lives in the world. Maybe that's why Watchout came about so naturally.",
+    "holaQuote": "“I’d never experienced anything like it.”",
+    "holaQuoteCite": "— What we’re most moved to hear",
+    "holaP3": "We’re curious by nature. We love asking questions, listening to stories and discovering how each person lives in the world. Maybe that’s why Watchout came about so naturally.",
     "equipoEyebrow": "Team",
     "equipoTitle": "The people behind every trip",
     "equipoMoniNombre": "Moni",
@@ -384,7 +543,7 @@
     "equipoSylvieFotoAlt": "Sylvie, co-founder and guide at Watchout Tours, in New Zealand",
     "equipoNuriaNombre": "Nuria",
     "equipoNuriaRol": "Europe Representative & Accessibility Consultant",
-    "equipoNuriaBio": "Nuria travelled with us on our pilot trip — 23 days across New Zealand with her husband and son. She's an accessibility consultant and writes at Six Sense Travel, her platform on inclusive tourism. She's now our representative in Europe.",
+    "equipoNuriaBio": "Nuria travelled with us on our pilot trip — 23 days across New Zealand with her husband and son. She’s an accessibility consultant and writes at Six Sense Travel, her platform on inclusive tourism. She’s now our representative in Europe.",
     "equipoNuriaFotoAlt": "Nuria smiling during her pilot trip across New Zealand with Watchout Tours",
     "equipoBlogLabel": "Six Sense Travel",
     "filoEyebrow": "Our philosophy",
@@ -417,9 +576,9 @@
         "texto": "Our travellers are adults who have decided to live an extraordinary adventure."
       }
     ],
-    "cierre1": "We thought we were going to show people New Zealand. And in the end it was New Zealand —and the people we've shared the road with— who taught us.",
-    "cierreDeseo": "Our greatest wish is that when you go home you don't just remember the places you visited. That you also discover you pay attention to things that used to go unnoticed.",
-    "cierre2": "Because perhaps that's the best souvenir you can take with you.",
+    "cierre1": "We thought we were going to show people New Zealand. And in the end it was New Zealand —and the people we’ve shared the road with— who taught us.",
+    "cierreDeseo": "Our greatest wish is that when you go home you don’t just remember the places you visited. That you also discover you pay attention to things that used to go unnoticed.",
+    "cierre2": "Because perhaps that’s the best souvenir you can take with you.",
     "cierreCta": "Tell us your dream"
   },
   "post": {
@@ -469,23 +628,23 @@
     "intro": "We only collect the data you give us voluntarily so we can reply to you. We never use it for advertising without your permission or share it with third parties.",
     "responsableTitle": "Data controller",
     "responsableP1": ", a limited company incorporated in New Zealand, with its address in Picton, New Zealand. Contact:",
-    "responsableP2": "Although we are a New Zealand company, our services are aimed at people resident in Spain and the European Union, so we process your data in accordance with the General Data Protection Regulation (GDPR) and New Zealand's privacy legislation (Privacy Act 2020).",
+    "responsableP2": "Although we are a New Zealand company, our services are aimed at people resident in Spain and the European Union, so we process your data in accordance with the General Data Protection Regulation (GDPR) and New Zealand’s privacy legislation (Privacy Act 2020).",
     "datosTitle": "Data we collect",
     "datosIntro": "Only what you provide voluntarily through the contact form:",
     "datos1": "Name",
     "datos2": "Email and/or phone (at least one, so we can reply to you)",
     "datos3": "Your preferred channel for us to contact you",
-    "datos4": "The type of trip you're interested in (optional)",
-    "datos5": "The content of any message you'd like to write to us (optional)",
+    "datos4": "The type of trip you’re interested in (optional)",
+    "datos5": "The content of any message you’d like to write to us (optional)",
     "finalidadTitle": "What we use your data for and on what basis",
     "finalidadLabel1": "Purpose:",
-    "finalidadText1": "to respond to your enquiry and talk with you about the trip you're interested in. Nothing more. We don't store your data in marketing databases, we don't send advertising or newsletters, and we don't create profiles.",
+    "finalidadText1": "to respond to your enquiry and talk with you about the trip you’re interested in. Nothing more. We don’t store your data in marketing databases, we don’t send advertising or newsletters, and we don’t create profiles.",
     "finalidadLabel2": "Legal basis:",
     "finalidadText2": "pre-contractual measures taken at your request (Art. 6.1.b GDPR) and your consent, which you give by ticking the acceptance box before submitting the form (Art. 6.1.a GDPR).",
     "conservacionTitle": "How long we keep it",
-    "conservacionP": "Only for as long as necessary to handle your enquiry and any conversation that arises from it. If you don't end up travelling with us, we delete your data within a maximum of 12 months from the last contact.",
+    "conservacionP": "Only for as long as necessary to handle your enquiry and any conversation that arises from it. If you don’t end up travelling with us, we delete your data within a maximum of 12 months from the last contact.",
     "destinatariosTitle": "Who else processes your data",
-    "destP1a": "We don't share your data with third parties. To receive the form messages we use",
+    "destP1a": "We don’t share your data with third parties. To receive the form messages we use",
     "destP1b": "(USA) as a technology provider, acting as a data processor in accordance with its",
     "destLink": "privacy safeguards",
     "destP1c": ". This international transfer is covered by the applicable EU–US data protection clauses and frameworks.",
@@ -495,22 +654,22 @@
     "cookiesTitle": "Cookies",
     "cookiesA": "This website",
     "cookiesStrong": "does not use analytics, tracking or advertising cookies",
-    "cookiesB": ". We only use essential local technical storage for the site to work (for example, an anti-spam limit on the form), which is exempt from the consent requirement. That's why you won't see any cookie banner.",
+    "cookiesB": ". We only use essential local technical storage for the site to work (for example, an anti-spam limit on the form), which is exempt from the consent requirement. That’s why you won’t see any cookie banner.",
     "derechosTitle": "Your rights",
     "derP1a": "You have the right of access, rectification, erasure, objection, restriction and portability of your data. You can exercise them by writing to",
-    "derP1b": "and we'll reply as soon as possible.",
-    "derP2a": "If you believe we haven't handled your data correctly, you can also lodge a complaint with the",
+    "derP1b": "and we’ll reply as soon as possible.",
+    "derP2a": "If you believe we haven’t handled your data correctly, you can also lodge a complaint with the",
     "derP2strong": "Spanish Data Protection Agency",
     "verAvisoA": "You can also read our",
     "verAvisoLink": "Legal notice",
     "fecha": "Last updated:",
     "fechaValor": "12 October 2026",
     "charlaTitle": "Online talk registration",
-    "charlaDatos": "If you sign up for our online talk “Discover New Zealand through the senses”, we process your name, your email, the date you choose, any question you'd like to ask us (optional) and whether you'd like to receive news about future trips (optional).",
+    "charlaDatos": "If you sign up for our online talk “Discover New Zealand through the senses”, we process your name, your email, the date you choose, any question you’d like to ask us (optional) and whether you’d like to receive news about future trips (optional).",
     "charlaFinalidadLabel": "Purpose and legal basis:",
     "charlaFinalidad": "to manage your registration and send you the confirmation email with the Microsoft Teams link, two reminders (24 hours and 1 hour before) and a follow-up email the day after the talk. The legal basis is your own registration request (Art. 6.1.b GDPR).",
     "charlaNoticiasLabel": "News about future trips:",
-    "charlaNoticias": "we'll only write to you with news about our trips if you tick that box, which is optional and unticked by default. The legal basis is your consent (Art. 6.1.a GDPR), which you can withdraw at any time by writing to",
+    "charlaNoticias": "we’ll only write to you with news about our trips if you tick that box, which is optional and unticked by default. The legal basis is your consent (Art. 6.1.a GDPR), which you can withdraw at any time by writing to",
     "charlaConservacionLabel": "Retention:",
     "charlaConservacion": "we apply the same period as for all other data (a maximum of 12 months from our last contact). If you asked to receive news, we keep your data until you withdraw your consent.",
     "charlaProveedoresLabel": "Providers:",
@@ -568,7 +727,7 @@
       "duracionLabel": "Length",
       "duracion": "About one hour",
       "plataformaLabel": "Platform",
-      "plataforma": "Microsoft Teams. It's an online meeting: you don't need to sign up to Teams.",
+      "plataforma": "Microsoft Teams. It’s an online meeting: you don’t need to sign up to Teams.",
       "idiomaLabel": "Language",
       "idioma": "Spanish",
       "precioLabel": "Price",
@@ -583,16 +742,16 @@
       "localItem": "{{fecha}} at {{hora}}"
     },
     "descubriras": {
-      "title": "What you'll discover",
+      "title": "What you’ll discover",
       "items": [
-        "New Zealand's nature, sounds, flavours and Māori culture.",
+        "New Zealand’s nature, sounds, flavours and Māori culture.",
         "How we organise the trip and support blind and low-vision travellers, respecting their independence.",
         "The main experiences of our next trip.",
         "Time for your questions."
       ]
     },
     "paraQuien": {
-      "title": "Who it's for",
+      "title": "Who it’s for",
       "intro": "The talk is designed for:",
       "items": [
         "Blind and low-vision people.",
@@ -602,66 +761,66 @@
     },
     "nosotras": {
       "title": "Who we are",
-      "p1": "We're Mónica and Sylvie, the founders of WatchOut!: two Spaniards who live in New Zealand and guide every trip, from start to finish.",
-      "p2": "The spark for the project came from Sylvie's father, a ski guide for blind skiers in Spain. Today we design sensory trips to discover New Zealand through storytelling, touch and sound.",
-      "p3": "We'll be joining from New Zealand, where it will be Sunday morning: 25 October and 8 November at 8:00, Auckland time.",
+      "p1": "We’re Mónica and Sylvie, the founders of WatchOut!: two Spaniards who live in New Zealand and guide every trip, from start to finish.",
+      "p2": "The spark for the project came from Sylvie’s father, a ski guide for blind skiers in Spain. Today we design sensory trips to discover New Zealand through storytelling, touch and sound.",
+      "p3": "We’ll be joining from New Zealand, where it will be Sunday morning: 25 October and 8 November at 8:00, Auckland time.",
       "cta": "Read our full story"
     },
     "entrar": {
       "title": "How to join the talk",
-      "enlace": "When you sign up, we'll email you the Microsoft Teams link for your session. We'll remind you again 24 hours and 1 hour before.",
+      "enlace": "When you sign up, we’ll email you the Microsoft Teams link for your session. We’ll remind you again 24 hours and 1 hour before.",
       "ordenadorLabel": "On a computer:",
       "ordenador": "join from your web browser, with no Microsoft account and nothing to install. Open the link and choose “Continue on this browser”.",
       "movilLabel": "On a phone or tablet:",
-      "movil": "you'll need the free Microsoft Teams app. Install it before the talk and join with the link as a guest.",
-      "ayuda": "Need technical help before the talk? Message us and we'll help you connect:",
+      "movil": "you’ll need the free Microsoft Teams app. Install it before the talk and join with the link as a guest.",
+      "ayuda": "Need technical help before the talk? Message us and we’ll help you connect:",
       "ayudaEmail": "Email info@watchouttours.nz",
       "ayudaWhatsapp": "Message us on WhatsApp at +64 27 267 7006"
     },
     "grabacion": {
       "title": "Recording",
-      "p": "We are going to record the talk. The recording will include the voice and image of anyone who turns on their microphone or camera. If you'd rather not appear, keep them off and type your questions in the meeting chat.",
+      "p": "We are going to record the talk. The recording will include the voice and image of anyone who turns on their microphone or camera. If you’d rather not appear, keep them off and type your questions in the meeting chat.",
       "privacidadPre": "More information in our",
       "privacidadLink": "privacy policy"
     },
     "final": {
       "title": "Will you join us?",
-      "p": "It's free and all you need is an internet connection. Save your place and we'll email you the link to join."
+      "p": "It’s free and all you need is an internet connection. Save your place and we’ll email you the link to join."
     },
     "form": {
       "title": "Sign up for the talk",
-      "intro": "Fill in the form and we'll email you the details and the Teams link for the date you choose. The talk is in Spanish.",
+      "intro": "Fill in the form and we’ll email you the details and the Teams link for the date you choose. The talk is in Spanish.",
       "obligatorio": "(required)",
       "opcional": "(optional)",
       "nombre": "Name",
       "email": "Email",
-      "emailHint": "We'll send the link to join to this address.",
+      "emailHint": "We’ll send the link to join to this address.",
       "sesionLegend": "Date",
       "sesionHint": "Both sessions have the same content.",
       "pregunta": "What would you like to know about travelling in New Zealand?",
-      "noticias": "I'd like to receive news about future trips",
-      "privacidadPre": "We'll only use your data to manage your registration and send you the talk emails: the confirmation, two reminders and a follow-up email. More information in our",
+      "noticias": "I’d like to receive news about future trips",
+      "privacidadPre": "We’ll only use your data to manage your registration and send you the talk emails: the confirmation, two reminders and a follow-up email. More information in our",
       "privacidadLink": "privacy policy",
       "submit": "Complete registration",
       "enviando": "Sending your registration…",
-      "success": "Thank you for signing up! We've sent you an email with the details and the link to join the talk on Microsoft Teams.",
-      "successNota": "If you can't see it in a few minutes, check your spam folder or email us at info@watchouttours.nz.",
+      "success": "Thank you for signing up! We’ve sent you an email with the details and the link to join the talk on Microsoft Teams.",
+      "successNota": "If you can’t see it in a few minutes, check your spam folder or email us at info@watchouttours.nz.",
       "errResumen": "Please check the following to complete your registration:",
       "err": {
         "nombre": "Enter your name.",
         "email": "Enter a valid email address, for example: name@example.com.",
         "sesion": "Choose a date.",
-        "pregunta": "Your question can't be longer than 1000 characters."
+        "pregunta": "Your question can’t be longer than 1000 characters."
       },
       "fallo": {
-        "titulo": "We couldn't complete your registration.",
-        "email": "We couldn't send you the confirmation email.",
+        "titulo": "We couldn’t complete your registration.",
+        "email": "We couldn’t send you the confirmation email.",
         "generico": "There was a technical problem.",
         "cerrada": "That session has already started. Please choose another date.",
-        "noActiva": "Registration for that date isn't open yet.",
-        "contacto": "Please try again in a few minutes, or message us and we'll sign you up:"
+        "noActiva": "Registration for that date isn’t open yet.",
+        "contacto": "Please try again in a few minutes, or message us and we’ll sign you up:"
       },
-      "sinSesiones": "Both sessions of the talk have already taken place. If you'd like to hear about the next one, message us."
+      "sinSesiones": "Both sessions of the talk have already taken place. If you’d like to hear about the next one, message us."
     }
   }
 }

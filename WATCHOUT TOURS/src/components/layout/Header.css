@@ -208,3 +208,95 @@
     display: flex;
   }
 }
+
+/* ── Desplegable "Viajes" ────────────────────────────── */
+/* Mismos colores, tipografía y subrayado que el resto de enlaces del menú;
+   en escritorio la lista flota sobre la cabecera con su mismo fondo. */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-dropdown__caret {
+  font-size: .8em;
+  transition: transform .2s;
+}
+
+.nav-dropdown__toggle[aria-expanded="true"] .nav-dropdown__caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: -20px;
+  z-index: 101;
+  min-width: 240px;
+  margin: 0;
+  padding: 12px 20px;
+  list-style: none;
+  background: var(--night, #0E5F73);
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+}
+
+.nav-dropdown__menu[hidden] {
+  display: none;
+}
+
+.nav-dropdown__menu li {
+  padding-block: 8px;
+}
+
+.nav-dropdown__link {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .nav-dropdown__toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding-block: .75rem;
+    border-bottom: 1px solid var(--line, #CFC4A8);
+    font-size: 16px;
+    color: var(--ink-soft, #4A453B);
+  }
+
+  .nav-dropdown__toggle.nav-link--active {
+    color: var(--ink, #15140F);
+    border-color: var(--ink, #15140F);
+  }
+
+  /* Dentro del menú hamburguesa la lista no flota: va en línea, sangrada
+     bajo el botón. */
+  .nav-dropdown__menu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 0 16px;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .nav-dropdown__menu li {
+    padding-block: 0;
+  }
+
+  .nav-dropdown__link {
+    display: block;
+  }
+}
