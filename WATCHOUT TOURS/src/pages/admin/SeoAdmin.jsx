@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 
-const PAGE_TYPES = ['home', 'productos', 'reseñas', 'blog', 'sobre-nosotras', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal', 'blind-travel-new-zealand', 'charla-nueva-zelanda']
+const PAGE_TYPES = ['home', 'sin-prisa', 'mas-alla-de-la-vista', 'productos', 'reseñas', 'blog', 'sobre-nosotras', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal', 'blind-travel-new-zealand', 'charla-nueva-zelanda']
 
 /* Nombre legible de cada página para las cabeceras del panel */
 const PAGE_LABELS = {
   'home': 'Home',
+  // Las dos líneas de viaje: los campos ES son de /sin-prisa y
+  // /mas-alla-de-la-vista, y los "(inglés)" de /en/unhurried y
+  // /en/beyond-sight.
+  'sin-prisa': 'Sin Prisa (/sin-prisa · /en/unhurried)',
+  'mas-alla-de-la-vista': 'Más allá de la vista (/mas-alla-de-la-vista · /en/beyond-sight)',
   'productos': 'Rutas (Productos)',
   'reseñas': 'Reseñas',
   'blog': 'Blog',

@@ -18,14 +18,17 @@
   "nav": {
     "main": "Navegación principal",
     "brandHome": "Watchout Tours — Ir al inicio",
-    "rutas": "Rutas",
+    "rutas": "Viajes",
     "nosotras": "Nosotras",
     "resenas": "Reseñas",
     "blog": "Blog",
     "contacto": "Contacto",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
-    "switchLang": "View this page in English"
+    "switchLang": "View this page in English",
+    "sinPrisa": "Sin Prisa",
+    "masAlla": "Más allá de la vista",
+    "todas": "Todas las experiencias"
   },
   "footer": {
     "brandHome": "Watchout Tours — Inicio",
@@ -37,6 +40,8 @@
     "sobreNosotras": "Sobre nosotras",
     "resenas": "Reseñas",
     "blog": "Blog",
+    "sinPrisa": "Sin Prisa",
+    "masAlla": "Más allá de la vista",
     "todasExperiencias": "Todas las experiencias",
     "disenaViaje": "Diseña tu viaje",
     "accesibilidad": "Accesibilidad",
@@ -45,6 +50,114 @@
     "rights": "Todos los derechos reservados."
   },
   "home": {
+    "seo": {
+      "title": "Viajes sensoriales por Nueva Zelanda en español | Watchout Tours",
+      "description": "Viajes en grupo pequeño por Nueva Zelanda, a ritmo tranquilo y con dos guías contigo de principio a fin. Para quien quiere comodidad total y para personas ciegas y con baja visión."
+    },
+    "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
+    "hero": {
+      "eyebrow": "Viajes sensoriales por Nueva Zelanda, en español",
+      "h1": "Nueva Zelanda con todos los sentidos.",
+      "sub": "Grupos de pocas personas, un ritmo que nadie apresura y nosotras dos a tu lado cada día del viaje.",
+      "ctaSinPrisa": "Viajes Sin Prisa",
+      "ctaMasAlla": "Viajes para personas ciegas y con baja visión"
+    },
+    "asiViajamos": {
+      "title": "Así viajamos",
+      "puntos": [
+        {
+          "titulo": "Grupos pequeños.",
+          "texto": "Pocas personas, para que el viaje se adapte a vosotros y no al revés."
+        },
+        {
+          "titulo": "Casi todo, solo para vosotros.",
+          "texto": "Hobbiton, la navegación por Auckland, la jornada maorí en Rotorua: la mayoría de las visitas son privadas para el grupo."
+        },
+        {
+          "titulo": "Nosotras dos, siempre.",
+          "texto": "Moni y Sylvie os acompañamos desde el aeropuerto hasta la despedida."
+        },
+        {
+          "titulo": "En español.",
+          "texto": "Sin barreras de idioma en ningún momento."
+        },
+        {
+          "titulo": "Todo resuelto.",
+          "texto": "Hoteles, traslados, comidas y actividades. Tú solo tienes que vivirlo."
+        }
+      ]
+    },
+    "dosViajes": {
+      "title": "Dos viajes, un mismo método",
+      "tarjetas": [
+        {
+          "id": "sin-prisa",
+          "to": "/sin-prisa",
+          "titulo": "Sin Prisa",
+          "texto": "Nueva Zelanda con calma y sin ocuparte de nada. Hoteles de 4 y 5 estrellas, desayunos y cenas incluidos, un transporte cómodo y nosotras dos contigo de principio a fin.",
+          "cta": "Descubre Sin Prisa"
+        },
+        {
+          "id": "mas-alla",
+          "to": "/mas-alla-de-la-vista",
+          "titulo": "Más allá de la vista",
+          "texto": "No toda visión necesita ojos. Un viaje diseñado para personas ciegas y con baja visión, donde cada lugar se vive con las manos, el oído y la piel, y la aventura llega hasta donde tú quieras.",
+          "cta": "Descubre Más allá de la vista"
+        }
+      ]
+    },
+    "testi": {
+      "eyebrow": "Lo que cuentan",
+      "title": "Así lo viven nuestros viajeros",
+      "srContent": "contenido de la reseña",
+      "srWho": "reseña de:",
+      "listen": "Escuchar testimonio",
+      "videoAria": "Testimonio en vídeo de {{name}} sobre su experiencia",
+      "more": "Leer más reseñas"
+    },
+    "audio": {
+      "eyebrow": "Escucha nuestros momentos más top",
+      "sr1": "primer audio",
+      "sr2": "segundo audio",
+      "card1Title": "¡Salto en parapente!",
+      "card1Tag": "Así suena volar por primera vez",
+      "card1Desc": "El viento en la cara, la sensación de libertad, el corazón latiendo al ritmo de la aventura.",
+      "card1Label": "Salto en parapente",
+      "card2Title": "La mordida de una alpaca",
+      "card2Tag": "Un ataque inesperado",
+      "card2Desc": "Ni siquiera en Nueva Zelanda estás a salvo de una alpaca curiosa.",
+      "card2Label": "La mordida de una alpaca",
+      "sr3": "tercer audio",
+      "card3Title": "Barro burbujeante",
+      "card3Tag": "La tierra hablando en Rotorua",
+      "card3Desc": "El sonido del barro geotermal borboteando en Rotorua: la tierra viva, respirando y hablando.",
+      "card3Label": "Barro burbujeante en Rotorua",
+      "sr4": "cuarto audio",
+      "card4Title": "Bienvenida al kauri",
+      "card4Tag": "Canto maorí al árbol más famoso",
+      "card4Desc": "Un canto maorí de bienvenida al kauri, el árbol gigante y sagrado de Nueva Zelanda.",
+      "card4Label": "Canto maorí de bienvenida al kauri"
+    },
+    "nosotras": {
+      "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua",
+      "eyebrow": "Nuestra historia",
+      "p": "Hace casi 8 años llegamos a Nueva Zelanda con una mochila llena de sueños e incertidumbre. Hoy somos Sylvie y Moni, las guías de Watchout — porque nadie como nosotras para contar, más allá de lo visual, la magia de este país que llamamos casa.",
+      "cta": "Conoce nuestra historia completa"
+    },
+    "blog": {
+      "eyebrow": "¿Cómo se vive?",
+      "title": "Por si quieres saber más",
+      "readingTime": "Tiempo de lectura: {{count}} mins",
+      "readArticle": "Leer artículo",
+      "seeAll": "Ver todos los artículos"
+    },
+    "finalCta": {
+      "title": "¿No sabes por dónde empezar?",
+      "p": "Cuéntanos qué te apetece y vemos juntos qué viaje encaja mejor contigo.",
+      "ctaPrimary": "Cuéntanos qué necesitas"
+    }
+  },
+  "masAlla": {
     "seo": {
       "title": "Viajes para Personas Ciegas por Nueva Zelanda | Watchout Tours",
       "description": "Viajes guiados y accesibles por Nueva Zelanda para personas ciegas y con baja visión. Experiencias sensoriales, autonomía y aventura, con dos guías contigo de principio a fin."
@@ -93,15 +206,6 @@
       "instagram": "Ver más en Instagram",
       "newTab": "(se abre en una pestaña nueva)"
     },
-    "testi": {
-      "eyebrow": "Lo que cuentan",
-      "title": "Así lo viven nuestros viajeros",
-      "srContent": "contenido de la reseña",
-      "srWho": "reseña de:",
-      "listen": "Escuchar testimonio",
-      "videoAria": "Testimonio en vídeo de {{name}} sobre su experiencia",
-      "more": "Leer más reseñas"
-    },
     "rutas": {
       "eyebrow": "Nuestras opciones",
       "title": "Dos maneras de vivirlo",
@@ -109,17 +213,15 @@
       "incluido": "Incluido:",
       "anuncioBadge": "¡Ya tenemos fecha!",
       "anuncioFecha": "Nuevo grupo: salimos el 1 de marzo",
-      "anuncioTexto": "Un grupo reducido de 3 a 6 viajeros recorriendo Nueva Zelanda durante 16 días. Las plazas se reservan por orden de llegada — cuéntanos que quieres venir y te guardamos la tuya.",
+      "anuncioTexto": "Un grupo reducido de 3 a 6 viajeros recorriendo Nueva Zelanda durante 15 días. Las plazas se reservan por orden de llegada — cuéntanos que quieres venir y te guardamos la tuya.",
       "anuncioCta": "Quiero mi plaza",
       "formatos": [
         {
           "id": "grupo",
-          "etiqueta": "16 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos",
+          "etiqueta": "15 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos",
           "titulo": "La aventura compartida",
-          "cuerpo": "Un grupo reducido de viajeros con las mismas ganas que tú de descubrir el mundo. Durante 16 días recorreremos juntos Nueva Zelanda, compartiendo aventuras, risas y momentos que recordarás toda la vida. Porque algunos viajes terminan… y otros te regalan amistades para siempre. Nosotras estaremos a vuestro lado en cada paso del camino, desde el primer día hasta el último.",
-          "precioTitulo": "Desde 9.500 € por persona",
-          "precioNota": "Viajamos de 3 a 6 personas. Sin letra pequeña: te damos el número exacto en cuanto hablemos.",
-          "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 15 noches.",
+          "cuerpo": "Un grupo reducido de viajeros con las mismas ganas que tú de descubrir el mundo. Durante 15 días recorreremos juntos Nueva Zelanda, compartiendo aventuras, risas y momentos que recordarás toda la vida. Porque algunos viajes terminan… y otros te regalan amistades para siempre. Nosotras estaremos a vuestro lado en cada paso del camino, desde el primer día hasta el último.",
+          "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 14 noches.",
           "cta": "Quiero más información"
         },
         {
@@ -127,60 +229,121 @@
           "etiqueta": "Privado · solo para ti y los tuyos · duración a tu ritmo",
           "titulo": "Tu viaje, a tu medida",
           "cuerpo": "Un viaje pensado solo para ti, y para quien quieras traer contigo. Nosotras dos, en exclusiva, diseñándolo a tu ritmo: tus días, tu energía, tu tiempo. Si quieres más calma, más calma. Si quieres más adrenalina, más adrenalina. Aquí no hay molde. Hay un viaje que te hacemos a medida, como un traje.",
-          "precioTitulo": "Precio a medida",
-          "precioNota": "Como lo diseñamos contigo, el precio también depende de ti: de cuántos días, de qué quieras vivir, de cómo lo sueñes. Sin compromiso.",
           "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo de principio a fin.",
           "cta": "Quiero más información"
         }
       ]
-    },
-    "audio": {
-      "eyebrow": "Escucha nuestros momentos más top",
-      "sr1": "primer audio",
-      "sr2": "segundo audio",
-      "card1Title": "¡Salto en parapente!",
-      "card1Tag": "Así suena volar por primera vez",
-      "card1Desc": "El viento en la cara, la sensación de libertad, el corazón latiendo al ritmo de la aventura.",
-      "card1Label": "Salto en parapente",
-      "card2Title": "La mordida de una alpaca",
-      "card2Tag": "Un ataque inesperado",
-      "card2Desc": "Ni siquiera en Nueva Zelanda estás a salvo de una alpaca curiosa.",
-      "card2Label": "La mordida de una alpaca",
-      "sr3": "tercer audio",
-      "card3Title": "Barro burbujeante",
-      "card3Tag": "La tierra hablando en Rotorua",
-      "card3Desc": "El sonido del barro geotermal borboteando en Rotorua: la tierra viva, respirando y hablando.",
-      "card3Label": "Barro burbujeante en Rotorua",
-      "sr4": "cuarto audio",
-      "card4Title": "Bienvenida al kauri",
-      "card4Tag": "Canto maorí al árbol más famoso",
-      "card4Desc": "Un canto maorí de bienvenida al kauri, el árbol gigante y sagrado de Nueva Zelanda.",
-      "card4Label": "Canto maorí de bienvenida al kauri"
-    },
-    "nosotras": {
-      "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua",
-      "eyebrow": "Nuestra historia",
-      "p": "Hace casi 8 años llegamos a Nueva Zelanda con una mochila llena de sueños e incertidumbre. Hoy somos Sylvie y Moni, las guías de Watchout — porque nadie como nosotras para contar, más allá de lo visual, la magia de este país que llamamos casa.",
-      "cta": "Conoce nuestra historia completa"
-    },
-    "blog": {
-      "eyebrow": "¿Cómo se vive?",
-      "title": "Por si quieres saber más",
-      "readingTime": "Tiempo de lectura: {{count}} mins",
-      "readArticle": "Leer artículo",
-      "seeAll": "Ver todos los artículos"
     },
     "finalCta": {
       "title": "¿No sabes por dónde empezar?",
       "p1": "Organizar un viaje accesible puede generar muchas preguntas.",
       "p2": "Resolvemos tus dudas y vemos qué opción encaja mejor contigo.",
       "ctaPrimary": "Cuéntanos qué necesitas"
+    }
+  },
+  "sinPrisa": {
+    "seo": {
+      "title": "Sin Prisa · Viajes tranquilos por Nueva Zelanda en grupo pequeño | Watchout Tours",
+      "description": "Quince días por Nueva Zelanda a ritmo tranquilo, con visitas privadas, hoteles de 4 y 5 estrellas, desayuno y cena incluidos y dos guías en español todo el viaje."
     },
-    "charlaAviso": {
-      "eyebrow": "Charla online gratuita · En español",
-      "title": "Descubre Nueva Zelanda a través de los sentidos",
-      "texto": "¿Cómo es viajar por Nueva Zelanda con ceguera o baja visión? Te lo contamos por Microsoft Teams:",
-      "cta": "Información e inscripción a la charla"
+    "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
+    "hero": {
+      "eyebrow": "Sin Prisa · Nueva Zelanda con todos los sentidos",
+      "h1": "Ese viaje que llevas años prometiéndote.",
+      "sub": "Quince días por Nueva Zelanda en un grupo pequeño, a un ritmo tranquilo y con Moni y Sylvie a tu lado desde que aterrizas hasta el último abrazo en el aeropuerto.",
+      "cta": "Quiero información"
+    },
+    "paraQuien": {
+      "title": "Para quién es",
+      "p1": "Para quien siempre ha soñado con ir al otro lado del mundo y nunca ha encontrado el momento, la compañía o las ganas de organizarlo. Para parejas que por fin tienen tiempo, para grupos de amigos que llevan años diciendo “algún día” y para quien viaja por su cuenta y quiere volver con amigos nuevos.",
+      "p2": "Aquí no tienes que preocuparte del idioma, de las maletas, de los horarios ni de con quién cenar. De eso nos ocupamos nosotras."
+    },
+    "incluye": {
+      "title": "Qué incluye",
+      "items": [
+        "Moni y Sylvie contigo los 15 días, en español.",
+        "14 noches en hoteles de 4 y 5 estrellas.",
+        "Desayuno y cena todos los días, y almuerzo en muchas de las jornadas.",
+        "Visitas privadas solo para el grupo.",
+        "Transporte cómodo durante toda la ruta y vuelo interno entre las dos islas.",
+        "Recogida en el aeropuerto y asistencia las 24 horas."
+      ]
+    },
+    "privado": {
+      "title": "Casi todo, solo para vosotros",
+      "p": "En Hobbiton recorréis la Comarca con un guía para el grupo y coméis en la Taberna del Dragón Verde. En Rotorua, un guía maorí os acompaña durante todo el día. En Auckland navegáis por el puerto en un velero solo para vosotros. Sin colas, sin esperar a cuarenta personas y con todo el tiempo del mundo para preguntar."
+    },
+    "solo": {
+      "title": "Si viajas por tu cuenta",
+      "p": "Mucha gente viaja con nosotras por su cuenta, y en dos días ya forma parte del grupo. Puedes tener tu propia habitación o, si lo prefieres, compartirla con otra persona del grupo que también viaje por su cuenta."
+    },
+    "familia": {
+      "title": "Para tu familia",
+      "p": "Moni y Sylvie viven en Nueva Zelanda desde hace ocho años y acompañan al grupo todos los días, con asistencia las 24 horas. Tu familia puede estar tranquila: estás con nosotras."
+    },
+    "dia": {
+      "title": "Así es un día de viaje",
+      "p": "Desayuno tranquilo en el hotel. Salimos hacia el sur entre colinas verdes llenas de ovejas. A media mañana llegamos a Hobbiton, donde un guía espera solo a nuestro grupo para recorrer la Comarca. Comemos en la Taberna del Dragón Verde, con su postre y sin mirar el reloj. Por la tarde, carretera hasta Rotorua, donde el aire ya huele a azufre. Cena en el hotel y a descansar."
+    },
+    "ruta": {
+      "title": "La ruta",
+      "navAria": "Mapa de la ruta Sin Prisa por Nueva Zelanda",
+      "paradas": [
+        {
+          "id": "sp-auckland",
+          "nombre": "Auckland"
+        },
+        {
+          "id": "sp-rotorua",
+          "nombre": "Rotorua"
+        },
+        {
+          "id": "sp-queenstown",
+          "nombre": "Queenstown"
+        },
+        {
+          "id": "sp-tekapo",
+          "nombre": "Tekapo"
+        },
+        {
+          "id": "sp-christchurch",
+          "nombre": "Christchurch"
+        },
+        {
+          "id": "sp-kaikoura",
+          "nombre": "Kaikōura"
+        }
+      ]
+    },
+    "llevaras": {
+      "title": "Lo que te llevarás",
+      "p": "El vapor de los géiseres en la piel. El canto de las ballenas por hidrófono en Kaikōura. Las estrellas de Tekapo contadas junto a una hoguera. El sabor del hāngi, cocinado bajo tierra con piedras volcánicas."
+    },
+    "faq": {
+      "title": "¿Es este viaje para mí?",
+      "items": [
+        {
+          "q": "¿Y si nunca he hecho un viaje tan largo?",
+          "a": "Mucha gente que viaja con nosotras tampoco. Te ayudamos a elegir los vuelos y las escalas, y en el aeropuerto de Auckland ya estamos esperándote."
+        },
+        {
+          "q": "¿Necesito estar en forma?",
+          "a": "Hay paseos cortos casi todos los días, siempre con calma y con pausas. Si tienes cualquier duda, nos llamas y lo hablamos."
+        },
+        {
+          "q": "¿Qué no está incluido?",
+          "a": "Los vuelos internacionales (te ayudamos a sacarlos) y el seguro de viaje, que es obligatorio."
+        },
+        {
+          "q": "¿Y si me apetece algo más movido?",
+          "a": "Se puede organizar como opcional: vuelo en helicóptero sobre el glaciar, jet boat en Queenstown y alguna cosa más."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "¿Hablamos?",
+      "p": "Cuéntanos qué te apetece y resolvemos todas tus dudas, sin compromiso.",
+      "ctaPrimary": "Quiero información"
     }
   },
   "notFound": {
@@ -271,12 +434,10 @@
     "formatos": [
       {
         "id": "grupo",
-        "etiqueta": "16 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos",
+        "etiqueta": "15 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos",
         "titulo": "La aventura compartida",
-        "cuerpo": "Un grupo pequeñito de gente con las mismas ganas que tú de comerse el mundo. 15 noches recorriendo Nueva Zelanda, riéndonos, flipando y sintiéndolo todo juntos. De esos viajes de los que vuelves con amigos para toda la vida. Y siempre nosotras dos pegadas al grupo, de principio a fin.",
-        "precioTitulo": "Desde 9.500 € por persona",
-        "precioNota": "Viajamos de 3 a 6 personas. Sin letra pequeña: te damos el número exacto en cuanto hablemos.",
-        "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 15 noches.",
+        "cuerpo": "Un grupo pequeñito de gente con las mismas ganas que tú de comerse el mundo. 14 noches recorriendo Nueva Zelanda, riéndonos, flipando y sintiéndolo todo juntos. De esos viajes de los que vuelves con amigos para toda la vida. Y siempre nosotras dos pegadas al grupo, de principio a fin.",
+        "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 14 noches.",
         "cta": "Quiero apuntarme"
       },
       {
@@ -284,8 +445,6 @@
         "etiqueta": "Privado · solo para ti y los tuyos · duración a tu ritmo",
         "titulo": "Tu viaje, a tu medida",
         "cuerpo": "Un viaje pensado solo para ti, y para quien quieras traer contigo. Nosotras dos, en exclusiva, diseñándolo a tu ritmo: tus días, tu energía, tu tiempo. Si quieres más calma, más calma. Si quieres más adrenalina, más adrenalina. Aquí no hay molde. Hay un viaje que te hacemos a medida, como un traje.",
-        "precioTitulo": "Precio a medida",
-        "precioNota": "Como lo diseñamos contigo, el precio también depende de ti: de cuántos días, de qué quieras vivir, de cómo lo sueñes. Sin compromiso y sin rollos.",
         "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo de principio a fin.",
         "cta": "Diseñemos el tuyo"
       }
@@ -369,7 +528,7 @@
     "holaTitle": "Somos Mónica y Sylvie.",
     "holaP1": "Dos españolas que llegaron a Nueva Zelanda hace siete años con una mochila llena de ilusión... y que todavía siguen sorprendiéndose con este país.",
     "holaP2": "Nos encanta madrugar para ver un amanecer, improvisar una parada porque alguien ha escuchado un río escondido, reírnos durante horas en la furgoneta y terminar el día compartiendo historias alrededor de una mesa.",
-    "holaQuote": "\"Nunca había vivido algo así.\"",
+    "holaQuote": "“Nunca había vivido algo así.”",
     "holaQuoteCite": "— Lo que más nos emociona escuchar",
     "holaP3": "Somos curiosas por naturaleza. Nos encanta preguntar, escuchar historias y descubrir cómo vive el mundo cada persona. Quizá por eso Watchout nació de forma tan natural.",
     "equipoEyebrow": "Equipo",

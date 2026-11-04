@@ -17,7 +17,18 @@ import AvisoLegal      from './pages/AvisoLegal'
 import NotFound        from './pages/NotFound'
 import BlindTravelNewZealand from './pages/BlindTravelNewZealand'
 import CharlaNuevaZelanda from './pages/CharlaNuevaZelanda'
+import SinPrisa from './pages/SinPrisa'
+import MasAllaDeLaVista from './pages/MasAllaDeLaVista'
 import { CHARLA_PUBLICADA } from './config/charlaPublicada'
+import { LOCALIZED_SLUGS } from './i18n/pageLanguages'
+
+/* Slug de una página en el idioma de `prefix` ('' = español, '/en' =
+   inglés), sin barra inicial. Las páginas con slug propio en inglés están
+   en LOCALIZED_SLUGS (src/i18n/pageLanguages.js). */
+function slug(prefix, basePath) {
+  const path = prefix === '/en' ? (LOCALIZED_SLUGS[basePath] ?? basePath) : basePath
+  return path.slice(1)
+}
 
 /* El panel de administración no lo usa el público: se carga en un chunk
    aparte (code-splitting) para no aumentar el peso de las páginas públicas. */
@@ -32,11 +43,16 @@ const AdminCharla     = lazy(() => import('./pages/admin/CharlaAdmin'))
 
 /* Rutas públicas (hijas del Layout). Se renderizan dos veces: sin prefijo
    (español, por defecto) y bajo /en (inglés). Los slugs se mantienen; solo
-   cambia el prefijo de idioma. `prefix` es '' para ES y '/en' para EN, y se
-   usa para que los redirects apunten al idioma correcto. */
+   cambia el prefijo de idioma, salvo en las páginas de LOCALIZED_SLUGS.
+   `prefix` es '' para ES y '/en' para EN, y se usa para elegir el slug y
+   para que los redirects apunten al idioma correcto. */
 function paginasPublicas(prefix) {
   return [
     <Route key="home"    index                    element={<Home />} />,
+    /* Las dos líneas de viaje: /sin-prisa ↔ /en/unhurried y
+       /mas-alla-de-la-vista ↔ /en/beyond-sight. */
+    <Route key="sinp"    path={slug(prefix, '/sin-prisa')}            element={<SinPrisa />} />,
+    <Route key="masa"    path={slug(prefix, '/mas-alla-de-la-vista')} element={<MasAllaDeLaVista />} />,
     <Route key="sn"      path="sobre-nosotras"    element={<SobreNosotras />} />,
     <Route key="prod"    path="productos"         element={<Productos />} />,
     <Route key="res"     path="resenas"           element={<Resenas />} />,

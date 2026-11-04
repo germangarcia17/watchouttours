@@ -14,22 +14,39 @@ const COORDS = [
   { id: 'queenstown', x: 33, y: 87 },
 ]
 
-export default function RutaMapa() {
+/* Ruta de Sin Prisa (/sin-prisa): Auckland → Rotorua → Queenstown →
+   Tekapo → Christchurch → Kaikōura. Mismo mapa esquemático. */
+export const COORDS_SIN_PRISA = [
+  { x: 47, y: 8 },   // Auckland
+  { x: 57, y: 22 },  // Rotorua
+  { x: 33, y: 87 },  // Queenstown
+  { x: 45, y: 70 },  // Tekapo
+  { x: 56, y: 64 },  // Christchurch
+  { x: 57, y: 55 },  // Kaikōura
+]
+
+/* `ns` es el namespace de i18n con los textos del mapa (title, navAria,
+   paradas y, opcionalmente, eyebrow y sub); `coords` las posiciones de los
+   pines, en el mismo orden que las paradas. Por defecto, la ruta de
+   /productos. El resumen de cada parada también es opcional. */
+export default function RutaMapa({ ns = 'productos.mapa', coords = COORDS }) {
   const { t } = useTranslation()
-  const textos = t('productos.mapa.paradas', { returnObjects: true })
-  const paradas = COORDS.map((c, i) => ({ ...c, ...textos[i] }))
+  const textos = t(`${ns}.paradas`, { returnObjects: true })
+  const paradas = coords.map((c, i) => ({ ...c, ...textos[i] }))
+  const eyebrow = t(`${ns}.eyebrow`, { defaultValue: '' })
+  const sub = t(`${ns}.sub`, { defaultValue: '' })
 
   return (
     <section className="ruta-mapa" aria-labelledby="ruta-mapa-heading">
       <div className="wrap">
-        <span className="sec-eyebrow">{t('productos.mapa.eyebrow')}</span>
-        <h2 id="ruta-mapa-heading" className="sec-title">{t('productos.mapa.title')}</h2>
-        <p className="sec-sub">{t('productos.mapa.sub')}</p>
+        {eyebrow && <span className="sec-eyebrow">{eyebrow}</span>}
+        <h2 id="ruta-mapa-heading" className="sec-title">{t(`${ns}.title`)}</h2>
+        {sub && <p className="sec-sub">{sub}</p>}
 
         <div className="ruta-mapa__grid">
           {/* Mapa esquemático: apoyo visual y navegación rápida por teclado.
               Cada pin es un enlace real a su parada en la lista de texto. */}
-          <nav className="ruta-mapa__svg-wrap" aria-label={t('productos.mapa.navAria')}>
+          <nav className="ruta-mapa__svg-wrap" aria-label={t(`${ns}.navAria`)}>
             <svg viewBox="0 0 340 620" className="ruta-mapa__svg" aria-hidden="true" focusable="false">
               <path
                 className="ruta-mapa__isla"
@@ -61,7 +78,7 @@ export default function RutaMapa() {
                 <span className="ruta-mapa__numero" aria-hidden="true">{i + 1}</span>
                 <div>
                   <h3 className="ruta-mapa__nombre">{p.nombre}</h3>
-                  <p className="ruta-mapa__resumen">{p.resumen}</p>
+                  {p.resumen && <p className="ruta-mapa__resumen">{p.resumen}</p>}
                 </div>
               </li>
             ))}

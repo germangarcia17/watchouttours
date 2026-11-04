@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { SkipLink } from './SkipLink'
 import { Header } from './Header'
 import { Footer } from './Footer'
-import { useLang, stripLang } from '../../i18n/routing'
+import { useLang, stripLang, localizePath } from '../../i18n/routing'
 import { availableLangs } from '../../i18n/pageLanguages'
 import { SITE_URL } from '../../lib/site'
 
@@ -32,7 +32,7 @@ function AlternateLinks() {
   const basePath = stripLang(pathname)
   const langs = availableLangs(basePath)
   const esUrl = `${SITE_URL}${basePath}`
-  const enUrl = `${SITE_URL}${basePath === '/' ? '/en' : `/en${basePath}`}`
+  const enUrl = `${SITE_URL}${localizePath(basePath, 'en')}`
   const defaultUrl = langs.includes('es') ? esUrl : enUrl
   return (
     <Helmet>

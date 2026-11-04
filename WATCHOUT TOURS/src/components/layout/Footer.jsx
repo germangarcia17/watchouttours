@@ -59,6 +59,8 @@ export function Footer() {
         <nav aria-label={t('footer.colViajes')} className="footer-col">
           <h3 className="footer-col__heading">{t('footer.colViajes')}</h3>
           <ul role="list" className="footer-col__list">
+            <li><L to="/sin-prisa">{t('footer.sinPrisa')}</L></li>
+            <li><L to="/mas-alla-de-la-vista">{t('footer.masAlla')}</L></li>
             <li><L to="/productos">{t('footer.todasExperiencias')}</L></li>
             <li><L to="/contacto">{t('footer.disenaViaje')}</L></li>
           </ul>

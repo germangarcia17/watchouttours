@@ -3,6 +3,13 @@ import { supabase } from '../../lib/supabase'
 import { uploadImage } from '../../lib/storage'
 
 const NUEVAS_IMAGENES_SUGERIDAS = [
+  // Hero de /sin-prisa: de momento usa el paisaje del géiser de la home;
+  // falta una foto propia (puerto, barco u Hobbiton).
+  {
+    section: 'sin-prisa', key: 'hero',
+    image_alt: 'El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa',
+    image_alt_en: 'The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush',
+  },
   {
     section: 'sobre-nosotras', key: 'equipo-moni',
     image_alt: 'Moni, cofundadora y guía de Watchout Tours, en Nueva Zelanda',

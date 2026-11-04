@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 import { useSeo } from '../lib/useSeo'
-import { useLang, stripLang } from '../i18n/routing'
+import { useLang, stripLang, localizePath } from '../i18n/routing'
 import { pickLocalized } from '../i18n/content'
 import { SITE_URL } from '../lib/site'
 
@@ -37,7 +37,7 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
 
   const basePath    = stripLang(pathname)
   const esUrl       = `${SITE_URL}${basePath}`
-  const enUrl       = `${SITE_URL}${basePath === '/' ? '/en' : `/en${basePath}`}`
+  const enUrl       = `${SITE_URL}${localizePath(basePath, 'en')}`
   const canonical   = row?.canonical_url || (lang === 'en' ? enUrl : esUrl)
 
   return (
