@@ -20,7 +20,6 @@ import { SolicitudRuta } from '../components/SolicitudRuta'
 import { HeroFoto, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
 
 const ICONOS_INCLUYE = ['guias', 'hotel', 'comida', 'privado', 'transporte', 'asistencia']
-const ICONOS_DIA = ['amanecer', 'sol', 'atardecer', 'luna']
 
 /* Galería: imagen por defecto de cada lugar. Hobbiton, Milford Sound y
    Tekapo aún no tienen foto en el proyecto: no se muestran hasta que se
@@ -66,13 +65,12 @@ function FotoGaleria({ id, lugar, alt }) {
  * Viajes tranquilos en grupos de máximo 6 personas
  * (/sin-prisa ↔ /en/unhurried). Orden: hero → filas en zigzag (para quién,
  * casi todo solo para vosotros, si viajas por tu cuenta, para tu familia)
- * → qué incluye → un día de viaje → la ruta en PDF → lo que te llevarás y
+ * → qué incluye → la ruta en PDF → lo que te llevarás y
  * galería → reseñas → preguntas frecuentes → CTA. Sin precios ni plazas.
  * ──────────────────────────────────────────────────────────────────────── */
 export default function SinPrisa() {
   const { t } = useTranslation()
   const incluye = t('sinPrisa.incluye.items', { returnObjects: true })
-  const momentos = t('sinPrisa.dia.momentos', { returnObjects: true })
   const galeria = t('sinPrisa.galeria.items', { returnObjects: true })
   const faq = t('sinPrisa.faq.items', { returnObjects: true })
 
@@ -122,27 +120,12 @@ export default function SinPrisa() {
         </div>
       </section>
 
-      {/* ── Así es un día de viaje: línea de tiempo ──── */}
-      <section aria-labelledby="sp-dia">
-        <div className="wrap">
-          <h2 id="sp-dia" className="sec-title">{t('sinPrisa.dia.title')}</h2>
-          <ol className="dia">
-            {momentos.map(({ etiqueta, texto }, i) => (
-              <li key={etiqueta} className="dia__momento">
-                <span className="dia__marca icono-circulo"><Icono nombre={ICONOS_DIA[i]} /></span>
-                <h3 className="dia__etiqueta">{etiqueta}</h3>
-                <p className="dia__texto">{texto}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       {/* ── La ruta: se pide en PDF (no se enseña en la web) ── */}
-      <SolicitudRuta viaje="viajes-60" />
+      {/* Fondo blanco: va entre dos bandas crema */}
+      <SolicitudRuta viaje="viajes-60" className="" />
 
       {/* ── Lo que te llevarás + galería ──────────────── */}
-      <section aria-labelledby="sp-llevaras">
+      <section className="band-cream" aria-labelledby="sp-llevaras">
         <div className="wrap">
           <div className="llevaras">
             <h2 id="sp-llevaras" className="sec-title">{t('sinPrisa.llevaras.title')}</h2>

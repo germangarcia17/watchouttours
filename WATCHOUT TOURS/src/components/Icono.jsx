@@ -106,27 +106,6 @@ const TRAZOS = {
       <path d="M3 19c1.5-1.3 3-1.3 4.5 0s3 1.3 4.5 0 3-1.3 4.5 0 3 1.3 4.5 0" />
     </>
   ),
-  // Momentos del día (línea de tiempo)
-  amanecer: (
-    <>
-      <path d="M3 18h18M6.5 18a5.5 5.5 0 0 1 11 0" />
-      <path d="M12 5.5V9M4.6 9.6l2 2M19.4 9.6l-2 2" />
-    </>
-  ),
-  sol: (
-    <>
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" />
-    </>
-  ),
-  atardecer: (
-    <>
-      <path d="M3 18h18M6.5 18a5.5 5.5 0 0 1 11 0" />
-      <path d="M12 9.5V5.5M10 7.5l2 2 2-2" />
-      <path d="M3 21h18" />
-    </>
-  ),
-  luna: <path d="M19.5 14.5A7.5 7.5 0 0 1 9.5 4.5a7.5 7.5 0 1 0 10 10Z" />,
   // Altavoz: audios
   altavoz: (
     <>
