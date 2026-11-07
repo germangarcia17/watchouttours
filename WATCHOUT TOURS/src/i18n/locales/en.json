@@ -28,11 +28,12 @@
     "switchLang": "Ver esta página en español",
     "sinPrisa": "60+ Journeys",
     "masAlla": "Journeys for blind and low-vision travellers",
-    "todas": "All experiences"
+    "todas": "All experiences",
+    "itinerario": "Get the itinerary"
   },
   "footer": {
     "brandHome": "Watchout Tours — Home",
-    "tagline": "Sensory journeys around New Zealand in groups of 6 at most, with two guides by your side from start to finish.",
+    "tagline": "Accessible travel specialists in New Zealand.",
     "whatsapp": "Message us on WhatsApp",
     "instagram": "Follow us on Instagram",
     "colNosotras": "About",
@@ -57,66 +58,184 @@
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
-      "eyebrow": "Sensory journeys through Aotearoa New Zealand",
-      "h1": "New Zealand with all your senses.",
-      "sub": "Groups of 6 at most, a pace nobody rushes, and the two of us by your side every day of the trip.",
-      "ctaSinPrisa": "60+ Journeys",
-      "ctaMasAlla": "Journeys for blind and low-vision travellers"
+      "etiqueta": "New Zealand with all your senses",
+      "h1": "The trip you’ve been dreaming of for years.",
+      "sub": "Specialists in journeys for blind and low-vision travellers, 60+ journeys and tailor-made trips. Groups of 6 at most, almost every experience private, and Moni and Sylvie by your side from start to finish.",
+      "ctaViajes": "Discover our journeys",
+      "ctaItinerario": "Get the free itinerary"
     },
-    "confianza": {
-      "titulo": "Why travel with Watchout Tours",
-      "items": [
-        "Groups of 6 at most",
-        "2 guides throughout",
-        "Private experiences",
-        "8 years living in New Zealand"
-      ]
+    "franja": {
+      "etiqueta": "Next group departure",
+      "fechas": "1–15 March 2027",
+      "plazas": "Only 6 places · Other dates? Ask us",
+      "cta": "Book your place"
     },
-    "asiViajamos": {
-      "title": "How we travel",
-      "puntos": [
+    "nz": {
+      "etiqueta": "The other side of the world",
+      "titulo": "New Zealand is that place you’ve always wanted to experience.",
+      "texto": "Steaming volcanoes, fiords where waterfalls tumble into the sea, the Shire from The Lord of the Rings and a Māori culture that welcomes you with a hongi. We’ve lived here for eight years, and we’ll take you to the New Zealand we truly know.",
+      "fotos": [
         {
-          "titulo": "Groups of 6 at most.",
-          "texto": "Just a few people, so the trip fits you, not the other way round."
+          "id": "tierra-media",
+          "titulo": "Middle-earth",
+          "frase": "A private visit to Hobbiton and lunch at the Green Dragon Inn.",
+          "alt": "Hobbiton: hobbit holes with round doors among green hills"
         },
         {
-          "titulo": "Almost everything, just for the group.",
-          "texto": "Hobbiton, sailing on Auckland’s harbour, a full day with a Māori guide in Rotorua: most experiences are private to the group."
+          "id": "maori",
+          "titulo": "Māori culture",
+          "frase": "A day in Rotorua with a Māori guide: haka, hāngi and hot springs.",
+          "alt": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge"
         },
         {
-          "titulo": "The two of us, always.",
-          "texto": "We pick you up at the airport and stay with you until the day we say goodbye."
+          "id": "queenstown",
+          "titulo": "Queenstown",
+          "frase": "Mountains rising over the lake and the century-old TSS Earnslaw.",
+          "alt": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind"
         },
         {
-          "titulo": "One language per group.",
-          "texto": "Every group travels in English or in Spanish, so nothing gets lost in translation."
+          "id": "milford",
+          "titulo": "Milford Sound",
+          "frase": "The eighth wonder of the world: a cruise through the fiord, with waterfall spray on your face.",
+          "alt": "Milford Sound: sheer rock walls rising straight out of the fiord"
         },
         {
-          "titulo": "All sorted.",
-          "texto": "Hotels, transfers, meals and activities. All you have to do is enjoy it."
+          "id": "kaikoura",
+          "titulo": "Kaikōura",
+          "frase": "Sperm whales, dolphins and seals in the wild and, with luck, orcas.",
+          "alt": "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky"
         }
       ]
     },
-    "dosViajes": {
-      "title": "Two ways to travel with us",
-      "tarjetas": [
+    "viajes": {
+      "etiqueta": "Our journeys",
+      "titulo": "Now, with us, that trip becomes real.",
+      "ciegos": {
+        "etiqueta": "Group · 6 travellers at most",
+        "titulo": "Journeys for blind and low-vision travellers",
+        "destacado": "Not all vision needs eyes.",
+        "texto": "A journey designed to experience New Zealand through your hands, your ears and your skin: the heat of the geysers, Māori song, the wind as you paraglide. Two dedicated guides and as much adventure as you want.",
+        "cta": "Discover these journeys",
+        "audios": "Listen to our audio and the paragliding video",
+        "imgAlt": "A traveller with a white cane and a companion holding a recording microphone by a wooden fence where several sheep lean over, on a farm among green hills"
+      },
+      "sesenta": {
+        "etiqueta": "Group · 6 travellers at most",
+        "titulo": "60+ Journeys",
+        "destacado": "New Zealand has been on your list for years. This is the moment.",
+        "texto": "Fifteen days at an easy pace, 4 and 5-star hotels, meals included and us taking care of everything, from the airport to the farewell. For couples, friends and solo travellers.",
+        "cta": "Discover 60+ Journeys",
+        "imgAlt": "Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them"
+      },
+      "privado": {
+        "etiqueta": "Tailor-made · Your dates",
+        "titulo": "Private journeys",
+        "texto": "Your own New Zealand trip, just for you and yours. You choose the dates and the pace, and we’re with you from start to finish.",
+        "cta": "Design your private trip"
+      }
+    },
+    "salida": {
+      "etiqueta": "Next group departure",
+      "titulo": "1–15 March 2027",
+      "texto1": "Aotearoa through the senses. Fifteen days and fourteen nights from north to south, with the inter-island flight included.",
+      "texto2": "Places are allocated in order of booking. Once all six are taken, the group closes.",
+      "reservar": "Book your place",
+      "itinerario": "Get the day-by-day itinerary",
+      "otras": {
+        "titulo": "Do these dates not suit you?",
+        "texto": "Tell us when you’d like to travel. We’ll let you know about upcoming departures or put a group together on the dates you suggest.",
+        "enlace": "Suggest your dates"
+      },
+      "rutaTitulo": "Highlights of the route",
+      "paradas": [
         {
-          "id": "sin-prisa",
-          "to": "/sin-prisa",
-          "titulo": "60+ Journeys",
-          "texto": "New Zealand at an easy pace, with nothing to organise. 4 and 5-star hotels, breakfast and dinner included, comfortable transport and the two of us with you from start to finish.",
-          "cta": "Discover 60+ Journeys",
-          "imgAlt": "Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them"
+          "nombre": "Auckland",
+          "gancho": "The City of Sails",
+          "frase": "We sail the harbour on a yacht just for the group."
         },
         {
-          "id": "mas-alla",
-          "to": "/mas-alla-de-la-vista",
-          "titulo": "Journeys for blind and low-vision travellers",
-          "texto": "Not all vision needs eyes. A journey designed for blind and low-vision travellers, where every place is felt through your hands, your ears and your skin, and the adventure goes as far as you want it to.",
-          "cta": "Discover journeys for blind and low-vision travellers",
-          "imgAlt": "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it"
+          "nombre": "Hobbiton & Rotorua",
+          "gancho": "The Shire and the Māori heartland",
+          "frase": "Hobbiton in private, geysers and a full day with a Māori guide."
+        },
+        {
+          "nombre": "Queenstown",
+          "gancho": "The adventure capital of the world",
+          "frase": "Bungy, jet boating and paragliding for the daring, and Lake Wakatipu aboard the century-old TSS Earnslaw for those who prefer calm."
+        },
+        {
+          "nombre": "Milford Sound",
+          "gancho": "The eighth wonder of the world",
+          "frase": "So Rudyard Kipling called it. A cruise through the fiord, with waterfall spray on your face."
+        },
+        {
+          "nombre": "Aoraki / Mount Cook",
+          "gancho": "New Zealand’s highest mountain",
+          "frase": "3,724 metres of ice and rock above turquoise glacial lakes."
+        },
+        {
+          "nombre": "Tekapo",
+          "gancho": "One of the clearest skies on the planet",
+          "frase": "An international dark sky reserve: the stars, told around a campfire."
+        },
+        {
+          "nombre": "Kaikōura",
+          "gancho": "A wildlife paradise",
+          "frase": "Sperm whales, dolphins and seals in the wild and, with luck, orcas."
         }
       ]
+    },
+    "nosotras": {
+      "etiqueta": "About us",
+      "titulo": "Moni and Sylvie. From Barcelona, living in New Zealand for eight years.",
+      "texto": "Sylvie has travelled to nearly 50 countries and spent years managing hotels here. Moni is a coach who makes a group feel at home from day one. We’ve travelled every route ourselves first, and we’re with you on every trip from start to finish.",
+      "cifras": [
+        {
+          "valor": "8 years",
+          "texto": "living in New Zealand"
+        },
+        {
+          "valor": "2",
+          "texto": "guides on every trip"
+        },
+        {
+          "valor": "6",
+          "texto": "travellers at most"
+        }
+      ],
+      "enlace": "Read our story",
+      "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua"
+    },
+    "resenas": {
+      "etiqueta": "Reviews",
+      "titulo": "What our travellers say.",
+      "todas": "Read all reviews"
+    },
+    "itinerario": {
+      "titulo": "Start with the itinerary. It’s free.",
+      "texto": "We’ll send it by email or WhatsApp, with every day, every visit and everything included. If the next departure doesn’t suit you, tell us which dates you’d prefer. No commitment.",
+      "whatsapp": "Or message us on WhatsApp",
+      "formAria": "Form to get the itinerary",
+      "nombre": "Name",
+      "contacto": "Email or WhatsApp",
+      "contactoAyuda": "Your email or mobile number, so we can send you the itinerary.",
+      "viaje": "Which journey interests you?",
+      "viajeElige": "Choose an option",
+      "opciones": {
+        "viajes-60": "60+ Journeys",
+        "personas-ciegas": "Journeys for blind and low-vision travellers",
+        "privado": "Private journey",
+        "no-se": "Not sure yet"
+      },
+      "fechas": "Which dates would suit you?",
+      "opcional": "(optional)",
+      "fechasEjemplo": "For example: October 2027",
+      "enviar": "Send me the itinerary",
+      "enviando": "Sending…",
+      "exito": "Got it! We’ll send you the itinerary very soon.",
+      "errNombre": "Enter your name (at least 2 letters).",
+      "errContacto": "Enter a valid email or mobile number so we can send you the itinerary.",
+      "errViaje": "Choose which journey interests you."
     },
     "testi": {
       "eyebrow": "What they say",
@@ -149,24 +268,6 @@
       "card4Tag": "A Māori chant to the country’s most famous tree",
       "card4Desc": "A Māori chant welcoming the kauri, New Zealand’s giant, sacred tree.",
       "card4Label": "Māori chant welcoming the kauri"
-    },
-    "nosotras": {
-      "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua",
-      "eyebrow": "Our story",
-      "p": "We’re Sylvie and Moni. Almost eight years ago we arrived in New Zealand with a backpack full of dreams and a few doubts. Today this country is our home, and what we love most is sharing it through every sense.",
-      "cta": "Discover our full story"
-    },
-    "blog": {
-      "eyebrow": "What’s it like?",
-      "title": "In case you’d like to know more",
-      "readingTime": "Reading time: {{count}} mins",
-      "readArticle": "Read article",
-      "seeAll": "See all articles"
-    },
-    "finalCta": {
-      "title": "Not sure where to start?",
-      "p": "Tell us what you have in mind and we’ll work out together which trip suits you best.",
-      "ctaPrimary": "Tell us what you need"
     }
   },
   "masAlla": {

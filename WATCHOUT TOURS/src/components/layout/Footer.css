@@ -1,10 +1,10 @@
 /* ── Pie de página (renovación visual) ───────────────────
-   Banda azul noche a todo el ancho, alineada con el contenido (.wrap).
+   Banda petróleo oscuro a todo el ancho, alineada con el contenido (.wrap).
    Se carga después de global.css y sustituye su aspecto anterior. Todos
    los colores claros cumplen AA sobre --night. */
 
 .site-footer {
-  background: var(--night);
+  background: var(--petroleo-oscuro);
   color: #E6E1D6;
   /* Línea fina para separarlo del CTA final, que también es azul */
   border-top: 1px solid rgba(255, 255, 255, .16);

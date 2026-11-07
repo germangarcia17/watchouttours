@@ -129,6 +129,10 @@ function ViajesDropdown({ onNavigate }) {
 export function Header() {
   const { t } = useTranslation()
   const localize = useLocalize()
+  const { pathname } = useLocation()
+  // En la home la cabecera va transparente sobre la foto del hero y lleva
+  // el botón "Pide el itinerario" (al formulario #itinerario de la home).
+  const esHome = stripLang(pathname) === '/'
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleRef = useRef(null)
 
@@ -148,7 +152,7 @@ export function Header() {
   }
 
   return (
-    <header className="site-header" role="banner">
+    <header className={`site-header${esHome ? ' site-header--home' : ''}`} role="banner">
       <div className="wrap nav-inner">
         {/* El enlace ya tiene texto visible; la imagen es decorativa */}
         <Link to={localize('/')} className="brand-badge" aria-label={t('nav.brandHome')}>
@@ -184,6 +188,9 @@ export function Header() {
         </nav>
 
         <div className="nav-actions">
+          {esHome && (
+            <a href="#itinerario" className="hn-btn hn-btn--coral header-cta">{t('nav.itinerario')}</a>
+          )}
           <LanguageSwitcher />
           <button
             ref={toggleRef}

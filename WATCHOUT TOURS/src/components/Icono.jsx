@@ -127,6 +127,22 @@ const TRAZOS = {
     </>
   ),
   luna: <path d="M19.5 14.5A7.5 7.5 0 0 1 9.5 4.5a7.5 7.5 0 1 0 10 10Z" />,
+  // Altavoz: audios
+  altavoz: (
+    <>
+      <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
+      <path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" />
+    </>
+  ),
+  // Bocadillo de chat: WhatsApp (trazo de línea, sin logotipo)
+  chat: (
+    <>
+      <path d="M12 3.5a8.5 8.5 0 0 0-7.4 12.7L3.5 20.5l4.4-1.1A8.5 8.5 0 1 0 12 3.5Z" />
+      <path d="M9 10.5h6M9 13.5h4" />
+    </>
+  ),
+  // Flecha
+  flecha: <path d="M5 12h14M13 6l6 6-6 6" />,
 }
 
 export function Icono({ nombre, className = '' }) {

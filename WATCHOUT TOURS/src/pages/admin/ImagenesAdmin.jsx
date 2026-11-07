@@ -3,23 +3,61 @@ import { supabase } from '../../lib/supabase'
 import { uploadImage } from '../../lib/storage'
 
 const NUEVAS_IMAGENES_SUGERIDAS = [
+  // ── Home nueva: huecos de imagen ────────────────────────────────────
+  // (home/hero y home/nosotras ya existían)
+  // Home: mosaico de Nueva Zelanda, La Tierra Media
+  {
+    section: 'home', key: 'nz-tierra-media',
+    image_alt: 'Hobbiton: casas hobbit con puertas redondas entre colinas verdes',
+    image_alt_en: 'Hobbiton: hobbit holes with round doors among green hills',
+  },
+  // Home: mosaico de Nueva Zelanda, Cultura maorí
+  {
+    section: 'home', key: 'nz-maori',
+    image_alt: 'Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial',
+    image_alt_en: 'Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge',
+  },
+  // Home: mosaico de Nueva Zelanda, Queenstown
+  {
+    section: 'home', key: 'nz-queenstown',
+    image_alt: 'Un viajero y su piloto vuelan en parapente biplaza sobre los valles de Queenstown, sonriendo, con montañas y un cielo de nubes al fondo',
+    image_alt_en: 'A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind',
+  },
+  // Home: mosaico de Nueva Zelanda, Milford Sound
+  {
+    section: 'home', key: 'nz-milford',
+    image_alt: 'Milford Sound: paredes de roca verticales que se levantan sobre el agua del fiordo',
+    image_alt_en: 'Milford Sound: sheer rock walls rising straight out of the fiord',
+  },
+  // Home: mosaico de Nueva Zelanda, Kaikōura
+  {
+    section: 'home', key: 'nz-kaikoura',
+    image_alt: 'Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado',
+    image_alt_en: 'Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky',
+  },
+  // Home: viajes para personas ciegas y con baja visión
+  {
+    section: 'home', key: 'viaje-ciegos',
+    image_alt: 'Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes',
+    image_alt_en: 'A traveller with a white cane and a companion holding a recording microphone by a wooden fence where several sheep lean over, on a farm among green hills',
+  },
+  // Home: Viajes +60
+  {
+    section: 'home', key: 'viaje-60',
+    image_alt: 'Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás',
+    image_alt_en: 'Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them',
+  },
+  // Home: franja de viajes en privado (foto de fondo decorativa)
+  {
+    section: 'home', key: 'viaje-privado',
+    image_alt: '',
+    image_alt_en: '',
+  },
   // ── Renovación visual: huecos de imagen nuevos ──────────────────────
   // Cada uno se puede sustituir sin tocar código. Mientras no se suba una
   // foto, la web usa la imagen actual del proyecto (en la galería de
   // Viajes +60, Hobbiton, Milford Sound y Tekapo no se muestran hasta que
   // tengan foto).
-  // Home: tarjeta “Viajes +60”
-  {
-    section: 'home', key: 'tarjeta-viajes-60',
-    image_alt: 'Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás',
-    image_alt_en: 'Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them',
-  },
-  // Home: tarjeta de personas ciegas y con baja visión
-  {
-    section: 'home', key: 'tarjeta-personas-ciegas',
-    image_alt: 'Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos',
-    image_alt_en: 'A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it',
-  },
   // Personas ciegas: hero
   {
     section: 'mas-alla-de-la-vista', key: 'hero',
