@@ -398,27 +398,6 @@
       "p": "Moni y Sylvie viven en Nueva Zelanda desde hace ocho años y acompañan al grupo todos los días, con asistencia las 24 horas. Tu familia puede estar tranquila: estás con nosotras.",
       "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua"
     },
-    "dia": {
-      "title": "Así es un día de viaje",
-      "momentos": [
-        {
-          "etiqueta": "Mañana",
-          "texto": "Desayuno tranquilo en el hotel. Salimos hacia el sur entre colinas verdes llenas de ovejas."
-        },
-        {
-          "etiqueta": "Mediodía",
-          "texto": "A media mañana llegamos a Hobbiton, donde un guía espera solo a nuestro grupo para recorrer la Comarca. Comemos en la Taberna del Dragón Verde, con su postre y sin mirar el reloj."
-        },
-        {
-          "etiqueta": "Tarde",
-          "texto": "Por la tarde, carretera hasta Rotorua, donde el aire ya huele a azufre."
-        },
-        {
-          "etiqueta": "Noche",
-          "texto": "Cena en el hotel y a descansar."
-        }
-      ]
-    },
     "llevaras": {
       "title": "Lo que te llevarás",
       "p": "El vapor de los géiseres en la piel. El canto de las ballenas por hidrófono en Kaikōura. Las estrellas de Tekapo contadas junto a una hoguera. El sabor del hāngi, cocinado bajo tierra con piedras volcánicas."

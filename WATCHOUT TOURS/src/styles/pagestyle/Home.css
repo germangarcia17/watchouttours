@@ -659,12 +659,17 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(var(--hero-shade), .22);
+  background: transparent;
 }
 
 .hero-full__contenido {
   position: relative;
   width: 100%;
+  text-shadow: 0 1px 12px rgba(var(--velo-rgb), .55);
+}
+
+.hero-full__contenido .btn {
+  text-shadow: none;
 }
 
 .hero-full__contenido::before {
@@ -676,18 +681,17 @@
   left: calc(50% - 50vw);
   width: 100vw;
   background: linear-gradient(to top,
-    rgba(var(--hero-shade), .9) 0%,
-    rgba(var(--hero-shade), .88) calc(100% - 96px),
-    rgba(var(--hero-shade), 0) 100%);
+    rgba(var(--velo-rgb), .78) 0%,
+    rgba(var(--velo-rgb), .64) calc(100% - 96px),
+    rgba(var(--velo-rgb), 0) 100%);
 }
 
 @media (min-width: 1200px) {
   .hero-full__contenido::before {
     background: linear-gradient(to right,
-      rgba(var(--hero-shade), .9) 0%,
-      rgba(var(--hero-shade), .88) calc(50vw + 200px),
-      rgba(var(--hero-shade), .3) calc(50vw + 500px),
-      rgba(var(--hero-shade), 0) 100%);
+      rgba(var(--velo-rgb), .78) 0%,
+      rgba(var(--velo-rgb), .64) calc(50vw + 380px),
+      rgba(var(--velo-rgb), 0) calc(50vw + 680px));
     -webkit-mask-image: linear-gradient(to top, #000 calc(100% - 96px), transparent);
     mask-image: linear-gradient(to top, #000 calc(100% - 96px), transparent);
   }
