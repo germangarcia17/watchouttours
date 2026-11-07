@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '../../lib/supabase'
 import { getPreload } from '../../lib/preload'
-import { useSiteImage } from '../../lib/siteImages'
 import { L, useLang } from '../../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../../i18n/content'
 import { AudioPlayer } from '../AudioPlayer'
-import imgNosotras from '../../images/sobre-nosotras.webp'
 import audioParapente from '../../images/Saltando en parapente.mp3'
 import audioAlpaca from '../../images/Cuando la alpaca le mordió.mp3'
 import audioBarro from '../../images/barro-burbujeante-rotorua.mp3'
@@ -75,7 +73,7 @@ function elegirResenas(lista, modo) {
 }
 
 /* tono: 'night' (banda azul) o 'cream' (banda crema). */
-export function ResenasDestacadas({ tono = 'night', modo = 'destacadas' }) {
+export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variante, id, antetitulo, titulo, textoEnlace }) {
   const { t } = useTranslation()
   const lang = useLang()
   const preload = getPreload()
@@ -94,23 +92,27 @@ export function ResenasDestacadas({ tono = 'night', modo = 'destacadas' }) {
   if (!resenas || resenas.length === 0) return null
 
   return (
-    <section className={`resenas band-${tono}`} aria-labelledby={`resenas-titulo-${modo}`}>
-      <div className="wrap">
-        <div className="sec-head">
-          <p className="sec-eyebrow">{t('home.testi.eyebrow')}</p>
-          <h2 id={`resenas-titulo-${modo}`} className="sec-title">{t('home.testi.title')}</h2>
+    <section
+      id={id}
+      className={variante === 'home' ? 'hn-seccion hn-arena hn-resenas' : `resenas band-${tono}`}
+      aria-labelledby={`resenas-titulo-${modo}`}
+    >
+      <div className={variante === 'home' ? 'hn-wrap' : 'wrap'}>
+        <div className={variante === 'home' ? 'hn-cabecera' : 'sec-head'}>
+          <p className={variante === 'home' ? 'hn-etiqueta' : 'sec-eyebrow'}>{antetitulo ?? t('home.testi.eyebrow')}</p>
+          <h2 id={`resenas-titulo-${modo}`} className={variante === 'home' ? 'hn-h2' : 'sec-title'}>{titulo ?? t('home.testi.title')}</h2>
         </div>
-        <div className={`resenas__grid resenas__grid--${resenas.length}`}>
+        <div className={variante === 'home' ? 'hn-resenas__grid' : `resenas__grid resenas__grid--${resenas.length}`}>
           {resenas.map((resena, i) => {
             const contexto = pickLocalized(resena, 'author_context', lang)
             return (
-              <figure key={resena.id} className={`resena${i === 0 ? ' resena--destacada' : ''}`}>
+              <figure key={resena.id} className={variante === 'home' ? 'hn-resena' : `resena${i === 0 ? ' resena--destacada' : ''}`}>
                 <span className="sr-only">{t('home.testi.srContent')}</span>
-                <span className="resena__comillas" aria-hidden="true">“</span>
-                <blockquote className="resena__cita" lang={fieldLangAttr(resena, 'content', lang)}>
+                {variante !== 'home' && <span className="resena__comillas" aria-hidden="true">“</span>}
+                <blockquote className={variante === 'home' ? 'hn-resena__cita' : 'resena__cita'} lang={fieldLangAttr(resena, 'content', lang)}>
                   <p>{pickLocalized(resena, 'content', lang)}</p>
                 </blockquote>
-                <figcaption className="resena__autor">
+                <figcaption className={variante === 'home' ? 'hn-resena__autor' : 'resena__autor'}>
                   <span className="sr-only">{t('home.testi.srWho')}</span>
                   <span className="resena__nombre">{resena.author_name}</span>
                   {contexto && (
@@ -127,8 +129,8 @@ export function ResenasDestacadas({ tono = 'night', modo = 'destacadas' }) {
             )
           })}
         </div>
-        <p className="resenas__mas">
-          <L to="/resenas">{t('home.testi.more')}<span aria-hidden="true"> →</span></L>
+        <p className={variante === 'home' ? 'hn-resenas__mas' : 'resenas__mas'}>
+          <L to="/resenas" className={variante === 'home' ? 'hn-enlace' : undefined}>{textoEnlace ?? t('home.testi.more')}<span aria-hidden="true"> →</span></L>
         </p>
       </div>
     </section>
@@ -143,12 +145,12 @@ const AUDIOS = [
   { n: 4, id: 'kauri',     src: audioKauri },
 ]
 
-export function AudioClips() {
+export function AudioClips({ id }) {
   const { t } = useTranslation()
   const [playingAudio, setPlayingAudio] = useState(null)
 
   return (
-    <section aria-labelledby="audio-clips-heading">
+    <section id={id} aria-labelledby="audio-clips-heading">
       <div className="wrap">
         <h2 id="audio-clips-heading" className="sec-title">{t('home.audio.eyebrow')}</h2>
         <div className="audio-cards">
@@ -169,74 +171,6 @@ export function AudioClips() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  )
-}
-
-/* ── Nuestra historia ───────────────────────────────── */
-export function NuestraHistoria() {
-  const { t } = useTranslation()
-  // Hueco listo para una foto nueva: /admin/imagenes, sección "home",
-  // clave "nosotras". De momento, la actual.
-  const nosotrasImg = useSiteImage('home', 'nosotras', imgNosotras, t('home.nosotras.imgAlt'))
-
-  return (
-    <section id="nosotras" className="historia band-cream" aria-labelledby="historia-titulo">
-      <div className="wrap historia__grid">
-        <figure className="historia__foto">
-          <img src={nosotrasImg.src} alt={nosotrasImg.alt} lang={nosotrasImg.lang} loading="lazy" />
-        </figure>
-        <div className="historia__texto">
-          <h2 id="historia-titulo" className="sec-title">{t('home.nosotras.eyebrow')}</h2>
-          <p className="historia__lead">{t('home.nosotras.p')}</p>
-          <L to="/sobre-nosotras" className="btn btn-outline">{t('home.nosotras.cta')}</L>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ── Vista previa del blog ──────────────────────────── */
-export function BlogPreview() {
-  const { t } = useTranslation()
-  const lang = useLang()
-  const [post, setPost] = useState(getPreload().homeBlogPreview ?? [])
-
-  useEffect(() => {
-    supabase
-      .from('blog_posts')
-      .select('*')
-      .eq('status', 'published')
-      .eq('resena', true)
-      .order('published_at', { ascending: false })
-      .limit(1)
-      .single()
-      .then(({ data }) => setPost(data ?? []))
-  }, [])
-
-  if (!post || !post.title) return null
-
-  return (
-    <section className="blog-home" aria-labelledby="blog-home-titulo">
-      <div className="wrap blog-home__grid">
-        <div>
-          <p className="sec-eyebrow">{t('home.blog.eyebrow')}</p>
-          <h2 id="blog-home-titulo" className="sec-title">{t('home.blog.title')}</h2>
-          <p className="blog-home__todos">
-            <L to="/blog">{t('home.blog.seeAll')}<span aria-hidden="true"> →</span></L>
-          </p>
-        </div>
-        <article className="tarjeta tarjeta--enlace blog-home__tarjeta">
-          <div className="tarjeta__cuerpo">
-            <h3 className="tarjeta__titulo" lang={fieldLangAttr(post, 'title', lang)}>{pickLocalized(post, 'title', lang)}</h3>
-            <p className="tarjeta__texto" lang={fieldLangAttr(post, 'excerpt', lang)}>{pickLocalized(post, 'excerpt', lang)}</p>
-            <p className="blog-home__lectura">{t('home.blog.readingTime', { count: post.reading_time })}</p>
-            <div className="tarjeta__pie">
-              <L to={`/blog/${post.slug}`} className="btn btn-outline tarjeta__enlace">{t('home.blog.readArticle')}</L>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
   )

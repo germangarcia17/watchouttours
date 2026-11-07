@@ -45,8 +45,8 @@ function AlternateLinks() {
 
 /* Botón flotante de WhatsApp: visible solo cuando no tapa nada útil.
    Se oculta mientras se ve el hero a pantalla completa (taparía sus
-   botones) y cuando está en pantalla el CTA final, que ya tiene su propio
-   botón de WhatsApp. Oculto, sale también del orden de tabulación y del
+   botones) y cuando está en pantalla el CTA final o el formulario del
+   itinerario de la home, que ya tienen su propio enlace de WhatsApp. Oculto, sale también del orden de tabulación y del
    árbol de accesibilidad (visibility: hidden en el CSS). */
 function useFabVisible() {
   const { pathname } = useLocation()
@@ -58,7 +58,7 @@ function useFabVisible() {
     let observer
     // Espera un fotograma para que la página nueva ya esté en el DOM.
     const id = requestAnimationFrame(() => {
-      const objetivos = document.querySelectorAll('.hero-full, .final-cta')
+      const objetivos = document.querySelectorAll('.hero-full, .final-cta, .hn-hero, #itinerario')
       if (objetivos.length === 0) { setVisible(true); return }
       observer = new IntersectionObserver(entries => {
         entries.forEach(e => enVista.set(e.target, e.isIntersecting))

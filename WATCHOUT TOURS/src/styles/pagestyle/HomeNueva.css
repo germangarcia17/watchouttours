@@ -1,0 +1,904 @@
+/* ════════════════════════════════════════════════════════════════════
+   Home nueva (maqueta aprobada) — todo bajo .hn-*
+   Colores: variables de theme.css (--petroleo-oscuro, --petroleo,
+   --coral-boton, --tinta-coral, --arena, --texto, --texto-2, --ambar,
+   --ambar-claro, --texto-claro, --mostaza, --linea-clara).
+   Sin sombras, bordes finos, esquinas de 16 a 22 px, botones en píldora,
+   contenido de 1240 px como máximo con márgenes laterales del 6 %.
+   Contraste: todo texto sobre foto lleva detrás una capa oscura de al
+   menos el 88 % (se cumple AA aunque la foto fuera blanca).
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Base ──────────────────────────────────────────────── */
+.hn-wrap {
+  width: 88%;
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+.site-main > .hn-seccion {
+  padding-block: clamp(80px, 9vw, 120px);
+}
+
+.hn-arena {
+  background: var(--arena);
+}
+
+.hn-oscuro {
+  background: var(--petroleo-oscuro);
+  color: var(--paper);
+}
+
+.hn-cabecera {
+  max-width: 780px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+/* Etiquetas pequeñas: Space Mono en mayúsculas */
+.hn-etiqueta {
+  margin: 0 0 16px;
+  font-family: var(--font-family-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--petroleo);
+}
+
+.hn-etiqueta--oscuro {
+  color: var(--ambar);
+}
+
+.hn-etiqueta--mostaza {
+  color: var(--mostaza);
+}
+
+/* Titulares: Bricolage Grotesque 600 con interletrado negativo ligero */
+.hn-h2 {
+  margin: 0 0 22px;
+  font-family: var(--font-family-heading);
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+.hn-h3 {
+  margin: 0 0 14px;
+  font-family: var(--font-family-heading);
+  font-size: clamp(28px, 2.8vw, 38px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -.015em;
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+.hn-oscuro .hn-h2,
+.hn-oscuro .hn-h3,
+.hn-privado .hn-h3 {
+  color: var(--paper);
+}
+
+/* Texto de lectura: 19 px en escritorio, 18 px en móvil */
+.hn-entradilla {
+  margin: 0;
+  max-width: 62ch;
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.6;
+  color: var(--texto-2);
+}
+
+.hn-parrafo {
+  margin: 0 0 18px;
+  max-width: 60ch;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--texto-2);
+}
+
+.hn-oscuro .hn-parrafo,
+.hn-privado .hn-parrafo {
+  color: var(--texto-claro);
+}
+
+.hn-destacado {
+  margin: 0 0 16px;
+  font-family: var(--font-family-heading);
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--texto);
+}
+
+/* ── Botones en píldora ────────────────────────────────── */
+.hn-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 13px 28px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-family-heading);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+
+.hn-btn:hover {
+  text-decoration: none;
+}
+
+/* Coral: solo botones principales, siempre con texto oscuro */
+.hn-btn--coral {
+  background: var(--coral-boton);
+  color: var(--tinta-coral);
+}
+
+.hn-btn--coral:hover {
+  border-color: var(--tinta-coral);
+}
+
+.hn-btn--coral:disabled {
+  cursor: wait;
+}
+
+.hn-btn--petroleo {
+  background: var(--petroleo);
+  color: var(--paper);
+}
+
+.hn-btn--petroleo:hover {
+  background: var(--petroleo-oscuro);
+}
+
+.hn-btn--borde-blanco {
+  background: transparent;
+  border-color: var(--paper);
+  color: var(--paper);
+}
+
+.hn-btn--borde-blanco:hover {
+  background: rgba(255, 255, 255, .14);
+}
+
+.hn-btn--blanco {
+  background: var(--paper);
+  color: var(--texto);
+}
+
+.hn-btn--blanco:hover {
+  border-color: var(--ambar);
+}
+
+.hn-btn--ancho {
+  width: 100%;
+}
+
+/* ── Enlaces ───────────────────────────────────────────── */
+.hn-enlace,
+.hn-enlace-icono,
+.hn-enlace-claro {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hn-enlace,
+.hn-enlace-icono {
+  color: var(--petroleo);
+}
+
+.hn-enlace-icono {
+  margin-top: 18px;
+}
+
+.hn-enlace-icono .icono {
+  width: 26px;
+  height: 26px;
+  color: var(--petroleo);
+}
+
+.hn-enlace-claro {
+  color: var(--ambar);
+}
+
+.hn-enlace:hover,
+.hn-enlace-icono:hover,
+.hn-enlace-claro:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ── Foco: anillo ámbar de 3 px en toda la home ──────────
+   Con un aro interior oscuro para que también se vea sobre fondos
+   claros (el ámbar solo no llega a 3:1 sobre blanco). */
+body.pagina-home :focus-visible {
+  outline: 3px solid var(--ambar);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--texto);
+}
+
+body.pagina-home main[tabindex="-1"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ── Cabecera sobre la foto (solo en la home) ──────────── */
+.site-header--home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.site-header--home .nav-inner {
+  width: 88%;
+  max-width: 1240px;
+  padding-inline: 0;
+}
+
+.site-header--home .nav-link,
+.site-header--home .nav-dropdown__toggle {
+  color: var(--paper);
+}
+
+.site-header--home .nav-dropdown__menu {
+  background: var(--petroleo-oscuro);
+}
+
+.header-cta {
+  min-height: 44px;
+  padding: 9px 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 1100px) {
+  .header-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  /* El menú móvil vuelve a sus colores (fondo claro, texto oscuro) */
+  .site-header--home .nav-links .nav-link,
+  .site-header--home .nav-links .nav-dropdown__toggle {
+    color: var(--ink-soft);
+  }
+
+  .site-header--home .nav-dropdown__menu {
+    background: none;
+  }
+}
+
+/* ── 1. Hero ───────────────────────────────────────────── */
+.site-main > .hn-hero {
+  padding-block: 160px 40px;
+}
+
+.hn-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: 860px;
+  overflow: hidden;
+  background: var(--petroleo-oscuro);
+  color: var(--paper);
+}
+
+.hn-hero__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+/* Degradado de arriba: detrás de la cabecera (90 % en sus primeros
+   100 px, donde están el logo y el menú). */
+.hn-hero__capa-superior {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 280px;
+  background: linear-gradient(to bottom,
+    rgba(var(--petroleo-oscuro-rgb), .9) 0,
+    rgba(var(--petroleo-oscuro-rgb), .9) 100px,
+    rgba(var(--petroleo-oscuro-rgb), 0) 100%);
+}
+
+/* Degradado de abajo: unido al bloque de texto, así cubre siempre todo
+   el texto sea cual sea la altura de la pantalla. */
+.hn-hero__contenido {
+  position: relative;
+}
+
+.hn-hero__contenido::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -120px;
+  bottom: -40px;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  background: linear-gradient(to top,
+    rgba(var(--petroleo-oscuro-rgb), .92) 0,
+    rgba(var(--petroleo-oscuro-rgb), .88) calc(100% - 120px),
+    rgba(var(--petroleo-oscuro-rgb), 0) 100%);
+}
+
+.hn-hero__titulo {
+  margin: 0 0 22px;
+  max-width: 16ch;
+  font-family: var(--font-family-heading);
+  font-size: clamp(44px, 6vw, 84px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.025em;
+  color: var(--paper);
+  text-wrap: balance;
+}
+
+.hn-hero__sub {
+  margin: 0;
+  max-width: 58ch;
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.55;
+  color: var(--paper);
+}
+
+/* Franja de la próxima salida: un único enlace a #salida. Fondo
+   petróleo semitransparente (no blanco) para no perder contraste. */
+.hn-franja {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+  margin-top: 48px;
+  padding: 18px 26px;
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 16px;
+  background: rgba(var(--petroleo-oscuro-rgb), .55);
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.hn-franja:hover {
+  border-color: var(--paper);
+  text-decoration: none;
+}
+
+.hn-franja__etiqueta {
+  font-family: var(--font-family-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ambar);
+}
+
+.hn-franja__fechas {
+  font-family: var(--font-family-heading);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.hn-franja__plazas {
+  font-size: 19px;
+  color: var(--texto-claro);
+}
+
+.hn-franja__cta {
+  margin-left: auto;
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ── 2. Nueva Zelanda: mosaico ─────────────────────────── */
+.hn-mosaico {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(300px, auto);
+  gap: 16px;
+}
+
+.hn-mosaico__item {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--petroleo);
+}
+
+.hn-mosaico__item--grande {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.hn-mosaico__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.hn-mosaico__texto {
+  position: relative;
+  width: 100%;
+  padding: 76px 22px 22px;
+  color: var(--paper);
+}
+
+/* Capa oscura detrás del texto de cada foto (88 % en toda la zona del
+   texto; se desvanece solo en los 56 px de arriba, sin texto). */
+.hn-mosaico__texto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top,
+    rgba(var(--petroleo-oscuro-rgb), .92) 0,
+    rgba(var(--petroleo-oscuro-rgb), .88) calc(100% - 56px),
+    rgba(var(--petroleo-oscuro-rgb), 0) 100%);
+}
+
+.hn-mosaico__titulo {
+  margin: 0 0 6px;
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--paper);
+}
+
+.hn-mosaico__item--grande .hn-mosaico__titulo {
+  font-size: clamp(28px, 2.6vw, 36px);
+}
+
+.hn-mosaico__frase {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--paper);
+}
+
+/* ── 4. Nuestros viajes ────────────────────────────────── */
+.hn-viajes {
+  display: grid;
+  gap: clamp(64px, 8vw, 112px);
+}
+
+.hn-viaje {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 5vw, 88px);
+  align-items: center;
+}
+
+.hn-viaje--invertida .hn-viaje__foto {
+  order: 2;
+}
+
+.hn-viaje__foto {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  background: var(--petroleo);
+}
+
+.hn-viaje__foto img,
+.hn-nosotras__foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* 4.3 Viajes en privado: franja ancha con foto de fondo */
+.hn-privado {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 460px;
+  padding: clamp(32px, 5vw, 72px);
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--petroleo-oscuro);
+  color: var(--paper);
+}
+
+.hn-privado__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* Degradado oscuro de izquierda a derecha: 88 % donde va el texto */
+.hn-privado::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to right,
+    rgba(var(--petroleo-oscuro-rgb), .92) 0,
+    rgba(var(--petroleo-oscuro-rgb), .88) 58%,
+    rgba(var(--petroleo-oscuro-rgb), .3) 100%);
+}
+
+.hn-privado__texto {
+  max-width: 560px;
+}
+
+/* ── 5. Próxima salida ─────────────────────────────────── */
+.hn-salida {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(40px, 6vw, 96px);
+}
+
+.hn-salida__ruta {
+  padding-left: clamp(32px, 5vw, 80px);
+  border-left: 1px solid rgba(255, 255, 255, .22);
+}
+
+.hn-recuadro {
+  margin-top: 40px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 18px;
+}
+
+.hn-recuadro__titulo {
+  margin: 0 0 10px;
+  font-family: var(--font-family-heading);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--paper);
+}
+
+.hn-salida__ruta-titulo {
+  margin: 0 0 28px;
+  font-family: var(--font-family-heading);
+  font-size: clamp(26px, 2.4vw, 32px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--paper);
+}
+
+.hn-paradas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 28px;
+}
+
+.hn-parada {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.hn-parada__num {
+  padding-top: 3px;
+  font-family: var(--font-family-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ambar);
+}
+
+.hn-parada__nombre {
+  margin: 0 0 2px;
+  font-family: var(--font-family-heading);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--paper);
+}
+
+.hn-parada__gancho {
+  margin: 0 0 4px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--ambar-claro);
+}
+
+.hn-parada__frase {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--texto-claro);
+}
+
+/* ── 6. Quiénes somos ──────────────────────────────────── */
+.hn-nosotras {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+
+.hn-nosotras__foto {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  background: var(--petroleo);
+}
+
+.hn-cifras {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+  padding: 28px 0;
+  border-top: 1px solid var(--linea-clara);
+  border-bottom: 1px solid var(--linea-clara);
+}
+
+.hn-cifra__valor {
+  font-family: var(--font-family-heading);
+  font-size: clamp(36px, 3.6vw, 48px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--petroleo);
+}
+
+.hn-cifra__texto {
+  margin: 8px 0 0;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--texto-2);
+}
+
+/* ── 7. Reseñas ────────────────────────────────────────── */
+.hn-resenas__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.hn-resena {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: clamp(24px, 2.6vw, 34px);
+  background: var(--paper);
+  border: 1px solid var(--linea-clara);
+  border-radius: 20px;
+}
+
+.hn-resena__cita {
+  margin: 0;
+}
+
+.hn-resena__cita p {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(20px, 1.7vw, 23px);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--texto);
+}
+
+.hn-resena__autor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--linea-clara);
+}
+
+.hn-resena .resena__nombre {
+  font-size: 19px;
+  color: var(--texto);
+}
+
+.hn-resena .resena__contexto {
+  font-size: 19px;
+  color: var(--texto-2);
+}
+
+.hn-resenas__mas {
+  margin: 36px 0 0;
+}
+
+/* ── 8. Pedir itinerario ───────────────────────────────── */
+.hn-itinerario {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.hn-itinerario__texto .hn-entradilla {
+  margin-bottom: 8px;
+}
+
+.hn-itinerario__form {
+  padding: clamp(24px, 3.5vw, 48px);
+  border-radius: 22px;
+  background: var(--arena);
+}
+
+.hn-itinerario .form-label,
+.hn-itinerario .form-control,
+.hn-itinerario .form-consent-label {
+  font-size: 19px;
+}
+
+.hn-ayuda {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--texto-2);
+}
+
+.hn-select {
+  min-height: 52px;
+  cursor: pointer;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .hn-mosaico {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hn-resenas__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .hn-viaje,
+  .hn-salida,
+  .hn-nosotras,
+  .hn-itinerario {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* En móvil la foto va siempre arriba */
+  .hn-viaje--invertida .hn-viaje__foto {
+    order: 0;
+  }
+
+  .hn-viaje__foto,
+  .hn-nosotras__foto {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hn-salida__ruta {
+    padding-left: 0;
+    padding-top: 40px;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, .22);
+  }
+
+  /* El texto de la franja privada ocupa todo el ancho: capa uniforme */
+  .hn-privado::before {
+    background: rgba(var(--petroleo-oscuro-rgb), .88);
+  }
+}
+
+@media (max-width: 760px) {
+  .site-main > .hn-hero {
+    padding-block: 120px 24px;
+  }
+
+  .hn-hero {
+    min-height: 760px;
+  }
+
+  .hn-parrafo,
+  .hn-franja__plazas,
+  .hn-franja__cta,
+  .hn-mosaico__frase,
+  .hn-parada__gancho,
+  .hn-parada__frase,
+  .hn-cifra__texto,
+  .hn-enlace,
+  .hn-enlace-icono,
+  .hn-enlace-claro,
+  .hn-resena .resena__nombre,
+  .hn-resena .resena__contexto,
+  .hn-itinerario .form-label,
+  .hn-itinerario .form-control,
+  .hn-itinerario .form-consent-label {
+    font-size: 18px;
+  }
+
+  .hn-franja {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hn-franja__cta {
+    margin-left: 0;
+  }
+
+  .hn-botones .hn-btn {
+    width: 100%;
+  }
+
+  .hn-mosaico {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: minmax(320px, auto);
+  }
+
+  .hn-mosaico__item--grande {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 380px;
+  }
+
+  .hn-cifras {
+    gap: 12px;
+  }
+
+  .hn-cifra__valor {
+    font-size: 30px;
+  }
+}
+
+/* ── Ajustes finales ───────────────────────────────────── */
+/* En la home, el pie se alinea con el contenido (1240 px, márgenes 6 %) */
+body.pagina-home .site-footer__inner {
+  width: 88%;
+  max-width: 1240px;
+  padding-inline: 0;
+}
+
+/* Enlaces dentro del formulario sobre arena: petróleo (7:1). El mostaza
+   del tema solo llega a 4,1:1 sobre arena. */
+.hn-itinerario__form a {
+  color: var(--petroleo);
+}

@@ -9,7 +9,7 @@ import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
 import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
-import { HeroFoto, SeparadorBaston, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
+import { HeroFoto, SeparadorBaston, ResenasDestacadas, CtaFinal, AudioClips } from '../components/home/BloquesHome'
 import { SolicitudRuta } from '../components/SolicitudRuta'
 
 /* Iconos de "Lo que van a vivir": adrenalina, sentidos y cultura. */
@@ -105,7 +105,7 @@ export default function MasAllaDeLaVista() {
       </section>
 
       {/* ── Así se vive la aventura (vídeo del parapente) ── */}
-      <section id="en-accion" aria-labelledby="accion-heading">
+      <section id="parapente" aria-labelledby="accion-heading">
         <div className="wrap">
           <div className="reel-grid">
             <div className="reel-frame">
@@ -130,6 +130,9 @@ export default function MasAllaDeLaVista() {
           </div>
         </div>
       </section>
+
+      {/* ── Audios (antes en la home; enlazados desde allí con #audios) ── */}
+      <AudioClips id="audios" />
 
       {/* ── Dos maneras de vivirlo — banda azul ───────── */}
       <section id="rutas" className="band-night" aria-labelledby="rutas-heading">

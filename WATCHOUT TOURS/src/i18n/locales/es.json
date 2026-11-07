@@ -28,11 +28,12 @@
     "switchLang": "View this page in English",
     "sinPrisa": "Viajes +60",
     "masAlla": "Viajes para personas ciegas y con baja visión",
-    "todas": "Todas las experiencias"
+    "todas": "Todas las experiencias",
+    "itinerario": "Pide el itinerario"
   },
   "footer": {
     "brandHome": "Watchout Tours — Inicio",
-    "tagline": "Viajes sensoriales por Nueva Zelanda en grupos de 6 personas como máximo, con dos guías contigo de principio a fin.",
+    "tagline": "Especialistas en viajes accesibles por Nueva Zelanda, en español.",
     "whatsapp": "Escríbenos por WhatsApp",
     "instagram": "Síguenos en Instagram",
     "colNosotras": "Nosotras",
@@ -57,66 +58,184 @@
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
-      "eyebrow": "Viajes sensoriales por Nueva Zelanda, en español",
-      "h1": "Nueva Zelanda con todos los sentidos.",
-      "sub": "Grupos de 6 personas como máximo, un ritmo que nadie apresura y nosotras dos a tu lado cada día del viaje.",
-      "ctaSinPrisa": "Viajes +60",
-      "ctaMasAlla": "Viajes para personas ciegas y con baja visión"
+      "etiqueta": "Nueva Zelanda con todos los sentidos",
+      "h1": "El viaje que llevas años soñando.",
+      "sub": "Especialistas en viajes para personas ciegas y con baja visión, viajes +60 y viajes a medida. Grupos de máximo 6 personas, casi todas las visitas en privado y Moni y Sylvie a tu lado de principio a fin.",
+      "ctaViajes": "Descubre los viajes",
+      "ctaItinerario": "Pide el itinerario gratis"
     },
-    "confianza": {
-      "titulo": "Por qué viajar con Watchout Tours",
-      "items": [
-        "Máximo 6 personas",
-        "2 guías todo el viaje",
-        "Visitas privadas",
-        "8 años viviendo en Nueva Zelanda"
-      ]
+    "franja": {
+      "etiqueta": "Próxima salida en grupo",
+      "fechas": "1 – 15 de marzo de 2027",
+      "plazas": "Solo 6 plazas · ¿Otras fechas? Pregúntanos",
+      "cta": "Reserva tu plaza"
     },
-    "asiViajamos": {
-      "title": "Así viajamos",
-      "puntos": [
+    "nz": {
+      "etiqueta": "El otro lado del mundo",
+      "titulo": "Nueva Zelanda es ese lugar que siempre has querido conocer.",
+      "texto": "Volcanes que humean, fiordos con cascadas que caen al mar, la Comarca de El Señor de los Anillos y una cultura maorí que te recibe con un hongi. Vivimos aquí desde hace ocho años y te llevamos a la Nueva Zelanda que conocemos de verdad.",
+      "fotos": [
         {
-          "titulo": "Grupos de 6 personas como máximo.",
-          "texto": "Pocas personas, para que el viaje se adapte a ti y no al revés."
+          "id": "tierra-media",
+          "titulo": "La Tierra Media",
+          "frase": "Hobbiton en visita privada y comida en la Taberna del Dragón Verde.",
+          "alt": "Hobbiton: casas hobbit con puertas redondas entre colinas verdes"
         },
         {
-          "titulo": "Casi todo, solo para el grupo.",
-          "texto": "Hobbiton, la navegación por el puerto de Auckland, la jornada maorí en Rotorua: la mayoría de las visitas son privadas."
+          "id": "maori",
+          "titulo": "Cultura maorí",
+          "frase": "Un día en Rotorua con un guía maorí: haka, hāngi y aguas termales.",
+          "alt": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial"
         },
         {
-          "titulo": "Nosotras dos, siempre.",
-          "texto": "Te recogemos en el aeropuerto y estamos contigo hasta el día de la despedida."
+          "id": "queenstown",
+          "titulo": "Queenstown",
+          "frase": "Montañas sobre el lago y el vapor centenario TSS Earnslaw.",
+          "alt": "Un viajero y su piloto vuelan en parapente biplaza sobre los valles de Queenstown, sonriendo, con montañas y un cielo de nubes al fondo"
         },
         {
-          "titulo": "En español.",
-          "texto": "Sin barreras de idioma en ningún momento."
+          "id": "milford",
+          "titulo": "Milford Sound",
+          "frase": "La octava maravilla del mundo: crucero por el fiordo, con la brisa de las cascadas en la cara.",
+          "alt": "Milford Sound: paredes de roca verticales que se levantan sobre el agua del fiordo"
         },
         {
-          "titulo": "Todo resuelto.",
-          "texto": "Hoteles, traslados, comidas y actividades. Tú solo tienes que vivirlo."
+          "id": "kaikoura",
+          "titulo": "Kaikōura",
+          "frase": "Cachalotes, delfines y focas en libertad y, con suerte, orcas.",
+          "alt": "Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado"
         }
       ]
     },
-    "dosViajes": {
-      "title": "Dos maneras de viajar con nosotras",
-      "tarjetas": [
+    "viajes": {
+      "etiqueta": "Nuestros viajes",
+      "titulo": "Ahora, con nosotras, ese viaje se hace realidad.",
+      "ciegos": {
+        "etiqueta": "En grupo · Máximo 6 personas",
+        "titulo": "Viajes para personas ciegas y con baja visión",
+        "destacado": "No toda visión necesita ojos.",
+        "texto": "Un viaje diseñado para vivir Nueva Zelanda con las manos, el oído y la piel: el calor de los géiseres, el canto maorí, el viento del parapente. Dos guías dedicadas y la aventura hasta donde tú quieras.",
+        "cta": "Descubre estos viajes",
+        "audios": "Escucha los audios y el vídeo del parapente",
+        "imgAlt": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes"
+      },
+      "sesenta": {
+        "etiqueta": "En grupo · Máximo 6 personas",
+        "titulo": "Viajes +60",
+        "destacado": "Llevas años con Nueva Zelanda en la lista. Este es el momento.",
+        "texto": "Quince días a ritmo tranquilo, hoteles de 4 y 5 estrellas, comidas incluidas y nosotras ocupándonos de todo, desde el aeropuerto hasta la despedida. Para quien viaja en pareja, con amigos o por su cuenta.",
+        "cta": "Descubre los viajes +60",
+        "imgAlt": "Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás"
+      },
+      "privado": {
+        "etiqueta": "A medida · Tus fechas",
+        "titulo": "Viajes en privado",
+        "texto": "Tu propio viaje por Nueva Zelanda, solo para ti y los tuyos. Eliges las fechas y el ritmo, y nosotras te acompañamos de principio a fin.",
+        "cta": "Diseña tu viaje privado"
+      }
+    },
+    "salida": {
+      "etiqueta": "Próxima salida en grupo",
+      "titulo": "1 – 15 de marzo de 2027",
+      "texto1": "Aotearoa a través de los sentidos. Quince días y catorce noches de norte a sur, con el vuelo entre islas incluido.",
+      "texto2": "Las plazas se asignan por orden de reserva. Cuando se completan las seis, el grupo se cierra.",
+      "reservar": "Reserva tu plaza",
+      "itinerario": "Pide el itinerario día a día",
+      "otras": {
+        "titulo": "¿No te encajan estas fechas?",
+        "texto": "Dinos cuándo te vendría bien viajar. Te avisamos de las próximas salidas o formamos un grupo en las fechas que nos propongas.",
+        "enlace": "Propón tus fechas"
+      },
+      "rutaTitulo": "Los imprescindibles de la ruta",
+      "paradas": [
         {
-          "id": "sin-prisa",
-          "to": "/sin-prisa",
-          "titulo": "Viajes +60",
-          "texto": "Nueva Zelanda con calma y sin ocuparte de nada. Hoteles de 4 y 5 estrellas, desayunos y cenas incluidos, un transporte cómodo y nosotras dos contigo de principio a fin.",
-          "cta": "Descubre los viajes +60",
-          "imgAlt": "Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás"
+          "nombre": "Auckland",
+          "gancho": "La ciudad de las velas",
+          "frase": "Navegamos por el puerto en un velero solo para el grupo."
         },
         {
-          "id": "mas-alla",
-          "to": "/mas-alla-de-la-vista",
-          "titulo": "Viajes para personas ciegas y con baja visión",
-          "texto": "No toda visión necesita ojos. Un viaje diseñado para personas ciegas y con baja visión, donde cada lugar se vive con las manos, el oído y la piel, y la aventura llega hasta donde tú quieras.",
-          "cta": "Descubre los viajes para personas ciegas y con baja visión",
-          "imgAlt": "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos"
+          "nombre": "Hobbiton y Rotorua",
+          "gancho": "La Comarca y el corazón maorí",
+          "frase": "Hobbiton en privado, géiseres y un día entero con un guía maorí."
+        },
+        {
+          "nombre": "Queenstown",
+          "gancho": "La capital mundial de los deportes de aventura",
+          "frase": "Puenting, jet boat y parapente para quien se atreva, y el lago Wakatipu a bordo del vapor centenario TSS Earnslaw para quien prefiera calma."
+        },
+        {
+          "nombre": "Milford Sound",
+          "gancho": "La octava maravilla del mundo",
+          "frase": "Así lo llamó Rudyard Kipling. Crucero por el fiordo, con la brisa de las cascadas en la cara."
+        },
+        {
+          "nombre": "Aoraki / Mount Cook",
+          "gancho": "La montaña más alta de Nueva Zelanda",
+          "frase": "3.724 metros de hielo y roca sobre lagos glaciares de color turquesa."
+        },
+        {
+          "nombre": "Tekapo",
+          "gancho": "Uno de los cielos más limpios del planeta",
+          "frase": "Reserva internacional de cielo oscuro: las estrellas, contadas junto a una hoguera."
+        },
+        {
+          "nombre": "Kaikōura",
+          "gancho": "El paraíso de la vida salvaje",
+          "frase": "Cachalotes, delfines y focas en libertad y, con suerte, orcas."
         }
       ]
+    },
+    "nosotras": {
+      "etiqueta": "Quiénes somos",
+      "titulo": "Moni y Sylvie. De Barcelona, en Nueva Zelanda desde hace ocho años.",
+      "texto": "Sylvie ha recorrido casi 50 países y ha dirigido hoteles aquí durante años. Moni es coach y consigue que un grupo se sienta en casa desde el primer día. Cada ruta la hemos recorrido antes nosotras, y cada viaje lo acompañamos de principio a fin.",
+      "cifras": [
+        {
+          "valor": "8 años",
+          "texto": "viviendo en Nueva Zelanda"
+        },
+        {
+          "valor": "2",
+          "texto": "guías en cada viaje"
+        },
+        {
+          "valor": "6",
+          "texto": "viajeros como máximo"
+        }
+      ],
+      "enlace": "Conoce nuestra historia",
+      "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua"
+    },
+    "resenas": {
+      "etiqueta": "Reseñas",
+      "titulo": "Lo que cuentan quienes ya han venido.",
+      "todas": "Leer todas las reseñas"
+    },
+    "itinerario": {
+      "titulo": "Empieza por el itinerario. Es gratis.",
+      "texto": "Te lo enviamos por email o WhatsApp, con cada día, cada visita y todo lo que incluye. Si la próxima salida no te encaja, dinos qué fechas prefieres. Sin compromiso.",
+      "whatsapp": "O escríbenos por WhatsApp",
+      "formAria": "Formulario para pedir el itinerario",
+      "nombre": "Nombre",
+      "contacto": "Email o WhatsApp",
+      "contactoAyuda": "Tu correo o tu número de móvil, para enviarte el itinerario.",
+      "viaje": "¿Qué viaje te interesa?",
+      "viajeElige": "Elige una opción",
+      "opciones": {
+        "viajes-60": "Viajes +60",
+        "personas-ciegas": "Viajes para personas ciegas y con baja visión",
+        "privado": "Viaje en privado",
+        "no-se": "Aún no lo sé"
+      },
+      "fechas": "¿Qué fechas te vendrían bien?",
+      "opcional": "(opcional)",
+      "fechasEjemplo": "Por ejemplo: octubre de 2027",
+      "enviar": "Quiero el itinerario",
+      "enviando": "Enviando…",
+      "exito": "¡Recibido! Te enviaremos el itinerario muy pronto.",
+      "errNombre": "Escribe tu nombre (al menos 2 letras).",
+      "errContacto": "Escribe un correo o un número de móvil válido para poder enviarte el itinerario.",
+      "errViaje": "Elige qué viaje te interesa."
     },
     "testi": {
       "eyebrow": "Lo que cuentan",
@@ -149,24 +268,6 @@
       "card4Tag": "Canto maorí al árbol más famoso",
       "card4Desc": "Un canto maorí de bienvenida al kauri, el árbol gigante y sagrado de Nueva Zelanda.",
       "card4Label": "Canto maorí de bienvenida al kauri"
-    },
-    "nosotras": {
-      "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua",
-      "eyebrow": "Nuestra historia",
-      "p": "Somos Sylvie y Moni. Hace casi ocho años llegamos a Nueva Zelanda con una mochila llena de sueños y alguna que otra duda. Hoy este país es nuestra casa, y lo que más nos gusta es enseñarlo a través de todos los sentidos.",
-      "cta": "Conoce nuestra historia completa"
-    },
-    "blog": {
-      "eyebrow": "¿Cómo se vive?",
-      "title": "Por si quieres saber más",
-      "readingTime": "Tiempo de lectura: {{count}} mins",
-      "readArticle": "Leer artículo",
-      "seeAll": "Ver todos los artículos"
-    },
-    "finalCta": {
-      "title": "¿No sabes por dónde empezar?",
-      "p": "Cuéntanos qué te apetece y vemos juntos qué viaje encaja mejor contigo.",
-      "ctaPrimary": "Cuéntanos qué necesitas"
     }
   },
   "masAlla": {
