@@ -1,12 +1,52 @@
 import { useTranslation } from 'react-i18next'
 import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
-import RutaMapa from '../components/RutaMapa'
+import { useSiteImage } from '../lib/siteImages'
+import { CabeceraPagina } from '../components/CabeceraPagina'
+import { SolicitudRuta } from '../components/SolicitudRuta'
+import { CtaFinal } from '../components/home/BloquesHome'
+import imgViajes60 from '../images/blind-travel-group-geyser.webp'
+import imgCiegas from '../images/blind-travel-maori-carving.webp'
+import imgPrivado from '../images/sobre-nosotras.webp'
+import '../styles/pagestyle/Home.css'
 import '../styles/pagestyle/Productos.css'
 
+/* Imagen de cada tarjeta, editable desde /admin/imagenes (sección
+   "productos"). */
+const IMAGENES = {
+  'viajes-60':       { clave: 'tarjeta-viajes-60', src: imgViajes60 },
+  'personas-ciegas': { clave: 'tarjeta-personas-ciegas', src: imgCiegas },
+  'privado':         { clave: 'tarjeta-privado', src: imgPrivado },
+}
+
+function Tarjeta({ id, to, titulo, texto, cta, imgAlt }) {
+  const img = useSiteImage('productos', IMAGENES[id].clave, IMAGENES[id].src, imgAlt)
+  return (
+    <article className="tarjeta tarjeta--enlace" aria-labelledby={`${id}-heading`}>
+      <figure className="tarjeta__media">
+        <img src={img.src} alt={img.alt} lang={img.lang} loading="lazy" />
+      </figure>
+      <div className="tarjeta__cuerpo">
+        <h2 id={`${id}-heading`} className="tarjeta__titulo">{titulo}</h2>
+        <p className="tarjeta__texto">{texto}</p>
+        <div className="tarjeta__pie">
+          {/* El nombre del viaje completa el enlace para el lector de
+              pantalla ("Ver el viaje" se repite en dos tarjetas). */}
+          <L to={to} className="btn btn-solid tarjeta__enlace">{cta}<span className="sr-only">: {titulo}</span><span aria-hidden="true"> →</span></L>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+/* ── Todas las experiencias ──────────────────────────────────────────────
+ * Reparte entre las dos líneas (Viajes +60 y Viajes para personas ciegas y
+ * con baja visión) y el viaje privado. La ruta no se enseña en la web: se
+ * pide en PDF (SolicitudRuta).
+ * ──────────────────────────────────────────────────────────────────────── */
 export default function Productos() {
   const { t } = useTranslation()
-  const formatos = t('productos.formatos', { returnObjects: true })
+  const tarjetas = t('productos.tarjetas', { returnObjects: true })
 
   return (
     <>
@@ -16,46 +56,23 @@ export default function Productos() {
         description={t('productos.seo.description')}
       />
 
-      {/* ── Formatos ─────────────────────────────────── */}
-      <section className="prod-formatos">
-        <div className="wrap">
-          <span className="sec-eyebrow">{t('productos.eyebrow')}</span>
-          <h1 className="sec-title">{t('productos.title')}</h1>
+      <CabeceraPagina antetitulo={t('productos.eyebrow')} titulo={t('productos.title')}>
+        <p>{t('productos.sub')}</p>
+      </CabeceraPagina>
 
-          <div className="prod-list">
-            {formatos.map(({ id, etiqueta, titulo, cuerpo, incluye, cta }) => (
-              <article key={id} id={id} aria-labelledby={`${id}-heading`} className="prod-card">
-                <div className="prod-card__head">
-                  <span className="prod-card__etiqueta">{etiqueta}</span>
-                  <h2 id={`${id}-heading`} className="prod-card__titulo">{titulo}</h2>
-                  <p className="prod-card__desc">{cuerpo}</p>
-                </div>
-
-                <div className="prod-card__footer">
-                  <p className="prod-card__incluye-nota"><strong>{t('productos.incluye')}</strong> {incluye}</p>
-                  <div className="cta-row">
-                    <L to="/contacto" className="btn btn-solid">{cta}</L>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+      <section aria-label={t('productos.eyebrow')}>
+        <div className="wrap experiencias">
+          {tarjetas.map(tarjeta => <Tarjeta key={tarjeta.id} {...tarjeta} />)}
         </div>
       </section>
 
-      <RutaMapa />
+      <SolicitudRuta />
 
-      {/* ── CTA final ────────────────────────────────── */}
-      <section className="prod-cta-section">
-        <div className="wrap">
-          <div className="ink-block prod-cta">
-            <div className="sec-eyebrow" style={{ color: 'var(--jade-soft)' }}>{t('productos.ctaEyebrow')}</div>
-            <h2 className="prod-cta__titulo">{t('productos.ctaTitle')}</h2>
-            <p>{t('productos.ctaText')}</p>
-            <L to="/contacto" className="btn btn-solid">{t('productos.ctaBtn')}</L>
-          </div>
-        </div>
-      </section>
+      <CtaFinal
+        titulo={t('productos.cta.title')}
+        parrafos={[t('productos.cta.text')]}
+        cta={t('productos.cta.btn')}
+      />
     </>
   )
 }

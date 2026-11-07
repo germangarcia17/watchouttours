@@ -32,6 +32,7 @@
   },
   "footer": {
     "brandHome": "Watchout Tours — Inicio",
+    "tagline": "Viajes sensoriales por Nueva Zelanda en grupos de 6 personas como máximo, con dos guías contigo de principio a fin.",
     "whatsapp": "Escríbenos por WhatsApp",
     "instagram": "Síguenos en Instagram",
     "colNosotras": "Nosotras",
@@ -76,15 +77,15 @@
       "puntos": [
         {
           "titulo": "Grupos de 6 personas como máximo.",
-          "texto": "Pocas personas, para que el viaje se adapte a vosotros y no al revés."
+          "texto": "Pocas personas, para que el viaje se adapte a ti y no al revés."
         },
         {
-          "titulo": "Casi todo, solo para vosotros.",
-          "texto": "Hobbiton, la navegación por Auckland, la jornada maorí en Rotorua: la mayoría de las visitas son privadas para el grupo."
+          "titulo": "Casi todo, solo para el grupo.",
+          "texto": "Hobbiton, la navegación por el puerto de Auckland, la jornada maorí en Rotorua: la mayoría de las visitas son privadas."
         },
         {
           "titulo": "Nosotras dos, siempre.",
-          "texto": "Moni y Sylvie os acompañamos desde el aeropuerto hasta la despedida."
+          "texto": "Te recogemos en el aeropuerto y estamos contigo hasta el día de la despedida."
         },
         {
           "titulo": "En español.",
@@ -97,7 +98,7 @@
       ]
     },
     "dosViajes": {
-      "title": "Dos viajes, un mismo método",
+      "title": "Dos maneras de viajar con nosotras",
       "tarjetas": [
         {
           "id": "sin-prisa",
@@ -127,7 +128,7 @@
       "more": "Leer más reseñas"
     },
     "audio": {
-      "eyebrow": "Escucha nuestros momentos más top",
+      "eyebrow": "Así suena el viaje",
       "sr1": "primer audio",
       "sr2": "segundo audio",
       "card1Title": "¡Salto en parapente!",
@@ -152,7 +153,7 @@
     "nosotras": {
       "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua",
       "eyebrow": "Nuestra historia",
-      "p": "Hace casi 8 años llegamos a Nueva Zelanda con una mochila llena de sueños e incertidumbre. Hoy somos Sylvie y Moni, las guías de Watchout — porque nadie como nosotras para contar, más allá de lo visual, la magia de este país que llamamos casa.",
+      "p": "Somos Sylvie y Moni. Hace casi ocho años llegamos a Nueva Zelanda con una mochila llena de sueños y alguna que otra duda. Hoy este país es nuestra casa, y lo que más nos gusta es enseñarlo a través de todos los sentidos.",
       "cta": "Conoce nuestra historia completa"
     },
     "blog": {
@@ -197,7 +198,7 @@
       "sub": "No ponemos límites a la aventura. Cada ruta combina adrenalina, inmersión sensorial y auténtica cultura maorí.",
       "srQ": "¿qué vas a sentir?",
       "p1Title": "Adrenalina y superación",
-      "p1Text": "Parapente en Queenstown, kayak en Kaikōura, lanchas rápidas. Sin límites mentales.",
+      "p1Text": "Parapente en Queenstown, kayak en Kaikōura, lanchas rápidas. Sin más límites que los que tú te pongas.",
       "p2Title": "Inmersión sensorial",
       "p2Text": "El tacto, el olfato y el oído como guía: Hobbiton, Rotorua, Milford Sound, Te Puia.",
       "p3Title": "Cultura y conexión",
@@ -209,7 +210,7 @@
       "fotoAlt": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial"
     },
     "reel": {
-      "videoAria": "Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. nuestro valiente aventurero corre hacia un barranco y ¡salta!, el despegue y la emoción de tocar el cielo por primera vez.",
+      "videoAria": "Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. Corre hacia el borde de la ladera, salta y siente por primera vez la emoción de tocar el cielo.",
       "eyebrow": "Así se vive la aventura",
       "callout": "¿Quién dijo que el parapente era solo para algunos?",
       "p1": "En Watchout creemos que la aventura no entiende de límites. Entiende de curiosidad, de emoción y de personas con ganas de lanzarse a vivir experiencias que recordarán toda la vida.",
@@ -282,8 +283,8 @@
       ]
     },
     "privado": {
-      "title": "Casi todo, solo para vosotros",
-      "p": "En Hobbiton recorréis la Comarca con un guía para el grupo y coméis en la Taberna del Dragón Verde. En Rotorua, un guía maorí os acompaña durante todo el día. En Auckland navegáis por el puerto en un velero solo para vosotros. Sin colas, sin esperar a cuarenta personas y con todo el tiempo del mundo para preguntar.",
+      "title": "Casi todo, solo para el grupo",
+      "p": "En Hobbiton recorremos la Comarca con un guía solo para nuestro grupo y comemos en la Taberna del Dragón Verde. En Rotorua, un guía maorí nos acompaña durante todo el día. En Auckland navegamos por el puerto en un velero solo para nosotros. Sin colas, sin esperar a cuarenta personas y con todo el tiempo del mundo para preguntar.",
       "imgAlt": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial"
     },
     "solo": {
@@ -314,36 +315,6 @@
         {
           "etiqueta": "Noche",
           "texto": "Cena en el hotel y a descansar."
-        }
-      ]
-    },
-    "ruta": {
-      "title": "La ruta",
-      "navAria": "Mapa de la ruta de los viajes +60 por Nueva Zelanda",
-      "paradas": [
-        {
-          "id": "sp-auckland",
-          "nombre": "Auckland"
-        },
-        {
-          "id": "sp-rotorua",
-          "nombre": "Rotorua"
-        },
-        {
-          "id": "sp-queenstown",
-          "nombre": "Queenstown"
-        },
-        {
-          "id": "sp-tekapo",
-          "nombre": "Tekapo"
-        },
-        {
-          "id": "sp-christchurch",
-          "nombre": "Christchurch"
-        },
-        {
-          "id": "sp-kaikoura",
-          "nombre": "Kaikōura"
         }
       ]
     },
@@ -445,72 +416,47 @@
     "videoAria": "Testimonio en vídeo de {{name}}",
     "ctaTitle": "¿La próxima reseña será la tuya?",
     "ctaPrimary": "Cuéntanos tu sueño",
-    "ctaSecondary": "Ver las rutas"
+    "ctaSecondary": "Ver los viajes"
   },
   "productos": {
     "seo": {
       "title": "Viajes Guiados por Nueva Zelanda para Ciegos | Watchout Tours",
       "description": "Dos maneras de recorrer Nueva Zelanda con nosotras: en grupo reducido o en viaje privado, diseñadas para personas ciegas y con baja visión."
     },
-    "eyebrow": "Nuestras opciones",
-    "title": "Dos maneras de vivirlo",
-    "sub": "La misma ruta, tu formato: en grupo pequeño con fechas fijas, o privada y a tu ritmo.",
-    "mapa": {
-      "eyebrow": "El itinerario",
-      "title": "Así es la ruta, parada a parada",
-      "sub": "Un mapa esquemático para hacerte una idea de conjunto — y, justo debajo, cada parada contada con detalle.",
-      "navAria": "Mapa de la ruta por Nueva Zelanda",
-      "paradas": [
-        {
-          "id": "auckland",
-          "nombre": "Auckland",
-          "resumen": "Empezamos tocando texturas de efectos especiales en Wētā Workshop y sintiendo la altura y la velocidad desde lo alto de la Sky Tower."
-        },
-        {
-          "id": "rotorua",
-          "nombre": "Waikato y Rotorua",
-          "resumen": "El tacto de las puertas redondas de Hobbiton, el estruendo del géiser Pōhutu en Te Puia, el haka retumbando en el pecho y el barro geotermal de Hells Gate en la piel."
-        },
-        {
-          "id": "kaikoura",
-          "nombre": "Kaikōura y Christchurch",
-          "resumen": "El soplido de las ballenas y sus clics de ecolocalización bajo el agua, y el frío extremo de una tormenta antártica real en el Antarctic Centre."
-        },
-        {
-          "id": "tekapo",
-          "nombre": "Tekapo y Mt Cook",
-          "resumen": "Un baño termal bajo un cielo que se cuenta, estrella a estrella, con un guiado astronómico narrado."
-        },
-        {
-          "id": "queenstown",
-          "nombre": "Queenstown, Milford Sound y Stewart Island",
-          "resumen": "El rugido de las cascadas de Milford Sound salpicando la cubierta, el vapor de las Onsen Hot Pools y el aislamiento salvaje de Stewart Island."
-        }
-      ]
-    },
-    "incluye": "Incluye:",
-    "ctaEyebrow": "¿Dudas?",
-    "ctaTitle": "Cuéntanos que necesitas.",
-    "ctaText": "Cuéntanos qué tienes en mente y nosotras le damos forma. Sin compromiso, sin prisas.",
-    "ctaBtn": "Contáctanos",
-    "formatos": [
+    "eyebrow": "Todas las experiencias",
+    "title": "Elige cómo quieres vivir Nueva Zelanda",
+    "sub": "Dos viajes en grupo, de 6 personas como máximo, o un viaje privado pensado solo para ti. En todos, nosotras dos contigo de principio a fin.",
+    "tarjetas": [
       {
-        "id": "grupo",
-        "etiqueta": "15 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos",
-        "titulo": "La aventura compartida",
-        "cuerpo": "Un grupo pequeñito de gente con las mismas ganas que tú de comerse el mundo. 14 noches recorriendo Nueva Zelanda, riéndonos, flipando y sintiéndolo todo juntos. De esos viajes de los que vuelves con amigos para toda la vida. Y siempre nosotras dos pegadas al grupo, de principio a fin.",
-        "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 14 noches.",
-        "cta": "Quiero apuntarme"
+        "id": "viajes-60",
+        "to": "/sin-prisa",
+        "titulo": "Viajes +60",
+        "texto": "Nueva Zelanda con calma y sin ocuparte de nada. Hoteles de 4 y 5 estrellas, desayunos y cenas incluidos, un transporte cómodo y nosotras dos contigo de principio a fin.",
+        "cta": "Ver el viaje",
+        "imgAlt": "Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás"
+      },
+      {
+        "id": "personas-ciegas",
+        "to": "/mas-alla-de-la-vista",
+        "titulo": "Viajes para personas ciegas y con baja visión",
+        "texto": "No toda visión necesita ojos. Un viaje diseñado para personas ciegas y con baja visión, donde cada lugar se vive con las manos, el oído y la piel, y la aventura llega hasta donde tú quieras.",
+        "cta": "Ver el viaje",
+        "imgAlt": "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos"
       },
       {
         "id": "privado",
-        "etiqueta": "Privado · solo para ti y los tuyos · duración a tu ritmo",
+        "to": "/contacto",
         "titulo": "Tu viaje, a tu medida",
-        "cuerpo": "Un viaje pensado solo para ti, y para quien quieras traer contigo. Nosotras dos, en exclusiva, diseñándolo a tu ritmo: tus días, tu energía, tu tiempo. Si quieres más calma, más calma. Si quieres más adrenalina, más adrenalina. Aquí no hay molde. Hay un viaje que te hacemos a medida, como un traje.",
-        "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo de principio a fin.",
-        "cta": "Diseñemos el tuyo"
+        "texto": "Un viaje solo para ti y para quien quieras traer. Lo diseñamos contigo y a tu ritmo: tus días, tu energía, tu tiempo. ¿Más calma o más aventura? Tú decides.",
+        "cta": "Diseñemos el tuyo",
+        "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua"
       }
-    ]
+    ],
+    "cta": {
+      "title": "¿Hablamos?",
+      "text": "Cuéntanos qué tienes en mente y te ayudamos a darle forma, sin compromiso.",
+      "btn": "Cuéntanos qué necesitas"
+    }
   },
   "contacto": {
     "docTitle": "Contacto | Watchout Tours",
@@ -597,11 +543,11 @@
     "equipoTitle": "Las personas detrás de cada viaje",
     "equipoMoniNombre": "Moni",
     "equipoMoniRol": "Fundadora y guía",
-    "equipoMoniBio": "Fundadora de WatchOut! y guía en cada salida, de principio a fin. Aterrizó en Nueva Zelanda hace siete años con una mochila llena de ilusión, y hoy traduce el país a través del relato, el tacto y el sonido.",
+    "equipoMoniBio": "Fundadora de Watchout y guía en cada salida, de principio a fin. Aterrizó en Nueva Zelanda hace siete años con una mochila llena de ilusión, y hoy traduce el país a través del relato, el tacto y el sonido.",
     "equipoMoniFotoAlt": "Moni, cofundadora y guía de Watchout Tours, en Nueva Zelanda",
     "equipoSylvieNombre": "Sylvie",
     "equipoSylvieRol": "Fundadora y guía",
-    "equipoSylvieBio": "Fundadora de WatchOut! y guía en cada salida, de principio a fin. Su padre, guía de esquí para ciegos en España, encendió la chispa que dio origen a este proyecto.",
+    "equipoSylvieBio": "Fundadora de Watchout y guía en cada salida, de principio a fin. Su padre, guía de esquí para ciegos en España, encendió la chispa que dio origen a este proyecto.",
     "equipoSylvieFotoAlt": "Sylvie, cofundadora y guía de Watchout Tours, en Nueva Zelanda",
     "equipoNuriaNombre": "Nuria",
     "equipoNuriaRol": "Representante en Europa y consultora de accesibilidad",
@@ -614,17 +560,17 @@
     "principios": [
       {
         "num": "01",
-        "titulo": "Diseñado para, no adaptado desde",
+        "titulo": "Pensado desde el principio, no adaptado después",
         "texto": "Construimos cada viaje desde el primer paso pensando en quién viaja con nosotras."
       },
       {
         "num": "02",
         "titulo": "El lujo es sensorial, no visual",
-        "texto": "El silencio de un fiordo al amanecer es opulento para cualquier sentido."
+        "texto": "El silencio de un fiordo al amanecer es un lujo para cualquier sentido."
       },
       {
         "num": "03",
-        "titulo": "Grupos de máximo seis",
+        "titulo": "Grupos de 6 personas como máximo",
         "texto": "Porque la experiencia sensorial requiere espacio y cada persona tiene su ritmo."
       },
       {
@@ -635,11 +581,11 @@
       {
         "num": "05",
         "titulo": "Cero condescendencia",
-        "texto": "Nuestras viajeras son adultas que han decidido vivir una aventura extraordinaria."
+        "texto": "Quienes viajan con nosotras son personas adultas que han decidido vivir una aventura extraordinaria."
       }
     ],
     "cierre1": "Pensábamos que íbamos a enseñar Nueva Zelanda. Y al final ha sido Nueva Zelanda —y las personas con las que hemos compartido el camino— quien nos ha enseñado a nosotras.",
-    "cierreDeseo": "Nuestra mayor ilusión es que cuando vuelvas a casa no solo recuerdes los lugares que visitaste. Que también descubras que prestas atención a cosas que antes pasaban desapercibidas.",
+    "cierreDeseo": "Ojalá que, al volver a casa, no solo recuerdes los lugares que visitaste, sino que descubras que ahora te fijas en cosas que antes te pasaban desapercibidas.",
     "cierre2": "Porque quizá ese sea el mejor souvenir que puedas llevarte.",
     "cierreCta": "Quiero saber más"
   },
@@ -884,5 +830,23 @@
       },
       "sinSesiones": "Las dos sesiones de la charla ya se han celebrado. Si quieres saber cuándo organizamos la próxima, escríbenos."
     }
+  },
+  "rutaPdf": {
+    "eyebrow": "La ruta",
+    "titulo": "Recibe la ruta completa en PDF",
+    "texto": "Déjanos tu nombre y tu correo y te enviamos el recorrido completo del viaje, para que lo leas con calma y lo compartas con quien quieras.",
+    "formAria": "Formulario para recibir la ruta en PDF",
+    "nombre": "Tu nombre",
+    "email": "Tu correo electrónico",
+    "viajeLegend": "¿Qué ruta quieres recibir?",
+    "opciones": {
+      "viajes-60": "Viajes +60",
+      "personas-ciegas": "Viajes para personas ciegas y con baja visión"
+    },
+    "enviar": "Quiero la ruta en PDF",
+    "enviando": "Enviando…",
+    "exito": "¡Hecho! Te enviaremos la ruta a tu correo muy pronto.",
+    "errEmail": "Introduce un correo válido para poder enviarte la ruta.",
+    "errViaje": "Elige qué ruta quieres recibir."
   }
 }

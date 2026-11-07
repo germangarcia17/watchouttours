@@ -10,6 +10,7 @@ import { Seo } from '../components/Seo'
 import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
 import { HeroFoto, SeparadorBaston, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
+import { SolicitudRuta } from '../components/SolicitudRuta'
 
 /* Iconos de "Lo que van a vivir": adrenalina, sentidos y cultura. */
 const ICONOS_PILARES = ['parapente', 'sentidos', 'ola']
@@ -166,6 +167,9 @@ export default function MasAllaDeLaVista() {
           </div>
         </div>
       </section>
+
+      {/* ── La ruta del viaje en grupo, en PDF ────────── */}
+      <SolicitudRuta viaje="personas-ciegas" className="" />
 
       {/* ── Reseñas (banda crema) ─────────────────────── */}
       <ResenasDestacadas tono="cream" />

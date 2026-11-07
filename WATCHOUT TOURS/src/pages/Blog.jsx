@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { Seo } from '../components/Seo'
+import { CabeceraPagina } from '../components/CabeceraPagina'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import { getPreload } from '../lib/preload'
@@ -43,60 +44,36 @@ export default function Blog() {
         description={t('blog.seo.description')}
       />
 
-      {/* ── Cabecera ─────────────────────────────────── */}
-      <section className="blog-hero">
-        <div className="wrap blog-hero-inner">
-          <span className="sec-eyebrow">{t('blog.eyebrow')}</span>
-          <h1 className="blog-titulo">{t('blog.title')}</h1>
-          <p className="blog-intro">
-            {t('blog.intro')}
-          </p>
-        </div>
-      </section>
+      <CabeceraPagina antetitulo={t('blog.eyebrow')} titulo={t('blog.title')}>
+        <p>{t('blog.intro')}</p>
+      </CabeceraPagina>
 
-      <section className="blog-listado">
+      <section className="blog-listado" aria-busy={loading}>
         <div className="wrap">
           {loading && <p className="blog-estado" role="status">{t('blog.loading')}</p>}
           {!loading && posts.length === 0 && (
             <p className="blog-estado">{t('blog.empty')}</p>
           )}
 
-          {/* ── Artículo destacado ─────────────────────── */}
-          {destacado && (
-            <article className="blog-destacado">
-              <div className="blog-destacado__meta">
-                <span className="sr-only">{t('blog.featuredSr')}</span>
-                {destacado.published_at && (
-                  <time dateTime={destacado.published_at}>{formatearFecha(destacado.published_at, lang)}</time>
-                )}
-                {destacado.reading_time && <span>· {t('blog.readTimeLong', { count: destacado.reading_time })}</span>}
-              </div>
-              <h2 className="blog-destacado__titulo" lang={fieldLangAttr(destacado, 'title', lang)}>{pickLocalized(destacado, 'title', lang)}</h2>
-              <p className="blog-destacado__excerpt" lang={fieldLangAttr(destacado, 'excerpt', lang)}>{pickLocalized(destacado, 'excerpt', lang)}</p>
-              <L to={`/blog/${destacado.slug}`} className="btn btn-solid">
-                {t('blog.readArticle')}<span className="sr-only">: {pickLocalized(destacado, 'title', lang)}</span>
-              </L>
-            </article>
-          )}
-
-          {/* ── Resto de artículos ─────────────────────── */}
-          {resto.length > 0 && (
-            <ul role="list" className="blog-grid">
-              {resto.map(post => (
-                <li key={post.id}>
-                  <article className="blog-card">
-                    <span className="sr-only">{t('blog.nextArticleSr')}</span>
-                    <div className="blog-card__meta">
-                      {post.published_at && (
-                        <time dateTime={post.published_at}>{formatearFecha(post.published_at, lang)}</time>
-                      )}
-                      {post.reading_time && <span>· {t('blog.readTimeShort', { count: post.reading_time })}</span>}
+          {posts.length > 0 && (
+            <ul role="list" className="blog-lista">
+              {[destacado, ...resto].map((post, i) => (
+                <li key={post.id} className={i === 0 ? 'blog-lista__destacado' : undefined}>
+                  <article className="tarjeta tarjeta--enlace blog-tarjeta">
+                    <div className="tarjeta__cuerpo">
+                      <span className="sr-only">{i === 0 ? t('blog.featuredSr') : t('blog.nextArticleSr')}</span>
+                      <p className="blog-tarjeta__meta">
+                        {post.published_at && <time dateTime={post.published_at}>{formatearFecha(post.published_at, lang)}</time>}
+                        {post.reading_time && <span> · {t(i === 0 ? 'blog.readTimeLong' : 'blog.readTimeShort', { count: post.reading_time })}</span>}
+                      </p>
+                      <h2 className="tarjeta__titulo" lang={fieldLangAttr(post, 'title', lang)}>{pickLocalized(post, 'title', lang)}</h2>
+                      <p className="tarjeta__texto" lang={fieldLangAttr(post, 'excerpt', lang)}>{pickLocalized(post, 'excerpt', lang)}</p>
+                      <div className="tarjeta__pie">
+                        <L to={`/blog/${post.slug}`} className={`btn ${i === 0 ? 'btn-solid' : 'btn-outline'} tarjeta__enlace`}>
+                          {t('blog.readArticle')}<span className="sr-only">: {pickLocalized(post, 'title', lang)}</span>
+                        </L>
+                      </div>
                     </div>
-                    <h2 className="blog-card__titulo" lang={fieldLangAttr(post, 'title', lang)}>{pickLocalized(post, 'title', lang)}</h2>
-                    <p className="blog-card__excerpt" lang={fieldLangAttr(post, 'excerpt', lang)}>{pickLocalized(post, 'excerpt', lang)}</p>
-                    <L to={`/blog/${post.slug}`} className="blog-card__link">
-                      {t('blog.readArticle')}<span className="sr-only">: {pickLocalized(post, 'title', lang)}</span><span aria-hidden="true"> →</span>
-                    </L>
                   </article>
                 </li>
               ))}

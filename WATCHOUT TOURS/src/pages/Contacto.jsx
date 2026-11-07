@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useForm, ValidationError } from '@formspree/react'
 import { L } from '../i18n/routing'
 import { Seo } from '../components/Seo'
+import { CabeceraPagina } from '../components/CabeceraPagina'
 import '../styles/pagestyle/Contacto.css'
 
 const PHONE_RE = /^[+\d][\d\s\-().]{4,19}$/
@@ -85,15 +86,9 @@ export default function Contacto() {
       />
 
       {/* ── Cabecera ─────────────────────────────────── */}
-      <section className="contacto-hero">
-        <div className="wrap contacto-hero-inner">
-          <span className="sec-eyebrow" aria-hidden="true">{t('contacto.eyebrow')}</span>
-          <h1 className="contacto-titulo">{t('contacto.title')}</h1>
-          <p className="contacto-intro">
-            {t('contacto.intro1')} <strong>{t('contacto.introStrong')}</strong> {t('contacto.intro2')}
-          </p>
-        </div>
-      </section>
+      <CabeceraPagina antetitulo={t('contacto.eyebrow')} titulo={t('contacto.title')}>
+        <p>{t('contacto.intro1')} <strong>{t('contacto.introStrong')}</strong> {t('contacto.intro2')}</p>
+      </CabeceraPagina>
 
       {/* ── Canales ──────────────────────────────────── */}
       <section className="contacto-canales-section">

@@ -23,7 +23,7 @@
 }
 
 .filo-intro {
-  font-size: 16.5px;
+  font-size: var(--fs-lead);
   color: var(--ink-soft);
   margin: 0 auto;
   max-width: 52ch;
@@ -67,13 +67,13 @@
 }
 
 .filo-principio__titulo {
-  font-size: 20px;
+  font-size: var(--fs-h3);
   font-weight: 800;
   margin: 4px 0 10px;
 }
 
 .filo-principio__texto {
-  font-size: 15.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   line-height: 1.7;
   margin: 0;

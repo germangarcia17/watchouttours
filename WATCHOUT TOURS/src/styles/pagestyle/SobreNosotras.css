@@ -27,7 +27,7 @@
 }
 
 .sn-intro {
-  font-size: 16.5px;
+  font-size: var(--fs-lead);
   color: var(--ink-soft);
   max-width: 54ch;
   margin-bottom: 16px;
@@ -54,7 +54,7 @@
 }
 
 .sn-aprendizaje {
-  padding: 72px 64px;
+  padding: 0;
 }
 
 .sn-aprendizaje-titulo {
@@ -67,7 +67,7 @@
   letter-spacing: normal;
 }
 
-.ink-block .sn-aprendizaje-titulo {
+.band-night .sn-aprendizaje-titulo {
   color: var(--paper);
 }
 
@@ -80,7 +80,7 @@
 }
 
 .sn-aprendizaje-cols p {
-  font-size: 15px;
+  font-size: var(--fs-body);
   line-height: 1.75;
   margin: 0;
 }
@@ -91,7 +91,7 @@
 }
 
 .sn-text {
-  font-size: 15.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   margin-bottom: 16px;
 }
@@ -112,7 +112,7 @@
 
 .sn-quote cite {
   font-style: normal;
-  font-size: 13px;
+  font-size: var(--fs-label);
   color: var(--gold);
   font-weight: 700;
 }
@@ -128,7 +128,7 @@
 }
 
 .sn-cierre-texto {
-  font-size: 15.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   margin-bottom: 16px;
 }
@@ -177,20 +177,20 @@
 
 .sn-equipo-nombre {
   font-family: var(--font-family-heading);
-  font-size: 20px;
+  font-size: var(--fs-h3);
   font-weight: 700;
   margin: 0 0 4px;
 }
 
 .sn-equipo-rol {
-  font-size: 13px;
+  font-size: var(--fs-body);
   font-weight: 700;
   color: var(--gold);
   margin: 0 0 12px;
 }
 
 .sn-equipo-bio {
-  font-size: 14.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   line-height: 1.65;
   margin: 0;
@@ -212,7 +212,7 @@
   border-radius: 999px;
   border: 1.5px solid var(--gold);
   color: var(--gold);
-  font-size: 13.5px;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   background: rgba(110, 85, 38, .06);
@@ -296,7 +296,7 @@
 
 /* ── Cierre del bloque "Lo que hemos aprendido" ──────── */
 .sn-aprendizaje-final {
-  font-size: 15px;
+  font-size: var(--fs-body);
   line-height: 1.75;
   margin: 28px 0 0;
   max-width: 60ch;
@@ -304,19 +304,35 @@
   opacity: .82;
 }
 
-.ink-block .sn-aprendizaje-negrita {
+.band-night .sn-aprendizaje-negrita {
   margin: 28px 0 0;
   padding: 24px 28px;
   max-width: 62ch;
   border-left: 3px solid var(--coral);
   background: rgba(244, 241, 234, .06);
   border-radius: 0 12px 12px 0;
-  font-size: 17px;
+  font-size: var(--fs-lead);
   line-height: 1.6;
   color: var(--paper);
 }
 
-.ink-block .sn-aprendizaje-negrita strong {
+.band-night .sn-aprendizaje-negrita strong {
   color: var(--paper);
   font-weight: 700;
 }
+
+/* ── Renovación visual ───────────────────────────────── */
+/* El bloque oscuro es ahora una banda a todo el ancho (.band-night): el
+   contenido no necesita relleno propio. */
+@media (max-width: 760px) {
+  .sn-aprendizaje {
+    padding: 0;
+  }
+}
+
+/* Chips de Nuria con zona táctil de 44 px */
+.sn-equipo-chip {
+  min-height: 44px;
+  font-size: var(--fs-body);
+}
+
