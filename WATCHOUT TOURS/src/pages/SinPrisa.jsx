@@ -16,7 +16,7 @@ import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
 import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
-import RutaMapa, { COORDS_SIN_PRISA } from '../components/RutaMapa'
+import { SolicitudRuta } from '../components/SolicitudRuta'
 import { HeroFoto, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
 
 const ICONOS_INCLUYE = ['guias', 'hotel', 'comida', 'privado', 'transporte', 'asistencia']
@@ -66,7 +66,7 @@ function FotoGaleria({ id, lugar, alt }) {
  * Viajes tranquilos en grupos de máximo 6 personas
  * (/sin-prisa ↔ /en/unhurried). Orden: hero → filas en zigzag (para quién,
  * casi todo solo para vosotros, si viajas por tu cuenta, para tu familia)
- * → qué incluye → un día de viaje → la ruta → lo que te llevarás y
+ * → qué incluye → un día de viaje → la ruta en PDF → lo que te llevarás y
  * galería → reseñas → preguntas frecuentes → CTA. Sin precios ni plazas.
  * ──────────────────────────────────────────────────────────────────────── */
 export default function SinPrisa() {
@@ -138,8 +138,8 @@ export default function SinPrisa() {
         </div>
       </section>
 
-      {/* ── La ruta (mismo mapa accesible que /productos) ── */}
-      <RutaMapa ns="sinPrisa.ruta" coords={COORDS_SIN_PRISA} className="band-cream" />
+      {/* ── La ruta: se pide en PDF (no se enseña en la web) ── */}
+      <SolicitudRuta viaje="viajes-60" />
 
       {/* ── Lo que te llevarás + galería ──────────────── */}
       <section aria-labelledby="sp-llevaras">

@@ -29,7 +29,7 @@ export default function SobreNosotras() {
       <section className="sn-hero">
         <div className="wrap sn-hero-grid">
           <div className="sn-hero-inner">
-            <span className="sec-eyebrow">{t('sobre.heroEyebrow')}</span>
+            <p className="sec-eyebrow">{t('sobre.heroEyebrow')}</p>
             <h1 className="sn-titulo">{t('sobre.heroTitle1')}<br />{t('sobre.heroTitle2')}</h1>
             <p className="sn-intro">{t('sobre.heroIntro1')}</p>
             <p className="sn-intro">{t('sobre.heroIntro2')}</p>
@@ -41,11 +41,11 @@ export default function SobreNosotras() {
       </section>
 
       {/* ── Lo que hemos aprendido — bloque oscuro ───── */}
-      <section>
+      <section className="band-night" aria-labelledby="aprendido-heading">
         <div className="wrap">
-          <div className="ink-block sn-aprendizaje">
-            <span className="sec-eyebrow">{t('sobre.aprendidoEyebrow')}</span>
-            <h2 className="sn-aprendizaje-titulo">{t('sobre.aprendidoTitulo')}</h2>
+          <div className="sn-aprendizaje">
+            <p className="sec-eyebrow">{t('sobre.aprendidoEyebrow')}</p>
+            <h2 id="aprendido-heading" className="sn-aprendizaje-titulo">{t('sobre.aprendidoTitulo')}</h2>
             <div className="sn-aprendizaje-cols">
               <p>{t('sobre.aprendidoCol1')}</p>
               <p>{t('sobre.aprendidoCol2')}</p>
@@ -61,7 +61,7 @@ export default function SobreNosotras() {
       {/* ── Hola, somos Mónica y Sylvie ─────────────── */}
       <section>
         <div className="wrap sn-hola">
-          <span className="sec-eyebrow"><span aria-hidden="true">👋 </span>{t('sobre.holaEyebrow')}</span>
+          <p className="sec-eyebrow">{t('sobre.holaEyebrow')}</p>
           <h2 className="sec-title">{t('sobre.holaTitle')}</h2>
           <p className="sn-text">{t('sobre.holaP1')}</p>
           <p className="sn-text">{t('sobre.holaP2')}</p>
@@ -76,7 +76,7 @@ export default function SobreNosotras() {
       {/* ── Equipo ─────────────────────────────────────── */}
       <section aria-labelledby="equipo-heading">
         <div className="wrap">
-          <span className="sec-eyebrow">{t('sobre.equipoEyebrow')}</span>
+          <p className="sec-eyebrow">{t('sobre.equipoEyebrow')}</p>
           <h2 id="equipo-heading" className="sec-title">{t('sobre.equipoTitle')}</h2>
           <div className="sn-equipo-grid">
             <article className="sn-equipo-card">
@@ -131,7 +131,7 @@ export default function SobreNosotras() {
       <section aria-labelledby="filosofia-heading">
         <div className="wrap sn-filo-grid">
           <div className="sn-filo-main">
-            <span className="sec-eyebrow">{t('sobre.filoEyebrow')}</span>
+            <p className="sec-eyebrow">{t('sobre.filoEyebrow')}</p>
             <h2 id="filosofia-heading" className="sec-title">{t('sobre.filoTitle')}</h2>
             <ol role="list" className="filo-lista">
               {PRINCIPIOS.map(({ num, titulo, texto }) => (

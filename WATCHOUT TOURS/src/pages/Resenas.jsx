@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
 import { Seo } from '../components/Seo'
+import { CabeceraPagina } from '../components/CabeceraPagina'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import { getPreload } from '../lib/preload'
+import '../styles/pagestyle/Home.css'
 import '../styles/pagestyle/Resenas.css'
 
 export default function Resenas() {
@@ -38,81 +40,54 @@ export default function Resenas() {
         description={t('resenas.seo.description')}
       />
 
-      {/* ── Cabecera ─────────────────────────────────── */}
-      <section className="rs-hero">
-        <div className="wrap rs-hero-inner">
-          <span className="sec-eyebrow">{t('resenas.eyebrow')}</span>
-          <h1 className="rs-titulo">{t('resenas.title')}</h1>
-          <p className="rs-intro">
-            {t('resenas.intro')}
-          </p>
-        </div>
-      </section>
+      <CabeceraPagina antetitulo={t('resenas.eyebrow')} titulo={t('resenas.title')}>
+        <p>{t('resenas.intro')}</p>
+      </CabeceraPagina>
 
-      <section className="rs-listado">
+      <section className="rs-listado" aria-busy={loading}>
         <div className="wrap">
           {loading && <p className="rs-estado" role="status">{t('resenas.loading')}</p>}
           {!loading && resenas.length === 0 && (
             <p className="rs-estado">{t('resenas.empty')}</p>
           )}
 
-          {/* ── Destacadas ─────────────────────────────── */}
-          {destacadas.length > 0 && (
-            <ul role="list" className="rs-destacadas">
-              {destacadas.map(r => (
-                <li key={r.id}>
-                  <article className="rs-destacada">
-                    <span className="rs-destacada__label">{t('resenas.featuredLabel')}</span>
-                    <blockquote className="rs-destacada__quote">
-                      <p lang={fieldLangAttr(r, 'content', lang)}>&ldquo;{pickLocalized(r, 'content', lang)}&rdquo;</p>
-                    </blockquote>
-                    <footer className="rs-destacada__who">
-                      <strong>{r.author_name}</strong>
-                      {pickLocalized(r, 'author_context', lang) && <span> — {pickLocalized(r, 'author_context', lang)}</span>}
-                    </footer>
-                    {r.video_url && (
-                      <details className="testi-video testi-video--claro">
-                        <summary>{t('resenas.listen')}</summary>
-                        <video src={r.video_url} controls playsInline preload="metadata" aria-label={t('resenas.videoAria', { name: r.author_name })} />
-                      </details>
-                    )}
-                  </article>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {/* ── Resto ──────────────────────────────────── */}
-          {resto.length > 0 && (
-            <ul role="list" className="rs-grid">
-              {resto.map(r => (
-                <li key={r.id}>
-                  <article className="rs-card">
-                    <blockquote className="rs-card__quote">
-                      <p lang={fieldLangAttr(r, 'content', lang)}>&ldquo;{pickLocalized(r, 'content', lang)}&rdquo;</p>
-                    </blockquote>
-                    <footer className="rs-card__who">
-                      <strong>{r.author_name}</strong>
-                      {pickLocalized(r, 'author_context', lang) && <span> — {pickLocalized(r, 'author_context', lang)}</span>}
-                    </footer>
-                    {r.video_url && (
-                      <details className="testi-video">
-                        <summary>{t('resenas.listen')}</summary>
-                        <video src={r.video_url} controls playsInline preload="metadata" aria-label={t('resenas.videoAria', { name: r.author_name })} />
-                      </details>
-                    )}
-                  </article>
-                </li>
-              ))}
+          {/* Destacadas primero (la primera, a todo el ancho) y después el
+              resto; todas con el mismo modelo de tarjeta de reseña. */}
+          {resenas.length > 0 && (
+            <ul role="list" className="rs-lista">
+              {[...destacadas, ...resto].map((r, i) => {
+                const contexto = pickLocalized(r, 'author_context', lang)
+                return (
+                  <li key={r.id} className={i === 0 && destacadas.length > 0 ? 'rs-lista__destacada' : undefined}>
+                    <figure className={`resena${i === 0 && destacadas.length > 0 ? ' resena--destacada' : ''}`}>
+                      {r.featured && <p className="resena__etiqueta">{t('resenas.featuredLabel')}</p>}
+                      <span className="resena__comillas" aria-hidden="true">“</span>
+                      <blockquote className="resena__cita" lang={fieldLangAttr(r, 'content', lang)}>
+                        <p>{pickLocalized(r, 'content', lang)}</p>
+                      </blockquote>
+                      <figcaption className="resena__autor">
+                        <span className="resena__nombre">{r.author_name}</span>
+                        {contexto && <span className="resena__contexto" lang={fieldLangAttr(r, 'author_context', lang)}>{contexto}</span>}
+                      </figcaption>
+                      {r.video_url && (
+                        <details className="testi-video">
+                          <summary>{t('resenas.listen')}</summary>
+                          <video src={r.video_url} controls playsInline preload="metadata" aria-label={t('resenas.videoAria', { name: r.author_name })} />
+                        </details>
+                      )}
+                    </figure>
+                  </li>
+                )
+              })}
             </ul>
           )}
         </div>
       </section>
 
       {/* ── CTA ──────────────────────────────────────── */}
-      <section className="rs-cta">
+      <section className="rs-cta band-night" aria-labelledby="rs-cta-titulo">
         <div className="wrap rs-cta-inner">
-          <h2 className="sec-title">{t('resenas.ctaTitle')}</h2>
+          <h2 id="rs-cta-titulo" className="sec-title">{t('resenas.ctaTitle')}</h2>
           <div className="cta-row" style={{ justifyContent: 'center' }}>
             <L to="/contacto" className="btn btn-solid">{t('resenas.ctaPrimary')}</L>
             <L to="/productos" className="btn btn-outline">{t('resenas.ctaSecondary')}</L>

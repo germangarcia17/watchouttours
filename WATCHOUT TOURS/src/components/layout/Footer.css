@@ -1,0 +1,176 @@
+/* ── Pie de página (renovación visual) ───────────────────
+   Banda azul noche a todo el ancho, alineada con el contenido (.wrap).
+   Se carga después de global.css y sustituye su aspecto anterior. Todos
+   los colores claros cumplen AA sobre --night. */
+
+.site-footer {
+  background: var(--night);
+  color: #E6E1D6;
+  /* Línea fina para separarlo del CTA final, que también es azul */
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  margin-top: 0;
+  --focus: #F4F1EA;
+}
+
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  padding-block: clamp(56px, 7vw, 88px) 48px;
+}
+
+/* ── Marca ── */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.footer-brand__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.footer-brand__logo:hover {
+  text-decoration: none;
+}
+
+.footer-brand__img {
+  width: 56px;
+  height: 56px;
+  padding: 6px;
+  border-radius: 50%;
+  background: #F1EDE4;
+  object-fit: contain;
+}
+
+.footer-brand__name {
+  font-family: 'Big Shoulders Display', var(--font-family-heading);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.footer-brand__tagline {
+  margin: 0;
+  max-width: 38ch;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: #E6E1D6;
+}
+
+.footer-sociales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Botones sociales: mismo estilo de botón secundario sobre azul */
+.footer-whatsapp,
+.footer-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1.5px solid rgba(255, 255, 255, .7);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color .15s ease;
+}
+
+.footer-whatsapp:hover,
+.footer-instagram:hover {
+  background: rgba(255, 255, 255, .12);
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.footer-whatsapp svg,
+.footer-instagram svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.footer-instagram svg {
+  fill: none;
+  color: inherit;
+  stroke: currentColor;
+}
+
+.footer-instagram svg circle:last-child {
+  fill: currentColor;
+}
+
+/* ── Columnas ── */
+.footer-col__heading {
+  margin: 0 0 12px;
+  font-family: var(--font-family-heading);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--jade-soft);
+}
+
+.footer-col__list a {
+  color: #F1EDE4;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.footer-col__list a:hover {
+  color: var(--paper);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Franja inferior ── */
+.site-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  padding-block: 24px;
+}
+
+/* En móvil, margen extra para que el botón flotante de WhatsApp nunca
+   tape el último texto del pie */
+@media (max-width: 760px) {
+  .site-footer__bottom {
+    padding-bottom: calc(24px + 72px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 16px;
+  color: #E6E1D6;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .site-footer__inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}

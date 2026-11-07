@@ -92,6 +92,24 @@ const NUEVAS_IMAGENES_SUGERIDAS = [
     image_alt: 'Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado',
     image_alt_en: 'Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky',
   },
+  // Todas las experiencias: tarjeta “Viajes +60”
+  {
+    section: 'productos', key: 'tarjeta-viajes-60',
+    image_alt: 'Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás',
+    image_alt_en: 'Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them',
+  },
+  // Todas las experiencias: tarjeta de personas ciegas y con baja visión
+  {
+    section: 'productos', key: 'tarjeta-personas-ciegas',
+    image_alt: 'Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos',
+    image_alt_en: 'A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it',
+  },
+  // Todas las experiencias: tarjeta del viaje privado
+  {
+    section: 'productos', key: 'tarjeta-privado',
+    image_alt: 'Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua',
+    image_alt_en: 'Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua',
+  },
   // Hero de /sin-prisa: de momento usa el paisaje del géiser de la home;
   // falta una foto propia (puerto, barco u Hobbiton).
   {

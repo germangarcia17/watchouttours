@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import logoImg from '../../images/logo-header-watchout.png'
 import { L, useLocalize } from '../../i18n/routing'
+import './Footer.css'
 
 export function Footer() {
   const { t } = useTranslation()
@@ -9,7 +10,7 @@ export function Footer() {
 
   return (
     <footer className="site-footer" role="contentinfo">
-      <div className="site-footer__inner container">
+      <div className="site-footer__inner wrap">
 
         {/* Columna marca */}
         <div className="footer-brand">
@@ -17,6 +18,8 @@ export function Footer() {
             <img src={logoImg} alt="" aria-hidden="true" className="footer-brand__img" loading="lazy" />
             <span className="footer-brand__name">Watchout Tours</span>
           </L>
+          <p className="footer-brand__tagline">{t('footer.tagline')}</p>
+          <div className="footer-sociales">
           <a
             href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20información%20sobre%20los%20viajes%20de%20Watchout%20Tours"
             className="footer-whatsapp"
@@ -43,6 +46,7 @@ export function Footer() {
             {t('footer.instagram')}
             <span className="sr-only"> {t('common.newTab')}</span>
           </a>
+          </div>
         </div>
 
         {/* Columna Nosotras */}

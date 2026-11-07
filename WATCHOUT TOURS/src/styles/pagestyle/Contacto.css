@@ -22,7 +22,7 @@
 }
 
 .contacto-intro {
-  font-size: 16.5px;
+  font-size: var(--fs-lead);
   color: var(--ink-soft);
   margin: 0 auto;
   max-width: 56ch;
@@ -99,12 +99,12 @@
   display: block;
   font-family: var(--font-family-heading);
   font-weight: 700;
-  font-size: 16px;
+  font-size: var(--fs-h3);
 }
 
 .canal-card__desc {
   display: block;
-  font-size: 13.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
 }
 
@@ -149,7 +149,7 @@
 .form-label {
   display: block;
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: var(--fs-body);
   margin-bottom: 8px;
   color: var(--ink);
 }
@@ -160,14 +160,14 @@
 
 .form-optional {
   font-weight: 400;
-  font-size: 13px;
+  font-size: var(--fs-body);
   color: var(--muted);
 }
 
 .form-control {
   width: 100%;
   font-family: inherit;
-  font-size: 15px;
+  font-size: var(--fs-body);
   color: var(--ink);
   background: var(--paper);
   border: 1.5px solid var(--border-input);
@@ -215,7 +215,7 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   background: var(--paper);
   border: 1.5px solid var(--border-input);
@@ -250,7 +250,7 @@ textarea.form-control {
   display: flex;
   gap: 12px;
   align-items: flex-start;
-  font-size: 14.5px;
+  font-size: var(--fs-body);
   color: var(--ink-soft);
   line-height: 1.5;
   cursor: pointer;
@@ -276,7 +276,7 @@ textarea.form-control {
 }
 
 .form-consent-info {
-  font-size: 12.5px;
+  font-size: var(--fs-body);
   color: var(--muted);
   line-height: 1.55;
   margin: 10px 0 0;
@@ -286,7 +286,7 @@ textarea.form-control {
 /* Errores y estados */
 .form-error {
   color: #b3401f;
-  font-size: 13.5px;
+  font-size: var(--fs-body);
   font-weight: 600;
   margin: 8px 0 0;
 }
@@ -304,7 +304,7 @@ textarea.form-control {
   border: 1px solid var(--jade-soft);
   border-radius: var(--radius);
   padding: 22px 26px;
-  font-size: 16px;
+  font-size: var(--fs-lead);
   font-weight: 600;
   color: var(--jade);
 }
@@ -312,7 +312,7 @@ textarea.form-control {
 .form-status--error {
   display: block;
   color: #b3401f;
-  font-size: 14px;
+  font-size: var(--fs-body);
   font-weight: 600;
   margin-top: 12px;
 }
@@ -355,3 +355,23 @@ textarea.form-control {
     padding-top: 28px;
   }
 }
+
+/* ── Renovación visual: ritmo vertical ───────────────── */
+/* Los canales y el formulario van seguidos, sin el hueco grande entre
+   secciones. */
+.site-main > .contacto-canales-section {
+  padding-block: 48px 0;
+}
+
+.site-main > .contacto-form-section {
+  padding-block: 48px var(--section-space);
+}
+
+/* Enlace dentro de la frase del consentimiento: zona táctil de 44 px de
+   alto sin mover el texto (relleno vertical compensado con margen). */
+.form-consent-label a {
+  display: inline-block;
+  padding-block: 11px;
+  margin-block: -11px;
+}
+

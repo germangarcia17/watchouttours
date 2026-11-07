@@ -1,174 +1,26 @@
-/* ── Rutas y viajes — estilos propios ─────────────────── */
-/* Tokens en styles/theme.css; .route y .hl base en Home.css */
+/* ── Todas las experiencias (/productos) ─────────────────
+   Tres tarjetas iguales (dos líneas de viaje y el viaje privado). La
+   tarjeta, la cabecera y el formulario de la ruta usan los estilos
+   comunes (theme.css, Home.css). */
 
-/* ── Cabecera ────────────────────────────────────────── */
-.prod-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 56px 0 24px;
-}
-
-.prod-hero-inner {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 680px;
-}
-
-.prod-titulo {
-  font-size: clamp(34px, 4.6vw, 48px);
-  font-weight: 800;
-  margin-bottom: 16px;
-}
-
-.prod-intro {
-  font-size: var(--fs-lead);
-  color: var(--ink-soft);
-  margin: 0 auto;
-  max-width: 54ch;
-}
-
-
-
-/* ── Formatos ────────────────────────────────────────── */
-.prod-formatos {
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
-.prod-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.experiencias {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: stretch;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
 }
 
-.prod-card {
-  position: relative;
-  padding: 0 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-}
-
-.prod-card:first-child {
-  padding-left: 0;
-  border-right: 1px solid var(--line);
-}
-
-.prod-card:last-child {
-  padding-right: 0;
-}
-
-.prod-card__etiqueta {
-  display: inline-block;
-  font-size: var(--fs-label);
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--jade);
-  border-left: 3px solid var(--jade-soft);
-  padding-left: 10px;
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.prod-card__titulo {
-  font-size: var(--fs-h3);
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.prod-card__desc {
-  font-size: var(--fs-body);
-  color: var(--ink-soft);
-  line-height: 1.65;
-  margin: 0;
-}
-
-/* Footer con precio */
-.prod-card__footer {
-  margin-top: auto;
-  border-top: 1px solid var(--line);
-  padding-top: 18px;
-}
-
-.prod-card__precio {
-  font-family: var(--font-family-mono);
-  letter-spacing: -.01em;
-  font-size: 19px;
-  font-weight: 800;
-  color: var(--jade);
-  margin: 0 0 8px;
-}
-
-.prod-card__precio-nota {
-  font-size: var(--fs-body);
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0 0 14px;
-}
-
-.prod-card__incluye-nota {
-  font-size: var(--fs-body);
-  color: var(--ink-soft);
-  line-height: 1.6;
-  padding-left: 14px;
-  border-left: 2px solid var(--jade-soft);
-  margin: 0 0 18px;
-}
-
-.prod-card__footer .btn {
-  padding: 12px 22px;
-  font-size: 16px;
-}
-
-/* ── CTA final ───────────────────────────────────────── */
-.prod-cta-section {
-  padding-top: 24px;
-  padding-bottom: 90px;
-}
-
-.prod-cta {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.prod-cta__titulo {
-  font-size: clamp(22px, 3vw, 30px);
-  font-weight: 800;
-  max-width: 24ch;
-}
-
-.prod-cta p {
-  font-size: var(--fs-body);
-  max-width: 54ch;
-  margin-bottom: 22px;
-}
-
-/* ── Responsive ──────────────────────────────────────── */
-@media (max-width: 900px) {
-  .prod-list {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    max-width: 560px;
-    margin: 0 auto;
+@media (max-width: 960px) {
+  .experiencias {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .prod-card {
-    padding: 0;
+  .experiencias > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
+}
 
-  .prod-card:first-child {
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 32px;
+@media (max-width: 640px) {
+  .experiencias {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

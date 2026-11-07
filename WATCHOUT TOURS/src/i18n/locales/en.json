@@ -32,6 +32,7 @@
   },
   "footer": {
     "brandHome": "Watchout Tours — Home",
+    "tagline": "Sensory journeys around New Zealand in groups of 6 at most, with two guides by your side from start to finish.",
     "whatsapp": "Message us on WhatsApp",
     "instagram": "Follow us on Instagram",
     "colNosotras": "About",
@@ -79,12 +80,12 @@
           "texto": "Just a few people, so the trip fits you, not the other way round."
         },
         {
-          "titulo": "Almost everything, just for you.",
+          "titulo": "Almost everything, just for the group.",
           "texto": "Hobbiton, sailing on Auckland’s harbour, a full day with a Māori guide in Rotorua: most experiences are private to the group."
         },
         {
           "titulo": "The two of us, always.",
-          "texto": "Moni and Sylvie are with you from airport pick-up to the final farewell."
+          "texto": "We pick you up at the airport and stay with you until the day we say goodbye."
         },
         {
           "titulo": "One language per group.",
@@ -97,7 +98,7 @@
       ]
     },
     "dosViajes": {
-      "title": "Two journeys, one way of travelling",
+      "title": "Two ways to travel with us",
       "tarjetas": [
         {
           "id": "sin-prisa",
@@ -119,7 +120,7 @@
     },
     "testi": {
       "eyebrow": "What they say",
-      "title": "How our travellers live it",
+      "title": "In our travellers’ words",
       "srContent": "review content",
       "srWho": "review by:",
       "listen": "Listen to testimonial",
@@ -127,7 +128,7 @@
       "more": "Read more reviews"
     },
     "audio": {
-      "eyebrow": "Listen to our top moments",
+      "eyebrow": "What the trip sounds like",
       "sr1": "first audio",
       "sr2": "second audio",
       "card1Title": "Paragliding jump!",
@@ -152,7 +153,7 @@
     "nosotras": {
       "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua",
       "eyebrow": "Our story",
-      "p": "Almost 8 years ago we arrived in New Zealand with a backpack full of dreams and uncertainty. Today we’re Sylvie and Moni, the Watchout guides — because no one better than us to tell, beyond the visual, the magic of this country we call home.",
+      "p": "We’re Sylvie and Moni. Almost eight years ago we arrived in New Zealand with a backpack full of dreams and a few doubts. Today this country is our home, and what we love most is sharing it through every sense.",
       "cta": "Discover our full story"
     },
     "blog": {
@@ -197,7 +198,7 @@
       "sub": "We set no limits on adventure. Every route blends adrenaline, sensory immersion and authentic Māori culture.",
       "srQ": "what will you feel?",
       "p1Title": "Adrenaline and challenge",
-      "p1Text": "Paragliding in Queenstown, kayaking in Kaikōura, jet boats. No mental limits.",
+      "p1Text": "Paragliding in Queenstown, kayaking in Kaikōura, jet boats. No limits except the ones you set.",
       "p2Title": "Sensory immersion",
       "p2Text": "Touch, smell and hearing as your guide: Hobbiton, Rotorua, Milford Sound, Te Puia.",
       "p3Title": "Culture and connection",
@@ -209,7 +210,7 @@
       "fotoAlt": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge"
     },
     "reel": {
-      "videoAria": "Video: one of our blind travellers takes off paragliding over Queenstown. our brave adventurer runs towards a cliff edge and jumps!, the take-off and the thrill of touching the sky for the first time.",
+      "videoAria": "Video: one of our blind travellers takes off paragliding over Queenstown. He runs towards the edge of the slope, jumps and feels the thrill of touching the sky for the first time.",
       "eyebrow": "This is how the adventure feels",
       "callout": "Who said paragliding was only for some people?",
       "p1": "At Watchout we believe adventure knows no limits. It knows curiosity, excitement, and people eager to throw themselves into experiences they’ll remember for a lifetime.",
@@ -314,36 +315,6 @@
         {
           "etiqueta": "Evening",
           "texto": "Dinner at the hotel, then time to rest."
-        }
-      ]
-    },
-    "ruta": {
-      "title": "The route",
-      "navAria": "Map of the 60+ Journeys route around New Zealand",
-      "paradas": [
-        {
-          "id": "sp-auckland",
-          "nombre": "Auckland"
-        },
-        {
-          "id": "sp-rotorua",
-          "nombre": "Rotorua"
-        },
-        {
-          "id": "sp-queenstown",
-          "nombre": "Queenstown"
-        },
-        {
-          "id": "sp-tekapo",
-          "nombre": "Tekapo"
-        },
-        {
-          "id": "sp-christchurch",
-          "nombre": "Christchurch"
-        },
-        {
-          "id": "sp-kaikoura",
-          "nombre": "Kaikōura"
         }
       ]
     },
@@ -452,65 +423,40 @@
       "title": "Guided New Zealand Tours for Blind Travellers | Watchout Tours",
       "description": "Two ways to explore New Zealand with us: small-group or private guided tours, designed for blind and low-vision travellers."
     },
-    "eyebrow": "Our options",
-    "title": "Two ways to live it",
-    "sub": "Same route, your format: in a small group with set dates, or private and at your own pace.",
-    "mapa": {
-      "eyebrow": "The itinerary",
-      "title": "Here’s the route, stop by stop",
-      "sub": "A schematic map to give you the big picture — and, right below, every stop told in full detail.",
-      "navAria": "Map of the New Zealand route",
-      "paradas": [
-        {
-          "id": "auckland",
-          "nombre": "Auckland",
-          "resumen": "We start by touching special-effects textures at Wētā Workshop and feeling the height and speed from the top of the Sky Tower."
-        },
-        {
-          "id": "rotorua",
-          "nombre": "Waikato and Rotorua",
-          "resumen": "The touch of Hobbiton’s round doors, the roar of the Pōhutu geyser at Te Puia, the haka rumbling in your chest, and the geothermal mud of Hells Gate on your skin."
-        },
-        {
-          "id": "kaikoura",
-          "nombre": "Kaikōura and Christchurch",
-          "resumen": "Whale blows and echolocation clicks underwater, then the extreme cold of a real Antarctic storm at the Antarctic Centre."
-        },
-        {
-          "id": "tekapo",
-          "nombre": "Tekapo and Mt Cook",
-          "resumen": "A hot pool soak under a sky that gets told to you, star by star, with a narrated astronomy guide."
-        },
-        {
-          "id": "queenstown",
-          "nombre": "Queenstown, Milford Sound and Stewart Island",
-          "resumen": "The roar of Milford Sound’s waterfalls splashing the deck, the steam of the Onsen Hot Pools, and the wild isolation of Stewart Island."
-        }
-      ]
-    },
-    "incluye": "Includes:",
-    "ctaEyebrow": "Questions?",
-    "ctaTitle": "Talking is free.",
-    "ctaText": "Tell us what you have in mind and we’ll figure out together how to shape it. No commitment, no rush, no fuss.",
-    "ctaBtn": "Tell us your dream",
-    "formatos": [
+    "eyebrow": "All experiences",
+    "title": "Choose how you’d like to experience New Zealand",
+    "sub": "Two group journeys, with 6 people at most, or a private trip designed just for you. Either way, the two of us are with you from start to finish.",
+    "tarjetas": [
       {
-        "id": "grupo",
-        "etiqueta": "15 days across New Zealand · group of 3 to 6 travellers + the two of us",
-        "titulo": "The shared adventure",
-        "cuerpo": "A tiny group of people with the same eagerness as you to take on the world. 14 nights travelling New Zealand, laughing, being amazed and feeling it all together. The kind of trip you come back from with friends for life. And always the two of us right there with the group, from start to finish.",
-        "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you for all 14 nights.",
-        "cta": "I want to join"
+        "id": "viajes-60",
+        "to": "/sin-prisa",
+        "titulo": "60+ Journeys",
+        "texto": "New Zealand at an easy pace, with nothing to organise. 4 and 5-star hotels, breakfast and dinner included, comfortable transport and the two of us with you from start to finish.",
+        "cta": "See the journey",
+        "imgAlt": "Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them"
+      },
+      {
+        "id": "personas-ciegas",
+        "to": "/mas-alla-de-la-vista",
+        "titulo": "Journeys for blind and low-vision travellers",
+        "texto": "Not all vision needs eyes. A journey designed for blind and low-vision travellers, where every place is felt through your hands, your ears and your skin, and the adventure goes as far as you want it to.",
+        "cta": "See the journey",
+        "imgAlt": "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it"
       },
       {
         "id": "privado",
-        "etiqueta": "Private · just for you and yours · length at your own pace",
+        "to": "/contacto",
         "titulo": "Your trip, tailor-made",
-        "cuerpo": "A trip designed just for you, and for whoever you want to bring along. The two of us, exclusively, designing it at your pace: your days, your energy, your time. If you want more calm, more calm. If you want more adrenaline, more adrenaline. There’s no mould here. There’s a trip we make to measure, like a tailored suit.",
-        "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you from start to finish.",
-        "cta": "Let’s design yours"
+        "texto": "A trip just for you and whoever you’d like to bring. We design it with you, at your pace: your days, your energy, your time. More calm or more adventure? You decide.",
+        "cta": "Let’s design yours",
+        "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua"
       }
-    ]
+    ],
+    "cta": {
+      "title": "Shall we talk?",
+      "text": "Tell us what you have in mind and we’ll help you shape it, no strings attached.",
+      "btn": "Tell us what you need"
+    }
   },
   "contacto": {
     "docTitle": "Contact | Watchout Tours",
@@ -597,11 +543,11 @@
     "equipoTitle": "The people behind every trip",
     "equipoMoniNombre": "Moni",
     "equipoMoniRol": "Founder & Guide",
-    "equipoMoniBio": "Co-founder of WatchOut! and guide on every trip, start to finish. She landed in New Zealand seven years ago with a backpack full of dreams, and now translates the country through story, touch and sound.",
+    "equipoMoniBio": "Co-founder of Watchout and guide on every trip, start to finish. She landed in New Zealand seven years ago with a backpack full of dreams, and now translates the country through story, touch and sound.",
     "equipoMoniFotoAlt": "Moni, co-founder and guide at Watchout Tours, in New Zealand",
     "equipoSylvieNombre": "Sylvie",
     "equipoSylvieRol": "Founder & Guide",
-    "equipoSylvieBio": "Co-founder of WatchOut! and guide on every trip, start to finish. Her father, a ski guide for blind skiers in Spain, sparked the idea that became this project.",
+    "equipoSylvieBio": "Co-founder of Watchout and guide on every trip, start to finish. Her father, a ski guide for blind skiers in Spain, sparked the idea that became this project.",
     "equipoSylvieFotoAlt": "Sylvie, co-founder and guide at Watchout Tours, in New Zealand",
     "equipoNuriaNombre": "Nuria",
     "equipoNuriaRol": "Europe Representative & Accessibility Consultant",
@@ -614,17 +560,17 @@
     "principios": [
       {
         "num": "01",
-        "titulo": "Designed for, not adapted from",
+        "titulo": "Designed from the start, not adapted later",
         "texto": "We build every trip from the very first step thinking about who travels with us."
       },
       {
         "num": "02",
         "titulo": "Luxury is sensory, not visual",
-        "texto": "The silence of a fjord at dawn is opulent for any sense."
+        "texto": "The silence of a fjord at dawn is a luxury for every sense."
       },
       {
         "num": "03",
-        "titulo": "Groups of six at most",
+        "titulo": "Groups of 6 at most",
         "texto": "Because the sensory experience needs space and each person has their own pace."
       },
       {
@@ -635,11 +581,11 @@
       {
         "num": "05",
         "titulo": "Zero condescension",
-        "texto": "Our travellers are adults who have decided to live an extraordinary adventure."
+        "texto": "The people who travel with us are adults who have chosen an extraordinary adventure."
       }
     ],
     "cierre1": "We thought we were going to show people New Zealand. And in the end it was New Zealand —and the people we’ve shared the road with— who taught us.",
-    "cierreDeseo": "Our greatest wish is that when you go home you don’t just remember the places you visited. That you also discover you pay attention to things that used to go unnoticed.",
+    "cierreDeseo": "We hope that when you get home you won’t just remember the places you visited, but notice that you now pay attention to things that used to pass you by.",
     "cierre2": "Because perhaps that’s the best souvenir you can take with you.",
     "cierreCta": "Tell us your dream"
   },
@@ -884,5 +830,23 @@
       },
       "sinSesiones": "Both sessions of the talk have already taken place. If you’d like to hear about the next one, message us."
     }
+  },
+  "rutaPdf": {
+    "eyebrow": "The route",
+    "titulo": "Get the full route as a PDF",
+    "texto": "Leave your name and email and we’ll send you the full itinerary, so you can read it at your own pace and share it with whoever you like.",
+    "formAria": "Form to get the route as a PDF",
+    "nombre": "Your name",
+    "email": "Your email",
+    "viajeLegend": "Which route would you like?",
+    "opciones": {
+      "viajes-60": "60+ Journeys",
+      "personas-ciegas": "Journeys for blind and low-vision travellers"
+    },
+    "enviar": "Send me the route",
+    "enviando": "Sending…",
+    "exito": "Done! We’ll email you the route very soon.",
+    "errEmail": "Enter a valid email so we can send you the route.",
+    "errViaje": "Choose which route you’d like."
   }
 }
