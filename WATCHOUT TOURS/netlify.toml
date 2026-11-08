@@ -31,6 +31,28 @@
   to     = "/en/sobre-nosotras"
   status = 301
 
+# La charla online y el directo ya se celebraron: sus páginas se han
+# retirado y las URL antiguas llevan a la home (301).
+[[redirects]]
+  from   = "/charla-nueva-zelanda"
+  to     = "/"
+  status = 301
+
+[[redirects]]
+  from   = "/en/charla-nueva-zelanda"
+  to     = "/en"
+  status = 301
+
+[[redirects]]
+  from   = "/directo"
+  to     = "/"
+  status = 301
+
+[[redirects]]
+  from   = "/directo/*"
+  to     = "/"
+  status = 301
+
 # Fallback de la SPA. Las páginas públicas y los artículos de blog se
 # prerenderizan en build (scripts/prerender.mjs) como archivos estáticos en
 # su ruta exacta (p. ej. /productos/index.html): Netlify los sirve

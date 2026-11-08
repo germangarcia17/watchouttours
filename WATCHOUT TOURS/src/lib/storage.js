@@ -2,7 +2,7 @@ import { supabase } from './supabase'
 
 const BUCKET = 'imagenes'
 
-/* Sube un archivo de imagen al bucket y devuelve su URL pública.
+/* Sube un archivo (imagen, vídeo o subtítulos .vtt) al bucket y devuelve su URL pública.
    folder: carpeta dentro del bucket ('site' | 'blog' | …) */
 export async function uploadImage(file, folder = 'blog') {
   const ext  = file.name.split('.').pop().toLowerCase()
@@ -18,7 +18,13 @@ export async function uploadImage(file, folder = 'blog') {
 
   const { error } = await supabase.storage
     .from(BUCKET)
-    .upload(path, file, { cacheControl: '31536000', upsert: false })
+    .upload(path, file, {
+      cacheControl: '31536000',
+      upsert: false,
+      // Algunos sistemas no dan tipo a los .vtt: sin él no se servirían
+      // como subtítulos.
+      contentType: file.type || (ext === 'vtt' ? 'text/vtt' : undefined),
+    })
 
   if (error) throw error
 

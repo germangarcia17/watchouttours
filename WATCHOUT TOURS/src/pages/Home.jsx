@@ -7,6 +7,8 @@ import { Seo } from '../components/Seo'
 import { Icono } from '../components/Icono'
 import { ImagenHueco, variantes } from '../components/ImagenHueco'
 import { ResenasDestacadas } from '../components/home/BloquesHome'
+import { BotonVideollamada } from '../components/Videollamada'
+import { Desplegable } from '../components/Desplegable'
 import { L, useLang } from '../i18n/routing'
 // Imágenes por defecto (versiones a varios anchos en src/images/home)
 import hero900 from '../images/home/hero-900.webp'
@@ -78,6 +80,7 @@ function Hero() {
         <div className="hn-botones">
           <a href="#viajes" className="hn-btn hn-btn--coral">{t('home.hero.ctaViajes')}</a>
           <a href="#itinerario" className="hn-btn hn-btn--borde-blanco">{t('home.hero.ctaItinerario')}</a>
+          <BotonVideollamada className="hn-btn hn-btn--borde-blanco" />
         </div>
         {/* Franja: toda ella es un único enlace a la próxima salida */}
         <a href="#salida" className="hn-franja">
@@ -274,6 +277,41 @@ function QuienesSomos() {
   )
 }
 
+/* ── 7b. Cómo reservar + preguntas frecuentes ────────────────────────── */
+function ComoReservar() {
+  const { t } = useTranslation()
+  const pasos = t('home.reservar.pasos', { returnObjects: true })
+  const faq = t('home.reservar.faq', { returnObjects: true })
+  return (
+    <section id="como-reservar" className="hn-seccion" aria-labelledby="hn-reservar-titulo">
+      <div className="hn-wrap">
+        <div className="hn-cabecera">
+          <p className="hn-etiqueta">{t('home.reservar.etiqueta')}</p>
+          <h2 id="hn-reservar-titulo" className="hn-h2">{t('home.reservar.titulo')}</h2>
+        </div>
+        {/* role="list": sin viñetas, Safari quitaría la semántica de lista */}
+        <ol className="hn-pasos" role="list">
+          {pasos.map((p, i) => (
+            <li key={p.titulo} className="hn-paso">
+              <span className="hn-paso__num" aria-hidden="true">{i + 1}</span>
+              <p className="hn-paso__texto"><strong>{p.titulo}</strong> {p.texto}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="hn-faq">
+          <h2 id="hn-faq-titulo" className="hn-h3 hn-faq__titulo">{t('home.reservar.faqTitulo')}</h2>
+          {faq.map(({ q, a }, i) => (
+            <Desplegable key={q} id={`hn-faq-${i + 1}`} boton={q} Titulo="h3" className="hn-faq__item">
+              <p>{a}</p>
+            </Desplegable>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 /* ── 8. Pedir itinerario ─────────────────────────────────────────────── */
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const TEL_RE = /^\+?[\d\s().-]{7,20}$/
@@ -324,6 +362,10 @@ function PedirItinerario({ viaje, setViaje }) {
         <div className="hn-itinerario__texto">
           <h2 id="hn-itinerario-titulo" className="hn-h2">{t('home.itinerario.titulo')}</h2>
           <p className="hn-entradilla">{t('home.itinerario.texto')}</p>
+          <p className="hn-parrafo hn-itinerario__llamada">{t('home.itinerario.videollamadaLinea')}</p>
+          <div className="hn-botones hn-itinerario__botones">
+            <BotonVideollamada className="hn-btn hn-btn--borde-petroleo" />
+          </div>
           <a href={WHATSAPP} className="hn-enlace-icono" target="_blank" rel="noopener noreferrer">
             <Icono nombre="chat" />
             <span>{t('home.itinerario.whatsapp')}</span>
@@ -432,6 +474,7 @@ function PedirItinerario({ viaje, setViaje }) {
               <button type="submit" disabled={state.submitting} className="hn-btn hn-btn--coral hn-btn--ancho">
                 {state.submitting ? t('home.itinerario.enviando') : t('home.itinerario.enviar')}
               </button>
+              <p className="hn-ayuda hn-itinerario__respuesta">{t('home.itinerario.respuesta')}</p>
               <div role="alert">
                 <ValidationError errors={state.errors} className="form-status--error" />
               </div>
@@ -445,7 +488,8 @@ function PedirItinerario({ viaje, setViaje }) {
 
 /* ── Home ────────────────────────────────────────────────────────────────
  * Maqueta aprobada: hero → Nueva Zelanda → nuestros viajes → próxima
- * salida → quiénes somos → reseñas → pedir itinerario. Estilos en
+ * salida → quiénes somos → reseñas → cómo reservar y preguntas
+ * frecuentes → pedir itinerario. Estilos en
  * HomeNueva.css (todo bajo .hn-*), con la paleta de theme.css.
  * ──────────────────────────────────────────────────────────────────────── */
 export default function Home() {
@@ -474,6 +518,7 @@ export default function Home() {
         titulo={t('home.resenas.titulo')}
         textoEnlace={t('home.resenas.todas')}
       />
+      <ComoReservar />
       <PedirItinerario viaje={viaje} setViaje={setViaje} />
     </>
   )

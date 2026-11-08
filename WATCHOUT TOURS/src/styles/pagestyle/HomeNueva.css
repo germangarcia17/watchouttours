@@ -925,3 +925,138 @@ body.pagina-home .site-footer__inner {
 .hn-itinerario__form a {
   color: var(--petroleo);
 }
+
+/* ── Botón con borde petróleo (sobre fondo claro) ──────── */
+.hn-btn--borde-petroleo {
+  background: transparent;
+  border-color: var(--petroleo);
+  color: var(--petroleo);
+}
+
+.hn-btn--borde-petroleo:hover {
+  background: rgba(var(--petroleo-oscuro-rgb), .06);
+  border-color: var(--petroleo-oscuro);
+  color: var(--petroleo-oscuro);
+}
+
+/* ── Pedir itinerario: videollamada y tiempo de respuesta ── */
+.hn-itinerario__llamada {
+  margin: 20px 0 0;
+}
+
+.hn-itinerario__botones {
+  margin: 16px 0 24px;
+}
+
+.hn-itinerario__respuesta {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+/* ── 7b. Cómo reservar ─────────────────────────────────── */
+/* Se separa del formulario, también sobre blanco, con una línea fina */
+#como-reservar + .hn-seccion {
+  border-top: 1px solid var(--linea-clara);
+}
+
+.hn-pasos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hn-paso {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hn-paso__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--petroleo);
+  color: var(--paper);
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.hn-paso__texto {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--texto-2);
+}
+
+.hn-paso__texto strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-family-heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+/* ── Preguntas frecuentes (desplegables) ───────────────── */
+.hn-faq {
+  max-width: 860px;
+  margin-top: clamp(56px, 7vw, 88px);
+}
+
+.hn-faq__titulo {
+  margin-bottom: 20px;
+}
+
+.hn-faq .desplegable {
+  border-bottom: 1px solid var(--linea-clara);
+}
+
+.hn-faq .desplegable:first-of-type {
+  border-top: 1px solid var(--linea-clara);
+}
+
+/* Colores de los desplegables de la home (la base está en Desplegable.css) */
+.hn-faq .desplegable__boton {
+  color: var(--texto);
+}
+
+.hn-faq .desplegable__boton:hover {
+  color: var(--petroleo);
+}
+
+.hn-faq .desplegable__signo::before,
+.hn-faq .desplegable__signo::after {
+  background: var(--petroleo);
+}
+
+.hn-faq .desplegable__panel p {
+  color: var(--texto-2);
+}
+
+@media (max-width: 860px) {
+  .hn-pasos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hn-paso {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .hn-paso__num {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .hn-paso__texto {
+    font-size: 18px;
+  }
+}

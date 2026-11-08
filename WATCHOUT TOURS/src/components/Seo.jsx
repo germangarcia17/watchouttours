@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 import { useSeo } from '../lib/useSeo'
 import { useLang, stripLang, localizePath } from '../i18n/routing'
@@ -28,9 +29,12 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
   const resolvedOgTitle = pickLocalized(row, 'og_title', lang) || ogTitle || metaTitle
   const resolvedOgDesc  = pickLocalized(row, 'og_description', lang) || ogDescription || metaDesc
   // Imagen social: fila de /admin/seo > imagen propia de la página (prop) >
-  // logo por defecto, para que ninguna página se comparta nunca sin imagen.
-  const defaultImage = `${SITE_URL}/favicon-512.png`
+  // imagen por defecto (public/og-image.jpg, 1200 × 630: la foto del hero
+  // con el logo), para que ninguna página se comparta nunca sin imagen.
+  const { t } = useTranslation()
+  const defaultImage = `${SITE_URL}/og-image.jpg`
   const ogImage     = row?.og_image_url || image || defaultImage
+  const esDefecto   = ogImage === defaultImage
   const twTitle     = pickLocalized(row, 'twitter_title', lang) || resolvedOgTitle
   const twDesc      = pickLocalized(row, 'twitter_description', lang) || resolvedOgDesc
   const twImage     = row?.twitter_image_url || ogImage
@@ -54,11 +58,15 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
       <meta property="og:title" content={resolvedOgTitle} />
       {resolvedOgDesc && <meta property="og:description" content={resolvedOgDesc} />}
       <meta property="og:image" content={ogImage} />
+      {esDefecto && <meta property="og:image:width" content="1200" />}
+      {esDefecto && <meta property="og:image:height" content="630" />}
+      {esDefecto && <meta property="og:image:alt" content={t('home.heroImgAlt')} />}
 
       <meta name="twitter:card" content={twImage ? 'summary_large_image' : 'summary'} />
       <meta name="twitter:title" content={twTitle} />
       {twDesc && <meta name="twitter:description" content={twDesc} />}
       {twImage && <meta name="twitter:image" content={twImage} />}
+      {twImage === defaultImage && <meta name="twitter:image:alt" content={t('home.heroImgAlt')} />}
     </Helmet>
   )
 }

@@ -5,6 +5,7 @@ import { getPreload } from '../../lib/preload'
 import { L, useLang } from '../../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../../i18n/content'
 import { AudioPlayer } from '../AudioPlayer'
+import { VideoTestimonio } from '../VideoTestimonio'
 import audioParapente from '../../images/Saltando en parapente.mp3'
 import audioAlpaca from '../../images/Cuando la alpaca le mordió.mp3'
 import audioBarro from '../../images/barro-burbujeante-rotorua.mp3'
@@ -119,12 +120,7 @@ export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variant
                     <span className="resena__contexto" lang={fieldLangAttr(resena, 'author_context', lang)}>{contexto}</span>
                   )}
                 </figcaption>
-                {resena.video_url && (
-                  <details className="testi-video">
-                    <summary>{t('home.testi.listen')}</summary>
-                    <video src={resena.video_url} controls playsInline preload="metadata" aria-label={t('home.testi.videoAria', { name: resena.author_name })} />
-                  </details>
-                )}
+                {resena.video_url && <VideoTestimonio resena={resena} />}
               </figure>
             )
           })}

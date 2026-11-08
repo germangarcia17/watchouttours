@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
+import { VideoTestimonio } from '../components/VideoTestimonio'
 import { Seo } from '../components/Seo'
 import { CabeceraPagina } from '../components/CabeceraPagina'
 import { L, useLang } from '../i18n/routing'
@@ -69,12 +70,7 @@ export default function Resenas() {
                         <span className="resena__nombre">{r.author_name}</span>
                         {contexto && <span className="resena__contexto" lang={fieldLangAttr(r, 'author_context', lang)}>{contexto}</span>}
                       </figcaption>
-                      {r.video_url && (
-                        <details className="testi-video">
-                          <summary>{t('resenas.listen')}</summary>
-                          <video src={r.video_url} controls playsInline preload="metadata" aria-label={t('resenas.videoAria', { name: r.author_name })} />
-                        </details>
-                      )}
+                      {r.video_url && <VideoTestimonio resena={r} />}
                     </figure>
                   </li>
                 )

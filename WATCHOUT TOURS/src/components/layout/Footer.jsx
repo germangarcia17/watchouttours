@@ -86,6 +86,7 @@ export function Footer() {
         <p className="footer-copy">
           &copy; {year} Watchout Tours. {t('footer.rights')}
         </p>
+        <p className="footer-copy footer-empresa">{t('footer.empresa')}</p>
       </div>
     </footer>
   )
