@@ -16,10 +16,8 @@ import Privacidad      from './pages/Privacidad'
 import AvisoLegal      from './pages/AvisoLegal'
 import NotFound        from './pages/NotFound'
 import BlindTravelNewZealand from './pages/BlindTravelNewZealand'
-import CharlaNuevaZelanda from './pages/CharlaNuevaZelanda'
 import SinPrisa from './pages/SinPrisa'
 import MasAllaDeLaVista from './pages/MasAllaDeLaVista'
-import { CHARLA_PUBLICADA } from './config/charlaPublicada'
 import { LOCALIZED_SLUGS } from './i18n/pageLanguages'
 
 /* Slug de una página en el idioma de `prefix` ('' = español, '/en' =
@@ -62,11 +60,6 @@ function paginasPublicas(prefix) {
     <Route key="acc"     path="accesibilidad"     element={<Accesibilidad />} />,
     <Route key="priv"    path="privacidad"        element={<Privacidad />} />,
     <Route key="aviso"   path="aviso-legal"       element={<AvisoLegal />} />,
-    /* Charla online: solo existe cuando está publicada (ver
-       src/config/charlaPublicada.js). */
-    ...(CHARLA_PUBLICADA
-      ? [<Route key="charla" path="charla-nueva-zelanda" element={<CharlaNuevaZelanda />} />]
-      : []),
     /* La filosofía vive ahora dentro de Sobre Nosotras */
     <Route key="filo"    path="filosofia"         element={<Navigate to={`${prefix}/sobre-nosotras`} replace />} />,
     <Route key="404"     path="*"                 element={<NotFound />} />,

@@ -17,6 +17,7 @@ import { Seo } from '../components/Seo'
 import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
 import { SolicitudRuta } from '../components/SolicitudRuta'
+import { BotonVideollamada } from '../components/Videollamada'
 import { HeroFoto, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
 
 const ICONOS_INCLUYE = ['guias', 'hotel', 'comida', 'privado', 'transporte', 'asistencia']
@@ -93,6 +94,7 @@ export default function SinPrisa() {
         subtitulo={t('sinPrisa.hero.sub')}
       >
         <L to="/contacto" className="btn btn-solid">{t('sinPrisa.hero.cta')}</L>
+        <BotonVideollamada className="btn btn-outline" />
       </HeroFoto>
 
       {/* ── Filas en zigzag ───────────────────────────── */}

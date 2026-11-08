@@ -72,7 +72,7 @@ export default function BlogPost() {
   const esUrl       = `${SITE_URL}/blog/${post.slug}`
   const enUrl       = `${SITE_URL}/en/blog/${post.slug}`
   const canonicalUrl = lang === 'en' ? enUrl : esUrl
-  const coverImage  = post.og_image_url ?? post.cover_image_url ?? `${SITE_URL}/favicon-512.png`
+  const coverImage  = post.og_image_url ?? post.cover_image_url ?? `${SITE_URL}/og-image.jpg`
 
   const articleJsonLd = {
     '@context': 'https://schema.org',

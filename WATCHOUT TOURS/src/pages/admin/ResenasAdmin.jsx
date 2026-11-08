@@ -2,6 +2,87 @@ import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 import { uploadImage } from '../../lib/storage'
 
+/* Portada, subtítulos (.vtt) y transcripción de un testimonio en vídeo.
+   Se editan sobre reseñas ya creadas (necesita la migración 012). */
+function EditorVideo({ resena, onGuardado }) {
+  const [datos, setDatos] = useState({
+    video_poster_url: resena.video_poster_url ?? '',
+    video_vtt_url: resena.video_vtt_url ?? '',
+    video_transcript: resena.video_transcript ?? '',
+    video_transcript_en: resena.video_transcript_en ?? '',
+  })
+  const [subiendo, setSubiendo] = useState(null)
+  const [estado, setEstado] = useState(null)
+  const [error, setError] = useState(null)
+  const id = resena.id
+
+  const cambiar = e => setDatos(prev => ({ ...prev, [e.target.name]: e.target.value }))
+
+  async function subir(campo, file) {
+    if (!file) return
+    setSubiendo(campo)
+    setError(null)
+    try {
+      const { url } = await uploadImage(file, 'resenas')
+      setDatos(prev => ({ ...prev, [campo]: url }))
+    } catch (err) {
+      setError(err.message ?? 'Error al subir el archivo.')
+    } finally {
+      setSubiendo(null)
+    }
+  }
+
+  async function guardar(e) {
+    e.preventDefault()
+    setEstado('Guardando…')
+    setError(null)
+    const limpio = Object.fromEntries(Object.entries(datos).map(([k, v]) => [k, v.trim() || null]))
+    const { error: err } = await supabase.from('resenas').update(limpio).eq('id', id)
+    if (err) { setEstado(null); setError(err.message); return }
+    setEstado('Guardado.')
+    onGuardado(id, limpio)
+  }
+
+  const ayuda = { fontSize: '0.85rem', color: 'var(--muted)', margin: '0 0 0.5rem' }
+  return (
+    <details className="resena-item__video-extra" style={{ marginTop: '0.75rem' }}>
+      <summary>Accesibilidad del vídeo: portada, subtítulos y transcripción<span className="sr-only"> de {resena.author_name}</span></summary>
+      <form onSubmit={guardar} noValidate style={{ maxWidth: '600px', marginTop: '0.75rem' }}>
+        <div className="form-field">
+          <label htmlFor={`poster-${id}`} className="form-label">Imagen de portada</label>
+          <p id={`poster-ayuda-${id}`} style={ayuda}>Un fotograma del vídeo en JPG o WebP. Sube el archivo o pega su URL.</p>
+          <input id={`poster-file-${id}`} type="file" accept="image/jpeg,image/png,image/webp" aria-label="Subir imagen de portada"
+            onChange={e => subir('video_poster_url', e.target.files?.[0])} disabled={!!subiendo} className="form-control form-control--file" />
+          <input id={`poster-${id}`} name="video_poster_url" type="url" value={datos.video_poster_url} onChange={cambiar}
+            aria-describedby={`poster-ayuda-${id}`} className="form-control" style={{ marginTop: '0.5rem' }} />
+        </div>
+        <div className="form-field">
+          <label htmlFor={`vtt-${id}`} className="form-label">Subtítulos (.vtt)</label>
+          <p id={`vtt-ayuda-${id}`} style={ayuda}>Archivo WebVTT en español. Sube el archivo o pega su URL.</p>
+          <input id={`vtt-file-${id}`} type="file" accept=".vtt,text/vtt" aria-label="Subir archivo de subtítulos"
+            onChange={e => subir('video_vtt_url', e.target.files?.[0])} disabled={!!subiendo} className="form-control form-control--file" />
+          <input id={`vtt-${id}`} name="video_vtt_url" type="url" value={datos.video_vtt_url} onChange={cambiar}
+            aria-describedby={`vtt-ayuda-${id}`} className="form-control" style={{ marginTop: '0.5rem' }} />
+        </div>
+        {subiendo && <p role="status">Subiendo archivo…</p>}
+        <div className="form-field">
+          <label htmlFor={`transcripcion-${id}`} className="form-label">Transcripción completa (español)</label>
+          <p id={`transcripcion-ayuda-${id}`} style={ayuda}>Deja una línea en blanco entre párrafos.</p>
+          <textarea id={`transcripcion-${id}`} name="video_transcript" rows={8} value={datos.video_transcript} onChange={cambiar}
+            aria-describedby={`transcripcion-ayuda-${id}`} className="form-control" />
+        </div>
+        <div className="form-field">
+          <label htmlFor={`transcripcion-en-${id}`} className="form-label">Transcripción (inglés, opcional)</label>
+          <textarea id={`transcripcion-en-${id}`} name="video_transcript_en" rows={8} value={datos.video_transcript_en} onChange={cambiar} className="form-control" />
+        </div>
+        {error && <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{error}</p>}
+        <p role="status" aria-live="polite">{estado}</p>
+        <button type="submit" disabled={!!subiendo} className="btn btn--primary btn--sm">Guardar<span className="sr-only"> vídeo de {resena.author_name}</span></button>
+      </form>
+    </details>
+  )
+}
+
 const EMPTY = { author_name: '', author_context: '', content: '', video_url: '', content_en: '', author_context_en: '' }
 
 export default function ResenasAdmin() {
@@ -154,6 +235,12 @@ export default function ResenasAdmin() {
             </div>
             <p className="resena-item__quote">&ldquo;{r.content}&rdquo;</p>
             {r.video_url && <p className="resena-item__video">Con vídeo: <a href={r.video_url} target="_blank" rel="noopener noreferrer">{r.video_url.split('/').pop()}</a></p>}
+            {r.video_url && (
+              <EditorVideo
+                resena={r}
+                onGuardado={(id, cambios) => setResenas(prev => prev.map(x => x.id === id ? { ...x, ...cambios } : x))}
+              />
+            )}
             <div className="resena-item__actions">
               <button
                 onClick={() => toggle(r.id, 'published', r.published)}
