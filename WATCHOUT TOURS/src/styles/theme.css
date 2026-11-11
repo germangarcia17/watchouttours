@@ -1,36 +1,45 @@
-/* ── Tokens de diseño WatchOut! — compartidos por toda la web ── */
+/* ── Tokens de diseño WatchOut! — compartidos por toda la web ──
+   Paleta del rediseño (fase 1). Los nombres de las variables se conservan
+   por compatibilidad; lo que cambia es su valor:
+     fondo principal  #FAF8F4  (--color-background, en global.css)
+     blanco           #FFFFFF  tarjetas y bandas alternas
+     texto            #15171A
+     texto secundario #6B6F76  (4,8:1 sobre el fondo, 5,0:1 sobre blanco)
+     acento único     #1F6B56  (hover #17513F: --color-btn-primary-hover)
+     líneas           #E8E4DA
+     banda oscura     #15171A  con texto blanco
+   El acento NO sirve como texto sobre la banda oscura (2,8:1): ahí las
+   etiquetas y los enlaces van en blanco. */
 :root {
   --paper: #FFFFFF;
-  --paper-deep: #F4F1EA;
-  --font-family-heading: 'Bricolage Grotesque', sans-serif;
-  --font-family-mono: 'Space Mono', monospace;
-  --ink: #15140F;
-  --ink-soft: #4A453B;
-  --night: #0E5F73;
-  /* Tonos oscurecidos para cumplir WCAG AA (4.5:1) como texto sobre blanco */
-  --muted: #5F584B;
-  /* Mostaza (antes jade): 4.7:1 sobre blanco */
-  --jade: #9A6B00;
-  --jade-soft: #F0C868; /* mostaza clara: 4.5:1 sobre --night, solo fondos oscuros o decoración */
-  --coral: #FF6B4A;
-  /* Coral oscurecido: 4.9:1 sobre blanco, para texto y enlaces */
-  --coral-text: #C8441C;
-  --amber2: #FFB454;
-  --gold: #6E5526;
-  --gold-soft: #D8B66A;
-  --amber: #F2A65A;
-  --line: #CFC4A8;
+  --paper-deep: #FFFFFF;
+  --font-family-heading: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-family-mono: 'Atkinson Hyperlegible', sans-serif;
+  --ink: #15171A;
+  --ink-soft: #6B6F76;
+  --night: #15171A;
+  --muted: #6B6F76;
+  /* Acento (el nombre --jade se conserva) */
+  --jade: #1F6B56;
+  --jade-soft: #E8E4DA;
+  --coral: #1F6B56;
+  --coral-text: #1F6B56;
+  --amber2: #1F6B56;
+  --gold: #1F6B56;
+  --gold-soft: #E8E4DA;
+  --amber: #FFFFFF;
+  --line: #E8E4DA;
   /* Borde de controles interactivos: 3:1 sobre crema (WCAG 1.4.11) */
-  --border-input: #8A8170;
-  /* Verde WhatsApp accesible sobre fondos claros (el original 1.6:1) */
-  --ws-green: #0A5C2D; /* 5.3:1 sobre el fondo del botón del footer (mínimo 4.5:1) */
-  /* Color del anillo de foco; los bloques oscuros lo redefinen a crema */
-  --focus: #15140F;
-  --radius: 18px;
+  --border-input: #6B6F76;
+  --ws-green: #1F6B56;
+  /* Color del anillo de foco; los bloques oscuros lo redefinen a blanco */
+  --focus: #1F6B56;
+  --radius: 2px;
 
   /* ── Escala tipográfica (renovación visual) ──
      Pasos claros y un único tamaño por nivel. Ningún texto de lectura
-     baja de 18 px; las etiquetas en mayúsculas, de 15 px. */
+     baja de 18 px. Las etiquetas de sección (.sec-eyebrow, .hn-etiqueta)
+     van a 12 px; --fs-label sigue en 15 px para el resto de usos. */
   --fs-h1: clamp(40px, 5.4vw, 72px);
   --fs-h2: clamp(30px, 3.4vw, 44px);
   --fs-h3: clamp(21px, 1.8vw, 24px);
@@ -41,32 +50,34 @@
   --measure: 65ch;
   /* Espacio vertical único entre secciones */
   --section-space: clamp(64px, 8vw, 104px);
-  /* Sombra única para tarjetas y fotos */
-  --shadow-card: 0 1px 2px rgba(21, 20, 15, .06), 0 14px 34px rgba(21, 20, 15, .09);
+  /* Sin sombras en el rediseño (la variable se conserva) */
+  --shadow-card: none;
 
-  /* ── Paleta de la home nueva (maqueta aprobada) ── */
-  --petroleo-oscuro: #0B2E36;   /* secciones oscuras y pie de página */
-  --petroleo-oscuro-rgb: 11, 46, 54;
-  --petroleo: #0E5F73;          /* botones secundarios, enlaces e iconos sobre claro */
-  --coral-boton: #FF6B4A;       /* solo botones principales */
-  --tinta-coral: #17110D;       /* texto sobre coral (nunca blanco) */
-  --arena: #F6F1EA;             /* fondos de secciones alternas */
-  --texto: #17262A;             /* texto principal */
-  --texto-2: #3B4A4E;           /* texto secundario */
-  --ambar: #FFB454;             /* etiquetas y destacados sobre oscuro; anillo de foco */
-  --ambar-claro: #FFE2B8;       /* destacados sobre oscuro */
-  --texto-claro: #D3DDDF;       /* texto secundario sobre oscuro */
-  --mostaza: #8A5F00;           /* etiquetas de las líneas sobre blanco */
-  --linea-clara: #DCD6CC;       /* bordes finos sobre claro */
+  /* ── Variables de la home (mismos nombres, paleta nueva) ── */
+  --petroleo-oscuro: #15171A;
+  --petroleo-oscuro-rgb: 21, 23, 26;
+  --petroleo: #1F6B56;
+  --coral-boton: #1F6B56;
+  --tinta-coral: #FFFFFF;
+  --arena: #FFFFFF;
+  --texto: #15171A;
+  --texto-2: #6B6F76;
+  --ambar: #FFFFFF;
+  --ambar-claro: #FFFFFF;
+  --texto-claro: #E8E4DA;
+  --mostaza: #1F6B56;
+  --linea-clara: #E8E4DA;
   /* Velo para el texto sobre fotos: negro neutro, no azul, para no teñir la foto */
   --velo-rgb: 8, 12, 14;
 }
 
 body {
-  background: var(--paper);
+  /* Fondo principal #FAF8F4 (definido en global.css); --paper es el blanco
+     de tarjetas, bandas alternas y texto sobre oscuro. */
+  background: var(--color-background);
   color: var(--ink);
   /* Atkinson Hyperlegible: tipografía diseñada para lectores con baja visión */
-  font-family: 'Atkinson Hyperlegible', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -88,8 +99,10 @@ main[tabindex="-1"]:focus {
   padding: 0 28px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--font-family-heading);
+  /* Fraunces siempre en 400: solo se cargan los pesos 300, 400 y 500 */
+  font-weight: 400;
   letter-spacing: -.01em;
   line-height: 1.08;
   color: var(--ink);
@@ -107,14 +120,20 @@ section {
 }
 
 /* ── Bandas de fondo ─────────────────────────────────── */
-/* Tres fondos del tema para dar ritmo: blanco (por defecto), crema y
-   azul noche. El azul se reserva para los momentos fuertes. */
+/* Tres fondos para dar ritmo: el fondo de la página (por defecto), blanco
+   (.band-cream, el nombre se conserva) y la banda oscura, reservada para
+   los momentos fuertes. Las bandas blancas se separan con una línea fina. */
 .band-cream {
   background: var(--paper-deep);
+  border-block: 1px solid var(--line);
 }
 
-/* Sobre crema, --jade baja a 4,1:1: las etiquetas pequeñas usan --gold
-   (6,2:1). */
+/* Dos bandas blancas seguidas comparten una sola línea */
+.band-cream + .band-cream {
+  border-top: 0;
+}
+
+/* --gold vale ahora lo mismo que el acento (6,5:1 sobre blanco) */
 .band-cream .sec-eyebrow {
   color: var(--gold);
 }
@@ -126,7 +145,7 @@ section {
 .band-night {
   background: var(--night);
   color: var(--paper);
-  --focus: #F4F1EA;
+  --focus: #FFFFFF;
 }
 
 .band-night h2,
@@ -138,19 +157,19 @@ section {
 .band-night p,
 .band-night li,
 .band-night .sec-sub {
-  color: #E6E1D6;
+  color: var(--paper);
 }
 
 .band-night .sec-eyebrow {
-  color: var(--jade-soft);
+  color: var(--paper);
 }
 
 .band-night .sec-eyebrow::before {
-  background: var(--jade-soft);
+  background: var(--paper);
 }
 
 .band-night a:not(.btn) {
-  color: var(--jade-soft);
+  color: var(--paper);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -162,9 +181,9 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-family-heading);
-  font-size: var(--fs-label);
-  letter-spacing: .15em;
+  font-family: var(--font-family);
+  font-size: 12px;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--jade);
   font-weight: 700;
@@ -172,13 +191,13 @@ section {
   line-height: 1.4;
 }
 
-/* Firma de marca: un pequeño trazo jade — la "voz" que abre cada sección */
+/* Firma de marca: un pequeño trazo en el color de acento que abre cada sección */
 .sec-eyebrow::before {
   content: "";
   display: inline-block;
   width: 22px;
-  height: 3px;
-  border-radius: 2px;
+  height: 1px;
+  border-radius: 0;
   background: var(--jade);
   flex-shrink: 0;
 }
@@ -186,7 +205,7 @@ section {
 .sec-title {
   font-family: var(--font-family-heading);
   font-size: var(--fs-h2);
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: -.015em;
   line-height: 1.08;
   color: var(--ink);
@@ -222,71 +241,84 @@ section {
 }
 
 .band-night .prosa p {
-  color: #E6E1D6;
+  color: var(--paper);
 }
 
 /* ── Botones ─────────────────────────────────────────── */
+/* Un solo aspecto en toda la web (.btn aquí y .hn-btn en HomeNueva.css):
+   planos, sin degradado ni sombra, radio de 2 px, 44 px de alto mínimo y
+   texto en Atkinson Hyperlegible 700.
+     Principal (.btn-solid):   fondo de acento, texto blanco (6,5:1).
+     Secundario (.btn-outline): borde de 1 px #15171A, fondo transparente.
+     Sobre foto u oscuro:       borde de 1 px blanco, texto blanco. */
 .btn {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.3;
-  min-height: 48px;
-  padding: 12px 26px;
-  border-radius: 100px;
+  min-height: 44px;
+  padding: 9px 24px;
+  border-radius: 2px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  border: 2px solid transparent;
-  transition: transform .15s ease, box-shadow .15s ease;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
   text-decoration: none;
 }
 
 .btn:focus-visible {
   outline: 3px solid var(--focus);
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
-.btn-solid {
-  background: linear-gradient(135deg, var(--coral), var(--amber2));
-  color: var(--ink);
-  box-shadow: 0 6px 18px rgba(255, 107, 74, .35);
+/* .btn.btn-* (dos clases) para ganar a reglas de enlace como
+   ".static-body a", que si no teñían de verde el texto del botón. */
+.btn.btn-solid {
+  background: var(--color-btn-primary);
+  border-color: var(--color-btn-primary);
+  color: #FFFFFF;
 }
 
-/* Secundario de verdad: borde y fondo transparente, para que nunca se
-   confunda con el principal. Sobre fondos oscuros pasa a claro. */
-.btn-outline {
+.btn.btn-solid:hover {
+  background: var(--color-btn-primary-hover);
+  border-color: var(--color-btn-primary-hover);
+  color: #FFFFFF;
+}
+
+.btn.btn-outline {
   background: transparent;
   color: var(--ink);
   border-color: var(--ink);
-  box-shadow: none;
 }
 
-.btn-outline:hover {
-  background: rgba(21, 20, 15, .06);
+.btn.btn-outline:hover {
+  background: rgba(21, 23, 26, .06);
+  color: var(--ink);
 }
 
-.hero-full .btn-outline,
-.band-night .btn-outline,
-.final-cta .btn-outline,
-.ink-block .btn-outline,
-.origin .btn-outline {
+.hero-full .btn.btn-outline,
+.band-night .btn.btn-outline,
+.final-cta .btn.btn-outline,
+.ink-block .btn.btn-outline,
+.origin .btn.btn-outline {
   color: var(--paper);
   border-color: var(--paper);
 }
 
-.hero-full .btn-outline:hover,
-.band-night .btn-outline:hover,
-.final-cta .btn-outline:hover,
-.ink-block .btn-outline:hover,
-.origin .btn-outline:hover {
+.hero-full .btn.btn-outline:hover,
+.band-night .btn.btn-outline:hover,
+.final-cta .btn.btn-outline:hover,
+.ink-block .btn.btn-outline:hover,
+.origin .btn.btn-outline:hover {
   background: rgba(255, 255, 255, .12);
+  color: var(--paper);
 }
 
 .btn-whatsapp svg {
@@ -311,6 +343,13 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Hover del acento solo en enlaces sin color propio: :where() no sube la
+   especificidad, así que cualquier clase (botones, enlaces sobre oscuro)
+   conserva su color. */
+a:where(:hover) {
+  color: var(--color-link-hover);
+}
+
 a:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
@@ -331,8 +370,9 @@ a:focus-visible {
 }
 
 /* ── Tarjeta unificada ───────────────────────────────── */
-/* Un solo modelo: radio --radius, imagen 4:3 arriba, cuerpo con el botón
-   siempre al pie, y la misma altura en cada fila (grid + height 100%). */
+/* Un solo modelo: blanca, borde de 1 px, radio de 2 px y sin sombra; imagen
+   4:3 arriba, cuerpo con el botón siempre al pie, y la misma altura en
+   cada fila (grid + height 100%). */
 .tarjeta {
   position: relative;
   display: flex;
@@ -367,7 +407,7 @@ a:focus-visible {
 
 .tarjeta__titulo {
   font-size: var(--fs-h3);
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.2;
   margin: 0;
   text-wrap: balance;
@@ -389,12 +429,11 @@ a:focus-visible {
    botón del pie) se estira sobre toda la tarjeta con ::after. */
 .tarjeta--enlace {
   cursor: pointer;
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: border-color .15s ease;
 }
 
 .tarjeta--enlace:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
+  border-color: var(--ink);
 }
 
 .tarjeta__enlace::after {
@@ -411,7 +450,7 @@ a:focus-visible {
 
   .tarjeta--enlace:has(.tarjeta__enlace:focus-visible) {
     outline: 3px solid var(--focus);
-    outline-offset: 4px;
+    outline-offset: 2px;
   }
 }
 
@@ -422,7 +461,7 @@ a:focus-visible {
 
 .page-head__titulo {
   font-size: clamp(36px, 4.6vw, 60px);
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.05;
   letter-spacing: -.02em;
   max-width: 20ch;
@@ -454,7 +493,8 @@ a:focus-visible {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(240, 200, 104, .18);
+  background: var(--paper);
+  border: 1px solid var(--line);
   color: var(--jade);
 }
 
@@ -464,8 +504,9 @@ a:focus-visible {
 }
 
 .band-night .icono-circulo {
-  background: rgba(255, 255, 255, .08);
-  color: var(--jade-soft);
+  background: transparent;
+  border-color: rgba(255, 255, 255, .4);
+  color: var(--paper);
 }
 
 /* ── Tarjeta genérica sobre papel ────────────────────── */
@@ -509,9 +550,8 @@ a:focus-visible {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-image: radial-gradient(var(--jade-soft) 1.4px, transparent 1.4px);
-  background-size: 20px 20px;
-  opacity: .08;
+  /* Antes llevaba una trama de puntos (degradado): la banda es lisa */
+  background: none;
   z-index: -1;
   pointer-events: none;
 }
@@ -526,7 +566,7 @@ a:focus-visible {
 }
 
 .ink-block p {
-  color: #D8D2C2;
+  color: var(--paper);
 }
 
 .ink-block .sec-title {
@@ -534,7 +574,11 @@ a:focus-visible {
 }
 
 .ink-block .sec-eyebrow {
-  color: var(--jade-soft);
+  color: var(--paper);
+}
+
+.ink-block .sec-eyebrow::before {
+  background: var(--paper);
 }
 
 /* Los bloques oscuros usan anillo de foco claro para que sea visible */
@@ -546,7 +590,7 @@ a:focus-visible {
 
 .admin-nav,
 .brand-badge {
-  --focus: #F4F1EA;
+  --focus: #FFFFFF;
 }
 
 @media (max-width: 760px) {

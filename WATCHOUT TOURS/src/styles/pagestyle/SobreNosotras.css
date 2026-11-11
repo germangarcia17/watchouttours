@@ -20,7 +20,7 @@
 .sn-titulo {
   font-family: inherit;
   font-size: clamp(38px, 5.4vw, 54px);
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.6;
   letter-spacing: normal;
   margin-bottom: 20px;
@@ -60,7 +60,7 @@
 .sn-aprendizaje-titulo {
   font-family: var(--font-family-heading);
   font-size: clamp(24px, 3.4vw, 33px);
-  font-weight: 700;
+  font-weight: 400;
   margin: 0 0 40px;
   max-width: 34ch;
   line-height: 1.3;
@@ -105,7 +105,7 @@
 .sn-quote p {
   font-family: var(--font-family-heading);
   font-size: 19px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--ink);
   margin: 0 0 8px;
 }
@@ -136,7 +136,7 @@
 .sn-cierre-deseo {
   font-family: var(--font-family-heading);
   font-size: clamp(19px, 2.6vw, 24px);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink);
   line-height: 1.4;
   margin: 24px 0;
@@ -178,7 +178,7 @@
 .sn-equipo-nombre {
   font-family: var(--font-family-heading);
   font-size: var(--fs-h3);
-  font-weight: 700;
+  font-weight: 400;
   margin: 0 0 4px;
 }
 

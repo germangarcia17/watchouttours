@@ -22,7 +22,7 @@
   min-height: 44px;
   font-family: var(--font-family-heading);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink);
 }
 
@@ -132,7 +132,7 @@
   margin: 0;
   font-family: var(--font-family-heading);
   font-size: clamp(20px, 1.9vw, 24px);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--ink);
   max-width: var(--measure);
@@ -169,7 +169,7 @@
   padding: 14px 20px;
   font-family: var(--font-family-heading);
   font-size: var(--fs-body);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink);
 }
 

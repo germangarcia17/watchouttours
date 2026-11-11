@@ -15,7 +15,7 @@
 
 .static-titulo {
   font-size: clamp(30px, 4.2vw, 42px);
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 14px;
   text-wrap: balance;
 }
@@ -43,7 +43,7 @@
 
 .static-body h2 {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 10px;
   padding-top: 24px;
   border-top: 1px solid var(--line);

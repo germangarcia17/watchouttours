@@ -1,26 +1,26 @@
 :root {
 
-  --color-text: #15140F;
-  --color-text-alt: #4A453B;
-  --color-background: #FFFFFF;
-  --color-background-alt: #F4F1EA;
-  --color-border: #D8B66A;
-  --color-btn-primary: #F2A65A;
-  --color-btn-primary-hover: #e6a55a;
-  --color-btn-primary-text: #0E0E10;
-  --color-btn-secondary: #0E0E10;
-  --color-btn-secondary-hover: #C9C4BC;
+  --color-text: #15171A;
+  --color-text-alt: #6B6F76;
+  --color-background: #FAF8F4;
+  --color-background-alt: #FFFFFF;
+  --color-border: #E8E4DA;
+  --color-btn-primary: #1F6B56;
+  --color-btn-primary-hover: #17513F;
+  --color-btn-primary-text: #FFFFFF;
+  --color-btn-secondary: #15171A;
+  --color-btn-secondary-hover: #15171A;
   --font-family: 'Atkinson Hyperlegible', sans-serif;
-  --font-family-heading: 'Bricolage Grotesque', sans-serif;
-  --font-family-mono: 'Space Mono', monospace;
+  --font-family-heading: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-family-mono: 'Atkinson Hyperlegible', sans-serif;
   --font-size-base: 18px;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
-  /* Oscurecido: el #48B890 original da 1.5:1 sobre crema como texto */
-  --color-link: #1F5F45;
-  --color-link-hover: #0056b3;
-  --color-focus-outline-bright: #15140F; /* ámbar original 1.8:1 sobre crema */
-  --color-focus-outline-dark: #0E0E10;
+  /* Acento único: 6,2:1 sobre el fondo, 6,5:1 sobre blanco */
+  --color-link: #1F6B56;
+  --color-link-hover: #17513F;
+  --color-focus-outline-bright: #1F6B56;
+  --color-focus-outline-dark: #FFFFFF;
   --max-width: 1300px;
 }
 
@@ -53,7 +53,7 @@ body {
 /* ── Footer ─────────────────────────────────────────── */
 .site-footer {
   background-color: var(--color-background-alt);
-  border-top: 1px solid rgba(216, 182, 106, 0.25);
+  border-top: 1px solid var(--color-border);
   margin-top: 2rem;
 }
 
@@ -110,25 +110,24 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  /* Verde oscurecido: el #25D366 original da 1.6:1 sobre crema */
-  color: var(--ws-green, #0A5C2D);
-  background-color: rgba(37, 211, 102, 0.08);
+  color: var(--color-link);
+  background-color: transparent;
   text-decoration: none;
-  border: 2px solid var(--ws-green, #0A5C2D);
-  border-radius: 6px;
+  border: 1px solid var(--color-link);
+  border-radius: 2px;
   padding: 0.5rem 0.75rem;
   width: fit-content;
   transition: background-color 0.2s, border-color 0.2s;
 }
 
 .footer-whatsapp:hover {
-  background-color: rgba(37, 211, 102, 0.15);
+  background-color: rgba(31, 107, 86, 0.08);
 }
 
 .footer-whatsapp svg {
   width: 1rem;
   height: 1rem;
-  fill: var(--ws-green, #0A5C2D);
+  fill: var(--color-link);
   flex-shrink: 0;
 }
 
@@ -138,30 +137,29 @@ body {
   gap: 0.5rem;
   margin-top: 0.6rem;
   font-size: 0.875rem;
-  /* Coral de marca oscurecido: 5.2:1 sobre el fondo del footer */
-  color: #B33C17;
-  background-color: rgba(255, 107, 74, 0.08);
+  color: var(--color-link);
+  background-color: transparent;
   text-decoration: none;
-  border: 2px solid #B33C17;
-  border-radius: 6px;
+  border: 1px solid var(--color-link);
+  border-radius: 2px;
   padding: 0.5rem 0.75rem;
   width: fit-content;
   transition: background-color 0.2s, border-color 0.2s;
 }
 
 .footer-instagram:hover {
-  background-color: rgba(255, 107, 74, 0.16);
+  background-color: rgba(31, 107, 86, 0.08);
 }
 
 .footer-instagram svg {
   width: 1rem;
   height: 1rem;
-  color: #B33C17;
+  color: var(--color-link);
   flex-shrink: 0;
 }
 
 .footer-col__heading {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-family);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -196,7 +194,7 @@ body {
 }
 
 .site-footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--color-border);
   padding-block: 1.25rem;
   text-align: center;
 }
@@ -231,27 +229,32 @@ body {
   z-index: 1000;
   width: 3.5rem;
   height: 3.5rem;
-  background-color: #25D366;
+  /* Color de acento (antes verde WhatsApp #25D366, donde el icono blanco
+     solo daba 2:1). Sin sombra: un borde blanco lo separa de lo que tenga
+     debajo, sea claro u oscuro. */
+  background-color: var(--color-btn-primary);
+  border: 1px solid #FFFFFF;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .whatsapp-fab:hover,
 .whatsapp-fab:focus-visible {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-  outline: 3px solid #15140F;
-  outline-offset: 3px;
+  background-color: var(--color-btn-primary-hover);
+}
+
+.whatsapp-fab:focus-visible {
+  outline: 3px solid var(--color-focus-outline-bright);
+  outline-offset: 2px;
 }
 
 .whatsapp-fab svg {
   width: 2rem;
   height: 2rem;
-  /* Icono oscuro: el blanco sobre el verde #25D366 da 2:1 (falla 1.4.11) */
+  /* Blanco sobre el acento: 6,5:1 */
   fill: #ffffff;
 }
 
@@ -272,7 +275,7 @@ body {
 .whatsapp-fab {
   bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
   right: calc(1.25rem + env(safe-area-inset-right, 0px));
-  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease, visibility .2s;
+  transition: transform .2s ease, background-color .2s ease, opacity .2s ease, visibility .2s;
 }
 
 /* Oculto mientras se ve el hero o el CTA final (ver useFabVisible en

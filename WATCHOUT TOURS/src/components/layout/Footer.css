@@ -9,7 +9,7 @@
   /* Línea fina para separarlo del CTA final, que también es azul */
   border-top: 1px solid rgba(255, 255, 255, .16);
   margin-top: 0;
-  --focus: #F4F1EA;
+  --focus: #FFFFFF;
 }
 
 .site-footer__inner {
@@ -49,11 +49,10 @@
 }
 
 .footer-brand__name {
-  font-family: 'Big Shoulders Display', var(--font-family-heading);
+  font-family: var(--font-family-heading);
   font-size: 26px;
-  font-weight: 700;
-  letter-spacing: .02em;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--paper);
 }
 
@@ -119,7 +118,7 @@
   margin: 0 0 12px;
   font-family: var(--font-family-heading);
   font-size: var(--fs-label);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--jade-soft);

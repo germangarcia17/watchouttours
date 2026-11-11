@@ -4,7 +4,7 @@
   z-index: 100;
   background: var(--night, #0E5F73);
   border-bottom: 1px solid rgba(255, 255, 255, .15);
-  --focus: #F4F1EA;
+  --focus: #FFFFFF;
 }
 
 .nav-inner {
@@ -20,7 +20,7 @@
   min-height: 44px;
   gap: 12px;
   text-decoration: none;
-  --focus: #15140F;
+  --focus: #FFFFFF;
 }
 
 .brand-badge:hover {
@@ -56,12 +56,11 @@
 }
 
 .brand-word {
-  font-family: 'Big Shoulders Display', var(--font-family-heading);
-  font-weight: 700;
+  font-family: var(--font-family-heading);
+  font-weight: 400;
   font-size: 22px;
   color: var(--paper, #FFFFFF);
-  letter-spacing: .01em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   white-space: nowrap;
   line-height: 1;
 }
@@ -203,7 +202,7 @@
   .nav-links--open {
     display: flex;
     /* El menú móvil tiene fondo claro: el foco pasa a oscuro para verse */
-    --focus: #15140F;
+    --focus: #1F6B56;
   }
 
   .nav-link {
