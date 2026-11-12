@@ -47,20 +47,12 @@ export function Header() {
   const { t } = useTranslation()
   const localize = useLocalize()
   const { pathname } = useLocation()
-  // En la home la cabecera va transparente sobre el hero (logo y texto en
-  // blanco) y, al hacer scroll, pasa a fondo claro con texto tinta.
+  // La cabecera es la misma en toda la web: barra opaca #15171A fija arriba.
+  // En la home no flota sobre el vídeo (licencia de Tourism New Zealand: el
+  // vídeo no puede llevar nada encima); el vídeo empieza debajo de ella.
   const esHome = stripLang(pathname) === '/'
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleRef = useRef(null)
-  const [solida, setSolida] = useState(false)
-
-  useEffect(() => {
-    if (!esHome) { setSolida(false); return }
-    const comprobar = () => setSolida(window.scrollY > 24)
-    comprobar()
-    window.addEventListener('scroll', comprobar, { passive: true })
-    return () => window.removeEventListener('scroll', comprobar)
-  }, [esHome])
 
   // Al cambiar de página, el menú móvil se cierra.
   useEffect(() => { setMenuOpen(false) }, [pathname])
@@ -85,23 +77,17 @@ export function Header() {
     return () => document.removeEventListener('keydown', alPulsar)
   }, [menuOpen])
 
-  const clara = esHome && (solida || menuOpen)
   const cerrar = () => setMenuOpen(false)
 
   return (
     <header
-      className={`site-header${esHome ? ' site-header--home' : ''}${clara ? ' site-header--solida' : ''}`}
+      className="site-header"
       role="banner"
     >
       <div className="nav-inner">
-        {/* El nombre accesible del enlace es el alt del logo. Las dos
-            versiones están en el HTML y el CSS enseña una: la oculta
-            (display: none) no existe para los lectores de pantalla. */}
+        {/* El nombre accesible del enlace es el alt del logo */}
         <Link to={localize('/')} className="brand-logo">
-          <img src="/brand/logo-blanco.svg" alt="WatchOut Tours" width="702" height="174" className="brand-logo__img brand-logo__img--blanco" />
-          {esHome && (
-            <img src="/brand/logo-principal.svg" alt="WatchOut Tours" width="702" height="174" className="brand-logo__img brand-logo__img--tinta" />
-          )}
+          <img src="/brand/logo-blanco.svg" alt="WatchOut Tours" width="702" height="174" className="brand-logo__img" />
         </Link>
 
         {/* El botón va antes que el menú en el HTML para que, al abrirlo, el

@@ -1,83 +1,49 @@
 /* ── Cabecera ────────────────────────────────────────────
-   · Páginas interiores: banda oscura fija arriba, logo y texto en blanco.
-   · Home (.site-header--home): transparente sobre el hero, con el logo y
-     el texto en blanco; al hacer scroll (.site-header--solida) pasa a
-     fondo #FAF8F4 con línea inferior, logo principal y texto tinta.
-   El menú se pliega en un botón por debajo de 1340 px. */
+   La misma en toda la web: barra opaca #15171A fija arriba (sticky), con el
+   logo blanco y el menú en blanco. No cambia al hacer scroll.
+   En la home no flota sobre el vídeo: el vídeo de Tourism New Zealand no
+   puede llevar nada encima (condición de su licencia) y empieza justo
+   debajo de la barra, que mide exactamente --cab-alto (borde incluido).
+   El menú se pliega en un botón por debajo de 1340 px. Abierto, no se
+   superpone al contenido: alarga la barra y empuja la página hacia abajo,
+   así tampoco tapa el vídeo. */
+
+:root {
+  --cab-alto: 81px;
+}
+
+@media (max-width: 1340px) {
+  :root {
+    --cab-alto: 69px;
+  }
+}
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--night);
-  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  background: #15171A;
+  border-bottom: 1px solid #2E3136;
   color: #FAF8F4;
-  --cab-linea: rgba(250, 248, 244, .55);
   --focus: #FFFFFF;
-}
-
-.site-header--home {
-  position: fixed;
-  left: 0;
-  right: 0;
-  background: transparent;
-  border-bottom-color: transparent;
-  transition: background-color .25s ease, border-color .25s ease;
-}
-
-.site-header--home.site-header--solida {
-  background: #FAF8F4;
-  border-bottom-color: var(--line);
-  color: var(--ink);
-  --cab-linea: var(--ink);
-  --focus: #1F6B56;
 }
 
 .nav-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 16px 7%;
-  transition: padding .25s ease;
-}
-
-/* Sobre el hero, el aire de la maqueta */
-.site-header--home:not(.site-header--solida) .nav-inner {
-  padding-block: 30px;
-}
-
-/* Sobre el vídeo de la home no puede ir ningún velo (licencia de Tourism
-   New Zealand), y su cielo es casi blanco: el propio texto y el logo del
-   menú llevan un halo oscuro para leerse sobre cualquier fotograma. No es
-   una capa sobre el vídeo: es parte de la tipografía de la cabecera. */
-.site-header--home:not(.site-header--solida) .nav-link,
-.site-header--home:not(.site-header--solida) .header-cta,
-.site-header--home:not(.site-header--solida) .lang-switch,
-.site-header--home:not(.site-header--solida) .menu-toggle {
-  text-shadow:
-    0 0 2px rgba(10, 11, 13, .9),
-    0 1px 4px rgba(10, 11, 13, .8),
-    0 0 14px rgba(10, 11, 13, .7);
-}
-
-.site-header--home:not(.site-header--solida) .brand-logo__img--blanco {
-  filter:
-    drop-shadow(0 0 1px rgba(10, 11, 13, .9))
-    drop-shadow(0 1px 3px rgba(10, 11, 13, .8))
-    drop-shadow(0 0 10px rgba(10, 11, 13, .6));
-}
-
-.site-header--home:not(.site-header--solida) .header-cta {
-  box-shadow: 0 0 0 1px rgba(10, 11, 13, .35), inset 0 0 0 1px rgba(10, 11, 13, .35);
+  column-gap: 24px;
+  padding: 0 7%;
 }
 
 /* ── Logo ── */
+/* El logo fija el alto de la barra: --cab-alto con el borde inferior */
 .brand-logo {
   display: inline-flex;
   align-items: center;
   flex: 0 0 auto;
-  min-height: 44px;
+  height: calc(var(--cab-alto) - 1px);
   text-decoration: none;
 }
 
@@ -85,15 +51,6 @@
   display: block;
   width: 200px;
   height: auto;
-}
-
-.brand-logo__img--tinta,
-.site-header--solida .brand-logo__img--blanco {
-  display: none;
-}
-
-.site-header--solida .brand-logo__img--tinta {
-  display: block;
 }
 
 /* ── Menú ── */
@@ -127,40 +84,29 @@
   text-decoration: none;
 }
 
-/* Botón "Diseña tu viaje": con borde, como el botón fantasma de la maqueta */
+/* Botón "Diseña tu viaje": verde de marca con texto blanco (6,5:1) */
 .header-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 44px;
   padding: 11px 20px;
-  border: 1px solid var(--cab-linea);
+  border: 1px solid #1F6B56;
+  background: #1F6B56;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .04em;
-  color: inherit;
+  color: #FFFFFF;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  transition: background-color .2s ease, border-color .2s ease;
 }
 
 .header-cta:hover {
-  background: #FAF8F4;
-  border-color: #FAF8F4;
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.site-header--solida .header-cta {
-  background: #1F6B56;
-  border-color: #1F6B56;
-  color: #FFFFFF;
-}
-
-.site-header--solida .header-cta:hover {
   background: var(--color-btn-primary-hover);
   border-color: var(--color-btn-primary-hover);
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .lang-switch {
@@ -200,9 +146,9 @@
 
 /* ── Menú plegado ── */
 @media (max-width: 1340px) {
-  .nav-inner,
-  .site-header--home:not(.site-header--solida) .nav-inner {
-    padding: 14px 6%;
+  .nav-inner {
+    column-gap: 4px;
+    padding: 0 6%;
   }
 
   .brand-logo__img {
@@ -217,28 +163,19 @@
     margin-left: auto;
   }
 
-  .nav-inner {
-    gap: 4px;
-  }
-
+  /* El menú abierto ocupa una fila nueva dentro de la barra (no flota
+     sobre la página) */
   .nav-links {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    order: 4;
+    flex: 0 0 100%;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     margin: 0;
-    padding: 8px 6% 28px;
-    max-height: calc(100dvh - 72px);
+    padding: 0 0 28px;
+    max-height: calc(100dvh - var(--cab-alto));
     overflow-y: auto;
-    background: #FAF8F4;
-    border-bottom: 1px solid var(--line);
-    color: var(--ink);
-    /* El menú abierto tiene fondo claro: el foco pasa a oscuro para verse */
-    --focus: #1F6B56;
   }
 
   .nav-links--open {
@@ -247,22 +184,18 @@
 
   .nav-link {
     min-height: 56px;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid #2E3136;
     white-space: normal;
   }
 
   .nav-link:hover,
   .nav-link--active {
-    border-bottom-color: var(--ink);
+    border-bottom-color: #FAF8F4;
   }
 
-  .nav-links .header-cta,
-  .nav-links .header-cta:hover {
+  .nav-links .header-cta {
     margin-top: 24px;
     min-height: 52px;
-    background: #1F6B56;
-    border-color: #1F6B56;
-    color: #FFFFFF;
     font-size: 14px;
   }
 }
@@ -270,12 +203,5 @@
 @media (max-width: 420px) {
   .brand-logo__img {
     width: 148px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .site-header--home,
-  .nav-inner {
-    transition: none;
   }
 }

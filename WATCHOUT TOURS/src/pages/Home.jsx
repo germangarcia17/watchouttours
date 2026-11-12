@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 import { useForm, ValidationError } from '@formspree/react'
 import '../styles/pagestyle/Contacto.css'
 import '../styles/pagestyle/HomeNueva.css'
@@ -116,14 +117,16 @@ function Foto({ clave, sizes, className = '', prioritaria, children }) {
    Vídeo: Milford Sound, RealNZ / Tourism New Zealand. Licencia WorldWide de
    Tourism New Zealand: solo web y medios no pagados, y SIN MODIFICAR. Poner
    texto, velos, botones o cualquier elemento encima cuenta como
-   modificación, así que el vídeo ocupa la pantalla entera sin nada encima
-   salvo el crédito mínimo (home.hero.credito). Solo la cabecera del sitio
-   (logo y menú, contenido nuestro) flota sobre él.
+   modificación, así que el vídeo ocupa el ancho y el alto de la pantalla
+   (menos la cabecera) sin absolutamente nada encima: ni la cabecera (el
+   vídeo empieza debajo de ella) ni el crédito (home.hero.credito), que va
+   debajo, en la zona oscura.
    El titular, los botones y el botón de pausa van en la sección de debajo
    (HeroIntro), sobre fondo #15171A.
    El vídeo es decorativo (aria-hidden): lo que muestra lo dice el texto
-   alternativo del hueco "hero-poster" (su primer fotograma), que está debajo
-   y es lo que se ve si el vídeo no carga o si se pide reducir el movimiento.
+   alternativo del hueco "hero-poster" (su primer fotograma), que se lee en
+   el pie. Ese fotograma es el póster del vídeo: lo que se ve mientras
+   carga, si no carga o si se pide reducir el movimiento.
    No lleva el atributo autoplay en el HTML: se arranca desde aquí para
    poder respetar prefers-reduced-motion (con él, no se reproduce solo).
    El botón solo aparece cuando hay vídeo que pausar; aria-pressed="true"
@@ -173,23 +176,36 @@ function useVideoHero() {
   return { video, hayVideo, enMarcha, alternar }
 }
 
-function Hero({ video, hayVideo }) {
+function Hero({ video }) {
   const { t } = useTranslation()
-  const poster = useSiteImage('home', 'hero-poster', IMG['hero-poster'].src, '')
+  // Póster del vídeo: hueco "hero-poster" (editable en /admin/imagenes)
+  const poster = useSiteImage('home', 'hero-poster', IMG['hero-poster'].src, t('home.huecos.hero-poster'))
   return (
     <figure className="hn-hero">
-      <Foto clave="hero-poster" sizes="100vw" prioritaria className="hn-hero__media" />
-      <video
-        ref={video}
-        className={`hn-hero__video${hayVideo ? ' hn-hero__video--lista' : ''}`}
-        poster={poster.src || undefined}
-        muted loop playsInline preload="metadata"
-        aria-hidden="true" tabIndex={-1}
-      >
-        <source src="/media/hero.webm" type="video/webm" />
-        <source src="/media/hero.mp4" type="video/mp4" />
-      </video>
-      <figcaption className="hn-hero__credito">{t('home.hero.credito')}</figcaption>
+      <Helmet>
+        <link rel="preload" as="image" href={poster.src} fetchpriority="high" />
+      </Helmet>
+      {/* En el área del vídeo solo está el <video>: ni póster aparte, ni
+          crédito, ni velo, ni botones. El póster va en su atributo. */}
+      <div className="hn-hero__area">
+        <video
+          ref={video}
+          className="hn-hero__video"
+          poster={poster.src || undefined}
+          muted loop playsInline preload="metadata"
+          aria-hidden="true" tabIndex={-1}
+        >
+          <source src="/media/hero.webm" type="video/webm" />
+          <source src="/media/hero.mp4" type="video/mp4" />
+        </video>
+      </div>
+      {/* Debajo del vídeo, en la zona oscura: crédito visible y, para los
+          lectores de pantalla, lo que muestra el vídeo (texto alternativo
+          del hueco "hero-poster") */}
+      <figcaption className="hn-hero__credito">
+        <span className="sr-only" lang={poster.lang}>{poster.alt}. </span>
+        {t('home.hero.credito')}
+      </figcaption>
     </figure>
   )
 }
@@ -773,7 +789,7 @@ export default function Home() {
   return (
     <div className="hn">
       <Seo pageType="home" title={t('home.seo.title')} description={t('home.seo.description')} />
-      <Hero video={hero.video} hayVideo={hero.hayVideo} />
+      <Hero video={hero.video} />
       <HeroIntro hayVideo={hero.hayVideo} enMarcha={hero.enMarcha} alternar={hero.alternar} />
       <ElPais />
       <Cita />

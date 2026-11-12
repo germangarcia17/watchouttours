@@ -40,7 +40,7 @@
 
 /* Las anclas (#colecciones, #itinerario, #tiaki…) no quedan bajo la cabecera fija */
 .hn [id] {
-  scroll-margin-top: 84px;
+  scroll-margin-top: calc(var(--cab-alto) + 3px);
 }
 
 /* ── Tipografía ────────────────────────────────────────── */
@@ -306,53 +306,45 @@
     linear-gradient(0deg, rgba(14, 15, 17, .82) 0%, rgba(14, 15, 17, .3) 55%, rgba(14, 15, 17, 0) 80%);
 }
 
-/* ── 1. Hero: el vídeo a pantalla completa, sin nada encima ── */
+/* ── 1. Hero: el vídeo solo, bajo la cabecera ──────────── */
 /* Licencia de Tourism New Zealand: el vídeo no se modifica, y eso incluye no
-   ponerle texto, velos ni botones encima. Solo el crédito mínimo. */
+   ponerle nada encima. Ocupa el ancho completo y el alto de la pantalla
+   menos la cabecera (--cab-alto, en Header.css); en su área solo está el
+   <video>. El crédito va debajo, sobre el fondo oscuro. */
 .hn-hero {
-  position: relative;
-  height: 100vh;
-  height: 100svh;
   margin: 0;
-  overflow: hidden;
   background: #15171A;
 }
 
-.hn-hero__media,
-.hn-hero__video {
-  position: absolute;
-  inset: 0;
+.hn-hero__area {
+  height: calc(100vh - var(--cab-alto));
+  height: calc(100svh - var(--cab-alto));
+  background: #15171A;
 }
 
 .hn-hero__video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity .6s ease;
 }
 
-.hn-hero__video--lista {
-  opacity: 1;
-}
-
-/* Crédito obligatorio: esquina inferior derecha, 11 px, blanco al 60 % */
+/* Crédito obligatorio: debajo del vídeo, a la derecha, 12 px, #B9BCC2
+   (9,7:1 sobre #15171A) */
 .hn-hero__credito {
-  position: absolute;
-  right: 20px;
-  bottom: 14px;
-  max-width: calc(100% - 40px);
   margin: 0;
-  font-size: 11px;
-  line-height: 1.4;
+  padding: 10px var(--hn-x) 0;
+  font-size: 12px;
+  line-height: 1.5;
   letter-spacing: .02em;
   text-align: right;
-  color: rgba(255, 255, 255, .6);
+  text-wrap: balance;
+  color: #B9BCC2;
 }
 
 /* ── 1b. Presentación bajo el vídeo (contenido nuestro) ── */
 .hn .hn-intro {
-  padding: 110px var(--hn-x) 96px;
+  padding: 90px var(--hn-x) 96px;
   background: #15171A;
   color: var(--hn-crema);
   --focus: #FFFFFF;
@@ -1125,10 +1117,6 @@ body.visor-abierto {
 
 /* ── Pantallas medianas ────────────────────────────────── */
 @media (max-width: 1180px) {
-  .hn [id] {
-    scroll-margin-top: 72px;
-  }
-
   /* El texto llega casi al borde derecho: el velo deja de ser lateral */
   .hn-velo {
     background:
@@ -1182,10 +1170,6 @@ body.visor-abierto {
     margin-top: 48px;
   }
 
-  .hn-hero__credito {
-    right: 12px;
-    bottom: 10px;
-  }
 
   /* Dos columnas → una */
   .hn-par {
@@ -1386,7 +1370,6 @@ body.visor-abierto {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hn-hero__video,
   .hn-mosaico__boton img,
   .hn-btn {
     transition: none;
