@@ -44,8 +44,9 @@ function AlternateLinks() {
 }
 
 /* Botón flotante de WhatsApp: visible solo cuando no tapa nada útil.
-   Se oculta mientras se ve el hero a pantalla completa (taparía sus
-   botones) y cuando está en pantalla el CTA final, el formulario del
+   Se oculta mientras se ve el hero a pantalla completa o la imagen de Tiaki
+   (en la home, el vídeo y la imagen de Tourism New Zealand no pueden llevar
+   nada encima: condición de su licencia) y cuando está en pantalla el CTA final, el formulario del
    itinerario o el cierre de la home, que ya tienen su propia llamada a la
    acción. Oculto, sale también del orden de tabulación y del
    árbol de accesibilidad (visibility: hidden en el CSS). */
@@ -59,12 +60,12 @@ function useFabVisible() {
     let observer
     // Espera un fotograma para que la página nueva ya esté en el DOM.
     const id = requestAnimationFrame(() => {
-      const objetivos = document.querySelectorAll('.hero-full, .final-cta, .hn-hero, #itinerario, .hn-cierre')
+      const objetivos = document.querySelectorAll('.hero-full, .final-cta, .hn-hero, .hn-tiaki__foto, #itinerario, .hn-cierre')
       if (objetivos.length === 0) { setVisible(true); return }
       observer = new IntersectionObserver(entries => {
         entries.forEach(e => enVista.set(e.target, e.isIntersecting))
         setVisible(![...enVista.values()].some(Boolean))
-      }, { threshold: 0.05 })
+      }, { threshold: 0, rootMargin: '0px 0px 96px 0px' }) // se oculta antes de que la zona llegue al botón
       objetivos.forEach(o => { enVista.set(o, false); observer.observe(o) })
     })
     return () => { cancelAnimationFrame(id); observer?.disconnect() }

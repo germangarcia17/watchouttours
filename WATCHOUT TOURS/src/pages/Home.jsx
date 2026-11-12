@@ -41,7 +41,9 @@ const PARAPENTE = una(parapente, 1600, 1400)
    El texto alternativo por defecto de cada uno está en home.huecos.<clave>
    (es.json / en.json) y se edita también desde el admin. */
 const IMG = {
-  'hero-poster': null,
+  // Primer fotograma del vídeo de la hero (public/media), para que el paso
+  // de la imagen al vídeo no se note.
+  'hero-poster': { src: '/media/hero-poster.jpg', width: 1920, height: 1080 },
   'pais-vertical': null,
   'pais-panoramica': null,
   'panel-privado': PARAPENTE,
@@ -110,17 +112,23 @@ function Foto({ clave, sizes, className = '', prioritaria, children }) {
   )
 }
 
-/* ── 1. Hero con vídeo ───────────────────────────────────────────────── */
-/* El vídeo es decorativo (aria-hidden): lo que cuenta la imagen lo dice el
-   texto alternativo del hueco "hero-poster", que está debajo y es lo que se
-   ve si el vídeo no carga o si se pide reducir el movimiento.
+/* ── 1. Hero: el vídeo solo, y debajo nuestra presentación ────────────
+   Vídeo: Milford Sound, RealNZ / Tourism New Zealand. Licencia WorldWide de
+   Tourism New Zealand: solo web y medios no pagados, y SIN MODIFICAR. Poner
+   texto, velos, botones o cualquier elemento encima cuenta como
+   modificación, así que el vídeo ocupa la pantalla entera sin nada encima
+   salvo el crédito mínimo (home.hero.credito). Solo la cabecera del sitio
+   (logo y menú, contenido nuestro) flota sobre él.
+   El titular, los botones y el botón de pausa van en la sección de debajo
+   (HeroIntro), sobre fondo #15171A.
+   El vídeo es decorativo (aria-hidden): lo que muestra lo dice el texto
+   alternativo del hueco "hero-poster" (su primer fotograma), que está debajo
+   y es lo que se ve si el vídeo no carga o si se pide reducir el movimiento.
    No lleva el atributo autoplay en el HTML: se arranca desde aquí para
    poder respetar prefers-reduced-motion (con él, no se reproduce solo).
    El botón solo aparece cuando hay vídeo que pausar; aria-pressed="true"
-   significa "en pausa". */
-function Hero() {
-  const { t } = useTranslation()
-  const poster = useSiteImage('home', 'hero-poster', null, '')
+   significa "en pausa". Versiones web sin audio en public/media. */
+function useVideoHero() {
   const video = useRef(null)
   const [hayVideo, setHayVideo] = useState(false)
   const [enMarcha, setEnMarcha] = useState(false)
@@ -131,20 +139,27 @@ function Hero() {
     v.muted = true // React no pone el atributo muted en el HTML
     // Escuchas nativas: en la página prerenderizada el vídeo puede haber
     // cargado (o empezado) antes de que React se enganche al HTML.
+    // Solo hay vídeo cuando llegan sus datos ('play' se dispara antes de
+    // cargar nada); si fallan todas las fuentes, el botón no se muestra.
     const listo = () => setHayVideo(true)
-    const estado = () => { setEnMarcha(!v.paused); if (!v.paused) setHayVideo(true) }
+    const estado = () => setEnMarcha(!v.paused)
+    const fallo = () => { setHayVideo(false); setEnMarcha(false) }
+    const ultima = v.querySelector('source:last-of-type')
     v.addEventListener('loadedmetadata', listo)
+    v.addEventListener('playing', listo)
     v.addEventListener('play', estado)
-    v.addEventListener('playing', estado)
     v.addEventListener('pause', estado)
+    ultima?.addEventListener('error', fallo)
     if (v.readyState >= 1) listo()
+    if (v.networkState === 3) fallo() // NETWORK_NO_SOURCE: ya falló antes de hidratar
     estado()
     if (!reducirMovimiento()) v.play()?.catch(() => {})
     return () => {
       v.removeEventListener('loadedmetadata', listo)
+      v.removeEventListener('playing', listo)
       v.removeEventListener('play', estado)
-      v.removeEventListener('playing', estado)
       v.removeEventListener('pause', estado)
+      ultima?.removeEventListener('error', fallo)
     }
   }, [])
 
@@ -155,8 +170,14 @@ function Hero() {
     else v.pause()
   }
 
+  return { video, hayVideo, enMarcha, alternar }
+}
+
+function Hero({ video, hayVideo }) {
+  const { t } = useTranslation()
+  const poster = useSiteImage('home', 'hero-poster', IMG['hero-poster'].src, '')
   return (
-    <section className="hn-hero" aria-labelledby="hn-hero-titulo">
+    <figure className="hn-hero">
       <Foto clave="hero-poster" sizes="100vw" prioritaria className="hn-hero__media" />
       <video
         ref={video}
@@ -168,30 +189,31 @@ function Hero() {
         <source src="/media/hero.webm" type="video/webm" />
         <source src="/media/hero.mp4" type="video/mp4" />
       </video>
-      <div className="hn-hero__velo" aria-hidden="true" />
+      <figcaption className="hn-hero__credito">{t('home.hero.credito')}</figcaption>
+    </figure>
+  )
+}
 
-      <div className="hn-hero__contenido">
-        <Etiqueta clara>{t('home.hero.etiqueta')}</Etiqueta>
-        <h1 id="hn-hero-titulo" className="hn-h1"><Texto k="home.hero.titulo" /></h1>
-        <p className="hn-hero__sub">{t('home.hero.sub')}</p>
-        <div className="hn-botones">
-          <a href="#itinerario" className="hn-btn">{t('home.hero.cta1')}</a>
-          <a href="#colecciones" className="hn-btn hn-btn--fantasma">{t('home.hero.cta2')}</a>
+function HeroIntro({ hayVideo, enMarcha, alternar }) {
+  const { t } = useTranslation()
+  return (
+    <section className="hn-intro" aria-labelledby="hn-hero-titulo">
+      <img src="/brand/logo-blanco.svg" alt="WatchOut Tours" width="702" height="174" className="hn-intro__logo" />
+      <Etiqueta className="hn-lbl--verde">{t('home.hero.etiqueta')}</Etiqueta>
+      <h1 id="hn-hero-titulo" className="hn-h1"><Texto k="home.hero.titulo" /></h1>
+      <p className="hn-intro__sub">{t('home.hero.sub')}</p>
+      <div className="hn-botones">
+        <a href="#itinerario" className="hn-btn">{t('home.hero.cta1')}</a>
+        <a href="#colecciones" className="hn-btn hn-btn--fantasma">{t('home.hero.cta2')}</a>
+      </div>
+      {hayVideo && (
+        <div className="hn-intro__video">
+          <button type="button" className="hn-hero__pausa" aria-pressed={!enMarcha} onClick={alternar}>
+            <span className={`hn-hero__signo${enMarcha ? '' : ' hn-hero__signo--play'}`} aria-hidden="true" />
+            {enMarcha ? t('home.hero.pausar') : t('home.hero.reproducir')}
+          </button>
         </div>
-      </div>
-
-      <div className="hn-hero__pie">
-        <span>{t('home.hero.pieVideo')}</span>
-        {hayVideo && (
-          <>
-            <span aria-hidden="true">·</span>
-            <button type="button" className="hn-hero__pausa" aria-pressed={!enMarcha} onClick={alternar}>
-              <span className={`hn-hero__signo${enMarcha ? '' : ' hn-hero__signo--play'}`} aria-hidden="true" />
-              {enMarcha ? t('home.hero.pausar') : t('home.hero.reproducir')}
-            </button>
-          </>
-        )}
-      </div>
+      )}
     </section>
   )
 }
@@ -727,7 +749,8 @@ function Preguntas() {
 }
 
 /* ── Home ────────────────────────────────────────────────────────────────
- * Reproduce la maqueta aprobada: hero con vídeo → el país (foto vertical y
+ * Reproduce la maqueta aprobada: vídeo a pantalla completa → presentación
+ * (titular y botones) → el país (foto vertical y
  * panorámica) → cita de las fundadoras → colecciones (tres paneles a
  * pantalla completa) → próxima salida → pilares → Tiaki → destinos →
  * galería → fundadoras → reseña destacada → cierre → formulario del
@@ -745,10 +768,13 @@ export default function Home() {
     if (id) requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView())
   }, [])
 
+  const hero = useVideoHero()
+
   return (
     <div className="hn">
       <Seo pageType="home" title={t('home.seo.title')} description={t('home.seo.description')} />
-      <Hero />
+      <Hero video={hero.video} hayVideo={hero.hayVideo} />
+      <HeroIntro hayVideo={hero.hayVideo} enMarcha={hero.enMarcha} alternar={hero.alternar} />
       <ElPais />
       <Cita />
       <Colecciones />

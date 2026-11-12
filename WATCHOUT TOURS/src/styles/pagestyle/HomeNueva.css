@@ -9,7 +9,7 @@
 
    Diferencias deliberadas con la maqueta, todas por contraste (WCAG AA):
    · pies de foto en #6B6F76 (4,8:1) en lugar de #8A8E95 (3,2:1);
-   · velos del hero, los paneles y el cierre reforzados lo justo
+   · velos de los paneles y el cierre reforzados lo justo
      para que el texto cumpla también sobre una foto muy clara.
    ──────────────────────────────────────────────────────────────────────── */
 
@@ -306,21 +306,20 @@
     linear-gradient(0deg, rgba(14, 15, 17, .82) 0%, rgba(14, 15, 17, .3) 55%, rgba(14, 15, 17, 0) 80%);
 }
 
-/* ── 1. Hero ───────────────────────────────────────────── */
+/* ── 1. Hero: el vídeo a pantalla completa, sin nada encima ── */
+/* Licencia de Tourism New Zealand: el vídeo no se modifica, y eso incluye no
+   ponerle texto, velos ni botones encima. Solo el crédito mínimo. */
 .hn-hero {
   position: relative;
   height: 100vh;
   height: 100svh;
-  min-height: 760px;
+  margin: 0;
   overflow: hidden;
-  background: var(--hn-gris);
-  color: var(--hn-crema);
-  --focus: #FFFFFF;
+  background: #15171A;
 }
 
 .hn-hero__media,
-.hn-hero__video,
-.hn-hero__velo {
+.hn-hero__video {
   position: absolute;
   inset: 0;
 }
@@ -337,21 +336,42 @@
   opacity: 1;
 }
 
-.hn-hero__velo {
-  background:
-    linear-gradient(180deg, rgba(14, 15, 17, .66) 0%, rgba(14, 15, 17, .6) 10%, rgba(14, 15, 17, 0) 24%, rgba(14, 15, 17, .22) 36%, rgba(14, 15, 17, .32) 45%, rgba(14, 15, 17, .8) 100%),
-    linear-gradient(90deg, rgba(14, 15, 17, .6) 0%, rgba(14, 15, 17, .55) 55%, rgba(14, 15, 17, 0) 88%);
-}
-
-.hn-hero__contenido {
+/* Crédito obligatorio: esquina inferior derecha, 11 px, blanco al 60 % */
+.hn-hero__credito {
   position: absolute;
-  left: var(--hn-x);
-  right: var(--hn-x);
-  bottom: 90px;
-  z-index: 2;
+  right: 20px;
+  bottom: 14px;
+  max-width: calc(100% - 40px);
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: .02em;
+  text-align: right;
+  color: rgba(255, 255, 255, .6);
 }
 
-.hn-hero__sub {
+/* ── 1b. Presentación bajo el vídeo (contenido nuestro) ── */
+.hn .hn-intro {
+  padding: 110px var(--hn-x) 96px;
+  background: #15171A;
+  color: var(--hn-crema);
+  --focus: #FFFFFF;
+}
+
+.hn-intro__logo {
+  display: block;
+  width: 230px;
+  height: auto;
+  margin-bottom: 64px;
+}
+
+/* El verde de marca (#1F6B56) no llega a 3:1 sobre #15171A: en fondo oscuro
+   se usa el verde claro de la paleta (#7FC4A6, 9,4:1), como en Tiaki */
+.hn-lbl--verde {
+  color: #7FC4A6;
+}
+
+.hn-intro__sub {
   max-width: 620px;
   margin: 0 0 36px;
   font-size: 20px;
@@ -359,20 +379,10 @@
   color: rgba(250, 248, 244, .95);
 }
 
-/* Pie del vídeo y botón de pausa */
-.hn-hero__pie {
-  position: absolute;
-  right: var(--hn-x);
-  bottom: 20px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 44px;
-  font-size: 12px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(250, 248, 244, .88);
+.hn-intro__video {
+  margin-top: 72px;
+  padding-top: 20px;
+  border-top: 1px solid #2E3136;
 }
 
 .hn-hero__pausa {
@@ -383,10 +393,11 @@
   padding: 0;
   border: 0;
   background: none;
-  color: inherit;
+  color: #B9BCC2;
   font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
@@ -1118,11 +1129,7 @@ body.visor-abierto {
     scroll-margin-top: 72px;
   }
 
-  /* El texto llega casi al borde derecho: los velos dejan de ser laterales */
-  .hn-hero__velo {
-    background: linear-gradient(180deg, rgba(14, 15, 17, .66) 0%, rgba(14, 15, 17, .6) 30%, rgba(14, 15, 17, .64) 60%, rgba(14, 15, 17, .8) 100%);
-  }
-
+  /* El texto llega casi al borde derecho: el velo deja de ser lateral */
   .hn-velo {
     background:
       linear-gradient(90deg, rgba(14, 15, 17, .62) 0%, rgba(14, 15, 17, .55) 80%, rgba(14, 15, 17, .35) 100%),
@@ -1156,25 +1163,28 @@ body.visor-abierto {
     padding-inline: 24px;
   }
 
-  /* Hero */
-  .hn-hero {
-    min-height: 680px;
+  /* Presentación bajo el vídeo */
+  .hn .hn-intro {
+    padding: 72px var(--hn-x) 72px;
   }
 
-  .hn-hero__contenido {
-    bottom: 84px;
+  .hn-intro__logo {
+    width: 180px;
+    margin-bottom: 44px;
   }
 
-  .hn-hero__sub {
+  .hn-intro__sub {
     margin-bottom: 28px;
     font-size: 18px;
   }
 
-  .hn-hero__pie {
-    left: var(--hn-x);
-    bottom: 14px;
-    justify-content: space-between;
-    font-size: 11px;
+  .hn-intro__video {
+    margin-top: 48px;
+  }
+
+  .hn-hero__credito {
+    right: 12px;
+    bottom: 10px;
   }
 
   /* Dos columnas → una */

@@ -12,8 +12,8 @@
 
 insert into site_images (section, key, src, image_alt, image_alt_en) values
   ('home', 'hero-poster', null,
-   'Milford Sound al amanecer: las paredes del fiordo se levantan sobre el agua en calma, con el pico Mitre al fondo',
-   'Milford Sound at dawn: the walls of the fiord rise above still water, with Mitre Peak in the distance'),
+   'Milford Sound, en Fiordland: decenas de cascadas bajan por las paredes del fiordo, cubiertas de selva y con las cumbres entre la niebla, y un pequeño barco navega a sus pies',
+   'Milford Sound, Fiordland: dozens of waterfalls run down the rainforest-covered walls of the fiord, the peaks lost in mist, as a small boat sails below'),
   ('home', 'pais-vertical', null,
    'Un sendero entre helechos gigantes en un bosque nativo de Nueva Zelanda',
    'A track between giant tree ferns in a native New Zealand forest'),

@@ -47,6 +47,31 @@
   padding-block: 30px;
 }
 
+/* Sobre el vídeo de la home no puede ir ningún velo (licencia de Tourism
+   New Zealand), y su cielo es casi blanco: el propio texto y el logo del
+   menú llevan un halo oscuro para leerse sobre cualquier fotograma. No es
+   una capa sobre el vídeo: es parte de la tipografía de la cabecera. */
+.site-header--home:not(.site-header--solida) .nav-link,
+.site-header--home:not(.site-header--solida) .header-cta,
+.site-header--home:not(.site-header--solida) .lang-switch,
+.site-header--home:not(.site-header--solida) .menu-toggle {
+  text-shadow:
+    0 0 2px rgba(10, 11, 13, .9),
+    0 1px 4px rgba(10, 11, 13, .8),
+    0 0 14px rgba(10, 11, 13, .7);
+}
+
+.site-header--home:not(.site-header--solida) .brand-logo__img--blanco {
+  filter:
+    drop-shadow(0 0 1px rgba(10, 11, 13, .9))
+    drop-shadow(0 1px 3px rgba(10, 11, 13, .8))
+    drop-shadow(0 0 10px rgba(10, 11, 13, .6));
+}
+
+.site-header--home:not(.site-header--solida) .header-cta {
+  box-shadow: 0 0 0 1px rgba(10, 11, 13, .35), inset 0 0 0 1px rgba(10, 11, 13, .35);
+}
+
 /* ── Logo ── */
 .brand-logo {
   display: inline-flex;
