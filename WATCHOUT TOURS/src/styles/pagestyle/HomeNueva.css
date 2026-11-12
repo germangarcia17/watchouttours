@@ -1,16 +1,26 @@
 /* ════════════════════════════════════════════════════════════════════
-   Home — todo bajo .hn-*
-   Colores: variables de theme.css (los nombres --petroleo, --coral-boton,
-   --arena, --ambar… se conservan, pero ya valen la paleta del rediseño:
-   acento #1F6B56, texto #15171A, secundario #6B6F76, líneas #E8E4DA,
-   banda oscura #15171A, blanco para bandas alternas y tarjetas).
-   Sin sombras, bordes de 1 px, radio de 2 px, botones planos iguales a
-   .btn (theme.css), contenido de 1240 px como máximo con márgenes
-   laterales del 6 %.
+   Home — revista de viajes (todo bajo .hn-*)
+   Fotografía a sangre, titulares en Fraunces muy grandes, mucho aire.
+   Colores: tokens de theme.css (acento #1F6B56, texto #15171A,
+   secundario #6B6F76, líneas #E8E4DA, oscuro #15171A).
+   Sin tarjetas, sin sombras, sin radios en las fotos.
    Contraste: todo texto sobre foto lleva detrás un velo oscuro neutro
-   (se cumple AA aunque la foto fuera blanca). Ese velo es el único
-   degradado que queda: es funcional, no decorativo.
+   pegado al propio bloque de texto (cumple AA aunque la foto fuera
+   blanca). Ese velo es el único degradado y es funcional.
    ════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Media separación: dos secciones seguidas suman 160 px (96 en móvil) */
+  --hn-sep: 80px;
+  --hn-margen: 6vw;
+  --hn-velo: var(--velo-rgb);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --hn-sep: 48px;
+  }
+}
 
 /* ── Base ──────────────────────────────────────────────── */
 .hn-wrap {
@@ -20,126 +30,143 @@
 }
 
 .site-main > .hn-seccion {
-  padding-block: clamp(80px, 9vw, 120px);
+  padding-block: var(--hn-sep);
 }
 
-.hn-arena {
-  background: var(--arena);
+/* Bandas blancas: llevan su propio aire por dentro */
+.site-main > .hn-blanca,
+.site-main > .hn-arena {
+  padding-block: calc(var(--hn-sep) * 2);
+  margin-block: var(--hn-sep);
+  background: var(--paper);
   border-block: 1px solid var(--linea-clara);
 }
 
-.hn-oscuro {
-  background: var(--petroleo-oscuro);
-  color: var(--paper);
-}
-
-/* Bloques oscuros o sobre foto: anillo de foco blanco */
-.hn-oscuro,
-.hn-hero,
-.hn-privado,
-.hn-mosaico__item,
-.site-header--home {
-  --focus: #FFFFFF;
+.hn-arena + .hn-seccion,
+.hn-blanca + .hn-seccion {
+  margin-top: 0;
 }
 
 .hn-cabecera {
-  max-width: 780px;
-  margin-bottom: clamp(40px, 5vw, 64px);
+  max-width: 900px;
+  margin-bottom: clamp(48px, 6vw, 96px);
 }
 
-/* Etiquetas de sección: Atkinson en mayúsculas, 12 px, color de acento
-   (blanco sobre oscuro o foto) */
-.hn-etiqueta {
-  margin: 0 0 16px;
-  font-family: var(--font-family);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  line-height: 1.5;
-  text-transform: uppercase;
-  color: var(--petroleo);
+/* Anclas: que la cabecera fija no tape el destino */
+body.pagina-home .site-main [id] {
+  scroll-margin-top: 96px;
 }
 
-.hn-etiqueta--oscuro {
-  color: var(--ambar);
-}
-
-.hn-etiqueta--mostaza {
-  color: var(--mostaza);
-}
-
-/* Titulares: Fraunces 400 con interletrado negativo ligero */
-.hn-h2 {
-  margin: 0 0 22px;
+/* ── Tipografía editorial ──────────────────────────────── */
+.hn-h1,
+.hn-h2,
+.hn-h3 {
+  margin: 0;
   font-family: var(--font-family-heading);
-  font-size: clamp(34px, 4.2vw, 54px);
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -.02em;
+  line-height: 1.05;
   color: var(--texto);
   text-wrap: balance;
+}
+
+.hn-h1 {
+  max-width: 22ch;
+  margin-bottom: 28px;
+  /* 7vw con tope de 104 px; en pantallas bajas también se limita por la
+     altura para que los botones del hero entren en la primera pantalla. */
+  font-size: clamp(44px, 7vw, 104px);
+  font-size: clamp(44px, min(7vw, 9.5svh), 104px);
+  font-weight: 300;
+  letter-spacing: -.025em;
+}
+
+.hn-h2 {
+  max-width: 22ch;
+  margin-bottom: 32px;
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 300;
+  letter-spacing: -.02em;
 }
 
 .hn-h3 {
-  margin: 0 0 14px;
-  font-family: var(--font-family-heading);
-  font-size: clamp(28px, 2.8vw, 38px);
+  margin-bottom: 16px;
+  font-size: clamp(28px, 3vw, 44px);
   font-weight: 400;
-  line-height: 1.12;
   letter-spacing: -.015em;
-  color: var(--texto);
-  text-wrap: balance;
 }
 
-.hn-oscuro .hn-h2,
-.hn-oscuro .hn-h3,
-.hn-privado .hn-h3 {
+/* Etiqueta: Atkinson 12 px en mayúsculas, precedida de un filete de 40 px */
+.hn-etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 28px;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--jade);
+}
+
+.hn-etiqueta::before {
+  content: "";
+  flex: 0 0 40px;
+  height: 1px;
+  background: currentColor;
+}
+
+.hn-etiqueta--clara {
   color: var(--paper);
 }
 
-/* Texto de lectura: 19 px en escritorio, 18 px en móvil */
-.hn-entradilla {
-  margin: 0;
-  max-width: 62ch;
-  font-size: clamp(19px, 1.6vw, 22px);
-  line-height: 1.6;
-  color: var(--texto-2);
-}
-
 .hn-parrafo {
-  margin: 0 0 18px;
-  max-width: 60ch;
+  margin: 0 0 20px;
+  max-width: 62ch;
   font-size: 19px;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--texto-2);
 }
 
-.hn-oscuro .hn-parrafo,
-.hn-privado .hn-parrafo {
-  color: var(--texto-claro);
-}
-
-.hn-destacado {
-  margin: 0 0 16px;
+/* Lema y frases destacadas: Fraunces cursiva */
+.hn-lema {
+  margin: -8px 0 24px;
   font-family: var(--font-family-heading);
   font-size: clamp(22px, 2vw, 28px);
+  font-style: italic;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.35;
   color: var(--texto);
 }
 
-/* ── Botones ───────────────────────────────────────────── */
-/* Mismo aspecto que .btn (theme.css): planos, sin degradado ni sombra,
-   radio de 2 px, 44 px de alto mínimo y Atkinson Hyperlegible 700. Los
-   nombres de las variantes se conservan (los usa el JSX):
-     --coral, --petroleo        principal: fondo de acento, texto blanco
-     --borde-petroleo           secundario: borde 1 px #15171A, transparente
-     --borde-blanco, --blanco   sobre foto u oscuro: borde 1 px blanco */
+/* Pie de foto como en revista */
+.hn-pie {
+  margin-top: 14px;
+  padding-inline: var(--hn-margen);
+  font-family: var(--font-family);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--texto-2);
+}
+
+.hn-foto {
+  margin: 0;
+}
+
+.hn-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* ── Botones (mismo aspecto que .btn, ver theme.css) ───── */
 .hn-botones {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 36px;
 }
 
 .hn-btn {
@@ -180,7 +207,7 @@
   color: #FFFFFF;
 }
 
-.hn-btn.hn-btn--coral:disabled {
+.hn-btn--coral:disabled {
   cursor: wait;
 }
 
@@ -197,67 +224,62 @@
   color: var(--paper);
 }
 
+.hn-btn.hn-btn--borde-petroleo {
+  background: transparent;
+  border-color: var(--texto);
+  color: var(--texto);
+}
+
+.hn-btn.hn-btn--borde-petroleo:hover {
+  background: rgba(var(--petroleo-oscuro-rgb), .06);
+  color: var(--texto);
+}
+
 .hn-btn--ancho {
   width: 100%;
 }
 
 /* ── Enlaces ───────────────────────────────────────────── */
-.hn-enlace,
-.hn-enlace-icono,
-.hn-enlace-claro {
+.hn-enlace {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   min-height: 44px;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
+  color: var(--jade);
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
 }
 
-.hn-enlace,
-.hn-enlace-icono {
-  color: var(--petroleo);
-}
-
-.hn-enlace-icono {
-  margin-top: 18px;
-}
-
-.hn-enlace-icono .icono {
-  width: 26px;
-  height: 26px;
-  color: var(--petroleo);
-}
-
-.hn-enlace-claro {
-  color: var(--ambar);
-}
-
-.hn-enlace:hover,
-.hn-enlace-icono:hover {
+.hn-enlace:hover {
   color: var(--color-link-hover);
-  text-decoration-thickness: 2px;
 }
 
-.hn-enlace-claro:hover {
-  color: var(--ambar);
-  text-decoration-thickness: 2px;
+.hn-flecha {
+  display: inline-block;
+  transition: transform .3s ease;
 }
 
-/* ── Foco ────────────────────────────────────────────────
-   La home usa el anillo global de theme.css (3 px en el color de acento
-   con 2 px de separación); los bloques oscuros o sobre foto lo pasan a
-   blanco con --focus (ver arriba). */
+.hn-enlace--flecha:hover .hn-flecha {
+  transform: translateX(4px);
+}
 
-/* ── Cabecera sobre la foto (solo en la home) ──────────── */
+/* ── Cabecera: transparente sobre el hero, clara al bajar ── */
 .site-header--home {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  /* Velo propio de la cabecera (no del hero) para que el menú blanco se
+     lea sobre cualquier cielo; desaparece al pasar a fondo claro. */
+  background: linear-gradient(to bottom,
+    rgba(var(--hn-velo), .72) 0,
+    rgba(var(--hn-velo), .6) 70%,
+    rgba(var(--hn-velo), 0) 100%);
+  border-bottom: 1px solid transparent;
+  transition: background-color .3s ease, border-color .3s ease;
 }
 
 .site-header--home .nav-inner {
@@ -267,17 +289,58 @@
 }
 
 .site-header--home .nav-link,
-.site-header--home .nav-dropdown__toggle {
+.site-header--home .nav-dropdown__toggle,
+.site-header--home .lang-switch,
+.site-header--home .menu-toggle {
   color: var(--paper);
 }
 
 .site-header--home .nav-dropdown__menu {
   background: var(--petroleo-oscuro);
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.site-header--home .brand-badge__circle {
+  box-shadow: none;
+}
+
+.site-header--home.site-header--solida {
+  background: var(--color-background);
+  border-bottom-color: var(--linea-clara);
+  --focus: var(--jade);
+}
+
+.site-header--solida .brand-word,
+.site-header--solida .nav-link,
+.site-header--solida .nav-dropdown__toggle,
+.site-header--solida .lang-switch,
+.site-header--solida .menu-toggle {
+  color: var(--texto);
+}
+
+.site-header--solida .brand-word-braille {
+  color: var(--texto-2);
+}
+
+.site-header--solida .nav-link:hover,
+.site-header--solida .nav-link--active {
+  border-color: var(--texto);
+}
+
+.site-header--solida .lang-switch {
+  border-color: var(--texto-2);
+  background: transparent;
+}
+
+.site-header--solida .nav-dropdown__menu {
+  background: var(--color-background);
+  border-color: var(--linea-clara);
 }
 
 .header-cta {
   min-height: 44px;
-  padding: 9px 20px;
+  padding: 8px 20px;
   font-size: 16px;
 }
 
@@ -291,7 +354,7 @@
   /* El menú móvil vuelve a sus colores (fondo claro, texto oscuro) */
   .site-header--home .nav-links .nav-link,
   .site-header--home .nav-links .nav-dropdown__toggle {
-    color: var(--ink-soft);
+    color: var(--texto);
   }
 
   .site-header--home .nav-dropdown__menu {
@@ -299,26 +362,25 @@
   }
 }
 
-/* ── 1. Hero ───────────────────────────────────────────── */
+/* ── 1. Hero con vídeo ─────────────────────────────────── */
 .site-main > .hn-hero {
-  padding-block: 160px 40px;
-}
-
-.hn-hero {
   position: relative;
   isolation: isolate;
   display: flex;
   align-items: flex-end;
-  min-height: 860px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 140px 0 96px;
   overflow: hidden;
   background: var(--petroleo-oscuro);
   color: var(--paper);
+  --focus: #FFFFFF;
 }
 
-.hn-hero__img {
+.hn-hero__media {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: -3;
   width: 100%;
   height: 100%;
   max-width: none;
@@ -326,24 +388,23 @@
   object-position: center 55%;
 }
 
-/* Degradado de arriba: velo neutro solo detrás del logo y el menú,
-   que se desvanece enseguida para dejar ver la foto. */
-.hn-hero__capa-superior {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 200px;
-  background: linear-gradient(to bottom,
-    rgba(var(--velo-rgb), .66) 0,
-    rgba(var(--velo-rgb), .56) 90px,
-    rgba(var(--velo-rgb), 0) 100%);
+/* El vídeo no se ve hasta que tiene datos: mientras, la foto del hueco */
+.hn-hero__video {
+  z-index: -2;
+  opacity: 0;
+  transition: opacity .6s ease;
 }
 
-/* Degradado de abajo: unido al bloque de texto, así cubre siempre todo
-   el texto sea cual sea la altura de la pantalla. Negro neutro (no azul)
-   y más ligero arriba, para que la foto se vea con su color. */
+.hn-hero__video--lista {
+  opacity: 1;
+}
+
+/* Velo solo en la parte inferior: es el ::before de .hn-hero__contenido,
+   así cubre siempre todo el texto sea cual sea la altura de la pantalla. */
+.hn-hero__velo {
+  display: none;
+}
+
 .hn-hero__contenido {
   position: relative;
 }
@@ -352,386 +413,523 @@
   content: "";
   position: absolute;
   z-index: -1;
-  top: -120px;
-  bottom: -40px;
+  top: -140px;
+  bottom: -96px;
   left: calc(50% - 50vw);
   width: 100vw;
   background: linear-gradient(to top,
-    rgba(var(--velo-rgb), .78) 0,
-    rgba(var(--velo-rgb), .64) calc(100% - 120px),
-    rgba(var(--velo-rgb), 0) 100%);
+    rgba(var(--hn-velo), .8) 0,
+    rgba(var(--hn-velo), .64) calc(100% - 140px),
+    rgba(var(--hn-velo), 0) 100%);
 }
 
-/* Sombra suave bajo el texto claro: refuerza la lectura sobre la foto */
-.hn-hero__contenido,
-.hn-mosaico__texto,
-.hn-privado__texto {
-  text-shadow: 0 1px 12px rgba(var(--velo-rgb), .55);
-}
-
-/* Huecos sin foto: el fondo liso de acento ya da contraste AA al texto
-   blanco (6,5:1), así que no hace falta velo encima. */
-.hn-mosaico__item:not(:has(img)) .hn-mosaico__texto::before,
-.hn-privado:not(:has(img))::before {
-  display: none;
-}
-
-/* Los botones llevan su propio fondo: sin sombra en el texto */
-.hn-hero__contenido :is(.hn-btn, .btn, .hn-franja),
-.hn-mosaico__texto :is(.hn-btn, .btn),
-.hn-privado__texto :is(.hn-btn, .btn) {
-  text-shadow: none;
-}
-
-.hn-hero__titulo {
-  margin: 0 0 22px;
-  max-width: 16ch;
-  font-family: var(--font-family-heading);
-  font-size: clamp(44px, 6vw, 84px);
-  font-weight: 400;
-  line-height: 1.02;
-  letter-spacing: -.025em;
+.hn-hero .hn-h1 {
   color: var(--paper);
-  text-wrap: balance;
 }
 
 .hn-hero__sub {
   margin: 0;
-  max-width: 58ch;
-  font-size: clamp(19px, 1.6vw, 22px);
-  line-height: 1.55;
+  max-width: 54ch;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.65;
   color: var(--paper);
 }
 
-/* Franja de la próxima salida: un único enlace a #salida. Fondo
-   oscuro semitransparente (no blanco) para no perder contraste. */
-.hn-franja {
-  display: flex;
-  flex-wrap: wrap;
+.hn-hero__pausa {
+  position: absolute;
+  right: var(--hn-margen);
+  bottom: 32px;
+  display: inline-flex;
   align-items: center;
-  gap: 8px 28px;
-  margin-top: 48px;
-  padding: 18px 26px;
-  border: 1px solid rgba(255, 255, 255, .4);
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, .7);
   border-radius: 2px;
-  background: rgba(var(--velo-rgb), .45);
+  background: rgba(var(--hn-velo), .6);
   color: var(--paper);
-  text-decoration: none;
+  font: 700 15px/1.3 var(--font-family);
+  cursor: pointer;
 }
 
-.hn-franja:hover {
+.hn-hero__pausa:hover {
   border-color: var(--paper);
-  color: var(--paper);
-  text-decoration: none;
 }
 
-.hn-franja__etiqueta {
-  font-family: var(--font-family);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ambar);
+/* Signo de pausa (dos barras) o de reproducir (triángulo) */
+.hn-hero__pausa-signo {
+  width: 10px;
+  height: 12px;
+  border-inline: 3px solid currentColor;
 }
 
-.hn-franja__fechas {
+.hn-hero__pausa-signo--play {
+  width: 0;
+  height: 0;
+  border-block: 6px solid transparent;
+  border-inline: 0;
+  border-left: 10px solid currentColor;
+}
+
+/* Indicador discreto de scroll: un filete vertical */
+.hn-hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 1px;
+  height: 64px;
+  background: rgba(255, 255, 255, .7);
+}
+
+/* ── 2. Franja ─────────────────────────────────────────── */
+.site-main > .hn-franja {
+  padding: calc(var(--hn-sep) * 2) 0 var(--hn-sep);
+}
+
+.hn-franja__frase {
+  max-width: 34ch;
+  margin: 0 auto;
+  padding-inline: var(--hn-margen);
   font-family: var(--font-family-heading);
-  font-size: 22px;
+  font-size: clamp(28px, 2.8vw, 34px);
+  font-style: italic;
   font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--texto);
+  text-wrap: balance;
 }
 
-.hn-franja__plazas {
-  font-size: 19px;
-  color: var(--texto-claro);
+.hn-franja__frase::before,
+.hn-franja__frase::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1px;
+  margin: 0 auto 40px;
+  background: var(--linea-clara);
+  background: var(--texto-2);
 }
 
-.hn-franja__cta {
-  margin-left: auto;
-  font-size: 19px;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.hn-franja__frase::after {
+  margin: 40px auto 0;
 }
 
-/* ── 2. Nueva Zelanda: mosaico ─────────────────────────── */
-.hn-mosaico {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* ── 3. El país: doble página ──────────────────────────── */
+.hn-doble {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: minmax(300px, auto);
-  gap: 16px;
+  grid-template-columns: 60% minmax(0, 1fr);
+  align-items: center;
 }
 
-.hn-mosaico__item {
+.hn-doble__foto {
+  aspect-ratio: 4 / 5;
+  max-height: 110svh;
+}
+
+.hn-doble__texto {
+  padding-inline: var(--hn-margen);
+}
+
+/* Sin foto todavía: el texto ocupa el ancho de lectura */
+.hn-doble:not(:has(.hn-foto)) {
+  grid-template-columns: minmax(0, 1fr);
+  width: 88%;
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+.hn-doble:not(:has(.hn-foto)) .hn-doble__texto {
+  padding-inline: 0;
+}
+
+.hn-panoramica {
+  margin-top: calc(var(--hn-sep) * 2);
+}
+
+.hn-panoramica img {
+  aspect-ratio: 21 / 9;
+}
+
+/* ── 4. Por qué con nosotras ───────────────────────────── */
+.hn-estrecho {
+  width: 88%;
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hn-estrecho .hn-etiqueta {
+  justify-content: center;
+}
+
+.hn-estrecho .hn-h2,
+.hn-estrecho .hn-parrafo {
+  margin-inline: auto;
+}
+
+.hn-cita {
+  margin: 56px auto 0;
+  padding: 0;
+}
+
+.hn-cita p {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(26px, 3vw, 40px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+.hn-sangre {
+  margin-top: calc(var(--hn-sep) * 2);
+}
+
+.hn-sangre img {
+  aspect-ratio: 16 / 9;
+  max-height: 92svh;
+}
+
+/* ── 5. Tres maneras: paneles a pantalla completa ──────── */
+.site-main > .hn-maneras {
+  padding: var(--hn-sep) 0 0;
+}
+
+.hn-maneras__cabecera {
+  padding-bottom: clamp(48px, 6vw, 96px);
+}
+
+.hn-panel {
   position: relative;
   isolation: isolate;
   display: flex;
   align-items: flex-end;
+  min-height: 90vh;
+  min-height: 90svh;
   overflow: hidden;
-  border-radius: 2px;
-  background: var(--petroleo);
+  background: var(--petroleo-oscuro);
+  color: var(--paper);
+  --focus: #FFFFFF;
 }
 
-.hn-mosaico__item--grande {
-  grid-column: span 2;
-  grid-row: span 2;
+.hn-panel + .hn-panel {
+  border-top: 1px solid var(--color-background);
 }
 
-.hn-mosaico__img {
+.hn-panel__foto {
   position: absolute;
   inset: 0;
   z-index: -2;
+}
+
+.hn-panel__foto img {
+  display: block;
   width: 100%;
   height: 100%;
   max-width: none;
   object-fit: cover;
 }
 
-.hn-mosaico__texto {
+.hn-panel__texto {
   position: relative;
   width: 100%;
-  padding: 76px 22px 22px;
-  color: var(--paper);
+  padding-block: 200px 88px;
 }
 
-/* Velo neutro detrás del texto de cada foto: más denso abajo, donde va
-   el texto, y se desvanece hacia arriba. */
-.hn-mosaico__texto::before {
+/* Velo inferior pegado al texto: denso detrás del texto, se desvanece
+   hacia arriba para dejar ver la foto. */
+.hn-panel__texto::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background: linear-gradient(to top,
-    rgba(var(--velo-rgb), .8) 0,
-    rgba(var(--velo-rgb), .66) calc(100% - 56px),
-    rgba(var(--velo-rgb), 0) 100%);
+    rgba(var(--hn-velo), .82) 0,
+    rgba(var(--hn-velo), .68) calc(100% - 200px),
+    rgba(var(--hn-velo), 0) 100%);
 }
 
-.hn-mosaico__titulo {
-  margin: 0 0 6px;
-  font-family: var(--font-family-heading);
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.15;
+.hn-panel__texto .hn-wrap > * {
+  max-width: 640px;
+}
+
+.hn-panel .hn-h2,
+.hn-panel .hn-lema,
+.hn-panel .hn-parrafo,
+.hn-panel .hn-enlace,
+.hn-panel .hn-enlace:hover {
   color: var(--paper);
 }
 
-.hn-mosaico__item--grande .hn-mosaico__titulo {
-  font-size: clamp(28px, 2.6vw, 36px);
-}
-
-.hn-mosaico__frase {
-  margin: 0;
-  font-size: 19px;
-  line-height: 1.5;
-  color: var(--paper);
-}
-
-/* ── 4. Nuestros viajes ────────────────────────────────── */
-.hn-viajes {
-  display: grid;
-  gap: clamp(64px, 8vw, 112px);
-}
-
-.hn-viaje {
+/* ── 6. Próxima salida ─────────────────────────────────── */
+.hn-dos {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(32px, 5vw, 88px);
+  gap: clamp(40px, 7vw, 112px);
   align-items: center;
 }
 
-.hn-viaje--invertida .hn-viaje__foto {
-  order: 2;
+.hn-dos:not(:has(.hn-foto)) {
+  grid-template-columns: minmax(0, 1fr);
 }
 
-.hn-viaje__foto {
-  overflow: hidden;
+.hn-dos__foto img {
   aspect-ratio: 4 / 5;
-  border-radius: 2px;
-  background: var(--petroleo);
 }
 
-.hn-viaje__foto img,
-.hn-nosotras__foto img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-}
-
-/* 4.3 Viajes en privado: franja ancha con foto de fondo */
-.hn-privado {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  align-items: center;
-  min-height: 460px;
-  padding: clamp(32px, 5vw, 72px);
-  overflow: hidden;
-  border-radius: 2px;
-  background: var(--petroleo-oscuro);
-  color: var(--paper);
-}
-
-.hn-privado__img {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-}
-
-/* Velo neutro de izquierda a derecha: denso donde va el texto y casi
-   nada en la mitad derecha, para que se vea la foto. */
-.hn-privado::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(to right,
-    rgba(var(--velo-rgb), .78) 0,
-    rgba(var(--velo-rgb), .62) 45%,
-    rgba(var(--velo-rgb), 0) 80%);
-}
-
-.hn-privado__texto {
-  max-width: 560px;
-}
-
-/* ── 5. Próxima salida ─────────────────────────────────── */
-.hn-salida {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(40px, 6vw, 96px);
-}
-
-.hn-salida__ruta {
-  padding-left: clamp(32px, 5vw, 80px);
-  border-left: 1px solid rgba(255, 255, 255, .22);
-}
-
-.hn-recuadro {
-  margin-top: 40px;
-  padding: 28px;
-  border: 1px solid rgba(255, 255, 255, .28);
-  border-radius: 2px;
-}
-
-.hn-recuadro__titulo {
-  margin: 0 0 10px;
-  font-family: var(--font-family-heading);
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--paper);
-}
-
-.hn-salida__ruta-titulo {
-  margin: 0 0 28px;
-  font-family: var(--font-family-heading);
-  font-size: clamp(26px, 2.4vw, 32px);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--paper);
+/* ── 7. De norte a sur ─────────────────────────────────── */
+.hn-ruta__titulo {
+  margin-bottom: clamp(56px, 8vw, 128px);
 }
 
 .hn-paradas {
-  list-style: none;
+  display: grid;
+  gap: calc(var(--hn-sep) * 2);
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 28px;
+  list-style: none;
 }
 
 .hn-parada {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 14px;
-}
-
-.hn-parada__num {
-  padding-top: 3px;
-  font-family: var(--font-family);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--ambar);
-}
-
-.hn-parada__nombre {
-  margin: 0 0 2px;
-  font-family: var(--font-family-heading);
-  font-size: 23px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--paper);
-}
-
-.hn-parada__gancho {
-  margin: 0 0 4px;
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 1.45;
-  color: var(--ambar-claro);
-}
-
-.hn-parada__frase {
-  margin: 0;
-  font-size: 19px;
-  line-height: 1.55;
-  color: var(--texto-claro);
-}
-
-/* ── 6. Quiénes somos ──────────────────────────────────── */
-.hn-nosotras {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 6vw, 96px);
+  grid-template-columns: 58% minmax(0, 1fr);
   align-items: center;
 }
 
-.hn-nosotras__foto {
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  border-radius: 2px;
-  background: var(--petroleo);
+.hn-parada--derecha {
+  grid-template-columns: minmax(0, 1fr) 58%;
 }
 
-.hn-cifras {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin: 32px 0;
-  padding: 28px 0;
-  border-top: 1px solid var(--linea-clara);
-  border-bottom: 1px solid var(--linea-clara);
+.hn-parada--derecha .hn-parada__foto {
+  order: 2;
 }
 
-.hn-cifra__valor {
+.hn-parada__foto img {
+  aspect-ratio: 4 / 3;
+}
+
+.hn-parada__texto {
+  padding-inline: var(--hn-margen);
+}
+
+/* Parada sin foto todavía: solo texto, alineado con el contenido */
+.hn-parada:not(:has(.hn-foto)) {
+  grid-template-columns: minmax(0, 1fr);
+  width: 88%;
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+.hn-parada:not(:has(.hn-foto)) .hn-parada__texto {
+  padding-inline: 0;
+}
+
+.hn-parada__num {
+  display: block;
+  margin-bottom: 12px;
   font-family: var(--font-family-heading);
-  font-size: clamp(36px, 3.6vw, 48px);
+  font-size: clamp(80px, 10vw, 160px);
+  font-weight: 300;
+  line-height: .9;
+  letter-spacing: -.04em;
+  color: var(--jade);
+}
+
+/* ── 8. Galería: mosaico editorial ─────────────────────── */
+/* Bloque de 12 columnas × 6 filas que se repite cada 6 fotos:
+   7×3, 5×2, 5×4, 4×3, 3×2 y 3×1 (encajan sin huecos). */
+.hn-mosaico {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: clamp(110px, 12vw, 190px);
+  grid-auto-flow: dense;
+  gap: 6px;
+  margin: 0;
+  padding: 0 6px;
+  list-style: none;
+}
+
+.hn-mosaico__item--1 { grid-column: span 7; grid-row: span 3; }
+.hn-mosaico__item--2 { grid-column: span 5; grid-row: span 2; }
+.hn-mosaico__item--3 { grid-column: span 5; grid-row: span 4; }
+.hn-mosaico__item--4 { grid-column: span 4; grid-row: span 3; }
+.hn-mosaico__item--5 { grid-column: span 3; grid-row: span 2; }
+.hn-mosaico__item--6 { grid-column: span 3; grid-row: span 1; }
+
+.hn-mosaico__boton {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--linea-clara);
+  cursor: zoom-in;
+}
+
+.hn-mosaico__boton img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transition: opacity .3s ease;
+}
+
+.hn-mosaico__boton:hover img {
+  opacity: .88;
+}
+
+.hn-mosaico__boton:focus-visible {
+  outline-offset: -6px;
+  outline-color: #FFFFFF;
+  box-shadow: inset 0 0 0 9px var(--jade);
+}
+
+/* Visor a pantalla completa */
+.hn-visor {
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 72px 96px 56px;
+  border: 0;
+  background: var(--petroleo-oscuro);
+  color: var(--paper);
+  --focus: #FFFFFF;
+}
+
+.hn-visor[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hn-visor::backdrop {
+  background: rgb(var(--petroleo-oscuro-rgb));
+}
+
+body.visor-abierto {
+  overflow: hidden;
+}
+
+.hn-visor__figura {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  min-height: 0;
+}
+
+.hn-visor__figura img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 240px);
+  object-fit: contain;
+}
+
+.hn-visor__pie {
+  max-width: 70ch;
+  font-size: 16px;
+  line-height: 1.55;
+  text-align: center;
+  color: var(--paper);
+}
+
+.hn-visor__contador {
+  margin: 12px 0 0;
+  font-size: 14px;
+  letter-spacing: .08em;
+  color: var(--texto-claro);
+}
+
+.hn-visor__cerrar,
+.hn-visor__flecha {
+  position: absolute;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--paper);
+  font: 700 16px/1 var(--font-family);
+  cursor: pointer;
+}
+
+.hn-visor__cerrar {
+  top: 16px;
+  right: 16px;
+  padding: 0 16px;
+}
+
+.hn-visor__flecha {
+  top: 50%;
+  width: 56px;
+  height: 56px;
+  margin-top: -28px;
+  font-size: 22px;
+}
+
+.hn-visor__flecha--ant {
+  left: 20px;
+}
+
+.hn-visor__flecha--sig {
+  right: 20px;
+}
+
+.hn-visor__cerrar:hover,
+.hn-visor__flecha:hover {
+  border-color: var(--paper);
+  background: rgba(255, 255, 255, .1);
+}
+
+/* ── 9. Tiaki ──────────────────────────────────────────── */
+.hn-tiaki__infografia {
+  margin: 48px auto;
+}
+
+.hn-tiaki__infografia img {
+  height: auto;
+  object-fit: contain;
+}
+
+/* ── 10. Quiénes somos ─────────────────────────────────── */
+.hn-nosotras {
+  display: grid;
+  grid-template-columns: 55% minmax(0, 1fr);
+  align-items: center;
+}
+
+.hn-nosotras__foto img {
+  aspect-ratio: 4 / 5;
+  max-height: 110svh;
+}
+
+.hn-nosotras__texto {
+  padding-inline: var(--hn-margen);
+}
+
+.site-main > .hn-nosotras:not(:has(.hn-foto)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* ── 11. Reseñas (variante home de ResenasDestacadas) ──── */
+.hn-resenas .hn-h2 {
+  font-style: italic;
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -.02em;
-  color: var(--petroleo);
 }
 
-.hn-cifra__texto {
-  margin: 8px 0 0;
-  font-size: 19px;
-  line-height: 1.4;
-  color: var(--texto-2);
-}
-
-/* ── 7. Reseñas ────────────────────────────────────────── */
 .hn-resenas__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: clamp(32px, 4vw, 64px);
 }
 
 .hn-resena {
@@ -739,10 +937,8 @@
   flex-direction: column;
   gap: 24px;
   margin: 0;
-  padding: clamp(24px, 2.6vw, 34px);
-  background: var(--paper);
-  border: 1px solid var(--linea-clara);
-  border-radius: 2px;
+  padding: 32px 0 0;
+  border-top: 1px solid var(--texto);
 }
 
 .hn-resena__cita {
@@ -752,9 +948,9 @@
 .hn-resena__cita p {
   margin: 0;
   font-family: var(--font-family-heading);
-  font-size: clamp(20px, 1.7vw, 23px);
+  font-size: clamp(20px, 1.6vw, 23px);
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--texto);
 }
 
@@ -763,261 +959,51 @@
   flex-direction: column;
   gap: 2px;
   margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid var(--linea-clara);
 }
 
 .hn-resena .resena__nombre {
-  font-size: 19px;
+  font-size: 17px;
+  font-weight: 700;
   color: var(--texto);
 }
 
 .hn-resena .resena__contexto {
-  font-size: 19px;
+  font-size: 16px;
   color: var(--texto-2);
 }
 
 .hn-resenas__mas {
-  margin: 36px 0 0;
+  margin: 56px 0 0;
 }
 
-/* ── 8. Pedir itinerario ───────────────────────────────── */
-.hn-itinerario {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 6vw, 96px);
-  align-items: start;
-}
-
-.hn-itinerario__texto .hn-entradilla {
-  margin-bottom: 8px;
-}
-
-.hn-itinerario__form {
-  padding: clamp(24px, 3.5vw, 48px);
-  border: 1px solid var(--linea-clara);
-  border-radius: 2px;
-  background: var(--arena);
-}
-
-.hn-itinerario .form-label,
-.hn-itinerario .form-control,
-.hn-itinerario .form-consent-label {
-  font-size: 19px;
-}
-
-.hn-ayuda {
-  margin: 0 0 8px;
-  font-size: 18px;
-  line-height: 1.5;
-  color: var(--texto-2);
-}
-
-.hn-select {
-  min-height: 52px;
-  cursor: pointer;
-}
-
-/* ── Responsive ────────────────────────────────────────── */
-@media (max-width: 1000px) {
-  .hn-mosaico {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hn-resenas__grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 860px) {
-  .hn-viaje,
-  .hn-salida,
-  .hn-nosotras,
-  .hn-itinerario {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  /* En móvil la foto va siempre arriba */
-  .hn-viaje--invertida .hn-viaje__foto {
-    order: 0;
-  }
-
-  .hn-viaje__foto,
-  .hn-nosotras__foto {
-    aspect-ratio: 4 / 3;
-  }
-
-  .hn-salida__ruta {
-    padding-left: 0;
-    padding-top: 40px;
-    border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, .22);
-  }
-
-  /* El texto de la franja privada ocupa todo el ancho: velo uniforme */
-  .hn-privado::before {
-    background: rgba(var(--velo-rgb), .66);
-  }
-}
-
-@media (max-width: 760px) {
-  .site-main > .hn-hero {
-    padding-block: 120px 24px;
-  }
-
-  .hn-hero {
-    min-height: 760px;
-  }
-
-  .hn-parrafo,
-  .hn-franja__plazas,
-  .hn-franja__cta,
-  .hn-mosaico__frase,
-  .hn-parada__gancho,
-  .hn-parada__frase,
-  .hn-cifra__texto,
-  .hn-enlace,
-  .hn-enlace-icono,
-  .hn-enlace-claro,
-  .hn-resena .resena__nombre,
-  .hn-resena .resena__contexto,
-  .hn-itinerario .form-label,
-  .hn-itinerario .form-control,
-  .hn-itinerario .form-consent-label {
-    font-size: 18px;
-  }
-
-  .hn-franja {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hn-franja__cta {
-    margin-left: 0;
-  }
-
-  .hn-botones .hn-btn {
-    width: 100%;
-  }
-
-  .hn-mosaico {
-    grid-template-columns: minmax(0, 1fr);
-    grid-auto-rows: minmax(320px, auto);
-  }
-
-  .hn-mosaico__item--grande {
-    grid-column: auto;
-    grid-row: auto;
-    min-height: 380px;
-  }
-
-  .hn-cifras {
-    gap: 12px;
-  }
-
-  .hn-cifra__valor {
-    font-size: 30px;
-  }
-}
-
-/* ── Ajustes finales ───────────────────────────────────── */
-/* En la home, el pie se alinea con el contenido (1240 px, márgenes 6 %) */
-body.pagina-home .site-footer__inner {
-  width: 88%;
-  max-width: 1240px;
-  padding-inline: 0;
-}
-
-/* Enlaces dentro del formulario (fondo blanco): acento, 6,5:1 */
-.hn-itinerario__form a {
-  color: var(--petroleo);
-}
-
-/* ── Botón secundario (sobre fondo claro) ──────────────── */
-.hn-btn.hn-btn--borde-petroleo {
-  background: transparent;
-  border-color: var(--texto);
-  color: var(--texto);
-}
-
-.hn-btn.hn-btn--borde-petroleo:hover {
-  background: rgba(var(--petroleo-oscuro-rgb), .06);
-  color: var(--texto);
-}
-
-/* ── Pedir itinerario: videollamada y tiempo de respuesta ── */
-.hn-itinerario__llamada {
-  margin: 20px 0 0;
-}
-
-.hn-itinerario__botones {
-  margin: 16px 0 24px;
-}
-
-.hn-itinerario__respuesta {
-  margin: 12px 0 0;
-  text-align: center;
-}
-
-/* ── 7b. Cómo reservar ─────────────────────────────────── */
-/* Se separa del formulario, también sobre blanco, con una línea fina */
-#como-reservar + .hn-seccion {
-  border-top: 1px solid var(--linea-clara);
-}
-
+/* ── 12. Cómo reservar ─────────────────────────────────── */
 .hn-pasos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(24px, 3vw, 40px);
+  gap: clamp(32px, 5vw, 80px);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.hn-paso {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .hn-paso__num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--petroleo);
-  color: var(--paper);
-  font-family: var(--font-family-heading);
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.hn-paso__texto {
-  margin: 0;
-  font-size: 19px;
-  line-height: 1.6;
-  color: var(--texto-2);
-}
-
-.hn-paso__texto strong {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 20px;
   font-family: var(--font-family-heading);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--texto);
+  font-size: clamp(64px, 7vw, 104px);
+  font-weight: 300;
+  line-height: .9;
+  letter-spacing: -.03em;
+  color: var(--jade);
 }
 
-/* ── Preguntas frecuentes (desplegables) ───────────────── */
 .hn-faq {
   max-width: 860px;
-  margin-top: clamp(56px, 7vw, 88px);
+  margin-top: calc(var(--hn-sep) * 2);
 }
 
 .hn-faq__titulo {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .hn-faq .desplegable {
@@ -1028,7 +1014,6 @@ body.pagina-home .site-footer__inner {
   border-top: 1px solid var(--linea-clara);
 }
 
-/* Colores de los desplegables de la home (la base está en Desplegable.css) */
 .hn-faq .desplegable__boton {
   color: var(--texto);
 }
@@ -1039,30 +1024,339 @@ body.pagina-home .site-footer__inner {
 
 .hn-faq .desplegable__signo::before,
 .hn-faq .desplegable__signo::after {
-  background: var(--petroleo);
+  height: 1px;
+  background: var(--jade);
 }
 
 .hn-faq .desplegable__panel p {
+  max-width: 62ch;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--texto-2);
 }
 
+/* Formulario del itinerario: sin tarjeta, controles finos */
+.site-main > .hn-seccion--pegada {
+  padding-top: 0;
+}
+
+.hn-itinerario {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(40px, 7vw, 112px);
+  align-items: start;
+  padding-top: calc(var(--hn-sep) * 2);
+  border-top: 1px solid var(--linea-clara);
+}
+
+.hn-itinerario .hn-h2 {
+  font-size: clamp(32px, 3.6vw, 52px);
+}
+
+.hn-entradilla {
+  margin: 0 0 20px;
+  max-width: 62ch;
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--texto-2);
+}
+
+.hn-itinerario .form-label,
+.hn-itinerario .form-control,
+.hn-itinerario .form-consent-label {
+  font-size: 18px;
+}
+
+.hn-itinerario .form-control {
+  border: 1px solid var(--border-input);
+  border-radius: 2px;
+  background: var(--paper);
+}
+
+.hn-itinerario .form-control:focus,
+.hn-itinerario .form-control:focus-visible {
+  border-color: var(--texto);
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.hn-itinerario .form-control--error {
+  border-color: #B3401F;
+}
+
+.hn-ayuda {
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--texto-2);
+}
+
+.hn-select {
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.hn-itinerario__form a {
+  color: var(--jade);
+}
+
+.hn-itinerario__llamada {
+  margin: 24px 0 0;
+}
+
+.hn-itinerario__botones {
+  margin: 16px 0 24px;
+}
+
+.hn-itinerario__respuesta {
+  margin: 14px 0 0;
+  text-align: center;
+}
+
+/* ── 13. Cierre ────────────────────────────────────────── */
+.site-main > .hn-cierre {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80vh;
+  min-height: 80svh;
+  margin-top: var(--hn-sep);
+  padding: 200px 0 120px;
+  overflow: hidden;
+  background: var(--petroleo-oscuro);
+  color: var(--paper);
+  --focus: #FFFFFF;
+}
+
+.hn-cierre__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.hn-cierre__contenido {
+  position: relative;
+}
+
+.hn-cierre__contenido::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -200px;
+  bottom: -120px;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  background: linear-gradient(to top,
+    rgba(var(--hn-velo), .8) 0,
+    rgba(var(--hn-velo), .66) calc(100% - 200px),
+    rgba(var(--hn-velo), 0) 100%);
+}
+
+.hn-cierre .hn-h2 {
+  max-width: 18ch;
+  color: var(--paper);
+}
+
+/* ── Movimiento: fundido con ligero desplazamiento ─────── */
+/* .hn-anima solo la pone Home.jsx si hay IntersectionObserver y no se
+   pide reducir el movimiento: sin JS todo se ve desde el principio. */
+.hn-anima .hn-revela {
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.hn-anima .hn-revela:not(.hn-visible) {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hn-anima .hn-revela:not(.hn-visible) {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hn-enlace--flecha:hover .hn-flecha {
+    transform: none;
+  }
+}
+
+/* ── Pie en la home: alineado con el contenido ─────────── */
+/* La frase de cierre del pie ya es el H2 del bloque de cierre que tiene
+   justo encima: en la home no se repite. */
+body.pagina-home .site-footer__frase {
+  display: none;
+}
+
+body.pagina-home .site-footer__inner,
+body.pagina-home .site-footer__frase {
+  width: 88%;
+  max-width: 1240px;
+  padding-inline: 0;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .hn-resenas__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 860px) {
+  .hn-doble,
+  .hn-dos,
+  .hn-nosotras,
+  .hn-itinerario,
+  .hn-parada,
+  .hn-parada--derecha {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hn-doble__texto,
+  .hn-nosotras__texto,
+  .hn-parada__texto {
+    width: 88%;
+    margin-inline: auto;
+    padding: 48px 0 0;
+  }
+
+  .hn-parada--derecha .hn-parada__foto {
+    order: 0;
+  }
+
+  .hn-doble__foto {
+    aspect-ratio: 4 / 5;
+    max-height: 80svh;
+  }
+
   .hn-pasos {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .hn-paso {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .hn-paso__num {
-    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    align-items: baseline;
   }
 }
 
 @media (max-width: 760px) {
-  .hn-paso__texto {
+  .site-main > .hn-hero {
+    padding: 128px 0 104px;
+  }
+
+  .hn-hero__pausa {
+    bottom: 24px;
+  }
+
+  .hn-hero__scroll {
+    display: none;
+  }
+
+  .hn-parrafo,
+  .hn-entradilla {
     font-size: 18px;
+  }
+
+  .hn-panoramica img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hn-sangre img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hn-botones .hn-btn {
+    width: 100%;
+  }
+
+  /* Paneles: foto arriba y texto debajo sobre fondo claro */
+  .hn-panel {
+    display: block;
+    min-height: 0;
+    background: var(--color-background);
+    color: var(--texto);
+    --focus: var(--jade);
+  }
+
+  .hn-panel + .hn-panel {
+    border-top: 0;
+  }
+
+  .hn-panel__foto {
+    position: static;
+    aspect-ratio: 4 / 5;
+    max-height: 70svh;
+    background: var(--petroleo-oscuro);
+  }
+
+  .hn-panel__texto {
+    padding: 40px 0 88px;
+  }
+
+  .hn-panel__texto::before {
+    display: none;
+  }
+
+  .hn-panel .hn-etiqueta {
+    color: var(--jade);
+  }
+
+  .hn-panel .hn-h2,
+  .hn-panel .hn-lema {
+    color: var(--texto);
+  }
+
+  .hn-panel .hn-parrafo {
+    color: var(--texto-2);
+  }
+
+  .hn-panel .hn-enlace {
+    color: var(--jade);
+  }
+
+  .hn-panel .hn-enlace:hover {
+    color: var(--color-link-hover);
+  }
+
+  /* Galería: dos columnas, una foto ancha cada tres */
+  .hn-mosaico {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 44vw;
+    gap: 4px;
+    padding: 0 4px;
+  }
+
+  .hn-mosaico__item {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  .hn-mosaico__item:nth-child(3n + 1) {
+    grid-column: span 2 !important;
+    grid-row: span 1 !important;
+  }
+
+  .hn-visor {
+    padding: 72px 16px 96px;
+  }
+
+  .hn-visor__flecha {
+    top: auto;
+    bottom: 20px;
+    margin-top: 0;
+  }
+
+  .hn-visor__figura img {
+    max-height: calc(100dvh - 300px);
+  }
+
+  .site-main > .hn-cierre {
+    padding: 160px 0 96px;
   }
 }

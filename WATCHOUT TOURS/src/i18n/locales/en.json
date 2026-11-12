@@ -60,158 +60,195 @@
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
-      "etiqueta": "New Zealand with all your senses",
-      "h1": "The trip you’ve been dreaming of for years.",
-      "sub": "Specialists in journeys for blind and low-vision travellers, 60+ journeys and tailor-made trips. Groups of 6 at most, almost every experience private, and Moni and Sylvie by your side from start to finish.",
-      "ctaViajes": "Discover our journeys",
-      "ctaItinerario": "Get the itinerary"
+      "etiqueta": "A local travel company in New Zealand",
+      "h1": "There's a place on the other side of the world that changes you forever. We live here.",
+      "sub": "We're Moni and Sylvie. We left Barcelona for a dream called New Zealand and made it our home. Now we open its doors to you, with exclusive journeys we share with you, every single day.",
+      "cta1": "I want to live it",
+      "cta2": "Talk to Moni and Sylvie",
+      "pausar": "Pause video",
+      "reproducir": "Play video"
     },
     "franja": {
-      "etiqueta": "Next group departure",
-      "fechas": "1–15 March 2027",
-      "plazas": "Only 6 places · Other dates? Ask us",
-      "cta": "Book your place"
+      "frase": "Everyone who comes to New Zealand leaves a little different. We came, and never found a way to leave."
     },
-    "nz": {
-      "etiqueta": "The other side of the world",
-      "titulo": "New Zealand is that place you’ve always wanted to experience.",
-      "texto": "Steaming volcanoes, fiords where waterfalls tumble into the sea, the Shire from The Lord of the Rings and a Māori culture that welcomes you with a hongi. We’ve lived here for eight years, and we’ll take you to the New Zealand we truly know.",
-      "fotos": [
-        {
-          "id": "tierra-media",
-          "titulo": "Middle-earth",
-          "frase": "A private visit to Hobbiton and lunch at the Green Dragon Inn.",
-          "alt": "Hobbiton: hobbit holes with round doors among green hills"
-        },
-        {
-          "id": "maori",
-          "titulo": "Māori culture",
-          "frase": "A day in Rotorua with a Māori guide: haka, hāngi and hot springs.",
-          "alt": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge"
-        },
-        {
-          "id": "queenstown",
-          "titulo": "Queenstown",
-          "frase": "Mountains rising over the lake and the century-old TSS Earnslaw.",
-          "alt": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind"
-        },
-        {
-          "id": "milford",
-          "titulo": "Milford Sound",
-          "frase": "The eighth wonder of the world: a cruise through the fiord, with waterfall spray on your face.",
-          "alt": "Milford Sound: sheer rock walls rising straight out of the fiord"
-        },
-        {
-          "id": "kaikoura",
-          "titulo": "Kaikōura",
-          "frase": "Sperm whales, dolphins and seals in the wild and, with luck, orcas.",
-          "alt": "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky"
-        }
-      ]
+    "pais": {
+      "etiqueta": "The country",
+      "titulo": "The journey you've been dreaming of for half your life.",
+      "texto": "Picture waking up to a turquoise lake framed by snow-capped peaks. Feeling the spray of a waterfall tumbling from the top of a fiord. Hearing a haka just steps away and feeling your skin prickle. New Zealand is something you feel in your body, and it stays with you forever.",
+      "imgAlt": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge",
+      "panoAlt": "Milford Sound: sheer rock walls rising straight out of the fiord",
+      "pie": "Milford Sound, Fiordland"
+    },
+    "porque": {
+      "etiqueta": "Why travel with us",
+      "titulo": "Only two people in the world can offer you this journey.",
+      "texto": "This country is our home. We know its roads, its silences and its people, and we've brought the very best together in intimate, exclusive journeys: very small groups, private experiences and 4- and 5-star hotels.",
+      "cita": "But the real luxury is something else: Moni and Sylvie by your side every day, taking care of every detail, from the first hug at the airport to the final toast.",
+      "imgAlt": "Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them"
     },
     "viajes": {
-      "etiqueta": "Our journeys",
-      "titulo": "Now, with us, that trip becomes real.",
+      "titulo": "Three ways to live it",
       "ciegos": {
-        "etiqueta": "Group · 6 travellers at most",
+        "etiqueta": "Small group",
         "titulo": "Journeys for blind and low-vision travellers",
-        "destacado": "Not all vision needs eyes.",
-        "texto": "A journey designed to experience New Zealand through your hands, your ears and your skin: the heat of the geysers, Māori song, the wind as you paraglide. Two dedicated guides and as much adventure as you want.",
-        "cta": "Discover these journeys",
-        "audios": "Listen to our audio and the paragliding video",
+        "lema": "Not all vision needs eyes.",
+        "texto": "You'll feel the warmth of volcanic earth under your hands. Hear the water of a fiord break all around you. Fly over Queenstown with the wind on your face. We've designed every moment so you can live all of New Zealand, without limits, with the two of us beside you.",
+        "enlace": "Discover these journeys",
         "imgAlt": "A traveller with a white cane and a companion holding a recording microphone by a wooden fence where several sheep lean over, on a farm among green hills"
       },
       "sesenta": {
-        "etiqueta": "Group · 6 travellers at most",
-        "titulo": "60+ Journeys",
-        "destacado": "New Zealand has been on your list for years. This is the moment.",
-        "texto": "Fifteen days at an easy pace, 4 and 5-star hotels, meals included and us taking care of everything, from the airport to the farewell. For couples, friends and solo travellers.",
-        "cta": "Discover 60+ Journeys",
-        "imgAlt": "Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them"
+        "etiqueta": "Small group",
+        "titulo": "Journeys for over-60s",
+        "lema": "You've earned it.",
+        "texto": "A lifetime waiting for this trip. Now it's time to live it the way you deserve: no rush, no worries, 4- and 5-star hotels and two friends on the ground looking after you every step of the way. All you have to do is let yourself be carried away.",
+        "enlace": "Discover our 60+ journeys",
+        "imgAlt": "Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy"
       },
       "privado": {
-        "etiqueta": "Tailor-made · Your dates",
+        "etiqueta": "Tailor-made",
         "titulo": "Private journeys",
-        "texto": "Your own New Zealand trip, just for you and yours. You choose the dates and the pace, and we’re with you from start to finish.",
-        "cta": "Design your private trip"
+        "lema": "Your dream, made to measure.",
+        "texto": "An anniversary, a family celebration, that promise you made each other years ago. Tell us how you picture it and we'll create an exclusive, one-of-a-kind journey designed just for you.",
+        "enlace": "Design your private journey",
+        "imgAlt": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind"
       }
     },
     "salida": {
       "etiqueta": "Next group departure",
-      "titulo": "1–15 March 2027",
-      "texto1": "Aotearoa through the senses. Fifteen days and fourteen nights from north to south, with the inter-island flight included.",
-      "texto2": "Places are allocated in order of booking. Once all six are taken, the group closes.",
-      "reservar": "Book your place",
-      "itinerario": "Get the day-by-day itinerary",
-      "otras": {
-        "titulo": "Do these dates not suit you?",
-        "texto": "Tell us when you’d like to travel. We’ll let you know about upcoming departures or put a group together on the dates you suggest.",
-        "enlace": "Suggest your dates"
-      },
-      "rutaTitulo": "Highlights of the route",
+      "titulo": "Fifteen days you'll remember for the rest of your life.",
+      "texto": "Aotearoa through the senses · 15 days in New Zealand, 1-15 March 2027. Departure from Spain on 27 February. From the volcanoes of the North Island to the fiords and glaciers of the South. Places are very limited and allocated in order of booking.",
+      "itinerario": "Request the itinerary",
+      "fechas": "Suggest your dates",
+      "imgAlt": "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it"
+    },
+    "ruta": {
+      "titulo": "North to south, a whole country",
       "paradas": [
         {
+          "id": "auckland",
           "nombre": "Auckland",
-          "gancho": "The City of Sails",
-          "frase": "We sail the harbour on a yacht just for the group."
+          "frase": "The City of Sails from the water, on a sailing boat just for us.",
+          "alt": "A sailing boat crosses Auckland harbour with the city skyline behind"
         },
         {
+          "id": "hobbiton-rotorua",
           "nombre": "Hobbiton & Rotorua",
-          "gancho": "The Shire and the Māori heartland",
-          "frase": "Hobbiton in private, geysers and a full day with a Māori guide."
+          "frase": "The Shire behind closed doors, and earth that boils beneath your feet, guided by a Māori host.",
+          "alt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush"
         },
         {
+          "id": "queenstown",
           "nombre": "Queenstown",
-          "gancho": "The adventure capital of the world",
-          "frase": "Bungy, jet boating and paragliding for the daring, and Lake Wakatipu aboard the century-old TSS Earnslaw for those who prefer calm."
+          "frase": "The adventure capital of the world: leap into the void, or cross the lake on a century-old steamship.",
+          "alt": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind"
         },
         {
+          "id": "milford",
           "nombre": "Milford Sound",
-          "gancho": "The eighth wonder of the world",
-          "frase": "So Rudyard Kipling called it. A cruise through the fiord, with waterfall spray on your face."
+          "frase": "The fiord Kipling called the eighth wonder of the world. The waterfalls fall so close they mist your face.",
+          "alt": "Milford Sound: sheer rock walls rising straight out of the fiord"
         },
         {
+          "id": "aoraki",
           "nombre": "Aoraki / Mount Cook",
-          "gancho": "New Zealand’s highest mountain",
-          "frase": "3,724 metres of ice and rock above turquoise glacial lakes."
+          "frase": "The country's highest peak, above glacial lakes of pure turquoise.",
+          "alt": "Snow-covered Aoraki / Mount Cook above the turquoise water of a glacial lake"
         },
         {
+          "id": "tekapo",
           "nombre": "Tekapo",
-          "gancho": "One of the clearest skies on the planet",
-          "frase": "An international dark sky reserve: the stars, told around a campfire."
+          "frase": "A campfire, a blanket and one of the clearest skies on the planet.",
+          "alt": "A night sky full of stars over Lake Tekapo"
         },
         {
+          "id": "kaikoura",
           "nombre": "Kaikōura",
-          "gancho": "A wildlife paradise",
-          "frase": "Sperm whales, dolphins and seals in the wild and, with luck, orcas."
+          "frase": "Sperm whales, dolphins and seals in the wild, with snowy mountains plunging into the sea.",
+          "alt": "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky"
         }
       ]
     },
+    "galeria": {
+      "titulo": "Gallery",
+      "ampliar": "Enlarge photo:",
+      "visor": "Photo viewer",
+      "cerrar": "Close the viewer",
+      "anterior": "Previous photo",
+      "siguiente": "Next photo",
+      "contador": "Photo {{n}} of {{total}}",
+      "alts": [
+        "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
+        "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it",
+        "Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy",
+        "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind",
+        "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky",
+        "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge",
+        "Photograph from a Watchout Tours journey around New Zealand",
+        "Photograph from a Watchout Tours journey around New Zealand",
+        "Photograph from a Watchout Tours journey around New Zealand",
+        "Photograph from a Watchout Tours journey around New Zealand",
+        "Photograph from a Watchout Tours journey around New Zealand",
+        "Photograph from a Watchout Tours journey around New Zealand"
+      ]
+    },
+    "tiaki": {
+      "etiqueta": "Travelling with care",
+      "titulo": "This land welcomed us. Caring for it is how we say thank you.",
+      "texto": "Tiaki means to care: for the land, its culture and everyone who arrives. It's New Zealand's promise, and ours on every journey.",
+      "enlace": "Discover the Tiaki Promise",
+      "imgAlt": "Official Tiaki Promise infographic: care for land, sea and nature, travel safely and respect culture"
+    },
     "nosotras": {
-      "etiqueta": "About us",
-      "titulo": "Moni and Sylvie. From Barcelona, living in New Zealand for eight years.",
-      "texto": "Sylvie has travelled to nearly 50 countries and spent years managing hotels here. Moni is a coach who makes a group feel at home from day one. We’ve travelled every route ourselves first, and we’re with you on every trip from start to finish.",
-      "cifras": [
-        {
-          "valor": "8 years",
-          "texto": "living in New Zealand"
-        },
-        {
-          "valor": "2",
-          "texto": "guides on every trip"
-        },
-        {
-          "valor": "6",
-          "texto": "travellers at most"
-        }
-      ],
+      "etiqueta": "Who we are",
+      "titulo": "We fell in love with a country. And we stayed.",
+      "texto": "We came from Barcelona chasing a dream, and New Zealand gave it back to us many times over. This is where we found our home, and where we still feel the same wonder as on day one. WatchOut Tours was born from wanting to share it: we want you to feel what we felt the very first time.",
       "enlace": "Read our story",
       "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua"
     },
     "resenas": {
       "etiqueta": "Reviews",
-      "titulo": "What our travellers say.",
+      "titulo": "What you feel, you never forget.",
       "todas": "Read all reviews"
+    },
+    "reservar": {
+      "etiqueta": "How to book",
+      "titulo": "Your dream is closer than you think. Let's talk.",
+      "pasos": [
+        "Request the itinerary, with every day and everything included.",
+        "A video call with Moni and Sylvie to answer all your questions.",
+        "Book your place. We’ll walk you through the terms in detail."
+      ],
+      "faqTitulo": "Frequently asked questions",
+      "faq": [
+        {
+          "q": "What does the trip include?",
+          "a": "Accommodation in 4 and 5-star hotels, breakfast and dinner every day, every activity on the itinerary, transport along the whole route, the inter-island flight, two guides for the whole trip and 24-hour assistance. It doesn’t include international flights (we’ll help you book them) or travel insurance."
+        },
+        {
+          "q": "What if the group doesn’t fill up?",
+          "a": "If the group is smaller when bookings close, we’ll offer you the choice of travelling anyway with a supplement or a full refund of everything you’ve paid. It’s up to you."
+        },
+        {
+          "q": "How do I book and pay?",
+          "a": "We’ll send you all the booking and payment conditions with the itinerary, and go through them calmly with you on the video call."
+        },
+        {
+          "q": "Do I need travel insurance?",
+          "a": "Yes, it’s compulsory, with medical and cancellation cover. We’ll help you choose one."
+        },
+        {
+          "q": "How fit do I need to be?",
+          "a": "There are walks almost every day, most of them short and on easy ground, and the odd day with a longer walk. We’ll talk it through before you book, so you can feel at ease."
+        },
+        {
+          "q": "Can I travel on my own?",
+          "a": "Yes. You can have a single room with a supplement, or share with another member of the group who’s also travelling on their own."
+        },
+        {
+          "q": "What if I don’t speak English?",
+          "a": "You don’t need to: the whole trip is in Spanish, with us."
+        }
+      ]
     },
     "itinerario": {
       "titulo": "Start with the itinerary.",
@@ -240,6 +277,10 @@
       "errViaje": "Choose which journey interests you.",
       "videollamadaLinea": "Would you rather talk to us? Book a 30-minute video call with Moni and Sylvie, with no commitment.",
       "respuesta": "We’ll get back to you within 24 hours."
+    },
+    "cierre": {
+      "frase": "New Zealand is waiting for you. So are we.",
+      "boton": "Request the itinerary"
     },
     "testi": {
       "eyebrow": "What they say",
@@ -275,55 +316,6 @@
       "card4Tag": "A Māori chant to the country’s most famous tree",
       "card4Desc": "A Māori chant welcoming the kauri, New Zealand’s giant, sacred tree.",
       "card4Label": "Māori chant welcoming the kauri"
-    },
-    "reservar": {
-      "etiqueta": "Step by step",
-      "titulo": "How to book",
-      "pasos": [
-        {
-          "titulo": "Ask for the itinerary.",
-          "texto": "We’ll send it to you with every day and everything included."
-        },
-        {
-          "titulo": "Let’s talk.",
-          "texto": "A video call with Moni and Sylvie to answer all your questions."
-        },
-        {
-          "titulo": "Book your place.",
-          "texto": "We explain all the conditions in the itinerary and on the video call."
-        }
-      ],
-      "faqTitulo": "Frequently asked questions",
-      "faq": [
-        {
-          "q": "What does the trip include?",
-          "a": "Accommodation in 4 and 5-star hotels, breakfast and dinner every day, every activity on the itinerary, transport along the whole route, the inter-island flight, two guides for the whole trip and 24-hour assistance. It doesn’t include international flights (we’ll help you book them) or travel insurance."
-        },
-        {
-          "q": "What if the group doesn’t fill up?",
-          "a": "If the group is smaller when bookings close, we’ll offer you the choice of travelling anyway with a supplement or a full refund of everything you’ve paid. It’s up to you."
-        },
-        {
-          "q": "How do I book and pay?",
-          "a": "We’ll send you all the booking and payment conditions with the itinerary, and go through them calmly with you on the video call."
-        },
-        {
-          "q": "Do I need travel insurance?",
-          "a": "Yes, it’s compulsory, with medical and cancellation cover. We’ll help you choose one."
-        },
-        {
-          "q": "How fit do I need to be?",
-          "a": "There are walks almost every day, most of them short and on easy ground, and the odd day with a longer walk. We’ll talk it through before you book, so you can feel at ease."
-        },
-        {
-          "q": "Can I travel on my own?",
-          "a": "Yes. You can have a single room with a supplement, or share with another member of the group who’s also travelling on their own."
-        },
-        {
-          "q": "What if I don’t speak English?",
-          "a": "You don’t need to: the whole trip is in Spanish, with us."
-        }
-      ]
     }
   },
   "masAlla": {

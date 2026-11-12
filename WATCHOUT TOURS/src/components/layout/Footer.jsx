@@ -10,6 +10,8 @@ export function Footer() {
 
   return (
     <footer className="site-footer" role="contentinfo">
+      {/* Frase de cierre de la marca (texto en home.cierre.frase) */}
+      <p className="site-footer__frase wrap">{t('home.cierre.frase')}</p>
       <div className="site-footer__inner wrap">
 
         {/* Columna marca */}

@@ -135,6 +135,17 @@ export function Header() {
   const esHome = stripLang(pathname) === '/'
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleRef = useRef(null)
+  // En la home, al bajar de la parte alta del hero la cabecera pasa de
+  // transparente (texto blanco sobre la foto) a fondo claro con texto tinta.
+  const [solida, setSolida] = useState(false)
+
+  useEffect(() => {
+    if (!esHome) { setSolida(false); return }
+    const comprobar = () => setSolida(window.scrollY > 24)
+    comprobar()
+    window.addEventListener('scroll', comprobar, { passive: true })
+    return () => window.removeEventListener('scroll', comprobar)
+  }, [esHome])
 
   // Con el menú móvil abierto, el botón flotante de WhatsApp se oculta
   // (ver .menu-abierto en global.css) para no tapar las opciones.
@@ -152,7 +163,10 @@ export function Header() {
   }
 
   return (
-    <header className={`site-header${esHome ? ' site-header--home' : ''}`} role="banner">
+    <header
+      className={`site-header${esHome ? ' site-header--home' : ''}${esHome && (solida || menuOpen) ? ' site-header--solida' : ''}`}
+      role="banner"
+    >
       <div className="wrap nav-inner">
         {/* El enlace ya tiene texto visible; la imagen es decorativa */}
         <Link to={localize('/')} className="brand-badge" aria-label={t('nav.brandHome')}>
