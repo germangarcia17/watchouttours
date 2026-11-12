@@ -32,9 +32,9 @@ insert into site_images (section, key, src, image_alt, image_alt_en) values
   ('home', 'salida-foto', null,
    'Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás',
    'Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them'),
-  ('home', 'tiaki-fondo', null,
-   'Delfines oscuros saltando frente a la costa de Kaikōura, con las montañas nevadas al fondo',
-   'Dusky dolphins leaping off the Kaikōura coast, with snow-capped mountains behind'),
+  ('home', 'tiaki-tohu', null,
+   'Tohu de Tiaki, Care for New Zealand, sobre un delfín saltando en el mar',
+   'Tiaki, Care for New Zealand, emblem over a dolphin leaping from the sea'),
   ('home', 'destino-rotorua', null,
    'El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa',
    'The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush'),
@@ -99,7 +99,7 @@ on conflict (section, key) do nothing;
 delete from site_images
 where section = 'home'
   and src is null
-  and key in ('porque-grupo', 'tiaki-infografia', 'ruta-auckland', 'ruta-hobbiton-rotorua',
+  and key in ('porque-grupo', 'tiaki-infografia', 'tiaki-fondo', 'ruta-auckland', 'ruta-hobbiton-rotorua',
               'ruta-queenstown', 'ruta-milford', 'ruta-aoraki', 'ruta-tekapo', 'ruta-kaikoura');
 
 -- Comprobación:

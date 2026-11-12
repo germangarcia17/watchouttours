@@ -9,7 +9,7 @@
 
    Diferencias deliberadas con la maqueta, todas por contraste (WCAG AA):
    · pies de foto en #6B6F76 (4,8:1) en lugar de #8A8E95 (3,2:1);
-   · velos del hero, los paneles, Tiaki y el cierre reforzados lo justo
+   · velos del hero, los paneles y el cierre reforzados lo justo
      para que el texto cumpla también sobre una foto muy clara.
    ──────────────────────────────────────────────────────────────────────── */
 
@@ -595,30 +595,24 @@
   --focus: #FFFFFF;
 }
 
+/* Imagen oficial: 16:9 a todo el ancho, entera (contain: nunca se recorta
+   el símbolo), sin texto ni velo encima */
 .hn-tiaki__foto {
-  height: 88vh;
-  min-height: 640px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #15171A;
 }
 
-.hn-tiaki__velo {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(21, 23, 26, 1) 0%, rgba(21, 23, 26, .7) 35%, rgba(21, 23, 26, .62) 52%, rgba(21, 23, 26, .1) 80%);
-}
-
-.hn-tiaki__cabecera {
-  position: absolute;
-  left: var(--hn-x);
-  right: var(--hn-x);
-  bottom: 70px;
-}
-
-.hn-tiaki__cabecera .hn-h1 {
-  margin-bottom: 0;
+.hn-tiaki__foto > img {
+  object-fit: contain;
 }
 
 .hn-tiaki__banda {
-  padding: 40px var(--hn-x) 150px;
+  padding: 110px var(--hn-x) 150px;
+}
+
+.hn-tiaki__banda .hn-h1 {
+  margin: 22px 0 48px;
 }
 
 .hn-tiaki__texto {
@@ -1274,17 +1268,12 @@ body.visor-abierto {
   }
 
   /* Tiaki */
-  .hn-tiaki__foto {
-    height: 78vh;
-    min-height: 520px;
-  }
-
-  .hn-tiaki__cabecera {
-    bottom: 40px;
-  }
-
   .hn-tiaki__banda {
-    padding: 32px var(--hn-x) 96px;
+    padding: 72px var(--hn-x) 96px;
+  }
+
+  .hn-tiaki__banda .hn-h1 {
+    margin-bottom: 36px;
   }
 
   .hn-tiaki__texto {

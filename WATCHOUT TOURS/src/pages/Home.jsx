@@ -29,6 +29,7 @@ import talla from '../images/blind-travel-maori-carving.webp'
 import parapente from '../images/parapente-poster.jpg'
 import kayak from '../images/kayak-kaikoura.jpg'
 import haka from '../images/haka-cultura-maori.jpg'
+import tiakiTohu from '../images/home/tiaki-tohu.jpg'
 
 const una = (src, w, h) => variantes([{ src, w, h }])
 const GEISER = variantes([{ src: hero900, w: 900, h: 675 }, { src: hero1400, w: 1400, h: 1050 }, { src: hero1800, w: 1800, h: 1350 }])
@@ -47,7 +48,9 @@ const IMG = {
   'panel-sesenta': una(secuoyas, 844, 1125),
   'panel-ciegos': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
   'salida-foto': variantes([{ src: sesenta500, w: 500, h: 666 }, { src: sesenta1000, w: 1000, h: 1333 }]),
-  'tiaki-fondo': null,
+  // Imagen oficial de Tiaki (Tourism New Zealand). Licencia WorldWide: solo
+  // web y medios no pagados. No se recorta, ni se retoca, ni lleva nada encima.
+  'tiaki-tohu': una(tiakiTohu, 2000, 1125),
   'destino-rotorua': GEISER,
   'destino-fiordland': null,
   'destino-aoraki': null,
@@ -315,20 +318,17 @@ function Pilares() {
   )
 }
 
-/* ── 7. Tiaki: foto a sangre + banda oscura con los tres compromisos ─── */
+/* ── 7. Tiaki: imagen oficial a todo el ancho (16:9, sin texto ni velo
+   encima) y, debajo, banda oscura con el texto y los tres compromisos ── */
 function Tiaki() {
   const { t } = useTranslation()
   const items = t('home.tiaki.items', { returnObjects: true })
   return (
     <section id="tiaki" className="hn-tiaki" aria-labelledby="hn-tiaki-titulo">
-      <Foto clave="tiaki-fondo" sizes="100vw" className="hn-tiaki__foto">
-        <div className="hn-tiaki__velo" aria-hidden="true" />
-        <div className="hn-tiaki__cabecera">
-          <Etiqueta clara>{t('home.tiaki.etiqueta')}</Etiqueta>
-          <h2 id="hn-tiaki-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.tiaki.titulo" /></h2>
-        </div>
-      </Foto>
+      <Foto clave="tiaki-tohu" sizes="100vw" className="hn-tiaki__foto" />
       <div className="hn-tiaki__banda">
+        <Etiqueta clara>{t('home.tiaki.etiqueta')}</Etiqueta>
+        <h2 id="hn-tiaki-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.tiaki.titulo" /></h2>
         <p className="hn-tiaki__texto">{t('home.tiaki.texto')}</p>
         <ol className="hn-columnas hn-compromisos" role="list">
           {items.map((c, i) => (
