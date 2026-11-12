@@ -1,118 +1,141 @@
+/* ── Cabecera ────────────────────────────────────────────
+   · Páginas interiores: banda oscura fija arriba, logo y texto en blanco.
+   · Home (.site-header--home): transparente sobre el hero, con el logo y
+     el texto en blanco; al hacer scroll (.site-header--solida) pasa a
+     fondo #FAF8F4 con línea inferior, logo principal y texto tinta.
+   El menú se pliega en un botón por debajo de 1340 px. */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--night, #0E5F73);
+  background: var(--night);
   border-bottom: 1px solid rgba(255, 255, 255, .15);
+  color: #FAF8F4;
+  --cab-linea: rgba(250, 248, 244, .55);
   --focus: #FFFFFF;
+}
+
+.site-header--home {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom-color: transparent;
+  transition: background-color .25s ease, border-color .25s ease;
+}
+
+.site-header--home.site-header--solida {
+  background: #FAF8F4;
+  border-bottom-color: var(--line);
+  color: var(--ink);
+  --cab-linea: var(--ink);
+  --focus: #1F6B56;
 }
 
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 20px;
+  gap: 24px;
+  padding: 16px 7%;
+  transition: padding .25s ease;
 }
 
-.brand-badge {
+/* Sobre el hero, el aire de la maqueta */
+.site-header--home:not(.site-header--solida) .nav-inner {
+  padding-block: 30px;
+}
+
+/* ── Logo ── */
+.brand-logo {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   min-height: 44px;
-  gap: 12px;
-  text-decoration: none;
-  --focus: #FFFFFF;
-}
-
-.brand-badge:hover {
   text-decoration: none;
 }
 
-/* Emblema circular sobre fondo blanco */
-.brand-badge__circle {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--paper-deep, #F4F1EA);
-  border: 1px solid var(--line, #CFC4A8);
-  box-shadow: 0 2px 6px rgba(21, 20, 15, .08);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
+.brand-logo__img {
+  display: block;
+  width: 200px;
+  height: auto;
 }
 
-.brand-badge__img {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
+.brand-logo__img--tinta,
+.site-header--solida .brand-logo__img--blanco {
+  display: none;
+}
+
+.site-header--solida .brand-logo__img--tinta {
   display: block;
 }
 
-.brand-word-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.brand-word {
-  font-family: var(--font-family-heading);
-  font-weight: 400;
-  font-size: 22px;
-  color: var(--paper, #FFFFFF);
-  letter-spacing: 0;
-  white-space: nowrap;
-  line-height: 1;
-}
-
-/* Guiño decorativo: el wordmark transcrito a braille. No es braille
-   funcional (nadie lo "lee" en pantalla) — es un elemento de marca,
-   por eso va aria-hidden en el JSX. */
-.brand-word-braille {
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: #F0C868;
-  line-height: 1;
-  white-space: nowrap;
-}
-
+/* ── Menú ── */
 .nav-links {
   display: flex;
-  gap: 28px;
-  font-size: 17px;
-  font-weight: 500;
-  color: #D8D2C2;
+  align-items: center;
+  gap: clamp(20px, 2.4vw, 34px);
+  margin-left: auto;
+  font-size: 14px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: #D8D2C2;
-  border-bottom: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
   /* Zona táctil de 44 px de alto sin cambiar el aspecto */
   min-height: 44px;
-  min-width: 44px;
+  padding-top: 2px;
+  border-bottom: 1px solid transparent;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color .2s ease;
+}
+
+.nav-link:hover,
+.nav-link--active {
+  border-bottom-color: currentColor;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Botón "Diseña tu viaje": con borde, como el botón fantasma de la maqueta */
+.header-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding-top: 2px;
-  transition: border-color .2s;
+  min-height: 44px;
+  padding: 11px 20px;
+  border: 1px solid var(--cab-linea);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 
-.nav-link:hover {
-  border-color: var(--amber, #F2A65A);
+.header-cta:hover {
+  background: #FAF8F4;
+  border-color: #FAF8F4;
+  color: var(--ink);
   text-decoration: none;
 }
 
-.nav-link--active {
-  font-weight: 700;
-  color: var(--paper, #FFFFFF);
-  border-color: var(--paper, #FFFFFF);
+.site-header--solida .header-cta {
+  background: #1F6B56;
+  border-color: #1F6B56;
+  color: #FFFFFF;
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.site-header--solida .header-cta:hover {
+  background: var(--color-btn-primary-hover);
+  border-color: var(--color-btn-primary-hover);
+  color: #FFFFFF;
 }
 
 .lang-switch {
@@ -121,200 +144,113 @@
   justify-content: center;
   min-width: 44px;
   min-height: 44px;
-  padding: 6px 10px;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: .04em;
-  color: var(--paper, #FFFFFF);
+  letter-spacing: .08em;
+  color: inherit;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, .4);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, .08);
-  transition: border-color .2s, background-color .2s;
 }
 
 .lang-switch:hover {
-  border-color: var(--paper, #FFFFFF);
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 .menu-toggle {
+  order: 3;
   display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--paper, #FFFFFF);
-  font-size: 1.5rem;
-  line-height: 1;
-  min-width: 44px;
-  min-height: 44px;
   align-items: center;
   justify-content: center;
-  padding: .25em;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
-@media (max-width: 760px) {
-  /* El wordmark completo + braille decorativo no entra junto al botón
-     de menú en pantallas de móvil reales (320-430px); se compacta el
-     bloque de marca para que el toggle quede siempre visible. */
+/* ── Menú plegado ── */
+@media (max-width: 1340px) {
+  .nav-inner,
+  .site-header--home:not(.site-header--solida) .nav-inner {
+    padding: 14px 6%;
+  }
+
+  .brand-logo__img {
+    width: 168px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .lang-switch {
+    margin-left: auto;
+  }
+
   .nav-inner {
-    padding-inline: 16px;
-  }
-
-  .brand-badge {
-    gap: 8px;
-  }
-
-  .brand-badge__circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .brand-badge__img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .brand-word {
-    font-size: 16px;
-  }
-
-  .brand-word-braille {
-    font-size: 9px;
-    letter-spacing: 1px;
+    gap: 4px;
   }
 
   .nav-links {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 100%;
     left: 0;
     right: 0;
-    z-index: 99;
     flex-direction: column;
-    background: var(--paper-deep, #DDD4BF);
-    padding: 1rem 28px;
+    align-items: stretch;
     gap: 0;
-    border-top: 1px solid var(--line, #CFC4A8);
-    box-shadow: 0 8px 24px rgba(0,0,0,.1);
+    margin: 0;
+    padding: 8px 6% 28px;
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    background: #FAF8F4;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    /* El menú abierto tiene fondo claro: el foco pasa a oscuro para verse */
+    --focus: #1F6B56;
   }
 
   .nav-links--open {
     display: flex;
-    /* El menú móvil tiene fondo claro: el foco pasa a oscuro para verse */
-    --focus: #1F6B56;
   }
 
   .nav-link {
-    padding-block: .75rem;
-    border-bottom: 1px solid var(--line, #CFC4A8);
-    font-size: 16px;
-    color: var(--ink-soft, #4A453B);
-  }
-
-  .nav-link--active {
-    color: var(--ink, #15140F);
-    border-color: var(--ink, #15140F);
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
-
-/* ── Desplegable "Viajes" ────────────────────────────── */
-/* Mismos colores, tipografía y subrayado que el resto de enlaces del menú;
-   en escritorio la lista flota sobre la cabecera con su mismo fondo. */
-.nav-dropdown {
-  position: relative;
-}
-
-.nav-dropdown__toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: none;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  font: inherit;
-  cursor: pointer;
-}
-
-.nav-dropdown__caret {
-  font-size: .8em;
-  transition: transform .2s;
-}
-
-.nav-dropdown__toggle[aria-expanded="true"] .nav-dropdown__caret {
-  transform: rotate(180deg);
-}
-
-.nav-dropdown__menu {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: -20px;
-  z-index: 101;
-  min-width: 240px;
-  margin: 0;
-  padding: 12px 20px;
-  list-style: none;
-  background: var(--night, #0E5F73);
-  border: 1px solid rgba(255, 255, 255, .15);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
-}
-
-.nav-dropdown__menu[hidden] {
-  display: none;
-}
-
-.nav-dropdown__menu li {
-  padding-block: 2px;
-}
-
-.nav-dropdown__link {
-  display: inline-flex;
-  white-space: nowrap;
-}
-
-@media (max-width: 760px) {
-  .nav-dropdown__toggle {
-    width: 100%;
-    justify-content: space-between;
-    padding-block: .75rem;
-    border-bottom: 1px solid var(--line, #CFC4A8);
-    font-size: 16px;
-    color: var(--ink-soft, #4A453B);
-  }
-
-  .nav-dropdown__toggle.nav-link--active {
-    color: var(--ink, #15140F);
-    border-color: var(--ink, #15140F);
-  }
-
-  /* Dentro del menú hamburguesa la lista no flota: va en línea, sangrada
-     bajo el botón. */
-  .nav-dropdown__menu {
-    position: static;
-    min-width: 0;
-    padding: 0 0 0 16px;
-    background: none;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .nav-dropdown__menu li {
-    padding-block: 0;
-  }
-
-  /* Los nombres largos ("Viajes para personas ciegas y con baja visión")
-     pasan a dos líneas en vez de salirse de la pantalla. */
-  .nav-dropdown__link {
-    display: block;
+    min-height: 56px;
+    border-bottom: 1px solid var(--line);
     white-space: normal;
-    overflow-wrap: break-word;
-    line-height: 1.35;
+  }
+
+  .nav-link:hover,
+  .nav-link--active {
+    border-bottom-color: var(--ink);
+  }
+
+  .nav-links .header-cta,
+  .nav-links .header-cta:hover {
+    margin-top: 24px;
+    min-height: 52px;
+    background: #1F6B56;
+    border-color: #1F6B56;
+    color: #FFFFFF;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-logo__img {
+    width: 148px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header--home,
+  .nav-inner {
+    transition: none;
   }
 }

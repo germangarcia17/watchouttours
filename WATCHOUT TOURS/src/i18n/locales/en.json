@@ -18,40 +18,34 @@
   },
   "nav": {
     "main": "Main navigation",
-    "brandHome": "Watchout Tours — Go to home",
-    "rutas": "Journeys",
-    "nosotras": "About us",
-    "resenas": "Reviews",
-    "blog": "Blog",
-    "contacto": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "switchLang": "Ver esta página en español",
-    "sinPrisa": "60+ Journeys",
-    "masAlla": "Journeys for blind and low-vision travellers",
-    "todas": "All experiences",
-    "itinerario": "Get the itinerary"
+    "privados": "Private journeys",
+    "grandesViajes": "Grand Journeys 60+",
+    "masAlla": "Beyond Sight",
+    "fundadoras": "Founders",
+    "disena": "Design your journey"
   },
   "footer": {
-    "brandHome": "Watchout Tours — Home",
-    "tagline": "Accessible travel specialists in New Zealand.",
-    "whatsapp": "Message us on WhatsApp",
-    "instagram": "Follow us on Instagram",
-    "colNosotras": "About",
-    "colViajes": "Journeys",
+    "colColecciones": "Collections",
+    "colMarca": "WatchOut Tours",
+    "colHablemos": "Let's talk",
     "colLegal": "Legal",
-    "sobreNosotras": "About us",
+    "fundadoras": "The founders",
+    "tiaki": "Responsible travel · Tiaki",
     "resenas": "Reviews",
-    "blog": "Blog",
-    "sinPrisa": "60+ Journeys",
-    "masAlla": "Journeys for blind and low-vision travellers",
-    "todasExperiencias": "All experiences",
-    "disenaViaje": "Plan your trip",
+    "diario": "Travel journal",
+    "contacto": "Contact",
+    "emailSr": "Email:",
+    "whatsapp": "WhatsApp +64 27 267 7006",
+    "instagram": "@watchouttours",
+    "instagramSr": "Instagram:",
     "accesibilidad": "Accessibility",
     "privacidad": "Privacy",
     "avisoLegal": "Legal notice",
-    "rights": "All rights reserved.",
-    "empresa": "Watchout Tours Ltd · Company registered in New Zealand"
+    "empresa": "WatchOut Tours Ltd. Registered company in New Zealand.",
+    "idiomas": "Language"
   },
   "home": {
     "seo": {
@@ -60,166 +54,179 @@
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
-      "etiqueta": "A local travel company in New Zealand",
-      "h1": "There's a place on the other side of the world that changes you forever. We live here.",
-      "sub": "We're Moni and Sylvie. We left Barcelona for a dream called New Zealand and made it our home. Now we open its doors to you, with exclusive journeys we share with you, every single day.",
-      "cta1": "I want to live it",
-      "cta2": "Talk to Moni and Sylvie",
+      "etiqueta": "Bespoke journeys · New Zealand, from within",
+      "titulo": "Where the Earth<br/><i>is still magic.</i>",
+      "sub": "The world's most dreamed-of destination, lived the way only those who call it home can live it. Private journeys and grand small-group journeys, designed and hosted by our founders.",
+      "cta1": "Design your journey",
+      "cta2": "Discover the collections",
+      "pieVideo": "Milford Sound, Fiordland",
       "pausar": "Pause video",
       "reproducir": "Play video"
     },
-    "franja": {
-      "frase": "Everyone who comes to New Zealand leaves a little different. We came, and never found a way to leave."
-    },
     "pais": {
       "etiqueta": "The country",
-      "titulo": "The journey you've been dreaming of for half your life.",
-      "texto": "Picture waking up to a turquoise lake framed by snow-capped peaks. Feeling the spray of a waterfall tumbling from the top of a fiord. Hearing a haka just steps away and feeling your skin prickle. New Zealand is something you feel in your body, and it stays with you forever.",
-      "imgAlt": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge",
-      "panoAlt": "Milford Sound: sheer rock walls rising straight out of the fiord",
-      "pie": "Milford Sound, Fiordland"
+      "titulo": "Some places you visit. Others change you <i>forever.</i>",
+      "p1": "New Zealand was one of the last lands on Earth to be reached by people, and you can still feel it. Here, fiords open to the sea between waterfalls that fall from the clouds, volcanoes breathe beneath your feet and the forests keep the song of birds found nowhere else on the planet.",
+      "p2": "Glaciers, wild beaches, lakes of an impossible turquoise and skies so pure that, at night, the stars feel within reach.",
+      "cierre": "Not just another journey. The journey.",
+      "pie": "Aoraki / Mount Cook above Lake Pukaki, Canterbury"
     },
-    "porque": {
-      "etiqueta": "Why travel with us",
-      "titulo": "Only two people in the world can offer you this journey.",
-      "texto": "This country is our home. We know its roads, its silences and its people, and we've brought the very best together in intimate, exclusive journeys: very small groups, private experiences and 4- and 5-star hotels.",
-      "cita": "But the real luxury is something else: Moni and Sylvie by your side every day, taking care of every detail, from the first hug at the airport to the final toast.",
-      "imgAlt": "Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them"
+    "cita": {
+      "texto": "“New Zealand was our dream. <i>Today it is our home.</i>”",
+      "firma": "Sylvie and Mónica · Founders of WatchOut Tours"
     },
-    "viajes": {
-      "titulo": "Three ways to live it",
-      "ciegos": {
-        "etiqueta": "Small group",
-        "titulo": "Journeys for blind and low-vision travellers",
-        "lema": "Not all vision needs eyes.",
-        "texto": "You'll feel the warmth of volcanic earth under your hands. Hear the water of a fiord break all around you. Fly over Queenstown with the wind on your face. We've designed every moment so you can live all of New Zealand, without limits, with the two of us beside you.",
-        "enlace": "Discover these journeys",
-        "imgAlt": "A traveller with a white cane and a companion holding a recording microphone by a wooden fence where several sheep lean over, on a farm among green hills"
+    "colecciones": {
+      "etiqueta": "Collections",
+      "titulo": "Three ways to experience <i>New Zealand.</i>",
+      "privado": {
+        "etiqueta": "Private journeys",
+        "titulo": "Your New Zealand, <i>designed for you alone.</i>",
+        "texto": "An anniversary, a family celebration, that promise you made each other years ago. We design your journey from scratch, on the dates you choose, with every route, hotel and experience hand-picked by our founders.",
+        "modo1": "Hosted",
+        "modo1Texto": "Sylvie and Mónica travel with you throughout, opening doors you won't find in any guidebook.",
+        "modo2": "Self drive",
+        "modo2Texto": "You take the wheel; we take care of every detail. We book absolutely everything and support you before, during and after your journey.",
+        "enlace": "Design your private journey"
       },
       "sesenta": {
-        "etiqueta": "Small group",
-        "titulo": "Journeys for over-60s",
-        "lema": "You've earned it.",
-        "texto": "A lifetime waiting for this trip. Now it's time to live it the way you deserve: no rush, no worries, 4- and 5-star hotels and two friends on the ground looking after you every step of the way. All you have to do is let yourself be carried away.",
-        "enlace": "Discover our 60+ journeys",
-        "imgAlt": "Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy"
+        "etiqueta": "Grand Journeys 60+",
+        "titulo": "The journey of a lifetime, <i>unhurried.</i>",
+        "texto": "A lifetime dreaming of this journey. Now it's time to live it as you deserve: grand routes from north to south in a very small group, at a gentle pace, with private experiences, 4- and 5-star hotels and two hosts looking after every detail, from the first embrace to the final toast.",
+        "enlace": "Discover the Grand Journeys 60+"
       },
-      "privado": {
-        "etiqueta": "Tailor-made",
-        "titulo": "Private journeys",
-        "lema": "Your dream, made to measure.",
-        "texto": "An anniversary, a family celebration, that promise you made each other years ago. Tell us how you picture it and we'll create an exclusive, one-of-a-kind journey designed just for you.",
-        "enlace": "Design your private journey",
-        "imgAlt": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind"
+      "ciegos": {
+        "etiqueta": "Beyond Sight",
+        "titulo": "Not all vision <i>needs eyes.</i>",
+        "texto": "Aotearoa through the senses: journeys for blind and low-vision travellers, designed to feel New Zealand with your whole body. The warmth of volcanic earth beneath your hands, the roar of a fiord, the wind of the Alps on your face.",
+        "enlace": "Discover this collection"
       }
     },
     "salida": {
-      "etiqueta": "Next group departure",
-      "titulo": "Fifteen days you'll remember for the rest of your life.",
-      "texto": "Aotearoa through the senses · 15 days in New Zealand, 1-15 March 2027. Departure from Spain on 27 February. From the volcanoes of the North Island to the fiords and glaciers of the South. Places are very limited and allocated in order of booking.",
+      "etiqueta": "Grand Journeys 60+ · Next departure",
+      "titulo": "The Grand Journey.<br/><i>1 – 15 March 2027.</i>",
+      "texto": "Fifteen days from north to south, from the geothermal valleys of Rotorua to the fiords of Milford Sound and the waters of Kaikōura, where sperm whales surface before snow-capped peaks. Departure from Spain on 27 February. Very limited places.",
       "itinerario": "Request the itinerary",
-      "fechas": "Suggest your dates",
-      "imgAlt": "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it"
+      "hablar": "Talk to us"
     },
-    "ruta": {
-      "titulo": "North to south, a whole country",
-      "paradas": [
+    "pilares": {
+      "etiqueta": "Our way of travelling",
+      "titulo": "The privilege of <i>travelling from within.</i>",
+      "items": [
         {
-          "id": "auckland",
-          "nombre": "Auckland",
-          "frase": "The City of Sails from the water, on a sailing boat just for us.",
-          "alt": "A sailing boat crosses Auckland harbour with the city skyline behind"
+          "titulo": "Privileged access",
+          "texto": "Doors that don't open to the ordinary traveller: private experiences, encounters with the guardians of Māori culture and places you won't find in any guidebook."
         },
         {
-          "id": "hobbiton-rotorua",
-          "nombre": "Hobbiton & Rotorua",
-          "frase": "The Shire behind closed doors, and earth that boils beneath your feet, guided by a Māori host.",
-          "alt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush"
+          "titulo": "Hosts, not guides",
+          "texto": "Sylvie and Mónica welcome you to their country the way one welcomes guests at home: with knowledge, judgement and a level of care that is never delegated."
         },
         {
-          "id": "queenstown",
-          "nombre": "Queenstown",
-          "frase": "The adventure capital of the world: leap into the void, or cross the lake on a century-old steamship.",
-          "alt": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind"
+          "titulo": "Handcrafted",
+          "texto": "Every journey is designed from scratch, hotel by hotel and experience by experience. Never a package: always a one-of-a-kind creation."
         },
         {
-          "id": "milford",
-          "nombre": "Milford Sound",
-          "frase": "The fiord Kipling called the eighth wonder of the world. The waterfalls fall so close they mist your face.",
-          "alt": "Milford Sound: sheer rock walls rising straight out of the fiord"
+          "titulo": "With care",
+          "texto": "We travel by the Tiaki Promise: deep respect for the land, its culture and its people."
+        }
+      ]
+    },
+    "tiaki": {
+      "etiqueta": "The Tiaki Promise",
+      "titulo": "We love this country.<br/><i>That is why we care for it.</i>",
+      "texto": "Tiaki means to care, in te reo Māori. It is the promise New Zealand asks of everyone who travels here, and we have made it our own: to journey through this land as you would enter someone else's home, with respect, with gratitude and with the commitment to leave it as we found it for those who come after us.",
+      "items": [
+        {
+          "titulo": "Care for land, sea and nature",
+          "texto": "We tread lightly and leave no trace. We travel in very small groups and choose experiences that respect wildlife and protected places."
+        },
+        {
+          "titulo": "Travel safely and with consideration",
+          "texto": "We know every road and every season. We plan with care and with respect for the people who live in each place we visit."
+        },
+        {
+          "titulo": "Respect culture",
+          "texto": "We approach Māori culture alongside its hosts, with an open heart and mind. We listen before we look."
+        }
+      ],
+      "cierre": "Every journey we design is also a way of giving thanks to the land that welcomed us.",
+      "enlace": "Discover the Tiaki Promise"
+    },
+    "destinos": {
+      "etiqueta": "Destinations",
+      "titulo": "The places that <i>stole our hearts.</i>",
+      "items": [
+        {
+          "id": "rotorua",
+          "nombre": "Rotorua",
+          "titulo": "Where the earth breathes.",
+          "texto": "Geysers that break the silence, boiling mud and the most vibrant Māori culture in the country."
+        },
+        {
+          "id": "fiordland",
+          "nombre": "Fiordland",
+          "titulo": "The eighth wonder of the world.",
+          "texto": "Milford and Doubtful Sound: walls of rock, waterfalls falling from the clouds and dolphins at the bow."
         },
         {
           "id": "aoraki",
           "nombre": "Aoraki / Mount Cook",
-          "frase": "The country's highest peak, above glacial lakes of pure turquoise.",
-          "alt": "Snow-covered Aoraki / Mount Cook above the turquoise water of a glacial lake"
+          "titulo": "The roof of New Zealand.",
+          "texto": "Glaciers that break into icebergs on lakes of turquoise."
         },
         {
-          "id": "tekapo",
-          "nombre": "Tekapo",
-          "frase": "A campfire, a blanket and one of the clearest skies on the planet.",
-          "alt": "A night sky full of stars over Lake Tekapo"
+          "id": "queenstown",
+          "nombre": "Queenstown",
+          "titulo": "The adventure capital of the world.",
+          "texto": "Mountains, lakes and vineyards: leap into the void, or raise a glass beside Lake Wakatipu."
         },
         {
           "id": "kaikoura",
           "nombre": "Kaikōura",
-          "frase": "Sperm whales, dolphins and seals in the wild, with snowy mountains plunging into the sea.",
-          "alt": "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky"
+          "titulo": "Where the mountains meet the sea.",
+          "texto": "Sperm whales, dolphins and seals in the wild, with the snowy Alps as a backdrop."
+        },
+        {
+          "id": "waitomo",
+          "nombre": "Waitomo",
+          "titulo": "A galaxy underground.",
+          "texto": "Thousands of glowworms silently light the caves like a starry sky."
         }
       ]
     },
     "galeria": {
-      "titulo": "Gallery",
+      "etiqueta": "Gallery",
+      "titulo": "New Zealand <i>in pictures.</i>",
+      "enlace": "See all images",
       "ampliar": "Enlarge photo:",
       "visor": "Photo viewer",
       "cerrar": "Close the viewer",
       "anterior": "Previous photo",
       "siguiente": "Next photo",
-      "contador": "Photo {{n}} of {{total}}",
-      "alts": [
-        "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
-        "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it",
-        "Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy",
-        "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind",
-        "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky",
-        "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge",
-        "Photograph from a Watchout Tours journey around New Zealand",
-        "Photograph from a Watchout Tours journey around New Zealand",
-        "Photograph from a Watchout Tours journey around New Zealand",
-        "Photograph from a Watchout Tours journey around New Zealand",
-        "Photograph from a Watchout Tours journey around New Zealand",
-        "Photograph from a Watchout Tours journey around New Zealand"
-      ]
+      "contador": "Photo {{n}} of {{total}}"
     },
-    "tiaki": {
-      "etiqueta": "Travelling with care",
-      "titulo": "This land welcomed us. Caring for it is how we say thank you.",
-      "texto": "Tiaki means to care: for the land, its culture and everyone who arrives. It's New Zealand's promise, and ours on every journey.",
-      "enlace": "Discover the Tiaki Promise",
-      "imgAlt": "Official Tiaki Promise infographic: care for land, sea and nature, travel safely and respect culture"
-    },
-    "nosotras": {
-      "etiqueta": "Who we are",
-      "titulo": "We fell in love with a country. And we stayed.",
-      "texto": "We came from Barcelona chasing a dream, and New Zealand gave it back to us many times over. This is where we found our home, and where we still feel the same wonder as on day one. WatchOut Tours was born from wanting to share it: we want you to feel what we felt the very first time.",
-      "enlace": "Read our story",
-      "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua"
+    "fundadoras": {
+      "etiqueta": "The founders",
+      "titulo": "We fell in love with a country. <i>And we stayed.</i>",
+      "p1": "More than eight years ago, we left Barcelona to follow a dream. We had travelled half the world, yet no place had ever made us feel what we felt when we arrived here. New Zealand didn't just win us over: it changed our lives.",
+      "p2": "Sylvie has managed hotels in New Zealand and has mastered the art of hospitality like few others. Mónica, a tireless traveller and coach specialising in NLP, has a gift for turning a journey into an experience that transforms you from within.",
+      "p3": "Eight years on, this country still moves us every morning when we wake up. WatchOut Tours was born to share that feeling: we have travelled every route, chosen every hotel and lived every experience before you.",
+      "firma": "Sylvie & Mónica",
+      "enlace": "Read our story"
     },
     "resenas": {
-      "etiqueta": "Reviews",
-      "titulo": "What you feel, you never forget.",
-      "todas": "Read all reviews"
+      "etiqueta": "What you feel, you never forget"
     },
-    "reservar": {
-      "etiqueta": "How to book",
-      "titulo": "Your dream is closer than you think. Let's talk.",
-      "pasos": [
-        "Request the itinerary, with every day and everything included.",
-        "A video call with Moni and Sylvie to answer all your questions.",
-        "Book your place. We’ll walk you through the terms in detail."
-      ],
-      "faqTitulo": "Frequently asked questions",
-      "faq": [
+    "cierre": {
+      "titulo": "New Zealand <i>is waiting for you.</i>",
+      "texto": "Tell us how you dream of it, and we'll begin designing it.",
+      "boton": "Design your journey"
+    },
+    "pie": {
+      "frase": "Bespoke journeys through New Zealand, designed and hosted by our founders."
+    },
+    "faq": {
+      "titulo": "Frequently asked questions",
+      "items": [
         {
           "q": "What does the trip include?",
           "a": "Accommodation in 4 and 5-star hotels, breakfast and dinner every day, every activity on the itinerary, transport along the whole route, the inter-island flight, two guides for the whole trip and 24-hour assistance. It doesn’t include international flights (we’ll help you book them) or travel insurance."
@@ -278,9 +285,35 @@
       "videollamadaLinea": "Would you rather talk to us? Book a 30-minute video call with Moni and Sylvie, with no commitment.",
       "respuesta": "We’ll get back to you within 24 hours."
     },
-    "cierre": {
-      "frase": "New Zealand is waiting for you. So are we.",
-      "boton": "Request the itinerary"
+    "huecos": {
+      "hero-poster": "Milford Sound at dawn: the walls of the fiord rise above still water, with Mitre Peak in the distance",
+      "pais-vertical": "A track between giant tree ferns in a native New Zealand forest",
+      "pais-panoramica": "Snow-covered Aoraki / Mount Cook above the turquoise water of Lake Pukaki",
+      "panel-privado": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind",
+      "panel-sesenta": "Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy",
+      "panel-ciegos": "A traveller with a white cane and a companion holding a recording microphone by a wooden fence where several sheep lean over, on a farm among green hills",
+      "salida-foto": "Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them",
+      "tiaki-fondo": "Dusky dolphins leaping off the Kaikōura coast, with snow-capped mountains behind",
+      "destino-rotorua": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
+      "destino-fiordland": "Milford Sound: a waterfall pours from the top of the fiord beside a boat",
+      "destino-aoraki": "Icebergs floating on Tasman Glacier Lake at the foot of Aoraki / Mount Cook",
+      "destino-queenstown": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind",
+      "destino-kaikoura": "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky",
+      "destino-waitomo": "Thousands of glowworms light the roof of a Waitomo cave in blue",
+      "galeria-01": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
+      "galeria-02": "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it",
+      "galeria-03": "Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy",
+      "galeria-04": "A traveller and pilot tandem paragliding over the valleys of Queenstown, smiling, with mountains and a cloudy sky behind",
+      "galeria-05": "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky",
+      "galeria-06": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge",
+      "galeria-07": "Photograph of New Zealand",
+      "galeria-08": "Photograph of New Zealand",
+      "galeria-09": "Photograph of New Zealand",
+      "galeria-10": "Photograph of New Zealand",
+      "galeria-11": "Photograph of New Zealand",
+      "galeria-12": "Photograph of New Zealand",
+      "nosotras": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua",
+      "cierre": "A South Island lake at dusk, with the mountains reflected in the water"
     },
     "testi": {
       "eyebrow": "What they say",

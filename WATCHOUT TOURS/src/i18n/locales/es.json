@@ -18,40 +18,34 @@
   },
   "nav": {
     "main": "Navegación principal",
-    "brandHome": "Watchout Tours — Ir al inicio",
-    "rutas": "Viajes",
-    "nosotras": "Nosotras",
-    "resenas": "Reseñas",
-    "blog": "Blog",
-    "contacto": "Contacto",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "switchLang": "View this page in English",
-    "sinPrisa": "Viajes +60",
-    "masAlla": "Viajes para personas ciegas y con baja visión",
-    "todas": "Todas las experiencias",
-    "itinerario": "Pide el itinerario"
+    "privados": "Viajes privados",
+    "grandesViajes": "Grandes Viajes +60",
+    "masAlla": "Más allá de la vista",
+    "fundadoras": "Fundadoras",
+    "disena": "Diseña tu viaje"
   },
   "footer": {
-    "brandHome": "Watchout Tours — Inicio",
-    "tagline": "Especialistas en viajes accesibles por Nueva Zelanda, en español.",
-    "whatsapp": "Escríbenos por WhatsApp",
-    "instagram": "Síguenos en Instagram",
-    "colNosotras": "Nosotras",
-    "colViajes": "Viajes",
+    "colColecciones": "Colecciones",
+    "colMarca": "WatchOut Tours",
+    "colHablemos": "Hablemos",
     "colLegal": "Legal",
-    "sobreNosotras": "Sobre nosotras",
+    "fundadoras": "Las fundadoras",
+    "tiaki": "Viaje responsable · Tiaki",
     "resenas": "Reseñas",
-    "blog": "Blog",
-    "sinPrisa": "Viajes +60",
-    "masAlla": "Viajes para personas ciegas y con baja visión",
-    "todasExperiencias": "Todas las experiencias",
-    "disenaViaje": "Diseña tu viaje",
+    "diario": "Diario de viaje",
+    "contacto": "Contacto",
+    "emailSr": "Correo electrónico:",
+    "whatsapp": "WhatsApp +64 27 267 7006",
+    "instagram": "@watchouttours",
+    "instagramSr": "Instagram:",
     "accesibilidad": "Accesibilidad",
     "privacidad": "Privacidad",
     "avisoLegal": "Aviso legal",
-    "rights": "Todos los derechos reservados.",
-    "empresa": "Watchout Tours Ltd · Empresa registrada en Nueva Zelanda"
+    "empresa": "WatchOut Tours Ltd. Empresa registrada en Nueva Zelanda.",
+    "idiomas": "Idioma"
   },
   "home": {
     "seo": {
@@ -60,166 +54,179 @@
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
-      "etiqueta": "Agencia local en Nueva Zelanda",
-      "h1": "Hay un lugar al otro lado del mundo que te cambia para siempre. Nosotras vivimos en él.",
-      "sub": "Somos Moni y Sylvie. Dejamos Barcelona por un sueño llamado Nueva Zelanda y lo convertimos en nuestra casa. Hoy te abrimos sus puertas con viajes exclusivos que vivimos a tu lado, día a día.",
-      "cta1": "Quiero vivirlo",
-      "cta2": "Hablar con Moni y Sylvie",
+      "etiqueta": "Viajes de autor · Nueva Zelanda, desde dentro",
+      "titulo": "Donde la Tierra<br/><i>aún es mágica.</i>",
+      "sub": "El destino más soñado del mundo, vivido como solo puede vivirlo quien lo llama hogar. Viajes privados y grandes viajes en grupo reducido, diseñados y acompañados por sus fundadoras.",
+      "cta1": "Diseña tu viaje",
+      "cta2": "Descubre las colecciones",
+      "pieVideo": "Milford Sound, Fiordland",
       "pausar": "Pausar vídeo",
       "reproducir": "Reproducir vídeo"
     },
-    "franja": {
-      "frase": "Quien viene a Nueva Zelanda vuelve distinto. Nosotras vinimos y ya no supimos irnos."
-    },
     "pais": {
       "etiqueta": "El país",
-      "titulo": "El viaje con el que llevas media vida soñando.",
-      "texto": "Imagina despertar frente a un lago turquesa con las montañas nevadas al fondo. Sentir en la cara la bruma de una cascada que cae desde lo alto de un fiordo. Escuchar un haka a dos pasos y notar cómo se te eriza la piel. Nueva Zelanda se siente en el cuerpo, y se queda contigo para siempre.",
-      "imgAlt": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial",
-      "panoAlt": "Milford Sound: paredes de roca verticales que se levantan sobre el agua del fiordo",
-      "pie": "Milford Sound, Fiordland"
+      "titulo": "Hay lugares que se visitan. Y lugares que te cambian <i>para siempre.</i>",
+      "p1": "Nueva Zelanda fue una de las últimas tierras del planeta que pisó el ser humano, y todavía se nota. Aquí los fiordos se abren al mar entre cascadas que caen desde las nubes, los volcanes respiran bajo los pies y los bosques guardan el canto de aves que no existen en ningún otro lugar.",
+      "p2": "Glaciares, playas salvajes, lagos de un turquesa imposible y cielos tan puros que, de noche, las estrellas parecen al alcance de la mano.",
+      "cierre": "No es un viaje más. Es el viaje.",
+      "pie": "Aoraki / Mount Cook sobre el lago Pukaki, Canterbury"
     },
-    "porque": {
-      "etiqueta": "Por qué con nosotras",
-      "titulo": "Solo dos personas en el mundo pueden ofrecerte este viaje.",
-      "texto": "Este país es nuestra casa. Conocemos sus carreteras, sus silencios y a su gente, y hemos reunido lo mejor en viajes íntimos y exclusivos: grupos muy reducidos, experiencias privadas y hoteles de 4 y 5 estrellas.",
-      "cita": "Pero el verdadero lujo es otro: Moni y Sylvie contigo cada día, cuidando cada detalle, desde el primer abrazo en el aeropuerto hasta el último brindis.",
-      "imgAlt": "Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás"
+    "cita": {
+      "texto": "«Nueva Zelanda fue nuestro sueño. <i>Hoy es nuestro hogar.</i>»",
+      "firma": "Sylvie y Mónica · Fundadoras de WatchOut Tours"
     },
-    "viajes": {
-      "titulo": "Tres maneras de vivirlo",
-      "ciegos": {
-        "etiqueta": "En grupo",
-        "titulo": "Viajes para personas ciegas y con baja visión",
-        "lema": "No toda visión necesita ojos.",
-        "texto": "Sentirás el calor de la tierra volcánica bajo tus manos. Oirás romper el agua de un fiordo a tu alrededor. Volarás sobre Queenstown con el viento en la cara. Hemos diseñado cada momento para que vivas Nueva Zelanda entera, sin límites, con las dos a tu lado.",
-        "enlace": "Descubre estos viajes",
-        "imgAlt": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes"
+    "colecciones": {
+      "etiqueta": "Colecciones",
+      "titulo": "Tres maneras de vivir <i>Nueva Zelanda.</i>",
+      "privado": {
+        "etiqueta": "Viajes privados",
+        "titulo": "Tu Nueva Zelanda, <i>diseñada solo para ti.</i>",
+        "texto": "Un aniversario, una celebración en familia, esa promesa que os hicisteis hace años. Diseñamos tu viaje desde cero, en las fechas que elijas, con la ruta, los hoteles y las experiencias seleccionados personalmente por nuestras fundadoras.",
+        "modo1": "Con anfitrionas",
+        "modo1Texto": "Sylvie y Mónica os acompañan durante todo el viaje, abriendo puertas que no aparecen en ninguna guía.",
+        "modo2": "Self drive",
+        "modo2Texto": "Vosotros al volante y nosotras detrás de cada detalle: lo reservamos absolutamente todo y os asistimos antes, durante y después del viaje.",
+        "enlace": "Diseña tu viaje privado"
       },
       "sesenta": {
-        "etiqueta": "En grupo",
-        "titulo": "Viajes +60",
-        "lema": "Te lo has ganado.",
-        "texto": "Toda una vida esperando este viaje. Ahora toca vivirlo como mereces: sin prisas, sin preocupaciones, con hoteles de 4 y 5 estrellas y dos amigas en destino cuidando de ti a cada paso. Tú solo tienes que dejarte llevar.",
-        "enlace": "Descubre los viajes +60",
-        "imgAlt": "Tres personas bajo secuoyas altísimas levantan los brazos para tocar una rama baja mientras la luz se filtra entre las copas"
+        "etiqueta": "Grandes Viajes +60",
+        "titulo": "El viaje de tu vida, <i>sin prisa.</i>",
+        "texto": "Toda una vida soñando con este viaje. Ahora toca vivirlo como mereces: grandes rutas de norte a sur en grupo muy reducido, a ritmo pausado, con experiencias privadas, hoteles de 4 y 5 estrellas y dos anfitrionas cuidando de cada detalle, del primer abrazo al último brindis.",
+        "enlace": "Descubre los Grandes Viajes +60"
       },
-      "privado": {
-        "etiqueta": "A medida",
-        "titulo": "Viajes en privado",
-        "lema": "Tu sueño, hecho a medida.",
-        "texto": "Un aniversario, una celebración en familia, esa promesa que os hicisteis hace años. Cuéntanos cómo lo imaginas y crearemos un viaje exclusivo e irrepetible, pensado solo para vosotros.",
-        "enlace": "Diseña tu viaje privado",
-        "imgAlt": "Un viajero y su piloto vuelan en parapente biplaza sobre los valles de Queenstown, sonriendo, con montañas y un cielo de nubes al fondo"
+      "ciegos": {
+        "etiqueta": "Más allá de la vista",
+        "titulo": "No toda visión <i>necesita ojos.</i>",
+        "texto": "Aotearoa a través de los sentidos: viajes para personas ciegas y con baja visión, pensados para sentir Nueva Zelanda con todo el cuerpo. El calor de la tierra volcánica bajo las manos, el rugido de un fiordo, el viento de los Alpes en la cara.",
+        "enlace": "Descubre esta colección"
       }
     },
     "salida": {
-      "etiqueta": "Próxima salida en grupo",
-      "titulo": "Quince días que recordarás toda la vida.",
-      "texto": "Aotearoa a través de los sentidos · 15 días en Nueva Zelanda, del 1 al 15 de marzo de 2027. Salida de España el 27 de febrero. De los volcanes de la Isla Norte a los fiordos y glaciares de la Isla Sur. Las plazas son muy pocas y se asignan por orden de reserva.",
-      "itinerario": "Pide el itinerario",
-      "fechas": "Propón tus fechas",
-      "imgAlt": "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos"
+      "etiqueta": "Grandes Viajes +60 · Próxima salida",
+      "titulo": "El Gran Viaje.<br/><i>1 – 15 de marzo de 2027.</i>",
+      "texto": "Quince días de norte a sur, de los valles geotérmicos de Rotorua a los fiordos de Milford Sound y las aguas de Kaikōura, donde los cachalotes emergen frente a montañas nevadas. Salida de España el 27 de febrero. Plazas muy limitadas.",
+      "itinerario": "Solicita el itinerario",
+      "hablar": "Habla con nosotras"
     },
-    "ruta": {
-      "titulo": "De norte a sur, un país entero",
-      "paradas": [
+    "pilares": {
+      "etiqueta": "Nuestra forma de viajar",
+      "titulo": "El privilegio de <i>viajar desde dentro.</i>",
+      "items": [
         {
-          "id": "auckland",
-          "nombre": "Auckland",
-          "frase": "La ciudad de las velas desde el agua, en un velero solo para nosotros.",
-          "alt": "Un velero navega por el puerto de Auckland, con los edificios de la ciudad al fondo"
+          "titulo": "Acceso privilegiado",
+          "texto": "Puertas que no se abren al viajero convencional: experiencias privadas, encuentros con quienes guardan la cultura maorí y rincones que no aparecen en ninguna guía."
         },
         {
-          "id": "hobbiton-rotorua",
-          "nombre": "Hobbiton y Rotorua",
-          "frase": "La Comarca a puerta cerrada y la tierra que hierve bajo los pies, de la mano de un guía maorí.",
-          "alt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa"
+          "titulo": "Anfitrionas, no guías",
+          "texto": "Sylvie y Mónica os reciben en su país como se recibe en casa: con conocimiento, criterio y una atención que nunca se delega."
         },
         {
-          "id": "queenstown",
-          "nombre": "Queenstown",
-          "frase": "La capital mundial de la aventura: para saltar al vacío o para cruzar el lago en un vapor centenario.",
-          "alt": "Un viajero y su piloto vuelan en parapente biplaza sobre los valles de Queenstown, sonriendo, con montañas y un cielo de nubes al fondo"
+          "titulo": "Hecho a mano",
+          "texto": "Cada viaje se diseña desde cero, hotel a hotel y experiencia a experiencia. Nunca un paquete: siempre una obra única."
         },
         {
-          "id": "milford",
-          "nombre": "Milford Sound",
-          "frase": "El fiordo que Kipling llamó la octava maravilla del mundo. Las cascadas caen tan cerca que te mojan la cara.",
-          "alt": "Milford Sound: paredes de roca verticales que se levantan sobre el agua del fiordo"
+          "titulo": "Con cuidado",
+          "texto": "Viajamos con la promesa Tiaki: respeto profundo por la tierra, su cultura y quienes la habitan."
+        }
+      ]
+    },
+    "tiaki": {
+      "etiqueta": "La promesa Tiaki",
+      "titulo": "Amamos este país.<br/><i>Por eso lo cuidamos.</i>",
+      "texto": "Tiaki significa cuidar, en te reo māori. Es la promesa que Nueva Zelanda pide a quienes la recorren, y nosotras la hemos hecho nuestra: viajar por esta tierra como se entra en un hogar ajeno, con respeto, con gratitud y con el compromiso de dejarla tal como la encontramos para quienes vendrán después.",
+      "items": [
+        {
+          "titulo": "Cuidar la tierra, el mar y la naturaleza",
+          "texto": "Pisamos con suavidad y no dejamos huella. Viajamos en grupos muy reducidos y elegimos experiencias que respetan la fauna y los espacios protegidos."
+        },
+        {
+          "titulo": "Viajar con seguridad y consideración",
+          "texto": "Conocemos cada carretera y cada estación del año. Planificamos con margen y con respeto por quienes viven en cada lugar que visitamos."
+        },
+        {
+          "titulo": "Respetar la cultura",
+          "texto": "Nos acercamos a la cultura maorí de la mano de sus anfitriones, con el corazón y la mente abiertos. Escuchamos antes de mirar."
+        }
+      ],
+      "cierre": "Cada viaje que diseñamos es también una forma de dar las gracias a la tierra que nos acogió.",
+      "enlace": "Conoce la promesa Tiaki"
+    },
+    "destinos": {
+      "etiqueta": "Destinos",
+      "titulo": "Los lugares que nos <i>robaron el corazón.</i>",
+      "items": [
+        {
+          "id": "rotorua",
+          "nombre": "Rotorua",
+          "titulo": "Donde la tierra respira.",
+          "texto": "Géiseres que rompen el silencio, barro que hierve y la cultura maorí más viva del país."
+        },
+        {
+          "id": "fiordland",
+          "nombre": "Fiordland",
+          "titulo": "La octava maravilla del mundo.",
+          "texto": "Milford y Doubtful Sound: paredes de roca, cascadas que caen desde las nubes y delfines junto a la proa."
         },
         {
           "id": "aoraki",
           "nombre": "Aoraki / Mount Cook",
-          "frase": "La montaña más alta del país, sobre lagos glaciares de color turquesa.",
-          "alt": "Aoraki / Mount Cook, nevado, sobre el agua turquesa de un lago glaciar"
+          "titulo": "El techo de Nueva Zelanda.",
+          "texto": "Glaciares que se deshacen en icebergs sobre lagos de color turquesa."
         },
         {
-          "id": "tekapo",
-          "nombre": "Tekapo",
-          "frase": "Una hoguera, una manta y uno de los cielos más limpios del planeta.",
-          "alt": "Cielo nocturno lleno de estrellas sobre el lago Tekapo"
+          "id": "queenstown",
+          "nombre": "Queenstown",
+          "titulo": "La capital mundial de la aventura.",
+          "texto": "Montañas, lagos y viñedos: para saltar al vacío o brindar frente al Wakatipu."
         },
         {
           "id": "kaikoura",
           "nombre": "Kaikōura",
-          "frase": "Cachalotes, delfines y focas en libertad, con las montañas nevadas cayendo al mar.",
-          "alt": "Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado"
+          "titulo": "Donde las montañas caen al mar.",
+          "texto": "Cachalotes, delfines y focas en libertad, con los Alpes nevados de telón de fondo."
+        },
+        {
+          "id": "waitomo",
+          "nombre": "Waitomo",
+          "titulo": "Una galaxia bajo tierra.",
+          "texto": "Miles de luciérnagas iluminan en silencio las cuevas, como un cielo estrellado."
         }
       ]
     },
     "galeria": {
-      "titulo": "Galería",
+      "etiqueta": "Galería",
+      "titulo": "Nueva Zelanda <i>en imágenes.</i>",
+      "enlace": "Ver todas las imágenes",
       "ampliar": "Ampliar foto:",
       "visor": "Visor de fotos",
       "cerrar": "Cerrar el visor",
       "anterior": "Foto anterior",
       "siguiente": "Foto siguiente",
-      "contador": "Foto {{n}} de {{total}}",
-      "alts": [
-        "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
-        "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos",
-        "Tres personas bajo secuoyas altísimas levantan los brazos para tocar una rama baja mientras la luz se filtra entre las copas",
-        "Un viajero y su piloto vuelan en parapente biplaza sobre los valles de Queenstown, sonriendo, con montañas y un cielo de nubes al fondo",
-        "Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado",
-        "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial",
-        "Fotografía de un viaje de Watchout Tours por Nueva Zelanda",
-        "Fotografía de un viaje de Watchout Tours por Nueva Zelanda",
-        "Fotografía de un viaje de Watchout Tours por Nueva Zelanda",
-        "Fotografía de un viaje de Watchout Tours por Nueva Zelanda",
-        "Fotografía de un viaje de Watchout Tours por Nueva Zelanda",
-        "Fotografía de un viaje de Watchout Tours por Nueva Zelanda"
-      ]
+      "contador": "Foto {{n}} de {{total}}"
     },
-    "tiaki": {
-      "etiqueta": "Viajamos con cuidado",
-      "titulo": "Esta tierra nos acogió. Cuidarla es nuestra forma de dar las gracias.",
-      "texto": "Tiaki significa cuidar: a la tierra, a su cultura y a quien llega. Es la promesa de Nueva Zelanda y también la nuestra en cada viaje.",
-      "enlace": "Conoce la promesa Tiaki",
-      "imgAlt": "Infografía oficial de la promesa Tiaki: cuidar la tierra, el mar y la naturaleza, viajar con seguridad y respetar la cultura"
-    },
-    "nosotras": {
-      "etiqueta": "Quiénes somos",
-      "titulo": "Nos enamoramos de un país. Y nos quedamos.",
-      "texto": "Llegamos de Barcelona persiguiendo un sueño y Nueva Zelanda nos lo devolvió multiplicado. Aquí encontramos nuestra casa, y aquí seguimos emocionándonos como el primer día. WatchOut Tours nació de las ganas de compartirlo: queremos que sientas lo mismo que sentimos nosotras la primera vez.",
-      "enlace": "Conoce nuestra historia",
-      "imgAlt": "Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua"
+    "fundadoras": {
+      "etiqueta": "Las fundadoras",
+      "titulo": "Nos enamoramos de un país. <i>Y nos quedamos.</i>",
+      "p1": "Hace más de ocho años dejamos Barcelona detrás de un sueño. Habíamos recorrido medio mundo, pero ningún lugar nos había hecho sentir lo que sentimos al llegar aquí. Nueva Zelanda no solo nos conquistó: nos cambió la vida.",
+      "p2": "Sylvie ha dirigido hoteles en Nueva Zelanda y domina como pocas el arte de la hospitalidad. Mónica, viajera incansable y coach especializada en PNL, tiene el don de convertir un viaje en una experiencia que transforma por dentro.",
+      "p3": "Ocho años después, este país nos sigue emocionando cada mañana al despertar. WatchOut Tours nació para compartir esa emoción: cada ruta la hemos recorrido, cada hotel lo hemos elegido y cada experiencia la hemos vivido antes que tú.",
+      "firma": "Sylvie & Mónica",
+      "enlace": "Conoce nuestra historia"
     },
     "resenas": {
-      "etiqueta": "Reseñas",
-      "titulo": "Lo que se siente no se olvida.",
-      "todas": "Leer todas las reseñas"
+      "etiqueta": "Lo que se siente no se olvida"
     },
-    "reservar": {
-      "etiqueta": "Cómo reservar",
-      "titulo": "Tu sueño está más cerca de lo que crees. Hablemos.",
-      "pasos": [
-        "Pide el itinerario, con cada día y todo lo que incluye.",
-        "Una videollamada con Moni y Sylvie para resolver tus dudas.",
-        "Reserva tu plaza. Te explicamos las condiciones en detalle."
-      ],
-      "faqTitulo": "Preguntas frecuentes",
-      "faq": [
+    "cierre": {
+      "titulo": "Nueva Zelanda <i>te está esperando.</i>",
+      "texto": "Cuéntanos cómo la sueñas y empezaremos a diseñarla.",
+      "boton": "Diseña tu viaje"
+    },
+    "pie": {
+      "frase": "Viajes de autor por Nueva Zelanda, diseñados y acompañados por sus fundadoras."
+    },
+    "faq": {
+      "titulo": "Preguntas frecuentes",
+      "items": [
         {
           "q": "¿Qué incluye el viaje?",
           "a": "Alojamiento en hoteles de 4 y 5 estrellas, desayuno y cena todos los días, todas las actividades del itinerario, transporte durante toda la ruta, vuelo entre islas, dos guías todo el viaje y asistencia las 24 horas. No incluye los vuelos internacionales (te ayudamos a sacarlos) ni el seguro de viaje."
@@ -278,9 +285,35 @@
       "videollamadaLinea": "¿Prefieres hablar con nosotras? Reserva una videollamada de 30 minutos con Moni y Sylvie, sin compromiso.",
       "respuesta": "Te respondemos en menos de 24 horas."
     },
-    "cierre": {
-      "frase": "Nueva Zelanda te está esperando. Nosotras también.",
-      "boton": "Pide el itinerario"
+    "huecos": {
+      "hero-poster": "Milford Sound al amanecer: las paredes del fiordo se levantan sobre el agua en calma, con el pico Mitre al fondo",
+      "pais-vertical": "Un sendero entre helechos gigantes en un bosque nativo de Nueva Zelanda",
+      "pais-panoramica": "Aoraki / Mount Cook, nevado, sobre el agua turquesa del lago Pukaki",
+      "panel-privado": "Un viajero y su piloto vuelan en parapente biplaza sobre los valles de Queenstown, sonriendo, con montañas y un cielo de nubes al fondo",
+      "panel-sesenta": "Tres personas bajo secuoyas altísimas levantan los brazos para tocar una rama baja mientras la luz se filtra entre las copas",
+      "panel-ciegos": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes",
+      "salida-foto": "Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás",
+      "tiaki-fondo": "Delfines oscuros saltando frente a la costa de Kaikōura, con las montañas nevadas al fondo",
+      "destino-rotorua": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
+      "destino-fiordland": "Milford Sound: una cascada cae desde lo alto del fiordo junto a un barco",
+      "destino-aoraki": "Icebergs flotando en el lago glaciar Tasman, a los pies de Aoraki / Mount Cook",
+      "destino-queenstown": "Un viajero y su piloto vuelan en parapente biplaza sobre los valles de Queenstown, sonriendo, con montañas y un cielo de nubes al fondo",
+      "destino-kaikoura": "Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado",
+      "destino-waitomo": "Miles de luciérnagas iluminan de azul el techo de una cueva de Waitomo",
+      "galeria-01": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
+      "galeria-02": "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos",
+      "galeria-03": "Tres personas bajo secuoyas altísimas levantan los brazos para tocar una rama baja mientras la luz se filtra entre las copas",
+      "galeria-04": "Un viajero y su piloto vuelan en parapente biplaza sobre los valles de Queenstown, sonriendo, con montañas y un cielo de nubes al fondo",
+      "galeria-05": "Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado",
+      "galeria-06": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial",
+      "galeria-07": "Fotografía de Nueva Zelanda",
+      "galeria-08": "Fotografía de Nueva Zelanda",
+      "galeria-09": "Fotografía de Nueva Zelanda",
+      "galeria-10": "Fotografía de Nueva Zelanda",
+      "galeria-11": "Fotografía de Nueva Zelanda",
+      "galeria-12": "Fotografía de Nueva Zelanda",
+      "nosotras": "Sylvie y Moni, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua",
+      "cierre": "Un lago de la Isla Sur al atardecer, con las montañas reflejadas en el agua"
     },
     "testi": {
       "eyebrow": "Lo que cuentan",

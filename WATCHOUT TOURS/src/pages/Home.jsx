@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { useForm, ValidationError } from '@formspree/react'
 import '../styles/pagestyle/Contacto.css'
 import '../styles/pagestyle/HomeNueva.css'
@@ -10,12 +10,10 @@ import { BotonVideollamada } from '../components/Videollamada'
 import { Desplegable } from '../components/Desplegable'
 import { useSiteImage } from '../lib/siteImages'
 import { L, useLang } from '../i18n/routing'
-// Imágenes por defecto de los huecos (versiones a varios anchos en src/images/home)
+// Imágenes por defecto de algunos huecos (versiones a varios anchos en src/images/home)
 import hero900 from '../images/home/hero-900.webp'
 import hero1400 from '../images/home/hero-1400.webp'
 import hero1800 from '../images/home/hero-1800.webp'
-import maori480 from '../images/home/maori-480.webp'
-import maori900 from '../images/home/maori-900.webp'
 import qt600 from '../images/home/queenstown-600.webp'
 import qt1200 from '../images/home/queenstown-1200.webp'
 import kai480 from '../images/home/kaikoura-480.webp'
@@ -33,43 +31,42 @@ import kayak from '../images/kayak-kaikoura.jpg'
 import haka from '../images/haka-cultura-maori.jpg'
 
 const una = (src, w, h) => variantes([{ src, w, h }])
-const HERO = variantes([{ src: hero900, w: 900, h: 675 }, { src: hero1400, w: 1400, h: 1050 }, { src: hero1800, w: 1800, h: 1350 }])
+const GEISER = variantes([{ src: hero900, w: 900, h: 675 }, { src: hero1400, w: 1400, h: 1050 }, { src: hero1800, w: 1800, h: 1350 }])
+const PARAPENTE = una(parapente, 1600, 1400)
 
-/* Imagen por defecto de cada hueco (sección "home" en /admin/imagenes).
-   null = todavía no hay foto adecuada en el proyecto: el hueco no se pinta
-   (o deja ver el fondo oscuro de su bloque) hasta que se suba desde el
-   admin. Las claves y los textos alternativos por defecto están listados en
-   supabase/migrations/013_home_editorial_huecos.sql. */
+/* Huecos de imagen de la home (sección "home" en /admin/imagenes) y su foto
+   por defecto. null = el proyecto todavía no tiene una foto adecuada: el
+   hueco se ve como un bloque gris hasta que se suba la suya desde el admin.
+   El texto alternativo por defecto de cada uno está en home.huecos.<clave>
+   (es.json / en.json) y se edita también desde el admin. */
 const IMG = {
-  'hero-poster': HERO,
-  'pais-vertical': variantes([{ src: maori480, w: 480, h: 850 }, { src: maori900, w: 900, h: 1594 }]),
+  'hero-poster': null,
+  'pais-vertical': null,
   'pais-panoramica': null,
-  'porque-grupo': variantes([{ src: sesenta500, w: 500, h: 666 }, { src: sesenta1000, w: 1000, h: 1333 }]),
-  'panel-ciegos': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
+  'panel-privado': PARAPENTE,
   'panel-sesenta': una(secuoyas, 844, 1125),
-  'panel-privado': una(parapente, 1600, 1400),
-  'salida-foto': una(talla, 1000, 1333),
-  'ruta-auckland': null,
-  'ruta-hobbiton-rotorua': HERO,
-  'ruta-queenstown': variantes([{ src: qt600, w: 600, h: 525 }, { src: qt1200, w: 1200, h: 1050 }]),
-  'ruta-milford': null,
-  'ruta-aoraki': null,
-  'ruta-tekapo': null,
-  'ruta-kaikoura': variantes([{ src: kai480, w: 480, h: 642 }, { src: kai900, w: 900, h: 1204 }]),
-  'galeria-01': HERO,
+  'panel-ciegos': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
+  'salida-foto': variantes([{ src: sesenta500, w: 500, h: 666 }, { src: sesenta1000, w: 1000, h: 1333 }]),
+  'tiaki-fondo': null,
+  'destino-rotorua': GEISER,
+  'destino-fiordland': null,
+  'destino-aoraki': null,
+  'destino-queenstown': variantes([{ src: qt600, w: 600, h: 525 }, { src: qt1200, w: 1200, h: 1050 }]),
+  'destino-kaikoura': variantes([{ src: kai480, w: 480, h: 642 }, { src: kai900, w: 900, h: 1204 }]),
+  'destino-waitomo': null,
+  'galeria-01': GEISER,
   'galeria-02': una(talla, 1000, 1333),
   'galeria-03': una(secuoyas, 844, 1125),
-  'galeria-04': una(parapente, 1600, 1400),
+  'galeria-04': PARAPENTE,
   'galeria-05': una(kayak, 1312, 1755),
   'galeria-06': una(haka, 1129, 2000),
   'galeria-07': null, 'galeria-08': null, 'galeria-09': null,
   'galeria-10': null, 'galeria-11': null, 'galeria-12': null,
-  'tiaki-infografia': null,
   nosotras: variantes([{ src: nos600, w: 600, h: 800 }, { src: nos1100, w: 1100, h: 1467 }]),
   cierre: null,
 }
 
-const WHATSAPP = 'https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber%20más%20sobre%20los%20viajes%20de%20Watchout%20Tours'
+const WHATSAPP = 'https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber%20más%20sobre%20los%20viajes%20de%20WatchOut%20Tours'
 const TIAKI = 'https://www.tiakinewzealand.com'
 
 /* Valores que recibe el equipo en el correo (siempre en español). */
@@ -83,47 +80,44 @@ const VIAJES_EQUIPO = {
 const reducirMovimiento = () =>
   typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
-/* Lleva el foco a un campo del formulario del itinerario (y lo enseña). */
-function irAlCampo(id) {
-  const el = document.getElementById(id)
-  if (!el) return
-  el.scrollIntoView({ behavior: reducirMovimiento() ? 'auto' : 'smooth', block: 'center' })
-  el.focus({ preventScroll: true })
-}
+const dos = n => String(n).padStart(2, '0')
 
-/* ¿Tiene foto el hueco? (subida en el admin o por defecto en el proyecto) */
-function useTieneFoto(clave, alt) {
-  return !!useSiteImage('home', clave, IMG[clave]?.src ?? null, alt).src
-}
-
-/* Foto de un hueco dentro de un <figure>, con pie opcional. Si el hueco no
-   tiene foto todavía, no se pinta nada (ni el figure). */
-function FotoHueco({ clave, alt, sizes, className = '', pie, prioritaria }) {
-  const tiene = useTieneFoto(clave, alt)
-  if (!tiene) return null
-  return (
-    <figure className={`hn-foto ${className}`.trim()}>
-      <ImagenHueco seccion="home" clave={clave} defecto={IMG[clave]} alt={alt} sizes={sizes} prioritaria={prioritaria} />
-      {pie && <figcaption className="hn-pie">{pie}</figcaption>}
-    </figure>
-  )
+/* Texto con marcas: <i>…</i> pasa a Fraunces cursiva y <br/> a salto de línea. */
+function Texto({ k }) {
+  return <Trans i18nKey={k} components={{ i: <span className="hn-it" />, br: <br /> }} />
 }
 
 /* Etiqueta de sección con su filete de 40 px */
-function Etiqueta({ children, clara }) {
-  return <p className={`hn-etiqueta${clara ? ' hn-etiqueta--clara' : ''}`}>{children}</p>
+function Etiqueta({ children, clara, className = '' }) {
+  return <p className={`hn-lbl${clara ? ' hn-lbl--clara' : ''} ${className}`.trim()}>{children}</p>
+}
+
+/* Foto de un hueco. El contenedor se pinta siempre: sin foto es el bloque
+   gris de la maqueta. */
+function Foto({ clave, sizes, className = '', prioritaria, children }) {
+  const { t } = useTranslation()
+  return (
+    <div className={`hn-foto ${className}`.trim()}>
+      <ImagenHueco
+        seccion="home" clave={clave} defecto={IMG[clave]} alt={t(`home.huecos.${clave}`)}
+        sizes={sizes} prioritaria={prioritaria}
+      />
+      {children}
+    </div>
+  )
 }
 
 /* ── 1. Hero con vídeo ───────────────────────────────────────────────── */
-/* El vídeo es decorativo (aria-hidden): la información la da la foto del
-   hueco "hero-poster", que está debajo con su texto alternativo y es lo que
-   se ve si el vídeo no carga o si se pide reducir el movimiento.
-   El botón de pausa solo aparece cuando hay vídeo que pausar. Su texto
-   cambia ("Pausar vídeo" / "Reproducir vídeo"), así que no lleva
-   aria-pressed: un botón de alternancia debe mantener el mismo nombre. */
+/* El vídeo es decorativo (aria-hidden): lo que cuenta la imagen lo dice el
+   texto alternativo del hueco "hero-poster", que está debajo y es lo que se
+   ve si el vídeo no carga o si se pide reducir el movimiento.
+   No lleva el atributo autoplay en el HTML: se arranca desde aquí para
+   poder respetar prefers-reduced-motion (con él, no se reproduce solo).
+   El botón solo aparece cuando hay vídeo que pausar; aria-pressed="true"
+   significa "en pausa". */
 function Hero() {
   const { t } = useTranslation()
-  const poster = useSiteImage('home', 'hero-poster', IMG['hero-poster'].src, t('home.heroImgAlt'))
+  const poster = useSiteImage('home', 'hero-poster', null, '')
   const video = useRef(null)
   const [hayVideo, setHayVideo] = useState(false)
   const [enMarcha, setEnMarcha] = useState(false)
@@ -132,142 +126,146 @@ function Hero() {
     const v = video.current
     if (!v) return
     v.muted = true // React no pone el atributo muted en el HTML
-    if (reducirMovimiento()) return
-    v.play()?.then(() => setEnMarcha(true)).catch(() => setEnMarcha(false))
+    // Escuchas nativas: en la página prerenderizada el vídeo puede haber
+    // cargado (o empezado) antes de que React se enganche al HTML.
+    const listo = () => setHayVideo(true)
+    const estado = () => { setEnMarcha(!v.paused); if (!v.paused) setHayVideo(true) }
+    v.addEventListener('loadedmetadata', listo)
+    v.addEventListener('play', estado)
+    v.addEventListener('playing', estado)
+    v.addEventListener('pause', estado)
+    if (v.readyState >= 1) listo()
+    estado()
+    if (!reducirMovimiento()) v.play()?.catch(() => {})
+    return () => {
+      v.removeEventListener('loadedmetadata', listo)
+      v.removeEventListener('play', estado)
+      v.removeEventListener('playing', estado)
+      v.removeEventListener('pause', estado)
+    }
   }, [])
 
   function alternar() {
     const v = video.current
     if (!v) return
-    if (v.paused) v.play()?.then(() => setEnMarcha(true)).catch(() => {})
-    else { v.pause(); setEnMarcha(false) }
+    if (v.paused) v.play()?.catch(() => {})
+    else v.pause()
   }
 
   return (
     <section className="hn-hero" aria-labelledby="hn-hero-titulo">
-      <ImagenHueco
-        seccion="home" clave="hero-poster" defecto={IMG['hero-poster']} alt={t('home.heroImgAlt')}
-        sizes="100vw" prioritaria className="hn-hero__media"
-      />
+      <Foto clave="hero-poster" sizes="100vw" prioritaria className="hn-hero__media" />
       <video
         ref={video}
-        className={`hn-hero__media hn-hero__video${hayVideo ? ' hn-hero__video--lista' : ''}`}
+        className={`hn-hero__video${hayVideo ? ' hn-hero__video--lista' : ''}`}
         poster={poster.src || undefined}
         muted loop playsInline preload="metadata"
         aria-hidden="true" tabIndex={-1}
-        onLoadedMetadata={() => setHayVideo(true)}
-        onPlay={() => setEnMarcha(true)}
-        onPause={() => setEnMarcha(false)}
       >
         <source src="/media/hero.webm" type="video/webm" />
         <source src="/media/hero.mp4" type="video/mp4" />
       </video>
       <div className="hn-hero__velo" aria-hidden="true" />
 
-      <div className="hn-wrap hn-hero__contenido">
+      <div className="hn-hero__contenido">
         <Etiqueta clara>{t('home.hero.etiqueta')}</Etiqueta>
-        <h1 id="hn-hero-titulo" className="hn-h1">{t('home.hero.h1')}</h1>
+        <h1 id="hn-hero-titulo" className="hn-h1"><Texto k="home.hero.titulo" /></h1>
         <p className="hn-hero__sub">{t('home.hero.sub')}</p>
         <div className="hn-botones">
-          <a href="#tres-maneras" className="hn-btn hn-btn--coral">{t('home.hero.cta1')}</a>
-          <a href="#itinerario" className="hn-btn hn-btn--borde-blanco">{t('home.hero.cta2')}</a>
+          <a href="#itinerario" className="hn-btn">{t('home.hero.cta1')}</a>
+          <a href="#colecciones" className="hn-btn hn-btn--fantasma">{t('home.hero.cta2')}</a>
         </div>
       </div>
 
-      {hayVideo && (
-        <button type="button" className="hn-hero__pausa" onClick={alternar}>
-          <span className={`hn-hero__pausa-signo${enMarcha ? '' : ' hn-hero__pausa-signo--play'}`} aria-hidden="true" />
-          {enMarcha ? t('home.hero.pausar') : t('home.hero.reproducir')}
-        </button>
-      )}
-      <span className="hn-hero__scroll" aria-hidden="true" />
+      <div className="hn-hero__pie">
+        <span>{t('home.hero.pieVideo')}</span>
+        {hayVideo && (
+          <>
+            <span aria-hidden="true">·</span>
+            <button type="button" className="hn-hero__pausa" aria-pressed={!enMarcha} onClick={alternar}>
+              <span className={`hn-hero__signo${enMarcha ? '' : ' hn-hero__signo--play'}`} aria-hidden="true" />
+              {enMarcha ? t('home.hero.pausar') : t('home.hero.reproducir')}
+            </button>
+          </>
+        )}
+      </div>
     </section>
   )
 }
 
-/* ── 2. Franja ───────────────────────────────────────────────────────── */
-function Franja() {
-  const { t } = useTranslation()
-  return (
-    <section className="hn-franja" aria-label={t('home.franja.frase')}>
-      <p className="hn-franja__frase hn-revela">{t('home.franja.frase')}</p>
-    </section>
-  )
-}
-
-/* ── 3. El país: doble página + panorámica ───────────────────────────── */
+/* ── 2. El país: foto vertical + texto, y panorámica a sangre ────────── */
 function ElPais() {
   const { t } = useTranslation()
   return (
-    <section id="el-pais" className="hn-seccion hn-pais" aria-labelledby="hn-pais-titulo">
-      <div className="hn-doble">
-        <FotoHueco
-          clave="pais-vertical" alt={t('home.pais.imgAlt')}
-          sizes="(min-width: 900px) 60vw, 100vw" className="hn-doble__foto"
-        />
-        <div className="hn-doble__texto hn-revela">
+    <>
+      <section id="el-pais" className="hn-sec hn-par" aria-labelledby="hn-pais-titulo">
+        <Foto clave="pais-vertical" sizes="(min-width: 901px) 40vw, 100vw" className="hn-par__foto hn-par__foto--vertical" />
+        <div className="hn-par__texto">
           <Etiqueta>{t('home.pais.etiqueta')}</Etiqueta>
-          <h2 id="hn-pais-titulo" className="hn-h2">{t('home.pais.titulo')}</h2>
-          <p className="hn-parrafo">{t('home.pais.texto')}</p>
+          <h2 id="hn-pais-titulo" className="hn-h2"><Texto k="home.pais.titulo" /></h2>
+          <p className="hn-body hn-body--primero">{t('home.pais.p1')}</p>
+          <p className="hn-body">{t('home.pais.p2')}</p>
+          <p className="hn-frase">{t('home.pais.cierre')}</p>
         </div>
-      </div>
-      <FotoHueco
-        clave="pais-panoramica" alt={t('home.pais.panoAlt')} sizes="100vw"
-        className="hn-panoramica hn-revela" pie={t('home.pais.pie')}
-      />
-    </section>
+      </section>
+      <figure className="hn-panoramica">
+        <Foto clave="pais-panoramica" sizes="100vw" className="hn-panoramica__foto" />
+        <figcaption className="hn-cap">{t('home.pais.pie')}</figcaption>
+      </figure>
+    </>
   )
 }
 
-/* ── 4. Por qué con nosotras ─────────────────────────────────────────── */
-function PorQue() {
+/* ── 3. Cita de las fundadoras ───────────────────────────────────────── */
+function Cita() {
   const { t } = useTranslation()
   return (
-    <section className="hn-seccion hn-porque" aria-labelledby="hn-porque-titulo">
-      <div className="hn-estrecho hn-revela">
-        <Etiqueta>{t('home.porque.etiqueta')}</Etiqueta>
-        <h2 id="hn-porque-titulo" className="hn-h2">{t('home.porque.titulo')}</h2>
-        <p className="hn-parrafo">{t('home.porque.texto')}</p>
-        <blockquote className="hn-cita">
-          <p>{t('home.porque.cita')}</p>
-        </blockquote>
-      </div>
-      <FotoHueco clave="porque-grupo" alt={t('home.porque.imgAlt')} sizes="100vw" className="hn-sangre hn-revela" />
+    <section className="hn-sec hn-cita" aria-label={t('home.cita.firma')}>
+      <figure>
+        <blockquote><p><Texto k="home.cita.texto" /></p></blockquote>
+        <figcaption className="hn-firma">{t('home.cita.firma')}</figcaption>
+      </figure>
     </section>
   )
 }
 
-/* ── 5. Tres maneras de vivirlo: paneles a pantalla completa ─────────── */
+/* ── 4. Colecciones: tres paneles a pantalla completa ────────────────── */
 const PANELES = [
-  { id: 'ciegos', clave: 'panel-ciegos', to: '/mas-alla-de-la-vista' },
+  { id: 'privado', clave: 'panel-privado', to: '/productos', modos: true },
   { id: 'sesenta', clave: 'panel-sesenta', to: '/sin-prisa' },
-  { id: 'privado', clave: 'panel-privado', to: '/productos' },
+  { id: 'ciegos', clave: 'panel-ciegos', to: '/mas-alla-de-la-vista' },
 ]
 
-function TresManeras() {
+function Colecciones() {
   const { t } = useTranslation()
   return (
-    <section id="tres-maneras" className="hn-maneras" aria-labelledby="hn-maneras-titulo">
-      <div className="hn-wrap hn-maneras__cabecera hn-revela">
-        <h2 id="hn-maneras-titulo" className="hn-h2">{t('home.viajes.titulo')}</h2>
+    <section id="colecciones" className="hn-colecciones" aria-labelledby="hn-colecciones-titulo">
+      <div className="hn-colecciones__cabecera">
+        <Etiqueta>{t('home.colecciones.etiqueta')}</Etiqueta>
+        <h2 id="hn-colecciones-titulo" className="hn-h2"><Texto k="home.colecciones.titulo" /></h2>
       </div>
-      {PANELES.map(({ id, clave, to }) => {
-        const ns = `home.viajes.${id}`
+      {PANELES.map(({ id, clave, to, modos }, i) => {
+        const ns = `home.colecciones.${id}`
         return (
           <article key={id} className="hn-panel" aria-labelledby={`hn-panel-${id}`}>
-            <div className="hn-panel__foto">
-              <ImagenHueco seccion="home" clave={clave} defecto={IMG[clave]} alt={t(`${ns}.imgAlt`)} sizes="100vw" />
-            </div>
+            <Foto clave={clave} sizes="100vw" className="hn-panel__foto">
+              <div className="hn-velo" aria-hidden="true" />
+            </Foto>
             <div className="hn-panel__texto">
-              <div className="hn-wrap hn-revela">
-                <Etiqueta clara>{t(`${ns}.etiqueta`)}</Etiqueta>
-                <h3 id={`hn-panel-${id}`} className="hn-h2">{t(`${ns}.titulo`)}</h3>
-                <p className="hn-lema">{t(`${ns}.lema`)}</p>
-                <p className="hn-parrafo">{t(`${ns}.texto`)}</p>
-                <L to={to} className="hn-enlace hn-enlace--flecha">
-                  {t(`${ns}.enlace`)}<span aria-hidden="true" className="hn-flecha">→</span>
-                </L>
-              </div>
+              <Etiqueta clara>{dos(i + 1)} · {t(`${ns}.etiqueta`)}</Etiqueta>
+              <h3 id={`hn-panel-${id}`} className="hn-h2"><Texto k={`${ns}.titulo`} /></h3>
+              <p className="hn-panel__parrafo">{t(`${ns}.texto`)}</p>
+              {modos && (
+                <div className="hn-modos">
+                  {[1, 2].map(n => (
+                    <div key={n} className="hn-modo">
+                      <h4 className="hn-modo__titulo">{t(`${ns}.modo${n}`)}</h4>
+                      <p>{t(`${ns}.modo${n}Texto`)}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              <L to={to} className="hn-lnk">{t(`${ns}.enlace`)}</L>
             </div>
           </article>
         )
@@ -276,49 +274,102 @@ function TresManeras() {
   )
 }
 
-/* ── 6. Próxima salida ───────────────────────────────────────────────── */
-function ProximaSalida() {
+/* ── 5. Próxima salida ───────────────────────────────────────────────── */
+function ProximaSalida({ setViaje }) {
   const { t } = useTranslation()
-  function proponerFechas(e) {
-    e.preventDefault()
-    irAlCampo('itinerario-fechas')
-  }
   return (
-    <section id="salida" className="hn-seccion hn-blanca hn-salida" aria-labelledby="hn-salida-titulo">
-      <div className="hn-wrap hn-dos">
-        <FotoHueco clave="salida-foto" alt={t('home.salida.imgAlt')} sizes="(min-width: 900px) 45vw, 100vw" className="hn-dos__foto hn-revela" />
-        <div className="hn-dos__texto hn-revela">
-          <Etiqueta>{t('home.salida.etiqueta')}</Etiqueta>
-          <h2 id="hn-salida-titulo" className="hn-h2">{t('home.salida.titulo')}</h2>
-          <p className="hn-parrafo">{t('home.salida.texto')}</p>
-          <div className="hn-botones">
-            <a href="#itinerario" className="hn-btn hn-btn--coral">{t('home.salida.itinerario')}</a>
-            <a href="#itinerario-fechas" className="hn-btn hn-btn--borde-petroleo" onClick={proponerFechas}>{t('home.salida.fechas')}</a>
-          </div>
+    <section id="salida" className="hn-sec hn-par hn-blanca" aria-labelledby="hn-salida-titulo">
+      <div className="hn-par__texto">
+        <Etiqueta>{t('home.salida.etiqueta')}</Etiqueta>
+        <h2 id="hn-salida-titulo" className="hn-h2"><Texto k="home.salida.titulo" /></h2>
+        <p className="hn-body hn-body--primero">{t('home.salida.texto')}</p>
+        <div className="hn-botones">
+          <a href="#itinerario" className="hn-btn" onClick={() => setViaje('viajes-60')}>{t('home.salida.itinerario')}</a>
+          <BotonVideollamada className="hn-btn hn-btn--tinta">{t('home.salida.hablar')}</BotonVideollamada>
+        </div>
+      </div>
+      <Foto clave="salida-foto" sizes="(min-width: 901px) 42vw, 100vw" className="hn-par__foto hn-par__foto--salida" />
+    </section>
+  )
+}
+
+/* ── 6. Pilares: cuatro columnas numeradas ───────────────────────────── */
+function Pilares() {
+  const { t } = useTranslation()
+  const items = t('home.pilares.items', { returnObjects: true })
+  return (
+    <section className="hn-sec" aria-labelledby="hn-pilares-titulo">
+      <Etiqueta>{t('home.pilares.etiqueta')}</Etiqueta>
+      <h2 id="hn-pilares-titulo" className="hn-h2"><Texto k="home.pilares.titulo" /></h2>
+      {/* role="list": sin viñetas, Safari quitaría la semántica de lista */}
+      <ol className="hn-columnas hn-pilares" role="list">
+        {items.map((p, i) => (
+          <li key={p.titulo}>
+            <span className="hn-num" aria-hidden="true">{dos(i + 1)}</span>
+            <h3 className="hn-columnas__titulo">{p.titulo}</h3>
+            <p>{p.texto}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+/* ── 7. Tiaki: foto a sangre + banda oscura con los tres compromisos ─── */
+function Tiaki() {
+  const { t } = useTranslation()
+  const items = t('home.tiaki.items', { returnObjects: true })
+  return (
+    <section id="tiaki" className="hn-tiaki" aria-labelledby="hn-tiaki-titulo">
+      <Foto clave="tiaki-fondo" sizes="100vw" className="hn-tiaki__foto">
+        <div className="hn-tiaki__velo" aria-hidden="true" />
+        <div className="hn-tiaki__cabecera">
+          <Etiqueta clara>{t('home.tiaki.etiqueta')}</Etiqueta>
+          <h2 id="hn-tiaki-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.tiaki.titulo" /></h2>
+        </div>
+      </Foto>
+      <div className="hn-tiaki__banda">
+        <p className="hn-tiaki__texto">{t('home.tiaki.texto')}</p>
+        <ol className="hn-columnas hn-compromisos" role="list">
+          {items.map((c, i) => (
+            <li key={c.titulo}>
+              <span className="hn-compromisos__num" aria-hidden="true">{dos(i + 1)}</span>
+              <h3 className="hn-columnas__titulo">{c.titulo}</h3>
+              <p>{c.texto}</p>
+            </li>
+          ))}
+        </ol>
+        <div className="hn-tiaki__cierre">
+          <p className="hn-tiaki__frase">{t('home.tiaki.cierre')}</p>
+          <a href={TIAKI} className="hn-lnk hn-lnk--clara" target="_blank" rel="noopener noreferrer">
+            {t('home.tiaki.enlace')}<span className="sr-only"> {t('common.newTab')}</span>
+          </a>
         </div>
       </div>
     </section>
   )
 }
 
-/* ── 7. De norte a sur ───────────────────────────────────────────────── */
-function Ruta() {
+/* ── 8. Destinos: seis bloques alternos foto / texto ─────────────────── */
+function Destinos() {
   const { t } = useTranslation()
-  const paradas = t('home.ruta.paradas', { returnObjects: true })
+  const items = t('home.destinos.items', { returnObjects: true })
   return (
-    <section className="hn-seccion hn-ruta" aria-labelledby="hn-ruta-titulo">
-      <div className="hn-wrap hn-revela">
-        <h2 id="hn-ruta-titulo" className="hn-h2 hn-ruta__titulo">{t('home.ruta.titulo')}</h2>
-      </div>
-      {/* role="list": sin viñetas, Safari quitaría la semántica de lista */}
-      <ol className="hn-paradas" role="list">
-        {paradas.map((p, i) => (
-          <li key={p.id} className={`hn-parada${i % 2 ? ' hn-parada--derecha' : ''}`}>
-            <FotoHueco clave={`ruta-${p.id}`} alt={p.alt} sizes="(min-width: 900px) 58vw, 100vw" className="hn-parada__foto hn-revela" />
-            <div className="hn-parada__texto hn-revela">
-              <span className="hn-parada__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-              <h3 className="hn-h3">{p.nombre}</h3>
-              <p className="hn-parrafo">{p.frase}</p>
+    <section id="destinos" className="hn-destinos" aria-labelledby="hn-destinos-titulo">
+      <Etiqueta>{t('home.destinos.etiqueta')}</Etiqueta>
+      <h2 id="hn-destinos-titulo" className="hn-h2"><Texto k="home.destinos.titulo" /></h2>
+      <ol className="hn-destinos__lista" role="list">
+        {items.map((d, i) => (
+          <li key={d.id} className={`hn-destino${i % 2 ? ' hn-destino--inverso' : ''}`}>
+            <Foto clave={`destino-${d.id}`} sizes="(min-width: 901px) 50vw, 100vw" className="hn-destino__foto" />
+            <div className="hn-destino__texto">
+              <span className="hn-num" aria-hidden="true">{dos(i + 1)}</span>
+              {/* El nombre del lugar forma parte del encabezado */}
+              <h3 className="hn-destino__titulo">
+                <span className="hn-lbl">{d.nombre}</span>
+                <span className="hn-h3">{d.titulo}</span>
+              </h3>
+              <p className="hn-body hn-body--menor">{d.texto}</p>
             </div>
           </li>
         ))}
@@ -327,45 +378,61 @@ function Ruta() {
   )
 }
 
-/* ── 8. Galería con visor accesible ──────────────────────────────────── */
-const GALERIA = Array.from({ length: 12 }, (_, i) => `galeria-${String(i + 1).padStart(2, '0')}`)
+/* ── 9. Galería: mosaico de 12 huecos con visor accesible ────────────── */
+const GALERIA = Array.from({ length: 12 }, (_, i) => `galeria-${dos(i + 1)}`)
 
 function Galeria() {
   const { t } = useTranslation()
-  const alts = t('home.galeria.alts', { returnObjects: true })
   // Número fijo de huecos: los hooks se llaman siempre en el mismo orden.
-  const todas = GALERIA.map((clave, i) => ({ clave, i, ...useSiteImage('home', clave, IMG[clave]?.src ?? null, alts[i]) }))
+  const todas = GALERIA.map(clave => ({
+    clave, ...useSiteImage('home', clave, IMG[clave]?.src ?? null, t(`home.huecos.${clave}`)),
+  }))
   const fotos = todas.filter(f => f.src)
   const [abierta, setAbierta] = useState(null)
   const disparador = useRef(null)
 
-  if (fotos.length === 0) return null
-
-  function abrir(i, e) {
+  function abrir(n, e) {
     disparador.current = e.currentTarget
-    setAbierta(i)
+    setAbierta(n)
   }
   function cerrar() {
     setAbierta(null)
-    // El foco vuelve a la foto desde la que se abrió el visor
+    // El foco vuelve al control desde el que se abrió el visor
     requestAnimationFrame(() => disparador.current?.focus())
   }
 
   return (
-    <section className="hn-seccion hn-galeria" aria-labelledby="hn-galeria-titulo">
-      <h2 id="hn-galeria-titulo" className="sr-only">{t('home.galeria.titulo')}</h2>
+    <section id="galeria" className="hn-galeria" aria-labelledby="hn-galeria-titulo">
+      <div className="hn-galeria__cabecera">
+        <div>
+          <Etiqueta>{t('home.galeria.etiqueta')}</Etiqueta>
+          <h2 id="hn-galeria-titulo" className="hn-h2"><Texto k="home.galeria.titulo" /></h2>
+        </div>
+        {fotos.length > 0 && (
+          <button type="button" className="hn-lnk hn-lnk--verde" onClick={e => abrir(0, e)}>
+            {t('home.galeria.enlace')}
+          </button>
+        )}
+      </div>
+      {/* Los 12 huecos ocupan siempre su sitio en el mosaico; el que aún no
+          tiene foto es un bloque gris sin contenido. */}
       <ul className="hn-mosaico" role="list">
-        {fotos.map((f, n) => (
-          <li key={f.clave} className={`hn-mosaico__item hn-mosaico__item--${(f.i % 6) + 1} hn-revela`}>
-            <button type="button" className="hn-mosaico__boton" onClick={e => abrir(n, e)}>
-              <ImagenHueco
-                seccion="home" clave={f.clave} defecto={IMG[f.clave]} alt=""
-                sizes="(min-width: 900px) 50vw, 100vw"
-              />
-              <span className="sr-only">{t('home.galeria.ampliar')} {f.alt}</span>
-            </button>
-          </li>
-        ))}
+        {todas.map((f, i) => {
+          const n = fotos.indexOf(f)
+          return (
+            <li key={f.clave} className={`hn-mosaico__item hn-mosaico__item--${i + 1}`} aria-hidden={f.src ? undefined : 'true'}>
+              {f.src && (
+                <button type="button" className="hn-mosaico__boton" onClick={e => abrir(n, e)}>
+                  <ImagenHueco
+                    seccion="home" clave={f.clave} defecto={IMG[f.clave]} alt=""
+                    sizes="(min-width: 901px) 44vw, 90vw"
+                  />
+                  <span className="sr-only" lang={f.lang}>{t('home.galeria.ampliar')} {f.alt}</span>
+                </button>
+              )}
+            </li>
+          )
+        })}
       </ul>
       {abierta !== null && (
         <Visor fotos={fotos} indice={abierta} setIndice={setAbierta} onCerrar={cerrar} />
@@ -433,79 +500,42 @@ function Visor({ fotos, indice, setIndice, onCerrar }) {
   )
 }
 
-/* ── 9. Tiaki ────────────────────────────────────────────────────────── */
-function Tiaki() {
+/* ── 10. Fundadoras: retrato a sangre y texto ────────────────────────── */
+function Fundadoras() {
   const { t } = useTranslation()
   return (
-    <section className="hn-seccion hn-blanca hn-tiaki" aria-labelledby="hn-tiaki-titulo">
-      <div className="hn-estrecho hn-revela">
-        <Etiqueta>{t('home.tiaki.etiqueta')}</Etiqueta>
-        <h2 id="hn-tiaki-titulo" className="hn-h2">{t('home.tiaki.titulo')}</h2>
-        <p className="hn-parrafo">{t('home.tiaki.texto')}</p>
-        <FotoHueco clave="tiaki-infografia" alt={t('home.tiaki.imgAlt')} sizes="(min-width: 900px) 720px, 100vw" className="hn-tiaki__infografia" />
-        <a href={TIAKI} className="hn-enlace hn-enlace--flecha" target="_blank" rel="noopener noreferrer">
-          {t('home.tiaki.enlace')}<span aria-hidden="true" className="hn-flecha">→</span>
-          <span className="sr-only"> {t('common.newTab')}</span>
-        </a>
+    <section id="fundadoras" className="hn-fundadoras hn-blanca" aria-labelledby="hn-fundadoras-titulo">
+      <Foto clave="nosotras" sizes="(min-width: 901px) 50vw, 100vw" className="hn-fundadoras__foto" />
+      <div className="hn-fundadoras__texto">
+        <Etiqueta>{t('home.fundadoras.etiqueta')}</Etiqueta>
+        <h2 id="hn-fundadoras-titulo" className="hn-h2"><Texto k="home.fundadoras.titulo" /></h2>
+        <p className="hn-body hn-body--primero">{t('home.fundadoras.p1')}</p>
+        <p className="hn-body">{t('home.fundadoras.p2')}</p>
+        <p className="hn-body">{t('home.fundadoras.p3')}</p>
+        <p className="hn-frase hn-frase--firma">{t('home.fundadoras.firma')}</p>
+        <div><L to="/sobre-nosotras" className="hn-lnk hn-lnk--verde">{t('home.fundadoras.enlace')}</L></div>
       </div>
     </section>
   )
 }
 
-/* ── 10. Quiénes somos ───────────────────────────────────────────────── */
-function QuienesSomos() {
+/* ── 12. Cierre a pantalla completa ──────────────────────────────────── */
+function Cierre() {
   const { t } = useTranslation()
   return (
-    <section id="nosotras" className="hn-seccion hn-nosotras" aria-labelledby="hn-nosotras-titulo">
-      <FotoHueco clave="nosotras" alt={t('home.nosotras.imgAlt')} sizes="(min-width: 900px) 55vw, 100vw" className="hn-nosotras__foto hn-revela" />
-      <div className="hn-nosotras__texto hn-revela">
-        <Etiqueta>{t('home.nosotras.etiqueta')}</Etiqueta>
-        <h2 id="hn-nosotras-titulo" className="hn-h2">{t('home.nosotras.titulo')}</h2>
-        <p className="hn-parrafo">{t('home.nosotras.texto')}</p>
-        <L to="/sobre-nosotras" className="hn-enlace hn-enlace--flecha">
-          {t('home.nosotras.enlace')}<span aria-hidden="true" className="hn-flecha">→</span>
-        </L>
+    <section className="hn-cierre" aria-labelledby="hn-cierre-titulo">
+      <Foto clave="cierre" sizes="100vw" className="hn-cierre__foto" />
+      <div className="hn-cierre__velo" aria-hidden="true" />
+      <div className="hn-cierre__contenido">
+        <h2 id="hn-cierre-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.cierre.titulo" /></h2>
+        <p>{t('home.cierre.texto')}</p>
+        <a href="#itinerario" className="hn-btn hn-btn--fantasma">{t('home.cierre.boton')}</a>
       </div>
     </section>
   )
 }
 
-/* ── 12. Cómo reservar + preguntas frecuentes ────────────────────────── */
-function ComoReservar() {
-  const { t } = useTranslation()
-  const pasos = t('home.reservar.pasos', { returnObjects: true })
-  const faq = t('home.reservar.faq', { returnObjects: true })
-  return (
-    <section id="como-reservar" className="hn-seccion" aria-labelledby="hn-reservar-titulo">
-      <div className="hn-wrap">
-        <div className="hn-cabecera hn-revela">
-          <Etiqueta>{t('home.reservar.etiqueta')}</Etiqueta>
-          <h2 id="hn-reservar-titulo" className="hn-h2">{t('home.reservar.titulo')}</h2>
-        </div>
-        {/* role="list": sin viñetas, Safari quitaría la semántica de lista */}
-        <ol className="hn-pasos" role="list">
-          {pasos.map((p, i) => (
-            <li key={p} className="hn-paso hn-revela">
-              <span className="hn-paso__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-              <p className="hn-parrafo">{p}</p>
-            </li>
-          ))}
-        </ol>
-
-        <div className="hn-faq">
-          <h2 id="hn-faq-titulo" className="hn-h3 hn-faq__titulo">{t('home.reservar.faqTitulo')}</h2>
-          {faq.map(({ q, a }, i) => (
-            <Desplegable key={q} id={`hn-faq-${i + 1}`} boton={q} Titulo="h3" className="hn-faq__item">
-              <p>{a}</p>
-            </Desplegable>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ── 12b. Pedir itinerario (Formspree) ─────────────────────────────────────────────── */
+/* ── 13. Pedir itinerario (Formspree) ────────────────────────────────── */
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const TEL_RE = /^\+?[\d\s().-]{7,20}$/
 const SPAM_DELAY_MS = 60_000
@@ -550,17 +580,17 @@ function PedirItinerario({ viaje, setViaje }) {
   const esEmail = EMAIL_RE.test(contacto.trim())
 
   return (
-    <section id="itinerario" className="hn-seccion hn-seccion--pegada" aria-labelledby="hn-itinerario-titulo">
-      <div className="hn-wrap hn-itinerario">
+    <section id="itinerario" className="hn-sec hn-itinerario-sec" aria-labelledby="hn-itinerario-titulo">
+      <div className="hn-itinerario">
         <div className="hn-itinerario__texto">
           <h2 id="hn-itinerario-titulo" className="hn-h2">{t('home.itinerario.titulo')}</h2>
-          <p className="hn-entradilla">{t('home.itinerario.texto')}</p>
-          <p className="hn-parrafo hn-itinerario__llamada">{t('home.itinerario.videollamadaLinea')}</p>
+          <p className="hn-body hn-body--primero">{t('home.itinerario.texto')}</p>
+          <p className="hn-body hn-itinerario__llamada">{t('home.itinerario.videollamadaLinea')}</p>
           <div className="hn-botones hn-itinerario__botones">
-            <BotonVideollamada className="hn-btn hn-btn--borde-petroleo" />
+            <BotonVideollamada className="hn-btn hn-btn--tinta" />
           </div>
-          <a href={WHATSAPP} className="hn-enlace" target="_blank" rel="noopener noreferrer">
-            {t('home.itinerario.whatsapp')}<span aria-hidden="true"> →</span>
+          <a href={WHATSAPP} className="hn-lnk hn-lnk--verde" target="_blank" rel="noopener noreferrer">
+            {t('home.itinerario.whatsapp')}
             <span className="sr-only"> {t('common.newTab')}</span>
           </a>
         </div>
@@ -663,7 +693,7 @@ function PedirItinerario({ viaje, setViaje }) {
                 <p id="itinerario-privacidad-info" className="form-consent-info">{t('contacto.consentInfo')}</p>
               </div>
 
-              <button type="submit" disabled={state.submitting} className="hn-btn hn-btn--coral hn-btn--ancho">
+              <button type="submit" disabled={state.submitting} className="hn-btn hn-btn--ancho">
                 {state.submitting ? t('home.itinerario.enviando') : t('home.itinerario.enviar')}
               </button>
               <p className="hn-ayuda hn-itinerario__respuesta">{t('home.itinerario.respuesta')}</p>
@@ -678,82 +708,60 @@ function PedirItinerario({ viaje, setViaje }) {
   )
 }
 
-/* ── 13. Cierre ──────────────────────────────────────────────────────── */
-function Cierre() {
+/* ── 13b. Preguntas frecuentes ───────────────────────────────────────── */
+function Preguntas() {
   const { t } = useTranslation()
+  const faq = t('home.faq.items', { returnObjects: true })
   return (
-    <section className="hn-cierre" aria-labelledby="hn-cierre-titulo">
-      <ImagenHueco seccion="home" clave="cierre" defecto={IMG.cierre} alt="" sizes="100vw" className="hn-cierre__img" />
-      <div className="hn-wrap hn-cierre__contenido hn-revela">
-        <h2 id="hn-cierre-titulo" className="hn-h2">{t('home.cierre.frase')}</h2>
-        <div className="hn-botones">
-          <a href="#itinerario" className="hn-btn hn-btn--borde-blanco">{t('home.cierre.boton')}</a>
-        </div>
+    <section id="preguntas" className="hn-sec hn-faq-sec" aria-labelledby="hn-faq-titulo">
+      <div className="hn-faq">
+        <h2 id="hn-faq-titulo" className="hn-h3 hn-faq__titulo">{t('home.faq.titulo')}</h2>
+        {faq.map(({ q, a }, i) => (
+          <Desplegable key={q} id={`hn-faq-${i + 1}`} boton={q} Titulo="h3" className="hn-faq__item">
+            <p>{a}</p>
+          </Desplegable>
+        ))}
       </div>
     </section>
   )
 }
 
-/* Fundido con desplazamiento al entrar en pantalla (600 ms). Sin JS, sin
-   IntersectionObserver o con prefers-reduced-motion todo se ve desde el
-   principio: la clase .hn-anima, que oculta, solo se pone aquí. */
-function useRevelar() {
-  useEffect(() => {
-    if (reducirMovimiento() || typeof IntersectionObserver === 'undefined') return
-    const raiz = document.documentElement
-    raiz.classList.add('hn-anima')
-    const io = new IntersectionObserver(entradas => {
-      entradas.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('hn-visible'); io.unobserve(e.target) }
-      })
-    }, { rootMargin: '0px 0px -8% 0px' })
-    document.querySelectorAll('.hn-revela').forEach(el => io.observe(el))
-    return () => { io.disconnect(); raiz.classList.remove('hn-anima') }
-  }, [])
-}
-
 /* ── Home ────────────────────────────────────────────────────────────────
- * Revista de viajes: hero con vídeo → franja → el país → por qué con
- * nosotras → tres maneras de vivirlo → próxima salida → de norte a sur →
- * galería → Tiaki → quiénes somos → reseñas → cómo reservar (pasos,
- * preguntas frecuentes y formulario) → cierre.
- * Estilos en HomeNueva.css (todo bajo .hn-*), con los tokens de theme.css.
+ * Reproduce la maqueta aprobada: hero con vídeo → el país (foto vertical y
+ * panorámica) → cita de las fundadoras → colecciones (tres paneles a
+ * pantalla completa) → próxima salida → pilares → Tiaki → destinos →
+ * galería → fundadoras → reseña destacada → cierre → formulario del
+ * itinerario y preguntas frecuentes.
+ * Estilos en HomeNueva.css (todo bajo .hn y .hn-*).
  * ──────────────────────────────────────────────────────────────────────── */
 export default function Home() {
   const { t } = useTranslation()
   const [viaje, setViaje] = useState('')
-  useRevelar()
 
-  // Cabecera transparente sobre el hero solo en la home (ver HomeNueva.css)
+  // Si se llega desde otra página con un ancla (/#itinerario, /#tiaki), la
+  // sección aún no existía cuando el enrutador intentó ir a ella.
   useEffect(() => {
-    document.body.classList.add('pagina-home')
-    return () => document.body.classList.remove('pagina-home')
+    const id = window.location.hash.slice(1)
+    if (id) requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView())
   }, [])
 
   return (
-    <>
+    <div className="hn">
       <Seo pageType="home" title={t('home.seo.title')} description={t('home.seo.description')} />
       <Hero />
-      <Franja />
       <ElPais />
-      <PorQue />
-      <TresManeras />
-      <ProximaSalida />
-      <Ruta />
-      <Galeria />
+      <Cita />
+      <Colecciones />
+      <ProximaSalida setViaje={setViaje} />
+      <Pilares />
       <Tiaki />
-      <QuienesSomos />
-      <ResenasDestacadas
-        tono="arena"
-        variante="home"
-        id="resenas"
-        antetitulo={t('home.resenas.etiqueta')}
-        titulo={t('home.resenas.titulo')}
-        textoEnlace={t('home.resenas.todas')}
-      />
-      <ComoReservar />
-      <PedirItinerario viaje={viaje} setViaje={setViaje} />
+      <Destinos />
+      <Galeria />
+      <Fundadoras />
+      <ResenasDestacadas variante="home" id="resenas" antetitulo={t('home.resenas.etiqueta')} />
       <Cierre />
-    </>
+      <PedirItinerario viaje={viaje} setViaje={setViaje} />
+      <Preguntas />
+    </div>
   )
 }
