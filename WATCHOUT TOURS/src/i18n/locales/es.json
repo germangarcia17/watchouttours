@@ -50,8 +50,8 @@
   },
   "home": {
     "seo": {
-      "title": "Viajes sensoriales por Nueva Zelanda en español | Watchout Tours",
-      "description": "Viajes en grupos de máximo 6 personas por Nueva Zelanda, a ritmo tranquilo y con dos guías contigo de principio a fin. Para quien quiere comodidad total y para personas ciegas y con baja visión."
+      "title": "WatchOut Tours · Viajes de autor por Nueva Zelanda",
+      "description": "Viajes privados y salidas en grupo reducido por Nueva Zelanda, diseñados y acompañados por sus fundadoras, dos barcelonesas que viven en el país. Hoteles de 4 y 5 estrellas y experiencias privadas."
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
@@ -103,11 +103,13 @@
       }
     },
     "salida": {
-      "etiqueta": "Grandes Viajes +60 · Próxima salida",
+      "etiqueta": "Próxima salida",
       "titulo": "El Gran Viaje.<br/><i>1 – 15 de marzo de 2027.</i>",
       "texto": "Quince días de norte a sur, de los valles geotérmicos de Rotorua a los fiordos de Milford Sound y las aguas de Kaikōura, donde los cachalotes emergen frente a montañas nevadas. Salida de España el 27 de febrero. Plazas muy limitadas.",
       "itinerario": "Solicita el itinerario",
-      "hablar": "Habla con nosotras"
+      "hablar": "Habla con nosotras",
+      "aviso": "¿Quieres viajar con nosotras en grupo? Nuestra próxima salida es El Gran Viaje, del 1 al 15 de marzo de 2027.",
+      "avisoEnlace": "Descubre El Gran Viaje"
     },
     "pilares": {
       "etiqueta": "Nuestra forma de viajar",
@@ -263,6 +265,7 @@
       "viaje": "¿Qué viaje te interesa?",
       "viajeElige": "Elige una opción",
       "opciones": {
+        "gran-viaje": "El Gran Viaje · 1 – 15 de marzo de 2027",
         "viajes-60": "Viajes +60",
         "personas-ciegas": "Viajes para personas ciegas y con baja visión",
         "privado": "Viaje en privado",
@@ -347,8 +350,8 @@
   },
   "masAlla": {
     "seo": {
-      "title": "Viajes para Personas Ciegas por Nueva Zelanda | Watchout Tours",
-      "description": "Viajes guiados y accesibles por Nueva Zelanda para personas ciegas y con baja visión. Experiencias sensoriales, autonomía y aventura, con dos guías contigo de principio a fin."
+      "title": "Viajes para personas ciegas y con baja visión · WatchOut Tours",
+      "description": "Aotearoa a través de los sentidos: viajes por Nueva Zelanda pensados para personas ciegas y con baja visión, diseñados y acompañados por sus fundadoras."
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
@@ -397,19 +400,15 @@
     "rutas": {
       "eyebrow": "Nuestras opciones",
       "title": "Dos maneras de vivirlo",
-      "sub": "La misma ruta, tú escoges tu formato: en grupo de 6 personas como máximo, con fechas cerradas, o privado y a tu ritmo.",
+      "sub": "La misma ruta, tú escoges tu formato: en grupo reducido, con fechas cerradas, o privado y a tu ritmo.",
       "incluido": "Incluido:",
-      "anuncioBadge": "¡Ya tenemos fecha!",
-      "anuncioFecha": "Nuevo grupo: salimos el 1 de marzo",
-      "anuncioTexto": "Un grupo reducido de 3 a 6 viajeros recorriendo Nueva Zelanda durante 15 días. Las plazas se reservan por orden de llegada — cuéntanos que quieres venir y te guardamos la tuya.",
-      "anuncioCta": "Quiero mi plaza",
       "formatos": [
         {
           "id": "grupo",
-          "etiqueta": "15 días por Nueva Zelanda · grupo de 3 a 6 viajeros + nosotras dos",
+          "etiqueta": "Por Nueva Zelanda en grupo reducido · con nosotras dos",
           "titulo": "La aventura compartida",
-          "cuerpo": "Un grupo de 6 viajeros como máximo, con las mismas ganas que tú de descubrir el mundo. Durante 15 días recorreremos juntos Nueva Zelanda, compartiendo aventuras, risas y momentos que recordarás toda la vida. Porque algunos viajes terminan… y otros te regalan amistades para siempre. Nosotras estaremos a vuestro lado en cada paso del camino, desde el primer día hasta el último.",
-          "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo las 14 noches.",
+          "cuerpo": "Un grupo reducido de viajeros con las mismas ganas que tú de descubrir el mundo. Recorreremos juntos Nueva Zelanda, compartiendo aventuras, risas y momentos que recordarás toda la vida. Porque algunos viajes terminan… y otros te regalan amistades para siempre. Nosotras estaremos a vuestro lado en cada paso del camino, desde el primer día hasta el último.",
+          "incluye": "Alojamientos, todas las actividades, transporte durante la ruta, comidas indicadas y nosotras dos contigo todo el viaje.",
           "cta": "Quiero más información"
         },
         {
@@ -431,14 +430,14 @@
   },
   "sinPrisa": {
     "seo": {
-      "title": "Viajes +60 por Nueva Zelanda en grupos de máximo 6 personas | Watchout Tours",
-      "description": "Quince días por Nueva Zelanda a ritmo tranquilo, en grupos de máximo 6 personas, con visitas privadas, hoteles de 4 y 5 estrellas, desayuno y cena incluidos y dos guías en español todo el viaje."
+      "title": "Viajes +60 por Nueva Zelanda · WatchOut Tours",
+      "description": "El viaje de tu vida, con todo resuelto: grupo reducido, traslados privados, hoteles de 4 y 5 estrellas y dos anfitrionas que se adelantan a cada detalle."
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
       "eyebrow": "Viajes +60 · Nueva Zelanda con todos los sentidos",
       "h1": "Ese viaje que llevas años prometiéndote.",
-      "sub": "Quince días por Nueva Zelanda en un grupo de 6 personas como máximo, a un ritmo tranquilo y con Moni y Sylvie a tu lado desde que aterrizas hasta el último abrazo en el aeropuerto.",
+      "sub": "Nueva Zelanda en grupo reducido, a un ritmo tranquilo y con Moni y Sylvie a tu lado desde que aterrizas hasta el último abrazo en el aeropuerto.",
       "cta": "Quiero información"
     },
     "paraQuien": {
@@ -450,8 +449,8 @@
     "incluye": {
       "title": "Qué incluye",
       "items": [
-        "Moni y Sylvie contigo los 15 días, en español.",
-        "14 noches en hoteles de 4 y 5 estrellas.",
+        "Moni y Sylvie contigo todo el viaje, en español.",
+        "Alojamiento en hoteles de 4 y 5 estrellas.",
         "Desayuno y cena todos los días, y almuerzo en muchas de las jornadas.",
         "Visitas privadas solo para el grupo.",
         "Transporte cómodo durante toda la ruta y vuelo interno entre las dos islas.",
@@ -542,8 +541,8 @@
   },
   "blog": {
     "seo": {
-      "title": "Blog de Viajes Sensoriales por Nueva Zelanda | Watchout Tours",
-      "description": "Reflexiones sobre viajar de forma sensorial y accesible por Nueva Zelanda: historias reales de personas ciegas y con baja visión."
+      "title": "Diario de viaje · Nueva Zelanda desde dentro · WatchOut Tours",
+      "description": "Historias, lugares y experiencias de Nueva Zelanda contadas desde dentro: rutas, cultura maorí, naturaleza y la promesa Tiaki."
     },
     "eyebrow": "El país por los sentidos",
     "title": "Blog sensorial",
@@ -575,8 +574,8 @@
   },
   "productos": {
     "seo": {
-      "title": "Viajes Guiados por Nueva Zelanda para Ciegos | Watchout Tours",
-      "description": "Dos maneras de recorrer Nueva Zelanda con nosotras: en grupo reducido o en viaje privado, diseñadas para personas ciegas y con baja visión."
+      "title": "Viajes privados a medida por Nueva Zelanda · WatchOut Tours",
+      "description": "Tu viaje a Nueva Zelanda diseñado desde cero, en tus fechas: con nuestras fundadoras como anfitrionas o en self drive, con todo reservado y asistencia antes, durante y después."
     },
     "eyebrow": "Todas las experiencias",
     "title": "Elige cómo quieres vivir Nueva Zelanda",
@@ -672,8 +671,8 @@
   "sobre": {
     "docTitle": "Sobre nosotras | Watchout Tours",
     "seo": {
-      "title": "Sobre Nosotras | Mónica y Sylvie — Watchout Tours",
-      "description": "Somos Mónica y Sylvie, guías españolas afincadas en Nueva Zelanda. Creamos viajes sensoriales y accesibles para personas ciegas y con baja visión. Esta es nuestra historia."
+      "title": "Las fundadoras · WatchOut Tours",
+      "description": "Sylvie y Mónica dejaron Barcelona hace más de ocho años y hicieron de Nueva Zelanda su hogar. Hoy diseñan y acompañan viajes de autor por el país que las enamoró."
     },
     "heroImgAlt": "Mónica y Sylvie sonriendo en un selfie junto a la bahía de Sídney al atardecer, con la Ópera de Sídney al fondo",
     "heroEyebrow": "El corazón del proyecto",

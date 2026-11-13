@@ -156,6 +156,22 @@ export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variant
 }
 
 
+/* ── Aviso de la próxima salida en grupo ───────────────
+   Lo usan Más allá de la vista y Viajes +60: la salida del 1 al 15 de
+   marzo de 2027 es El Gran Viaje, no un viaje propio de esas colecciones,
+   así que aquí solo se menciona y se enlaza a su sección de la home. */
+export function AvisoProximaSalida() {
+  const { t } = useTranslation()
+  return (
+    <div className="anuncio-grupo">
+      <p className="anuncio-grupo__texto">{t('home.salida.aviso')}</p>
+      <div className="cta-row" style={{ justifyContent: 'center' }}>
+        <L to="/#proxima-salida" className="btn btn-solid anuncio-grupo__cta">{t('home.salida.avisoEnlace')}<span aria-hidden="true"> →</span></L>
+      </div>
+    </div>
+  )
+}
+
 /* ── Audios ──────────────────────────────────────────── */
 const AUDIOS = [
   { n: 1, id: 'parapente', src: audioParapente },

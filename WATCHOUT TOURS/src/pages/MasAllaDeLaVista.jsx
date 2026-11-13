@@ -9,7 +9,7 @@ import { useSiteImage } from '../lib/siteImages'
 import { Seo } from '../components/Seo'
 import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
-import { HeroFoto, SeparadorBaston, ResenasDestacadas, CtaFinal, AudioClips } from '../components/home/BloquesHome'
+import { HeroFoto, SeparadorBaston, ResenasDestacadas, CtaFinal, AudioClips, AvisoProximaSalida } from '../components/home/BloquesHome'
 import { SolicitudRuta } from '../components/SolicitudRuta'
 
 /* Iconos de "Lo que van a vivir": adrenalina, sentidos y cultura. */
@@ -157,17 +157,7 @@ export default function MasAllaDeLaVista() {
             ))}
           </div>
 
-          <div className="anuncio-grupo">
-            <span className="anuncio-grupo__badge">
-              <span className="anuncio-grupo__punto" aria-hidden="true"></span>
-              {t('masAlla.rutas.anuncioBadge')}
-            </span>
-            <p className="anuncio-grupo__fecha">{t('masAlla.rutas.anuncioFecha')}</p>
-            <p className="anuncio-grupo__texto">{t('masAlla.rutas.anuncioTexto')}</p>
-            <div className="cta-row" style={{ justifyContent: 'center' }}>
-              <L to="/contacto" className="btn btn-solid anuncio-grupo__cta">{t('masAlla.rutas.anuncioCta')}<span aria-hidden="true"> →</span></L>
-            </div>
-          </div>
+          <AvisoProximaSalida />
         </div>
       </section>
 
