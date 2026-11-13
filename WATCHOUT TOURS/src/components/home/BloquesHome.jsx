@@ -92,28 +92,50 @@ export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variant
 
   if (!resenas || resenas.length === 0) return null
 
+  // Home: una sola reseña, centrada, como una cita de revista.
+  if (variante === 'home') {
+    const resena = resenas[0]
+    const texto = (pickLocalized(resena, 'content', lang) ?? '').trim()
+    const contexto = pickLocalized(resena, 'author_context', lang)
+    const yaEntrecomillado = /^[«“"]/.test(texto)
+    const [abre, cierra] = lang === 'en' ? ['“', '”'] : ['«', '»']
+    return (
+      <section id={id} className="hn-sec hn-resena" aria-labelledby="hn-resena-titulo">
+        <h2 id="hn-resena-titulo" className="hn-lbl hn-lbl--centro">{antetitulo ?? t('home.testi.eyebrow')}</h2>
+        <figure>
+          <span className="sr-only">{t('home.testi.srContent')}</span>
+          <blockquote className="hn-resena__cita" lang={fieldLangAttr(resena, 'content', lang)}>
+            <p>{yaEntrecomillado ? texto : `${abre}${texto}${cierra}`}</p>
+          </blockquote>
+          <figcaption className="hn-firma">
+            <span className="sr-only">{t('home.testi.srWho')} </span>
+            {resena.author_name}
+            {contexto && <span lang={fieldLangAttr(resena, 'author_context', lang)}> · {contexto}</span>}
+          </figcaption>
+          {resena.video_url && <VideoTestimonio resena={resena} />}
+        </figure>
+      </section>
+    )
+  }
+
   return (
-    <section
-      id={id}
-      className={variante === 'home' ? 'hn-seccion hn-arena hn-resenas' : `resenas band-${tono}`}
-      aria-labelledby={`resenas-titulo-${modo}`}
-    >
-      <div className={variante === 'home' ? 'hn-wrap' : 'wrap'}>
-        <div className={variante === 'home' ? 'hn-cabecera' : 'sec-head'}>
-          <p className={variante === 'home' ? 'hn-etiqueta' : 'sec-eyebrow'}>{antetitulo ?? t('home.testi.eyebrow')}</p>
-          <h2 id={`resenas-titulo-${modo}`} className={variante === 'home' ? 'hn-h2' : 'sec-title'}>{titulo ?? t('home.testi.title')}</h2>
+    <section id={id} className={`resenas band-${tono}`} aria-labelledby={`resenas-titulo-${modo}`}>
+      <div className="wrap">
+        <div className="sec-head">
+          <p className="sec-eyebrow">{antetitulo ?? t('home.testi.eyebrow')}</p>
+          <h2 id={`resenas-titulo-${modo}`} className="sec-title">{titulo ?? t('home.testi.title')}</h2>
         </div>
-        <div className={variante === 'home' ? 'hn-resenas__grid' : `resenas__grid resenas__grid--${resenas.length}`}>
+        <div className={`resenas__grid resenas__grid--${resenas.length}`}>
           {resenas.map((resena, i) => {
             const contexto = pickLocalized(resena, 'author_context', lang)
             return (
-              <figure key={resena.id} className={variante === 'home' ? 'hn-resena' : `resena${i === 0 ? ' resena--destacada' : ''}`}>
+              <figure key={resena.id} className={`resena${i === 0 ? ' resena--destacada' : ''}`}>
                 <span className="sr-only">{t('home.testi.srContent')}</span>
-                {variante !== 'home' && <span className="resena__comillas" aria-hidden="true">“</span>}
-                <blockquote className={variante === 'home' ? 'hn-resena__cita' : 'resena__cita'} lang={fieldLangAttr(resena, 'content', lang)}>
+                <span className="resena__comillas" aria-hidden="true">“</span>
+                <blockquote className="resena__cita" lang={fieldLangAttr(resena, 'content', lang)}>
                   <p>{pickLocalized(resena, 'content', lang)}</p>
                 </blockquote>
-                <figcaption className={variante === 'home' ? 'hn-resena__autor' : 'resena__autor'}>
+                <figcaption className="resena__autor">
                   <span className="sr-only">{t('home.testi.srWho')}</span>
                   <span className="resena__nombre">{resena.author_name}</span>
                   {contexto && (
@@ -125,13 +147,14 @@ export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variant
             )
           })}
         </div>
-        <p className={variante === 'home' ? 'hn-resenas__mas' : 'resenas__mas'}>
-          <L to="/resenas" className={variante === 'home' ? 'hn-enlace' : undefined}>{textoEnlace ?? t('home.testi.more')}<span aria-hidden="true"> →</span></L>
+        <p className="resenas__mas">
+          <L to="/resenas">{textoEnlace ?? t('home.testi.more')}<span aria-hidden="true"> →</span></L>
         </p>
       </div>
     </section>
   )
 }
+
 
 /* ── Audios ──────────────────────────────────────────── */
 const AUDIOS = [

@@ -2,24 +2,16 @@ import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import './Header.css'
-import logoImg from '../../images/logo-header-watchout.png'
 import { L, LNav, useLang, useLocalize, stripLang, localizePath } from '../../i18n/routing'
 import { availableLangs } from '../../i18n/pageLanguages'
 
-/* Submenú "Viajes" / "Journeys": las dos líneas de viaje y la página con
-   todas las experiencias. Las rutas son siempre las españolas: LNav las
-   traduce al slug inglés cuando toca (ver src/i18n/pageLanguages.js). */
-const viajesLinks = [
-  { to: '/sin-prisa',            key: 'sinPrisa' },
-  { to: '/mas-alla-de-la-vista', key: 'masAlla' },
-  { to: '/productos',            key: 'todas' },
-]
-
+/* Menú principal. Las rutas son siempre las españolas: LNav las traduce al
+   slug inglés cuando toca (ver src/i18n/pageLanguages.js). */
 const navLinks = [
-  { to: '/sobre-nosotras', key: 'nosotras' },
-  { to: '/resenas',        key: 'resenas' },
-  { to: '/blog',           key: 'blog' },
-  { to: '/contacto',       key: 'contacto' },
+  { to: '/productos',            key: 'privados' },
+  { to: '/sin-prisa',            key: 'grandesViajes' },
+  { to: '/mas-alla-de-la-vista', key: 'masAlla' },
+  { to: '/sobre-nosotras',       key: 'fundadoras' },
 ]
 
 /* Selector de idioma: enlaza a la misma página en el otro idioma,
@@ -51,90 +43,19 @@ function LanguageSwitcher() {
   )
 }
 
-/* Desplegable "Viajes" (patrón disclosure: botón con aria-expanded que
-   muestra/oculta una lista de enlaces normales). Teclado: Intro/Espacio en
-   el botón lo abre y cierra, Tab recorre los enlaces, Escape lo cierra y
-   devuelve el foco al botón, y se cierra solo al salir el foco del bloque
-   o al hacer clic fuera. En móvil la lista aparece dentro del menú
-   hamburguesa, debajo del botón. */
-function ViajesDropdown({ onNavigate }) {
-  const { t } = useTranslation()
-  const { pathname } = useLocation()
-  const [open, setOpen] = useState(false)
-  const wrapRef = useRef(null)
-  const buttonRef = useRef(null)
-
-  const base = stripLang(pathname)
-  const active = viajesLinks.some(({ to }) => base === to)
-
-  // Al cambiar de página, el submenú se cierra.
-  useEffect(() => { setOpen(false) }, [pathname])
-
-  // Clic fuera del bloque: se cierra (Safari no enfoca los botones al
-  // hacer clic, así que no basta con onBlur).
-  useEffect(() => {
-    if (!open) return
-    function onPointerDown(e) {
-      if (!wrapRef.current?.contains(e.target)) setOpen(false)
-    }
-    document.addEventListener('mousedown', onPointerDown)
-    return () => document.removeEventListener('mousedown', onPointerDown)
-  }, [open])
-
-  function handleKeyDown(e) {
-    if (e.key === 'Escape' && open) {
-      // No cerrar también el menú móvil: primero solo el submenú.
-      e.stopPropagation()
-      setOpen(false)
-      buttonRef.current?.focus()
-    }
-  }
-
-  function handleBlur(e) {
-    if (!wrapRef.current?.contains(e.relatedTarget)) setOpen(false)
-  }
-
-  return (
-    <div className="nav-dropdown" ref={wrapRef} onKeyDown={handleKeyDown} onBlur={handleBlur}>
-      <button
-        ref={buttonRef}
-        type="button"
-        className={`nav-link nav-dropdown__toggle${active ? ' nav-link--active' : ''}`}
-        aria-expanded={open}
-        aria-controls="nav-viajes-submenu"
-        onClick={() => setOpen(v => !v)}
-      >
-        {t('nav.rutas')}
-        <span className="nav-dropdown__caret" aria-hidden="true">▾</span>
-      </button>
-      <ul id="nav-viajes-submenu" className="nav-dropdown__menu" hidden={!open}>
-        {viajesLinks.map(({ to, key }) => (
-          <li key={to}>
-            <LNav
-              to={to}
-              className={({ isActive }) =>
-                `nav-link nav-dropdown__link${isActive ? ' nav-link--active' : ''}`
-              }
-              onClick={() => { setOpen(false); onNavigate() }}
-            >
-              {t(`nav.${key}`)}
-            </LNav>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
 export function Header() {
   const { t } = useTranslation()
   const localize = useLocalize()
   const { pathname } = useLocation()
-  // En la home la cabecera va transparente sobre la foto del hero y lleva
-  // el botón "Pide el itinerario" (al formulario #itinerario de la home).
+  // La cabecera es la misma en toda la web: barra opaca #15171A fija arriba.
+  // En la home no flota sobre el vídeo (licencia de Tourism New Zealand: el
+  // vídeo no puede llevar nada encima); el vídeo empieza debajo de ella.
   const esHome = stripLang(pathname) === '/'
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleRef = useRef(null)
+
+  // Al cambiar de página, el menú móvil se cierra.
+  useEffect(() => { setMenuOpen(false) }, [pathname])
 
   // Con el menú móvil abierto, el botón flotante de WhatsApp se oculta
   // (ver .menu-abierto en global.css) para no tapar las opciones.
@@ -143,66 +64,68 @@ export function Header() {
     return () => document.body.classList.remove('menu-abierto')
   }, [menuOpen])
 
-  /* Escape cierra el menú móvil y devuelve el foco al botón que lo abrió */
-  function handleNavKeyDown(e) {
-    if (e.key === 'Escape' && menuOpen) {
+  /* Escape cierra el menú móvil, esté donde esté el foco, y lo devuelve al
+     botón que lo abrió */
+  useEffect(() => {
+    if (!menuOpen) return
+    function alPulsar(e) {
+      if (e.key !== 'Escape') return
       setMenuOpen(false)
       toggleRef.current?.focus()
     }
-  }
+    document.addEventListener('keydown', alPulsar)
+    return () => document.removeEventListener('keydown', alPulsar)
+  }, [menuOpen])
+
+  const cerrar = () => setMenuOpen(false)
 
   return (
-    <header className={`site-header${esHome ? ' site-header--home' : ''}`} role="banner">
-      <div className="wrap nav-inner">
-        {/* El enlace ya tiene texto visible; la imagen es decorativa */}
-        <Link to={localize('/')} className="brand-badge" aria-label={t('nav.brandHome')}>
-          <span className="brand-badge__circle">
-            <img src={logoImg} alt="" aria-hidden="true" className="brand-badge__img" />
-          </span>
-          <span className="brand-word-col">
-            <span className="brand-word">Watchout Tours</span>
-            <span className="brand-word-braille" aria-hidden="true">⠺⠁⠞⠉⠓⠕⠥⠞⠀⠞⠕⠥⠗⠎</span>
-          </span>
+    <header
+      className="site-header"
+      role="banner"
+    >
+      <div className="nav-inner">
+        {/* El nombre accesible del enlace es el alt del logo */}
+        <Link to={localize('/')} className="brand-logo">
+          <img src="/brand/logo-blanco.svg" alt="WatchOut Tours" width="702" height="174" className="brand-logo__img" />
         </Link>
+
+        {/* El botón va antes que el menú en el HTML para que, al abrirlo, el
+            siguiente Tab entre en sus enlaces (el CSS lo coloca a la derecha). */}
+        <button
+          ref={toggleRef}
+          type="button"
+          className="menu-toggle"
+          aria-controls="site-nav"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+          onClick={() => setMenuOpen(v => !v)}
+        >
+          <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
+        </button>
 
         <nav
           id="site-nav"
           aria-label={t('nav.main')}
           className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}
-          onKeyDown={handleNavKeyDown}
         >
-          <ViajesDropdown onNavigate={() => setMenuOpen(false)} />
           {navLinks.map(({ to, key }) => (
             <LNav
               key={to}
               to={to}
-              end={to === '/'}
-              className={({ isActive }) =>
-                `nav-link${isActive ? ' nav-link--active' : ''}`
-              }
-              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) => `nav-link${isActive ? ' nav-link--active' : ''}`}
+              onClick={cerrar}
             >
               {t(`nav.${key}`)}
             </LNav>
           ))}
+          {/* En la home, ancla al formulario; en el resto, a la home + ancla */}
+          {esHome
+            ? <a href="#itinerario" className="header-cta" onClick={cerrar}>{t('nav.disena')}</a>
+            : <L to="/#itinerario" className="header-cta" onClick={cerrar}>{t('nav.disena')}</L>}
         </nav>
 
-        <div className="nav-actions">
-          {esHome && (
-            <a href="#itinerario" className="hn-btn hn-btn--coral header-cta">{t('nav.itinerario')}</a>
-          )}
-          <LanguageSwitcher />
-          <button
-            ref={toggleRef}
-            className="menu-toggle"
-            aria-controls="site-nav"
-            aria-expanded={menuOpen}
-            aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
-            onClick={() => setMenuOpen(v => !v)}
-          >
-            <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
-          </button>
-        </div>
+        <LanguageSwitcher />
       </div>
     </header>
   )

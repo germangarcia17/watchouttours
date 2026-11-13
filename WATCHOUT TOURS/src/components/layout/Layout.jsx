@@ -44,29 +44,54 @@ function AlternateLinks() {
 }
 
 /* Botón flotante de WhatsApp: visible solo cuando no tapa nada útil.
-   Se oculta mientras se ve el hero a pantalla completa (taparía sus
-   botones) y cuando está en pantalla el CTA final o el formulario del
-   itinerario de la home, que ya tienen su propio enlace de WhatsApp. Oculto, sale también del orden de tabulación y del
-   árbol de accesibilidad (visibility: hidden en el CSS). */
+   · Se oculta mientras está en pantalla una zona que ya tiene su propia
+     llamada a la acción (CTA final, formulario del itinerario, cierre de la
+     home) o el vídeo de la hero.
+   · Se oculta también cuando quedaría encima de una foto de la home: las
+     fotos y el vídeo de Tourism New Zealand no pueden llevar nada encima
+     (condición de su licencia), y el criterio se aplica a todas.
+   Oculto, sale también del orden de tabulación y del árbol de
+   accesibilidad (visibility: hidden en el CSS). */
+const ZONAS = '.hero-full, .final-cta, .hn-hero, #itinerario, .hn-cierre'
+const FOTOS = '.hn .hn-foto, .hn-mosaico__item'
+
 function useFabVisible() {
   const { pathname } = useLocation()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (typeof IntersectionObserver === 'undefined') { setVisible(true); return }
-    const enVista = new Map()
-    let observer
+    let raf = 0
+    function calcular() {
+      raf = 0
+      const alto = window.innerHeight
+      // 96 px de margen: se oculta antes de que la zona llegue al botón
+      const enZona = [...document.querySelectorAll(ZONAS)].some(e => {
+        const r = e.getBoundingClientRect()
+        return r.bottom > 0 && r.top < alto + 96
+      })
+      let pisaFoto = false
+      const fab = document.querySelector('.whatsapp-fab')
+      if (fab) {
+        // Margen vertical amplio: el botón tarda 0,2 s en desvanecerse y debe
+        // estar oculto antes de que la foto llegue a él al hacer scroll
+        const f = fab.getBoundingClientRect(), mx = 16, my = 160
+        pisaFoto = [...document.querySelectorAll(FOTOS)].some(e => {
+          const r = e.getBoundingClientRect()
+          return r.left < f.right + mx && r.right > f.left - mx && r.top < f.bottom + my && r.bottom > f.top - my
+        })
+      }
+      setVisible(!enZona && !pisaFoto)
+    }
+    const programar = () => { if (!raf) raf = requestAnimationFrame(calcular) }
     // Espera un fotograma para que la página nueva ya esté en el DOM.
-    const id = requestAnimationFrame(() => {
-      const objetivos = document.querySelectorAll('.hero-full, .final-cta, .hn-hero, #itinerario')
-      if (objetivos.length === 0) { setVisible(true); return }
-      observer = new IntersectionObserver(entries => {
-        entries.forEach(e => enVista.set(e.target, e.isIntersecting))
-        setVisible(![...enVista.values()].some(Boolean))
-      }, { threshold: 0.05 })
-      objetivos.forEach(o => { enVista.set(o, false); observer.observe(o) })
-    })
-    return () => { cancelAnimationFrame(id); observer?.disconnect() }
+    programar()
+    window.addEventListener('scroll', programar, { passive: true })
+    window.addEventListener('resize', programar)
+    return () => {
+      cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', programar)
+      window.removeEventListener('resize', programar)
+    }
   }, [pathname])
 
   return visible

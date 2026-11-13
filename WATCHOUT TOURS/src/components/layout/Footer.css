@@ -1,180 +1,201 @@
-/* ── Pie de página (renovación visual) ───────────────────
-   Banda petróleo oscuro a todo el ancho, alineada con el contenido (.wrap).
-   Se carga después de global.css y sustituye su aspecto anterior. Todos
-   los colores claros cumplen AA sobre --night. */
+/* ── Pie de página ───────────────────────────────────────
+   Banda oscura #15171A a todo el ancho, con los mismos márgenes laterales
+   que la home (7 %). Se carga después de global.css y sustituye su aspecto
+   anterior. Todos los grises cumplen AA sobre #15171A. */
 
 .site-footer {
-  background: var(--petroleo-oscuro);
-  color: #E6E1D6;
-  /* Línea fina para separarlo del CTA final, que también es azul */
-  border-top: 1px solid rgba(255, 255, 255, .16);
   margin-top: 0;
-  --focus: #F4F1EA;
+  padding: 100px 7% 40px;
+  background: #15171A;
+  border-top: 0;
+  color: #FAF8F4;
+  --focus: #FFFFFF;
 }
 
 .site-footer__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
-  gap: 40px;
-  padding-block: clamp(56px, 7vw, 88px) 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 0;
 }
 
 /* ── Marca ── */
 .footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
+  display: block;
+  max-width: 340px;
 }
 
 .footer-brand__logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 44px;
-  text-decoration: none;
+  display: inline-block;
 }
 
-.footer-brand__logo:hover {
-  text-decoration: none;
-}
-
-.footer-brand__img {
-  width: 56px;
-  height: 56px;
-  padding: 6px;
-  border-radius: 50%;
-  background: #F1EDE4;
-  object-fit: contain;
-}
-
-.footer-brand__name {
-  font-family: 'Big Shoulders Display', var(--font-family-heading);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: .02em;
-  text-transform: uppercase;
-  color: var(--paper);
+.footer-brand__logo img {
+  display: block;
+  width: 230px;
+  height: auto;
 }
 
 .footer-brand__tagline {
-  margin: 0;
-  max-width: 38ch;
-  font-size: var(--fs-body);
-  line-height: 1.6;
-  color: #E6E1D6;
-}
-
-.footer-sociales {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-/* Botones sociales: mismo estilo de botón secundario sobre azul */
-.footer-whatsapp,
-.footer-instagram {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  padding: 10px 18px;
-  border: 1.5px solid rgba(255, 255, 255, .7);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--paper);
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background-color .15s ease;
-}
-
-.footer-whatsapp:hover,
-.footer-instagram:hover {
-  background: rgba(255, 255, 255, .12);
-  color: var(--paper);
-  text-decoration: none;
-}
-
-.footer-whatsapp svg,
-.footer-instagram svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-  flex-shrink: 0;
-}
-
-.footer-instagram svg {
-  fill: none;
-  color: inherit;
-  stroke: currentColor;
-}
-
-.footer-instagram svg circle:last-child {
-  fill: currentColor;
+  margin: 24px 0 0;
+  max-width: none;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #B9BCC2;
 }
 
 /* ── Columnas ── */
 .footer-col__heading {
-  margin: 0 0 12px;
-  font-family: var(--font-family-heading);
-  font-size: var(--fs-label);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 10px;
+  font-family: var(--font-family);
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: .12em;
+  line-height: 1.6;
+  letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--jade-soft);
+  color: #FAF8F4;
+}
+
+.footer-col__heading::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+}
+
+.footer-col__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .footer-col__list a {
-  color: #F1EDE4;
-  font-size: 17px;
-  line-height: 1.4;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 2.2;
+  color: #B9BCC2;
+  text-decoration: none;
 }
 
 .footer-col__list a:hover {
-  color: var(--paper);
+  color: #FAF8F4;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
+}
+
+/* ── Créditos de fotografía y vídeo ── */
+.footer-creditos {
+  margin: 80px 0 0;
+  max-width: 90ch;
+  font-size: 12px;
+  line-height: 1.6;
+  /* #8F9399 sobre #15171A: 5,7:1 */
+  color: #8F9399;
+}
+
+.footer-creditos + .site-footer__bottom {
+  margin-top: 20px;
 }
 
 /* ── Franja inferior ── */
 .site-footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, .16);
-  padding-block: 24px;
-}
-
-/* En móvil, margen extra para que el botón flotante de WhatsApp nunca
-   tape el último texto del pie */
-@media (max-width: 760px) {
-  .site-footer__bottom {
-    padding-bottom: calc(24px + 72px + env(safe-area-inset-bottom, 0px));
-  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+  margin-top: 80px;
+  padding: 24px 0 0;
+  border-top: 1px solid #2E3136;
+  font-size: 12px;
+  /* #8F9399 sobre #15171A: 5,7:1 (el #7D8187 de la maqueta se queda en 4,5:1) */
+  color: #8F9399;
 }
 
 .footer-copy {
   margin: 0;
-  font-size: 16px;
-  color: #E6E1D6;
-  text-align: center;
+  font-size: inherit;
+  color: inherit;
+  text-align: left;
 }
 
-.footer-empresa {
-  margin-top: 6px;
+.footer-legal,
+.footer-idiomas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-@media (max-width: 960px) {
+.footer-idiomas {
+  gap: 4px 0;
+}
+
+.footer-idiomas li + li::before {
+  content: "·";
+  margin-inline: 8px;
+}
+
+.site-footer__bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-footer__bottom a:hover,
+.site-footer__bottom a[aria-current] {
+  color: #FAF8F4;
+}
+
+.site-footer__bottom a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .site-footer {
+    padding: 72px 6% 32px;
+  }
+
+  .footer-creditos {
+    margin-top: 56px;
+  }
+
   .site-footer__inner {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 44px 48px;
   }
 
   .footer-brand {
-    grid-column: 1 / -1;
+    flex: 1 0 100%;
   }
-}
 
-@media (max-width: 600px) {
-  .site-footer__inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
+  .footer-col {
+    flex: 1 1 200px;
+  }
+
+  /* Enlaces con más aire para el dedo */
+  .footer-col__list a {
+    font-size: 15px;
+    line-height: 1.5;
+    padding-block: 11px;
+  }
+
+  .site-footer__bottom {
+    margin-top: 56px;
+    /* Hueco para que el botón flotante de WhatsApp no tape el último texto */
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    font-size: 13px;
+  }
+
+  .site-footer__bottom a {
+    min-height: 44px;
   }
 }
