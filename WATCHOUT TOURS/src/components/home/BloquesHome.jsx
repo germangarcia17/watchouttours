@@ -39,8 +39,11 @@ export function SeparadorBaston() {
 export function HeroFoto({ imagen, antetitulo, titulo, subtitulo, children }) {
   return (
     <section className="hero-full">
-      <img className="hero-full__img" src={imagen.src} alt={imagen.alt} lang={imagen.lang} fetchpriority="high" />
-      <div className="hero-full__capa" aria-hidden="true" />
+      {/* La foto va sola, sin velo ni texto encima (las fotos de Tourism New
+          Zealand no pueden llevar nada encima); el texto, debajo. */}
+      <div className="hero-full__foto">
+        <img className="hero-full__img" src={imagen.src} alt={imagen.alt} lang={imagen.lang} fetchpriority="high" />
+      </div>
       <div className="wrap hero-full__contenido">
         <p className="hero-full__antetitulo">{antetitulo}</p>
         <h1 className="hero-full__titulo">{titulo}</h1>
@@ -224,7 +227,7 @@ export function CtaFinal({ titulo, parrafos, cta }) {
         <div className="cta-row" style={{ justifyContent: 'center' }}>
           <L to="/contacto" className="btn btn-solid">{cta}</L>
           <a
-            href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber%20más%20sobre%20los%20viajes%20de%20Watchout%20Tours"
+            href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber%20más%20sobre%20los%20viajes%20de%20WatchOut%20Tours"
             className="btn btn-outline btn-whatsapp"
             target="_blank"
             rel="noopener noreferrer"

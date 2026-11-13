@@ -60,8 +60,8 @@ const NUEVAS_IMAGENES_SUGERIDAS = [
   // Viajes +60: “Para tu familia”
   {
     section: 'sin-prisa', key: 'familia',
-    image_alt: 'Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua',
-    image_alt_en: 'Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua',
+    image_alt: 'Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua',
+    image_alt_en: 'Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua',
   },
   // Viajes +60: galería, Hobbiton
   {
@@ -108,8 +108,8 @@ const NUEVAS_IMAGENES_SUGERIDAS = [
   // Todas las experiencias: tarjeta del viaje privado
   {
     section: 'productos', key: 'tarjeta-privado',
-    image_alt: 'Sylvie y Moni, guías de Watchout Tours, sonriendo frente a un géiser humeante en Rotorua',
-    image_alt_en: 'Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua',
+    image_alt: 'Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua',
+    image_alt_en: 'Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua',
   },
   // Hero de /sin-prisa: de momento usa el paisaje del géiser de la home;
   // falta una foto propia (puerto, barco u Hobbiton).

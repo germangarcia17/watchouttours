@@ -87,7 +87,7 @@ export default function BlogPost() {
     publisher: {
       '@type': 'Organization',
       name: 'Watchout Tours',
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon-512.png` },
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon-512.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
   }
