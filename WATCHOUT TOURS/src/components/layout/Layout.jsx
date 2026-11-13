@@ -47,13 +47,13 @@ function AlternateLinks() {
    · Se oculta mientras está en pantalla una zona que ya tiene su propia
      llamada a la acción (CTA final, formulario del itinerario, cierre de la
      home) o el vídeo de la hero.
-   · Se oculta también cuando quedaría encima de una foto de la home: las
+   · Se oculta también cuando quedaría encima de una foto o un vídeo: las
      fotos y el vídeo de Tourism New Zealand no pueden llevar nada encima
      (condición de su licencia), y el criterio se aplica a todas.
    Oculto, sale también del orden de tabulación y del árbol de
    accesibilidad (visibility: hidden en el CSS). */
 const ZONAS = '.hero-full, .final-cta, .hn-hero, #itinerario, .hn-cierre'
-const FOTOS = '.hn .hn-foto, .hn-mosaico__item'
+const FOTOS = '.hn .hn-foto, .hn-mosaico__item, .site-main img, .site-main video'
 
 function useFabVisible() {
   const { pathname } = useLocation()

@@ -332,10 +332,10 @@
       "card1Tag": "This is what flying for the first time sounds like",
       "card1Desc": "The wind on your face, the sense of freedom, your heart beating to the rhythm of adventure.",
       "card1Label": "Paragliding jump",
-      "card2Title": "An alpaca’s bite",
-      "card2Tag": "An unexpected attack",
-      "card2Desc": "Not even in New Zealand are you safe from a curious alpaca.",
-      "card2Label": "An alpaca’s bite",
+      "card2Title": "A curious alpaca",
+      "card2Tag": "An unexpected encounter",
+      "card2Desc": "In New Zealand, even the alpacas want to get to know you up close.",
+      "card2Label": "A curious alpaca",
       "sr3": "third audio",
       "card3Title": "Bubbling mud",
       "card3Tag": "The earth speaking in Rotorua",
@@ -355,77 +355,77 @@
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
-      "eyebrow": "Sensory trips through New Zealand for blind and low-vision travellers",
+      "eyebrow": "Beyond Sight · Aotearoa through the senses",
       "big1": "Not all vision",
       "big2": "needs eyes.",
-      "sub": "Two guides, with you from start to finish. No limits.",
-      "ctaPrimary": "I want to know more"
+      "sub": "Journeys through New Zealand for blind and low-vision travellers, designed to be felt with your whole body and hosted from start to finish by their founders.",
+      "ctaPrimary": "I want to discover it"
     },
     "viajes": {
-      "eyebrow": "What are our trips like?",
-      "title": "Lived through your hands, your ears and your skin",
-      "p1": "New Zealand is far away. But it doesn’t have to feel out of reach.",
-      "p2": "We’ve designed experiences so that blind and low-vision people can discover this country with safety, independence and excitement.",
-      "p3": "Feeling the breeze and cold water on your face at Milford Sound. Sensing the geothermal heat of Rotorua. Running your hands over the carvings of Māori designs. Stepping through the door of Bilbo’s house and into Hobbiton like a real hobbit.",
+      "eyebrow": "Our journeys",
+      "title": "New Zealand is lived through your hands, your ears and your skin.",
+      "p1": "New Zealand is on the other side of the world, but it has never been out of your reach.",
+      "p2": "Every experience is designed so you can discover it safely, independently and with all of its emotion intact.",
+      "p3": "The icy spray of a waterfall on your face at Milford Sound. The warmth of Rotorua's volcanic earth beneath your feet. Your hands tracing a Māori carving, groove by groove. Stepping through the round door of Bag End and into the Shire like a true hobbit.",
       "p4": "And this is only the beginning.",
-      "p5": "Because the best way to get to know New Zealand isn’t always with your sight, but with all your senses.",
+      "p5": "Because New Zealand isn't something you look at: it's something you feel.",
       "fotoAlt": "Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky"
     },
     "explorar": {
-      "eyebrow": "What you’ll live",
-      "title": "Our way of exploring New Zealand",
-      "sub": "We set no limits on adventure. Every route blends adrenaline, sensory immersion and authentic Māori culture.",
+      "eyebrow": "What you'll experience",
+      "title": "Our way of exploring New Zealand.",
+      "sub": "Every route brings together adrenaline, the senses and Māori culture. The only limits are the ones you set.",
       "srQ": "what will you feel?",
-      "p1Title": "Adrenaline and challenge",
-      "p1Text": "Paragliding in Queenstown, kayaking in Kaikōura, jet boats. No limits except the ones you set.",
-      "p2Title": "Sensory immersion",
-      "p2Text": "Touch, smell and hearing as your guide: Hobbiton, Rotorua, Milford Sound, Te Puia.",
-      "p3Title": "Culture and connection",
-      "p3Text": "The moko, the hāngi, the song of the whales through a hydrophone in Kaikōura."
+      "p1Title": "Adrenaline",
+      "p1Text": "Paragliding over Queenstown, kayaking among seals in Kaikōura, jet boats along the rivers. As far as you want to go.",
+      "p2Title": "The senses as your guide",
+      "p2Text": "Touch, smell and hearing open up every place: the Shire, Rotorua's geothermal valleys, the fiords of Milford Sound.",
+      "p3Title": "Living culture",
+      "p3Text": "The moko, the hāngi and the song of the whales through the hydrophone in Kaikōura."
     },
     "cultura": {
       "tag": "Living culture",
-      "caption": "The hāngi, the moko, the haka: Māori culture is lived up close, not watched from a distance.",
+      "caption": "The hāngi, the moko, the haka: Māori culture is lived up close, never from a distance.",
       "fotoAlt": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge"
     },
     "reel": {
       "videoAria": "Video: one of our blind travellers takes off paragliding over Queenstown. He runs towards the edge of the slope, jumps and feels the thrill of touching the sky for the first time.",
       "eyebrow": "This is how the adventure feels",
-      "callout": "Who said paragliding was only for some people?",
-      "p1": "At Watchout we believe adventure knows no limits. It knows curiosity, excitement, and people eager to throw themselves into experiences they’ll remember for a lifetime.",
+      "callout": "Who said flying was only for the few?",
+      "p1": "At WatchOut Tours we believe adventure knows no limits. It knows curiosity, emotion and people eager to live something they'll remember for the rest of their lives.",
       "p2": "This is one of our travellers flying over Queenstown. The wind on your face, the sense of freedom and that mix of nerves and excitement right before take-off… some moments stay with you forever.",
       "instagram": "See more on Instagram",
       "newTab": "(opens in a new tab)"
     },
     "rutas": {
-      "eyebrow": "Our options",
-      "title": "Two ways to live it",
-      "sub": "Same route, you choose your format: in a small group, with set dates, or private and at your own pace.",
+      "eyebrow": "Two ways to travel",
+      "title": "Two ways to experience it.",
+      "sub": "Choose how you want to experience New Zealand: in a small group on a set date, or privately, designed just for you.",
       "incluido": "Included:",
       "formatos": [
         {
           "id": "grupo",
-          "etiqueta": "Across New Zealand in a small group · with the two of us",
+          "etiqueta": "In a small group · with our founders",
           "titulo": "The shared adventure",
-          "cuerpo": "A small group of travellers with the same eagerness as you to explore the world. We’ll travel New Zealand together, sharing adventures, laughter and moments you’ll remember for a lifetime. Because some trips end… and others give you friendships forever. We’ll be by your side every step of the way, from the first day to the last.",
-          "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you throughout.",
+          "cuerpo": "Just a few travellers who share your eagerness to discover the world. Together we'll travel New Zealand through adventures, laughter and unforgettable moments, because some journeys end and others give you friendships for life. Sylvie and Mónica host you from beginning to end.",
+          "incluye": "Accommodation, all activities, private transfers throughout the route, the meals indicated and the personal hosting of our founders.",
           "cta": "I’d like more information"
         },
         {
           "id": "privado",
-          "etiqueta": "Private · just for you and yours · length at your own pace",
+          "etiqueta": "Private · just for you and yours · on your dates",
           "titulo": "Your trip, tailor-made",
-          "cuerpo": "A trip designed just for you, and for whoever you want to bring along. The two of us, exclusively, designing it at your pace: your days, your energy, your time. If you want more calm, more calm. If you want more adrenaline, more adrenaline. There’s no mould here. There’s a trip we make to measure, like a tailored suit.",
-          "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you from start to finish.",
+          "cuerpo": "A journey designed just for you and for whoever you'd like to bring along. We design it with you, to your measure: your days, your energy, your time. More calm? More calm. More adrenaline? More adrenaline. There are no moulds here: just a handcrafted journey, like a tailored suit.",
+          "incluye": "Accommodation, all activities, private transfers throughout the route, the meals indicated and the personal hosting of our founders from start to finish.",
           "cta": "I’d like more information"
         }
       ]
     },
     "finalCta": {
-      "title": "Not sure where to start?",
-      "p1": "Planning an accessible trip can raise lots of questions.",
-      "p2": "Write to us. We’ll answer your questions and figure out together which option fits you best.",
-      "ctaPrimary": "Tell us what you need"
+      "title": "Shall we start imagining it?",
+      "p1": "A journey like this raises many questions, and we love answering them.",
+      "p2": "Tell us what excites you and together we'll find the best way to experience it.",
+      "ctaPrimary": "Tell us about your journey"
     }
   },
   "sinPrisa": {
@@ -435,42 +435,42 @@
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
-      "eyebrow": "60+ Journeys · New Zealand with all your senses",
+      "eyebrow": "60+ Journeys · New Zealand, every detail taken care of",
       "h1": "The trip you’ve been promising yourself for years.",
-      "sub": "New Zealand in a small group, at an easy pace, with Moni and Sylvie by your side from the moment you land to the last hug at the airport.",
-      "cta": "Find out more"
+      "sub": "New Zealand in a small group of like-minded travellers, in 4- and 5-star hotels, with two hosts who take care of everything, from the moment you land to the final toast.",
+      "cta": "I want to discover it"
     },
     "paraQuien": {
       "title": "Who it’s for",
-      "p1": "For anyone who has always dreamed of going to the other side of the world and has never found the right time, the right company or the energy to organise it. For couples who finally have the time, for groups of friends who’ve been saying “one day” for years, and for solo travellers who’d like to come home with new friends.",
-      "p2": "You don’t need to worry about language, luggage, timetables or who to have dinner with. We take care of all that.",
+      "p1": "For anyone who has always dreamed of the other side of the world and never found the right moment, the right company or someone to make it easy. For couples who finally have the time, for friends who have been saying \"one day\" for years, and for solo travellers who'd like to come home with new friends.",
+      "p2": "Here you won't have to think about language, luggage, timetables or who to have dinner with. We take care of all of that.",
       "imgAlt": "Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy"
     },
     "incluye": {
       "title": "What’s included",
       "items": [
-        "Moni and Sylvie with you throughout.",
+        "The personal hosting of Sylvie and Mónica throughout the journey, in Spanish.",
         "Accommodation in 4- and 5-star hotels.",
         "Breakfast and dinner every day, plus lunch on many days.",
         "Private experiences, just for the group.",
-        "Comfortable transport throughout and the domestic flight between the islands.",
+        "Private transfers throughout the route and the domestic flight between the two islands.",
         "Airport pick-up and 24-hour support."
       ]
     },
     "privado": {
-      "title": "Almost everything, just for you",
-      "p": "At Hobbiton, you explore the Shire with a guide for your group and have lunch at the Green Dragon Inn. In Rotorua, a Māori guide spends the whole day with you. In Auckland, you sail the harbour on a yacht that’s yours for the afternoon. No queues, no waiting for forty other people, and all the time in the world for questions.",
+      "title": "Private experiences, just for the group.",
+      "p": "At Hobbiton we explore the Shire with a private guide and have lunch at the Green Dragon Inn. In Rotorua, a Māori guide spends the whole day with us. In Auckland we sail the harbour on a yacht all to ourselves. No queues, no crowds and all the time in the world for questions.",
       "imgAlt": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge"
     },
     "solo": {
       "title": "Travelling solo",
-      "p": "Plenty of people travel with us on their own, and within a couple of days they’re part of the group. You can have your own room or, if you prefer, share with another solo traveller in the group.",
+      "p": "Many of our travellers arrive on their own and, within a couple of days, they're part of the group. You can have your own room or, if you prefer, share with another solo traveller in the group.",
       "imgAlt": "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it"
     },
     "familia": {
       "title": "For your family",
-      "p": "Moni and Sylvie have lived in New Zealand for eight years and are with the group every single day, with 24-hour support. Your family can relax: you’re with us.",
-      "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua"
+      "p": "Sylvie and Mónica have lived in New Zealand for more than eight years and are with the group every day, with 24-hour support. Your family can rest easy: you're in the very best hands.",
+      "imgAlt": "Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua"
     },
     "llevaras": {
       "title": "What you’ll take home",
@@ -515,22 +515,22 @@
         },
         {
           "q": "Do I need to be fit?",
-          "a": "There are short walks most days, always at an easy pace with plenty of breaks. If you’re unsure about anything, give us a call and we’ll talk it through."
+          "a": "Not at all. There are short walks most days, always at your own pace and with time to enjoy every place. If you have any questions, just call us and we'll talk it through."
         },
         {
           "q": "What’s not included?",
           "a": "International flights (we’ll help you book them) and travel insurance, which is compulsory."
         },
         {
-          "q": "What if I fancy something a bit more lively?",
-          "a": "We can arrange optional extras: a helicopter flight over the glacier, a jet boat ride in Queenstown and a few more."
+          "q": "What if I'd like a little more excitement?",
+          "a": "We can arrange it as an optional extra: a helicopter flight over the glacier, a jet boat ride in Queenstown and much more."
         }
       ]
     },
     "finalCta": {
       "title": "Shall we talk?",
-      "p": "Tell us what you have in mind and we’ll answer all your questions, no strings attached.",
-      "ctaPrimary": "Find out more"
+      "p": "Tell us how you imagine your journey and we'll answer all your questions, with no obligation.",
+      "ctaPrimary": "I want to discover it"
     }
   },
   "notFound": {
@@ -655,7 +655,7 @@
     "mensajePlaceholder": "What would you like to experience? Are you travelling alone or with others? Do you have dates in mind?",
     "consentPre": "I have read and accept the",
     "consentLink": "privacy policy",
-    "consentInfo": "Controller: Watchout Tours Ltd. · Purpose: to respond to your enquiry and talk with you about your trip. We don’t use your data for advertising or share it with third parties. You can exercise your rights of access, rectification and erasure by writing to info@watchouttours.nz.",
+    "consentInfo": "Controller: WatchOut Tours Ltd. · Purpose: to respond to your enquiry and talk with you about your trip. We don’t use your data for advertising or share it with third parties. You can exercise your rights of access, rectification and erasure by writing to info@watchouttours.nz.",
     "submit": "Send form",
     "submitting": "Sending…",
     "err": {
