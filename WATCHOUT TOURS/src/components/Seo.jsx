@@ -29,8 +29,9 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
   const resolvedOgTitle = pickLocalized(row, 'og_title', lang) || ogTitle || metaTitle
   const resolvedOgDesc  = pickLocalized(row, 'og_description', lang) || ogDescription || metaDesc
   // Imagen social: fila de /admin/seo > imagen propia de la página (prop) >
-  // imagen por defecto (public/og-image.jpg, 1200 × 630: la foto del hero
-  // con el logo), para que ninguna página se comparta nunca sin imagen.
+  // imagen por defecto (public/og-image.jpg, 1200 × 630: foto propia del
+  // géiser Pōhutu, sin logo ni texto), para que ninguna página se comparta
+  // nunca sin imagen.
   const { t } = useTranslation()
   const defaultImage = `${SITE_URL}/og-image.jpg`
   const ogImage     = row?.og_image_url || image || defaultImage

@@ -18,7 +18,7 @@ import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
 import { SolicitudRuta } from '../components/SolicitudRuta'
 import { BotonVideollamada } from '../components/Videollamada'
-import { HeroFoto, ResenasDestacadas, CtaFinal } from '../components/home/BloquesHome'
+import { HeroFoto, ResenasDestacadas, CtaFinal, AvisoProximaSalida } from '../components/home/BloquesHome'
 
 const ICONOS_INCLUYE = ['guias', 'hotel', 'comida', 'privado', 'transporte', 'asistencia']
 
@@ -119,6 +119,8 @@ export default function SinPrisa() {
               </li>
             ))}
           </ul>
+          {/* La próxima salida en grupo es El Gran Viaje: solo se enlaza */}
+          <AvisoProximaSalida />
         </div>
       </section>
 

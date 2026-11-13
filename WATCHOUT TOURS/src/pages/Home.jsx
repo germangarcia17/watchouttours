@@ -78,6 +78,7 @@ const TIAKI = 'https://www.tiakinewzealand.com'
 
 /* Valores que recibe el equipo en el correo (siempre en español). */
 const VIAJES_EQUIPO = {
+  'gran-viaje': 'El Gran Viaje (1 – 15 de marzo de 2027)',
   'viajes-60': 'Viajes +60',
   'personas-ciegas': 'Viajes para personas ciegas y con baja visión',
   'privado': 'Viaje en privado',
@@ -349,13 +350,13 @@ function Colecciones() {
 function ProximaSalida({ setViaje }) {
   const { t } = useTranslation()
   return (
-    <section id="salida" className="hn-sec hn-par hn-blanca" aria-labelledby="hn-salida-titulo">
+    <section id="proxima-salida" className="hn-sec hn-par hn-blanca" aria-labelledby="hn-salida-titulo">
       <div className="hn-par__texto">
         <Etiqueta>{t('home.salida.etiqueta')}</Etiqueta>
         <h2 id="hn-salida-titulo" className="hn-h2"><Texto k="home.salida.titulo" /></h2>
         <p className="hn-body hn-body--primero">{t('home.salida.texto')}</p>
         <div className="hn-botones">
-          <a href="#itinerario" className="hn-btn" onClick={() => setViaje('viajes-60')}>{t('home.salida.itinerario')}</a>
+          <a href="#itinerario" className="hn-btn" onClick={() => setViaje('gran-viaje')}>{t('home.salida.itinerario')}</a>
           <BotonVideollamada className="hn-btn hn-btn--tinta">{t('home.salida.hablar')}</BotonVideollamada>
         </div>
       </div>

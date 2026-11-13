@@ -50,8 +50,8 @@
   },
   "home": {
     "seo": {
-      "title": "Sensory Tours of New Zealand in Groups of 6 at Most | Watchout Tours",
-      "description": "Journeys around New Zealand in groups of 6 at most, at an easy pace, with two dedicated guides by your side from start to finish. For travellers who want total comfort, and for blind and low-vision travellers."
+      "title": "WatchOut Tours · Bespoke journeys through New Zealand",
+      "description": "Private journeys and small-group departures through New Zealand, designed and hosted by their founders, two women from Barcelona who call the country home. 4- and 5-star hotels and private experiences."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
@@ -103,11 +103,13 @@
       }
     },
     "salida": {
-      "etiqueta": "Grand Journeys 60+ · Next departure",
+      "etiqueta": "Next departure",
       "titulo": "The Grand Journey.<br/><i>1 – 15 March 2027.</i>",
       "texto": "Fifteen days from north to south, from the geothermal valleys of Rotorua to the fiords of Milford Sound and the waters of Kaikōura, where sperm whales surface before snow-capped peaks. Departure from Spain on 27 February. Very limited places.",
       "itinerario": "Request the itinerary",
-      "hablar": "Talk to us"
+      "hablar": "Talk to us",
+      "aviso": "Would you like to travel with us in a group? Our next departure is The Grand Journey, 1 – 15 March 2027.",
+      "avisoEnlace": "Discover The Grand Journey"
     },
     "pilares": {
       "etiqueta": "Our way of travelling",
@@ -263,6 +265,7 @@
       "viaje": "Which journey interests you?",
       "viajeElige": "Choose an option",
       "opciones": {
+        "gran-viaje": "The Grand Journey · 1 – 15 March 2027",
         "viajes-60": "60+ Journeys",
         "personas-ciegas": "Journeys for blind and low-vision travellers",
         "privado": "Private journey",
@@ -347,8 +350,8 @@
   },
   "masAlla": {
     "seo": {
-      "title": "Accessible New Zealand Tours for Blind Travellers | Watchout Tours",
-      "description": "Guided tours across New Zealand in groups of 6 at most, designed for blind and visually impaired travellers. Sensory experiences, independence, adventure and local connection."
+      "title": "Journeys for blind and low-vision travellers · WatchOut Tours",
+      "description": "Aotearoa through the senses: journeys through New Zealand designed for blind and low-vision travellers, hosted by their founders."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
@@ -397,19 +400,15 @@
     "rutas": {
       "eyebrow": "Our options",
       "title": "Two ways to live it",
-      "sub": "Same route, you choose your format: in a group of 6 at most, with set dates, or private and at your own pace.",
+      "sub": "Same route, you choose your format: in a small group, with set dates, or private and at your own pace.",
       "incluido": "Included:",
-      "anuncioBadge": "We’ve got a date!",
-      "anuncioFecha": "New group trip: departing March 1",
-      "anuncioTexto": "A small group of 3 to 6 travellers exploring New Zealand for 15 days. Spots are held on a first-come basis — tell us you’re in and we’ll save yours.",
-      "anuncioCta": "I want my spot",
       "formatos": [
         {
           "id": "grupo",
-          "etiqueta": "15 days across New Zealand · group of 3 to 6 travellers + the two of us",
+          "etiqueta": "Across New Zealand in a small group · with the two of us",
           "titulo": "The shared adventure",
-          "cuerpo": "A group of 6 travellers at most, with the same eagerness as you to explore the world. Over 15 days we’ll travel New Zealand together, sharing adventures, laughter and moments you’ll remember for a lifetime. Because some trips end… and others give you friendships forever. We’ll be by your side every step of the way, from the first day to the last.",
-          "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you for all 14 nights.",
+          "cuerpo": "A small group of travellers with the same eagerness as you to explore the world. We’ll travel New Zealand together, sharing adventures, laughter and moments you’ll remember for a lifetime. Because some trips end… and others give you friendships forever. We’ll be by your side every step of the way, from the first day to the last.",
+          "incluye": "Accommodation, all activities, transport during the route, the meals indicated, and the two of us with you throughout.",
           "cta": "I’d like more information"
         },
         {
@@ -431,14 +430,14 @@
   },
   "sinPrisa": {
     "seo": {
-      "title": "60+ Journeys around New Zealand in groups of 6 at most | Watchout Tours",
-      "description": "Fifteen days around New Zealand at an easy pace, in groups of 6 at most, with private experiences, 4 and 5-star hotels, breakfast and dinner included and two dedicated guides throughout."
+      "title": "60+ Journeys through New Zealand · WatchOut Tours",
+      "description": "The journey of a lifetime, every detail taken care of: a small group, private transfers, 4- and 5-star hotels and two hosts who anticipate every need."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
       "eyebrow": "60+ Journeys · New Zealand with all your senses",
       "h1": "The trip you’ve been promising yourself for years.",
-      "sub": "Fifteen days around New Zealand in a group of 6 at most, at an easy pace, with Moni and Sylvie by your side from the moment you land to the last hug at the airport.",
+      "sub": "New Zealand in a small group, at an easy pace, with Moni and Sylvie by your side from the moment you land to the last hug at the airport.",
       "cta": "Find out more"
     },
     "paraQuien": {
@@ -450,8 +449,8 @@
     "incluye": {
       "title": "What’s included",
       "items": [
-        "Moni and Sylvie with you for all 15 days.",
-        "14 nights in 4 and 5-star hotels.",
+        "Moni and Sylvie with you throughout.",
+        "Accommodation in 4- and 5-star hotels.",
         "Breakfast and dinner every day, plus lunch on many days.",
         "Private experiences, just for the group.",
         "Comfortable transport throughout and the domestic flight between the islands.",
@@ -542,8 +541,8 @@
   },
   "blog": {
     "seo": {
-      "title": "Sensory Travel Blog — New Zealand | Watchout Tours",
-      "description": "Reflections on sensory, accessible travel through New Zealand: real stories from blind and low-vision travellers."
+      "title": "Travel journal · New Zealand from within · WatchOut Tours",
+      "description": "Stories, places and experiences from New Zealand, told from within: routes, Māori culture, nature and the Tiaki Promise."
     },
     "eyebrow": "The country through the senses",
     "title": "Sensory blog",
@@ -575,8 +574,8 @@
   },
   "productos": {
     "seo": {
-      "title": "Guided New Zealand Tours for Blind Travellers | Watchout Tours",
-      "description": "Two ways to explore New Zealand with us: small-group or private guided tours, designed for blind and low-vision travellers."
+      "title": "Private bespoke journeys through New Zealand · WatchOut Tours",
+      "description": "Your New Zealand journey designed from scratch, on your dates: hosted by our founders or self-drive, with everything booked and support before, during and after."
     },
     "eyebrow": "All experiences",
     "title": "Choose how you’d like to experience New Zealand",
@@ -672,8 +671,8 @@
   "sobre": {
     "docTitle": "About us | Watchout Tours",
     "seo": {
-      "title": "About Us | Mónica and Sylvie — Watchout Tours",
-      "description": "We’re Mónica and Sylvie, Spanish guides based in New Zealand. We create sensory, accessible trips for blind and low-vision travellers. This is our story."
+      "title": "The founders · WatchOut Tours",
+      "description": "Sylvie and Mónica left Barcelona more than eight years ago and made New Zealand their home. Today they design and host bespoke journeys through the country they fell in love with."
     },
     "heroImgAlt": "Mónica and Sylvie smiling in a selfie by Sydney Harbour at dusk, with the Sydney Opera House in the background",
     "heroEyebrow": "The heart of the project",
