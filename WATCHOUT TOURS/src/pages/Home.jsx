@@ -132,15 +132,37 @@ function Foto({ clave, sizes, className = '', prioritaria, children }) {
    poder respetar prefers-reduced-motion (con él, no se reproduce solo).
    El botón solo aparece cuando hay vídeo que pausar; aria-pressed="true"
    significa "en pausa". Versiones web sin audio en public/media. */
+/* El <video> va como HTML fijo (dangerouslySetInnerHTML) para que lleve
+   siempre muted, autoplay, loop y playsinline, tanto en la página
+   prerenderizada como después de hidratar: React no escribe el atributo
+   muted y lo quita al hidratar, y Safari de iPhone lo exige para
+   reproducir solo. El MP4 (H.264) va primero porque lo reproducen todos los
+   navegadores; Safari puede elegir el WebM (VP9) y no decodificarlo, y
+   entonces no enseña ni el vídeo ni el póster. El póster por defecto es el
+   primer fotograma (public/media/hero-poster.jpg). */
+const POSTER_DEFECTO = '/media/hero-poster.jpg'
+const VIDEO_HERO = `<video class="hn-hero__video" poster="${POSTER_DEFECTO}" muted autoplay loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">`
+  + '<source src="/media/hero.mp4" type="video/mp4">'
+  + '<source src="/media/hero.webm" type="video/webm">'
+  + '</video>'
+
 function useVideoHero() {
-  const video = useRef(null)
+  const area = useRef(null)
   const [hayVideo, setHayVideo] = useState(false)
   const [enMarcha, setEnMarcha] = useState(false)
+  const video = () => area.current?.querySelector('video')
 
   useEffect(() => {
-    const v = video.current
+    const v = video()
     if (!v) return
-    v.muted = true // React no pone el atributo muted en el HTML
+    v.muted = true
+    // Con "reducir movimiento" no se reproduce solo: se queda en el primer
+    // fotograma, que es el mismo que el póster.
+    if (reducirMovimiento()) {
+      v.autoplay = false
+      v.pause()
+      if (v.currentTime > 0) v.currentTime = 0
+    }
     // Escuchas nativas: en la página prerenderizada el vídeo puede haber
     // cargado (o empezado) antes de que React se enganche al HTML.
     // Solo hay vídeo cuando llegan sus datos ('play' se dispara antes de
@@ -157,7 +179,8 @@ function useVideoHero() {
     if (v.readyState >= 1) listo()
     if (v.networkState === 3) fallo() // NETWORK_NO_SOURCE: ya falló antes de hidratar
     estado()
-    if (!reducirMovimiento()) v.play()?.catch(() => {})
+    // Por si el navegador no respetó autoplay (p. ej. tras volver atrás)
+    if (!reducirMovimiento() && v.paused) v.play()?.catch(() => {})
     return () => {
       v.removeEventListener('loadedmetadata', listo)
       v.removeEventListener('playing', listo)
@@ -168,38 +191,43 @@ function useVideoHero() {
   }, [])
 
   function alternar() {
-    const v = video.current
+    const v = video()
     if (!v) return
     if (v.paused) v.play()?.catch(() => {})
     else v.pause()
   }
 
-  return { video, hayVideo, enMarcha, alternar }
+  return { area, hayVideo, enMarcha, alternar }
 }
 
-function Hero({ video }) {
+function Hero({ area }) {
   const { t } = useTranslation()
-  // Póster del vídeo: hueco "hero-poster" (editable en /admin/imagenes)
-  const poster = useSiteImage('home', 'hero-poster', IMG['hero-poster'].src, t('home.huecos.hero-poster'))
+  // Póster del vídeo: hueco "hero-poster" (editable en /admin/imagenes).
+  // Si el admin no responde o el hueco no tiene foto, queda el primer
+  // fotograma del vídeo.
+  const poster = useSiteImage('home', 'hero-poster', POSTER_DEFECTO, t('home.huecos.hero-poster'))
+
+  // Si el admin tiene otra imagen, se usa solo cuando carga de verdad; si
+  // falla, se mantiene la de respaldo.
+  useEffect(() => {
+    const v = area.current?.querySelector('video')
+    if (!v || !poster.src || poster.src === POSTER_DEFECTO) return
+    let vivo = true
+    const prueba = new Image()
+    prueba.onload = () => { if (vivo) v.setAttribute('poster', poster.src) }
+    prueba.onerror = () => { if (vivo) v.setAttribute('poster', POSTER_DEFECTO) }
+    prueba.src = poster.src
+    return () => { vivo = false }
+  }, [poster.src])
+
   return (
     <figure className="hn-hero">
       <Helmet>
-        <link rel="preload" as="image" href={poster.src} fetchpriority="high" />
+        <link rel="preload" as="image" href={POSTER_DEFECTO} fetchpriority="high" />
       </Helmet>
       {/* En el área del vídeo solo está el <video>: ni póster aparte, ni
           crédito, ni velo, ni botones. El póster va en su atributo. */}
-      <div className="hn-hero__area">
-        <video
-          ref={video}
-          className="hn-hero__video"
-          poster={poster.src || undefined}
-          muted loop playsInline preload="metadata"
-          aria-hidden="true" tabIndex={-1}
-        >
-          <source src="/media/hero.webm" type="video/webm" />
-          <source src="/media/hero.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <div ref={area} className="hn-hero__area" dangerouslySetInnerHTML={{ __html: VIDEO_HERO }} />
       {/* Debajo del vídeo, en la zona oscura: crédito visible y, para los
           lectores de pantalla, lo que muestra el vídeo (texto alternativo
           del hueco "hero-poster") */}
@@ -791,7 +819,7 @@ export default function Home() {
   return (
     <div className="hn">
       <Seo pageType="home" title={t('home.seo.title')} description={t('home.seo.description')} />
-      <Hero video={hero.video} />
+      <Hero area={hero.area} />
       <HeroIntro hayVideo={hero.hayVideo} enMarcha={hero.enMarcha} alternar={hero.alternar} />
       <ElPais />
       <Cita />
