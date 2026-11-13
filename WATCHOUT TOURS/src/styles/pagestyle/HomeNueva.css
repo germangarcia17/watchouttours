@@ -297,15 +297,6 @@
   object-fit: cover;
 }
 
-/* Velo de los paneles: de izquierda a derecha y de abajo arriba */
-.hn-velo {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(14, 15, 17, .62) 0%, rgba(14, 15, 17, .55) 55%, rgba(14, 15, 17, 0) 88%),
-    linear-gradient(0deg, rgba(14, 15, 17, .82) 0%, rgba(14, 15, 17, .3) 55%, rgba(14, 15, 17, 0) 80%);
-}
-
 /* ── 1. Hero: el vídeo solo, bajo la cabecera ──────────── */
 /* Licencia de Tourism New Zealand: el vídeo no se modifica, y eso incluye no
    ponerle nada encima. Ocupa el ancho completo y el alto de la pantalla
@@ -473,35 +464,21 @@
   padding: 0 var(--hn-x) 90px;
 }
 
+/* Licencia de Tourism New Zealand: sin texto ni velos sobre las fotos. Cada
+   panel es la foto a todo el ancho y, debajo, su texto sobre fondo claro. */
 .hn-panel {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: max(100vh, 760px);
-  min-height: max(100svh, 760px);
-  padding: 150px var(--hn-x) 90px;
-  background: var(--hn-gris);
-  color: var(--hn-crema);
-  --focus: #FFFFFF;
-}
-
-.hn-panel:first-of-type {
-  min-height: max(100vh, 780px);
-  min-height: max(100svh, 780px);
-}
-
-.hn-panel + .hn-panel {
-  margin-top: 6px;
+  background: var(--hn-crema);
+  color: #15171A;
 }
 
 .hn-panel__foto {
-  position: absolute;
-  inset: 0;
+  height: calc(100vh - var(--cab-alto));
+  height: calc(100svh - var(--cab-alto));
+  min-height: 520px;
 }
 
 .hn-panel__texto {
-  position: relative;
+  padding: 72px var(--hn-x) 120px;
 }
 
 .hn-panel__texto .hn-h2 {
@@ -513,7 +490,7 @@
   margin: 26px 0 0;
   font-size: 19px;
   line-height: 1.7;
-  color: rgba(250, 248, 244, .95);
+  color: var(--hn-lectura);
 }
 
 /* Las dos formas del viaje privado */
@@ -524,7 +501,7 @@
   max-width: 900px;
   margin-top: 34px;
   padding-top: 26px;
-  border-top: 1px solid rgba(250, 248, 244, .35);
+  border-top: 1px solid var(--line);
 }
 
 .hn-modo {
@@ -546,7 +523,7 @@
   margin: 8px 0 0;
   font-size: 16px;
   line-height: 1.6;
-  color: rgba(250, 248, 244, .88);
+  color: var(--hn-lectura);
 }
 
 /* ── 6. Pilares · 7. compromisos Tiaki: columnas numeradas ── */
@@ -792,12 +769,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .6s ease, opacity .3s ease;
+  transition: transform .6s ease;
 }
 
+/* Al pasar el ratón solo cambia el encuadre (sin tocar el color de la foto) */
 .hn-mosaico__boton:hover img {
   transform: scale(1.03);
-  opacity: .9;
 }
 
 .hn-mosaico__boton:focus-visible {
@@ -965,45 +942,37 @@ body.visor-abierto {
 }
 
 /* ── 12. Cierre ────────────────────────────────────────── */
+/* La foto (de Tourism New Zealand) va sola, sin velo ni texto encima; el
+   titular y el botón, en la banda oscura de debajo. */
 .hn-cierre {
-  position: relative;
-  height: 92vh;
-  min-height: 640px;
-  overflow: hidden;
-  background: var(--hn-gris);
+  background: #15171A;
   color: var(--hn-crema);
   --focus: #FFFFFF;
 }
 
-.hn-cierre__foto,
-.hn-cierre__velo {
-  position: absolute;
-  inset: 0;
-}
-
-/* Velo plano de la maqueta (.38) más un refuerzo suave tras el texto */
-.hn-cierre__velo {
-  background:
-    radial-gradient(ellipse 75% 60% at 50% 50%, rgba(14, 15, 17, .42) 0%, rgba(14, 15, 17, .38) 60%, rgba(14, 15, 17, 0) 100%),
-    rgba(14, 15, 17, .38);
+.hn-cierre__foto {
+  height: calc(92vh - var(--cab-alto));
+  height: calc(92svh - var(--cab-alto));
+  min-height: 520px;
 }
 
 .hn-cierre__contenido {
-  position: absolute;
-  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0 var(--hn-x);
+  padding: 96px var(--hn-x) 110px;
   text-align: center;
+}
+
+.hn-cierre__contenido .hn-h1 {
+  margin-top: 0;
 }
 
 .hn-cierre__contenido p {
   margin: 0 0 38px;
   font-size: 20px;
   line-height: 1.6;
-  color: rgba(250, 248, 244, .95);
+  color: #D9DBDF;
 }
 
 /* ── 13. Formulario del itinerario y preguntas frecuentes ── */
@@ -1115,16 +1084,6 @@ body.visor-abierto {
   color: var(--hn-lectura);
 }
 
-/* ── Pantallas medianas ────────────────────────────────── */
-@media (max-width: 1180px) {
-  /* El texto llega casi al borde derecho: el velo deja de ser lateral */
-  .hn-velo {
-    background:
-      linear-gradient(90deg, rgba(14, 15, 17, .62) 0%, rgba(14, 15, 17, .55) 80%, rgba(14, 15, 17, .35) 100%),
-      linear-gradient(0deg, rgba(14, 15, 17, .82) 0%, rgba(14, 15, 17, .3) 55%, rgba(14, 15, 17, 0) 80%);
-  }
-}
-
 /* ── Móvil y tableta vertical ──────────────────────────── */
 @media (max-width: 900px) {
   .hn {
@@ -1195,51 +1154,18 @@ body.visor-abierto {
     padding-bottom: 56px;
   }
 
-  .hn-panel,
-  .hn-panel:first-of-type {
-    display: block;
-    min-height: 0;
-    padding: 0;
-    background: var(--hn-crema);
-    color: #15171A;
-    --focus: #1F6B56;
-  }
-
-  .hn-panel + .hn-panel {
-    margin-top: 0;
-  }
-
   .hn-panel__foto {
-    position: relative;
-    inset: auto;
     height: 62vh;
     min-height: 340px;
     max-height: 560px;
-  }
-
-  .hn-panel .hn-velo {
-    display: none;
   }
 
   .hn-panel__texto {
     padding: 44px var(--hn-x) 80px;
   }
 
-  .hn-panel .hn-lbl--clara {
-    color: #1F6B56;
-  }
-
   .hn-panel__parrafo {
     font-size: 18px;
-    color: var(--hn-lectura);
-  }
-
-  .hn-modos {
-    border-top-color: var(--line);
-  }
-
-  .hn-modo p {
-    color: var(--hn-lectura);
   }
 
   /* Pilares y compromisos en una columna */
@@ -1347,9 +1273,13 @@ body.visor-abierto {
   }
 
   /* Cierre */
-  .hn-cierre {
-    height: 86vh;
-    min-height: 560px;
+  .hn-cierre__foto {
+    height: 60vh;
+    min-height: 340px;
+  }
+
+  .hn-cierre__contenido {
+    padding: 72px var(--hn-x) 88px;
   }
 
   /* Formulario */

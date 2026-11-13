@@ -87,6 +87,20 @@
   text-underline-offset: 4px;
 }
 
+/* ── Créditos de fotografía y vídeo ── */
+.footer-creditos {
+  margin: 80px 0 0;
+  max-width: 90ch;
+  font-size: 12px;
+  line-height: 1.6;
+  /* #8F9399 sobre #15171A: 5,7:1 */
+  color: #8F9399;
+}
+
+.footer-creditos + .site-footer__bottom {
+  margin-top: 20px;
+}
+
 /* ── Franja inferior ── */
 .site-footer__bottom {
   display: flex;
@@ -149,6 +163,10 @@
 @media (max-width: 900px) {
   .site-footer {
     padding: 72px 6% 32px;
+  }
+
+  .footer-creditos {
+    margin-top: 56px;
   }
 
   .site-footer__inner {

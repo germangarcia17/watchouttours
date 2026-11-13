@@ -17,28 +17,30 @@ import hero1400 from '../images/home/hero-1400.webp'
 import hero1800 from '../images/home/hero-1800.webp'
 import qt600 from '../images/home/queenstown-600.webp'
 import qt1200 from '../images/home/queenstown-1200.webp'
-import kai480 from '../images/home/kaikoura-480.webp'
-import kai900 from '../images/home/kaikoura-900.webp'
 import ciegos600 from '../images/home/viaje-ciegos-600.webp'
 import ciegos1200 from '../images/home/viaje-ciegos-1200.webp'
-import sesenta500 from '../images/home/viaje-60-500.webp'
-import sesenta1000 from '../images/home/viaje-60-1000.webp'
 import nos600 from '../images/home/nosotras-600.webp'
 import nos1100 from '../images/home/nosotras-1100.webp'
 import secuoyas from '../images/blind-travel-redwoods.webp'
 import talla from '../images/blind-travel-maori-carving.webp'
 import parapente from '../images/parapente-poster.jpg'
 import kayak from '../images/kayak-kaikoura.jpg'
-import haka from '../images/haka-cultura-maori.jpg'
 import tiakiTohu from '../images/home/tiaki-tohu.jpg'
+// Fotos de Tourism New Zealand (licencia WorldWide: solo web y medios no
+// pagados; sin recortar en edición, sin retocar y sin nada encima; el
+// encuadre con object-fit: cover está permitido). Se sirven tal cual.
+import wanaka from '../images/home/tnz-233385-lake-wanaka.jpg'
+import aorakiPukaki from '../images/home/tnz-233933-aoraki-mt-cook.jpg'
+import aorakiIceberg from '../images/home/tnz-233937-aoraki-iceberg.jpg'
+import waitomo from '../images/home/tnz-232230-waitomo.jpg'
 
 const una = (src, w, h) => variantes([{ src, w, h }])
 const GEISER = variantes([{ src: hero900, w: 900, h: 675 }, { src: hero1400, w: 1400, h: 1050 }, { src: hero1800, w: 1800, h: 1350 }])
 const PARAPENTE = una(parapente, 1600, 1400)
 
 /* Huecos de imagen de la home (sección "home" en /admin/imagenes) y su foto
-   por defecto. null = el proyecto todavía no tiene una foto adecuada: el
-   hueco se ve como un bloque gris hasta que se suba la suya desde el admin.
+   por defecto. null = la foto se sube desde el admin: hasta entonces el
+   hueco se ve como un bloque gris.
    El texto alternativo por defecto de cada uno está en home.huecos.<clave>
    (es.json / en.json) y se edita también desde el admin. */
 const IMG = {
@@ -46,26 +48,25 @@ const IMG = {
   // de la imagen al vídeo no se note.
   'hero-poster': { src: '/media/hero-poster.jpg', width: 1920, height: 1080 },
   'pais-vertical': null,
-  'pais-panoramica': null,
-  'panel-privado': PARAPENTE,
-  'panel-sesenta': una(secuoyas, 844, 1125),
+  'pais-panoramica': una(aorakiPukaki, 2000, 1334),
+  'panel-privado': una(wanaka, 1500, 1000),
+  'panel-sesenta': null,
   'panel-ciegos': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
-  'salida-foto': variantes([{ src: sesenta500, w: 500, h: 666 }, { src: sesenta1000, w: 1000, h: 1333 }]),
+  'salida-foto': null,
   // Imagen oficial de Tiaki (Tourism New Zealand). Licencia WorldWide: solo
   // web y medios no pagados. No se recorta, ni se retoca, ni lleva nada encima.
   'tiaki-tohu': una(tiakiTohu, 2000, 1125),
   'destino-rotorua': GEISER,
-  'destino-fiordland': null,
-  'destino-aoraki': null,
+  'destino-aoraki': una(aorakiIceberg, 1500, 1000),
   'destino-queenstown': variantes([{ src: qt600, w: 600, h: 525 }, { src: qt1200, w: 1200, h: 1050 }]),
-  'destino-kaikoura': variantes([{ src: kai480, w: 480, h: 642 }, { src: kai900, w: 900, h: 1204 }]),
-  'destino-waitomo': null,
-  'galeria-01': GEISER,
+  'destino-kaikoura': null,
+  'destino-waitomo': una(waitomo, 1500, 1001),
+  'galeria-01': null,
   'galeria-02': una(talla, 1000, 1333),
   'galeria-03': una(secuoyas, 844, 1125),
-  'galeria-04': PARAPENTE,
+  'galeria-04': null,
   'galeria-05': una(kayak, 1312, 1755),
-  'galeria-06': una(haka, 1129, 2000),
+  'galeria-06': null,
   'galeria-07': null, 'galeria-08': null, 'galeria-09': null,
   'galeria-10': null, 'galeria-11': null, 'galeria-12': null,
   nosotras: variantes([{ src: nos600, w: 600, h: 800 }, { src: nos1100, w: 1100, h: 1467 }]),
@@ -270,7 +271,9 @@ function Cita() {
   )
 }
 
-/* ── 4. Colecciones: tres paneles a pantalla completa ────────────────── */
+/* ── 4. Colecciones: tres paneles ────────────────────────────────────
+   Cada panel es una foto a todo el ancho y, debajo, su texto. Las fotos de
+   Tourism New Zealand no pueden llevar texto ni velos encima (licencia). */
 const PANELES = [
   { id: 'privado', clave: 'panel-privado', to: '/productos', modos: true },
   { id: 'sesenta', clave: 'panel-sesenta', to: '/sin-prisa' },
@@ -289,11 +292,10 @@ function Colecciones() {
         const ns = `home.colecciones.${id}`
         return (
           <article key={id} className="hn-panel" aria-labelledby={`hn-panel-${id}`}>
-            <Foto clave={clave} sizes="100vw" className="hn-panel__foto">
-              <div className="hn-velo" aria-hidden="true" />
-            </Foto>
+            {/* Foto a todo el ancho sin nada encima; el texto, debajo */}
+            <Foto clave={clave} sizes="100vw" className="hn-panel__foto" />
             <div className="hn-panel__texto">
-              <Etiqueta clara>{dos(i + 1)} · {t(`${ns}.etiqueta`)}</Etiqueta>
+              <Etiqueta>{dos(i + 1)} · {t(`${ns}.etiqueta`)}</Etiqueta>
               <h3 id={`hn-panel-${id}`} className="hn-h2"><Texto k={`${ns}.titulo`} /></h3>
               <p className="hn-panel__parrafo">{t(`${ns}.texto`)}</p>
               {modos && (
@@ -562,8 +564,8 @@ function Cierre() {
   const { t } = useTranslation()
   return (
     <section className="hn-cierre" aria-labelledby="hn-cierre-titulo">
+      {/* Foto a todo el ancho sin nada encima; el texto, debajo */}
       <Foto clave="cierre" sizes="100vw" className="hn-cierre__foto" />
-      <div className="hn-cierre__velo" aria-hidden="true" />
       <div className="hn-cierre__contenido">
         <h2 id="hn-cierre-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.cierre.titulo" /></h2>
         <p>{t('home.cierre.texto')}</p>

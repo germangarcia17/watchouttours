@@ -95,6 +95,9 @@ export function Footer() {
 
       </div>
 
+      {/* Créditos de las fotos y el vídeo (licencia de Tourism New Zealand) */}
+      <p className="footer-creditos">{t('footer.creditos')}</p>
+
       <div className="site-footer__bottom">
         <p className="footer-copy">&copy; {year} {t('footer.empresa')}</p>
         <nav aria-label={t('footer.colLegal')}>
