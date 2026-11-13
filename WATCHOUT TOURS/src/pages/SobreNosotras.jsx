@@ -6,6 +6,7 @@ import { useSiteImage } from '../lib/siteImages'
 import { L } from '../i18n/routing'
 import { bucketUrl } from '../lib/bucket'
 import { Seo } from '../components/Seo'
+import { CreditoFoto } from '../components/CreditoFoto'
 
 export default function SobreNosotras() {
   const { t } = useTranslation()
@@ -34,8 +35,12 @@ export default function SobreNosotras() {
             <p className="sn-intro">{t('sobre.heroIntro1')}</p>
             <p className="sn-intro">{t('sobre.heroIntro2')}</p>
           </div>
-          <div className="sn-hero-photo">
-            <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
+          {/* El marco recorta lo que sobresale: el crédito va fuera, debajo */}
+          <div>
+            <div className="sn-hero-photo">
+              <img src={heroImg.src} alt={heroImg.alt} lang={heroImg.lang} />
+            </div>
+            <CreditoFoto credito={heroImg.credito} />
           </div>
         </div>
       </section>
@@ -83,6 +88,7 @@ export default function SobreNosotras() {
               <div className="sn-equipo-foto">
                 <img src={moniImg.src} alt={moniImg.alt} lang={moniImg.lang} loading="lazy" />
               </div>
+              <CreditoFoto credito={moniImg.credito} />
               <h3 className="sn-equipo-nombre">{t('sobre.equipoMoniNombre')}</h3>
               <p className="sn-equipo-rol">{t('sobre.equipoMoniRol')}</p>
               <p className="sn-equipo-bio">{t('sobre.equipoMoniBio')}</p>
@@ -92,6 +98,7 @@ export default function SobreNosotras() {
               <div className="sn-equipo-foto">
                 <img src={sylvieImg.src} alt={sylvieImg.alt} lang={sylvieImg.lang} loading="lazy" />
               </div>
+              <CreditoFoto credito={sylvieImg.credito} />
               <h3 className="sn-equipo-nombre">{t('sobre.equipoSylvieNombre')}</h3>
               <p className="sn-equipo-rol">{t('sobre.equipoSylvieRol')}</p>
               <p className="sn-equipo-bio">{t('sobre.equipoSylvieBio')}</p>
@@ -101,6 +108,7 @@ export default function SobreNosotras() {
               <div className="sn-equipo-foto">
                 <img src={nuriaImg.src} alt={nuriaImg.alt} lang={nuriaImg.lang} loading="lazy" />
               </div>
+              <CreditoFoto credito={nuriaImg.credito} />
               <h3 className="sn-equipo-nombre">{t('sobre.equipoNuriaNombre')}</h3>
               <p className="sn-equipo-rol">{t('sobre.equipoNuriaRol')}</p>
               <p className="sn-equipo-bio">{t('sobre.equipoNuriaBio')}</p>

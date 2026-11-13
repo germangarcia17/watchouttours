@@ -284,8 +284,38 @@
 /* Sin foto, el hueco es el bloque gris de la maqueta */
 .hn-foto {
   position: relative;
-  overflow: hidden;
   background: var(--hn-gris);
+}
+
+/* Crédito de la foto: justo debajo de su borde, fuera del área de la imagen */
+.hn-foto__credito {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+/* Fotos a sangre: el crédito se alinea con el margen de la página */
+.hn-foto__credito--sangre {
+  padding-inline: var(--hn-x);
+}
+
+/* Panorámica: pie a la izquierda y crédito a la derecha */
+.hn-cap--con-credito {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 24px;
+}
+
+.hn-cap__credito {
+  margin: 0 0 0 auto;
+}
+
+/* Visor de la galería: el crédito, debajo de la descripción */
+.hn-visor__pie .hn-visor__credito {
+  margin-top: 8px;
 }
 
 .hn-foto > img {

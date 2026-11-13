@@ -4,6 +4,7 @@ import { uploadImage } from '../../lib/storage'
 
 import es from '../../i18n/locales/es.json'
 import en from '../../i18n/locales/en.json'
+import { CREDITOS_HOME } from '../../lib/creditos'
 
 /* Huecos de imagen de la home: una fila por clave de home.huecos (es.json /
    en.json), con su texto alternativo por defecto en los dos idiomas. Así la
@@ -12,6 +13,7 @@ const HUECOS_HOME = Object.keys(es.home.huecos).map(key => ({
   section: 'home', key,
   image_alt: es.home.huecos[key],
   image_alt_en: en.home.huecos[key],
+  credito: CREDITOS_HOME[key] ?? '',
 }))
 
 const NUEVAS_IMAGENES_SUGERIDAS = [
@@ -140,6 +142,8 @@ export default function ImagenesAdmin() {
   const [loading, setLoading]   = useState(true)
   const [editing, setEditing]   = useState({})
   const [editingEn, setEditingEn] = useState({})
+  const [editingCred, setEditingCred] = useState({})
+  const [saveError, setSaveError] = useState({})
   const [saving, setSaving]     = useState({})
   const [uploading, setUploading] = useState({})
   const [uploadError, setUploadError] = useState({})
@@ -163,21 +167,39 @@ export default function ImagenesAdmin() {
     setEditingEn(prev => ({ ...prev, [id]: value }))
   }
 
+  function handleCredChange(id, value) {
+    setEditingCred(prev => ({ ...prev, [id]: value }))
+  }
+
   async function saveAlt(image) {
     const newAlt   = editing[image.id]
     const newAltEn = editingEn[image.id]
+    const newCred  = editingCred[image.id]
     const altChanged   = newAlt   !== undefined && newAlt   !== (image.image_alt ?? '')
     const altEnChanged = newAltEn !== undefined && newAltEn !== (image.image_alt_en ?? '')
-    if (!altChanged && !altEnChanged) return
+    const credChanged  = newCred  !== undefined && newCred  !== (image.credito ?? '')
+    if (!altChanged && !altEnChanged && !credChanged) return
 
     setSaving(prev => ({ ...prev, [image.id]: true }))
+    setSaveError(prev => { const next = { ...prev }; delete next[image.id]; return next })
     const payload = {}
     if (altChanged)   payload.image_alt    = newAlt
     if (altEnChanged) payload.image_alt_en = newAltEn
-    await supabase.from('site_images').update(payload).eq('id', image.id)
+    // Vacío se guarda como '' (no null): así la web sabe que esta foto no
+    // lleva crédito y no usa el de por defecto.
+    if (credChanged)  payload.credito      = newCred.trim()
+    const { error } = await supabase.from('site_images').update(payload).eq('id', image.id)
+    if (error) {
+      setSaveError(prev => ({ ...prev, [image.id]: payload.credito !== undefined
+        ? 'No se pudo guardar. Si es el crédito, falta ejecutar en Supabase la migración 014 (columna credito).'
+        : (error.message ?? 'No se pudo guardar.') }))
+      setSaving(prev => { const next = { ...prev }; delete next[image.id]; return next })
+      return
+    }
     setImages(prev => prev.map(img => img.id === image.id ? { ...img, ...payload } : img))
     setEditing(prev => { const next = { ...prev }; delete next[image.id]; return next })
     setEditingEn(prev => { const next = { ...prev }; delete next[image.id]; return next })
+    setEditingCred(prev => { const next = { ...prev }; delete next[image.id]; return next })
     setSaving(prev => { const next = { ...prev }; delete next[image.id]; return next })
   }
 
@@ -205,7 +227,7 @@ export default function ImagenesAdmin() {
     try {
       const { data, error } = await supabase
         .from('site_images')
-        .insert({ section: nueva.section, key: nueva.key, image_alt: nueva.image_alt, image_alt_en: nueva.image_alt_en })
+        .insert({ section: nueva.section, key: nueva.key, image_alt: nueva.image_alt, image_alt_en: nueva.image_alt_en, ...(nueva.credito ? { credito: nueva.credito } : {}) })
         .select()
         .single()
       if (error) throw error
@@ -320,6 +342,29 @@ export default function ImagenesAdmin() {
                     {saving[img.id] ? '…' : 'Guardar'}
                   </button>
                 </div>
+
+                <label htmlFor={`cred-${img.id}`} className="form-label" style={{ marginTop: '10px' }}>Crédito de la foto</label>
+                <p id={`cred-ayuda-${img.id}`} style={{ fontSize: '0.8rem', color: 'var(--muted)', margin: '0 0 6px' }}>
+                  Se muestra debajo de la foto como «Foto: …» (en inglés, «Photo: …»). Ejemplo: Miles Holden / Tourism New Zealand. Si el texto lleva su propia etiqueta, como «Tiaki: Tourism New Zealand», se muestra tal cual. Déjalo vacío en las fotos propias.
+                </p>
+                <div className="image-item__alt-row">
+                  <input
+                    id={`cred-${img.id}`}
+                    type="text"
+                    aria-describedby={`cred-ayuda-${img.id}`}
+                    value={editingCred[img.id] !== undefined ? editingCred[img.id] : (img.credito ?? '')}
+                    onChange={e => handleCredChange(img.id, e.target.value)}
+                    className="form-control"
+                  />
+                  <button
+                    onClick={() => saveAlt(img)}
+                    disabled={saving[img.id] || editingCred[img.id] === undefined}
+                    className="btn btn--primary btn--sm"
+                  >
+                    {saving[img.id] ? '…' : 'Guardar'}
+                  </button>
+                </div>
+                {saveError[img.id] && <p role="alert" className="form-error" style={{ marginTop: '6px' }}>{saveError[img.id]}</p>}
               </div>
 
             </div>

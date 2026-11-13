@@ -11,6 +11,7 @@ import { Icono } from '../components/Icono'
 import { L } from '../i18n/routing'
 import { HeroFoto, SeparadorBaston, ResenasDestacadas, CtaFinal, AudioClips, AvisoProximaSalida } from '../components/home/BloquesHome'
 import { SolicitudRuta } from '../components/SolicitudRuta'
+import { CreditoFoto } from '../components/CreditoFoto'
 
 /* Iconos de "Lo que van a vivir": adrenalina, sentidos y cultura. */
 const ICONOS_PILARES = ['parapente', 'sentidos', 'ola']
@@ -56,6 +57,7 @@ export default function MasAllaDeLaVista() {
           <div className="intro-grid">
             <figure className="foto-marco">
               <img src={viajesImg.src} alt={viajesImg.alt} lang={viajesImg.lang} loading="lazy" />
+              <CreditoFoto credito={viajesImg.credito} className="credito-foto--marco" />
             </figure>
             <div className="prosa">
               <p className="sec-eyebrow">{t('masAlla.viajes.eyebrow')}</p>
@@ -95,6 +97,7 @@ export default function MasAllaDeLaVista() {
             </div>
             <figure className="cultura-foto">
               <img src={culturaImg.src} alt={culturaImg.alt} lang={culturaImg.lang} loading="lazy" />
+              <CreditoFoto credito={culturaImg.credito} />
               <figcaption>
                 <span className="tag">{t('masAlla.cultura.tag')}</span>
                 <p>{t('masAlla.cultura.caption')}</p>

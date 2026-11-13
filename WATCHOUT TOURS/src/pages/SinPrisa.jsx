@@ -19,6 +19,7 @@ import { L } from '../i18n/routing'
 import { SolicitudRuta } from '../components/SolicitudRuta'
 import { BotonVideollamada } from '../components/Videollamada'
 import { HeroFoto, ResenasDestacadas, CtaFinal, AvisoProximaSalida } from '../components/home/BloquesHome'
+import { CreditoFoto } from '../components/CreditoFoto'
 
 const ICONOS_INCLUYE = ['guias', 'hotel', 'comida', 'privado', 'transporte', 'asistencia']
 
@@ -40,6 +41,7 @@ function Fila({ id, clave, imgDefecto, ns, parrafos, invertida = false }) {
     <div className={`fila${invertida ? ' fila--invertida' : ''}`}>
       <figure className="fila__foto foto-marco">
         <img src={img.src} alt={img.alt} lang={img.lang} loading="lazy" />
+        <CreditoFoto credito={img.credito} className="credito-foto--marco" />
       </figure>
       <div className="fila__texto prosa">
         <h2 id={id} className="sec-title">{t(`${ns}.title`)}</h2>
@@ -56,7 +58,7 @@ function FotoGaleria({ id, lugar, alt }) {
     <li className="galeria__item">
       <figure>
         <img src={img.src} alt={img.alt} lang={img.lang} loading="lazy" />
-        <figcaption>{lugar}</figcaption>
+        <figcaption>{lugar}<CreditoFoto credito={img.credito} /></figcaption>
       </figure>
     </li>
   )
