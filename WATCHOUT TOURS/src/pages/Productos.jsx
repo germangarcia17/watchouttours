@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
+import { CreditoFoto } from '../components/CreditoFoto'
 import { useSiteImage } from '../lib/siteImages'
 import { CabeceraPagina } from '../components/CabeceraPagina'
 import { SolicitudRuta } from '../components/SolicitudRuta'
@@ -25,6 +26,7 @@ function Tarjeta({ id, to, titulo, texto, cta, imgAlt }) {
     <article className="tarjeta tarjeta--enlace" aria-labelledby={`${id}-heading`}>
       <figure className="tarjeta__media">
         <img src={img.src} alt={img.alt} lang={img.lang} loading="lazy" />
+        <CreditoFoto credito={img.credito} className="credito-foto--marco" />
       </figure>
       <div className="tarjeta__cuerpo">
         <h2 id={`${id}-heading`} className="tarjeta__titulo">{titulo}</h2>

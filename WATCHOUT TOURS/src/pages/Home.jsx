@@ -11,6 +11,8 @@ import { BotonVideollamada } from '../components/Videollamada'
 import { Desplegable } from '../components/Desplegable'
 import { useSiteImage } from '../lib/siteImages'
 import { L, useLang } from '../i18n/routing'
+import { CreditoFoto } from '../components/CreditoFoto'
+import { CREDITOS_HOME } from '../lib/creditos'
 // Imágenes por defecto de algunos huecos (versiones a varios anchos en src/images/home)
 import hero900 from '../images/home/hero-900.webp'
 import hero1400 from '../images/home/hero-1400.webp'
@@ -101,9 +103,14 @@ function Etiqueta({ children, clara, className = '' }) {
 }
 
 /* Foto de un hueco. El contenedor se pinta siempre: sin foto es el bloque
-   gris de la maqueta. */
-function Foto({ clave, sizes, className = '', prioritaria, children }) {
+   gris de la maqueta.
+   Crédito (fotos de Tourism New Zealand): justo debajo del borde inferior,
+   fuera del área de la imagen y alineado a la derecha. "sangre": foto a
+   todo el ancho, el crédito se alinea con el margen de la página. "tono":
+   "oscuro" si lo que sigue a la foto es una banda oscura. */
+function Foto({ clave, sizes, className = '', prioritaria, children, tono = 'claro', sangre = false, sinCredito = false }) {
   const { t } = useTranslation()
+  const img = useSiteImage('home', clave, IMG[clave]?.src ?? null, '', CREDITOS_HOME[clave] ?? '')
   return (
     <div className={`hn-foto ${className}`.trim()}>
       <ImagenHueco
@@ -111,6 +118,9 @@ function Foto({ clave, sizes, className = '', prioritaria, children }) {
         sizes={sizes} prioritaria={prioritaria}
       />
       {children}
+      {img.src && !sinCredito && (
+        <CreditoFoto credito={img.credito} tono={tono} className={`hn-foto__credito${sangre ? ' hn-foto__credito--sangre' : ''}`} />
+      )}
     </div>
   )
 }
@@ -280,11 +290,21 @@ function ElPais() {
         </div>
       </section>
       <figure className="hn-panoramica">
-        <Foto clave="pais-panoramica" sizes="100vw" className="hn-panoramica__foto" />
-        <figcaption className="hn-cap">{t('home.pais.pie')}</figcaption>
+        <Foto clave="pais-panoramica" sizes="100vw" className="hn-panoramica__foto" sinCredito />
+        {/* Pie a la izquierda y crédito a la derecha, en la misma línea */}
+        <figcaption className="hn-cap hn-cap--con-credito">
+          <span>{t('home.pais.pie')}</span>
+          <CreditoPanoramica />
+        </figcaption>
       </figure>
     </>
   )
+}
+
+function CreditoPanoramica() {
+  const img = useSiteImage('home', 'pais-panoramica', IMG['pais-panoramica']?.src ?? null, '', CREDITOS_HOME['pais-panoramica'])
+  if (!img.src) return null
+  return <CreditoFoto credito={img.credito} className="hn-cap__credito" />
 }
 
 /* ── 3. Cita de las fundadoras ───────────────────────────────────────── */
@@ -322,7 +342,7 @@ function Colecciones() {
         return (
           <article key={id} className="hn-panel" aria-labelledby={`hn-panel-${id}`}>
             {/* Foto a todo el ancho sin nada encima; el texto, debajo */}
-            <Foto clave={clave} sizes="100vw" className="hn-panel__foto" />
+            <Foto clave={clave} sizes="100vw" className="hn-panel__foto" sangre />
             <div className="hn-panel__texto">
               <Etiqueta>{dos(i + 1)} · {t(`${ns}.etiqueta`)}</Etiqueta>
               <h3 id={`hn-panel-${id}`} className="hn-h2"><Texto k={`${ns}.titulo`} /></h3>
@@ -394,7 +414,7 @@ function Tiaki() {
   const items = t('home.tiaki.items', { returnObjects: true })
   return (
     <section id="tiaki" className="hn-tiaki" aria-labelledby="hn-tiaki-titulo">
-      <Foto clave="tiaki-tohu" sizes="100vw" className="hn-tiaki__foto" />
+      <Foto clave="tiaki-tohu" sizes="100vw" className="hn-tiaki__foto" sangre tono="oscuro" />
       <div className="hn-tiaki__banda">
         <Etiqueta clara>{t('home.tiaki.etiqueta')}</Etiqueta>
         <h2 id="hn-tiaki-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.tiaki.titulo" /></h2>
@@ -454,7 +474,7 @@ function Galeria() {
   const { t } = useTranslation()
   // Número fijo de huecos: los hooks se llaman siempre en el mismo orden.
   const todas = GALERIA.map(clave => ({
-    clave, ...useSiteImage('home', clave, IMG[clave]?.src ?? null, t(`home.huecos.${clave}`)),
+    clave, ...useSiteImage('home', clave, IMG[clave]?.src ?? null, t(`home.huecos.${clave}`), CREDITOS_HOME[clave] ?? ''),
   }))
   const fotos = todas.filter(f => f.src)
   const [abierta, setAbierta] = useState(null)
@@ -550,7 +570,10 @@ function Visor({ fotos, indice, setIndice, onCerrar }) {
       </button>
       <figure className="hn-visor__figura">
         <img src={foto.src} alt="" />
-        <figcaption className="hn-visor__pie" lang={foto.lang}>{foto.alt}</figcaption>
+        <figcaption className="hn-visor__pie">
+          <span lang={foto.lang}>{foto.alt}</span>
+          <CreditoFoto credito={foto.credito} tono="oscuro" className="hn-visor__credito" />
+        </figcaption>
       </figure>
       <p className="hn-visor__contador" aria-live="polite">
         {t('home.galeria.contador', { n: indice + 1, total })}
@@ -594,7 +617,7 @@ function Cierre() {
   return (
     <section className="hn-cierre" aria-labelledby="hn-cierre-titulo">
       {/* Foto a todo el ancho sin nada encima; el texto, debajo */}
-      <Foto clave="cierre" sizes="100vw" className="hn-cierre__foto" />
+      <Foto clave="cierre" sizes="100vw" className="hn-cierre__foto" sangre tono="oscuro" />
       <div className="hn-cierre__contenido">
         <h2 id="hn-cierre-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.cierre.titulo" /></h2>
         <p>{t('home.cierre.texto')}</p>

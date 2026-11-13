@@ -119,3 +119,40 @@ body.menu-abierto .whatsapp-fab {
     transform: none;
   }
 }
+
+/* ── Crédito de foto (Tourism New Zealand) ───────────────
+   Fuera del área de la imagen: debajo y alineado a la derecha.
+   #6B6F76 sobre #FAF8F4: 4,8:1 · #8F9399 sobre #15171A: 5,7:1 */
+.credito-foto {
+  margin: 6px 0 0;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: .02em;
+  text-align: right;
+  color: #6B6F76;
+}
+
+.credito-foto--oscuro {
+  color: #8F9399;
+}
+
+/* Dentro de un marco de foto (tarjeta, fila…): bajo la imagen, con aire */
+.credito-foto--marco {
+  margin: 6px 12px 8px;
+}
+
+/* Portada de las páginas de colección: bajo el borde de la foto, alineado
+   con el contenido de la página */
+.hero-full__foto {
+  position: relative;
+}
+
+.hero-full__credito {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding-inline: max(28px, calc((100% - 1080px) / 2 + 28px));
+}

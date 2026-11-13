@@ -23,7 +23,7 @@ function loadSiteImages() {
   return cachePromise
 }
 
-export function useSiteImage(section, key, fallbackSrc, fallbackAlt) {
+export function useSiteImage(section, key, fallbackSrc, fallbackAlt, fallbackCredito = '') {
   const lang = useLang()
   const [row, setRow] = useState(null)
 
@@ -46,9 +46,15 @@ export function useSiteImage(section, key, fallbackSrc, fallbackAlt) {
   // con lang="es" para que el lector de pantalla lo pronuncie correctamente.
   const fellBackToSpanish = lang === 'en' && !hasAltEn && dbAlt
 
+  // Crédito: el del admin si la fila lo tiene (aunque sea vacío: foto
+  // propia, sin crédito); si la columna está a null o no hay fila, el de
+  // por defecto que pasa la página.
+  const credito = row && row.credito != null ? row.credito : fallbackCredito
+
   return {
     src: row?.src || fallbackSrc,
     alt: dbAlt || fallbackAlt,
     lang: fellBackToSpanish ? 'es' : undefined,
+    credito,
   }
 }

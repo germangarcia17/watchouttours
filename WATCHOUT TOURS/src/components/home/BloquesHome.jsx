@@ -11,6 +11,7 @@ import audioAlpaca from '../../images/Cuando la alpaca le mordió.mp3'
 import audioBarro from '../../images/barro-burbujeante-rotorua.mp3'
 import audioKauri from '../../images/bienvenida-al-kauri.mp3'
 import '../../styles/pagestyle/Home.css'
+import { CreditoFoto } from '../CreditoFoto'
 
 /* Bloques que antes vivían en la home y ahora comparten la home de marca
    (/), Más allá de la vista (/mas-alla-de-la-vista) y Sin Prisa
@@ -43,6 +44,8 @@ export function HeroFoto({ imagen, antetitulo, titulo, subtitulo, children }) {
           Zealand no pueden llevar nada encima); el texto, debajo. */}
       <div className="hero-full__foto">
         <img className="hero-full__img" src={imagen.src} alt={imagen.alt} lang={imagen.lang} fetchpriority="high" />
+        {/* Crédito, si la foto lo lleva: debajo del borde, fuera de la imagen */}
+        <CreditoFoto credito={imagen.credito} tono="oscuro" className="hero-full__credito" />
       </div>
       <div className="wrap hero-full__contenido">
         <p className="hero-full__antetitulo">{antetitulo}</p>
