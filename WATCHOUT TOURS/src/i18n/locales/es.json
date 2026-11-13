@@ -280,7 +280,7 @@
       "errNombre": "Escribe tu nombre (al menos 2 letras).",
       "errContacto": "Escribe un correo o un número de móvil válido para poder enviarte el itinerario.",
       "errViaje": "Elige qué viaje te interesa.",
-      "videollamadaLinea": "¿Prefieres hablar con nosotras? Reserva una videollamada de 30 minutos con Moni y Sylvie, sin compromiso.",
+      "videollamadaLinea": "¿Prefieres hablar con nosotras? Reserva una videollamada de 30 minutos con Mónica y Sylvie, sin compromiso.",
       "respuesta": "Te respondemos en menos de 24 horas."
     },
     "huecos": {
@@ -309,7 +309,7 @@
       "galeria-10": "Una lancha navega entre icebergs en el lago glaciar Tasman, con montañas nevadas al fondo",
       "galeria-11": "Cathedral Cove, en Coromandel: acantilados blancos y bosque sobre el mar",
       "galeria-12": "Una carretera serpentea entre el bosque y el mar en la costa oeste, cerca de Haast",
-      "nosotras": "Sylvie y Moni, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua",
+      "nosotras": "Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua",
       "cierre": "La costa de Kaikōura al anochecer, con los Alpes nevados reflejados en el mar en calma"
     },
     "testi": {
@@ -353,79 +353,128 @@
       "title": "Viajes para personas ciegas y con baja visión · WatchOut Tours",
       "description": "Aotearoa a través de los sentidos: viajes por Nueva Zelanda pensados para personas ciegas y con baja visión, diseñados y acompañados por sus fundadoras."
     },
-    "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
-    "hero": {
-      "eyebrow": "Más allá de la vista · Aotearoa a través de los sentidos",
-      "big1": "No toda visión",
-      "big2": "necesita ojos.",
-      "sub": "Viajes por Nueva Zelanda para personas ciegas y con baja visión, diseñados para sentirla con todo el cuerpo y acompañados de principio a fin por sus fundadoras.",
-      "ctaPrimary": "Quiero descubrirlo"
+    "huecos": {
+      "vista-portada": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes",
+      "cultura": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial"
     },
-    "viajes": {
-      "eyebrow": "Nuestros viajes",
-      "title": "Nueva Zelanda se vive con las manos, el oído y la piel.",
+    "portada": {
+      "etiqueta": "Más allá de la vista · Aotearoa a través de los sentidos",
+      "titulo": "No toda visión<br/><i>necesita ojos.</i>",
+      "sub": "Viajes por Nueva Zelanda para personas ciegas y con baja visión, diseñados para sentirla con todo el cuerpo. Todo incluido, todo preparado y con nosotras a tu lado las 24 horas.",
+      "boton": "Quiero descubrirlo"
+    },
+    "manifiesto": {
+      "etiqueta": "Nuestros viajes",
+      "titulo": "Nueva Zelanda se vive con las manos,<br/><i>el oído y la piel.</i>",
       "p1": "Nueva Zelanda está al otro lado del mundo, pero nunca ha estado fuera de tu alcance.",
-      "p2": "Cada experiencia está pensada para que la descubras con seguridad, con autonomía y con la emoción intacta.",
-      "p3": "La espuma helada de una cascada en la cara en Milford Sound. El calor de la tierra volcánica de Rotorua bajo los pies. Las manos recorriendo una talla maorí, surco a surco. Cruzar la puerta redonda de Bolsón Cerrado y entrar en la Comarca como un hobbit más.",
-      "p4": "Y esto es solo el principio.",
-      "p5": "Porque Nueva Zelanda no se mira: se siente.",
-      "fotoAlt": "Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado"
+      "p2": "La espuma helada de una cascada en la cara en Milford Sound. El calor de la tierra volcánica de Rotorua bajo los pies. Las manos recorriendo una talla maorí, surco a surco. Cruzar la puerta redonda de Bolsón Cerrado y entrar en la Comarca como un hobbit más.",
+      "cierre": "Porque Nueva Zelanda no se mira: se siente."
     },
-    "explorar": {
-      "eyebrow": "Lo que vivirás",
-      "title": "Nuestra forma de explorar Nueva Zelanda.",
-      "sub": "Cada ruta une adrenalina, sentidos y cultura maorí. Los límites los pones tú.",
-      "srQ": "¿qué vas a sentir?",
-      "p1Title": "Adrenalina",
-      "p1Text": "Parapente sobre Queenstown, kayak entre focas en Kaikōura, lanchas rápidas por los ríos. Hasta donde tú quieras llegar.",
-      "p2Title": "Los sentidos como guía",
-      "p2Text": "El tacto, el olfato y el oído abren cada lugar: la Comarca, los valles geotérmicos de Rotorua, los fiordos de Milford Sound.",
-      "p3Title": "Cultura viva",
-      "p3Text": "El moko, el hāngi y el canto de las ballenas a través del hidrófono en Kaikōura."
-    },
-    "cultura": {
-      "tag": "Cultura viva",
-      "caption": "El hāngi, el moko, el haka: la cultura maorí se vive de cerca, nunca desde la distancia.",
-      "fotoAlt": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial"
-    },
-    "reel": {
-      "videoAria": "Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. Corre hacia el borde de la ladera, salta y siente por primera vez la emoción de tocar el cielo.",
-      "eyebrow": "Así se vive la aventura",
-      "callout": "¿Quién dijo que volar era solo para unos pocos?",
-      "p1": "En WatchOut Tours creemos que la aventura no entiende de límites. Entiende de curiosidad, de emoción y de personas con ganas de vivir algo que recordarán toda la vida.",
-      "p2": "Este es uno de nuestros viajeros sobrevolando Queenstown. El viento en la cara, la sensación de libertad y esa mezcla de nervios y emoción justo antes de despegar… hay momentos que se quedan contigo para siempre.",
-      "instagram": "Ver más en Instagram",
-      "newTab": "(se abre en una pestaña nueva)"
-    },
-    "rutas": {
-      "eyebrow": "Dos maneras de viajar",
-      "title": "Dos maneras de vivirlo.",
-      "sub": "Elige cómo quieres vivir Nueva Zelanda: en un grupo reducido y con fecha cerrada, o en privado, diseñado solo para ti.",
-      "incluido": "Incluido:",
-      "formatos": [
+    "unico": {
+      "etiqueta": "Lo que lo hace único",
+      "titulo": "Cada detalle,<br/><i>pensado para sentirlo.</i>",
+      "items": [
         {
-          "id": "grupo",
-          "etiqueta": "En grupo reducido · con nuestras fundadoras",
-          "titulo": "La aventura compartida",
-          "cuerpo": "Unos pocos viajeros con tus mismas ganas de descubrir el mundo. Recorreremos juntos Nueva Zelanda entre aventuras, risas y momentos que no se olvidan, porque hay viajes que terminan y otros que te regalan amistades para siempre. Sylvie y Mónica os acompañan como anfitrionas de principio a fin.",
-          "incluye": "Alojamiento, todas las actividades, traslados privados durante la ruta, las comidas indicadas y el acompañamiento personal de nuestras fundadoras.",
-          "cta": "Quiero más información"
+          "titulo": "Maquetas táctiles en 3D",
+          "texto": "Montañas, fiordos y lugares emblemáticos que puedes recorrer con las manos para entender el paisaje antes de vivirlo."
         },
         {
-          "id": "privado",
-          "etiqueta": "En privado · solo para ti y los tuyos · en tus fechas",
-          "titulo": "Tu viaje, a tu medida",
-          "cuerpo": "Un viaje pensado solo para ti y para quien quieras que te acompañe. Lo diseñamos contigo, a tu medida: tus días, tu energía, tu tiempo. ¿Más calma? Más calma. ¿Más adrenalina? Más adrenalina. Aquí no hay moldes: hay un viaje hecho a mano, como un traje a medida.",
-          "incluye": "Alojamiento, todas las actividades, traslados privados durante la ruta, las comidas indicadas y el acompañamiento personal de nuestras fundadoras de principio a fin.",
-          "cta": "Quiero más información"
+          "titulo": "Todo probado antes",
+          "texto": "Hemos vivido cada actividad antes que tú, para que cada experiencia sea segura, accesible y emocionante de verdad."
+        },
+        {
+          "titulo": "Descripciones vivas",
+          "texto": "Os contamos cada lugar con detalle y con cariño: la luz, los colores, las formas y todo lo que sucede alrededor."
+        },
+        {
+          "titulo": "Contigo las 24 horas",
+          "texto": "Sylvie y Mónica son vuestras anfitrionas y guías durante todo el viaje, de día y de noche. No tendrás que encargarte de nada."
         }
       ]
     },
-    "finalCta": {
-      "title": "¿Empezamos a imaginarlo?",
-      "p1": "Un viaje así despierta muchas preguntas, y nos encanta responderlas.",
-      "p2": "Cuéntanos qué te ilusiona y buscamos juntos la mejor forma de vivirlo.",
-      "ctaPrimary": "Cuéntanos tu viaje"
+    "incluye": {
+      "etiqueta": "Viaje en grupo · Todo incluido",
+      "titulo": "Tú solo tienes que<br/><i>vivirlo.</i>",
+      "items": [
+        {
+          "titulo": "Hoteles de 4 y 5 estrellas",
+          "texto": "Elegidos por su confort, su ubicación y su accesibilidad, y con una orientación de cada habitación a tu llegada."
+        },
+        {
+          "titulo": "Desayunos y cenas emplatados",
+          "texto": "Cada mañana y cada noche, servidos en la mesa. Sin bufés, sin bandejas y sin tener que pedir ayuda."
+        },
+        {
+          "titulo": "Un vehículo privado de lujo",
+          "texto": "Recorremos el país en nuestro propio vehículo, solo para el grupo, con el vuelo interno entre las dos islas incluido."
+        },
+        {
+          "titulo": "Todas las actividades incluidas",
+          "texto": "Reservadas, pagadas y adaptadas antes de que llegues."
+        },
+        {
+          "titulo": "Recogida en el aeropuerto",
+          "texto": "Te esperamos a tu llegada y te acompañamos hasta tu vuelo de vuelta."
+        },
+        {
+          "titulo": "Asistencia las 24 horas",
+          "texto": "Antes, durante y después del viaje. Tu familia puede estar tranquila."
+        }
+      ]
+    },
+    "explorar": {
+      "etiqueta": "Lo que vivirás",
+      "titulo": "Nuestra forma de explorar<br/><i>Nueva Zelanda.</i>",
+      "sub": "Cada ruta une adrenalina, sentidos y cultura maorí. Los límites los pones tú.",
+      "items": [
+        {
+          "titulo": "Adrenalina",
+          "texto": "Parapente sobre Queenstown, kayak entre focas en Kaikōura, lanchas rápidas por los ríos. Hasta donde tú quieras llegar."
+        },
+        {
+          "titulo": "Los sentidos como guía",
+          "texto": "El tacto, el olfato y el oído abren cada lugar: la Comarca, los valles geotérmicos de Rotorua, los fiordos de Milford Sound."
+        },
+        {
+          "titulo": "Cultura viva",
+          "texto": "El moko, el hāngi y el canto de las ballenas a través del hidrófono en Kaikōura."
+        }
+      ],
+      "pie": "El hāngi, el moko, el haka: la cultura maorí se vive de cerca, nunca desde la distancia."
+    },
+    "reel": {
+      "etiqueta": "Así se vive la aventura",
+      "titulo": "¿Quién dijo que volar<br/><i>era solo para unos pocos?</i>",
+      "p1": "En WatchOut Tours creemos que la aventura no entiende de límites. Entiende de curiosidad, de emoción y de personas con ganas de vivir algo que recordarán toda la vida.",
+      "p2": "Este es uno de nuestros viajeros sobrevolando Queenstown. El viento en la cara, la sensación de libertad y esa mezcla de nervios y emoción justo antes de despegar… hay momentos que se quedan contigo para siempre.",
+      "instagram": "Ver más en Instagram",
+      "videoAria": "Vídeo: uno de nuestros viajeros ciegos despega en parapente sobre Queenstown. Corre hacia el borde de la ladera, salta y siente por primera vez la emoción de tocar el cielo."
+    },
+    "audios": {
+      "titulo": "Así suena Nueva Zelanda."
+    },
+    "maneras": {
+      "etiqueta": "Dos maneras de viajar",
+      "titulo": "En grupo<br/><i>o en privado.</i>",
+      "grupo": {
+        "etiqueta": "En grupo reducido, con fecha cerrada",
+        "titulo": "La aventura compartida",
+        "texto": "Unos pocos viajeros con tus mismas ganas de descubrir el mundo, con todo incluido: hoteles de 4 y 5 estrellas, desayunos y cenas emplatados, todas las actividades y nosotras a vuestro lado las 24 horas. Hay viajes que terminan y otros que te regalan amistades para siempre.",
+        "boton": "Quiero más información"
+      },
+      "privado": {
+        "etiqueta": "Solo para ti y los tuyos, en tus fechas",
+        "titulo": "Tu viaje, a tu medida",
+        "texto": "Lo diseñamos contigo: tus días, tu energía, tu tiempo. ¿Más calma? Más calma. ¿Más adrenalina? Más adrenalina. Con la misma atención a cada sentido y con nuestras fundadoras como anfitrionas de principio a fin.",
+        "boton": "Diseña tu viaje privado"
+      }
+    },
+    "resena": {
+      "etiqueta": "Lo que se siente no se olvida"
+    },
+    "cierre": {
+      "titulo": "¿Empezamos a<br/><i>imaginarlo?</i>",
+      "texto": "Un viaje así despierta muchas preguntas, y nos encanta responderlas. Cuéntanos qué te ilusiona y buscamos juntos la mejor forma de vivirlo."
     }
   },
   "sinPrisa": {
@@ -433,44 +482,84 @@
       "title": "Viajes +60 por Nueva Zelanda · WatchOut Tours",
       "description": "El viaje de tu vida, con todo resuelto: grupo reducido, traslados privados, hoteles de 4 y 5 estrellas y dos anfitrionas que se adelantan a cada detalle."
     },
-    "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
-    "hero": {
-      "eyebrow": "Viajes +60 · Nueva Zelanda, con todo resuelto",
-      "h1": "Ese viaje que llevas años prometiéndote.",
-      "sub": "Nueva Zelanda en un grupo reducido de viajeros afines, en hoteles de 4 y 5 estrellas y con dos anfitrionas que se ocupan de todo, desde que aterrizas hasta el último brindis.",
-      "cta": "Quiero descubrirlo"
+    "huecos": {
+      "sesenta-portada": "Una lancha navega entre icebergs en el lago glaciar Tasman, con montañas nevadas al fondo",
+      "sesenta-hobbiton": "Vista de las colinas de Hobbiton a través de una puerta redonda",
+      "sesenta-rotorua": "Viajeros pasean por una pasarela de madera entre fumarolas y vapor geotérmico en Rotorua",
+      "sesenta-kaikoura": "La cola de un cachalote se alza sobre el mar de Kaikōura",
+      "sesenta-anfitrionas": "Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua",
+      "sesenta-cierre": "El árbol solitario del lago Wanaka, con kayaks en el agua en calma y montañas al fondo"
+    },
+    "portada": {
+      "etiqueta": "Viajes +60",
+      "titulo": "Ese viaje que llevas años<br/><i>prometiéndote.</i>",
+      "sub": "Nueva Zelanda en un grupo reducido de viajeros afines, con todo incluido y todo resuelto: hoteles de 4 y 5 estrellas, desayunos y cenas cada día, un vehículo privado de lujo y dos anfitrionas a tu lado de principio a fin.",
+      "boton": "Quiero descubrirlo"
     },
     "paraQuien": {
-      "title": "Para quién es",
-      "p1": "Para quien siempre ha soñado con el otro lado del mundo y nunca encontró el momento, la compañía o a alguien que se lo pusiera fácil. Para parejas que por fin tienen tiempo, para amigos que llevan años diciendo «algún día» y para quien viaja por su cuenta y quiere volver con amigos nuevos.",
-      "p2": "Aquí no tendrás que pensar en el idioma, las maletas, los horarios ni con quién cenar. De todo eso nos ocupamos nosotras.",
-      "imgAlt": "Tres personas bajo secuoyas altísimas levantan los brazos para tocar una rama baja mientras la luz se filtra entre las copas"
+      "cita": "«Para quien siempre soñó con el otro lado del mundo. <i>Y por fin ha llegado su momento.</i>»",
+      "p1": "Para quien nunca encontró el momento, la compañía o a alguien que se lo pusiera fácil. Para parejas que por fin tienen tiempo, para amigos que llevan años diciendo «algún día» y para quien viaja por su cuenta y quiere volver con amigos nuevos.",
+      "p2": "Aquí no tendrás que pensar en el idioma, las maletas, los horarios ni dónde cenar. De todo eso nos ocupamos nosotras."
     },
     "incluye": {
-      "title": "Qué incluye",
+      "etiqueta": "Todo incluido",
+      "titulo": "Tú solo tienes que<br/><i>dejarte llevar.</i>",
       "items": [
-        "El acompañamiento personal de Sylvie y Mónica durante todo el viaje, en español.",
-        "Alojamiento en hoteles de 4 y 5 estrellas.",
-        "Desayuno y cena todos los días, y almuerzo en muchas de las jornadas.",
-        "Experiencias privadas, solo para el grupo.",
-        "Traslados privados durante toda la ruta y vuelo interno entre las dos islas.",
-        "Recogida en el aeropuerto y asistencia las 24 horas."
+        {
+          "titulo": "Hoteles de 4 y 5 estrellas",
+          "texto": "Alojamientos elegidos uno a uno por su ubicación, su confort y su encanto."
+        },
+        {
+          "titulo": "Desayuno y cena cada día",
+          "texto": "Todas las mañanas y todas las noches, la mesa está servida. Sin buscar restaurante ni pensar en reservas."
+        },
+        {
+          "titulo": "Un vehículo privado de lujo",
+          "texto": "Recorremos el país en nuestro propio vehículo, cómodo y solo para el grupo. Y el vuelo interno entre las dos islas también está incluido."
+        },
+        {
+          "titulo": "Experiencias incluidas",
+          "texto": "Las grandes experiencias del viaje ya están reservadas y pagadas, muchas de ellas en privado para el grupo."
+        },
+        {
+          "titulo": "Dos anfitrionas, todo el viaje",
+          "texto": "Sylvie y Mónica os reciben en el aeropuerto, os acompañan cada día y os guían en español por cada lugar."
+        },
+        {
+          "titulo": "Asistencia las 24 horas",
+          "texto": "Antes, durante y después del viaje, siempre hay alguien al otro lado. Tu familia puede estar tranquila."
+        }
       ]
     },
-    "privado": {
-      "title": "Experiencias privadas, solo para el grupo.",
-      "p": "En Hobbiton recorremos la Comarca con un guía privado y comemos en la Taberna del Dragón Verde. En Rotorua, un guía maorí nos acompaña durante todo el día. En Auckland navegamos por el puerto en un velero solo para nosotros. Sin colas, sin multitudes y con todo el tiempo del mundo para preguntar.",
-      "imgAlt": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial"
+    "experiencias": {
+      "etiqueta": "Experiencias privadas",
+      "titulo": "Momentos que no se<br/><i>reservan por libre.</i>",
+      "items": [
+        {
+          "id": "hobbiton",
+          "titulo": "La Comarca, solo para el grupo",
+          "texto": "Recorremos Hobbiton con un guía privado, entramos en un agujero hobbit de verdad y terminamos con un almuerzo servido en la Taberna del Dragón Verde."
+        },
+        {
+          "id": "rotorua",
+          "titulo": "Rotorua, de la mano de un guía maorí",
+          "texto": "Un día entero entre géiseres, barro que hierve y la cultura maorí contada desde dentro, con una bienvenida tradicional y un almuerzo inspirado en la cocina maorí."
+        },
+        {
+          "id": "kaikoura",
+          "titulo": "Kaikōura, frente a los cachalotes",
+          "texto": "Desde la cabina del capitán, con asientos de primera fila y ventanales panorámicos, esperamos a que el gigante del océano asome entre las montañas nevadas."
+        }
+      ]
     },
     "solo": {
-      "title": "Si viajas por tu cuenta",
-      "p": "Muchos de nuestros viajeros llegan por su cuenta y, en dos días, ya forman parte del grupo. Puedes tener tu propia habitación o, si lo prefieres, compartirla con otra persona del grupo que también viaje sola.",
-      "imgAlt": "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos"
+      "titulo": "¿Viajas por tu cuenta?",
+      "texto": "Muchos de nuestros viajeros llegan solos y, en dos días, ya forman parte del grupo. Puedes tener tu propia habitación o, si lo prefieres, compartirla con otra persona del grupo que también viaje sola."
     },
-    "familia": {
-      "title": "Para tu familia",
-      "p": "Sylvie y Mónica viven en Nueva Zelanda desde hace más de ocho años y acompañan al grupo cada día, con asistencia las 24 horas. Tu familia puede estar tranquila: estás en las mejores manos.",
-      "imgAlt": "Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua"
+    "anfitrionas": {
+      "etiqueta": "Tus anfitrionas",
+      "titulo": "En las mejores manos.",
+      "texto": "Sylvie y Mónica viven en Nueva Zelanda desde hace más de ocho años. Sylvie ha dirigido hoteles en el país y sabe como pocas lo que significa cuidar de un huésped. Mónica tiene el don de que un grupo de desconocidos se sienta en familia desde el primer día. Juntas, se adelantan a cada detalle para que tú solo tengas que disfrutar."
     },
     "llevaras": {
       "title": "Lo que te llevarás",
@@ -507,19 +596,19 @@
       ]
     },
     "faq": {
-      "title": "¿Es este viaje para mí?",
+      "titulo": "¿Es este viaje para mí?",
       "items": [
         {
-          "q": "¿Y si nunca he hecho un viaje tan largo?",
-          "a": "Mucha gente que viaja con nosotras tampoco. Te ayudamos a elegir los vuelos y las escalas, y en el aeropuerto de Auckland ya estamos esperándote."
-        },
-        {
-          "q": "¿Necesito estar en forma?",
+          "q": "¿Tengo que estar en forma?",
           "a": "No hace falta. Hay paseos cortos casi todos los días, siempre a vuestro aire y con tiempo para disfrutar de cada lugar. Si tienes cualquier duda, nos llamas y lo hablamos."
         },
         {
+          "q": "¿Y si no hablo inglés?",
+          "a": "No lo necesitas. Nosotras os acompañamos y os traducimos todo, en cada actividad y en cada momento."
+        },
+        {
           "q": "¿Qué no está incluido?",
-          "a": "Los vuelos internacionales (te ayudamos a sacarlos) y el seguro de viaje, que es obligatorio."
+          "a": "Los vuelos internacionales, el seguro de viaje (obligatorio) y algunos almuerzos libres para que disfrutéis a vuestro aire. Todo lo demás, sí."
         },
         {
           "q": "¿Y si me apetece algo más de emoción?",
@@ -527,10 +616,10 @@
         }
       ]
     },
-    "finalCta": {
-      "title": "¿Hablamos?",
-      "p": "Cuéntanos cómo imaginas tu viaje y resolvemos todas tus dudas, sin compromiso.",
-      "ctaPrimary": "Quiero descubrirlo"
+    "cierre": {
+      "titulo": "¿Empezamos a<br/><i>preparar tu viaje?</i>",
+      "texto": "Cuéntanos cómo lo imaginas y resolvemos todas tus dudas, sin compromiso.",
+      "privado": "¿Preferís viajar solos? Lo diseñamos <l>en privado</l>, a vuestra medida."
     }
   },
   "notFound": {

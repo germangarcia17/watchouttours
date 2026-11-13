@@ -30,6 +30,23 @@ export const CREDITOS_HOME = {
   'cierre': TNZ('Miles Holden'),
 }
 
+/* Viajes +60 (/sin-prisa, sección "sin-prisa" del admin). La foto de las
+   anfitrionas es propia: sin crédito. */
+export const CREDITOS_SESENTA = {
+  'sesenta-portada': TNZ('Miles Holden'),
+  'sesenta-hobbiton': TNZ('Miles Holden'),
+  'sesenta-rotorua': TNZ('Miles Holden'),
+  'sesenta-kaikoura': TNZ('Miles Holden'),
+  'sesenta-anfitrionas': '',
+  'sesenta-cierre': TNZ('Miles Holden'),
+}
+
+/* Más allá de la vista: todas las fotos son propias, sin crédito. */
+export const CREDITOS_VISTA = {
+  'vista-portada': '',
+  cultura: '',
+}
+
 /* Texto que se muestra, o null si no hay crédito. */
 export function textoCredito(credito, lang) {
   const c = (credito ?? '').trim()

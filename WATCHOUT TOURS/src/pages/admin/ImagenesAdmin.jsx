@@ -4,7 +4,7 @@ import { uploadImage } from '../../lib/storage'
 
 import es from '../../i18n/locales/es.json'
 import en from '../../i18n/locales/en.json'
-import { CREDITOS_HOME } from '../../lib/creditos'
+import { CREDITOS_HOME, CREDITOS_SESENTA, CREDITOS_VISTA } from '../../lib/creditos'
 
 /* Huecos de imagen de la home: una fila por clave de home.huecos (es.json /
    en.json), con su texto alternativo por defecto en los dos idiomas. Así la
@@ -16,55 +16,23 @@ const HUECOS_HOME = Object.keys(es.home.huecos).map(key => ({
   credito: CREDITOS_HOME[key] ?? '',
 }))
 
+/* Lo mismo para Viajes +60 (sinPrisa.huecos) y Más allá de la vista
+   (masAlla.huecos). */
+const huecosDe = (section, ns, creditos) => Object.keys(es[ns].huecos).map(key => ({
+  section, key,
+  image_alt: es[ns].huecos[key],
+  image_alt_en: en[ns].huecos[key],
+  credito: creditos[key] ?? '',
+}))
+
 const NUEVAS_IMAGENES_SUGERIDAS = [
   ...HUECOS_HOME,
+  ...huecosDe('sin-prisa', 'sinPrisa', CREDITOS_SESENTA),
+  ...huecosDe('mas-alla-de-la-vista', 'masAlla', CREDITOS_VISTA),
   // ── Renovación visual: huecos de imagen nuevos ──────────────────────
-  // Cada uno se puede sustituir sin tocar código. Mientras no se suba una
-  // foto, la web usa la imagen actual del proyecto (en la galería de
+  // Cada uno se puede sustituir sin tocar código. En la galería de
   // Viajes +60, Hobbiton, Milford Sound y Tekapo no se muestran hasta que
-  // tengan foto).
-  // Personas ciegas: hero
-  {
-    section: 'mas-alla-de-la-vista', key: 'hero',
-    image_alt: 'El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa',
-    image_alt_en: 'The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush',
-  },
-  // Personas ciegas: “¿Cómo son nuestros viajes?”
-  {
-    section: 'mas-alla-de-la-vista', key: 'como-viajamos',
-    image_alt: 'Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado',
-    image_alt_en: 'Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky',
-  },
-  // Personas ciegas: “Lo que van a vivir”
-  {
-    section: 'mas-alla-de-la-vista', key: 'cultura',
-    image_alt: 'Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial',
-    image_alt_en: 'Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge',
-  },
-  // Viajes +60: “Para quién es”
-  {
-    section: 'sin-prisa', key: 'para-quien',
-    image_alt: 'Tres personas bajo secuoyas altísimas levantan los brazos para tocar una rama baja mientras la luz se filtra entre las copas',
-    image_alt_en: 'Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy',
-  },
-  // Viajes +60: “Casi todo, solo para vosotros”
-  {
-    section: 'sin-prisa', key: 'privado',
-    image_alt: 'Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial',
-    image_alt_en: 'Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge',
-  },
-  // Viajes +60: “Si viajas por tu cuenta”
-  {
-    section: 'sin-prisa', key: 'solo',
-    image_alt: 'Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos',
-    image_alt_en: 'A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it',
-  },
-  // Viajes +60: “Para tu familia”
-  {
-    section: 'sin-prisa', key: 'familia',
-    image_alt: 'Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua',
-    image_alt_en: 'Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua',
-  },
+  // tengan foto.
   // Viajes +60: galería, Hobbiton
   {
     section: 'sin-prisa', key: 'galeria-hobbiton',
@@ -113,27 +81,20 @@ const NUEVAS_IMAGENES_SUGERIDAS = [
     image_alt: 'Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua',
     image_alt_en: 'Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua',
   },
-  // Hero de /sin-prisa: de momento usa el paisaje del géiser de la home;
-  // falta una foto propia (puerto, barco u Hobbiton).
-  {
-    section: 'sin-prisa', key: 'hero',
-    image_alt: 'El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa',
-    image_alt_en: 'The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush',
-  },
   {
     section: 'sobre-nosotras', key: 'equipo-moni',
-    image_alt: 'Moni, cofundadora y guía de Watchout Tours, en Nueva Zelanda',
-    image_alt_en: 'Moni, co-founder and guide at Watchout Tours, in New Zealand',
+    image_alt: 'Mónica, cofundadora y guía de WatchOut Tours, en Nueva Zelanda',
+    image_alt_en: 'Mónica, co-founder and guide at WatchOut Tours, in New Zealand',
   },
   {
     section: 'sobre-nosotras', key: 'equipo-sylvie',
-    image_alt: 'Sylvie, cofundadora y guía de Watchout Tours, en Nueva Zelanda',
-    image_alt_en: 'Sylvie, co-founder and guide at Watchout Tours, in New Zealand',
+    image_alt: 'Sylvie, cofundadora y guía de WatchOut Tours, en Nueva Zelanda',
+    image_alt_en: 'Sylvie, co-founder and guide at WatchOut Tours, in New Zealand',
   },
   {
     section: 'sobre-nosotras', key: 'equipo-nuria',
-    image_alt: 'Nuria sonriendo durante su viaje piloto por Nueva Zelanda con Watchout Tours',
-    image_alt_en: 'Nuria smiling during her pilot trip across New Zealand with Watchout Tours',
+    image_alt: 'Nuria sonriendo durante su viaje piloto por Nueva Zelanda con WatchOut Tours',
+    image_alt_en: 'Nuria smiling during her pilot trip across New Zealand with WatchOut Tours',
   },
 ]
 
