@@ -60,10 +60,12 @@ from (values
 ) as v(section, key, alt, alt_en, credito)
 where site_images.section = v.section and site_images.key = v.key;
 
--- Huecos que ya no usa ninguna página
+-- Huecos que ya no usa ninguna página (solo los que no tienen foto subida;
+-- los que la tienen se conservan para no perder la foto)
 delete from site_images
-where (section = 'sin-prisa' and key in ('hero', 'para-quien', 'privado', 'solo', 'familia'))
-   or (section = 'mas-alla-de-la-vista' and key in ('hero', 'como-viajamos', 'cultura'));
+where src is null
+  and ((section = 'sin-prisa' and key in ('hero', 'para-quien', 'privado', 'solo', 'familia'))
+    or (section = 'mas-alla-de-la-vista' and key in ('hero', 'como-viajamos', 'cultura')));
 
 -- Comprobación:
 -- select section, key, credito from site_images
