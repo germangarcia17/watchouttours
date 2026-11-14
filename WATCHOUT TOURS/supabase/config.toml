@@ -414,16 +414,3 @@ enabled = true
 # and column/key alignment. Set to "null" to emit raw, unformatted SQL.
 # format_options = "{\"keywordCase\":\"upper\",\"indent\":2,\"maxWidth\":180,\"commaStyle\":\"trailing\"}"
 
-# Directos: las funciones se llaman desde la web sin sesión; la seguridad la ponen CORS,
-# el secreto del cron y el token de exportación.
-[functions.directo-inscripcion]
-verify_jwt = false
-
-[functions.directo-evento]
-verify_jwt = false
-
-[functions.directo-recordatorios]
-verify_jwt = false
-
-[functions.directo-exportar]
-verify_jwt = false

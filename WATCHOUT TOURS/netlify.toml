@@ -8,15 +8,9 @@
   # el comando "ignore" devuelve siempre != 0, así que nunca se omite.
   ignore    = "/bin/false"
 
-# Las funciones de la charla importan módulos compartidos con la web
-# (src/config/charla.js) y de netlify/lib/: esbuild los empaqueta.
+# Las funciones de Netlify se empaquetan con esbuild.
 [functions]
   node_bundler = "esbuild"
-
-# Recordatorios (24 h y 1 h antes) y seguimiento de la charla online.
-# La función no hace nada fuera de esas ventanas (ver charla-envios.js).
-[functions."charla-envios"]
-  schedule = "*/10 * * * *"
 
 # La "filosofía" vive ahora dentro de Sobre Nosotras: redirect real (301)
 # para cualquier URL o backlink antiguo, en vez de depender del redirect
@@ -28,7 +22,19 @@
 
 [[redirects]]
   from   = "/en/filosofia"
-  to     = "/en/sobre-nosotras"
+  to     = "/en/about-us"
+  status = 301
+
+# Viajes privados en inglés vive en /en/products (antes /en/productos)
+[[redirects]]
+  from   = "/en/productos"
+  to     = "/en/products"
+  status = 301
+
+# Fundadoras en inglés vive en /en/about-us (antes /en/sobre-nosotras)
+[[redirects]]
+  from   = "/en/sobre-nosotras"
+  to     = "/en/about-us"
   status = 301
 
 # La charla online y el directo ya se celebraron: sus páginas se han
