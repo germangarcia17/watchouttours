@@ -45,7 +45,7 @@
     "privacidad": "Privacy",
     "avisoLegal": "Legal notice",
     "empresa": "WatchOut Tours Ltd. Registered company in New Zealand.",
-    "creditos": "Photography and video: Tourism New Zealand (Miles Holden, Eric Hanson, Shaun Jeffers) and RealNZ. Tiaki: Tourism New Zealand.",
+    "creditos": "Photography and video: Tourism New Zealand (Miles Holden, Eric Hanson, Shaun Jeffers, Graeme Murray) and RealNZ. Tiaki: Tourism New Zealand.",
     "idiomas": "Language"
   },
   "home": {
@@ -354,8 +354,9 @@
       "description": "Aotearoa through the senses: journeys through New Zealand designed for blind and low-vision travellers, hosted by their founders."
     },
     "huecos": {
-      "vista-portada": "A traveller with a white cane and a companion holding a recording microphone beside a wooden fence where several sheep peer out, on a farm among green hills",
-      "cultura": "Young Māori man performing a haka at a cultural show, wearing a traditional bone necklace and piupiu skirt, pulling out his tongue in a ceremonial gesture of challenge"
+      "vista-portada": "",
+      "vista-unico": "A hand traces the relief of a carved Māori panel at Te Puia, Rotorua",
+      "vista-vivir": "A traveller with a white cane and a companion holding a recording microphone beside a wooden fence where several sheep peer out, on a farm among green hills"
     },
     "portada": {
       "etiqueta": "Beyond Sight · Aotearoa through the senses",
@@ -483,10 +484,10 @@
       "description": "The journey of a lifetime, every detail taken care of: a small group, private transfers, 4- and 5-star hotels and two hosts who anticipate every need."
     },
     "huecos": {
-      "sesenta-portada": "A boat weaves between icebergs on Tasman Glacier Lake, beneath snowy peaks",
-      "sesenta-hobbiton": "The hills of Hobbiton seen through a round hobbit door",
-      "sesenta-rotorua": "Travellers stroll along a boardwalk through geothermal steam in Rotorua",
-      "sesenta-kaikoura": "A sperm whale's tail rises from the sea off Kaikōura",
+      "sesenta-portada": "Four walkers follow the Hooker Valley Track through the mist, with the snowy peaks of Aoraki / Mount Cook beyond",
+      "sesenta-hobbiton": "A hobbit hole with a round red door, a wooden fence and a garden in bloom at Hobbiton",
+      "sesenta-rotorua": "Māori women in traditional dress prepare food with hot water beside a carved house in Rotorua",
+      "sesenta-kaikoura": "A sperm whale's tail dives into the sea off Kaikōura, with the snowy Alps rising through the clouds beyond",
       "sesenta-anfitrionas": "Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua",
       "sesenta-cierre": "The lone tree of Lake Wānaka, with kayaks on the still water and mountains beyond"
     },

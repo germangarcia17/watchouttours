@@ -45,7 +45,7 @@
     "privacidad": "Privacidad",
     "avisoLegal": "Aviso legal",
     "empresa": "WatchOut Tours Ltd. Empresa registrada en Nueva Zelanda.",
-    "creditos": "Fotografías y vídeo: Tourism New Zealand (Miles Holden, Eric Hanson, Shaun Jeffers) y RealNZ. Tiaki: Tourism New Zealand.",
+    "creditos": "Fotografías y vídeo: Tourism New Zealand (Miles Holden, Eric Hanson, Shaun Jeffers, Graeme Murray) y RealNZ. Tiaki: Tourism New Zealand.",
     "idiomas": "Idioma"
   },
   "home": {
@@ -354,8 +354,9 @@
       "description": "Aotearoa a través de los sentidos: viajes por Nueva Zelanda pensados para personas ciegas y con baja visión, diseñados y acompañados por sus fundadoras."
     },
     "huecos": {
-      "vista-portada": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes",
-      "cultura": "Joven maorí realizando un haka en una presentación cultural, con collar tradicional de hueso y falda piupiu, sacando la lengua en un gesto de desafío ceremonial"
+      "vista-portada": "",
+      "vista-unico": "Una mano recorre los relieves de una talla maorí de madera en Te Puia, Rotorua",
+      "vista-vivir": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes"
     },
     "portada": {
       "etiqueta": "Más allá de la vista · Aotearoa a través de los sentidos",
@@ -483,10 +484,10 @@
       "description": "El viaje de tu vida, con todo resuelto: grupo reducido, traslados privados, hoteles de 4 y 5 estrellas y dos anfitrionas que se adelantan a cada detalle."
     },
     "huecos": {
-      "sesenta-portada": "Una lancha navega entre icebergs en el lago glaciar Tasman, con montañas nevadas al fondo",
-      "sesenta-hobbiton": "Vista de las colinas de Hobbiton a través de una puerta redonda",
-      "sesenta-rotorua": "Viajeros pasean por una pasarela de madera entre fumarolas y vapor geotérmico en Rotorua",
-      "sesenta-kaikoura": "La cola de un cachalote se alza sobre el mar de Kaikōura",
+      "sesenta-portada": "Cuatro caminantes recorren el valle Hooker entre la niebla, con las montañas nevadas de Aoraki / Mount Cook al fondo",
+      "sesenta-hobbiton": "Un agujero hobbit con la puerta roja redonda, la valla de madera y el jardín en flor, en Hobbiton",
+      "sesenta-rotorua": "Mujeres maoríes con vestimenta tradicional preparan comida con agua caliente junto a una casa tallada, en Rotorua",
+      "sesenta-kaikoura": "La cola de un cachalote se sumerge en el mar de Kaikōura, con los Alpes nevados entre las nubes al fondo",
       "sesenta-anfitrionas": "Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua",
       "sesenta-cierre": "El árbol solitario del lago Wanaka, con kayaks en el agua en calma y montañas al fondo"
     },

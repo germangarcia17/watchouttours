@@ -36,25 +36,35 @@ export function Portada({ ns, foto }) {
 }
 
 /* Columnas numeradas (como los pilares de la home). `rejilla`: tres por
-   fila (para seis puntos) en lugar de todas en una. */
-export function Columnas({ id, ns, rejilla = false, className = '' }) {
+   fila (para seis puntos) en lugar de todas en una. `foto`: props de
+   FotoHueco para una foto 4:3 junto a las columnas (que pasan a dos por
+   fila). */
+export function Columnas({ id, ns, rejilla = false, foto, className = '' }) {
   const { t } = useTranslation()
   const items = t(`${ns}.items`, { returnObjects: true })
   const tituloId = `${id ?? ns.replace(/\W/g, '-')}-titulo`
+  // role="list": sin viñetas, Safari quitaría la semántica de lista
+  const lista = (
+    <ol className={`hn-columnas hn-pilares${rejilla || foto ? ' hn-col-rejilla' : ''}${foto ? ' hn-col-rejilla--dos' : ''}`} role="list">
+      {items.map((p, i) => (
+        <li key={p.titulo}>
+          <span className="hn-num" aria-hidden="true">{dos(i + 1)}</span>
+          <h3 className="hn-columnas__titulo">{p.titulo}</h3>
+          <p>{p.texto}</p>
+        </li>
+      ))}
+    </ol>
+  )
   return (
     <section id={id} className={`hn-sec ${className}`.trim()} aria-labelledby={tituloId}>
       <Etiqueta>{t(`${ns}.etiqueta`)}</Etiqueta>
       <h2 id={tituloId} className="hn-h2"><Texto k={`${ns}.titulo`} /></h2>
-      {/* role="list": sin viñetas, Safari quitaría la semántica de lista */}
-      <ol className={`hn-columnas hn-pilares${rejilla ? ' hn-col-rejilla' : ''}`} role="list">
-        {items.map((p, i) => (
-          <li key={p.titulo}>
-            <span className="hn-num" aria-hidden="true">{dos(i + 1)}</span>
-            <h3 className="hn-columnas__titulo">{p.titulo}</h3>
-            <p>{p.texto}</p>
-          </li>
-        ))}
-      </ol>
+      {foto ? (
+        <div className="hn-col-con-foto">
+          <FotoHueco {...foto} sizes="(min-width: 901px) 42vw, 100vw" className="hn-col-con-foto__foto" />
+          {lista}
+        </div>
+      ) : lista}
     </section>
   )
 }

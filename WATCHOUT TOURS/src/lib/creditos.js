@@ -41,10 +41,12 @@ export const CREDITOS_SESENTA = {
   'sesenta-cierre': TNZ('Miles Holden'),
 }
 
-/* Más allá de la vista: todas las fotos son propias, sin crédito. */
+/* Más allá de la vista. La de la granja es propia, sin crédito; la de la
+   portada aún no se conoce: su crédito se escribe en el admin al subirla. */
 export const CREDITOS_VISTA = {
   'vista-portada': '',
-  cultura: '',
+  'vista-unico': TNZ('Graeme Murray'),
+  'vista-vivir': '',
 }
 
 /* Texto que se muestra, o null si no hay crédito. */

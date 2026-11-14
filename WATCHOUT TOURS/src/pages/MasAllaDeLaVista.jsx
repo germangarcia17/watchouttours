@@ -9,23 +9,28 @@ import { Texto, Etiqueta, FotoHueco, dos } from '../components/editorial/Editori
 import { Portada, Columnas, ProximaSalidaGrupo, CierreFormulario } from '../components/editorial/Colecciones'
 import ciegos600 from '../images/home/viaje-ciegos-600.webp'
 import ciegos1200 from '../images/home/viaje-ciegos-1200.webp'
-import imgHaka from '../images/haka-cultura-maori.jpg'
 import videoParapente from '../images/parapente-teaser.mp4'
 import imgParapentePoster from '../images/parapente-poster.jpg'
 
 /* Huecos de imagen (sección "mas-alla-de-la-vista" en /admin/imagenes) y su
-   foto por defecto. Todas son propias, sin crédito. Texto alternativo por
-   defecto en masAlla.huecos.<clave>. */
+   foto por defecto. Texto alternativo por defecto en masAlla.huecos.<clave>
+   y crédito en CREDITOS_VISTA.
+   null = la foto se sube desde el admin (hasta entonces, bloque gris):
+   vista-portada (horizontal, a sangre) y vista-unico (4:3). Como aún no se
+   sabe qué foto será, no tienen texto alternativo por defecto: se escribe
+   en el admin al subirla. */
 const IMG = {
-  'vista-portada': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
-  cultura: variantes([{ src: imgHaka, w: 1129, h: 2000 }]),
+  'vista-portada': null,
+  'vista-unico': null,
+  'vista-vivir': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
 }
 
 function useFoto(clave) {
   const { t } = useTranslation()
   return {
     seccion: 'mas-alla-de-la-vista', clave, defecto: IMG[clave],
-    alt: t(`masAlla.huecos.${clave}`), credito: CREDITOS_VISTA[clave] ?? '',
+    // Sin alt por defecto (hueco aún sin foto): el del admin, cuando se suba
+    alt: t(`masAlla.huecos.${clave}`) || null, credito: CREDITOS_VISTA[clave] ?? '',
   }
 }
 
@@ -45,11 +50,12 @@ function Manifiesto() {
   )
 }
 
-/* ── 5. Lo que vivirás: tres pilares y la foto con su pie debajo ────── */
+/* ── 5. Lo que vivirás: tres pilares y la foto vertical (4:5) con su pie
+   debajo ───────────────────────────────────────────────────────────── */
 function LoQueViviras() {
   const { t } = useTranslation()
   const items = t('masAlla.explorar.items', { returnObjects: true })
-  const foto = useFoto('cultura')
+  const foto = useFoto('vista-vivir')
   return (
     <section className="hn-sec hn-blanca hn-col-vivir" aria-labelledby="ma-vivir-titulo">
       <div className="hn-col-vivir__texto">
@@ -69,7 +75,7 @@ function LoQueViviras() {
         </ol>
       </div>
       <figure className="hn-col-vivir__figura">
-        <FotoHueco {...foto} sizes="(min-width: 901px) 40vw, 100vw" className="hn-col-vivir__foto" sinCredito />
+        <FotoHueco {...foto} sizes="(min-width: 901px) 40vw, 100vw" className="hn-col-vivir__foto" />
         <figcaption className="hn-cap">{t('masAlla.explorar.pie')}</figcaption>
       </figure>
     </section>
@@ -144,6 +150,7 @@ export default function MasAllaDeLaVista() {
   const { t } = useTranslation()
   const [viaje, setViaje] = useState('personas-ciegas')
   const portada = useFoto('vista-portada')
+  const unico = useFoto('vista-unico')
 
   return (
     <div className="hn hn-col">
@@ -152,7 +159,7 @@ export default function MasAllaDeLaVista() {
       <Seo pageType="mas-alla-de-la-vista" title={t('masAlla.seo.title')} description={t('masAlla.seo.description')} />
       <Portada ns="masAlla" foto={portada} />
       <Manifiesto />
-      <Columnas id="descubre" ns="masAlla.unico" className="hn-blanca" />
+      <Columnas id="descubre" ns="masAlla.unico" foto={unico} className="hn-blanca" />
       <Columnas ns="masAlla.incluye" rejilla />
       <LoQueViviras />
       <Parapente />

@@ -210,7 +210,7 @@
 }
 
 .hn-col-vivir__foto {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
 }
 
 .hn-col-vivir__figura .hn-cap {
@@ -381,5 +381,40 @@
 @media (min-width: 901px) and (max-width: 1180px) {
   .hn-columnas.hn-col-rejilla {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ── Lo que lo hace único: foto 4:3 junto a las columnas (dos por fila) ── */
+.hn-col-con-foto {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 7%;
+  align-items: start;
+  margin-top: 80px;
+}
+
+.hn-col-con-foto__foto {
+  aspect-ratio: 4 / 3;
+}
+
+.hn-col-con-foto .hn-pilares {
+  margin-top: 0;
+}
+
+.hn-columnas.hn-col-rejilla--dos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px 48px;
+}
+
+@media (max-width: 900px) {
+  .hn-col-con-foto {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+    margin-top: 56px;
+  }
+
+  .hn-columnas.hn-col-rejilla--dos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
   }
 }

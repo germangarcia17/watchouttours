@@ -15,6 +15,8 @@ import imgKaikoura from '../images/kayak-kaikoura.jpg'
 // Foto de Tourism New Zealand (sin recortar en edición, sin retocar y sin
 // nada encima; el encuadre con object-fit: cover está permitido)
 import wanaka from '../images/home/tnz-233385-lake-wanaka.jpg'
+import rotoruaTnz from '../images/home/tnz-234567-rotorua.jpg'
+import kaikouraTnz from '../images/home/tnz-516648-kaikoura.jpg'
 
 /* Huecos de imagen (sección "sin-prisa" en /admin/imagenes) y su foto por
    defecto. null = la foto se sube desde el admin: hasta entonces el hueco
@@ -23,8 +25,8 @@ import wanaka from '../images/home/tnz-233385-lake-wanaka.jpg'
 const IMG = {
   'sesenta-portada': null,
   'sesenta-hobbiton': null,
-  'sesenta-rotorua': null,
-  'sesenta-kaikoura': null,
+  'sesenta-rotorua': variantes([{ src: rotoruaTnz, w: 1125, h: 750 }]),
+  'sesenta-kaikoura': variantes([{ src: kaikouraTnz, w: 1500, h: 1000 }]),
   'sesenta-anfitrionas': variantes([{ src: nos600, w: 600, h: 800 }, { src: nos1100, w: 1100, h: 1467 }]),
   'sesenta-cierre': variantes([{ src: wanaka, w: 1500, h: 1000 }]),
 }
