@@ -11,51 +11,9 @@ import audioAlpaca from '../../images/Cuando la alpaca le mordió.mp3'
 import audioBarro from '../../images/barro-burbujeante-rotorua.mp3'
 import audioKauri from '../../images/bienvenida-al-kauri.mp3'
 import '../../styles/pagestyle/Home.css'
-import { CreditoFoto } from '../CreditoFoto'
 
-/* Bloques que antes vivían en la home y ahora comparten la home de marca
-   (/), Más allá de la vista (/mas-alla-de-la-vista) y Sin Prisa
-   (/sin-prisa). El marcado y los estilos (Home.css) son los mismos que
-   tenía la home. */
-
-/* Separador de secciones: icono decorativo de una persona caminando con
-   bastón. Es puramente decorativo (aria-hidden).
-   Icono: Font Awesome Free 6 "person-walking-with-cane" — CC BY 4.0
-   (https://fontawesome.com/license/free). */
-export function SeparadorBaston() {
-  return (
-    <div className="separador-baston" aria-hidden="true">
-      <svg viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M176 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-8.4 32c-36.4 0-69.6 20.5-85.9 53.1L35.4 273.7c-7.9 15.8-1.5 35 14.3 42.9s35 1.5 42.9-14.3L128 231.6l0 43.2c0 17 6.7 33.3 18.7 45.3L224 397.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-89.4c0-12.7-5.1-24.9-14.1-33.9L224 306.7l0-93.4 70.4 93.9c10.6 14.1 30.7 17 44.8 6.4s17-30.7 6.4-44.8L268.8 166.4C250.7 142.2 222.2 128 192 128l-24.4 0zM128.3 346.8L97 472.2c-4.3 17.1 6.1 34.5 23.3 38.8s34.5-6.1 38.8-23.3l22-88.2-52.8-52.8zM450.8 505.1c5 7.3 15 9.1 22.3 4s9.1-15 4-22.3L358.9 316.1c-2.8 3.8-6.1 7.3-10.1 10.3c-5 3.8-10.5 6.4-16.2 7.9L450.8 505.1z" />
-      </svg>
-    </div>
-  )
-}
-
-/* ── Hero a pantalla completa ───────────────────────── */
-/* Foto de fondo con el h1, el subtítulo y los botones encima. Una capa
-   degradada oscura garantiza contraste AA en todo el texto (más densa
-   donde está el texto, abajo). La foto es decorativa respecto al texto,
-   pero lleva su alt porque transmite el destino. */
-export function HeroFoto({ imagen, antetitulo, titulo, subtitulo, children }) {
-  return (
-    <section className="hero-full">
-      {/* La foto va sola, sin velo ni texto encima (las fotos de Tourism New
-          Zealand no pueden llevar nada encima); el texto, debajo. */}
-      <div className="hero-full__foto">
-        <img className="hero-full__img" src={imagen.src} alt={imagen.alt} lang={imagen.lang} fetchpriority="high" />
-        {/* Crédito, si la foto lo lleva: debajo del borde, fuera de la imagen */}
-        <CreditoFoto credito={imagen.credito} tono="oscuro" className="hero-full__credito" />
-      </div>
-      <div className="wrap hero-full__contenido">
-        <p className="hero-full__antetitulo">{antetitulo}</p>
-        <h1 className="hero-full__titulo">{titulo}</h1>
-        <p className="hero-full__sub">{subtitulo}</p>
-        <div className="cta-row hero-full__botones">{children}</div>
-      </div>
-    </section>
-  )
-}
+/* Bloques compartidos: reseñas (home, Más allá de la vista), audios (Más
+   allá de la vista) y CTA final (Todas las experiencias). */
 
 /* ── Reseñas destacadas ─────────────────────────────── */
 /* En el prerender llegan precargadas (homeResenas, ver
@@ -71,30 +29,36 @@ function hablaDeCeguera(r) {
 /* Elige hasta 3 reseñas. Por defecto, las destacadas. Con
    modo="sinCeguera", entre todas las publicadas, primero las que no se
    centran en la ceguera y, dentro de cada grupo, las destacadas. */
-function elegirResenas(lista, modo) {
+function elegirResenas(lista, modo, autor) {
   if (!lista) return null
+  // Con `autor`, primero la reseña de esa persona (si no la hay, las destacadas)
+  if (autor) {
+    const suya = lista.find(r => (r.author_name ?? '').toLowerCase().includes(autor.toLowerCase()))
+    return suya ? [suya] : lista.filter(r => r.featured).slice(0, 1)
+  }
   if (modo !== 'sinCeguera') return lista.slice(0, 3)
   return [...lista]
     .sort((a, b) => (hablaDeCeguera(a) - hablaDeCeguera(b)) || (b.featured - a.featured))
     .slice(0, 3)
 }
 
-/* tono: 'night' (banda azul) o 'cream' (banda crema). */
-export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variante, id, antetitulo, titulo, textoEnlace }) {
+/* tono: 'night' (banda azul) o 'cream' (banda crema).
+   autor: muestra la reseña de esa persona (p. ej. "Nuria"). */
+export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variante, id, antetitulo, titulo, textoEnlace, autor, className = '' }) {
   const { t } = useTranslation()
   const lang = useLang()
   const preload = getPreload()
   const [resenas, setResenas] = useState(
-    elegirResenas(modo === 'sinCeguera' ? preload.resenas : preload.homeResenas, modo) ?? null
+    elegirResenas(modo === 'sinCeguera' || autor ? preload.resenas : preload.homeResenas, modo, autor) ?? null
   )
 
   useEffect(() => {
     let q = supabase.from('resenas').select('*').eq('published', true)
-    q = modo === 'sinCeguera'
+    q = modo === 'sinCeguera' || autor
       ? q.order('featured', { ascending: false }).order('created_at', { ascending: false }).limit(30)
       : q.eq('featured', true).limit(3)
-    q.then(({ data }) => setResenas(elegirResenas(data, modo)))
-  }, [modo])
+    q.then(({ data }) => setResenas(elegirResenas(data, modo, autor)))
+  }, [modo, autor])
 
   if (!resenas || resenas.length === 0) return null
 
@@ -106,7 +70,7 @@ export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variant
     const yaEntrecomillado = /^[«“"]/.test(texto)
     const [abre, cierra] = lang === 'en' ? ['“', '”'] : ['«', '»']
     return (
-      <section id={id} className="hn-sec hn-resena" aria-labelledby="hn-resena-titulo">
+      <section id={id} className={`hn-sec hn-resena ${className}`.trim()} aria-labelledby="hn-resena-titulo">
         <h2 id="hn-resena-titulo" className="hn-lbl hn-lbl--centro">{antetitulo ?? t('home.testi.eyebrow')}</h2>
         <figure>
           <span className="sr-only">{t('home.testi.srContent')}</span>
@@ -162,22 +126,6 @@ export function ResenasDestacadas({ tono = 'night', modo = 'destacadas', variant
 }
 
 
-/* ── Aviso de la próxima salida en grupo ───────────────
-   Lo usan Más allá de la vista y Viajes +60: la salida del 1 al 15 de
-   marzo de 2027 es El Gran Viaje, no un viaje propio de esas colecciones,
-   así que aquí solo se menciona y se enlaza a su sección de la home. */
-export function AvisoProximaSalida() {
-  const { t } = useTranslation()
-  return (
-    <div className="anuncio-grupo">
-      <p className="anuncio-grupo__texto">{t('home.salida.aviso')}</p>
-      <div className="cta-row" style={{ justifyContent: 'center' }}>
-        <L to="/#proxima-salida" className="btn btn-solid anuncio-grupo__cta">{t('home.salida.avisoEnlace')}<span aria-hidden="true"> →</span></L>
-      </div>
-    </div>
-  )
-}
-
 /* ── Audios ──────────────────────────────────────────── */
 const AUDIOS = [
   { n: 1, id: 'parapente', src: audioParapente },
@@ -186,14 +134,18 @@ const AUDIOS = [
   { n: 4, id: 'kauri',     src: audioKauri },
 ]
 
-export function AudioClips({ id }) {
+/* `titulo`: encabezado de la sección (por defecto, home.audio.eyebrow).
+   `className`: clases de la sección (Más allá de la vista la pone en el
+   sistema editorial: "hn-sec hn-audios"). */
+export function AudioClips({ id, titulo, className }) {
   const { t } = useTranslation()
   const [playingAudio, setPlayingAudio] = useState(null)
+  const editorial = className?.includes('hn-')
 
   return (
-    <section id={id} aria-labelledby="audio-clips-heading">
-      <div className="wrap">
-        <h2 id="audio-clips-heading" className="sec-title">{t('home.audio.eyebrow')}</h2>
+    <section id={id} className={className} aria-labelledby="audio-clips-heading">
+      <div className={editorial ? undefined : 'wrap'}>
+        <h2 id="audio-clips-heading" className={editorial ? 'hn-h2' : 'sec-title'}>{titulo ?? t('home.audio.eyebrow')}</h2>
         <div className="audio-cards">
           {AUDIOS.map(({ n, id, src }) => (
             <div key={id} className="audio-card">

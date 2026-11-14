@@ -1,0 +1,420 @@
+/* ── Páginas de colección: Viajes +60 y Más allá de la vista ─────────────
+   Mismo sistema editorial que la home (HomeNueva.css, prefijo .hn-); aquí
+   solo lo propio de estas páginas (prefijo .hn-col-).
+   Ninguna foto lleva texto, velo ni nada encima: el texto va fuera y el
+   crédito, debajo del borde (.hn-foto__credito).
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* ── 1. Portada: la foto sola y, debajo, la banda oscura ── */
+.hn-col-portada {
+  background: #15171A;
+  color: var(--hn-crema);
+  --focus: #FFFFFF;
+}
+
+.hn-col-portada__foto {
+  height: calc(100vh - var(--cab-alto));
+  height: calc(100svh - var(--cab-alto));
+  min-height: 520px;
+  max-height: 980px;
+}
+
+.hn-col-portada__texto {
+  padding: 96px var(--hn-x) 110px;
+}
+
+.hn-col-portada__texto .hn-h1 {
+  max-width: 1100px;
+}
+
+/* ── Cita grande y párrafos centrados (Para quién es) ── */
+.hn-col-centro {
+  text-align: center;
+}
+
+.hn-col-centro .hn-body {
+  margin-inline: auto;
+}
+
+.hn-col-cita {
+  margin: 0;
+}
+
+.hn-col-cita p {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: var(--hn-serif);
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(34px, 4.4vw, 62px);
+  font-weight: 300;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+/* ── Columnas numeradas: seis puntos en tres por fila ── */
+.hn-columnas.hn-col-rejilla {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 72px 56px;
+}
+
+/* ── Bloques alternos: el texto con su título, sin la etiqueta del lugar ── */
+.hn-col .hn-destino__texto .hn-h3 {
+  margin-top: 20px;
+}
+
+/* Fondo: las experiencias van sobre crema */
+.hn-col .hn-destinos {
+  background: var(--hn-crema);
+}
+
+/* ── Dos columnas: título a la izquierda, texto a la derecha ── */
+.hn-col-dos {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 7%;
+  align-items: start;
+}
+
+.hn-col-dos .hn-h2 {
+  margin-top: 0;
+}
+
+.hn-col-dos .hn-body {
+  margin-top: 6px;
+}
+
+/* ── Lo que te llevarás: fotos con el lugar y el crédito debajo ── */
+.hn-col-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px 24px;
+  margin: 80px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hn-col-galeria__figura {
+  margin: 0;
+}
+
+.hn-col-galeria__foto {
+  aspect-ratio: 4 / 5;
+}
+
+.hn-col-galeria__pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: .02em;
+  color: #6B6F76;
+}
+
+.hn-col-galeria__credito {
+  margin: 0 0 0 auto;
+}
+
+/* ── Preguntas ── */
+.hn-col-faq .hn-faq {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.hn-col-faq .hn-faq__titulo {
+  margin-bottom: 40px;
+}
+
+/* ── Próxima salida (El Gran Viaje) ── */
+.hn-col-salida {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hn .hn-col-salida {
+  padding-block: 120px;
+}
+
+.hn-col-salida__texto {
+  max-width: 760px;
+  margin: 26px 0 36px;
+  font-family: var(--hn-serif);
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 300;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+/* ── Manifiesto (Más allá de la vista) ── */
+.hn-col-manifiesto .hn-h2 {
+  max-width: 1100px;
+}
+
+.hn-col-manifiesto__texto {
+  max-width: 760px;
+  margin-left: auto;
+}
+
+/* ── Lo que vivirás: pilares y foto con pie ── */
+.hn-col-vivir {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 7%;
+  align-items: center;
+}
+
+.hn-col-vivir__lista {
+  margin: 56px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hn-col-vivir__lista > li {
+  display: flex;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.hn-col-vivir__num {
+  flex: 0 0 56px;
+  font-family: var(--hn-serif);
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1;
+  color: #1F6B56;
+}
+
+.hn-col-vivir__lista .hn-columnas__titulo {
+  margin: 0 0 8px;
+  font-size: 26px;
+  line-height: 1.3;
+}
+
+.hn-col-vivir__lista p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--hn-lectura);
+}
+
+.hn-col-vivir__figura {
+  margin: 0;
+}
+
+.hn-col-vivir__foto {
+  aspect-ratio: 4 / 5;
+}
+
+.hn-col-vivir__figura .hn-cap {
+  padding: 0;
+}
+
+/* ── Parapente: vídeo vertical y texto ── */
+.hn-col-reel {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  gap: 7%;
+  align-items: center;
+}
+
+.hn-col-reel .reel-frame {
+  width: 100%;
+}
+
+/* ── Audios: las tarjetas de siempre, con el encabezado editorial ── */
+.hn-col-audios .hn-h2 {
+  margin: 0 0 56px;
+}
+
+/* ── Dos maneras de viajar ── */
+.hn-col-maneras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px;
+  margin-top: 72px;
+}
+
+.hn-col-manera {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 48px;
+  background: #FFFFFF;
+  border-top: 3px solid #1F6B56;
+}
+
+.hn-col-manera__etiqueta {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #1F6B56;
+}
+
+.hn-col-manera .hn-h3 {
+  margin-top: 16px;
+}
+
+.hn-col-manera__texto {
+  flex: 1;
+  margin: 18px 0 34px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--hn-lectura);
+}
+
+/* ── Cierre: banda oscura con el texto y el formulario ── */
+.hn-col-cierre {
+  background: #15171A;
+  color: var(--hn-crema);
+  --focus: #FFFFFF;
+}
+
+.hn-col-cierre__banda {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 7%;
+  align-items: start;
+  padding: 120px var(--hn-x) 140px;
+}
+
+.hn-col-cierre__texto .hn-h2 {
+  margin-top: 0;
+}
+
+.hn-col-cierre__parrafo,
+.hn-col-cierre__privado {
+  max-width: 34em;
+  margin: 30px 0 0;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #D9DBDF;
+}
+
+.hn-col-cierre__privado {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #3A3D42;
+  font-size: 18px;
+}
+
+.hn-col-cierre__privado a {
+  color: #7FC4A6;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hn-col-cierre__privado a:hover {
+  color: #FFFFFF;
+}
+
+/* El formulario va en una hoja clara dentro de la banda: los campos, los
+   errores y los textos de ayuda conservan su contraste */
+.hn-col-cierre__form.hn-itinerario {
+  display: block;
+  padding: 48px;
+  background: #FFFFFF;
+  color: #15171A;
+  --focus: #15171A;
+}
+
+/* ── Móvil y tableta vertical ── */
+@media (max-width: 900px) {
+  .hn-col-portada__foto {
+    height: 62vh;
+    min-height: 340px;
+  }
+
+  .hn-col-portada__texto {
+    padding: 64px var(--hn-x) 80px;
+  }
+
+  .hn-columnas.hn-col-rejilla {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .hn-col-dos,
+  .hn-col-vivir,
+  .hn-col-reel,
+  .hn-col-maneras,
+  .hn-col-cierre__banda {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .hn-col-galeria {
+    margin-top: 56px;
+  }
+
+  .hn-col-reel .reel-frame {
+    max-width: 300px;
+  }
+
+  .hn-col-manera {
+    padding: 36px 24px;
+  }
+
+  .hn .hn-col-salida {
+    padding-block: 88px;
+  }
+
+  .hn-col-cierre__banda {
+    padding: 80px var(--hn-x) 96px;
+  }
+
+  .hn-col-cierre__form.hn-itinerario {
+    padding: 32px 20px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .hn-columnas.hn-col-rejilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ── Lo que lo hace único: foto 4:3 junto a las columnas (dos por fila) ── */
+.hn-col-con-foto {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 7%;
+  align-items: start;
+  margin-top: 80px;
+}
+
+.hn-col-con-foto__foto {
+  aspect-ratio: 4 / 3;
+}
+
+.hn-col-con-foto .hn-pilares {
+  margin-top: 0;
+}
+
+.hn-columnas.hn-col-rejilla--dos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px 48px;
+}
+
+@media (max-width: 900px) {
+  .hn-col-con-foto {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+    margin-top: 56px;
+  }
+
+  .hn-columnas.hn-col-rejilla--dos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+}
