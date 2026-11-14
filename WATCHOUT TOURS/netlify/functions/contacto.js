@@ -46,7 +46,7 @@ export async function handler(event) {
   }
 
   const html = `
-    <h2>Nuevo mensaje de contacto — WatchOut! Sensory Tours</h2>
+    <h2>Nuevo mensaje de contacto — WatchOut Tours</h2>
     <table>
       <tr><th>Nombre</th><td>${escapeHtml(nombre)}</td></tr>
       <tr><th>Correo</th><td>${escapeHtml(email)}</td></tr>
@@ -63,7 +63,7 @@ export async function handler(event) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from:    'WatchOut! Sensory Tours <noreply@watchouttours.com>',
+        from:    'WatchOut Tours <noreply@watchouttours.com>',
         to:      [to],
         replyTo: email,
         subject: `Nuevo mensaje de ${nombre}`,

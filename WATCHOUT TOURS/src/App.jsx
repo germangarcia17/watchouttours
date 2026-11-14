@@ -37,7 +37,6 @@ const AdminBlogEditor = lazy(() => import('./pages/admin/BlogEditor'))
 const AdminResenas    = lazy(() => import('./pages/admin/ResenasAdmin'))
 const AdminImagenes   = lazy(() => import('./pages/admin/ImagenesAdmin'))
 const AdminSeo        = lazy(() => import('./pages/admin/SeoAdmin'))
-const AdminCharla     = lazy(() => import('./pages/admin/CharlaAdmin'))
 
 /* Rutas públicas (hijas del Layout). Se renderizan dos veces: sin prefijo
    (español, por defecto) y bajo /en (inglés). Los slugs se mantienen; solo
@@ -51,8 +50,8 @@ function paginasPublicas(prefix) {
        /mas-alla-de-la-vista ↔ /en/beyond-sight. */
     <Route key="sinp"    path={slug(prefix, '/sin-prisa')}            element={<SinPrisa />} />,
     <Route key="masa"    path={slug(prefix, '/mas-alla-de-la-vista')} element={<MasAllaDeLaVista />} />,
-    <Route key="sn"      path="sobre-nosotras"    element={<SobreNosotras />} />,
-    <Route key="prod"    path="productos"         element={<Productos />} />,
+    <Route key="sn"      path={slug(prefix, '/sobre-nosotras')} element={<SobreNosotras />} />,
+    <Route key="prod"    path={slug(prefix, '/productos')} element={<Productos />} />,
     <Route key="res"     path="resenas"           element={<Resenas />} />,
     <Route key="blog"    path="blog"              element={<Blog />} />,
     <Route key="post"    path="blog/:slug"        element={<BlogPost />} />,
@@ -61,7 +60,7 @@ function paginasPublicas(prefix) {
     <Route key="priv"    path="privacidad"        element={<Privacidad />} />,
     <Route key="aviso"   path="aviso-legal"       element={<AvisoLegal />} />,
     /* La filosofía vive ahora dentro de Sobre Nosotras */
-    <Route key="filo"    path="filosofia"         element={<Navigate to={`${prefix}/sobre-nosotras`} replace />} />,
+    <Route key="filo"    path="filosofia"         element={<Navigate to={`${prefix}${prefix ? '/about-us' : '/sobre-nosotras'}`} replace />} />,
     <Route key="404"     path="*"                 element={<NotFound />} />,
   ]
 }
@@ -99,7 +98,6 @@ export default function App() {
           <Route path="/admin/resenas"      element={<Suspense fallback={null}><AdminResenas /></Suspense>} />
           <Route path="/admin/imagenes"     element={<Suspense fallback={null}><AdminImagenes /></Suspense>} />
           <Route path="/admin/seo"          element={<Suspense fallback={null}><AdminSeo /></Suspense>} />
-          <Route path="/admin/charla"       element={<Suspense fallback={null}><AdminCharla /></Suspense>} />
         </Route>
       </Route>
     </Routes>

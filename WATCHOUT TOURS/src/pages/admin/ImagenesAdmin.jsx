@@ -4,7 +4,7 @@ import { uploadImage } from '../../lib/storage'
 
 import es from '../../i18n/locales/es.json'
 import en from '../../i18n/locales/en.json'
-import { CREDITOS_HOME, CREDITOS_SESENTA, CREDITOS_VISTA } from '../../lib/creditos'
+import { CREDITOS_HOME, CREDITOS_SESENTA, CREDITOS_VISTA, CREDITOS_FUNDADORAS, CREDITOS_PRIVADOS } from '../../lib/creditos'
 
 /* Huecos de imagen de la home: una fila por clave de home.huecos (es.json /
    en.json), con su texto alternativo por defecto en los dos idiomas. Así la
@@ -29,6 +29,8 @@ const NUEVAS_IMAGENES_SUGERIDAS = [
   ...HUECOS_HOME,
   ...huecosDe('sin-prisa', 'sinPrisa', CREDITOS_SESENTA),
   ...huecosDe('mas-alla-de-la-vista', 'masAlla', CREDITOS_VISTA),
+  ...huecosDe('privados', 'privados', CREDITOS_PRIVADOS),
+  ...huecosDe('fundadoras', 'fundadoras', CREDITOS_FUNDADORAS),
   // ── Renovación visual: huecos de imagen nuevos ──────────────────────
   // Cada uno se puede sustituir sin tocar código. En la galería de
   // Viajes +60, Hobbiton, Milford Sound y Tekapo no se muestran hasta que
@@ -63,39 +65,6 @@ const NUEVAS_IMAGENES_SUGERIDAS = [
     image_alt: 'Dos viajeras sentadas en un kayak amarillo en las aguas de Kaikōura, con chalecos de Seal Kayak Kaikoura, mirando hacia otro kayak con más viajeros bajo un cielo despejado',
     image_alt_en: 'Two travellers sitting in a yellow kayak on the waters of Kaikōura, wearing Seal Kayak Kaikoura life jackets, looking towards another kayak with more travellers under a clear sky',
   },
-  // Todas las experiencias: tarjeta “Viajes +60”
-  {
-    section: 'productos', key: 'tarjeta-viajes-60',
-    image_alt: 'Siete viajeros y guías reunidos en una pasarela de madera, con el vapor del géiser Pōhutu elevándose detrás',
-    image_alt_en: 'Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them',
-  },
-  // Todas las experiencias: tarjeta de personas ciegas y con baja visión
-  {
-    section: 'productos', key: 'tarjeta-personas-ciegas',
-    image_alt: 'Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos',
-    image_alt_en: 'A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it',
-  },
-  // Todas las experiencias: tarjeta del viaje privado
-  {
-    section: 'productos', key: 'tarjeta-privado',
-    image_alt: 'Sylvie y Mónica, fundadoras de WatchOut Tours, sonriendo frente a un géiser humeante en Rotorua',
-    image_alt_en: 'Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua',
-  },
-  {
-    section: 'sobre-nosotras', key: 'equipo-moni',
-    image_alt: 'Mónica, cofundadora y guía de WatchOut Tours, en Nueva Zelanda',
-    image_alt_en: 'Mónica, co-founder and guide at WatchOut Tours, in New Zealand',
-  },
-  {
-    section: 'sobre-nosotras', key: 'equipo-sylvie',
-    image_alt: 'Sylvie, cofundadora y guía de WatchOut Tours, en Nueva Zelanda',
-    image_alt_en: 'Sylvie, co-founder and guide at WatchOut Tours, in New Zealand',
-  },
-  {
-    section: 'sobre-nosotras', key: 'equipo-nuria',
-    image_alt: 'Nuria sonriendo durante su viaje piloto por Nueva Zelanda con WatchOut Tours',
-    image_alt_en: 'Nuria smiling during her pilot trip across New Zealand with WatchOut Tours',
-  },
 ]
 
 export default function ImagenesAdmin() {
@@ -112,7 +81,7 @@ export default function ImagenesAdmin() {
   const [createError, setCreateError] = useState({})
 
   useEffect(() => {
-    document.title = 'Imágenes | Watchout Tours Admin'
+    document.title = 'Imágenes | WatchOut Tours Admin'
 
     supabase.from('site_images').select('*').order('section').then(({ data }) => {
       setImages(data ?? [])

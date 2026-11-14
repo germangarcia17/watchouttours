@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-server && node scripts/prerender.mjs && node scripts/generate-sitemap.mjs",
-    "preview": "vite preview",
-    "test": "node --test tests/*.test.mjs",
-    "charla:emails": "node scripts/charla-emails.mjs"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

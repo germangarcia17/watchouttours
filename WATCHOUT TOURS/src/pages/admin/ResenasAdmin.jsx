@@ -95,7 +95,7 @@ export default function ResenasAdmin() {
   const [videoUploadError, setVideoUploadError] = useState(null)
 
   useEffect(() => {
-    document.title = 'Reseñas | Watchout Tours Admin'
+    document.title = 'Reseñas | WatchOut Tours Admin'
     loadResenas()
   }, [])
 

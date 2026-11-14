@@ -16,8 +16,9 @@ import { Texto, Etiqueta, FotoHueco, FormularioItinerario, dos } from './Editori
 
 /* Portada: la foto a sangre, sola, y debajo la banda #15171A con la
    etiqueta, el h1, el subtítulo y los botones (como la home). `foto`:
-   props de FotoHueco. */
-export function Portada({ ns, foto }) {
+   props de FotoHueco. `botones`: false para una portada sin botones.
+   `ancla`: id de la sección a la que lleva el botón principal. */
+export function Portada({ ns, foto, botones = true, ancla = 'descubre' }) {
   const { t } = useTranslation()
   return (
     <header className="hn-col-portada">
@@ -26,10 +27,12 @@ export function Portada({ ns, foto }) {
         <Etiqueta className="hn-lbl--verde">{t(`${ns}.portada.etiqueta`)}</Etiqueta>
         <h1 className="hn-h1"><Texto k={`${ns}.portada.titulo`} /></h1>
         <p className="hn-intro__sub">{t(`${ns}.portada.sub`)}</p>
-        <div className="hn-botones">
-          <a href="#descubre" className="hn-btn">{t(`${ns}.portada.boton`)}</a>
-          <BotonVideollamada className="hn-btn hn-btn--fantasma">{t('home.salida.hablar')}</BotonVideollamada>
-        </div>
+        {botones && (
+          <div className="hn-botones">
+            <a href={`#${ancla}`} className="hn-btn">{t(`${ns}.portada.boton`)}</a>
+            <BotonVideollamada className="hn-btn hn-btn--fantasma">{t('home.salida.hablar')}</BotonVideollamada>
+          </div>
+        )}
       </div>
     </header>
   )
@@ -102,13 +105,13 @@ export function Preguntas({ ns }) {
 
 /* Cierre: (opcional) la foto a sangre, sola, y debajo la banda #15171A con
    el título, el texto y el formulario del itinerario con el viaje de la
-   página preseleccionado. id="itinerario": los botones de la página
-   llevan aquí. `extra`: contenido bajo el texto (p. ej. la línea de los
+   página preseleccionado. `id` (por defecto "itinerario"): los botones
+   de la página llevan aquí. `extra`: contenido bajo el texto (p. ej. la línea de los
    viajes privados). */
-export function CierreFormulario({ ns, foto, viaje, setViaje, extra }) {
+export function CierreFormulario({ ns, foto, viaje, setViaje, extra, id = 'itinerario', className = '' }) {
   const { t } = useTranslation()
   return (
-    <section id="itinerario" className="hn-col-cierre" aria-labelledby="hn-col-cierre-titulo">
+    <section id={id} className={`hn-col-cierre ${className}`.trim()} aria-labelledby="hn-col-cierre-titulo">
       {foto && <FotoHueco {...foto} sizes="100vw" className="hn-cierre__foto" sangre tono="oscuro" />}
       <div className="hn-col-cierre__banda">
         <div className="hn-col-cierre__texto">

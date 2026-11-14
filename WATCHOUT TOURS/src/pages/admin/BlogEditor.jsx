@@ -24,7 +24,7 @@ export default function BlogEditor() {
   const [uploadError, setUploadError] = useState({})
 
   useEffect(() => {
-    document.title = isEdit ? 'Editar artículo | Watchout Tours Admin' : 'Nuevo artículo | Watchout Tours Admin'
+    document.title = isEdit ? 'Editar artículo | WatchOut Tours Admin' : 'Nuevo artículo | WatchOut Tours Admin'
 
     if (isEdit) {
       supabase.from('blog_posts').select('*').eq('id', id).single().then(({ data }) => {

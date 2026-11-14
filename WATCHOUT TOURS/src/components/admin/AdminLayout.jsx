@@ -9,7 +9,6 @@ const adminLinks = [
   { to: '/admin/resenas',   label: 'Reseñas' },
   { to: '/admin/imagenes',  label: 'Imágenes' },
   { to: '/admin/seo',       label: 'SEO' },
-  { to: '/admin/charla',    label: 'Charla' },
 ]
 
 export function AdminLayout() {
@@ -20,7 +19,7 @@ export function AdminLayout() {
       <SkipLink />
       <nav className="admin-nav" aria-label="Navegación del panel de administración">
         <div className="admin-nav__inner">
-          <Link to="/admin" className="admin-nav__brand">Watchout Tours Admin</Link>
+          <Link to="/admin" className="admin-nav__brand">WatchOut Tours Admin</Link>
           <ul role="list" className="admin-nav__list">
             {adminLinks.map(({ to, label }) => (
               <li key={to}>

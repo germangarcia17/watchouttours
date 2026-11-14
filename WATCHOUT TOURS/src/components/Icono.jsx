@@ -1,4 +1,4 @@
-/* Iconos de línea fina de Watchout Tours.
+/* Iconos de línea fina de WatchOut Tours.
  *
  * Dibujos propios (sin licencia de terceros) sobre una rejilla de 24×24,
  * trazo de 1,5 px y color heredado (currentColor), para que tomen el color

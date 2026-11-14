@@ -94,7 +94,7 @@ export default function Contacto() {
       <section className="contacto-canales-section">
         <div className="wrap contacto-canales">
           <a
-            href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20información%20sobre%20los%20viajes%20de%20WatchOut!"
+            href="https://wa.me/64272677006?text=¡Hola!%20Quiero%20información%20sobre%20los%20viajes%20de%20WatchOut Tours"
             className="canal-card canal-card--whatsapp"
             target="_blank"
             rel="noopener noreferrer"

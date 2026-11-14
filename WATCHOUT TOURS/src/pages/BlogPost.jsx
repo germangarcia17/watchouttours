@@ -83,10 +83,10 @@ export default function BlogPost() {
     ...(post.published_at && { datePublished: post.published_at }),
     dateModified: post.updated_at || post.published_at,
     inLanguage: lang === 'en' ? 'en' : 'es',
-    author: { '@type': 'Organization', name: 'Watchout Tours', url: SITE_URL },
+    author: { '@type': 'Organization', name: 'WatchOut Tours', url: SITE_URL },
     publisher: {
       '@type': 'Organization',
-      name: 'Watchout Tours',
+      name: 'WatchOut Tours',
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon-512.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
@@ -105,7 +105,7 @@ export default function BlogPost() {
   return (
     <article aria-labelledby="post-heading">
       <Helmet>
-        <title>{metaTitle} | Watchout Tours</title>
+        <title>{metaTitle} | WatchOut Tours</title>
         {metaDesc && <meta name="description" content={metaDesc} />}
         {keywords && <meta name="keywords" content={keywords} />}
         <link rel="canonical" href={canonicalUrl} />

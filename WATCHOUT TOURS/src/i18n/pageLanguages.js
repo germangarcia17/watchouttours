@@ -1,6 +1,6 @@
 /* Idiomas y slugs de cada página pública.
  *
- * Por defecto, toda página pública de Watchout Tours existe en ambos
+ * Por defecto, toda página pública de WatchOut Tours existe en ambos
  * idiomas con el mismo slug, con o sin prefijo /en (p. ej. /productos ↔
  * /en/productos). Este módulo es la única fuente de verdad para las
  * excepciones:
@@ -26,6 +26,8 @@ export const MONOLINGUAL_ROUTES = {
 export const LOCALIZED_SLUGS = {
   '/mas-alla-de-la-vista': '/beyond-sight',
   '/sin-prisa':            '/unhurried',
+  '/sobre-nosotras':       '/about-us',
+  '/productos':            '/products',
 }
 
 /* Idiomas disponibles para una ruta base dada. ['es', 'en'] si no está

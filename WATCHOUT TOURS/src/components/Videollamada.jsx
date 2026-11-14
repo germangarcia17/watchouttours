@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
 /* Enlace a la agenda de Calendly para reservar una videollamada de
-   30 minutos con Moni y Sylvie. Se abre en una pestaña nueva y lo anuncia
+   30 minutos con Mónica y Sylvie. Se abre en una pestaña nueva y lo anuncia
    a los lectores de pantalla. `className` decide el aspecto del botón
    (siempre con borde, nunca el principal) y `children`, si se pasa,
    sustituye al texto por defecto. */

@@ -1,4 +1,4 @@
-# robots.txt — Watchout Tours
+# robots.txt — WatchOut Tours
 # Permite el rastreo de todo el sitio público y bloquea el panel de administración.
 
 User-agent: *
