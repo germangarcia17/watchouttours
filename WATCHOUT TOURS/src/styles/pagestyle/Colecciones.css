@@ -418,3 +418,149 @@
     gap: 48px;
   }
 }
+
+/* ── Fundadoras ── */
+/* Nuestra historia: una columna de lectura con capitular en Fraunces */
+.hn-col-historia__texto {
+  max-width: 720px;
+  margin-left: auto;
+}
+
+.hn-col-capitular::first-letter {
+  float: left;
+  margin: 10px 14px 0 0;
+  font-family: var(--hn-serif);
+  font-size: 96px;
+  font-weight: 300;
+  line-height: .8;
+  color: #1F6B56;
+}
+
+/* Sylvie y Mónica: retrato y texto alternando */
+.hn .hn-col-fundadoras {
+  padding: 140px var(--hn-x);
+}
+
+.hn-col-fundadora + .hn-col-fundadora {
+  margin-top: 120px;
+}
+
+.hn-col .hn-col-fundadora:first-child {
+  margin-top: 0;
+}
+
+.hn-col-fundadora .hn-col-fundadora__foto {
+  flex-basis: 46%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+}
+
+/* Tres columnas con foto arriba y texto debajo */
+.hn-col-tres {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 56px 40px;
+  margin: 80px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hn-col-tres__foto {
+  aspect-ratio: 4 / 5;
+  margin-bottom: 40px;
+}
+
+.hn-col-tres .hn-columnas__titulo {
+  margin: 14px 0 10px;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.hn-col-tres p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--hn-lectura);
+}
+
+.hn-col-botones-centro {
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .hn .hn-col-fundadoras {
+    padding: 96px var(--hn-x);
+  }
+
+  .hn-col-fundadora + .hn-col-fundadora {
+    margin-top: 80px;
+  }
+
+  .hn-col-fundadora .hn-col-fundadora__foto {
+    aspect-ratio: 4 / 5;
+  }
+
+  .hn-col-tres {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 64px;
+    margin-top: 56px;
+  }
+
+  .hn-col-capitular::first-letter {
+    font-size: 76px;
+  }
+}
+
+/* ── Viajes privados ── */
+/* Lo que incluye cada manera de viajar */
+.hn-col-incluye__titulo {
+  margin: 30px 0 12px;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #1F6B56;
+}
+
+.hn-col-incluye {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hn-col-incluye li {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--hn-lectura);
+}
+
+.hn-col-incluye li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+/* Cierre con la foto a 70vh */
+.hn-col-cierre--70 .hn-cierre__foto {
+  height: 70vh;
+  height: 70svh;
+  min-height: 420px;
+}
+
+@media (max-width: 900px) {
+  .hn-col-cierre--70 .hn-cierre__foto {
+    height: 60vh;
+    min-height: 340px;
+  }
+}
+
+/* Bloques alternos sobre blanco cuando la sección lo pide */
+.hn-col .hn-destinos.hn-blanca {
+  background: #FFFFFF;
+}
+
+/* Título del cierre: cabe en su columna sin partirse palabra a palabra */
+.hn-col-cierre__texto .hn-h2 {
+  font-size: clamp(34px, 3.4vw, 50px);
+}

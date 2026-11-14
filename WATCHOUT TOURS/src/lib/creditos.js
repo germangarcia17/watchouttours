@@ -49,6 +49,26 @@ export const CREDITOS_VISTA = {
   'vista-vivir': '',
 }
 
+/* Viajes privados (/productos, sección "privados" del admin). La foto de
+   las anfitrionas es propia: sin crédito. */
+export const CREDITOS_PRIVADOS = {
+  'privados-portada': TNZ('Miles Holden'),
+  'privados-anfitrionas': '',
+  'privados-selfdrive': TNZ('Miles Holden'),
+  'privados-cierre': TNZ('Miles Holden'),
+}
+
+/* Fundadoras (/sobre-nosotras, sección "fundadoras" del admin). Las fotos
+   de las fundadoras son propias: sin crédito. */
+export const CREDITOS_FUNDADORAS = {
+  'fundadoras-portada': '',
+  'fundadoras-sylvie': '',
+  'fundadoras-monica': '',
+  'fundadoras-montanas': TNZ('Will Patino'),
+  'fundadoras-tierra': TNZ('Miles Holden'),
+  'fundadoras-oceano': TNZ('Miles Holden'),
+}
+
 /* Texto que se muestra, o null si no hay crédito. */
 export function textoCredito(credito, lang) {
   const c = (credito ?? '').trim()

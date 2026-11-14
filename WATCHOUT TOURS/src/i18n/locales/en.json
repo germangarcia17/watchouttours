@@ -45,7 +45,7 @@
     "privacidad": "Privacy",
     "avisoLegal": "Legal notice",
     "empresa": "WatchOut Tours Ltd. Registered company in New Zealand.",
-    "creditos": "Photography and video: Tourism New Zealand (Miles Holden, Eric Hanson, Shaun Jeffers, Graeme Murray) and RealNZ. Tiaki: Tourism New Zealand.",
+    "creditos": "Photography and video: Tourism New Zealand (Miles Holden, Eric Hanson, Shaun Jeffers, Graeme Murray, Will Patino) and RealNZ. Tiaki: Tourism New Zealand.",
     "idiomas": "Language"
   },
   "home": {
@@ -662,44 +662,108 @@
     "ctaPrimary": "Tell us your dream",
     "ctaSecondary": "See the trips"
   },
-  "productos": {
+  "privados": {
     "seo": {
       "title": "Private bespoke journeys through New Zealand · WatchOut Tours",
       "description": "Your New Zealand journey designed from scratch, on your dates: hosted by our founders or self-drive, with everything booked and support before, during and after."
     },
-    "eyebrow": "All experiences",
-    "title": "Choose how you’d like to experience New Zealand",
-    "sub": "Two group journeys, with 6 people at most, or a private trip designed just for you. Either way, the two of us are with you from start to finish.",
-    "tarjetas": [
-      {
-        "id": "viajes-60",
-        "to": "/sin-prisa",
-        "titulo": "60+ Journeys",
-        "texto": "New Zealand at an easy pace, with nothing to organise. 4 and 5-star hotels, breakfast and dinner included, comfortable transport and the two of us with you from start to finish.",
-        "cta": "See the journey",
-        "imgAlt": "Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them"
-      },
-      {
-        "id": "personas-ciegas",
-        "to": "/mas-alla-de-la-vista",
-        "titulo": "Journeys for blind and low-vision travellers",
-        "texto": "Not all vision needs eyes. A journey designed for blind and low-vision travellers, where every place is felt through your hands, your ears and your skin, and the adventure goes as far as you want it to.",
-        "cta": "See the journey",
-        "imgAlt": "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it"
-      },
-      {
-        "id": "privado",
-        "to": "/contacto",
-        "titulo": "Your trip, tailor-made",
-        "texto": "A trip just for you and whoever you’d like to bring. We design it with you, at your pace: your days, your energy, your time. More calm or more adventure? You decide.",
-        "cta": "Let’s design yours",
-        "imgAlt": "Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua"
-      }
-    ],
-    "cta": {
-      "title": "Shall we talk?",
-      "text": "Tell us what you have in mind and we’ll help you shape it, no strings attached.",
-      "btn": "Tell us what you need"
+    "huecos": {
+      "privados-portada": "A calm lake beneath snow-capped mountains in the Queenstown region",
+      "privados-anfitrionas": "A woman rests her hand on a carved Māori figure while her companion beside her describes it with gestures",
+      "privados-selfdrive": "A campervan travels the road beside the turquoise waters of Lake Pukaki, with snowy mountains beyond",
+      "privados-cierre": "The Milky Way stretches across the night sky over Tekapo"
+    },
+    "portada": {
+      "etiqueta": "Private journeys",
+      "titulo": "Your New Zealand,<br/><i>designed for you alone.</i>",
+      "sub": "A journey that doesn't exist until you imagine it. We design it from scratch, on your dates and to your measure, with every route, hotel and experience hand-picked by our founders.",
+      "boton": "Design your journey"
+    },
+    "manifiesto": {
+      "cita": "“We don't adapt packages. <i>We create journeys only you could live.</i>”",
+      "texto": "An anniversary, a family celebration, that promise you made each other years ago. Every private journey begins with a conversation about what you dream of and ends with a route designed down to the last detail: what to see, where to stay, what to feel in each place and at what pace to live it."
+    },
+    "maneras": {
+      "etiqueta": "Two ways to travel",
+      "titulo": "You choose how to live it.",
+      "incluyeLabel": "Includes",
+      "items": [
+        {
+          "id": "anfitrionas",
+          "titulo": "Hosted",
+          "texto": "Sylvie and Mónica travel with you throughout the journey and open the doors of their country to you: the places you won't find in any guidebook, the people who give each place its meaning, and the peace of mind of having everything taken care of, with nothing to think about but enjoying it.",
+          "incluye": [
+            "Bespoke journey design",
+            "Hand-picked accommodation",
+            "Private experiences",
+            "Private transfers throughout the route",
+            "Personal hosting by our founders",
+            "24-hour support"
+          ]
+        },
+        {
+          "id": "selfdrive",
+          "titulo": "Self drive",
+          "texto": "For those who dream of the freedom of the open road. You take the wheel; we take care of every detail: we design the route, book absolutely everything and support you remotely before, during and after your journey. The adventure is yours, and so is the peace of mind.",
+          "incluye": [
+            "Bespoke journey design",
+            "Booking of accommodation, activities and vehicle",
+            "A route planned day by day",
+            "Support before, during and after your journey"
+          ]
+        }
+      ]
+    },
+    "pasos": {
+      "etiqueta": "Step by step",
+      "titulo": "How your journey comes to life.",
+      "items": [
+        {
+          "titulo": "A conversation",
+          "texto": "Tell us what you dream of, when you'd like to travel and how you like to do it. By video call, at your own pace."
+        },
+        {
+          "titulo": "The design",
+          "texto": "We create a proposal tailored to you, with the route, accommodation and experiences."
+        },
+        {
+          "titulo": "The fine-tuning",
+          "texto": "We refine it together until it's exactly the journey you imagined."
+        },
+        {
+          "titulo": "The journey",
+          "texto": "We book everything and look after you, in person or remotely, from start to finish."
+        }
+      ]
+    },
+    "faq": {
+      "titulo": "Frequently asked questions",
+      "items": [
+        {
+          "q": "How many days do I need to see New Zealand?",
+          "a": "We recommend at least two weeks to explore both islands without rushing. Ten days lets you experience one island in depth. We'll talk it through based on what you'd like to see."
+        },
+        {
+          "q": "When is the best time to travel?",
+          "a": "Every season has its charm: the southern summer (December to March) is ideal for nature and the coast; autumn for colour and tranquillity; winter for snow. We'll help you choose for your journey."
+        },
+        {
+          "q": "Do you also arrange flights?",
+          "a": "International flights aren't included, but we'll help you choose the best times and stopovers."
+        },
+        {
+          "q": "Can we travel with children?",
+          "a": "Of course. We design the journey with the whole family in mind, with pace and experiences for every age."
+        },
+        {
+          "q": "How much does a private journey cost?",
+          "a": "It depends on the length, the season, the travel style and the type of accommodation. After our first conversation we'll send you a detailed proposal, with no obligation."
+        }
+      ]
+    },
+    "cierre": {
+      "titulo": "Your New Zealand begins<br/><i>with a conversation.</i>",
+      "texto": "Tell us how you dream of it, and we'll begin designing it."
     }
   },
   "contacto": {
@@ -758,80 +822,75 @@
       "spam": "Please wait a moment before sending again."
     }
   },
-  "sobre": {
-    "docTitle": "About us | WatchOut Tours",
+  "fundadoras": {
     "seo": {
       "title": "The founders · WatchOut Tours",
       "description": "Sylvie and Mónica left Barcelona more than eight years ago and made New Zealand their home. Today they design and host bespoke journeys through the country they fell in love with."
     },
-    "heroImgAlt": "Mónica and Sylvie smiling in a selfie by Sydney Harbour at dusk, with the Sydney Opera House in the background",
-    "heroEyebrow": "The heart of the project",
-    "heroTitle1": "Much more",
-    "heroTitle2": "than a trip.",
-    "heroIntro1": "WatchOut Tours was born from the desire to create experiences where blind or visually impaired people can discover New Zealand from a more sensory, human and authentic place.",
-    "heroIntro2": "But it’s also born with another purpose: to help open conversations, raise awareness of the invisible and spark new ways of travelling that people want to share.",
-    "aprendidoEyebrow": "What we’ve learned",
-    "aprendidoTitulo": "Before starting this adventure we thought we were creating accessible trips. Today we know it’s much more than that.",
-    "aprendidoCol1": "Every trip reminds us that there are many ways of perceiving the world. When we share those ways of feeling, listening, touching and discovering, something changes in all of us who are there.",
-    "aprendidoCol2": "We’ve seen how people who didn’t know each other end up connecting in a deeply human way. How a small detail comes to hold great meaning. How we learn to trust more, to listen better and to be truly present.",
-    "aprendidoFinal": "That’s why we believe the real impact of these trips isn’t only in the places we visit. It’s in the people we become when we live them together.",
-    "aprendidoNegrita": "Our greatest wish is that you go home with the feeling of having lived something you’ll remember for a lifetime. Because the best trips aren’t measured by the kilometres travelled, but by what they leave inside us.",
-    "holaEyebrow": "Hello",
-    "holaTitle": "We’re Mónica and Sylvie.",
-    "holaP1": "Two Spaniards who arrived in New Zealand seven years ago with a backpack full of excitement... and who are still amazed by this country.",
-    "holaP2": "We love getting up early to watch a sunrise, improvising a stop because someone heard a hidden river, laughing for hours in our private vehicle and ending the day sharing stories around a table.",
-    "holaQuote": "“I’d never experienced anything like it.”",
-    "holaQuoteCite": "— What we’re most moved to hear",
-    "holaP3": "We’re curious by nature. We love asking questions, listening to stories and discovering how each person lives in the world. Maybe that’s why WatchOut Tours came about so naturally.",
-    "equipoEyebrow": "Team",
-    "equipoTitle": "The people behind every trip",
-    "equipoMoniNombre": "Mónica",
-    "equipoMoniRol": "Founder & Guide",
-    "equipoMoniBio": "Co-founder of WatchOut Tours and guide on every trip, start to finish. She landed in New Zealand seven years ago with a backpack full of dreams, and now translates the country through story, touch and sound.",
-    "equipoMoniFotoAlt": "Mónica, co-founder and guide at WatchOut Tours, in New Zealand",
-    "equipoSylvieNombre": "Sylvie",
-    "equipoSylvieRol": "Founder & Guide",
-    "equipoSylvieBio": "Co-founder of WatchOut Tours and guide on every trip, start to finish. Her father, a ski guide for blind skiers in Spain, sparked the idea that became this project.",
-    "equipoSylvieFotoAlt": "Sylvie, co-founder and guide at WatchOut Tours, in New Zealand",
-    "equipoNuriaNombre": "Nuria",
-    "equipoNuriaRol": "Europe Representative & Accessibility Consultant",
-    "equipoNuriaBio": "Nuria travelled with us on our pilot trip — 23 days across New Zealand with her husband and son. She’s an accessibility consultant and writes at Six Sense Travel, her platform on inclusive tourism. She’s now our representative in Europe.",
-    "equipoNuriaFotoAlt": "Nuria smiling during her pilot trip across New Zealand with WatchOut Tours",
-    "equipoBlogLabel": "Six Sense Travel",
-    "filoEyebrow": "Our philosophy",
-    "filoTitle": "Five principles that guide every decision",
-    "filoFotoAlt": "A WatchOut Tours traveller at the top of a New Zealand mountain, with a wide landscape behind her",
-    "principios": [
-      {
-        "num": "01",
-        "titulo": "Designed from the start, not adapted later",
-        "texto": "We build every trip from the very first step thinking about who travels with us."
-      },
-      {
-        "num": "02",
-        "titulo": "Luxury is sensory, not visual",
-        "texto": "The silence of a fjord at dawn is a luxury for every sense."
-      },
-      {
-        "num": "03",
-        "titulo": "Groups of 6 at most",
-        "texto": "Because the sensory experience needs space and each person has their own pace."
-      },
-      {
-        "num": "04",
-        "titulo": "Respect for Māori culture",
-        "texto": "We work with local communities, not over them."
-      },
-      {
-        "num": "05",
-        "titulo": "Zero condescension",
-        "texto": "The people who travel with us are adults who have chosen an extraordinary adventure."
-      }
-    ],
-    "cierre1": "We thought we were going to show people New Zealand. And in the end it was New Zealand —and the people we’ve shared the road with— who taught us.",
-    "cierreDeseo": "We hope that when you get home you won’t just remember the places you visited, but notice that you now pay attention to things that used to pass you by.",
-    "cierre2": "Because perhaps that’s the best souvenir you can take with you.",
-    "cierreCta": "Tell us your dream"
+    "huecos": {
+      "fundadoras-portada": "Sylvie and Mónica, founders of WatchOut Tours, in New Zealand",
+      "fundadoras-sylvie": "Sylvie, co-founder of WatchOut Tours",
+      "fundadoras-monica": "Mónica, co-founder of WatchOut Tours",
+      "fundadoras-montanas": "Two people leap for joy on the shore of Lake Pukaki, before snow-capped Aoraki / Mount Cook",
+      "fundadoras-tierra": "Pōhutu Geyser erupting against the light, its steam lit by the sun in Rotorua",
+      "fundadoras-oceano": "A dolphin swims through turquoise water beside a boat in Kaikōura"
+    },
+    "portada": {
+      "etiqueta": "The founders",
+      "titulo": "We fell in love with a country.<br/><i>And we stayed.</i>",
+      "sub": "We're Sylvie and Mónica. More than eight years ago we left Barcelona to follow a dream, and today we design and host journeys through the country that changed our lives."
+    },
+    "historia": {
+      "etiqueta": "Our story",
+      "titulo": "From the other side of the world,<br/><i>home.</i>",
+      "parrafos": [
+        "We had travelled half the world. We knew the thrill of arriving somewhere new and the ache of leaving it behind. But no journey had prepared us for what we felt when we landed in New Zealand.",
+        "It was the light. Fiords plunging into the sea between waterfalls, the earth breathing beneath your feet in Rotorua, skies so clear that at night the stars feel within reach. And it was the people, and a Māori culture that sees the land as something to care for, not something to own.",
+        "We came to discover it and never managed to leave. More than eight years have passed, and this country still moves us every morning when we wake up.",
+        "WatchOut Tours was born from a deep desire to share what we felt that first time. That's why we have travelled every route, chosen every hotel and lived every experience before you."
+      ]
+    },
+    "sylvie": {
+      "etiqueta": "Sylvie",
+      "titulo": "The art of<br/><i>hospitality.</i>",
+      "texto": "Sylvie has managed hotels in New Zealand and knows like few others what it means to look after a guest: anticipating what they need before they ask, taking care of every detail without it showing, and making them feel at home thousands of kilometres from their own. Hers is the eye that chooses every hotel and every table on our journeys."
+    },
+    "monica": {
+      "etiqueta": "Mónica",
+      "titulo": "Travelling to<br/><i>be transformed.</i>",
+      "texto": "Mónica is a tireless traveller and a coach specialising in NLP. She knows a journey can be far more than a route: it can be a before and an after. She has a gift for making a group of strangers feel like family from day one, and for turning every moment into something you'll remember for the rest of your life."
+    },
+    "cita": {
+      "texto": "“New Zealand was our dream. <i>Today it is our home. And nothing makes us happier than opening its doors to you.</i>”",
+      "firma": "Sylvie & Mónica"
+    },
+    "emociona": {
+      "etiqueta": "New Zealand, every day",
+      "titulo": "What still<br/><i>moves us.</i>",
+      "items": [
+        {
+          "id": "montanas",
+          "titulo": "Its mountains",
+          "texto": "Aoraki emerging from the clouds at the end of the valley. No matter how many times we see it, it always leaves us speechless."
+        },
+        {
+          "id": "tierra",
+          "titulo": "Its living earth",
+          "texto": "The roar of a geyser, the scent of steam, the impossible colours of the hot springs. Here the earth is alive, and you can feel it."
+        },
+        {
+          "id": "oceano",
+          "titulo": "Its ocean",
+          "texto": "The sea at Kaikōura, where dolphins swim alongside the bow and whales surface before the mountains. An ocean full of life."
+        }
+      ]
+    },
+    "cierre": {
+      "titulo": "We'd love<br/><i>to meet you.</i>",
+      "texto": "Tell us how you dream of your journey. We'll listen, by video call or in writing, and begin designing it together.",
+      "boton1": "Talk to us",
+      "boton2": "Design your journey"
+    }
   },
   "post": {
     "loading": "Loading…",
@@ -915,19 +974,7 @@
     "verAvisoA": "You can also read our",
     "verAvisoLink": "Legal notice",
     "fecha": "Last updated:",
-    "fechaValor": "12 October 2026",
-    "charlaTitle": "Online talk registration",
-    "charlaDatos": "If you sign up for our online talk “Discover New Zealand through the senses”, we process your name, your email, the date you choose, any question you’d like to ask us (optional) and whether you’d like to receive news about future trips (optional).",
-    "charlaFinalidadLabel": "Purpose and legal basis:",
-    "charlaFinalidad": "to manage your registration and send you the confirmation email with the Microsoft Teams link, two reminders (24 hours and 1 hour before) and a follow-up email the day after the talk. The legal basis is your own registration request (Art. 6.1.b GDPR).",
-    "charlaNoticiasLabel": "News about future trips:",
-    "charlaNoticias": "we’ll only write to you with news about our trips if you tick that box, which is optional and unticked by default. The legal basis is your consent (Art. 6.1.a GDPR), which you can withdraw at any time by writing to",
-    "charlaConservacionLabel": "Retention:",
-    "charlaConservacion": "we apply the same period as for all other data (a maximum of 12 months from our last contact). If you asked to receive news, we keep your data until you withdraw your consent.",
-    "charlaProveedoresLabel": "Providers:",
-    "charlaProveedores": "we store registrations in Supabase and send emails with Resend, which act as data processors on our behalf. Where they process data outside the European Economic Area, the transfer is covered by the safeguards provided for in the GDPR. The talk takes place on Microsoft Teams: when you join, Microsoft processes the data you enter (for example, the name you join with) under its own privacy policy.",
-    "charlaGrabacionLabel": "Recording:",
-    "charlaGrabacion": "we will record the talk and send the link to the recording to everyone registered. The recording includes the voice and image of anyone who turns on their microphone or camera; you can take part without appearing by keeping them off and typing in the chat. The legal basis is your consent, which you give by turning on your microphone or camera."
+    "fechaValor": "12 October 2026"
   },
   "avisoLegal": {
     "docTitle": "Legal notice | WatchOut Tours",
@@ -956,23 +1003,5 @@
     "leyPb": ") and consumer protection.",
     "fecha": "Last updated:",
     "fechaValor": "16 July 2026"
-  },
-  "rutaPdf": {
-    "eyebrow": "The route",
-    "titulo": "Get the full route as a PDF",
-    "texto": "Leave your name and email and we’ll send you the full itinerary, so you can read it at your own pace and share it with whoever you like.",
-    "formAria": "Form to get the route as a PDF",
-    "nombre": "Your name",
-    "email": "Your email",
-    "viajeLegend": "Which route would you like?",
-    "opciones": {
-      "viajes-60": "60+ Journeys",
-      "personas-ciegas": "Journeys for blind and low-vision travellers"
-    },
-    "enviar": "Send me the route",
-    "enviando": "Sending…",
-    "exito": "Done! We’ll email you the route very soon.",
-    "errEmail": "Enter a valid email so we can send you the route.",
-    "errViaje": "Choose which route you’d like."
   }
 }

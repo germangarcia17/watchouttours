@@ -26,6 +26,8 @@ export const MONOLINGUAL_ROUTES = {
 export const LOCALIZED_SLUGS = {
   '/mas-alla-de-la-vista': '/beyond-sight',
   '/sin-prisa':            '/unhurried',
+  '/sobre-nosotras':       '/about-us',
+  '/productos':            '/products',
 }
 
 /* Idiomas disponibles para una ruta base dada. ['es', 'en'] si no está
