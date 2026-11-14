@@ -624,7 +624,7 @@
     }
   },
   "notFound": {
-    "docTitle": "Page not found | Watchout Tours",
+    "docTitle": "Page not found | WatchOut Tours",
     "title": "Page not found",
     "text": "Sorry, the page you’re looking for doesn’t exist or has been moved.",
     "home": "Go to the home page"
@@ -647,7 +647,7 @@
   },
   "resenas": {
     "seo": {
-      "title": "Reviews from Blind Travellers in New Zealand | Watchout Tours",
+      "title": "Reviews from Blind Travellers in New Zealand | WatchOut Tours",
       "description": "What blind and low-vision travellers say about touring New Zealand with us. No filters, no actors."
     },
     "eyebrow": "What they say",
@@ -693,7 +693,7 @@
         "titulo": "Your trip, tailor-made",
         "texto": "A trip just for you and whoever you’d like to bring. We design it with you, at your pace: your days, your energy, your time. More calm or more adventure? You decide.",
         "cta": "Let’s design yours",
-        "imgAlt": "Sylvie and Moni, Watchout Tours guides, smiling in front of a steaming geyser in Rotorua"
+        "imgAlt": "Sylvie and Mónica, founders of WatchOut Tours, smiling in front of a steaming geyser in Rotorua"
       }
     ],
     "cta": {
@@ -703,9 +703,9 @@
     }
   },
   "contacto": {
-    "docTitle": "Contact | Watchout Tours",
+    "docTitle": "Contact | WatchOut Tours",
     "seo": {
-      "title": "Contact | Watchout Tours — Accessible New Zealand Travel",
+      "title": "Contact | WatchOut Tours — Accessible New Zealand Travel",
       "description": "Tell us about your dream trip to New Zealand. We’ll answer your questions about our accessible tours for blind and visually impaired travellers. Email or WhatsApp us."
     },
     "eyebrow": "No commitment · no rush · no fuss",
@@ -759,7 +759,7 @@
     }
   },
   "sobre": {
-    "docTitle": "About us | Watchout Tours",
+    "docTitle": "About us | WatchOut Tours",
     "seo": {
       "title": "The founders · WatchOut Tours",
       "description": "Sylvie and Mónica left Barcelona more than eight years ago and made New Zealand their home. Today they design and host bespoke journeys through the country they fell in love with."
@@ -768,7 +768,7 @@
     "heroEyebrow": "The heart of the project",
     "heroTitle1": "Much more",
     "heroTitle2": "than a trip.",
-    "heroIntro1": "Watchout was born from the desire to create experiences where blind or visually impaired people can discover New Zealand from a more sensory, human and authentic place.",
+    "heroIntro1": "WatchOut Tours was born from the desire to create experiences where blind or visually impaired people can discover New Zealand from a more sensory, human and authentic place.",
     "heroIntro2": "But it’s also born with another purpose: to help open conversations, raise awareness of the invisible and spark new ways of travelling that people want to share.",
     "aprendidoEyebrow": "What we’ve learned",
     "aprendidoTitulo": "Before starting this adventure we thought we were creating accessible trips. Today we know it’s much more than that.",
@@ -779,28 +779,28 @@
     "holaEyebrow": "Hello",
     "holaTitle": "We’re Mónica and Sylvie.",
     "holaP1": "Two Spaniards who arrived in New Zealand seven years ago with a backpack full of excitement... and who are still amazed by this country.",
-    "holaP2": "We love getting up early to watch a sunrise, improvising a stop because someone heard a hidden river, laughing for hours in the van and ending the day sharing stories around a table.",
+    "holaP2": "We love getting up early to watch a sunrise, improvising a stop because someone heard a hidden river, laughing for hours in our private vehicle and ending the day sharing stories around a table.",
     "holaQuote": "“I’d never experienced anything like it.”",
     "holaQuoteCite": "— What we’re most moved to hear",
-    "holaP3": "We’re curious by nature. We love asking questions, listening to stories and discovering how each person lives in the world. Maybe that’s why Watchout came about so naturally.",
+    "holaP3": "We’re curious by nature. We love asking questions, listening to stories and discovering how each person lives in the world. Maybe that’s why WatchOut Tours came about so naturally.",
     "equipoEyebrow": "Team",
     "equipoTitle": "The people behind every trip",
-    "equipoMoniNombre": "Moni",
+    "equipoMoniNombre": "Mónica",
     "equipoMoniRol": "Founder & Guide",
-    "equipoMoniBio": "Co-founder of Watchout and guide on every trip, start to finish. She landed in New Zealand seven years ago with a backpack full of dreams, and now translates the country through story, touch and sound.",
-    "equipoMoniFotoAlt": "Moni, co-founder and guide at Watchout Tours, in New Zealand",
+    "equipoMoniBio": "Co-founder of WatchOut Tours and guide on every trip, start to finish. She landed in New Zealand seven years ago with a backpack full of dreams, and now translates the country through story, touch and sound.",
+    "equipoMoniFotoAlt": "Mónica, co-founder and guide at WatchOut Tours, in New Zealand",
     "equipoSylvieNombre": "Sylvie",
     "equipoSylvieRol": "Founder & Guide",
-    "equipoSylvieBio": "Co-founder of Watchout and guide on every trip, start to finish. Her father, a ski guide for blind skiers in Spain, sparked the idea that became this project.",
-    "equipoSylvieFotoAlt": "Sylvie, co-founder and guide at Watchout Tours, in New Zealand",
+    "equipoSylvieBio": "Co-founder of WatchOut Tours and guide on every trip, start to finish. Her father, a ski guide for blind skiers in Spain, sparked the idea that became this project.",
+    "equipoSylvieFotoAlt": "Sylvie, co-founder and guide at WatchOut Tours, in New Zealand",
     "equipoNuriaNombre": "Nuria",
     "equipoNuriaRol": "Europe Representative & Accessibility Consultant",
     "equipoNuriaBio": "Nuria travelled with us on our pilot trip — 23 days across New Zealand with her husband and son. She’s an accessibility consultant and writes at Six Sense Travel, her platform on inclusive tourism. She’s now our representative in Europe.",
-    "equipoNuriaFotoAlt": "Nuria smiling during her pilot trip across New Zealand with Watchout Tours",
+    "equipoNuriaFotoAlt": "Nuria smiling during her pilot trip across New Zealand with WatchOut Tours",
     "equipoBlogLabel": "Six Sense Travel",
     "filoEyebrow": "Our philosophy",
     "filoTitle": "Five principles that guide every decision",
-    "filoFotoAlt": "A Watchout Tours traveller at the top of a New Zealand mountain, with a wide landscape behind her",
+    "filoFotoAlt": "A WatchOut Tours traveller at the top of a New Zealand mountain, with a wide landscape behind her",
     "principios": [
       {
         "num": "01",
@@ -846,13 +846,13 @@
     "eyebrow": "Legal"
   },
   "accesibilidad": {
-    "docTitle": "Accessibility | Watchout Tours",
+    "docTitle": "Accessibility | WatchOut Tours",
     "seo": {
-      "title": "Accessibility Statement | Watchout Tours",
+      "title": "Accessibility Statement | WatchOut Tours",
       "description": "How we ensure the digital accessibility of watchouttours.nz for people with visual and other disabilities."
     },
     "title": "Accessibility statement",
-    "intro": "Watchout Tours is committed to ensuring digital accessibility for everyone.",
+    "intro": "WatchOut Tours is committed to ensuring digital accessibility for everyone.",
     "conformidadTitle": "Conformance level",
     "conformidadP1": "This site aims to meet the",
     "conformidadP2": "at",
@@ -871,10 +871,10 @@
     "fechaValor": "25 June 2026"
   },
   "privacidad": {
-    "docTitle": "Privacy | Watchout Tours",
+    "docTitle": "Privacy | WatchOut Tours",
     "seo": {
-      "title": "Privacy Policy | Watchout Tours",
-      "description": "How we handle your personal data when you contact Watchout Tours through our website form."
+      "title": "Privacy Policy | WatchOut Tours",
+      "description": "How we handle your personal data when you contact WatchOut Tours through our website form."
     },
     "title": "Privacy policy",
     "intro": "We only collect the data you give us voluntarily so we can reply to you. We never use it for advertising without your permission or share it with third parties.",
@@ -930,10 +930,10 @@
     "charlaGrabacion": "we will record the talk and send the link to the recording to everyone registered. The recording includes the voice and image of anyone who turns on their microphone or camera; you can take part without appearing by keeping them off and typing in the chat. The legal basis is your consent, which you give by turning on your microphone or camera."
   },
   "avisoLegal": {
-    "docTitle": "Legal notice | Watchout Tours",
+    "docTitle": "Legal notice | WatchOut Tours",
     "seo": {
-      "title": "Legal Notice | Watchout Tours",
-      "description": "Legal information about Watchout Tours Ltd., the owner of this website, and its terms of use."
+      "title": "Legal Notice | WatchOut Tours",
+      "description": "Legal information about WatchOut Tours Ltd., the owner of this website, and its terms of use."
     },
     "title": "Legal notice",
     "intro": "Who we are and the terms under which you can use this website.",
@@ -947,11 +947,11 @@
     "objetoP2strong": "No service is contracted and no payment is made through this website.",
     "objetoP2rest": "Any subsequent booking is agreed personally and directly with us.",
     "propiedadTitle": "Intellectual property",
-    "propiedadP": "The content of this website (text, photographs, audio, video, logo and design) belongs to Watchout Tours Ltd. or is used with the permission of its owners. Its reproduction or commercial use without our prior consent is not permitted.",
+    "propiedadP": "The content of this website (text, photographs, audio, video, logo and design) belongs to WatchOut Tours Ltd. or is used with the permission of its owners. Its reproduction or commercial use without our prior consent is not permitted.",
     "responsabilidadTitle": "Liability",
     "responsabilidadP": "We strive to keep the information published up to date and accurate, but it is indicative only: the final details of each trip (dates, prices and conditions) are always confirmed personally before any agreement. Links to third-party sites (such as Instagram or WhatsApp) are governed by the terms of those services.",
     "leyTitle": "Applicable law",
-    "leyPa": "Watchout Tours Ltd. is a New Zealand company and is governed by New Zealand law. However, as this website is aimed at people resident in Spain, the applicable European and Spanish rules are respected, in particular regarding data protection (you can read more in our",
+    "leyPa": "WatchOut Tours Ltd. is a New Zealand company and is governed by New Zealand law. However, as this website is aimed at people resident in Spain, the applicable European and Spanish rules are respected, in particular regarding data protection (you can read more in our",
     "leyLink": "privacy policy",
     "leyPb": ") and consumer protection.",
     "fecha": "Last updated:",

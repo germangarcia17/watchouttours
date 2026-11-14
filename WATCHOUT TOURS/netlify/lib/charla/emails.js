@@ -16,7 +16,7 @@ import { googleCalendarUrl, outlookCalendarUrl } from './ics.js'
 const T = {
   es: {
     titulo: 'Descubre Nueva Zelanda a través de los sentidos',
-    firma: 'Mónica y Sylvie\nWatchOut! Sensory Tours',
+    firma: 'Mónica y Sylvie\nWatchOut Tours',
     hola: n => `Hola, ${n}:`,
     cuando: 'Fecha',
     horarios: 'Horarios',
@@ -61,14 +61,14 @@ const T = {
     segLlamadaSinEnlace: 'Si te has quedado con ganas de más, te invitamos a una llamada individual de 15 minutos con nosotras para resolver tus dudas sobre el viaje, sin compromiso. Responde a este email o escríbenos por WhatsApp y buscamos un momento que te venga bien.',
     segViajeTitulo: 'Nuestro próximo viaje',
     segViaje: 'Toda la información del viaje está en nuestra web:',
-    segViajeEnlace: 'Ver los viajes de WatchOut! por Nueva Zelanda',
+    segViajeEnlace: 'Ver los viajes de WatchOut Tours por Nueva Zelanda',
     segWhatsapp: 'Y si prefieres escribirnos o mandarnos un audio, estamos en WhatsApp:',
-    segWhatsappEnlace: `Escribir a WatchOut! por WhatsApp (${CONTACTO.whatsappNumero})`,
+    segWhatsappEnlace: `Escribir a WatchOut Tours por WhatsApp (${CONTACTO.whatsappNumero})`,
   },
 
   en: {
     titulo: 'Discover New Zealand through the senses',
-    firma: 'Mónica and Sylvie\nWatchOut! Sensory Tours',
+    firma: 'Mónica and Sylvie\nWatchOut Tours',
     hola: n => `Hi ${n},`,
     cuando: 'Date',
     horarios: 'Times',
@@ -113,9 +113,9 @@ const T = {
     segLlamadaSinEnlace: 'If you’d like to know more, we invite you to a free, no-obligation 15-minute one-to-one call with us to answer your questions about the trip. Reply to this email or message us on WhatsApp and we’ll find a time that suits you.',
     segViajeTitulo: 'Our next trip',
     segViaje: 'You’ll find all the trip information on our website:',
-    segViajeEnlace: 'See WatchOut! trips in New Zealand',
+    segViajeEnlace: 'See WatchOut Tours trips in New Zealand',
     segWhatsapp: 'And if you prefer to write or send us a voice message, we’re on WhatsApp:',
-    segWhatsappEnlace: `Message WatchOut! on WhatsApp (${CONTACTO.whatsappNumero})`,
+    segWhatsappEnlace: `Message WatchOut Tours on WhatsApp (${CONTACTO.whatsappNumero})`,
   },
 }
 

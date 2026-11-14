@@ -31,7 +31,7 @@ export default function CharlaAdmin() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    document.title = 'Charla | Watchout Tours Admin'
+    document.title = 'Charla | WatchOut Tours Admin'
     supabase
       .from('charla_inscripciones')
       .select('*')

@@ -18,7 +18,7 @@ export function config() {
     supabaseUrl: (process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || '').replace(/\/+$/, ''),
     supabaseKey: process.env.SUPABASE_SERVICE_ROLE_KEY || '',
     resendKey: process.env.RESEND_API_KEY || '',
-    from: process.env.CHARLA_EMAIL_FROM || 'WatchOut! Sensory Tours <info@watchouttours.nz>',
+    from: process.env.CHARLA_EMAIL_FROM || 'WatchOut Tours <info@watchouttours.nz>',
     avisoInterno: process.env.CONTACT_EMAIL || '',
   }
 }

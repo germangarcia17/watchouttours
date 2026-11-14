@@ -27,7 +27,7 @@ export default function AvisoLegal() {
           <section aria-labelledby="titular-heading">
             <h2 id="titular-heading">{t('avisoLegal.titularTitle')}</h2>
             <p>
-              <strong>Watchout Tours Ltd.</strong>{t('avisoLegal.titularP')}
+              <strong>WatchOut Tours Ltd.</strong>{t('avisoLegal.titularP')}
             </p>
             <ul>
               <li>{t('avisoLegal.domicilio')}</li>

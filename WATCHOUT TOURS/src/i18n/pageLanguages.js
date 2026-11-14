@@ -1,6 +1,6 @@
 /* Idiomas y slugs de cada página pública.
  *
- * Por defecto, toda página pública de Watchout Tours existe en ambos
+ * Por defecto, toda página pública de WatchOut Tours existe en ambos
  * idiomas con el mismo slug, con o sin prefijo /en (p. ej. /productos ↔
  * /en/productos). Este módulo es la única fuente de verdad para las
  * excepciones:

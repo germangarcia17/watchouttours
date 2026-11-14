@@ -112,7 +112,7 @@ export default function ImagenesAdmin() {
   const [createError, setCreateError] = useState({})
 
   useEffect(() => {
-    document.title = 'Imágenes | Watchout Tours Admin'
+    document.title = 'Imágenes | WatchOut Tours Admin'
 
     supabase.from('site_images').select('*').order('section').then(({ data }) => {
       setImages(data ?? [])

@@ -1,10 +1,10 @@
-// WatchOut! · Directos online — lógica central (sin dependencias externas)
+// WatchOut Tours · Directos online — lógica central (sin dependencias externas)
 
 export const SUCCESS_MESSAGE =
   '¡Ya estás dentro! Te hemos enviado un correo con los detalles. Si no lo encuentras, revisa la carpeta de spam.';
 
 export const NEWSLETTER_CONSENT_TEXT =
-  'Quiero recibir por email novedades y viajes de WatchOut! Sensory Tours.';
+  'Quiero recibir por email novedades y viajes de WatchOut Tours.';
 
 // Ordenados del más lejano al más cercano al inicio.
 export const REMINDERS = [
@@ -137,11 +137,11 @@ export function buildEmail(kind, { event, row, config = {} }) {
     throw new Error(`Tipo de email desconocido: ${kind}`);
   }
 
-  const hosts = 'Estaremos Sylvie y Moni desde Nueva Zelanda, y con nosotras Nuria, que ya hizo el viaje y te contará cómo lo vivió.';
+  const hosts = 'Estaremos Sylvie y Mónica desde Nueva Zelanda, y con nosotras Nuria, que ya hizo el viaje y te contará cómo lo vivió.';
   const howTo = 'En el ordenador funciona desde el navegador, sin instalar nada. En el móvil necesitas la app gratuita de Microsoft Teams. Al entrar esperarás unos segundos en la sala de espera hasta que te demos paso.';
   const sr = 'Teams funciona con VoiceOver, TalkBack, JAWS y NVDA.';
   const help = `Si tienes cualquier duda, responde a este correo o escríbenos por WhatsApp al ${whatsapp}.`;
-  const footer = 'Recibes este correo porque te has inscrito en un directo de WatchOut! Sensory Tours. Si no quieres recibir los recordatorios, responde con la palabra BAJA.';
+  const footer = 'Recibes este correo porque te has inscrito en un directo de WatchOut Tours. Si no quieres recibir los recordatorios, responde con la palabra BAJA.';
 
   const text = [
     `Hola ${name}:`,
@@ -166,8 +166,8 @@ export function buildEmail(kind, { event, row, config = {} }) {
     '',
     help,
     '',
-    'Sylvie y Moni',
-    'WatchOut! Sensory Tours',
+    'Sylvie y Mónica',
+    'WatchOut Tours',
     'Not all vision needs eyes.',
     '',
     footer,
@@ -188,7 +188,7 @@ export function buildEmail(kind, { event, row, config = {} }) {
 <body style="margin:0;padding:0;background:#F3F8F9">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F3F8F9"><tr><td align="center" style="padding:24px 12px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#FFFFFF;border-radius:14px;overflow:hidden">
-<tr><td style="background:#0E5F73;color:#FFFFFF;padding:20px 28px;font-family:Verdana,Arial,sans-serif;font-size:20px;font-weight:bold">WatchOut! Sensory Tours</td></tr>
+<tr><td style="background:#0E5F73;color:#FFFFFF;padding:20px 28px;font-family:Verdana,Arial,sans-serif;font-size:20px;font-weight:bold">WatchOut Tours</td></tr>
 <tr><td style="padding:28px;font-family:Verdana,Arial,sans-serif;font-size:18px;line-height:1.6;color:#0B2A33">
 <p style="margin:0 0 16px">Hola ${esc(name)}:</p>
 ${p(esc(intro))}
@@ -207,7 +207,7 @@ ${kind === 'confirm' ? p(esc(hosts)) : ''}
 ${p(esc(extra))}
 <p style="margin:0 0 24px"><a href="${esc(calendarLink(event))}" style="color:#0E5F73">Añadir a Google Calendar</a></p>
 ${p(esc(help))}
-<p style="margin:0">Sylvie y Moni<br>WatchOut! Sensory Tours<br><span lang="en">Not all vision needs eyes.</span></p>
+<p style="margin:0">Sylvie y Mónica<br>WatchOut Tours<br><span lang="en">Not all vision needs eyes.</span></p>
 </td></tr>
 <tr><td style="padding:16px 28px 24px;font-family:Verdana,Arial,sans-serif;font-size:13px;line-height:1.5;color:#3C5A63;border-top:1px solid #D7E3E6">${esc(footer)}</td></tr>
 </table></td></tr></table></body></html>`;

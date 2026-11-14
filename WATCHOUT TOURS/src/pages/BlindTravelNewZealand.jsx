@@ -74,7 +74,7 @@ const pageJsonLd = {
 /* ────────────────────────────────────────────────────────────────────────
  * Guía pilar "Blind Travel in New Zealand" (solo en inglés, sin equivalente
  * en español). Contenido editorial basado en el primer viaje piloto de
- * Watchout Tours. No tiene FAQPage Schema todavía (a propósito) y no está
+ * WatchOut Tours. No tiene FAQPage Schema todavía (a propósito) y no está
  * enlazada desde la navegación.
  * ──────────────────────────────────────────────────────────────────────── */
 export default function BlindTravelNewZealand() {
@@ -106,7 +106,7 @@ export default function BlindTravelNewZealand() {
               What 23 days on the road with blind travellers taught us about accessibility, independence and experiencing New Zealand beyond sight.
             </p>
             <p className="btnz-byline">
-              By Watchout Tours — First-hand travel insights from our New Zealand pilot journey. Last reviewed: <time dateTime="2026-08">August 2026</time>.
+              By WatchOut Tours — First-hand travel insights from our New Zealand pilot journey. Last reviewed: <time dateTime="2026-08">August 2026</time>.
             </p>
           </div>
           <figure className="btnz-hero-photo">
@@ -142,14 +142,14 @@ export default function BlindTravelNewZealand() {
               <li>Permission to touch.</li>
               <li>Someone knowing when to help — and when not to.</li>
             </ul>
-            <p>This guide is based on what we learned travelling through New Zealand with blind travellers during our first Watchout Tours journey.</p>
+            <p>This guide is based on what we learned travelling through New Zealand with blind travellers during our first WatchOut Tours journey.</p>
             <p>It isn’t intended to describe every blind person’s experience. Blindness and low vision are different for everyone.</p>
             <p>It’s simply what the road taught us.</p>
           </div>
 
           {/* ── Procedencia editorial: de dónde viene este contenido ──── */}
           <aside className="btnz-provenance" aria-label="Editorial provenance">
-            <p>Based on the first Watchout Tours journey across New Zealand: 23 days travelling alongside blind travellers, learning directly from what worked, what didn’t, and what we would design differently next time.</p>
+            <p>Based on the first WatchOut Tours journey across New Zealand: 23 days travelling alongside blind travellers, learning directly from what worked, what didn’t, and what we would design differently next time.</p>
           </aside>
 
           <section aria-labelledby="btnz-yes-heading">
@@ -206,7 +206,7 @@ export default function BlindTravelNewZealand() {
             <p>And when help is permanently available, it can slowly become the default solution.</p>
             <p>We began asking ourselves a different question:</p>
             <p>Does this person actually need our help right now, or do they simply need information?</p>
-            <p>That question has become fundamental to the way we’re developing Watchout.</p>
+            <p>That question has become fundamental to the way we’re developing WatchOut Tours.</p>
             <p>For us, independence doesn’t mean leaving somebody alone to figure everything out.</p>
             <p>It means providing enough orientation, information and choice for the traveller to decide what they want to do themselves.</p>
             <p>Because there is no single correct level of independence.</p>
@@ -389,7 +389,7 @@ export default function BlindTravelNewZealand() {
             <blockquote className="btnz-quote">
               <p>“Can a blind person do this?” and “Is this experience prepared for a blind person?” are two different questions.</p>
             </blockquote>
-            <p>That’s why preparation with tourism operators has become an increasingly important part of how we think about future Watchout journeys.</p>
+            <p>That’s why preparation with tourism operators has become an increasingly important part of how we think about future WatchOut Tours journeys.</p>
           </section>
 
           <section aria-labelledby="btnz-ordering-lunch-heading">
@@ -489,8 +489,8 @@ export default function BlindTravelNewZealand() {
           </section>
 
           <section aria-labelledby="btnz-method-heading">
-            <h2 id="btnz-method-heading">How Watchout is learning to travel differently</h2>
-            <p>Watchout Tours was born in New Zealand from a simple idea:</p>
+            <h2 id="btnz-method-heading">How WatchOut Tours is learning to travel differently</h2>
+            <p>WatchOut Tours was born in New Zealand from a simple idea:</p>
             <p>This country doesn’t have to be seen to be extraordinary.</p>
             <p>But our first journey taught us that creating a genuinely meaningful blind travel experience requires much more than choosing accessible activities.</p>
             <p>It requires designing the whole journey differently.</p>
@@ -517,7 +517,7 @@ export default function BlindTravelNewZealand() {
             <p>And through all of them:</p>
             <p>Choice.</p>
             <p>Because we don’t believe there’s one correct way to travel blind.</p>
-            <p>Read more <L to="/sobre-nosotras">about Watchout Tours and how we started</L>.</p>
+            <p>Read more <L to="/sobre-nosotras">about WatchOut Tours and how we started</L>.</p>
           </section>
 
           <section aria-labelledby="btnz-not-for-you-heading">
@@ -576,9 +576,9 @@ export default function BlindTravelNewZealand() {
           {/* ── CTA: cierre editorial del artículo ────────────────────── */}
           <div className="btnz-cta card-deep">
             <p className="btnz-cta-lead">Thinking about experiencing New Zealand beyond sight?</p>
-            <p>Explore how Watchout is designing small-group journeys for blind and low-vision travellers.</p>
+            <p>Explore how WatchOut Tours is designing small-group journeys for blind and low-vision travellers.</p>
             <div className="cta-row">
-              <L to="/productos" className="btn btn-solid">Explore Watchout journeys</L>
+              <L to="/productos" className="btn btn-solid">Explore WatchOut Tours journeys</L>
             </div>
           </div>
 

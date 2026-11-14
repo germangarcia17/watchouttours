@@ -41,7 +41,7 @@ export function buildIcs({ sesion, titulo, descripcion, teamsUrl, uid, now = new
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//WatchOut! Sensory Tours//Charla Nueva Zelanda//ES',
+    'PRODID:-//WatchOut Tours//Charla Nueva Zelanda//ES',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',

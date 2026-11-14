@@ -29,7 +29,7 @@ export default function Privacidad() {
           <section aria-labelledby="responsable-heading">
             <h2 id="responsable-heading">{t('privacidad.responsableTitle')}</h2>
             <p>
-              <strong>Watchout Tours Ltd.</strong>{t('privacidad.responsableP1')}{' '}
+              <strong>WatchOut Tours Ltd.</strong>{t('privacidad.responsableP1')}{' '}
               <a href="mailto:info@watchouttours.nz">info@watchouttours.nz</a>.
             </p>
             <p>{t('privacidad.responsableP2')}</p>

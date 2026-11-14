@@ -11,7 +11,7 @@ export default function AdminLogin() {
   const [error, setError]   = useState(null)
   const [loading, setLoad]  = useState(false)
 
-  useEffect(() => { document.title = 'Iniciar sesión | Watchout Tours Admin' }, [])
+  useEffect(() => { document.title = 'Iniciar sesión | WatchOut Tours Admin' }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -32,7 +32,7 @@ export default function AdminLogin() {
     <main className="login-page" id="main-content" tabIndex={-1}>
       <div className="login-box">
         <div className="login-box__logo">
-          <span className="login-box__badge">WatchOut! <em>Admin</em></span>
+          <span className="login-box__badge">WatchOut Tours <em>Admin</em></span>
         </div>
         <h1>Iniciar sesión</h1>
 
