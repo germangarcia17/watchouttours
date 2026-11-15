@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { supabase } from './supabase'
+import { getPreload } from './preload'
 
 /* Metadatos SEO editables desde el panel de admin (tabla seo_metadata).
    Una sola consulta por sesión, cacheada a nivel de módulo. Si la fila no
@@ -19,7 +20,8 @@ function loadSeo() {
 }
 
 export function useSeo(pageType) {
-  const [row, setRow] = useState(null)
+  // En el prerender, la fila llega precargada (scripts/prerender.mjs)
+  const [row, setRow] = useState(() => getPreload().seo?.find(r => r.page_type === pageType) ?? null)
 
   useEffect(() => {
     let cancelled = false

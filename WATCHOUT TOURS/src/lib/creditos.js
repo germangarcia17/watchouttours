@@ -47,6 +47,7 @@ export const CREDITOS_VISTA = {
   'vista-portada': '',
   'vista-unico': TNZ('Graeme Murray'),
   'vista-vivir': '',
+  'vista-nuria': '',
 }
 
 /* Viajes privados (/productos, sección "privados" del admin). La foto de

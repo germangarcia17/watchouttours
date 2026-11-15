@@ -1,28 +1,27 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
 
-const PAGE_TYPES = ['home', 'sin-prisa', 'mas-alla-de-la-vista', 'productos', 'reseñas', 'blog', 'sobre-nosotras', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal', 'blind-travel-new-zealand']
+/* Páginas con SEO editable, en el orden del menú de la web. La clave es la
+   fila de seo_metadata (page_type) que usa cada página. */
+const PAGE_TYPES = ['home', 'productos', 'sin-prisa', 'mas-alla-de-la-vista', 'sobre-nosotras', 'blog', 'reseñas', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal', 'blind-travel-new-zealand']
 
-/* Nombre legible de cada página para las cabeceras del panel */
+/* Nombre legible de cada página y sus rutas (español · inglés). Los campos
+   ES se usan en la ruta española y los "(inglés)", en la inglesa. */
 const PAGE_LABELS = {
-  'home': 'Home',
-  // Las dos líneas de viaje: los campos ES son de /sin-prisa y
-  // /mas-alla-de-la-vista, y los "(inglés)" de /en/unhurried y
-  // /en/beyond-sight.
+  'home': 'Home (/ · /en)',
+  'productos': 'Viajes privados (/productos · /en/products)',
   'sin-prisa': 'Viajes +60 (/sin-prisa · /en/unhurried)',
-  'mas-alla-de-la-vista': 'Viajes para personas ciegas y con baja visión (/mas-alla-de-la-vista · /en/beyond-sight)',
-  'productos': 'Rutas (Productos)',
-  'reseñas': 'Reseñas',
-  'blog': 'Blog',
-  'sobre-nosotras': 'Sobre nosotras',
-  'contacto': 'Contacto',
-  'accesibilidad': 'Accesibilidad',
-  'privacidad': 'Privacidad',
-  'aviso-legal': 'Aviso legal',
-  // Página solo en inglés: el formulario ES/EN es el mismo para todas las
-  // páginas, pero aquí solo se usarán realmente los campos "(inglés)" — ver
+  'mas-alla-de-la-vista': 'Más allá de la vista (/mas-alla-de-la-vista · /en/beyond-sight)',
+  'sobre-nosotras': 'Fundadoras (/sobre-nosotras · /en/about-us)',
+  'blog': 'Diario de viaje (/blog · /en/blog)',
+  'reseñas': 'Reseñas (/resenas · /en/resenas)',
+  'contacto': 'Contacto (/contacto · /en/contacto)',
+  'accesibilidad': 'Accesibilidad (/accesibilidad · /en/accesibilidad)',
+  'privacidad': 'Privacidad (/privacidad · /en/privacidad)',
+  'aviso-legal': 'Aviso legal (/aviso-legal · /en/aviso-legal)',
+  // Página solo en inglés: aquí solo se usan los campos "(inglés)" — ver
   // src/i18n/pageLanguages.js.
-  'blind-travel-new-zealand': 'Blind Travel New Zealand (solo inglés)',
+  'blind-travel-new-zealand': 'Blind Travel New Zealand (solo inglés: /en/blind-travel-new-zealand)',
 }
 
 const EMPTY_META = {

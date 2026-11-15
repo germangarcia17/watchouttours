@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from './supabase'
 import { useLang } from '../i18n/routing'
+import { getPreload } from './preload'
 
 /* Imágenes del sitio gestionables desde el panel de admin.
    - Una sola consulta a site_images por sesión (caché a nivel de módulo).
@@ -25,7 +26,9 @@ function loadSiteImages() {
 
 export function useSiteImage(section, key, fallbackSrc, fallbackAlt, fallbackCredito = '') {
   const lang = useLang()
-  const [row, setRow] = useState(null)
+  // En el prerender, la fila llega precargada (scripts/prerender.mjs): el
+  // HTML estático ya lleva la foto subida desde el admin
+  const [row, setRow] = useState(() => getPreload().siteImages?.find(r => r.section === section && r.key === key) ?? null)
 
   useEffect(() => {
     let cancelled = false

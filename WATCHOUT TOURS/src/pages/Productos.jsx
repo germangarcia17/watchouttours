@@ -4,7 +4,7 @@ import { Seo } from '../components/Seo'
 import { variantes } from '../components/ImagenHueco'
 import { ResenasDestacadas } from '../components/home/BloquesHome'
 import { CREDITOS_PRIVADOS } from '../lib/creditos'
-import { Texto, Etiqueta, FotoHueco, dos } from '../components/editorial/Editorial'
+import { Texto, Etiqueta, FotoHueco, dos, useImagenSocial } from '../components/editorial/Editorial'
 import { Portada, Columnas, Preguntas, CierreFormulario } from '../components/editorial/Colecciones'
 import talla from '../images/blind-travel-maori-carving.webp'
 
@@ -82,13 +82,14 @@ export default function Productos() {
   const { t } = useTranslation()
   const [viaje, setViaje] = useState('privado')
   const portada = useFoto('privados-portada')
+  const social = useImagenSocial(portada)
   const cierre = useFoto('privados-cierre')
 
   return (
     <div className="hn hn-col">
       {/* pageType editable desde /admin/seo (fila 'productos'); estos son
           los valores de respaldo mientras no haya fila guardada. */}
-      <Seo pageType="productos" title={t('privados.seo.title')} description={t('privados.seo.description')} />
+      <Seo pageType="productos" title={t('privados.seo.title')} description={t('privados.seo.description')} image={social.src} imageAlt={social.alt} />
       <Portada ns="privados" foto={portada} ancla="diseña" />
       <Manifiesto />
       <Maneras />

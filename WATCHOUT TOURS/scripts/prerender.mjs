@@ -38,12 +38,12 @@ async function fetchBuildTimeData() {
   const anon = process.env.VITE_SUPABASE_ANON_KEY
   if (!url || !anon) {
     console.warn('[prerender] Sin credenciales de Supabase; se omite el contenido dinámico.')
-    return { blogList: [], resenas: [], homeResenas: [], homeBlogPreview: null }
+    return { blogList: [], resenas: [], homeResenas: [], homeBlogPreview: null, seo: [], siteImages: [] }
   }
   try {
     const supabase = createClient(url, anon)
 
-    const [blogListRes, resenasRes, homeResenasRes, homeBlogRes] = await Promise.all([
+    const [blogListRes, resenasRes, homeResenasRes, homeBlogRes, seoRes, imagesRes] = await Promise.all([
       supabase.from('blog_posts').select('*').eq('status', 'published')
         .lte('published_at', new Date().toISOString())
         .order('published_at', { ascending: false }),
@@ -52,6 +52,11 @@ async function fetchBuildTimeData() {
       supabase.from('resenas').select('*').eq('published', true).eq('featured', true).limit(3),
       supabase.from('blog_posts').select('*').eq('status', 'published').eq('resena', true)
         .order('published_at', { ascending: false }).limit(1).maybeSingle(),
+      // SEO de /admin/seo y fotos de /admin/imagenes: así el HTML estático
+      // (el que leen Google y las redes sociales) ya lleva los textos y la
+      // og:image del admin, no solo los del código.
+      supabase.from('seo_metadata').select('*'),
+      supabase.from('site_images').select('*'),
     ])
 
     return {
@@ -59,10 +64,12 @@ async function fetchBuildTimeData() {
       resenas: resenasRes.data ?? [],
       homeResenas: homeResenasRes.data ?? [],
       homeBlogPreview: homeBlogRes.data ?? null,
+      seo: seoRes.data ?? [],
+      siteImages: imagesRes.data ?? [],
     }
   } catch (err) {
     console.warn('[prerender] No se pudo leer Supabase:', err.message)
-    return { blogList: [], resenas: [], homeResenas: [], homeBlogPreview: null }
+    return { blogList: [], resenas: [], homeResenas: [], homeBlogPreview: null, seo: [], siteImages: [] }
   }
 }
 
@@ -126,7 +133,8 @@ async function main() {
 
   async function render1(url, preload, outFile) {
     total++
-    globalThis.__PRELOAD__ = preload
+    // SEO y fotos del admin, comunes a todas las páginas
+    globalThis.__PRELOAD__ = { seo: data.seo, siteImages: data.siteImages, ...preload }
     if (await writeRoute(template, render, url, outFile)) ok++
   }
 

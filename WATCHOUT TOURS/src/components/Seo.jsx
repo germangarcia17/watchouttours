@@ -15,7 +15,9 @@ import { SITE_URL } from '../lib/site'
    procede y, si algún campo está vacío, cae a los valores por defecto que le
    pasa la página. Añade también las etiquetas hreflang para las dos versiones
    de idioma (fase 4). */
-export function Seo({ pageType, title, description, keywords, ogTitle, ogDescription, image, robots }) {
+/* `image`: foto de la portada de la página (URL absoluta o ruta del sitio)
+   y `imageAlt`, su texto alternativo. */
+export function Seo({ pageType, title, description, keywords, ogTitle, ogDescription, image, imageAlt, robots }) {
   const row = useSeo(pageType)
   const lang = useLang()
   const { pathname } = useLocation()
@@ -34,7 +36,8 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
   // nunca sin imagen.
   const { t } = useTranslation()
   const defaultImage = `${SITE_URL}/og-image.jpg`
-  const ogImage     = row?.og_image_url || image || defaultImage
+  const imagenPagina = image && image.startsWith('/') ? `${SITE_URL}${image}` : image
+  const ogImage     = row?.og_image_url || imagenPagina || defaultImage
   const esDefecto   = ogImage === defaultImage
   const twTitle     = pickLocalized(row, 'twitter_title', lang) || resolvedOgTitle
   const twDesc      = pickLocalized(row, 'twitter_description', lang) || resolvedOgDesc
@@ -43,7 +46,10 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
   const basePath    = stripLang(pathname)
   const esUrl       = `${SITE_URL}${basePath}`
   const enUrl       = `${SITE_URL}${localizePath(basePath, 'en')}`
-  const canonical   = row?.canonical_url || (lang === 'en' ? enUrl : esUrl)
+  // La canónica del admin solo se usa si es una URL completa (una palabra
+  // suelta, como «home», daría una canónica rota)
+  const canonicalAdmin = /^https?:\/\//.test(row?.canonical_url ?? '') ? row.canonical_url : null
+  const canonical   = canonicalAdmin || (lang === 'en' ? enUrl : esUrl)
 
   return (
     <Helmet>
@@ -62,6 +68,7 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
       {esDefecto && <meta property="og:image:width" content="1200" />}
       {esDefecto && <meta property="og:image:height" content="630" />}
       {esDefecto && <meta property="og:image:alt" content={t('home.heroImgAlt')} />}
+      {!esDefecto && !row?.og_image_url && imageAlt && <meta property="og:image:alt" content={imageAlt} />}
 
       <meta name="twitter:card" content={twImage ? 'summary_large_image' : 'summary'} />
       <meta name="twitter:title" content={twTitle} />

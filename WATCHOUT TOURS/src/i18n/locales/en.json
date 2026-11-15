@@ -104,11 +104,11 @@
     },
     "salida": {
       "etiqueta": "Next departure",
-      "titulo": "The Grand Journey.<br/><i>1 – 15 March 2027.</i>",
-      "texto": "Fifteen days from north to south, from the geothermal valleys of Rotorua to the fiords of Milford Sound and the waters of Kaikōura, where sperm whales surface before snow-capped peaks. Departure from Spain on 27 February. Very limited places.",
+      "titulo": "The Grand Journey.<br/><i>27 February – 16 March 2027.</i>",
+      "texto": "Eighteen days from north to south, from the geothermal valleys of Rotorua to the fiords of Milford Sound and the waters of Kaikōura, where sperm whales surface before snow-capped peaks. A very small group, private experiences and very limited places.",
       "itinerario": "Request the itinerary",
       "hablar": "Talk to us",
-      "aviso": "Would you like to travel with us in a group? Our next departure is The Grand Journey, 1 – 15 March 2027.",
+      "aviso": "Would you like to travel with us in a group? Our next departure is The Grand Journey, 27 February – 16 March 2027.",
       "avisoEnlace": "Discover The Grand Journey"
     },
     "pilares": {
@@ -225,32 +225,44 @@
       "titulo": "Frequently asked questions",
       "items": [
         {
-          "q": "What does the trip include?",
-          "a": "Accommodation in 4 and 5-star hotels, breakfast and dinner every day, every activity on the itinerary, transport along the whole route, the inter-island flight, two guides for the whole trip and 24-hour assistance. It doesn’t include international flights (we’ll help you book them) or travel insurance."
+          "q": "Who are you?",
+          "a": "We're Sylvie and Mónica, two women from Barcelona who have lived in New Zealand for more than eight years. WatchOut Tours is our bespoke travel agency: we design every journey and host it personally."
         },
         {
-          "q": "What if the group doesn’t fill up?",
-          "a": "If the group is smaller when bookings close, we’ll offer you the choice of travelling anyway with a supplement or a full refund of everything you’ve paid. It’s up to you."
+          "q": "What kinds of journeys do you offer?",
+          "a": "Private bespoke journeys, hosted by us or self-drive; The Grand Journey, our small-group departure; 60+ Journeys, in a group with every detail taken care of; and Beyond Sight, journeys for blind and low-vision travellers."
         },
         {
-          "q": "How do I book and pay?",
-          "a": "We’ll send you all the booking and payment conditions with the itinerary, and go through them calmly with you on the video call."
+          "q": "What does The Grand Journey include?",
+          "a": "4- and 5-star hotels, breakfast and dinner every day, transfers in our private vehicle, the domestic flight between the two islands, the experiences in the itinerary (many of them private for the group) and our hosting throughout the journey. It doesn't include international flights, travel insurance or the lunches the itinerary lists as free."
         },
         {
-          "q": "Do I need travel insurance?",
-          "a": "Yes, it’s compulsory, with medical and cancellation cover. We’ll help you choose one."
+          "q": "Do I need to speak English?",
+          "a": "No. We're with you in Spanish at all times, and on guided visits in English we use simultaneous translation devices into Spanish that work with your own phone."
         },
         {
-          "q": "How fit do I need to be?",
-          "a": "There are walks almost every day, most of them short and on easy ground, and the odd day with a longer walk. We’ll talk it through before you book, so you can feel at ease."
+          "q": "How many people travel in the group?",
+          "a": "A very small group, so every experience can be enjoyed at ease and with the attention it deserves. We'll give you all the details on our video call."
         },
         {
-          "q": "Can I travel on my own?",
-          "a": "Yes. You can have a single room with a supplement, or share with another member of the group who’s also travelling on their own."
+          "q": "Will you help me with international flights?",
+          "a": "Yes. Although they aren't included, we'll advise you on the best times and stopovers and help you book your tickets."
         },
         {
-          "q": "What if I don’t speak English?",
-          "a": "You don’t need to: the whole trip is in Spanish, with us."
+          "q": "What documents do I need to enter New Zealand?",
+          "a": "With a Spanish passport you need an NZeTA (electronic travel authority), which includes the IVL tourist levy, and to complete the New Zealand Traveller Declaration (NZTD) before arrival. We'll walk you through it step by step. For other nationalities, please ask us."
+        },
+        {
+          "q": "Is travel insurance compulsory?",
+          "a": "Yes, for all our journeys we ask for travel insurance with medical and cancellation cover."
+        },
+        {
+          "q": "How do I book?",
+          "a": "It all begins with a no-obligation video call. We'll send you the full itinerary with the booking conditions, answer all your questions and, once you're ready, you confirm your place."
+        },
+        {
+          "q": "What happens before, during and after the journey?",
+          "a": "We're with you at every stage: we help you prepare, we host you in New Zealand with 24-hour support, and we're still by your side when you get home."
         }
       ]
     },
@@ -265,7 +277,7 @@
       "viaje": "Which journey interests you?",
       "viajeElige": "Choose an option",
       "opciones": {
-        "gran-viaje": "The Grand Journey · 1 – 15 March 2027",
+        "gran-viaje": "The Grand Journey · 27 February – 16 March 2027",
         "viajes-60": "60+ Journeys",
         "personas-ciegas": "Journeys for blind and low-vision travellers",
         "privado": "Private journey",
@@ -351,12 +363,13 @@
   "masAlla": {
     "seo": {
       "title": "Journeys for blind and low-vision travellers · WatchOut Tours",
-      "description": "Aotearoa through the senses: journeys through New Zealand designed for blind and low-vision travellers, hosted by their founders."
+      "description": "Aotearoa through the senses: journeys through New Zealand for blind and low-vision travellers, all inclusive, with tactile models and round-the-clock hosting."
     },
     "huecos": {
       "vista-portada": "",
       "vista-unico": "A hand traces the relief of a carved Māori panel at Te Puia, Rotorua",
-      "vista-vivir": "A traveller with a white cane and a companion holding a recording microphone beside a wooden fence where several sheep peer out, on a farm among green hills"
+      "vista-vivir": "A traveller with a white cane and a companion holding a recording microphone beside a wooden fence where several sheep peer out, on a farm among green hills",
+      "vista-nuria": "Nuria, accessibility consultant at WatchOut Tours"
     },
     "portada": {
       "etiqueta": "Beyond Sight · Aotearoa through the senses",
@@ -470,6 +483,11 @@
         "boton": "Design your private journey"
       }
     },
+    "nuria": {
+      "etiqueta": "Our accessibility consultant",
+      "titulo": "Nuria,<br/><i>insight beyond sight.</i>",
+      "texto": "Nuria is a blind traveller, author of the Six Sense Travel blog, and our accessibility consultant and European representative. She took part in our pilot journey and reviews every route, every activity and every detail with us, so that what we offer truly works for those who travel without sight. No one tells better than she does how New Zealand is lived through the other senses."
+    },
     "resena": {
       "etiqueta": "What you feel, you never forget"
     },
@@ -481,7 +499,7 @@
   "sinPrisa": {
     "seo": {
       "title": "60+ Journeys through New Zealand · WatchOut Tours",
-      "description": "The journey of a lifetime, every detail taken care of: a small group, private transfers, 4- and 5-star hotels and two hosts who anticipate every need."
+      "description": "The journey of a lifetime, every detail taken care of: a small group, 4- and 5-star hotels, breakfast and dinner every day, a private vehicle and two hosts who anticipate every need."
     },
     "huecos": {
       "sesenta-portada": "Four walkers follow the Hooker Valley Track through the mist, with the snowy peaks of Aoraki / Mount Cook beyond",
