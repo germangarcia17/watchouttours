@@ -6,7 +6,7 @@ import { variantes } from '../components/ImagenHueco'
 import { CreditoFoto } from '../components/CreditoFoto'
 import { useSiteImage } from '../lib/siteImages'
 import { CREDITOS_SESENTA } from '../lib/creditos'
-import { Texto, Etiqueta, FotoHueco, dos } from '../components/editorial/Editorial'
+import { Texto, Etiqueta, FotoHueco, dos, useImagenSocial } from '../components/editorial/Editorial'
 import { Portada, Columnas, ProximaSalidaGrupo, Preguntas, CierreFormulario } from '../components/editorial/Colecciones'
 import nos600 from '../images/home/nosotras-600.webp'
 import nos1100 from '../images/home/nosotras-1100.webp'
@@ -161,13 +161,14 @@ export default function SinPrisa() {
   const { t } = useTranslation()
   const [viaje, setViaje] = useState('viajes-60')
   const portada = useFoto('sesenta-portada')
+  const social = useImagenSocial(portada)
   const cierre = useFoto('sesenta-cierre')
 
   return (
     <div className="hn hn-col">
       {/* pageType editable desde /admin/seo (fila 'sin-prisa'); estos son
           los valores de respaldo mientras no haya fila guardada. */}
-      <Seo pageType="sin-prisa" title={t('sinPrisa.seo.title')} description={t('sinPrisa.seo.description')} />
+      <Seo pageType="sin-prisa" title={t('sinPrisa.seo.title')} description={t('sinPrisa.seo.description')} image={social.src} imageAlt={social.alt} />
       <Portada ns="sinPrisa" foto={portada} />
       <ParaQuien />
       <Columnas id="descubre" ns="sinPrisa.incluye" rejilla className="hn-blanca" />

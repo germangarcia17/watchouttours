@@ -564,3 +564,32 @@
 .hn-col-cierre__texto .hn-h2 {
   font-size: clamp(34px, 3.4vw, 50px);
 }
+
+/* ── Nuria y su reseña (Más allá de la vista): una sola sección ── */
+.hn .hn-col-nuria {
+  padding: 140px var(--hn-x) 0;
+}
+
+.hn-col .hn-col-nuria__bloque {
+  margin-top: 0;
+}
+
+.hn-col-nuria .hn-col-nuria__foto {
+  flex-basis: 44%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.hn .hn-col-nuria__resena {
+  padding: 120px 0 140px;
+}
+
+@media (max-width: 900px) {
+  .hn .hn-col-nuria {
+    padding-top: 96px;
+  }
+
+  .hn .hn-col-nuria__resena {
+    padding: 80px 0 96px;
+  }
+}

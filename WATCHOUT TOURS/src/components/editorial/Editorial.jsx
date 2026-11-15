@@ -19,7 +19,7 @@ export const WHATSAPP = 'https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber
 
 /* Valores que recibe el equipo en el correo (siempre en español). */
 export const VIAJES_EQUIPO = {
-  'gran-viaje': 'El Gran Viaje (1 – 15 de marzo de 2027)',
+  'gran-viaje': 'El Gran Viaje · 27 de febrero – 16 de marzo de 2027',
   'viajes-60': 'Viajes +60',
   'personas-ciegas': 'Viajes para personas ciegas y con baja visión',
   'privado': 'Viaje en privado',
@@ -65,6 +65,13 @@ export function FotoHueco({
       )}
     </div>
   )
+}
+
+/* Foto de un hueco (props de FotoHueco) para usarla como og:image de la
+   página: { src, alt } o src null si el hueco aún no tiene foto. */
+export function useImagenSocial({ seccion, clave, defecto, alt }) {
+  const img = useSiteImage(seccion, clave, defecto?.src ?? null, alt ?? '')
+  return { src: img.src || null, alt: img.alt }
 }
 
 /* ── Formulario para pedir el itinerario (Formspree) ──────────────────── */

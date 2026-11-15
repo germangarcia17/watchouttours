@@ -9,7 +9,8 @@ import { ResenasDestacadas } from '../components/home/BloquesHome'
 import { BotonVideollamada } from '../components/Videollamada'
 import { Desplegable } from '../components/Desplegable'
 import { useSiteImage } from '../lib/siteImages'
-import { L } from '../i18n/routing'
+import { L, useLang } from '../i18n/routing'
+import { SITE_URL } from '../lib/site'
 import { Texto, Etiqueta, FotoHueco, PedirItinerario, dos } from '../components/editorial/Editorial'
 import { CreditoFoto } from '../components/CreditoFoto'
 import { CREDITOS_HOME } from '../lib/creditos'
@@ -598,6 +599,31 @@ function Cierre() {
   )
 }
 
+/* ── Datos estructurados de El Gran Viaje (TouristTrip, sin precio) ── */
+function GranViajeJsonLd() {
+  const { t } = useTranslation()
+  const lang = useLang()
+  const datos = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name: lang === 'en' ? 'The Grand Journey' : 'El Gran Viaje',
+    description: t('home.salida.texto'),
+    inLanguage: lang,
+    url: `${SITE_URL}${lang === 'en' ? '/en' : ''}/#proxima-salida`,
+    startDate: '2027-02-27',
+    endDate: '2027-03-16',
+    touristType: lang === 'en'
+      ? 'Travellers seeking an exclusive small-group experience'
+      : 'Viajeros que buscan una experiencia exclusiva en grupo reducido',
+    provider: { '@type': 'TravelAgency', name: 'WatchOut Tours', url: SITE_URL },
+  }
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(datos)}</script>
+    </Helmet>
+  )
+}
+
 /* ── 13. Pedir itinerario: PedirItinerario (components/editorial) ──── */
 
 /* ── 13b. Preguntas frecuentes ───────────────────────────────────────── */
@@ -639,10 +665,13 @@ export default function Home() {
   }, [])
 
   const hero = useVideoHero()
+  // og:image: el póster del vídeo de la hero (hueco hero-poster)
+  const poster = useSiteImage('home', 'hero-poster', POSTER_DEFECTO, t('home.huecos.hero-poster'))
 
   return (
     <div className="hn">
-      <Seo pageType="home" title={t('home.seo.title')} description={t('home.seo.description')} />
+      <Seo pageType="home" title={t('home.seo.title')} description={t('home.seo.description')} image={poster.src} imageAlt={poster.alt} />
+      <GranViajeJsonLd />
       <Hero area={hero.area} />
       <HeroIntro hayVideo={hero.hayVideo} enMarcha={hero.enMarcha} alternar={hero.alternar} />
       <ElPais />

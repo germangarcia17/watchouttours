@@ -5,12 +5,13 @@ import { L } from '../i18n/routing'
 import { variantes } from '../components/ImagenHueco'
 import { CREDITOS_VISTA } from '../lib/creditos'
 import { ResenasDestacadas, AudioClips } from '../components/home/BloquesHome'
-import { Texto, Etiqueta, FotoHueco, dos } from '../components/editorial/Editorial'
+import { Texto, Etiqueta, FotoHueco, dos, useImagenSocial } from '../components/editorial/Editorial'
 import { Portada, Columnas, ProximaSalidaGrupo, CierreFormulario } from '../components/editorial/Colecciones'
 import ciegos600 from '../images/home/viaje-ciegos-600.webp'
 import ciegos1200 from '../images/home/viaje-ciegos-1200.webp'
 import videoParapente from '../images/parapente-teaser.mp4'
 import imgParapentePoster from '../images/parapente-poster.jpg'
+import imgNuria from '../images/vista-nuria.jpg'
 
 /* Huecos de imagen (sección "mas-alla-de-la-vista" en /admin/imagenes) y su
    foto por defecto. Texto alternativo por defecto en masAlla.huecos.<clave>
@@ -22,6 +23,8 @@ import imgParapentePoster from '../images/parapente-poster.jpg'
 const IMG = {
   'vista-portada': null,
   'vista-unico': null,
+  // Foto propia de Nuria (la que tenía en el equipo de la antigua Sobre nosotras)
+  'vista-nuria': variantes([{ src: imgNuria, w: 800, h: 800 }]),
   'vista-vivir': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
 }
 
@@ -139,6 +142,26 @@ function DosManeras({ setViaje }) {
   )
 }
 
+/* ── 9. Nuria y su reseña: una sola sección. Retrato a un lado y texto al
+   otro (como los destinos de la home) y, debajo, su reseña con vídeo ─── */
+function Nuria() {
+  const { t } = useTranslation()
+  const foto = useFoto('vista-nuria')
+  return (
+    <section id="nuria" className="hn-blanca hn-col-nuria" aria-labelledby="ma-nuria-titulo">
+      <div className="hn-destino hn-col-nuria__bloque">
+        <FotoHueco {...foto} sizes="(min-width: 901px) 45vw, 100vw" className="hn-destino__foto hn-col-nuria__foto" />
+        <div className="hn-destino__texto">
+          <Etiqueta>{t('masAlla.nuria.etiqueta')}</Etiqueta>
+          <h2 id="ma-nuria-titulo" className="hn-h2"><Texto k="masAlla.nuria.titulo" /></h2>
+          <p className="hn-body hn-body--primero">{t('masAlla.nuria.texto')}</p>
+        </div>
+      </div>
+      <ResenasDestacadas variante="home" autor="Nuria" id="resena" antetitulo={t('masAlla.resena.etiqueta')} className="hn-col-nuria__resena" />
+    </section>
+  )
+}
+
 /* ── Más allá de la vista (/mas-alla-de-la-vista ↔ /en/beyond-sight) ────
  * Viajes para personas ciegas y con baja visión. Portada → manifiesto →
  * lo que lo hace único (#descubre) → todo incluido en el viaje en grupo →
@@ -150,13 +173,14 @@ export default function MasAllaDeLaVista() {
   const { t } = useTranslation()
   const [viaje, setViaje] = useState('personas-ciegas')
   const portada = useFoto('vista-portada')
+  const social = useImagenSocial(portada)
   const unico = useFoto('vista-unico')
 
   return (
     <div className="hn hn-col">
       {/* pageType editable desde /admin/seo (fila 'mas-alla-de-la-vista');
           estos son los valores de respaldo mientras no haya fila guardada. */}
-      <Seo pageType="mas-alla-de-la-vista" title={t('masAlla.seo.title')} description={t('masAlla.seo.description')} />
+      <Seo pageType="mas-alla-de-la-vista" title={t('masAlla.seo.title')} description={t('masAlla.seo.description')} image={social.src} imageAlt={social.alt} />
       <Portada ns="masAlla" foto={portada} />
       <Manifiesto />
       <Columnas id="descubre" ns="masAlla.unico" foto={unico} className="hn-blanca" />
@@ -165,7 +189,7 @@ export default function MasAllaDeLaVista() {
       <Parapente />
       <AudioClips id="audios" titulo={t('masAlla.audios.titulo')} className="hn-sec hn-blanca hn-col-audios" />
       <DosManeras setViaje={setViaje} />
-      <ResenasDestacadas variante="home" autor="Nuria" id="resena" antetitulo={t('masAlla.resena.etiqueta')} className="hn-blanca" />
+      <Nuria />
       <ProximaSalidaGrupo />
       <CierreFormulario ns="masAlla" viaje={viaje} setViaje={setViaje} />
     </div>

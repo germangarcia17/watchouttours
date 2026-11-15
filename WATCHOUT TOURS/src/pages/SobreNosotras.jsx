@@ -3,7 +3,7 @@ import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
 import { BotonVideollamada } from '../components/Videollamada'
 import { CREDITOS_FUNDADORAS } from '../lib/creditos'
-import { Texto, Etiqueta, FotoHueco, dos } from '../components/editorial/Editorial'
+import { Texto, Etiqueta, FotoHueco, dos, useImagenSocial } from '../components/editorial/Editorial'
 import { Portada, Columnas } from '../components/editorial/Colecciones'
 
 /* Huecos de imagen (sección "fundadoras" en /admin/imagenes). Todos se suben
@@ -116,11 +116,12 @@ function Cierre() {
 export default function SobreNosotras() {
   const { t } = useTranslation()
   const portada = useFoto('fundadoras-portada')
+  const social = useImagenSocial(portada)
   return (
     <div className="hn hn-col">
       {/* pageType editable desde /admin/seo (fila 'sobre-nosotras'); estos son
           los valores de respaldo mientras no haya fila guardada. */}
-      <Seo pageType="sobre-nosotras" title={t('fundadoras.seo.title')} description={t('fundadoras.seo.description')} />
+      <Seo pageType="sobre-nosotras" title={t('fundadoras.seo.title')} description={t('fundadoras.seo.description')} image={social.src} imageAlt={social.alt} />
       <Portada ns="fundadoras" foto={portada} botones={false} />
       <Historia />
       <div className="hn-col-fundadoras hn-blanca">

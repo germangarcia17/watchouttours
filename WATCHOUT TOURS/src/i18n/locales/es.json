@@ -104,11 +104,11 @@
     },
     "salida": {
       "etiqueta": "Próxima salida",
-      "titulo": "El Gran Viaje.<br/><i>1 – 15 de marzo de 2027.</i>",
-      "texto": "Quince días de norte a sur, de los valles geotérmicos de Rotorua a los fiordos de Milford Sound y las aguas de Kaikōura, donde los cachalotes emergen frente a montañas nevadas. Salida de España el 27 de febrero. Plazas muy limitadas.",
+      "titulo": "El Gran Viaje.<br/><i>Del 27 de febrero al 16 de marzo de 2027.</i>",
+      "texto": "Dieciocho días de norte a sur, de los valles geotérmicos de Rotorua a los fiordos de Milford Sound y las aguas de Kaikōura, donde los cachalotes emergen frente a montañas nevadas. Un grupo muy reducido, experiencias privadas y plazas muy limitadas.",
       "itinerario": "Solicita el itinerario",
       "hablar": "Habla con nosotras",
-      "aviso": "¿Quieres viajar con nosotras en grupo? Nuestra próxima salida es El Gran Viaje, del 1 al 15 de marzo de 2027.",
+      "aviso": "¿Quieres viajar con nosotras en grupo? Nuestra próxima salida es El Gran Viaje, del 27 de febrero al 16 de marzo de 2027.",
       "avisoEnlace": "Descubre El Gran Viaje"
     },
     "pilares": {
@@ -225,32 +225,44 @@
       "titulo": "Preguntas frecuentes",
       "items": [
         {
-          "q": "¿Qué incluye el viaje?",
-          "a": "Alojamiento en hoteles de 4 y 5 estrellas, desayuno y cena todos los días, todas las actividades del itinerario, transporte durante toda la ruta, vuelo entre islas, dos guías todo el viaje y asistencia las 24 horas. No incluye los vuelos internacionales (te ayudamos a sacarlos) ni el seguro de viaje."
+          "q": "¿Quiénes sois?",
+          "a": "Somos Sylvie y Mónica, dos barcelonesas que viven en Nueva Zelanda desde hace más de ocho años. WatchOut Tours es nuestra agencia de viajes de autor: diseñamos cada viaje y lo acompañamos personalmente."
         },
         {
-          "q": "¿Qué pasa si el grupo no se completa?",
-          "a": "Si al cierre de reservas el grupo es más pequeño, te ofrecemos salir igualmente con un suplemento o la devolución íntegra de lo pagado. Tú decides."
+          "q": "¿Qué tipos de viaje ofrecéis?",
+          "a": "Viajes privados a medida, con nosotras como anfitrionas o en self drive; El Gran Viaje, nuestra salida en grupo reducido; Viajes +60, en grupo y con todo resuelto; y Más allá de la vista, viajes para personas ciegas y con baja visión."
         },
         {
-          "q": "¿Cómo se reserva y se paga?",
-          "a": "Te enviamos todas las condiciones de reserva y pago junto con el itinerario, y te las explicamos con calma en la videollamada."
+          "q": "¿Qué incluye El Gran Viaje?",
+          "a": "Hoteles de 4 y 5 estrellas, desayuno y cena cada día, los traslados en nuestro vehículo privado, el vuelo interno entre las dos islas, las experiencias del itinerario (muchas de ellas privadas para el grupo) y nuestro acompañamiento durante todo el viaje. No incluye los vuelos internacionales, el seguro de viaje ni los almuerzos que el itinerario indica como libres."
         },
         {
-          "q": "¿Necesito seguro de viaje?",
-          "a": "Sí, es obligatorio, con cobertura médica y de cancelación. Te orientamos para elegirlo."
+          "q": "¿Necesito hablar inglés?",
+          "a": "No. Nosotras os acompañamos en español en todo momento, y en las visitas guiadas en inglés usamos dispositivos de traducción simultánea al español que funcionan con vuestro propio móvil."
         },
         {
-          "q": "¿Qué nivel físico hace falta?",
-          "a": "Hay paseos casi todos los días, la mayoría cortos y por terreno cómodo, y algún día con más caminata. Antes de reservar lo hablamos para que estés tranquilo."
+          "q": "¿Cuántas personas viajan en el grupo?",
+          "a": "Un grupo muy reducido, para que cada experiencia se viva con calma y con la atención que merece. Os damos todos los detalles en la videollamada."
         },
         {
-          "q": "¿Puedo viajar solo o sola?",
-          "a": "Sí. Puedes tener habitación individual con suplemento o compartirla con otra persona del grupo que también viaje sola."
+          "q": "¿Me ayudáis con los vuelos internacionales?",
+          "a": "Sí. Aunque no están incluidos, os asesoramos para elegir los mejores horarios y escalas, y os ayudamos a sacar los billetes."
         },
         {
-          "q": "¿Y si no hablo inglés?",
-          "a": "No hace falta: todo el viaje es en español, con nosotras."
+          "q": "¿Qué documentación necesito para entrar en Nueva Zelanda?",
+          "a": "Con pasaporte español necesitáis la NZeTA (autorización electrónica de viaje), que incluye la tasa turística IVL, y completar la Declaración de Viaje de Nueva Zelanda (NZTD) antes de llegar. Os explicamos cómo hacerlo paso a paso. Para otras nacionalidades, consultadnos."
+        },
+        {
+          "q": "¿Es obligatorio el seguro de viaje?",
+          "a": "Sí, para todos nuestros viajes pedimos un seguro de viaje con cobertura médica y de cancelación."
+        },
+        {
+          "q": "¿Cómo se reserva?",
+          "a": "Todo empieza con una videollamada sin compromiso. Os enviamos el itinerario completo con las condiciones de reserva, resolvemos todas vuestras dudas y, cuando lo tengáis claro, confirmáis vuestra plaza."
+        },
+        {
+          "q": "¿Qué pasa antes, durante y después del viaje?",
+          "a": "Estamos con vosotros en cada etapa: os ayudamos a preparar el viaje, os acompañamos en Nueva Zelanda con asistencia las 24 horas y seguimos a vuestro lado cuando volvéis a casa."
         }
       ]
     },
@@ -265,7 +277,7 @@
       "viaje": "¿Qué viaje te interesa?",
       "viajeElige": "Elige una opción",
       "opciones": {
-        "gran-viaje": "El Gran Viaje · 1 – 15 de marzo de 2027",
+        "gran-viaje": "El Gran Viaje · 27 de febrero – 16 de marzo de 2027",
         "viajes-60": "Viajes +60",
         "personas-ciegas": "Viajes para personas ciegas y con baja visión",
         "privado": "Viaje en privado",
@@ -351,12 +363,13 @@
   "masAlla": {
     "seo": {
       "title": "Viajes para personas ciegas y con baja visión · WatchOut Tours",
-      "description": "Aotearoa a través de los sentidos: viajes por Nueva Zelanda pensados para personas ciegas y con baja visión, diseñados y acompañados por sus fundadoras."
+      "description": "Aotearoa a través de los sentidos: viajes por Nueva Zelanda para personas ciegas y con baja visión, con todo incluido, maquetas táctiles y acompañamiento las 24 horas."
     },
     "huecos": {
       "vista-portada": "",
       "vista-unico": "Una mano recorre los relieves de una talla maorí de madera en Te Puia, Rotorua",
-      "vista-vivir": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes"
+      "vista-vivir": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes",
+      "vista-nuria": "Nuria, consultora de accesibilidad de WatchOut Tours"
     },
     "portada": {
       "etiqueta": "Más allá de la vista · Aotearoa a través de los sentidos",
@@ -470,6 +483,11 @@
         "boton": "Diseña tu viaje privado"
       }
     },
+    "nuria": {
+      "etiqueta": "Nuestra consultora de accesibilidad",
+      "titulo": "Nuria,<br/><i>la mirada que no necesita ojos.</i>",
+      "texto": "Nuria es viajera ciega, autora del blog Six Sense Travel y nuestra consultora de accesibilidad y representante en Europa. Participó en nuestro viaje piloto y revisa con nosotras cada ruta, cada actividad y cada detalle, para que lo que proponemos funcione de verdad para quien viaja sin ver. Nadie mejor que ella para contar cómo se vive Nueva Zelanda con los demás sentidos."
+    },
     "resena": {
       "etiqueta": "Lo que se siente no se olvida"
     },
@@ -481,7 +499,7 @@
   "sinPrisa": {
     "seo": {
       "title": "Viajes +60 por Nueva Zelanda · WatchOut Tours",
-      "description": "El viaje de tu vida, con todo resuelto: grupo reducido, traslados privados, hoteles de 4 y 5 estrellas y dos anfitrionas que se adelantan a cada detalle."
+      "description": "El viaje de tu vida, con todo resuelto: grupo reducido, hoteles de 4 y 5 estrellas, desayuno y cena cada día, vehículo privado y dos anfitrionas que se adelantan a cada detalle."
     },
     "huecos": {
       "sesenta-portada": "Cuatro caminantes recorren el valle Hooker entre la niebla, con las montañas nevadas de Aoraki / Mount Cook al fondo",
@@ -634,8 +652,8 @@
       "title": "Diario de viaje · Nueva Zelanda desde dentro · WatchOut Tours",
       "description": "Historias, lugares y experiencias de Nueva Zelanda contadas desde dentro: rutas, cultura maorí, naturaleza y la promesa Tiaki."
     },
-    "eyebrow": "El país por los sentidos",
-    "title": "Blog sensorial",
+    "eyebrow": "Nueva Zelanda desde dentro",
+    "title": "Diario de viaje",
     "intro": "Reflexiones sobre viajar de forma diferente. Sobre escuchar mejor.",
     "loading": "Cargando artículos…",
     "empty": "Los artículos estarán disponibles próximamente.",
@@ -990,7 +1008,7 @@
     "emailLabel": "Correo electrónico:",
     "whatsapp": "WhatsApp: +64 27 267 7006",
     "objetoTitle": "Objeto de la web",
-    "objetoP1": "Esta web tiene una finalidad informativa: dar a conocer los viajes sensoriales por Nueva Zelanda que organizamos para personas ciegas o con baja visión y ofrecer un medio de contacto a las personas interesadas.",
+    "objetoP1": "Esta web tiene una finalidad informativa: dar a conocer los viajes de autor por Nueva Zelanda que organizamos y ofrecer un medio de contacto a las personas interesadas.",
     "objetoP2strong": "A través de esta web no se contrata ningún servicio ni se realiza ningún pago.",
     "objetoP2rest": "Cualquier contratación posterior se acuerda de forma personal y directa con nosotras.",
     "propiedadTitle": "Propiedad intelectual",
