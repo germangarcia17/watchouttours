@@ -11,6 +11,8 @@
 // generate-sitemap.mjs consultan ese módulo. Aquí `path` es siempre la ruta
 // base española.
 
+import { RUTAS } from '../src/data/rutas.js'
+
 export const STATIC_ROUTES = [
   { path: '/',               changefreq: 'weekly',  priority: '1.0' },
   // Las dos líneas de viaje. En inglés tienen otro slug (/en/unhurried,
@@ -19,6 +21,10 @@ export const STATIC_ROUTES = [
   { path: '/mas-alla-de-la-vista', changefreq: 'monthly', priority: '0.9' },
   { path: '/sobre-nosotras', changefreq: 'monthly', priority: '0.8' },
   { path: '/productos',      changefreq: 'weekly',  priority: '0.9' },
+  // Rutas de autor (en inglés /en/routes): la lista y una página por ruta
+  // (src/data/rutas.js)
+  { path: '/rutas',          changefreq: 'weekly',  priority: '0.9' },
+  ...RUTAS.map(r => ({ path: `/rutas/${r.slug}`, changefreq: 'monthly', priority: '0.8' })),
   { path: '/resenas',        changefreq: 'weekly',  priority: '0.7' },
   { path: '/blog',           changefreq: 'weekly',  priority: '0.7' },
   { path: '/contacto',       changefreq: 'monthly', priority: '0.6' },

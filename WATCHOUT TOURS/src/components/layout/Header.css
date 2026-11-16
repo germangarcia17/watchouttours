@@ -144,6 +144,72 @@
   cursor: pointer;
 }
 
+/* ── Desplegable «Formas de viajar» ── */
+.nav-desplegable {
+  position: relative;
+}
+
+.nav-desplegable__boton {
+  gap: 8px;
+  padding: 2px 0 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.nav-desplegable__signo {
+  width: 7px;
+  height: 7px;
+  margin-top: -4px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+
+.nav-desplegable--abierto .nav-desplegable__signo {
+  margin-top: 3px;
+  transform: rotate(-135deg);
+}
+
+.nav-desplegable__lista {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: -24px;
+  z-index: 110;
+  min-width: 260px;
+  margin: 0;
+  padding: 10px 0;
+  border: 1px solid #2E3136;
+  background: #15171A;
+  list-style: none;
+}
+
+.nav-desplegable__lista[hidden] {
+  display: none;
+}
+
+.nav-desplegable__enlace {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 24px;
+  color: #FAF8F4;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-desplegable__enlace:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
 /* ── Menú plegado ── */
 @media (max-width: 1340px) {
   .nav-inner {
@@ -191,6 +257,30 @@
   .nav-link:hover,
   .nav-link--active {
     border-bottom-color: #FAF8F4;
+  }
+
+  /* El desplegable se abre dentro de la lista */
+  .nav-desplegable__boton {
+    width: 100%;
+    justify-content: space-between;
+    min-height: 56px;
+    border-bottom: 1px solid #2E3136;
+  }
+
+  .nav-desplegable__lista {
+    position: static;
+    min-width: 0;
+    padding: 4px 0 12px;
+    border: 0;
+    border-bottom: 1px solid #2E3136;
+  }
+
+  .nav-desplegable__enlace {
+    padding: 6px 0 6px 20px;
+    text-transform: none;
+    letter-spacing: .02em;
+    font-size: 16px;
+    white-space: normal;
   }
 
   .nav-links .header-cta {

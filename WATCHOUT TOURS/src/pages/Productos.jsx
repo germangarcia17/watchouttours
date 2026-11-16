@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '../components/Seo'
+import { L } from '../i18n/routing'
 import { variantes } from '../components/ImagenHueco'
 import { ResenasDestacadas } from '../components/home/BloquesHome'
 import { CREDITOS_PRIVADOS } from '../lib/creditos'
@@ -50,6 +51,9 @@ function Maneras() {
       <ol className="hn-destinos__lista" role="list">
         {items.map((m, i) => <Manera key={m.id} {...m} n={i} />)}
       </ol>
+      <p className="hn-col-rutas-enlace">
+        <L to="/rutas" className="hn-btn hn-btn--tinta">{t('privados.maneras.rutasEnlace')}</L>
+      </p>
     </section>
   )
 }

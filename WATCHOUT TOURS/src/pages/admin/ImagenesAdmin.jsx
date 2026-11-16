@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
+import { RUTAS } from '../../data/rutas'
 import { uploadImage } from '../../lib/storage'
 
 import es from '../../i18n/locales/es.json'
 import en from '../../i18n/locales/en.json'
-import { CREDITOS_HOME, CREDITOS_SESENTA, CREDITOS_VISTA, CREDITOS_FUNDADORAS, CREDITOS_PRIVADOS } from '../../lib/creditos'
+import { CREDITOS_HOME, CREDITOS_SESENTA, CREDITOS_VISTA, CREDITOS_FUNDADORAS, CREDITOS_PRIVADOS, CREDITOS_RUTAS } from '../../lib/creditos'
 
 /* Huecos de imagen de la home: una fila por clave de home.huecos (es.json /
    en.json), con su texto alternativo por defecto en los dos idiomas. Así la
@@ -30,6 +31,10 @@ const NUEVAS_IMAGENES_SUGERIDAS = [
   ...huecosDe('sin-prisa', 'sinPrisa', CREDITOS_SESENTA),
   ...huecosDe('mas-alla-de-la-vista', 'masAlla', CREDITOS_VISTA),
   ...huecosDe('privados', 'privados', CREDITOS_PRIVADOS),
+  ...huecosDe('rutas', 'rutas', CREDITOS_RUTAS),
+  // Portada y momento firma de cada ruta (src/data/rutas.js): sin alt ni
+  // crédito por defecto, se escriben al subir la foto
+  ...RUTAS.flatMap(r => ['portada', 'momento'].map(h => ({ section: 'rutas', key: `ruta-${r.slug}-${h}`, image_alt: '', image_alt_en: '', credito: '' }))),
   ...huecosDe('fundadoras', 'fundadoras', CREDITOS_FUNDADORAS),
   // ── Renovación visual: huecos de imagen nuevos ──────────────────────
   // Cada uno se puede sustituir sin tocar código. En la galería de

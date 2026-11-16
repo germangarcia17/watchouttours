@@ -70,6 +70,10 @@ export const CREDITOS_FUNDADORAS = {
   'fundadoras-oceano': TNZ('Miles Holden'),
 }
 
+/* Rutas de autor (sección "rutas" del admin): las fotos aún no se conocen;
+   su crédito se escribe en el admin al subirlas. */
+export const CREDITOS_RUTAS = {}
+
 /* Texto que se muestra, o null si no hay crédito. */
 export function textoCredito(credito, lang) {
   const c = (credito ?? '').trim()

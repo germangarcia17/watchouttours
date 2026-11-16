@@ -23,6 +23,7 @@ export const VIAJES_EQUIPO = {
   'viajes-60': 'Viajes +60',
   'personas-ciegas': 'Viajes para personas ciegas y con baja visión',
   'privado': 'Viaje en privado',
+  'ruta-autor': 'Una de vuestras rutas de autor',
   'no-se': 'Aún no lo sé',
 }
 

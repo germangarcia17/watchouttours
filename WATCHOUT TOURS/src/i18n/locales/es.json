@@ -25,7 +25,11 @@
     "grandesViajes": "Grandes Viajes +60",
     "masAlla": "Más allá de la vista",
     "fundadoras": "Fundadoras",
-    "disena": "Diseña tu viaje"
+    "disena": "Diseña tu viaje",
+    "rutas": "Rutas",
+    "formas": "Formas de viajar",
+    "granViaje": "El Gran Viaje",
+    "sesenta": "Viajes +60"
   },
   "footer": {
     "colColecciones": "Colecciones",
@@ -51,7 +55,7 @@
   "home": {
     "seo": {
       "title": "WatchOut Tours · Viajes de autor por Nueva Zelanda",
-      "description": "Viajes privados y salidas en grupo reducido por Nueva Zelanda, diseñados y acompañados por sus fundadoras, dos barcelonesas que viven en el país. Hoteles de 4 y 5 estrellas y experiencias privadas."
+      "description": "Especialistas en Nueva Zelanda: rutas de autor y viajes a medida para parejas, familias, amantes de la naturaleza, del lujo y del esquí. Con nuestras fundadoras como anfitrionas o en self drive."
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
@@ -281,7 +285,8 @@
         "viajes-60": "Viajes +60",
         "personas-ciegas": "Viajes para personas ciegas y con baja visión",
         "privado": "Viaje en privado",
-        "no-se": "Aún no lo sé"
+        "no-se": "Aún no lo sé",
+        "ruta-autor": "Una de vuestras rutas de autor"
       },
       "fechas": "¿Qué fechas te vendrían bien?",
       "opcional": "(opcional)",
@@ -358,6 +363,12 @@
       "card4Tag": "Canto maorí al árbol más famoso",
       "card4Desc": "Un canto maorí de bienvenida al kauri, el árbol gigante y sagrado de Nueva Zelanda.",
       "card4Label": "Canto maorí de bienvenida al kauri"
+    },
+    "rutas": {
+      "etiqueta": "Rutas de autor",
+      "titulo": "Una Nueva Zelanda<br/><i>para cada viajero.</i>",
+      "texto": "De los volcanes del norte a los fiordos del sur, de una luna de miel a una temporada de esquí.",
+      "enlace": "Descubre todas las rutas"
     }
   },
   "masAlla": {
@@ -730,7 +741,8 @@
             "Asistencia antes, durante y después del viaje"
           ]
         }
-      ]
+      ],
+      "rutasEnlace": "Descubre nuestras rutas de autor"
     },
     "pasos": {
       "etiqueta": "Paso a paso",
@@ -1021,5 +1033,321 @@
     "leyPb": ") y de protección de las personas consumidoras.",
     "fecha": "Última actualización:",
     "fechaValor": "16 de julio de 2026"
+  },
+  "rutas": {
+    "seo": {
+      "title": "Rutas por Nueva Zelanda · Viajes de autor · WatchOut Tours",
+      "description": "Ocho rutas de autor por Nueva Zelanda: Isla Norte, Isla Sur, de punta a punta, luna de miel, esquí, gran lujo y la Tierra Media. Con anfitrionas o en self drive."
+    },
+    "seoRuta": {
+      "title": "{{nombre}} · Viaje a Nueva Zelanda · WatchOut Tours",
+      "description": "{{frase}} Con anfitrionas o en self drive."
+    },
+    "portada": {
+      "etiqueta": "Rutas de autor",
+      "titulo": "Una Nueva Zelanda<br/><i>para cada viajero.</i>",
+      "sub": "Somos especialistas en Nueva Zelanda. Estas son nuestras rutas de autor: puntos de partida que diseñamos a vuestra medida, para recorrerlas con nosotras como anfitrionas o en self drive."
+    },
+    "filtrosLabel": "Filtrar rutas por tipo de viaje",
+    "filtrosResultado": "{{count}} rutas",
+    "filtros": {
+      "todas": "Todas",
+      "primer": "Primer viaje",
+      "parejas": "Parejas",
+      "familias": "Familias",
+      "naturaleza": "Naturaleza",
+      "cultura": "Cultura",
+      "aventura": "Aventura",
+      "lujo": "Lujo",
+      "invierno": "Invierno"
+    },
+    "tarjeta": {
+      "duracion": "Duración",
+      "epoca": "Mejor época",
+      "idealPara": "Ideal para",
+      "enlace": "Descubre la ruta",
+      "modalidades": "Con anfitrionas o en self drive"
+    },
+    "ampliaciones": {
+      "etiqueta": "Ampliaciones",
+      "titulo": "Y después,<br/><i>un poco más lejos.</i>",
+      "items": [
+        {
+          "id": "cook",
+          "titulo": "Islas Cook",
+          "texto": "¿Y si terminas el viaje en una laguna de Aitutaki? Rarotonga y Aitutaki, de 5 a 7 noches, con vuelo directo desde Auckland."
+        },
+        {
+          "id": "australia",
+          "titulo": "Australia",
+          "texto": "Sídney, la Gran Barrera de Coral o Uluru: el otro lado del mar de Tasmania, a un vuelo de distancia."
+        }
+      ]
+    },
+    "cierre": {
+      "titulo": "¿No encuentras tu ruta?<br/><i>La diseñamos contigo.</i>",
+      "texto": "Cada viaje es único. Cuéntanos cómo lo imaginas y creamos tu ruta desde cero.",
+      "boton1": "Diseña tu viaje",
+      "boton2": "Habla con nosotras"
+    },
+    "pagina": {
+      "etiqueta": "Ruta de autor",
+      "botonItinerario": "Recibe el itinerario completo",
+      "botonHablar": "Habla con nosotras",
+      "recorridoEtiqueta": "El recorrido",
+      "recorridoTitulo": "Parada a parada.",
+      "mapaAria": "Mapa de Nueva Zelanda con el recorrido de la ruta: {{paradas}}.",
+      "momentoEtiqueta": "El momento firma",
+      "vivirEtiqueta": "Lo que vivirás",
+      "vivirTitulo": "Tres momentos<br/><i>que no olvidarás.</i>",
+      "manerasEtiqueta": "Dos maneras de hacerla",
+      "manerasTitulo": "Tú eliges<br/><i>cómo vivirla.</i>",
+      "otrasEtiqueta": "Otras rutas",
+      "otrasTitulo": "Sigue soñando.",
+      "todas": "Ver todas las rutas"
+    },
+    "form": {
+      "etiqueta": "Itinerario completo",
+      "titulo": "Recibe el itinerario<br/><i>completo.</i>",
+      "texto": "Déjanos tus datos y te enviamos el itinerario día a día de esta ruta, sin compromiso.",
+      "nombre": "Nombre",
+      "email": "Correo electrónico",
+      "fechas": "Fechas aproximadas",
+      "fechasAyuda": "Por ejemplo: marzo de 2027",
+      "viajeros": "Número de viajeros",
+      "modalidad": "Modalidad",
+      "modalidadAnfitrionas": "Con anfitrionas",
+      "modalidadSelfdrive": "Self drive",
+      "modalidadNose": "Aún no lo sé",
+      "ampliacion": "¿Te interesa una ampliación a las Islas Cook o Australia?",
+      "si": "Sí",
+      "no": "No",
+      "comentarios": "Comentarios",
+      "enviar": "Quiero el itinerario",
+      "enviando": "Enviando…",
+      "exito": "Gracias. En menos de 48 horas os enviamos el itinerario completo.",
+      "errNombre": "Escribe tu nombre (al menos 2 letras).",
+      "errEmail": "Escribe un correo electrónico válido.",
+      "formAria": "Formulario para recibir el itinerario completo de la ruta"
+    },
+    "huecos": {
+      "rutas-portada": "",
+      "ampliacion-cook": "",
+      "ampliacion-australia": ""
+    },
+    "lista": {
+      "isla-norte": {
+        "nombre": "Te Ika-a-Māui ·<br/><i>La Isla Norte</i>",
+        "nombrePlano": "Te Ika-a-Māui · La Isla Norte",
+        "subtitulo": "Tierra de fuego y cultura maorí",
+        "duracion": "12 días",
+        "epoca": "Todo el año",
+        "frase": "Volcanes que respiran, géiseres, luciérnagas y la cultura maorí más viva del país.",
+        "intro": "Aquí la tierra está viva. La Isla Norte es la de los volcanes humeantes, las aguas termales y los bosques donde la cultura maorí sigue latiendo con fuerza. Una ruta para sentir el corazón de Aotearoa, de las playas subtropicales del norte a la capital.",
+        "momento": "Un hāngi en Rotorua junto a una familia maorí: la comida cocinada bajo tierra, sobre piedras calientes, y compartida como se comparte en casa.",
+        "vivir": [
+          "Los volcanes de Tongariro, escenario de paisajes de otro planeta",
+          "Las cuevas de Waitomo, iluminadas por miles de luciérnagas",
+          "Waitangi, donde nació la nación neozelandesa"
+        ],
+        "paradas": [
+          "Auckland",
+          "Bay of Islands y Waitangi",
+          "Waitomo",
+          "Hobbiton",
+          "Rotorua",
+          "Taupō",
+          "Tongariro",
+          "Wellington"
+        ]
+      },
+      "isla-sur": {
+        "nombre": "Te Waipounamu ·<br/><i>La Isla Sur salvaje</i>",
+        "nombrePlano": "Te Waipounamu · La Isla Sur salvaje",
+        "subtitulo": "Fiordos, glaciares y la naturaleza más pura",
+        "duracion": "16 días",
+        "epoca": "De octubre a abril",
+        "frase": "De los pingüinos de Oamaru a los fiordos de Milford, pasando por la costa indómita de The Catlins.",
+        "intro": "La Isla Sur es Nueva Zelanda en estado salvaje: montañas que caen al mar, glaciares que se deshacen en lagos turquesa y costas donde los pingüinos y los albatros viven en libertad. Una ruta para quien busca la naturaleza más pura y los rincones que aún no conocen las multitudes.",
+        "momento": "Al anochecer en Oamaru, esperar en silencio la llegada de los pingüinos azules, los más pequeños del mundo, que vuelven del mar a sus nidos.",
+        "vivir": [
+          "Los albatros reales de la península de Otago",
+          "Las cascadas y acantilados de The Catlins",
+          "Milford Sound, la octava maravilla del mundo"
+        ],
+        "paradas": [
+          "Christchurch",
+          "Kaikōura",
+          "Tekapo",
+          "Aoraki / Mount Cook",
+          "Oamaru",
+          "Dunedin y la península de Otago",
+          "The Catlins",
+          "Fiordland y Milford Sound",
+          "Queenstown",
+          "Wanaka",
+          "Costa oeste y glaciares",
+          "Arthur's Pass"
+        ]
+      },
+      "esencial": {
+        "nombre": "Lo esencial de<br/><i>Nueva Zelanda</i>",
+        "nombrePlano": "Lo esencial de Nueva Zelanda",
+        "subtitulo": "Lo más icónico de las dos islas",
+        "duracion": "18 días",
+        "epoca": "De octubre a abril",
+        "frase": "La Comarca, Rotorua, Milford Sound, Aoraki y los cachalotes de Kaikōura en un solo viaje.",
+        "intro": "Si es tu primer viaje a Nueva Zelanda, esta es tu ruta. Reúne los lugares que todo el mundo sueña con ver, con el ritmo justo para vivirlos de verdad. Es la ruta de El Gran Viaje, ahora también en privado y en tus fechas.",
+        "momento": "Una hoguera bajo el cielo de Tekapo, una de las reservas de cielo oscuro más puras del mundo, tostando nubes al fuego mientras las estrellas del hemisferio sur llenan la noche.",
+        "vivir": [
+          "La Comarca en privado",
+          "Los cachalotes de Kaikōura",
+          "Un vuelo sobre los glaciares de Aoraki"
+        ],
+        "paradas": [
+          "Auckland",
+          "Hobbiton",
+          "Rotorua",
+          "Queenstown",
+          "Milford Sound",
+          "Aoraki / Mount Cook",
+          "Tekapo",
+          "Kaikōura",
+          "Christchurch"
+        ]
+      },
+      "de-punta-a-punta": {
+        "nombre": "De punta a punta ·<br/><i>La gran travesía</i>",
+        "nombrePlano": "De punta a punta · La gran travesía",
+        "subtitulo": "Del cabo Reinga a Stewart Island",
+        "duracion": "24 días",
+        "epoca": "De noviembre a marzo",
+        "frase": "El viaje definitivo: todo el país, del extremo norte al extremo sur, sin dejarse nada.",
+        "intro": "Hay viajes que se hacen una vez en la vida. Esta travesía recorre Nueva Zelanda entera, desde el faro del cabo Reinga, donde según la tradición maorí los espíritus emprenden su último viaje, hasta Stewart Island, la última tierra antes de la Antártida.",
+        "momento": "Contemplar desde el cabo Reinga cómo el mar de Tasmania y el océano Pacífico se encuentran, en el lugar más sagrado del norte del país.",
+        "vivir": [
+          "El cruce del estrecho de Cook entre las dos islas",
+          "Las playas doradas de Abel Tasman",
+          "Los kiwis salvajes de Stewart Island"
+        ],
+        "paradas": [
+          "Cabo Reinga",
+          "Bay of Islands",
+          "Auckland",
+          "Coromandel",
+          "Rotorua",
+          "Tongariro",
+          "Wellington",
+          "Estrecho de Cook",
+          "Marlborough",
+          "Abel Tasman",
+          "Costa oeste y glaciares",
+          "Wanaka",
+          "Queenstown",
+          "Fiordland",
+          "The Catlins",
+          "Stewart Island"
+        ]
+      },
+      "luna-de-miel": {
+        "nombre": "Luna de miel<br/><i>en el fin del mundo</i>",
+        "nombrePlano": "Luna de miel en el fin del mundo",
+        "subtitulo": "Para empezar la vida juntos donde todo es posible",
+        "duracion": "14 días",
+        "epoca": "De octubre a abril",
+        "frase": "Lodges con encanto, cenas privadas, un glaciar solo para vosotros y una noche en Milford Sound.",
+        "intro": "Un viaje para recordar toda la vida, en el lugar más romántico del planeta. Lodges escondidos entre montañas y viñedos, cenas a la luz de las velas, amaneceres en los fiordos y la sensación de que el mundo se ha quedado, por fin, solo para vosotros.",
+        "momento": "Un vuelo en helicóptero con aterrizaje en un glaciar, para brindar con champán en un lugar donde solo estáis vosotros y el silencio.",
+        "vivir": [
+          "Una noche a bordo en Milford Sound",
+          "Catas privadas entre los viñedos de Marlborough",
+          "Lodges boutique con vistas que quitan el aliento"
+        ],
+        "paradas": [
+          "Auckland",
+          "Isla de Waiheke",
+          "Bay of Islands",
+          "Rotorua",
+          "Queenstown",
+          "Fiordland",
+          "Wanaka",
+          "Marlborough"
+        ]
+      },
+      "esqui": {
+        "nombre": "Invierno austral ·<br/><i>Esquí en Nueva Zelanda</i>",
+        "nombrePlano": "Invierno austral · Esquí en Nueva Zelanda",
+        "subtitulo": "Nieve en pleno verano europeo",
+        "duracion": "12 días",
+        "epoca": "De mediados de junio a septiembre",
+        "frase": "Mount Hutt, Cardrona, Treble Cone, Coronet Peak y The Remarkables, con aguas termales bajo las estrellas.",
+        "intro": "Cuando en Europa aprieta el calor, en Nueva Zelanda nieva. Esta ruta recorre las mejores estaciones de la Isla Sur, con montañas de vistas infinitas, pueblos alpinos con encanto y noches de aguas termales bajo uno de los cielos más limpios del mundo.",
+        "momento": "Un día de heliesquí: el helicóptero os deja en cumbres vírgenes, lejos de cualquier remonte, para bajar por nieve que nadie ha tocado. Opcional para esquiadores expertos.",
+        "vivir": [
+          "Cinco estaciones de esquí en una sola ruta",
+          "Aguas termales en Tekapo bajo las estrellas",
+          "Un día de descanso en los fiordos nevados de Milford"
+        ],
+        "paradas": [
+          "Christchurch",
+          "Mount Hutt",
+          "Tekapo",
+          "Wanaka (Cardrona y Treble Cone)",
+          "Queenstown (Coronet Peak y The Remarkables)",
+          "Milford Sound"
+        ]
+      },
+      "gran-lujo": {
+        "nombre": "Nueva Zelanda<br/><i>Gran Lujo</i>",
+        "nombrePlano": "Nueva Zelanda Gran Lujo",
+        "subtitulo": "Los lodges más exclusivos y experiencias imposibles de reservar por libre",
+        "duracion": "16 días",
+        "epoca": "De octubre a abril",
+        "frase": "Lodges de categoría mundial, helicópteros, avioneta privada y chefs a vuestra disposición.",
+        "intro": "El país más espectacular del mundo, vivido sin ningún límite. Lodges legendarios entre acantilados, lagos y montañas, traslados en helicóptero y avioneta privada, chefs que cocinan solo para vosotros y experiencias diseñadas en exclusiva. Nueva Zelanda, en su versión más extraordinaria.",
+        "momento": "Un almuerzo privado en una cumbre de los Alpes del Sur, a la que solo se llega en helicóptero.",
+        "vivir": [
+          "Los lodges más exclusivos del país",
+          "Traslados en helicóptero y avioneta privada",
+          "Chefs privados y bodegas reservadas solo para vosotros"
+        ],
+        "paradas": [
+          "Northland",
+          "Bay of Islands",
+          "Taupō",
+          "Hawke's Bay",
+          "Queenstown",
+          "Fiordland",
+          "Aoraki / Mount Cook"
+        ]
+      },
+      "tierra-media": {
+        "nombre": "La ruta de<br/><i>la Tierra Media</i>",
+        "nombrePlano": "La ruta de la Tierra Media",
+        "subtitulo": "Los escenarios de El Señor de los Anillos y El Hobbit",
+        "duracion": "15 días",
+        "epoca": "De octubre a abril",
+        "frase": "De la Comarca al Monte del Destino, de Edoras a Isengard: para quienes sueñan con la Tierra Media.",
+        "intro": "Para quienes han soñado mil veces con la Tierra Media, esta ruta la convierte en real. Recorremos los paisajes donde se rodaron El Señor de los Anillos y El Hobbit, de las colinas verdes de la Comarca a los volcanes de Mordor y las montañas de Edoras, con historias de rodaje en cada parada.",
+        "momento": "Un banquete nocturno en la Taberna del Dragón Verde, en Hobbiton, y un paseo por la Comarca iluminada con faroles al caer la noche.",
+        "vivir": [
+          "La Comarca de noche, iluminada con faroles",
+          "Los volcanes de Tongariro, el Mordor de las películas",
+          "Glenorchy, la puerta de Isengard y Lothlórien"
+        ],
+        "paradas": [
+          "Hobbiton",
+          "Tongariro (el Monte del Destino)",
+          "Wellington",
+          "Nelson",
+          "Mount Sunday (Edoras)",
+          "Twizel",
+          "Queenstown y Glenorchy",
+          "Arrowtown",
+          "Fiordland"
+        ],
+        "aviso": "«El Señor de los Anillos» y «El Hobbit» son marcas de sus respectivos titulares. WatchOut Tours no está afiliada a ellos."
+      }
+    }
   }
 }

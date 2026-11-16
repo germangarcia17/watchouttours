@@ -11,6 +11,8 @@ import { Desplegable } from '../components/Desplegable'
 import { useSiteImage } from '../lib/siteImages'
 import { L, useLang } from '../i18n/routing'
 import { SITE_URL } from '../lib/site'
+import { TarjetaRuta } from '../components/rutas/RutasUI'
+import { RUTAS } from '../data/rutas'
 import { Texto, Etiqueta, FotoHueco, PedirItinerario, dos } from '../components/editorial/Editorial'
 import { CreditoFoto } from '../components/CreditoFoto'
 import { CREDITOS_HOME } from '../lib/creditos'
@@ -334,6 +336,26 @@ function Colecciones() {
           </article>
         )
       })}
+    </section>
+  )
+}
+
+/* ── 4b. Rutas de autor: las cuatro destacadas ─────────────────────── */
+function RutasDestacadas() {
+  const { t } = useTranslation()
+  return (
+    <section id="rutas" className="hn-sec hn-blanca" aria-labelledby="hn-rutas-titulo">
+      <div className="hn-rutas__cabecera">
+        <div>
+          <Etiqueta>{t('home.rutas.etiqueta')}</Etiqueta>
+          <h2 id="hn-rutas-titulo" className="hn-h2"><Texto k="home.rutas.titulo" /></h2>
+          <p className="hn-body hn-body--primero">{t('home.rutas.texto')}</p>
+        </div>
+        <L to="/rutas" className="hn-lnk hn-lnk--verde">{t('home.rutas.enlace')}</L>
+      </div>
+      <ul className="rt-rejilla rt-rejilla--cuatro" role="list">
+        {RUTAS.filter(r => r.destacada).sort((a, b) => a.destacada - b.destacada).map(r => <li key={r.slug}><TarjetaRuta ruta={r} /></li>)}
+      </ul>
     </section>
   )
 }
@@ -677,6 +699,7 @@ export default function Home() {
       <ElPais />
       <Cita />
       <Colecciones />
+      <RutasDestacadas />
       <ProximaSalida setViaje={setViaje} />
       <Pilares />
       <Tiaki />

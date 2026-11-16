@@ -25,7 +25,11 @@
     "grandesViajes": "Grand Journeys 60+",
     "masAlla": "Beyond Sight",
     "fundadoras": "Founders",
-    "disena": "Design your journey"
+    "disena": "Design your journey",
+    "rutas": "Routes",
+    "formas": "Ways to travel",
+    "granViaje": "The Grand Journey",
+    "sesenta": "60+ Journeys"
   },
   "footer": {
     "colColecciones": "Collections",
@@ -51,7 +55,7 @@
   "home": {
     "seo": {
       "title": "WatchOut Tours · Bespoke journeys through New Zealand",
-      "description": "Private journeys and small-group departures through New Zealand, designed and hosted by their founders, two women from Barcelona who call the country home. 4- and 5-star hotels and private experiences."
+      "description": "New Zealand specialists: signature routes and bespoke journeys for couples, families and lovers of nature, luxury and skiing. Hosted by our founders or self-drive."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
@@ -281,7 +285,8 @@
         "viajes-60": "60+ Journeys",
         "personas-ciegas": "Journeys for blind and low-vision travellers",
         "privado": "Private journey",
-        "no-se": "Not sure yet"
+        "no-se": "Not sure yet",
+        "ruta-autor": "One of your signature routes"
       },
       "fechas": "Which dates would suit you?",
       "opcional": "(optional)",
@@ -358,6 +363,12 @@
       "card4Tag": "A Māori chant to the country’s most famous tree",
       "card4Desc": "A Māori chant welcoming the kauri, New Zealand’s giant, sacred tree.",
       "card4Label": "Māori chant welcoming the kauri"
+    },
+    "rutas": {
+      "etiqueta": "Signature routes",
+      "titulo": "A New Zealand<br/><i>for every traveller.</i>",
+      "texto": "From the volcanoes of the north to the fiords of the south, from a honeymoon to a ski season.",
+      "enlace": "Discover all routes"
     }
   },
   "masAlla": {
@@ -730,7 +741,8 @@
             "Support before, during and after your journey"
           ]
         }
-      ]
+      ],
+      "rutasEnlace": "Discover our signature routes"
     },
     "pasos": {
       "etiqueta": "Step by step",
@@ -1021,5 +1033,321 @@
     "leyPb": ") and consumer protection.",
     "fecha": "Last updated:",
     "fechaValor": "16 July 2026"
+  },
+  "rutas": {
+    "seo": {
+      "title": "New Zealand routes · Signature journeys · WatchOut Tours",
+      "description": "Eight signature routes through New Zealand: North Island, South Island, end to end, honeymoon, skiing, grand luxury and Middle-earth. Hosted or self-drive."
+    },
+    "seoRuta": {
+      "title": "{{nombre}} · New Zealand journey · WatchOut Tours",
+      "description": "{{frase}} Hosted or self-drive."
+    },
+    "portada": {
+      "etiqueta": "Signature routes",
+      "titulo": "A New Zealand<br/><i>for every traveller.</i>",
+      "sub": "We are New Zealand specialists. These are our signature routes: starting points we tailor to you, to travel with us as your hosts or self-drive."
+    },
+    "filtrosLabel": "Filter routes by type of journey",
+    "filtrosResultado": "{{count}} routes",
+    "filtros": {
+      "todas": "All",
+      "primer": "First visit",
+      "parejas": "Couples",
+      "familias": "Families",
+      "naturaleza": "Nature",
+      "cultura": "Culture",
+      "aventura": "Adventure",
+      "lujo": "Luxury",
+      "invierno": "Winter"
+    },
+    "tarjeta": {
+      "duracion": "Duration",
+      "epoca": "Best time",
+      "idealPara": "Ideal for",
+      "enlace": "Discover the route",
+      "modalidades": "Hosted or self-drive"
+    },
+    "ampliaciones": {
+      "etiqueta": "Extensions",
+      "titulo": "And then,<br/><i>a little further.</i>",
+      "items": [
+        {
+          "id": "cook",
+          "titulo": "Cook Islands",
+          "texto": "What if your journey ended in the lagoon of Aitutaki? Rarotonga and Aitutaki, 5 to 7 nights, with a direct flight from Auckland."
+        },
+        {
+          "id": "australia",
+          "titulo": "Australia",
+          "texto": "Sydney, the Great Barrier Reef or Uluru: the other side of the Tasman Sea, just a flight away."
+        }
+      ]
+    },
+    "cierre": {
+      "titulo": "Can't find your route?<br/><i>We'll design it with you.</i>",
+      "texto": "Every journey is unique. Tell us how you imagine it and we'll create your route from scratch.",
+      "boton1": "Design your journey",
+      "boton2": "Talk to us"
+    },
+    "pagina": {
+      "etiqueta": "Signature route",
+      "botonItinerario": "Get the full itinerary",
+      "botonHablar": "Talk to us",
+      "recorridoEtiqueta": "The route",
+      "recorridoTitulo": "Stop by stop.",
+      "mapaAria": "Map of New Zealand showing the route: {{paradas}}.",
+      "momentoEtiqueta": "The signature moment",
+      "vivirEtiqueta": "What you'll experience",
+      "vivirTitulo": "Three moments<br/><i>you won't forget.</i>",
+      "manerasEtiqueta": "Two ways to travel it",
+      "manerasTitulo": "You choose<br/><i>how to live it.</i>",
+      "otrasEtiqueta": "Other routes",
+      "otrasTitulo": "Keep dreaming.",
+      "todas": "See all routes"
+    },
+    "form": {
+      "etiqueta": "Full itinerary",
+      "titulo": "Get the full<br/><i>itinerary.</i>",
+      "texto": "Leave us your details and we'll send you this route's day-by-day itinerary, with no obligation.",
+      "nombre": "Name",
+      "email": "Email",
+      "fechas": "Approximate dates",
+      "fechasAyuda": "For example: March 2027",
+      "viajeros": "Number of travellers",
+      "modalidad": "Travel style",
+      "modalidadAnfitrionas": "Hosted",
+      "modalidadSelfdrive": "Self drive",
+      "modalidadNose": "Not sure yet",
+      "ampliacion": "Are you interested in an extension to the Cook Islands or Australia?",
+      "si": "Yes",
+      "no": "No",
+      "comentarios": "Comments",
+      "enviar": "Send me the itinerary",
+      "enviando": "Sending…",
+      "exito": "Thank you. We'll send you the full itinerary within 48 hours.",
+      "errNombre": "Please enter your name (at least 2 letters).",
+      "errEmail": "Please enter a valid email address.",
+      "formAria": "Form to get the full itinerary of the route"
+    },
+    "huecos": {
+      "rutas-portada": "",
+      "ampliacion-cook": "",
+      "ampliacion-australia": ""
+    },
+    "lista": {
+      "isla-norte": {
+        "nombre": "Te Ika-a-Māui ·<br/><i>The North Island</i>",
+        "nombrePlano": "Te Ika-a-Māui · The North Island",
+        "subtitulo": "Land of fire and Māori culture",
+        "duracion": "12 days",
+        "epoca": "Year-round",
+        "frase": "Breathing volcanoes, geysers, glowworms and the country's most vibrant Māori culture.",
+        "intro": "Here, the earth is alive. The North Island is a land of smoking volcanoes, hot springs and forests where Māori culture still beats strongly. A route to feel the heart of Aotearoa, from the subtropical beaches of the north to the capital.",
+        "momento": "A hāngi in Rotorua with a Māori family: food cooked underground on hot stones, and shared the way it's shared at home.",
+        "vivir": [
+          "The volcanoes of Tongariro, landscapes from another planet",
+          "The Waitomo caves, lit by thousands of glowworms",
+          "Waitangi, where the New Zealand nation was born"
+        ],
+        "paradas": [
+          "Auckland",
+          "Bay of Islands and Waitangi",
+          "Waitomo",
+          "Hobbiton",
+          "Rotorua",
+          "Taupō",
+          "Tongariro",
+          "Wellington"
+        ]
+      },
+      "isla-sur": {
+        "nombre": "Te Waipounamu ·<br/><i>The wild South Island</i>",
+        "nombrePlano": "Te Waipounamu · The wild South Island",
+        "subtitulo": "Fiords, glaciers and nature at its purest",
+        "duracion": "16 days",
+        "epoca": "October to April",
+        "frase": "From the penguins of Oamaru to the fiords of Milford, by way of the untamed coast of The Catlins.",
+        "intro": "The South Island is New Zealand in the wild: mountains plunging into the sea, glaciers melting into turquoise lakes and coastlines where penguins and albatrosses live free. A route for those seeking nature at its purest and corners the crowds have yet to find.",
+        "momento": "At dusk in Oamaru, waiting in silence for the little blue penguins, the smallest in the world, to come home from the sea to their nests.",
+        "vivir": [
+          "The royal albatrosses of the Otago Peninsula",
+          "The waterfalls and cliffs of The Catlins",
+          "Milford Sound, the eighth wonder of the world"
+        ],
+        "paradas": [
+          "Christchurch",
+          "Kaikōura",
+          "Tekapo",
+          "Aoraki / Mount Cook",
+          "Oamaru",
+          "Dunedin and the Otago Peninsula",
+          "The Catlins",
+          "Fiordland and Milford Sound",
+          "Queenstown",
+          "Wanaka",
+          "West Coast and glaciers",
+          "Arthur's Pass"
+        ]
+      },
+      "esencial": {
+        "nombre": "The essence of<br/><i>New Zealand</i>",
+        "nombrePlano": "The essence of New Zealand",
+        "subtitulo": "The most iconic of both islands",
+        "duracion": "18 days",
+        "epoca": "October to April",
+        "frase": "The Shire, Rotorua, Milford Sound, Aoraki and the sperm whales of Kaikōura in a single journey.",
+        "intro": "If this is your first journey to New Zealand, this is your route. It brings together the places everyone dreams of seeing, at just the right pace to truly experience them. It's the route of The Grand Journey, now also available privately and on your dates.",
+        "momento": "A campfire beneath the sky of Tekapo, one of the purest dark sky reserves in the world, toasting marshmallows as the southern stars fill the night.",
+        "vivir": [
+          "The Shire, privately",
+          "The sperm whales of Kaikōura",
+          "A flight over the glaciers of Aoraki"
+        ],
+        "paradas": [
+          "Auckland",
+          "Hobbiton",
+          "Rotorua",
+          "Queenstown",
+          "Milford Sound",
+          "Aoraki / Mount Cook",
+          "Tekapo",
+          "Kaikōura",
+          "Christchurch"
+        ]
+      },
+      "de-punta-a-punta": {
+        "nombre": "End to end ·<br/><i>The great crossing</i>",
+        "nombrePlano": "End to end · The great crossing",
+        "subtitulo": "From Cape Reinga to Stewart Island",
+        "duracion": "24 days",
+        "epoca": "November to March",
+        "frase": "The ultimate journey: the whole country, from its northern tip to its southern end, leaving nothing out.",
+        "intro": "Some journeys happen once in a lifetime. This crossing covers all of New Zealand, from the lighthouse at Cape Reinga, where in Māori tradition spirits begin their final journey, to Stewart Island, the last land before Antarctica.",
+        "momento": "Watching from Cape Reinga as the Tasman Sea and the Pacific Ocean meet, at the most sacred place in the north of the country.",
+        "vivir": [
+          "Crossing Cook Strait between the two islands",
+          "The golden beaches of Abel Tasman",
+          "The wild kiwi of Stewart Island"
+        ],
+        "paradas": [
+          "Cape Reinga",
+          "Bay of Islands",
+          "Auckland",
+          "Coromandel",
+          "Rotorua",
+          "Tongariro",
+          "Wellington",
+          "Cook Strait",
+          "Marlborough",
+          "Abel Tasman",
+          "West Coast and glaciers",
+          "Wanaka",
+          "Queenstown",
+          "Fiordland",
+          "The Catlins",
+          "Stewart Island"
+        ]
+      },
+      "luna-de-miel": {
+        "nombre": "A honeymoon<br/><i>at the end of the world</i>",
+        "nombrePlano": "A honeymoon at the end of the world",
+        "subtitulo": "To begin your life together where anything is possible",
+        "duracion": "14 days",
+        "epoca": "October to April",
+        "frase": "Charming lodges, private dinners, a glacier all to yourselves and a night on Milford Sound.",
+        "intro": "A journey to remember for a lifetime, in the most romantic place on earth. Lodges hidden among mountains and vineyards, candlelit dinners, sunrises over the fiords and the feeling that the world, at last, is yours alone.",
+        "momento": "A helicopter flight landing on a glacier, to toast with champagne in a place where there is only the two of you and the silence.",
+        "vivir": [
+          "A night on board in Milford Sound",
+          "Private tastings among the vineyards of Marlborough",
+          "Boutique lodges with breathtaking views"
+        ],
+        "paradas": [
+          "Auckland",
+          "Waiheke Island",
+          "Bay of Islands",
+          "Rotorua",
+          "Queenstown",
+          "Fiordland",
+          "Wanaka",
+          "Marlborough"
+        ]
+      },
+      "esqui": {
+        "nombre": "Southern winter ·<br/><i>Skiing in New Zealand</i>",
+        "nombrePlano": "Southern winter · Skiing in New Zealand",
+        "subtitulo": "Snow in the middle of the European summer",
+        "duracion": "12 days",
+        "epoca": "Mid-June to September",
+        "frase": "Mount Hutt, Cardrona, Treble Cone, Coronet Peak and The Remarkables, with hot pools beneath the stars.",
+        "intro": "When the heat sets in across Europe, it snows in New Zealand. This route takes in the South Island's finest ski fields, with endless mountain views, charming alpine towns and evenings in hot pools beneath one of the clearest skies on earth.",
+        "momento": "A day of heli-skiing: the helicopter drops you on untouched peaks, far from any lift, to ride snow no one else has touched. Optional for expert skiers.",
+        "vivir": [
+          "Five ski fields in a single route",
+          "Hot pools in Tekapo beneath the stars",
+          "A rest day in the snowy fiords of Milford"
+        ],
+        "paradas": [
+          "Christchurch",
+          "Mount Hutt",
+          "Tekapo",
+          "Wanaka (Cardrona and Treble Cone)",
+          "Queenstown (Coronet Peak and The Remarkables)",
+          "Milford Sound"
+        ]
+      },
+      "gran-lujo": {
+        "nombre": "New Zealand<br/><i>Grand Luxury</i>",
+        "nombrePlano": "New Zealand Grand Luxury",
+        "subtitulo": "The most exclusive lodges and experiences you can't book on your own",
+        "duracion": "16 days",
+        "epoca": "October to April",
+        "frase": "World-class lodges, helicopters, private planes and chefs at your disposal.",
+        "intro": "The world's most spectacular country, experienced without limits. Legendary lodges among cliffs, lakes and mountains, helicopter and private plane transfers, chefs cooking only for you and experiences designed exclusively. New Zealand at its most extraordinary.",
+        "momento": "A private lunch on a Southern Alps summit, reachable only by helicopter.",
+        "vivir": [
+          "The country's most exclusive lodges",
+          "Helicopter and private plane transfers",
+          "Private chefs and wineries reserved just for you"
+        ],
+        "paradas": [
+          "Northland",
+          "Bay of Islands",
+          "Taupō",
+          "Hawke's Bay",
+          "Queenstown",
+          "Fiordland",
+          "Aoraki / Mount Cook"
+        ]
+      },
+      "tierra-media": {
+        "nombre": "The Middle-earth<br/><i>route</i>",
+        "nombrePlano": "The Middle-earth route",
+        "subtitulo": "The film locations of The Lord of the Rings and The Hobbit",
+        "duracion": "15 days",
+        "epoca": "October to April",
+        "frase": "From the Shire to Mount Doom, from Edoras to Isengard: for those who dream of Middle-earth.",
+        "intro": "For those who have dreamed of Middle-earth a thousand times, this route makes it real. We travel through the landscapes where The Lord of the Rings and The Hobbit were filmed, from the green hills of the Shire to the volcanoes of Mordor and the mountains of Edoras, with filming stories at every stop.",
+        "momento": "An evening banquet at the Green Dragon Inn in Hobbiton, followed by a lantern-lit walk through the Shire as night falls.",
+        "vivir": [
+          "The Shire by night, lit by lanterns",
+          "The volcanoes of Tongariro, the films' Mordor",
+          "Glenorchy, the gateway to Isengard and Lothlórien"
+        ],
+        "paradas": [
+          "Hobbiton",
+          "Tongariro (Mount Doom)",
+          "Wellington",
+          "Nelson",
+          "Mount Sunday (Edoras)",
+          "Twizel",
+          "Queenstown and Glenorchy",
+          "Arrowtown",
+          "Fiordland"
+        ],
+        "aviso": "\"The Lord of the Rings\" and \"The Hobbit\" are trademarks of their respective owners. WatchOut Tours is not affiliated with them."
+      }
+    }
   }
 }

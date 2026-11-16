@@ -18,6 +18,8 @@ import NotFound        from './pages/NotFound'
 import BlindTravelNewZealand from './pages/BlindTravelNewZealand'
 import SinPrisa from './pages/SinPrisa'
 import MasAllaDeLaVista from './pages/MasAllaDeLaVista'
+import Rutas from './pages/Rutas'
+import Ruta from './pages/Ruta'
 import { LOCALIZED_SLUGS } from './i18n/pageLanguages'
 
 /* Slug de una página en el idioma de `prefix` ('' = español, '/en' =
@@ -52,6 +54,9 @@ function paginasPublicas(prefix) {
     <Route key="masa"    path={slug(prefix, '/mas-alla-de-la-vista')} element={<MasAllaDeLaVista />} />,
     <Route key="sn"      path={slug(prefix, '/sobre-nosotras')} element={<SobreNosotras />} />,
     <Route key="prod"    path={slug(prefix, '/productos')} element={<Productos />} />,
+    /* Rutas de autor: /rutas ↔ /en/routes y /rutas/:slug ↔ /en/routes/:slug */
+    <Route key="rutas"   path={slug(prefix, '/rutas')} element={<Rutas />} />,
+    <Route key="ruta"    path={`${slug(prefix, '/rutas')}/:slug`} element={<Ruta />} />,
     <Route key="res"     path="resenas"           element={<Resenas />} />,
     <Route key="blog"    path="blog"              element={<Blog />} />,
     <Route key="post"    path="blog/:slug"        element={<BlogPost />} />,
