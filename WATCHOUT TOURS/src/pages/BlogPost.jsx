@@ -72,7 +72,13 @@ export default function BlogPost() {
   const esUrl       = `${SITE_URL}/blog/${post.slug}`
   const enUrl       = `${SITE_URL}/en/blog/${post.slug}`
   const canonicalUrl = lang === 'en' ? enUrl : esUrl
-  const coverImage  = post.og_image_url ?? post.cover_image_url ?? `${SITE_URL}/og-image.jpg`
+  // og:image y JSON-LD exigen URL absoluta. Las portadas servidas desde el
+  // propio repositorio se guardan como ruta relativa (/media/...), así que
+  // aquí se les antepone el dominio canónico.
+  const portada    = post.og_image_url ?? post.cover_image_url
+  const coverImage = portada
+    ? (portada.startsWith('/') ? `${SITE_URL}${portada}` : portada)
+    : `${SITE_URL}/og-image.jpg`
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
