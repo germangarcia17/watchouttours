@@ -225,11 +225,10 @@ function Franja() {
   return (
     <section className="hn-sec hn-blanca vj-franja" aria-labelledby="hn-franja-titulo">
       <Etiqueta>{t('home.franja.etiqueta')}</Etiqueta>
-      <h2 id="hn-franja-titulo" className="hn-h2"><Texto k="home.franja.titulo" /></h2>
+      <h2 id="hn-franja-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.franja.titulo" /></h2>
       <ul className="vj-franja__lista" role="list">
         {palabras.map((p, i) => <li key={p}><L to={FRANJA[i]}>{p}</L></li>)}
       </ul>
-      <L to="/viajes" className="hn-lnk hn-lnk--verde">{t('home.franja.enlace')}</L>
     </section>
   )
 }
@@ -547,8 +546,8 @@ function Cierre() {
       <Foto clave="cierre" sizes="100vw" className="hn-cierre__foto" sangre tono="oscuro" />
       <div className="hn-cierre__contenido">
         <h2 id="hn-cierre-titulo" className="hn-h1 hn-h1--menor"><Texto k="home.cierre.titulo" /></h2>
+        {/* Sin botón: el formulario del itinerario va justo debajo */}
         <p>{t('home.cierre.texto')}</p>
-        <a href="#itinerario" className="hn-btn hn-btn--fantasma">{t('home.cierre.boton')}</a>
       </div>
     </section>
   )

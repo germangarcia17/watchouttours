@@ -190,8 +190,7 @@
     },
     "cierre": {
       "titulo": "New Zealand <i>is waiting for you.</i>",
-      "texto": "Tell us how you dream of it, and we'll begin designing it.",
-      "boton": "Design your journey"
+      "texto": "Tell us how you dream of it, and we'll begin designing it."
     },
     "pie": {
       "frase": "Bespoke journeys through New Zealand, designed in every detail by our founders."
@@ -202,10 +201,6 @@
         {
           "q": "Who are you?",
           "a": "We're Sylvie and Mónica, two women from Barcelona who have lived in New Zealand for more than eight years. WatchOut Tours is our bespoke travel agency: we design every journey from scratch and look after every detail before, during and after."
-        },
-        {
-          "q": "What kinds of journeys do you offer?",
-          "a": "Bespoke tailor-made journeys (honeymoons, families, luxury, skiing, nature, Māori culture…), privately with us as your hosts or self-drive; small-group departures such as The Grand Journey; 60+ Journeys, in a group with every detail taken care of; and journeys for blind and low-vision travellers."
         },
         {
           "q": "What does The Grand Journey include?",
@@ -243,7 +238,7 @@
     },
     "itinerario": {
       "titulo": "Start with the itinerary.",
-      "texto": "We’ll send it by email or WhatsApp, with every day, every visit and everything included. If the next departure doesn’t suit you, tell us which dates you’d prefer. No commitment.",
+      "texto": "Tell us what kind of journey you're interested in and we'll send you the itinerary by email or WhatsApp, with every day, every visit and everything included. No obligation.",
       "whatsapp": "Or message us on WhatsApp",
       "formAria": "Form to get the itinerary",
       "nombre": "Name",
@@ -352,8 +347,7 @@
         "Skiers",
         "Over 60s",
         "Blind and low-vision travellers"
-      ],
-      "enlace": "Discover our journeys"
+      ]
     },
     "salidas": {
       "gran-viaje": {
@@ -1150,11 +1144,11 @@
       "viajes-pareja": "The lone tree of Lake Wānaka, with kayaks on the still water and mountains beyond",
       "viajes-familia": "A hobbit hole with a round red door, a wooden fence and a garden in bloom at Hobbiton",
       "viajes-lujo": "A calm lake beneath snow-capped mountains in the Queenstown region",
-      "viajes-esqui": "",
+      "viajes-esqui": "A skier carves down a snowy slope towards a small hut, with a turquoise lake and snow-capped mountains beyond",
       "viajes-naturaleza": "Two people leap for joy on the shore of Lake Pukaki, before snow-capped Aoraki / Mount Cook",
       "viajes-maori": "Māori women in traditional dress prepare food with hot water beside a carved house in Rotorua",
       "viajes-sesenta": "Travellers stroll along a boardwalk through geothermal steam in Rotorua",
-      "viajes-ciegos": "A traveller with a white cane and a companion holding a recording microphone by a wooden fence where several sheep lean over, on a farm among green hills",
+      "viajes-ciegos": "A couple sit arm in arm on a rock, seen from behind, smiling at each other before a volcano with its summit in the clouds",
       "viajes-amigos": "A boat weaves between icebergs on Tasman Glacier Lake, beneath snowy peaks",
       "ampliacion-cook": "",
       "ampliacion-australia": ""

@@ -28,6 +28,16 @@
   ],
   "hash": "08a9f93c1d51"
  },
+ "esqui-tekapo": {
+  "w": 1500,
+  "h": 844,
+  "anchos": [
+   640,
+   1280,
+   1500
+  ],
+  "hash": "2c8e41a0706d"
+ },
  "fundadoras--fundadoras-monica": {
   "w": 1350,
   "h": 1800,
@@ -522,6 +532,16 @@
    1600
   ],
   "hash": "a364ef1367b5"
+ },
+ "pareja-tongariro": {
+  "w": 1500,
+  "h": 2000,
+  "anchos": [
+   640,
+   1280,
+   1500
+  ],
+  "hash": "9e2f898269ca"
  },
  "privados--privados-anfitrionas": {
   "w": 1800,
