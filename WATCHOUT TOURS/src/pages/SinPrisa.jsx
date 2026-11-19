@@ -2,33 +2,23 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
-import { variantes } from '../components/ImagenHueco'
+import { Imagen } from '../components/Imagen'
+import { defectoHueco } from '../components/ImagenHueco'
 import { CreditoFoto } from '../components/CreditoFoto'
 import { useSiteImage } from '../lib/siteImages'
 import { CREDITOS_SESENTA } from '../lib/creditos'
 import { Texto, Etiqueta, FotoHueco, dos, useImagenSocial } from '../components/editorial/Editorial'
 import { Portada, Columnas, ProximaSalidaGrupo, Preguntas, CierreFormulario } from '../components/editorial/Colecciones'
-import nos600 from '../images/home/nosotras-600.webp'
-import nos1100 from '../images/home/nosotras-1100.webp'
-import imgRotorua from '../images/blind-travel-group-geyser.webp'
-import imgKaikoura from '../images/kayak-kaikoura.jpg'
-// Foto de Tourism New Zealand (sin recortar en edición, sin retocar y sin
-// nada encima; el encuadre con object-fit: cover está permitido)
-import wanaka from '../images/home/tnz-233385-lake-wanaka.jpg'
-import rotoruaTnz from '../images/home/tnz-234567-rotorua.jpg'
-import kaikouraTnz from '../images/home/tnz-516648-kaikoura.jpg'
 
 /* Huecos de imagen (sección "sin-prisa" en /admin/imagenes) y su foto por
    defecto. null = la foto se sube desde el admin: hasta entonces el hueco
    es un bloque gris. Texto alternativo por defecto en
    sinPrisa.huecos.<clave> y crédito en CREDITOS_SESENTA. */
 const IMG = {
-  'sesenta-portada': null,
-  'sesenta-hobbiton': null,
-  'sesenta-rotorua': variantes([{ src: rotoruaTnz, w: 1125, h: 750 }]),
-  'sesenta-kaikoura': variantes([{ src: kaikouraTnz, w: 1500, h: 1000 }]),
-  'sesenta-anfitrionas': variantes([{ src: nos600, w: 600, h: 800 }, { src: nos1100, w: 1100, h: 1467 }]),
-  'sesenta-cierre': variantes([{ src: wanaka, w: 1500, h: 1000 }]),
+  'sesenta-rotorua': 'tnz-234567-rotorua',
+  'sesenta-kaikoura': 'tnz-516648-kaikoura',
+  'sesenta-anfitrionas': 'nosotras',
+  'sesenta-cierre': 'tnz-233385-lake-wanaka',
 }
 
 /* Props de FotoHueco para un hueco de la página */
@@ -113,18 +103,18 @@ function Anfitrionas() {
    hasta que se suban desde /admin/imagenes (sección "sin-prisa", clave
    "galeria-<lugar>"). */
 const GALERIA_POR_DEFECTO = {
-  rotorua: imgRotorua,
-  kaikoura: imgKaikoura,
+  rotorua: 'grupo-geiser',
+  kaikoura: 'kayak-kaikoura',
 }
 
 function FotoGaleria({ id, lugar, alt }) {
-  const img = useSiteImage('sin-prisa', `galeria-${id}`, GALERIA_POR_DEFECTO[id] ?? null, alt)
+  const img = useSiteImage('sin-prisa', `galeria-${id}`, defectoHueco('sin-prisa', `galeria-${id}`, GALERIA_POR_DEFECTO[id]), alt)
   if (!img.src) return null
   return (
     <li>
       <figure className="hn-col-galeria__figura">
         <div className="hn-foto hn-col-galeria__foto">
-          <img src={img.src} alt={img.alt} lang={img.lang} loading="lazy" />
+          <Imagen src={img.src} alt={img.alt} lang={img.lang} sizes="(min-width: 901px) 30vw, 100vw" />
         </div>
         <figcaption className="hn-col-galeria__pie">
           <span>{lugar}</span>

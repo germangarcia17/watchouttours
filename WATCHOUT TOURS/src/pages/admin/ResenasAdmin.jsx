@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
-import { uploadImage } from '../../lib/storage'
 
 /* Portada, subtítulos (.vtt) y transcripción de un testimonio en vídeo.
    Se editan sobre reseñas ya creadas (necesita la migración 012). */
@@ -11,26 +10,12 @@ function EditorVideo({ resena, onGuardado }) {
     video_transcript: resena.video_transcript ?? '',
     video_transcript_en: resena.video_transcript_en ?? '',
   })
-  const [subiendo, setSubiendo] = useState(null)
+  const subiendo = null
   const [estado, setEstado] = useState(null)
   const [error, setError] = useState(null)
   const id = resena.id
 
   const cambiar = e => setDatos(prev => ({ ...prev, [e.target.name]: e.target.value }))
-
-  async function subir(campo, file) {
-    if (!file) return
-    setSubiendo(campo)
-    setError(null)
-    try {
-      const { url } = await uploadImage(file, 'resenas')
-      setDatos(prev => ({ ...prev, [campo]: url }))
-    } catch (err) {
-      setError(err.message ?? 'Error al subir el archivo.')
-    } finally {
-      setSubiendo(null)
-    }
-  }
 
   async function guardar(e) {
     e.preventDefault()
@@ -50,21 +35,16 @@ function EditorVideo({ resena, onGuardado }) {
       <form onSubmit={guardar} noValidate style={{ maxWidth: '600px', marginTop: '0.75rem' }}>
         <div className="form-field">
           <label htmlFor={`poster-${id}`} className="form-label">Imagen de portada</label>
-          <p id={`poster-ayuda-${id}`} style={ayuda}>Un fotograma del vídeo en JPG o WebP. Sube el archivo o pega su URL.</p>
-          <input id={`poster-file-${id}`} type="file" accept="image/jpeg,image/png,image/webp" aria-label="Subir imagen de portada"
-            onChange={e => subir('video_poster_url', e.target.files?.[0])} disabled={!!subiendo} className="form-control form-control--file" />
-          <input id={`poster-${id}`} name="video_poster_url" type="url" value={datos.video_poster_url} onChange={cambiar}
+          <p id={`poster-ayuda-${id}`} style={ayuda}>Un fotograma del vídeo (≤ 100 KB), guardado en el repositorio. Escribe su ruta, p. ej. /media/resena-nuria-poster.jpg. Nada se sube a Supabase.</p>
+          <input id={`poster-${id}`} name="video_poster_url" type="text" value={datos.video_poster_url} onChange={cambiar}
             aria-describedby={`poster-ayuda-${id}`} className="form-control" style={{ marginTop: '0.5rem' }} />
         </div>
         <div className="form-field">
           <label htmlFor={`vtt-${id}`} className="form-label">Subtítulos (.vtt)</label>
-          <p id={`vtt-ayuda-${id}`} style={ayuda}>Archivo WebVTT en español. Sube el archivo o pega su URL.</p>
-          <input id={`vtt-file-${id}`} type="file" accept=".vtt,text/vtt" aria-label="Subir archivo de subtítulos"
-            onChange={e => subir('video_vtt_url', e.target.files?.[0])} disabled={!!subiendo} className="form-control form-control--file" />
-          <input id={`vtt-${id}`} name="video_vtt_url" type="url" value={datos.video_vtt_url} onChange={cambiar}
+          <p id={`vtt-ayuda-${id}`} style={ayuda}>Archivo WebVTT en español, guardado en el repositorio. Escribe su ruta, p. ej. /media/resena-nuria.vtt.</p>
+          <input id={`vtt-${id}`} name="video_vtt_url" type="text" value={datos.video_vtt_url} onChange={cambiar}
             aria-describedby={`vtt-ayuda-${id}`} className="form-control" style={{ marginTop: '0.5rem' }} />
         </div>
-        {subiendo && <p role="status">Subiendo archivo…</p>}
         <div className="form-field">
           <label htmlFor={`transcripcion-${id}`} className="form-label">Transcripción completa (español)</label>
           <p id={`transcripcion-ayuda-${id}`} style={ayuda}>Deja una línea en blanco entre párrafos.</p>
@@ -91,8 +71,6 @@ export default function ResenasAdmin() {
   const [form, setForm]         = useState(EMPTY)
   const [saving, setSaving]     = useState(false)
   const [formError, setFormError] = useState(null)
-  const [uploadingVideo, setUploadingVideo] = useState(false)
-  const [videoUploadError, setVideoUploadError] = useState(null)
 
   useEffect(() => {
     document.title = 'Reseñas | WatchOut Tours Admin'
@@ -108,21 +86,6 @@ export default function ResenasAdmin() {
   function handleChange(e) {
     const { name, value } = e.target
     setForm(prev => ({ ...prev, [name]: value }))
-  }
-
-  async function handleVideoFile(file) {
-    if (!file) return
-    setUploadingVideo(true)
-    setVideoUploadError(null)
-    try {
-      const { url } = await uploadImage(file, 'resenas')
-      setForm(prev => ({ ...prev, video_url: url }))
-    } catch (err) {
-      console.error('[resenas] error al subir el vídeo:', err)
-      setVideoUploadError(err.message ?? 'Error al subir el vídeo.')
-    } finally {
-      setUploadingVideo(false)
-    }
   }
 
   async function handleCreate(e) {
@@ -181,26 +144,11 @@ export default function ResenasAdmin() {
             <textarea id="resena_content" name="content" rows={4} value={form.content} onChange={handleChange} aria-required="true" className="form-control" />
           </div>
           <div className="form-field">
-            <label htmlFor="video_file" className="form-label">Vídeo del testimonio (opcional)</label>
-            <p style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: '0 0 0.5rem' }}>
-              Sube el archivo directamente, o si ya tienes una URL (por ejemplo de YouTube) pégala abajo.
+            <label htmlFor="video_url" className="form-label">Vídeo del testimonio (opcional)</label>
+            <p id="video_url_ayuda" style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: '0 0 0.5rem' }}>
+              Los vídeos se guardan solo en el repositorio de GitHub (H.264, 720p, ≤ 8 MB), nunca en Supabase. Escribe su ruta, p. ej. /media/resena-nuria.mp4.
             </p>
-            <input
-              id="video_file"
-              type="file"
-              accept="video/mp4,video/webm,video/quicktime"
-              onChange={e => handleVideoFile(e.target.files?.[0])}
-              disabled={uploadingVideo}
-              className="form-control form-control--file"
-            />
-            {uploadingVideo && <span role="status" style={{ display: 'block', marginTop: '0.5rem' }}>Subiendo vídeo…</span>}
-            {videoUploadError && (
-              <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{videoUploadError}</p>
-            )}
-          </div>
-          <div className="form-field">
-            <label htmlFor="video_url" className="form-label">URL del vídeo del testimonio</label>
-            <input id="video_url" name="video_url" type="url" value={form.video_url} onChange={handleChange} className="form-control" placeholder="https://…supabase.co/…/testimonio.mp4" />
+            <input id="video_url" name="video_url" type="text" aria-describedby="video_url_ayuda" value={form.video_url} onChange={handleChange} className="form-control" placeholder="/media/testimonio.mp4" />
             {form.video_url && <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginTop: '0.4rem' }}>Vídeo listo: {form.video_url}</p>}
           </div>
 

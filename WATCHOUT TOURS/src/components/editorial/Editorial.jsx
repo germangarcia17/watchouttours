@@ -3,15 +3,17 @@ import { Trans, useTranslation } from 'react-i18next'
 import { useForm, ValidationError } from '@formspree/react'
 import '../../styles/pagestyle/Contacto.css'
 import '../../styles/pagestyle/HomeNueva.css'
-import { ImagenHueco } from '../ImagenHueco'
+import { ImagenHueco, defectoHueco } from '../ImagenHueco'
 import { CreditoFoto } from '../CreditoFoto'
 import { BotonVideollamada } from '../Videollamada'
 import { useSiteImage } from '../../lib/siteImages'
+import { urlImagen } from '../Imagen'
 import { L, useLang } from '../../i18n/routing'
 
 /* ── Piezas del sistema editorial ────────────────────────────────────────
- * Las comparten la home (/), Viajes +60 (/sin-prisa) y Más allá de la vista
- * (/mas-alla-de-la-vista). Estilos en HomeNueva.css (prefijo .hn-) y, lo
+ * Las comparten la home (/), Viajes de autor (/viajes), Viajes +60
+ * (/sin-prisa) y Viajes para personas ciegas y con baja visión
+ * (/viajes-personas-ciegas-baja-vision). Estilos en HomeNueva.css (prefijo .hn-) y, lo
  * propio de las páginas de colección, en Colecciones.css.
  * ──────────────────────────────────────────────────────────────────────── */
 
@@ -19,11 +21,17 @@ export const WHATSAPP = 'https://wa.me/64272677006?text=¡Hola!%20Quiero%20saber
 
 /* Valores que recibe el equipo en el correo (siempre en español). */
 export const VIAJES_EQUIPO = {
+  'luna-de-miel': 'Luna de miel o pareja',
+  'familia': 'Familia',
+  'lujo': 'Extra lujo',
+  'esqui': 'Esquí',
+  'naturaleza': 'Naturaleza y aventura',
+  'cultura-maori': 'Cultura maorí',
+  'viajes-60': 'Viaje +60',
+  'personas-ciegas': 'Viaje para personas ciegas o con baja visión',
+  'amigos': 'Viaje con amigos',
+  'privado': 'Viaje en privado o self drive',
   'gran-viaje': 'El Gran Viaje · 27 de febrero – 16 de marzo de 2027',
-  'viajes-60': 'Viajes +60',
-  'personas-ciegas': 'Viajes para personas ciegas y con baja visión',
-  'privado': 'Viaje en privado',
-  'ruta-autor': 'Una de vuestras rutas de autor',
   'no-se': 'Aún no lo sé',
 }
 
@@ -53,7 +61,7 @@ export function FotoHueco({
   seccion, clave, defecto, alt, credito = '', sizes, className = '', prioritaria,
   children, tono = 'claro', sangre = false, sinCredito = false,
 }) {
-  const img = useSiteImage(seccion, clave, defecto?.src ?? null, '', credito)
+  const img = useSiteImage(seccion, clave, defectoHueco(seccion, clave, defecto), '', credito)
   return (
     <div className={`hn-foto ${className}`.trim()}>
       <ImagenHueco
@@ -71,8 +79,8 @@ export function FotoHueco({
 /* Foto de un hueco (props de FotoHueco) para usarla como og:image de la
    página: { src, alt } o src null si el hueco aún no tiene foto. */
 export function useImagenSocial({ seccion, clave, defecto, alt }) {
-  const img = useSiteImage(seccion, clave, defecto?.src ?? null, alt ?? '')
-  return { src: img.src || null, alt: img.alt }
+  const img = useSiteImage(seccion, clave, defectoHueco(seccion, clave, defecto), alt ?? '')
+  return { src: img.src ? urlImagen(img.src, 1280) : null, alt: img.alt }
 }
 
 /* ── Formulario para pedir el itinerario (Formspree) ──────────────────── */

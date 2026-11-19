@@ -17,6 +17,10 @@ export function VideoTestimonio({ resena }) {
   const parrafos = (transcripcion ?? '').split(/\n\s*\n/).map(p => p.trim()).filter(Boolean)
   const nombre = resena.author_name
 
+  // Los vídeos solo se sirven desde el repositorio (public/media/). Una URL
+  // antigua de Supabase Storage ya no existe: no se pinta un reproductor roto.
+  if (!resena.video_url?.startsWith('/')) return null
+
   return (
     <div className="testi-video testi-video--visible">
       <video
@@ -24,9 +28,7 @@ export function VideoTestimonio({ resena }) {
         poster={resena.video_poster_url || undefined}
         controls
         playsInline
-        preload="metadata"
-        // Los subtítulos están en otro dominio (Supabase): hace falta CORS
-        crossOrigin={resena.video_vtt_url ? 'anonymous' : undefined}
+        preload="none"
         aria-label={t('home.testi.videoAria', { name: nombre })}
       >
         {resena.video_vtt_url && (

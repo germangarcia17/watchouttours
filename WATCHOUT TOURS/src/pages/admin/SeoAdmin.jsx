@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
-import { RUTAS } from '../../data/rutas'
 import es from '../../i18n/locales/es.json'
 
 /* Páginas con SEO editable, en el orden del menú de la web. La clave es la
    fila de seo_metadata (page_type) que usa cada página. */
-const PAGE_TYPES = ['home', 'rutas', ...RUTAS.map(r => `ruta-${r.slug}`), 'productos', 'sin-prisa', 'mas-alla-de-la-vista', 'sobre-nosotras', 'blog', 'reseñas', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal', 'blind-travel-new-zealand']
+const PAGE_TYPES = ['home', 'viajes', 'productos', 'sin-prisa', 'mas-alla-de-la-vista', 'sobre-nosotras', 'blog', 'reseñas', 'contacto', 'accesibilidad', 'privacidad', 'aviso-legal', 'blind-travel-new-zealand']
 
 /* Nombre legible de cada página y sus rutas (español · inglés). Los campos
    ES se usan en la ruta española y los "(inglés)", en la inglesa. */
 const PAGE_LABELS = {
   'home': 'Home (/ · /en)',
-  'rutas': 'Rutas de autor (/rutas · /en/routes)',
-  ...Object.fromEntries(RUTAS.map(r => [`ruta-${r.slug}`, `Ruta: ${es.rutas.lista[r.slug].nombrePlano} (/rutas/${r.slug} · /en/routes/${r.slug})`])),
+  'viajes': 'Viajes de autor (/viajes · /en/journeys)',
   'productos': 'Viajes privados (/productos · /en/products)',
   'sin-prisa': 'Viajes +60 (/sin-prisa · /en/unhurried)',
-  'mas-alla-de-la-vista': 'Más allá de la vista (/mas-alla-de-la-vista · /en/beyond-sight)',
+  'mas-alla-de-la-vista': 'Viajes para personas ciegas y con baja visión (/viajes-personas-ciegas-baja-vision · /en/blind-low-vision-travel)',
   'sobre-nosotras': 'Fundadoras (/sobre-nosotras · /en/about-us)',
   'blog': 'Diario de viaje (/blog · /en/blog)',
   'reseñas': 'Reseñas (/resenas · /en/resenas)',

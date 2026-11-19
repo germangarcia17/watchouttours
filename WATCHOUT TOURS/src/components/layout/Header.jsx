@@ -7,25 +7,25 @@ import { availableLangs } from '../../i18n/pageLanguages'
 
 /* Menú principal. Las rutas son siempre las españolas: LNav las traduce al
    slug inglés cuando toca (ver src/i18n/pageLanguages.js). */
-const formasDeViajar = [
-  { to: '/productos',            key: 'privados' },
-  { to: '/#proxima-salida',      key: 'granViaje' },
-  { to: '/sin-prisa',            key: 'sesenta' },
-  { to: '/mas-alla-de-la-vista', key: 'masAlla' },
+const viajes = [
+  { to: '/viajes',                             key: 'todos' },
+  { to: '/productos',                          key: 'privados' },
+  { to: '/sin-prisa',                          key: 'sesenta' },
+  { to: '/viajes-personas-ciegas-baja-vision', key: 'ciegos' },
 ]
 
-/* Desplegable «Formas de viajar»: un botón con aria-expanded que muestra la
+/* Desplegable «Viajes»: un botón con aria-expanded que muestra la
    lista de enlaces. Escape lo cierra y devuelve el foco al botón; también
    se cierra al salir de él con el teclado o al hacer clic fuera. En el menú
    móvil se abre dentro de la propia lista. */
-function MenuFormas({ onNavegar }) {
+function MenuViajes({ onNavegar }) {
   const { t } = useTranslation()
-  const { pathname, hash } = useLocation()
+  const { pathname } = useLocation()
   const [abierto, setAbierto] = useState(false)
   const caja = useRef(null)
   const boton = useRef(null)
   const base = stripLang(pathname)
-  const activo = formasDeViajar.some(({ to }) => to === base || (to === '/#proxima-salida' && base === '/' && hash === '#proxima-salida'))
+  const activo = viajes.some(({ to }) => to === base)
 
   useEffect(() => { setAbierto(false) }, [pathname])
 
@@ -49,13 +49,13 @@ function MenuFormas({ onNavegar }) {
       <button
         ref={boton} type="button"
         className={`nav-link nav-desplegable__boton${activo ? ' nav-link--active' : ''}`}
-        aria-expanded={abierto} aria-controls="nav-formas"
+        aria-expanded={abierto} aria-controls="nav-viajes"
         onClick={() => setAbierto(v => !v)}
       >
-        {t('nav.formas')}<span className="nav-desplegable__signo" aria-hidden="true" />
+        {t('nav.viajes')}<span className="nav-desplegable__signo" aria-hidden="true" />
       </button>
-      <ul id="nav-formas" className="nav-desplegable__lista" hidden={!abierto}>
-        {formasDeViajar.map(({ to, key }) => (
+      <ul id="nav-viajes" className="nav-desplegable__lista" hidden={!abierto}>
+        {viajes.map(({ to, key }) => (
           <li key={key}>
             <L to={to} className="nav-desplegable__enlace" onClick={() => { setAbierto(false); onNavegar() }}>{t(`nav.${key}`)}</L>
           </li>
@@ -160,10 +160,11 @@ export function Header() {
           aria-label={t('nav.main')}
           className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}
         >
-          <LNav to="/rutas" className={({ isActive }) => `nav-link${isActive ? ' nav-link--active' : ''}`} onClick={cerrar}>
-            {t('nav.rutas')}
-          </LNav>
-          <MenuFormas onNavegar={cerrar} />
+          <MenuViajes onNavegar={cerrar} />
+          {/* Salidas en grupo: la sección de la home */}
+          {esHome
+            ? <a href="#proxima-salida" className="nav-link" onClick={cerrar}>{t('nav.salidas')}</a>
+            : <L to="/#proxima-salida" className="nav-link" onClick={cerrar}>{t('nav.salidas')}</L>}
           <LNav to="/sobre-nosotras" className={({ isActive }) => `nav-link${isActive ? ' nav-link--active' : ''}`} onClick={cerrar}>
             {t('nav.fundadoras')}
           </LNav>

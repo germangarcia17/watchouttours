@@ -41,7 +41,7 @@ export const CREDITOS_SESENTA = {
   'sesenta-cierre': TNZ('Miles Holden'),
 }
 
-/* Más allá de la vista. La de la granja es propia, sin crédito; la de la
+/* Viajes para personas ciegas y con baja visión. La de la granja es propia, sin crédito; la de la
    portada aún no se conoce: su crédito se escribe en el admin al subirla. */
 export const CREDITOS_VISTA = {
   'vista-portada': '',
@@ -70,9 +70,23 @@ export const CREDITOS_FUNDADORAS = {
   'fundadoras-oceano': TNZ('Miles Holden'),
 }
 
-/* Rutas de autor (sección "rutas" del admin): las fotos aún no se conocen;
-   su crédito se escribe en el admin al subirlas. */
-export const CREDITOS_RUTAS = {}
+/* Viajes de autor (/viajes, sección "viajes" del admin). La de personas
+   ciegas es propia, sin crédito; la del esquí y las de las ampliaciones aún
+   no existen: su crédito se escribe en el admin cuando se añadan. */
+export const CREDITOS_VIAJES = {
+  'viajes-portada': TNZ('Miles Holden'),
+  'viajes-pareja': TNZ('Miles Holden'),
+  'viajes-familia': TNZ('Miles Holden'),
+  'viajes-lujo': TNZ('Miles Holden'),
+  'viajes-esqui': '',
+  'viajes-naturaleza': TNZ('Will Patino'),
+  'viajes-maori': TNZ('Miles Holden'),
+  'viajes-sesenta': TNZ('Miles Holden'),
+  'viajes-ciegos': '',
+  'viajes-amigos': TNZ('Miles Holden'),
+  'ampliacion-cook': '',
+  'ampliacion-australia': '',
+}
 
 /* Texto que se muestra, o null si no hay crédito. */
 export function textoCredito(credito, lang) {

@@ -2,12 +2,10 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
-import { variantes } from '../components/ImagenHueco'
 import { ResenasDestacadas } from '../components/home/BloquesHome'
 import { CREDITOS_PRIVADOS } from '../lib/creditos'
 import { Texto, Etiqueta, FotoHueco, dos, useImagenSocial } from '../components/editorial/Editorial'
 import { Portada, Columnas, Preguntas, CierreFormulario } from '../components/editorial/Colecciones'
-import talla from '../images/blind-travel-maori-carving.webp'
 
 /* Huecos de imagen (sección "privados" en /admin/imagenes) y su foto por
    defecto. null = la foto se sube desde el admin (hasta entonces, bloque
@@ -16,7 +14,7 @@ import talla from '../images/blind-travel-maori-carving.webp'
    de la home), sin crédito. */
 const IMG = {
   'privados-portada': null,
-  'privados-anfitrionas': variantes([{ src: talla, w: 1000, h: 1333 }]),
+  'privados-anfitrionas': 'talla-maori',
   'privados-selfdrive': null,
   'privados-cierre': null,
 }
@@ -51,8 +49,8 @@ function Maneras() {
       <ol className="hn-destinos__lista" role="list">
         {items.map((m, i) => <Manera key={m.id} {...m} n={i} />)}
       </ol>
-      <p className="hn-col-rutas-enlace">
-        <L to="/rutas" className="hn-btn hn-btn--tinta">{t('privados.maneras.rutasEnlace')}</L>
+      <p className="hn-col-viajes-enlace">
+        <L to="/viajes" className="hn-btn hn-btn--tinta">{t('privados.maneras.viajesEnlace')}</L>
       </p>
     </section>
   )

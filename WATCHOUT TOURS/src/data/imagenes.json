@@ -1,0 +1,838 @@
+{
+ "blog--como-preparamos-viaje-sensorial-accesible": {
+  "w": 1200,
+  "h": 1599,
+  "anchos": [
+   640,
+   1200
+  ],
+  "hash": "8fe3c93fbc28"
+ },
+ "blog--rotorua-cinco-sentidos": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "a90096365753"
+ },
+ "blog--viajar-siendo-ciego-mitos": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "08a9f93c1d51"
+ },
+ "fundadoras--fundadoras-monica": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "dd068c602cc6"
+ },
+ "fundadoras--fundadoras-montanas": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "3c94c9295275"
+ },
+ "fundadoras--fundadoras-oceano": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "56f32c274794"
+ },
+ "fundadoras--fundadoras-portada": {
+  "w": 1600,
+  "h": 1066,
+  "anchos": [
+   640,
+   1280,
+   1600
+  ],
+  "hash": "5ec3cc5f7240"
+ },
+ "fundadoras--fundadoras-sylvie": {
+  "w": 1200,
+  "h": 1600,
+  "anchos": [
+   640,
+   1200
+  ],
+  "hash": "c468753cedc2"
+ },
+ "fundadoras--fundadoras-tierra": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "351bacafbf11"
+ },
+ "geiser-pohutu": {
+  "w": 1800,
+  "h": 1350,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "49a657b7ac35"
+ },
+ "granja-oyentes": {
+  "w": 1200,
+  "h": 1600,
+  "anchos": [
+   640,
+   1200
+  ],
+  "hash": "6d053ab9591c"
+ },
+ "grupo-geiser": {
+  "w": 1000,
+  "h": 1333,
+  "anchos": [
+   640,
+   1000
+  ],
+  "hash": "505784b25f49"
+ },
+ "home--cierre": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "fdd1646b60c6"
+ },
+ "home--destino-aoraki": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "b6cd96cb6521"
+ },
+ "home--destino-kaikoura": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "143ad3b3e61d"
+ },
+ "home--destino-queenstown": {
+  "w": 1600,
+  "h": 1066,
+  "anchos": [
+   640,
+   1280,
+   1600
+  ],
+  "hash": "fdeba9081830"
+ },
+ "home--destino-waitomo": {
+  "w": 1800,
+  "h": 1202,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "1e74d089abcd"
+ },
+ "home--galeria-01": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "3b82ba9bbbf6"
+ },
+ "home--galeria-02": {
+  "w": 1600,
+  "h": 1059,
+  "anchos": [
+   640,
+   1280,
+   1600
+  ],
+  "hash": "5f77ece07ef0"
+ },
+ "home--galeria-03": {
+  "w": 1600,
+  "h": 1066,
+  "anchos": [
+   640,
+   1280,
+   1600
+  ],
+  "hash": "5773221ffed1"
+ },
+ "home--galeria-04": {
+  "w": 1800,
+  "h": 1013,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "ecb73414c5ee"
+ },
+ "home--galeria-06": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "1c6485f72c61"
+ },
+ "home--galeria-07": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "8e40040843cc"
+ },
+ "home--galeria-08": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "7bbd558069c2"
+ },
+ "home--galeria-09": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "b56d872222c5"
+ },
+ "home--galeria-10": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "c7aec756b08d"
+ },
+ "home--galeria-11": {
+  "w": 1800,
+  "h": 1199,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "f1f83b81353c"
+ },
+ "home--galeria-12": {
+  "w": 1800,
+  "h": 1199,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "cd73d8165072"
+ },
+ "home--hero-poster": {
+  "w": 1600,
+  "h": 1066,
+  "anchos": [
+   640,
+   1280,
+   1600
+  ],
+  "hash": "5ec3cc5f7240",
+  "igualA": "fundadoras--fundadoras-portada"
+ },
+ "home--nosotras": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "0c796b21be68"
+ },
+ "home--nz-maori": {
+  "w": 1016,
+  "h": 1800,
+  "anchos": [
+   640,
+   1016
+  ],
+  "hash": "08d2b8484021"
+ },
+ "home--nz-milford": {
+  "w": 1200,
+  "h": 1600,
+  "anchos": [
+   640,
+   1200
+  ],
+  "hash": "2fc7bd835732"
+ },
+ "home--nz-queenstown": {
+  "w": 1800,
+  "h": 1350,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "b0b96ef56d25"
+ },
+ "home--nz-tierra-media": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "38f1d4fa0e62"
+ },
+ "home--pais-panoramica": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "3393497bfbd8"
+ },
+ "home--pais-vertical": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "0db0516f430e"
+ },
+ "home--panel-ciegos": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "0f00dc1ec086"
+ },
+ "home--panel-privado": {
+  "w": 1800,
+  "h": 1200,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "4a51f8f26125"
+ },
+ "home--panel-sesenta": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "ba30e9514381"
+ },
+ "home--salida-foto": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "5de173bde6c2"
+ },
+ "home--tarjeta-personas-ciegas": {
+  "w": 1000,
+  "h": 1333,
+  "anchos": [
+   640,
+   1000
+  ],
+  "hash": "fc4d182c715e"
+ },
+ "home--tarjeta-viajes-60": {
+  "w": 1200,
+  "h": 1599,
+  "anchos": [
+   640,
+   1200
+  ],
+  "hash": "4f47a8f0a5d4"
+ },
+ "home--tiaki-tohu": {
+  "w": 1800,
+  "h": 1012,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "407ffa76affa"
+ },
+ "home--viaje-60": {
+  "w": 1800,
+  "h": 1350,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "25d5463c2aa9"
+ },
+ "home--viaje-ciegos": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "0f00dc1ec086",
+  "igualA": "home--panel-ciegos"
+ },
+ "home--viaje-privado": {
+  "w": 1800,
+  "h": 1350,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "43f67660e43a"
+ },
+ "kayak-kaikoura": {
+  "w": 1312,
+  "h": 1755,
+  "anchos": [
+   640,
+   1280,
+   1312
+  ],
+  "hash": "64bfd470a1b2"
+ },
+ "mas-alla-de-la-vista--hero": {
+  "w": 1800,
+  "h": 1350,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "35dffbe69b0f"
+ },
+ "mas-alla-de-la-vista--vista-portada": {
+  "w": 1600,
+  "h": 1059,
+  "anchos": [
+   640,
+   1280,
+   1600
+  ],
+  "hash": "5f77ece07ef0",
+  "igualA": "home--galeria-02"
+ },
+ "mas-alla-de-la-vista--vista-unico": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "21e4a1a9afef"
+ },
+ "mas-alla-de-la-vista--vista-vivir": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "82fab464efdc"
+ },
+ "nosotras": {
+  "w": 1100,
+  "h": 1467,
+  "anchos": [
+   640,
+   1100
+  ],
+  "hash": "fe29731b3601"
+ },
+ "parapente-poster": {
+  "w": 1600,
+  "h": 1400,
+  "anchos": [
+   640,
+   1280,
+   1600
+  ],
+  "hash": "a364ef1367b5"
+ },
+ "privados--privados-anfitrionas": {
+  "w": 1800,
+  "h": 1200,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "ef4845e647e0"
+ },
+ "privados--privados-cierre": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "cbb326a6c73e"
+ },
+ "privados--privados-portada": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "4dafd070ffe7"
+ },
+ "privados--privados-selfdrive": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "1c75dd465798"
+ },
+ "productos--tarjeta-viajes-60": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "41239fe3595b"
+ },
+ "queenstown-parapente": {
+  "w": 1200,
+  "h": 1050,
+  "anchos": [
+   640,
+   1200
+  ],
+  "hash": "f4310ee66eac"
+ },
+ "secuoyas": {
+  "w": 844,
+  "h": 1125,
+  "anchos": [
+   640,
+   844
+  ],
+  "hash": "f48fabb4f638"
+ },
+ "sin-prisa--galeria-hobbiton": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "de06913c7660"
+ },
+ "sin-prisa--galeria-milford-sound": {
+  "w": 1066,
+  "h": 1600,
+  "anchos": [
+   640,
+   1066
+  ],
+  "hash": "136f9ba95e28"
+ },
+ "sin-prisa--hero": {
+  "w": 1800,
+  "h": 1200,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "ef4845e647e0",
+  "igualA": "privados--privados-anfitrionas"
+ },
+ "sin-prisa--para-quien": {
+  "w": 1350,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1350
+  ],
+  "hash": "82fab464efdc",
+  "igualA": "mas-alla-de-la-vista--vista-vivir"
+ },
+ "sin-prisa--sesenta-anfitrionas": {
+  "w": 1200,
+  "h": 1599,
+  "anchos": [
+   640,
+   1200
+  ],
+  "hash": "7ce9b00ab969"
+ },
+ "sin-prisa--sesenta-cierre": {
+  "w": 1800,
+  "h": 1200,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "4a51f8f26125",
+  "igualA": "home--panel-privado"
+ },
+ "sin-prisa--sesenta-hobbiton": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "de06913c7660",
+  "igualA": "sin-prisa--galeria-hobbiton"
+ },
+ "sin-prisa--sesenta-kaikoura": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "030fe2b28905"
+ },
+ "sin-prisa--sesenta-portada": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "80949760bd08"
+ },
+ "sin-prisa--sesenta-rotorua": {
+  "w": 1800,
+  "h": 1201,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "1feec80ed210"
+ },
+ "sin-prisa--solo": {
+  "w": 926,
+  "h": 1600,
+  "anchos": [
+   640,
+   926
+  ],
+  "hash": "b319d123b3dd"
+ },
+ "sobre-nosotras--equipo-moni": {
+  "w": 800,
+  "h": 800,
+  "anchos": [
+   640,
+   800
+  ],
+  "hash": "672e8220382a"
+ },
+ "sobre-nosotras--equipo-nuria": {
+  "w": 800,
+  "h": 800,
+  "anchos": [
+   640,
+   800
+  ],
+  "hash": "a43584adc7b5"
+ },
+ "sobre-nosotras--equipo-sylvie": {
+  "w": 800,
+  "h": 800,
+  "anchos": [
+   640,
+   800
+  ],
+  "hash": "e8b39cb84ab1"
+ },
+ "sobre-nosotras--hero": {
+  "w": 1800,
+  "h": 1800,
+  "anchos": [
+   640,
+   1280,
+   1800
+  ],
+  "hash": "184f4d9f5c28"
+ },
+ "talla-maori": {
+  "w": 1000,
+  "h": 1333,
+  "anchos": [
+   640,
+   1000
+  ],
+  "hash": "de2d7668b30c"
+ },
+ "tiaki-tohu": {
+  "w": 2000,
+  "h": 1125,
+  "anchos": [
+   640,
+   1280,
+   1920
+  ],
+  "hash": "74479490330a"
+ },
+ "tnz-232230-waitomo": {
+  "w": 1500,
+  "h": 1001,
+  "anchos": [
+   640,
+   1280,
+   1500
+  ],
+  "hash": "9e241baf6fbf"
+ },
+ "tnz-233385-lake-wanaka": {
+  "w": 1500,
+  "h": 1000,
+  "anchos": [
+   640,
+   1280,
+   1500
+  ],
+  "hash": "7bf48b9267ce"
+ },
+ "tnz-233933-aoraki-mt-cook": {
+  "w": 2000,
+  "h": 1334,
+  "anchos": [
+   640,
+   1280,
+   1920
+  ],
+  "hash": "b26402a392da"
+ },
+ "tnz-233937-aoraki-iceberg": {
+  "w": 1500,
+  "h": 1000,
+  "anchos": [
+   640,
+   1280,
+   1500
+  ],
+  "hash": "31f335cde8dd"
+ },
+ "tnz-234567-rotorua": {
+  "w": 1125,
+  "h": 750,
+  "anchos": [
+   640,
+   1125
+  ],
+  "hash": "8a02ee4904a1"
+ },
+ "tnz-516648-kaikoura": {
+  "w": 1500,
+  "h": 1000,
+  "anchos": [
+   640,
+   1280,
+   1500
+  ],
+  "hash": "237aefe1d044"
+ },
+ "viaje-ciegos": {
+  "w": 1200,
+  "h": 1600,
+  "anchos": [
+   640,
+   1200
+  ],
+  "hash": "d35b37a0e185"
+ },
+ "vista-nuria": {
+  "w": 800,
+  "h": 800,
+  "anchos": [
+   640,
+   800
+  ],
+  "hash": "6219c405f81f"
+ }
+}

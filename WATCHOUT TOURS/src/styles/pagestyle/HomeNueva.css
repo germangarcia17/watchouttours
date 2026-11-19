@@ -318,7 +318,8 @@
   margin-top: 8px;
 }
 
-.hn-foto > img {
+.hn-foto > img,
+.hn-foto > picture > img {
   position: absolute;
   inset: 0;
   display: block;
@@ -613,7 +614,8 @@
   background: #15171A;
 }
 
-.hn-tiaki__foto > img {
+.hn-tiaki__foto > img,
+.hn-tiaki__foto > picture > img {
   object-fit: contain;
 }
 
@@ -928,7 +930,8 @@ body.visor-abierto {
   min-height: 820px;
 }
 
-.hn-fundadoras__foto > img {
+.hn-fundadoras__foto > img,
+.hn-fundadoras__foto > picture > img {
   object-position: center 35%;
 }
 

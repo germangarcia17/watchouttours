@@ -145,7 +145,7 @@ async function main() {
       ? { homeResenas: data.homeResenas, homeBlogPreview: data.homeBlogPreview }
       // Más allá de la vista muestra la reseña de Nuria, que se busca entre
       // todas las publicadas: ver ResenasDestacadas (prop autor).
-      : path === '/mas-alla-de-la-vista' ? { resenas: data.resenas }
+      : path === '/viajes-personas-ciegas-baja-vision' ? { resenas: data.resenas }
       : path === '/resenas' ? { resenas: data.resenas }
       : path === '/blog' ? { blogList: data.blogList }
       : {}

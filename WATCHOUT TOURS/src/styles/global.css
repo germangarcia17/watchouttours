@@ -156,3 +156,9 @@ body.menu-abierto .whatsapp-fab {
   right: 0;
   padding-inline: max(28px, calc((100% - 1080px) / 2 + 28px));
 }
+
+/* <picture> de las imágenes optimizadas (componente Imagen): no crea caja,
+   así la <img> se coloca como si fuera hija directa de su contenedor */
+picture.imagen {
+  display: contents;
+}

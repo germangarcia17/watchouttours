@@ -594,8 +594,8 @@
   }
 }
 
-/* Viajes privados: enlace destacado a las rutas de autor */
-.hn-col-rutas-enlace {
+/* Viajes privados: enlace destacado a Viajes de autor */
+.hn-col-viajes-enlace {
   margin: 96px 0 0;
   text-align: center;
 }

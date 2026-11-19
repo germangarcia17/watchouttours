@@ -22,17 +22,15 @@
     "closeMenu": "Close menu",
     "switchLang": "Ver esta página en español",
     "privados": "Private journeys",
-    "grandesViajes": "Grand Journeys 60+",
-    "masAlla": "Beyond Sight",
     "fundadoras": "Founders",
     "disena": "Design your journey",
-    "rutas": "Routes",
-    "formas": "Ways to travel",
-    "granViaje": "The Grand Journey",
-    "sesenta": "60+ Journeys"
+    "sesenta": "60+ Journeys",
+    "viajes": "Journeys",
+    "todos": "All our journeys",
+    "salidas": "Group departures",
+    "ciegos": "Journeys for blind and low-vision travellers"
   },
   "footer": {
-    "colColecciones": "Collections",
     "colMarca": "WatchOut Tours",
     "colHablemos": "Let's talk",
     "colLegal": "Legal",
@@ -50,20 +48,21 @@
     "avisoLegal": "Legal notice",
     "empresa": "WatchOut Tours Ltd. Registered company in New Zealand.",
     "creditos": "Photography and video: Tourism New Zealand (Miles Holden, Eric Hanson, Shaun Jeffers, Graeme Murray, Will Patino) and RealNZ. Tiaki: Tourism New Zealand.",
-    "idiomas": "Language"
+    "idiomas": "Language",
+    "colViajes": "Journeys"
   },
   "home": {
     "seo": {
-      "title": "WatchOut Tours · Bespoke journeys through New Zealand",
-      "description": "New Zealand specialists: signature routes and bespoke journeys for couples, families and lovers of nature, luxury and skiing. Hosted by our founders or self-drive."
+      "title": "WatchOut Tours · Bespoke travel agency in New Zealand",
+      "description": "A bespoke travel agency specialising in New Zealand. Honeymoons, family journeys, luxury, skiing, group departures and tailor-made trips, designed in every detail from New Zealand."
     },
     "heroImgAlt": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
     "hero": {
       "etiqueta": "Bespoke journeys · New Zealand, from within",
       "titulo": "Where the Earth<br/><i>is still magic.</i>",
-      "sub": "The world's most dreamed-of destination, lived the way only those who call it home can live it. Private journeys and grand small-group journeys, designed and hosted by our founders.",
-      "cta1": "Design your journey",
-      "cta2": "Discover the collections",
+      "sub": "A bespoke travel agency specialising in New Zealand. We design every journey from scratch, in every detail and to the measure of those who live it.",
+      "cta1": "Discover our journeys",
+      "cta2": "Design your journey",
       "credito": "Milford Sound, Fiordland · Video: RealNZ / Tourism New Zealand",
       "pausar": "Pause video",
       "reproducir": "Play video"
@@ -80,36 +79,8 @@
       "texto": "“New Zealand was our dream. <i>Today it is our home.</i>”",
       "firma": "Sylvie and Mónica · Founders of WatchOut Tours"
     },
-    "colecciones": {
-      "etiqueta": "Collections",
-      "titulo": "Three ways to experience <i>New Zealand.</i>",
-      "privado": {
-        "etiqueta": "Private journeys",
-        "titulo": "Your New Zealand, <i>designed for you alone.</i>",
-        "texto": "An anniversary, a family celebration, that promise you made each other years ago. We design your journey from scratch, on the dates you choose, with every route, hotel and experience hand-picked by our founders.",
-        "modo1": "Hosted",
-        "modo1Texto": "Sylvie and Mónica travel with you throughout, opening doors you won't find in any guidebook.",
-        "modo2": "Self drive",
-        "modo2Texto": "You take the wheel; we take care of every detail. We book absolutely everything and support you before, during and after your journey.",
-        "enlace": "Design your private journey"
-      },
-      "sesenta": {
-        "etiqueta": "Grand Journeys 60+",
-        "titulo": "The journey of a lifetime, <i>unhurried.</i>",
-        "texto": "A lifetime dreaming of this journey. Now it's time to live it as you deserve: grand routes from north to south in a very small group, at a gentle pace, with private experiences, 4- and 5-star hotels and two hosts looking after every detail, from the first embrace to the final toast.",
-        "enlace": "Discover the Grand Journeys 60+"
-      },
-      "ciegos": {
-        "etiqueta": "Beyond Sight",
-        "titulo": "Not all vision <i>needs eyes.</i>",
-        "texto": "Aotearoa through the senses: journeys for blind and low-vision travellers, designed to feel New Zealand with your whole body. The warmth of volcanic earth beneath your hands, the roar of a fiord, the wind of the Alps on your face.",
-        "enlace": "Discover this collection"
-      }
-    },
     "salida": {
-      "etiqueta": "Next departure",
-      "titulo": "The Grand Journey.<br/><i>27 February – 16 March 2027.</i>",
-      "texto": "Eighteen days from north to south, from the geothermal valleys of Rotorua to the fiords of Milford Sound and the waters of Kaikōura, where sperm whales surface before snow-capped peaks. A very small group, private experiences and very limited places.",
+      "etiqueta": "Upcoming group departures",
       "itinerario": "Request the itinerary",
       "hablar": "Talk to us",
       "aviso": "Would you like to travel with us in a group? Our next departure is The Grand Journey, 27 February – 16 March 2027.",
@@ -125,7 +96,7 @@
         },
         {
           "titulo": "Hosts, not guides",
-          "texto": "Sylvie and Mónica welcome you to their country the way one welcomes guests at home: with knowledge, judgement and a level of care that is never delegated."
+          "texto": "When you travel with us, Sylvie and Mónica welcome you to their country the way one welcomes guests at home: with knowledge, judgement and a level of care that is never delegated."
         },
         {
           "titulo": "Handcrafted",
@@ -223,18 +194,18 @@
       "boton": "Design your journey"
     },
     "pie": {
-      "frase": "Bespoke journeys through New Zealand, designed and hosted by our founders."
+      "frase": "Bespoke journeys through New Zealand, designed in every detail by our founders."
     },
     "faq": {
       "titulo": "Frequently asked questions",
       "items": [
         {
           "q": "Who are you?",
-          "a": "We're Sylvie and Mónica, two women from Barcelona who have lived in New Zealand for more than eight years. WatchOut Tours is our bespoke travel agency: we design every journey and host it personally."
+          "a": "We're Sylvie and Mónica, two women from Barcelona who have lived in New Zealand for more than eight years. WatchOut Tours is our bespoke travel agency: we design every journey from scratch and look after every detail before, during and after."
         },
         {
           "q": "What kinds of journeys do you offer?",
-          "a": "Private bespoke journeys, hosted by us or self-drive; The Grand Journey, our small-group departure; 60+ Journeys, in a group with every detail taken care of; and Beyond Sight, journeys for blind and low-vision travellers."
+          "a": "Bespoke tailor-made journeys (honeymoons, families, luxury, skiing, nature, Māori culture…), privately with us as your hosts or self-drive; small-group departures such as The Grand Journey; 60+ Journeys, in a group with every detail taken care of; and journeys for blind and low-vision travellers."
         },
         {
           "q": "What does The Grand Journey include?",
@@ -242,7 +213,7 @@
         },
         {
           "q": "Do I need to speak English?",
-          "a": "No. We're with you in Spanish at all times, and on guided visits in English we use simultaneous translation devices into Spanish that work with your own phone."
+          "a": "No. On group departures and on private journeys with hosts we're with you in Spanish at all times, and on guided visits in English we use simultaneous translation devices into Spanish that work with your own phone."
         },
         {
           "q": "How many people travel in the group?",
@@ -266,7 +237,7 @@
         },
         {
           "q": "What happens before, during and after the journey?",
-          "a": "We're with you at every stage: we help you prepare, we host you in New Zealand with 24-hour support, and we're still by your side when you get home."
+          "a": "We're with you at every stage: we help you prepare, we support you around the clock while you're in New Zealand, and we're still by your side when you get home."
         }
       ]
     },
@@ -278,15 +249,21 @@
       "nombre": "Name",
       "contacto": "Email or WhatsApp",
       "contactoAyuda": "Your email or mobile number, so we can send you the itinerary.",
-      "viaje": "Which journey interests you?",
+      "viaje": "What kind of journey are you interested in?",
       "viajeElige": "Choose an option",
       "opciones": {
+        "luna-de-miel": "Honeymoon or couple",
+        "familia": "Family",
+        "lujo": "Extra luxury",
+        "esqui": "Skiing",
+        "naturaleza": "Nature and adventure",
+        "cultura-maori": "Māori culture",
+        "viajes-60": "60+ Journey",
+        "personas-ciegas": "Journey for blind or low-vision travellers",
+        "amigos": "Journey with friends",
+        "privado": "Private or self-drive journey",
         "gran-viaje": "The Grand Journey · 27 February – 16 March 2027",
-        "viajes-60": "60+ Journeys",
-        "personas-ciegas": "Journeys for blind and low-vision travellers",
-        "privado": "Private journey",
-        "no-se": "Not sure yet",
-        "ruta-autor": "One of your signature routes"
+        "no-se": "I don't know yet"
       },
       "fechas": "Which dates would suit you?",
       "opcional": "(optional)",
@@ -296,7 +273,7 @@
       "exito": "Got it! We’ll send you the itinerary very soon.",
       "errNombre": "Enter your name (at least 2 letters).",
       "errContacto": "Enter a valid email or mobile number so we can send you the itinerary.",
-      "errViaje": "Choose which journey interests you.",
+      "errViaje": "Choose the kind of journey you are interested in.",
       "videollamadaLinea": "Would you rather talk to us? Book a 30-minute video call with Mónica and Sylvie, with no commitment.",
       "respuesta": "We’ll get back to you within 24 hours."
     },
@@ -304,9 +281,6 @@
       "hero-poster": "Milford Sound, Fiordland: dozens of waterfalls run down the rainforest-covered walls of the fiord, the peaks lost in mist, as a small boat sails below",
       "pais-vertical": "A small carved Māori figure among ferns and native bush, lit by sunlight filtering through the forest",
       "pais-panoramica": "Snow-capped Aoraki / Mount Cook above the turquoise waters of Lake Pukaki",
-      "panel-privado": "The lone tree of Lake Wānaka, with kayaks on the still water and mountains beyond",
-      "panel-sesenta": "Travellers stroll along a boardwalk through geothermal steam in Rotorua",
-      "panel-ciegos": "A traveller with a white cane and a companion holding a recording microphone by a wooden fence where several sheep lean over, on a farm among green hills",
       "salida-foto": "A traveller opens her arms at the bow as a sperm whale dives off the Kaikōura coast",
       "tiaki-tohu": "Tiaki, Care for New Zealand, emblem over a dolphin leaping from the sea",
       "destino-rotorua": "The Pōhutu geyser at Te Puia, Rotorua, sending a column of hot steam into a blue, cloud-streaked sky, beside a turquoise thermal pool surrounded by native bush",
@@ -364,26 +338,43 @@
       "card4Desc": "A Māori chant welcoming the kauri, New Zealand’s giant, sacred tree.",
       "card4Label": "Māori chant welcoming the kauri"
     },
-    "rutas": {
-      "etiqueta": "Signature routes",
-      "titulo": "A New Zealand<br/><i>for every traveller.</i>",
-      "texto": "From the volcanoes of the north to the fiords of the south, from a honeymoon to a ski season.",
-      "enlace": "Discover all routes"
+    "franja": {
+      "etiqueta": "Bespoke journeys",
+      "titulo": "Every journey,<br/><i>a different story.</i>",
+      "palabras": [
+        "Couples",
+        "Honeymooners",
+        "Families",
+        "Friends",
+        "Adventurers",
+        "Nature lovers",
+        "Luxury travellers",
+        "Skiers",
+        "Over 60s",
+        "Blind and low-vision travellers"
+      ],
+      "enlace": "Discover our journeys"
+    },
+    "salidas": {
+      "gran-viaje": {
+        "titulo": "The Grand Journey.<br/><i>27 February – 16 March 2027.</i>",
+        "texto": "Eighteen days from north to south, from the geothermal valleys of Rotorua to the fiords of Milford Sound and the waters of Kaikōura, where sperm whales surface before snow-capped peaks. A very small group, private experiences and very limited places."
+      }
     }
   },
   "masAlla": {
     "seo": {
-      "title": "Journeys for blind and low-vision travellers · WatchOut Tours",
-      "description": "Aotearoa through the senses: journeys through New Zealand for blind and low-vision travellers, all inclusive, with tactile models and round-the-clock hosting."
+      "title": "Travel for blind and low-vision people in New Zealand · WatchOut Tours",
+      "description": "New Zealand journeys for blind and low-vision travellers, in a group or privately: all inclusive, tactile models and round-the-clock hosting."
     },
     "huecos": {
-      "vista-portada": "",
+      "vista-portada": "A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it",
       "vista-unico": "A hand traces the relief of a carved Māori panel at Te Puia, Rotorua",
       "vista-vivir": "A traveller with a white cane and a companion holding a recording microphone beside a wooden fence where several sheep peer out, on a farm among green hills",
       "vista-nuria": "Nuria, accessibility consultant at WatchOut Tours"
     },
     "portada": {
-      "etiqueta": "Beyond Sight · Aotearoa through the senses",
+      "etiqueta": "Journeys for blind and low-vision travellers",
       "titulo": "Not all vision<br/><i>needs eyes.</i>",
       "sub": "Journeys through New Zealand for blind and low-vision travellers, designed to be felt with your whole body. Everything included, everything prepared, and us by your side around the clock.",
       "boton": "I want to discover it"
@@ -495,8 +486,8 @@
       }
     },
     "nuria": {
-      "etiqueta": "Our accessibility consultant",
-      "titulo": "Nuria,<br/><i>insight beyond sight.</i>",
+      "etiqueta": "Accessibility",
+      "titulo": "Nuria,<br/><i>our accessibility expert.</i>",
       "texto": "Nuria is a blind traveller, author of the Six Sense Travel blog, and our accessibility consultant and European representative. She took part in our pilot journey and reviews every route, every activity and every detail with us, so that what we offer truly works for those who travel without sight. No one tells better than she does how New Zealand is lived through the other senses."
     },
     "resena": {
@@ -742,7 +733,7 @@
           ]
         }
       ],
-      "rutasEnlace": "Discover our signature routes"
+      "viajesEnlace": "Discover all our journeys"
     },
     "pasos": {
       "etiqueta": "Step by step",
@@ -855,7 +846,7 @@
   "fundadoras": {
     "seo": {
       "title": "The founders · WatchOut Tours",
-      "description": "Sylvie and Mónica left Barcelona more than eight years ago and made New Zealand their home. Today they design and host bespoke journeys through the country they fell in love with."
+      "description": "Sylvie and Mónica left Barcelona more than eight years ago and made New Zealand their home. Today they design bespoke journeys through the country they fell in love with."
     },
     "huecos": {
       "fundadoras-portada": "Sylvie and Mónica, founders of WatchOut Tours, in New Zealand",
@@ -868,7 +859,7 @@
     "portada": {
       "etiqueta": "The founders",
       "titulo": "We fell in love with a country.<br/><i>And we stayed.</i>",
-      "sub": "We're Sylvie and Mónica. More than eight years ago we left Barcelona to follow a dream, and today we design and host journeys through the country that changed our lives."
+      "sub": "We're Sylvie and Mónica. More than eight years ago we left Barcelona to follow a dream, and today we design bespoke journeys through the country that changed our lives."
     },
     "historia": {
       "etiqueta": "Our story",
@@ -1034,43 +1025,109 @@
     "fecha": "Last updated:",
     "fechaValor": "16 July 2026"
   },
-  "rutas": {
+  "viajes": {
     "seo": {
-      "title": "New Zealand routes · Signature journeys · WatchOut Tours",
-      "description": "Eight signature routes through New Zealand: North Island, South Island, end to end, honeymoon, skiing, grand luxury and Middle-earth. Hosted or self-drive."
-    },
-    "seoRuta": {
-      "title": "{{nombre}} · New Zealand journey · WatchOut Tours",
-      "description": "{{frase}} Hosted or self-drive."
+      "title": "Bespoke tailor-made journeys through New Zealand · WatchOut Tours",
+      "description": "Honeymoons, family holidays, luxury, skiing, nature, Māori culture, 60+ journeys and travel for blind people. We design your New Zealand journey in every detail."
     },
     "portada": {
-      "etiqueta": "Signature routes",
-      "titulo": "A New Zealand<br/><i>for every traveller.</i>",
-      "sub": "We are New Zealand specialists. These are our signature routes: starting points we tailor to you, to travel with us as your hosts or self-drive."
+      "etiqueta": "Bespoke journeys",
+      "titulo": "Every journey,<br/><i>one of a kind.</i>",
+      "sub": "Honeymoons, family journeys, luxury escapes, ski seasons or group departures: we design every New Zealand journey from scratch, in a group, privately or self-drive. Tell us what you dream of.",
+      "boton": "Tell us about your journey"
     },
-    "filtrosLabel": "Filter routes by type of journey",
-    "filtrosResultado": "{{count}} routes",
-    "filtros": {
-      "todas": "All",
-      "primer": "First visit",
-      "parejas": "Couples",
-      "familias": "Families",
-      "naturaleza": "Nature",
-      "cultura": "Culture",
-      "aventura": "Adventure",
-      "lujo": "Luxury",
-      "invierno": "Winter"
+    "maneras": {
+      "etiqueta": "How to travel",
+      "titulo": "You choose<br/><i>how to live it.</i>",
+      "grupo": {
+        "titulo": "In a group",
+        "texto": "Dated departures we publish each season, in very small groups with everything included.",
+        "enlace": "Upcoming departures"
+      },
+      "privado": {
+        "titulo": "Privately",
+        "texto": "Just for you and yours, on your dates. If you wish, Sylvie and Mónica can host you from start to finish.",
+        "enlace": "Private journeys"
+      },
+      "selfdrive": {
+        "titulo": "Self drive",
+        "texto": "You take the wheel; we take care of every detail: we book everything and support you before, during and after.",
+        "enlace": "Private journeys"
+      }
     },
-    "tarjeta": {
-      "duracion": "Duration",
-      "epoca": "Best time",
-      "idealPara": "Ideal for",
-      "enlace": "Discover the route",
-      "modalidades": "Hosted or self-drive"
+    "especialidades": {
+      "titulo": "And our specialities"
+    },
+    "tarjetas": {
+      "etiqueta": "Inspiration",
+      "titulo": "Journeys we design<br/><i>to measure.</i>",
+      "disena": "Design this journey",
+      "descubre": "Find out more",
+      "lista": {
+        "pareja": {
+          "titulo": "Honeymoons and couples",
+          "texto": "Charming lodges, private dinners and a glacier all to yourselves. The most romantic place on earth."
+        },
+        "familia": {
+          "titulo": "Families",
+          "texto": "From the Shire to the whales of Kaikōura: a journey parents and children will always remember."
+        },
+        "lujo": {
+          "titulo": "Extra-luxury journeys",
+          "texto": "The most exclusive lodges, helicopters and experiences you can't book on your own."
+        },
+        "esqui": {
+          "titulo": "Skiing in New Zealand",
+          "texto": "Snow in the middle of the European summer: the South Island's finest ski fields, June to September."
+        },
+        "naturaleza": {
+          "titulo": "Nature and adventure",
+          "texto": "Fiords, glaciers, volcanoes and a nature unlike anywhere else."
+        },
+        "maori": {
+          "titulo": "Māori culture",
+          "texto": "Discover Aotearoa alongside its Māori hosts, with respect and from within."
+        },
+        "sesenta": {
+          "titulo": "60+ Journeys",
+          "texto": "In a group with every detail taken care of: 4- and 5-star hotels, breakfast and dinner daily and two hosts."
+        },
+        "ciegos": {
+          "titulo": "Blind and low-vision travellers",
+          "texto": "In a group or privately, all inclusive and designed to experience New Zealand with every sense."
+        },
+        "amigos": {
+          "titulo": "Friends and group travel",
+          "texto": "Our small-group departures, open to all, or your own group of friends."
+        }
+      }
+    },
+    "pasos": {
+      "etiqueta": "Step by step",
+      "titulo": "How your journey<br/><i>comes to life.</i>",
+      "items": [
+        {
+          "titulo": "A conversation",
+          "texto": "Tell us what you dream of, when you'd like to travel and how you like to do it. By video call, at your own pace."
+        },
+        {
+          "titulo": "The design",
+          "texto": "We create a proposal tailored to you, with the route, accommodation and experiences."
+        },
+        {
+          "titulo": "The fine-tuning",
+          "texto": "We refine it together until it's exactly the journey you imagined."
+        },
+        {
+          "titulo": "The journey",
+          "texto": "We book everything and look after you, in person or remotely, from start to finish."
+        }
+      ]
     },
     "ampliaciones": {
       "etiqueta": "Extensions",
       "titulo": "And then,<br/><i>a little further.</i>",
+      "texto": "And if you'd like to keep travelling, we can extend your journey to the Cook Islands or Australia.",
       "items": [
         {
           "id": "cook",
@@ -1085,269 +1142,22 @@
       ]
     },
     "cierre": {
-      "titulo": "Can't find your route?<br/><i>We'll design it with you.</i>",
-      "texto": "Every journey is unique. Tell us how you imagine it and we'll create your route from scratch.",
-      "boton1": "Design your journey",
-      "boton2": "Talk to us"
-    },
-    "pagina": {
-      "etiqueta": "Signature route",
-      "botonItinerario": "Get the full itinerary",
-      "botonHablar": "Talk to us",
-      "recorridoEtiqueta": "The route",
-      "recorridoTitulo": "Stop by stop.",
-      "mapaAria": "Map of New Zealand showing the route: {{paradas}}.",
-      "momentoEtiqueta": "The signature moment",
-      "vivirEtiqueta": "What you'll experience",
-      "vivirTitulo": "Three moments<br/><i>you won't forget.</i>",
-      "manerasEtiqueta": "Two ways to travel it",
-      "manerasTitulo": "You choose<br/><i>how to live it.</i>",
-      "otrasEtiqueta": "Other routes",
-      "otrasTitulo": "Keep dreaming.",
-      "todas": "See all routes"
-    },
-    "form": {
-      "etiqueta": "Full itinerary",
-      "titulo": "Get the full<br/><i>itinerary.</i>",
-      "texto": "Leave us your details and we'll send you this route's day-by-day itinerary, with no obligation.",
-      "nombre": "Name",
-      "email": "Email",
-      "fechas": "Approximate dates",
-      "fechasAyuda": "For example: March 2027",
-      "viajeros": "Number of travellers",
-      "modalidad": "Travel style",
-      "modalidadAnfitrionas": "Hosted",
-      "modalidadSelfdrive": "Self drive",
-      "modalidadNose": "Not sure yet",
-      "ampliacion": "Are you interested in an extension to the Cook Islands or Australia?",
-      "si": "Yes",
-      "no": "No",
-      "comentarios": "Comments",
-      "enviar": "Send me the itinerary",
-      "enviando": "Sending…",
-      "exito": "Thank you. We'll send you the full itinerary within 48 hours.",
-      "errNombre": "Please enter your name (at least 2 letters).",
-      "errEmail": "Please enter a valid email address.",
-      "formAria": "Form to get the full itinerary of the route"
+      "titulo": "Tell us about your journey.<br/><i>We'll design it with you.</i>",
+      "texto": "Every journey is unique. Write to us and we'll work through every detail of what you need and what you dream of."
     },
     "huecos": {
-      "rutas-portada": "",
+      "viajes-portada": "Snow-capped Aoraki / Mount Cook above the turquoise waters of Lake Pukaki",
+      "viajes-pareja": "The lone tree of Lake Wānaka, with kayaks on the still water and mountains beyond",
+      "viajes-familia": "A hobbit hole with a round red door, a wooden fence and a garden in bloom at Hobbiton",
+      "viajes-lujo": "A calm lake beneath snow-capped mountains in the Queenstown region",
+      "viajes-esqui": "",
+      "viajes-naturaleza": "Two people leap for joy on the shore of Lake Pukaki, before snow-capped Aoraki / Mount Cook",
+      "viajes-maori": "Māori women in traditional dress prepare food with hot water beside a carved house in Rotorua",
+      "viajes-sesenta": "Travellers stroll along a boardwalk through geothermal steam in Rotorua",
+      "viajes-ciegos": "A traveller with a white cane and a companion holding a recording microphone by a wooden fence where several sheep lean over, on a farm among green hills",
+      "viajes-amigos": "A boat weaves between icebergs on Tasman Glacier Lake, beneath snowy peaks",
       "ampliacion-cook": "",
       "ampliacion-australia": ""
-    },
-    "lista": {
-      "isla-norte": {
-        "nombre": "Te Ika-a-Māui ·<br/><i>The North Island</i>",
-        "nombrePlano": "Te Ika-a-Māui · The North Island",
-        "subtitulo": "Land of fire and Māori culture",
-        "duracion": "12 days",
-        "epoca": "Year-round",
-        "frase": "Breathing volcanoes, geysers, glowworms and the country's most vibrant Māori culture.",
-        "intro": "Here, the earth is alive. The North Island is a land of smoking volcanoes, hot springs and forests where Māori culture still beats strongly. A route to feel the heart of Aotearoa, from the subtropical beaches of the north to the capital.",
-        "momento": "A hāngi in Rotorua with a Māori family: food cooked underground on hot stones, and shared the way it's shared at home.",
-        "vivir": [
-          "The volcanoes of Tongariro, landscapes from another planet",
-          "The Waitomo caves, lit by thousands of glowworms",
-          "Waitangi, where the New Zealand nation was born"
-        ],
-        "paradas": [
-          "Auckland",
-          "Bay of Islands and Waitangi",
-          "Waitomo",
-          "Hobbiton",
-          "Rotorua",
-          "Taupō",
-          "Tongariro",
-          "Wellington"
-        ]
-      },
-      "isla-sur": {
-        "nombre": "Te Waipounamu ·<br/><i>The wild South Island</i>",
-        "nombrePlano": "Te Waipounamu · The wild South Island",
-        "subtitulo": "Fiords, glaciers and nature at its purest",
-        "duracion": "16 days",
-        "epoca": "October to April",
-        "frase": "From the penguins of Oamaru to the fiords of Milford, by way of the untamed coast of The Catlins.",
-        "intro": "The South Island is New Zealand in the wild: mountains plunging into the sea, glaciers melting into turquoise lakes and coastlines where penguins and albatrosses live free. A route for those seeking nature at its purest and corners the crowds have yet to find.",
-        "momento": "At dusk in Oamaru, waiting in silence for the little blue penguins, the smallest in the world, to come home from the sea to their nests.",
-        "vivir": [
-          "The royal albatrosses of the Otago Peninsula",
-          "The waterfalls and cliffs of The Catlins",
-          "Milford Sound, the eighth wonder of the world"
-        ],
-        "paradas": [
-          "Christchurch",
-          "Kaikōura",
-          "Tekapo",
-          "Aoraki / Mount Cook",
-          "Oamaru",
-          "Dunedin and the Otago Peninsula",
-          "The Catlins",
-          "Fiordland and Milford Sound",
-          "Queenstown",
-          "Wanaka",
-          "West Coast and glaciers",
-          "Arthur's Pass"
-        ]
-      },
-      "esencial": {
-        "nombre": "The essence of<br/><i>New Zealand</i>",
-        "nombrePlano": "The essence of New Zealand",
-        "subtitulo": "The most iconic of both islands",
-        "duracion": "18 days",
-        "epoca": "October to April",
-        "frase": "The Shire, Rotorua, Milford Sound, Aoraki and the sperm whales of Kaikōura in a single journey.",
-        "intro": "If this is your first journey to New Zealand, this is your route. It brings together the places everyone dreams of seeing, at just the right pace to truly experience them. It's the route of The Grand Journey, now also available privately and on your dates.",
-        "momento": "A campfire beneath the sky of Tekapo, one of the purest dark sky reserves in the world, toasting marshmallows as the southern stars fill the night.",
-        "vivir": [
-          "The Shire, privately",
-          "The sperm whales of Kaikōura",
-          "A flight over the glaciers of Aoraki"
-        ],
-        "paradas": [
-          "Auckland",
-          "Hobbiton",
-          "Rotorua",
-          "Queenstown",
-          "Milford Sound",
-          "Aoraki / Mount Cook",
-          "Tekapo",
-          "Kaikōura",
-          "Christchurch"
-        ]
-      },
-      "de-punta-a-punta": {
-        "nombre": "End to end ·<br/><i>The great crossing</i>",
-        "nombrePlano": "End to end · The great crossing",
-        "subtitulo": "From Cape Reinga to Stewart Island",
-        "duracion": "24 days",
-        "epoca": "November to March",
-        "frase": "The ultimate journey: the whole country, from its northern tip to its southern end, leaving nothing out.",
-        "intro": "Some journeys happen once in a lifetime. This crossing covers all of New Zealand, from the lighthouse at Cape Reinga, where in Māori tradition spirits begin their final journey, to Stewart Island, the last land before Antarctica.",
-        "momento": "Watching from Cape Reinga as the Tasman Sea and the Pacific Ocean meet, at the most sacred place in the north of the country.",
-        "vivir": [
-          "Crossing Cook Strait between the two islands",
-          "The golden beaches of Abel Tasman",
-          "The wild kiwi of Stewart Island"
-        ],
-        "paradas": [
-          "Cape Reinga",
-          "Bay of Islands",
-          "Auckland",
-          "Coromandel",
-          "Rotorua",
-          "Tongariro",
-          "Wellington",
-          "Cook Strait",
-          "Marlborough",
-          "Abel Tasman",
-          "West Coast and glaciers",
-          "Wanaka",
-          "Queenstown",
-          "Fiordland",
-          "The Catlins",
-          "Stewart Island"
-        ]
-      },
-      "luna-de-miel": {
-        "nombre": "A honeymoon<br/><i>at the end of the world</i>",
-        "nombrePlano": "A honeymoon at the end of the world",
-        "subtitulo": "To begin your life together where anything is possible",
-        "duracion": "14 days",
-        "epoca": "October to April",
-        "frase": "Charming lodges, private dinners, a glacier all to yourselves and a night on Milford Sound.",
-        "intro": "A journey to remember for a lifetime, in the most romantic place on earth. Lodges hidden among mountains and vineyards, candlelit dinners, sunrises over the fiords and the feeling that the world, at last, is yours alone.",
-        "momento": "A helicopter flight landing on a glacier, to toast with champagne in a place where there is only the two of you and the silence.",
-        "vivir": [
-          "A night on board in Milford Sound",
-          "Private tastings among the vineyards of Marlborough",
-          "Boutique lodges with breathtaking views"
-        ],
-        "paradas": [
-          "Auckland",
-          "Waiheke Island",
-          "Bay of Islands",
-          "Rotorua",
-          "Queenstown",
-          "Fiordland",
-          "Wanaka",
-          "Marlborough"
-        ]
-      },
-      "esqui": {
-        "nombre": "Southern winter ·<br/><i>Skiing in New Zealand</i>",
-        "nombrePlano": "Southern winter · Skiing in New Zealand",
-        "subtitulo": "Snow in the middle of the European summer",
-        "duracion": "12 days",
-        "epoca": "Mid-June to September",
-        "frase": "Mount Hutt, Cardrona, Treble Cone, Coronet Peak and The Remarkables, with hot pools beneath the stars.",
-        "intro": "When the heat sets in across Europe, it snows in New Zealand. This route takes in the South Island's finest ski fields, with endless mountain views, charming alpine towns and evenings in hot pools beneath one of the clearest skies on earth.",
-        "momento": "A day of heli-skiing: the helicopter drops you on untouched peaks, far from any lift, to ride snow no one else has touched. Optional for expert skiers.",
-        "vivir": [
-          "Five ski fields in a single route",
-          "Hot pools in Tekapo beneath the stars",
-          "A rest day in the snowy fiords of Milford"
-        ],
-        "paradas": [
-          "Christchurch",
-          "Mount Hutt",
-          "Tekapo",
-          "Wanaka (Cardrona and Treble Cone)",
-          "Queenstown (Coronet Peak and The Remarkables)",
-          "Milford Sound"
-        ]
-      },
-      "gran-lujo": {
-        "nombre": "New Zealand<br/><i>Grand Luxury</i>",
-        "nombrePlano": "New Zealand Grand Luxury",
-        "subtitulo": "The most exclusive lodges and experiences you can't book on your own",
-        "duracion": "16 days",
-        "epoca": "October to April",
-        "frase": "World-class lodges, helicopters, private planes and chefs at your disposal.",
-        "intro": "The world's most spectacular country, experienced without limits. Legendary lodges among cliffs, lakes and mountains, helicopter and private plane transfers, chefs cooking only for you and experiences designed exclusively. New Zealand at its most extraordinary.",
-        "momento": "A private lunch on a Southern Alps summit, reachable only by helicopter.",
-        "vivir": [
-          "The country's most exclusive lodges",
-          "Helicopter and private plane transfers",
-          "Private chefs and wineries reserved just for you"
-        ],
-        "paradas": [
-          "Northland",
-          "Bay of Islands",
-          "Taupō",
-          "Hawke's Bay",
-          "Queenstown",
-          "Fiordland",
-          "Aoraki / Mount Cook"
-        ]
-      },
-      "tierra-media": {
-        "nombre": "The Middle-earth<br/><i>route</i>",
-        "nombrePlano": "The Middle-earth route",
-        "subtitulo": "The film locations of The Lord of the Rings and The Hobbit",
-        "duracion": "15 days",
-        "epoca": "October to April",
-        "frase": "From the Shire to Mount Doom, from Edoras to Isengard: for those who dream of Middle-earth.",
-        "intro": "For those who have dreamed of Middle-earth a thousand times, this route makes it real. We travel through the landscapes where The Lord of the Rings and The Hobbit were filmed, from the green hills of the Shire to the volcanoes of Mordor and the mountains of Edoras, with filming stories at every stop.",
-        "momento": "An evening banquet at the Green Dragon Inn in Hobbiton, followed by a lantern-lit walk through the Shire as night falls.",
-        "vivir": [
-          "The Shire by night, lit by lanterns",
-          "The volcanoes of Tongariro, the films' Mordor",
-          "Glenorchy, the gateway to Isengard and Lothlórien"
-        ],
-        "paradas": [
-          "Hobbiton",
-          "Tongariro (Mount Doom)",
-          "Wellington",
-          "Nelson",
-          "Mount Sunday (Edoras)",
-          "Twizel",
-          "Queenstown and Glenorchy",
-          "Arrowtown",
-          "Fiordland"
-        ],
-        "aviso": "\"The Lord of the Rings\" and \"The Hobbit\" are trademarks of their respective owners. WatchOut Tours is not affiliated with them."
-      }
     }
   }
 }

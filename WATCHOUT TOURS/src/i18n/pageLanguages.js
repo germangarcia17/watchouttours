@@ -24,18 +24,16 @@ export const MONOLINGUAL_ROUTES = {
 
 /* Ruta base española → slug inglés (sin el prefijo /en). */
 export const LOCALIZED_SLUGS = {
-  '/mas-alla-de-la-vista': '/beyond-sight',
-  '/sin-prisa':            '/unhurried',
-  '/sobre-nosotras':       '/about-us',
-  '/productos':            '/products',
-  '/rutas':                '/routes',
+  '/viajes':                             '/journeys',
+  '/viajes-personas-ciegas-baja-vision': '/blind-low-vision-travel',
+  '/sin-prisa':                          '/unhurried',
+  '/sobre-nosotras':                     '/about-us',
+  '/productos':                          '/products',
 }
 
 /* Prefijos que cambian en inglés para todas sus subpáginas
-   (/rutas/isla-norte ↔ /en/routes/isla-norte). */
-export const LOCALIZED_PREFIXES = {
-  '/rutas/': '/routes/',
-}
+   (p. ej. { '/es/': '/en-slug/' }). Ahora no hay ninguno. */
+export const LOCALIZED_PREFIXES = {}
 
 /* Idiomas disponibles para una ruta base dada. ['es', 'en'] si no está
    listada como excepción. */

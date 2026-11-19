@@ -6,7 +6,8 @@ import { L } from '../../i18n/routing'
 import { Texto, Etiqueta, FotoHueco, FormularioItinerario, dos } from './Editorial'
 
 /* ── Bloques de las páginas de colección ─────────────────────────────────
- * Viajes +60 (/sin-prisa) y Más allá de la vista (/mas-alla-de-la-vista).
+ * Viajes de autor (/viajes), Viajes +60 (/sin-prisa) y Viajes para personas
+ * ciegas y con baja visión (/viajes-personas-ciegas-baja-vision).
  * Mismo sistema editorial que la home (HomeNueva.css) más lo propio de
  * estas páginas (Colecciones.css, prefijo .hn-col-).
  * Ninguna foto lleva nada encima (licencia de Tourism New Zealand; las

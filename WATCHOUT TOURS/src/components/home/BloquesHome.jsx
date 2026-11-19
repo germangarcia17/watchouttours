@@ -12,8 +12,8 @@ import audioBarro from '../../images/barro-burbujeante-rotorua.mp3'
 import audioKauri from '../../images/bienvenida-al-kauri.mp3'
 import '../../styles/pagestyle/Home.css'
 
-/* Bloques compartidos: reseñas (home, Más allá de la vista, Viajes
-   privados) y audios (Más allá de la vista). */
+/* Bloques compartidos: reseñas (home, la página de personas ciegas, Viajes
+   privados) y audios (la página de personas ciegas). */
 
 /* ── Reseñas destacadas ─────────────────────────────── */
 /* En el prerender llegan precargadas (homeResenas, ver
@@ -135,7 +135,7 @@ const AUDIOS = [
 ]
 
 /* `titulo`: encabezado de la sección (por defecto, home.audio.eyebrow).
-   `className`: clases de la sección (Más allá de la vista la pone en el
+   `className`: clases de la sección (la página de personas ciegas la pone en el
    sistema editorial: "hn-sec hn-audios"). */
 export function AudioClips({ id, titulo, className }) {
   const { t } = useTranslation()

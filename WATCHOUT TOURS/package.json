@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-server && node scripts/prerender.mjs && node scripts/generate-sitemap.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "imagenes": "npm --prefix scripts/imagenes install --no-audit --no-fund --silent && node scripts/imagenes/optimizar.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
