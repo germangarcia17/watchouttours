@@ -9,7 +9,6 @@ import { availableLangs } from '../../i18n/pageLanguages'
    slug inglés cuando toca (ver src/i18n/pageLanguages.js). */
 const viajes = [
   { to: '/viajes',                             key: 'todos' },
-  { to: '/productos',                          key: 'privados' },
   { to: '/sin-prisa',                          key: 'sesenta' },
   { to: '/viajes-personas-ciegas-baja-vision', key: 'ciegos' },
 ]

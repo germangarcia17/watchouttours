@@ -12,7 +12,7 @@ import { Desplegable } from '../components/Desplegable'
 import { useSiteImage } from '../lib/siteImages'
 import { L, useLang } from '../i18n/routing'
 import { SITE_URL } from '../lib/site'
-import { TresManeras, Especialidades } from '../components/viajes/ViajesUI'
+import { TresManeras } from '../components/viajes/ViajesUI'
 import { Texto, Etiqueta, FotoHueco, PedirItinerario, dos } from '../components/editorial/Editorial'
 import { CreditoFoto } from '../components/CreditoFoto'
 import { CREDITOS_HOME } from '../lib/creditos'
@@ -630,7 +630,7 @@ export default function Home() {
       <HeroIntro hayVideo={hero.hayVideo} enMarcha={hero.enMarcha} alternar={hero.alternar} />
       <Franja />
       <ElPais />
-      <TresManeras id="maneras" className="hn-blanca"><Especialidades /></TresManeras>
+      <TresManeras id="maneras" className="hn-blanca" />
       <Cita />
       <ProximasSalidas setViaje={setViaje} />
       <Pilares />
