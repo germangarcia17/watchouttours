@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
-import { Texto, Etiqueta, FotoHueco, useImagenSocial } from '../components/editorial/Editorial'
+import { Texto, Etiqueta, FotoHueco } from '../components/editorial/Editorial'
 import { Portada, Columnas, CierreFormulario } from '../components/editorial/Colecciones'
 import { TresManeras, Ampliaciones, useFotoViajes } from '../components/viajes/ViajesUI'
 
@@ -61,7 +61,6 @@ export default function Viajes() {
   const { t } = useTranslation()
   const [viaje, setViaje] = useState('')
   const portada = useFotoViajes('viajes-portada')
-  const social = useImagenSocial(portada)
 
   // Si se llega con un ancla (/viajes#viaje-familia desde la home), la
   // sección aún no existía cuando el enrutador intentó ir a ella.
@@ -74,7 +73,7 @@ export default function Viajes() {
     <div className="hn hn-col">
       {/* pageType editable desde /admin/seo (fila 'viajes'); estos son los
           valores de respaldo mientras no haya fila guardada. */}
-      <Seo pageType="viajes" title={t('viajes.seo.title')} description={t('viajes.seo.description')} image={social.src} imageAlt={social.alt} />
+      <Seo pageType="viajes" title={t('viajes.seo.title')} description={t('viajes.seo.description')} />
       <Portada ns="viajes" foto={portada} ancla="diseña" />
       <TresManeras />
       <Tarjetas setViaje={setViaje} />

@@ -5,7 +5,7 @@ import { urlImagen } from '../components/Imagen'
 import { L } from '../i18n/routing'
 import { CREDITOS_VISTA } from '../lib/creditos'
 import { ResenasDestacadas, AudioClips } from '../components/home/BloquesHome'
-import { Texto, Etiqueta, FotoHueco, dos, useImagenSocial } from '../components/editorial/Editorial'
+import { Texto, Etiqueta, FotoHueco, dos } from '../components/editorial/Editorial'
 import { Portada, Columnas, ProximaSalidaGrupo, CierreFormulario } from '../components/editorial/Colecciones'
 import videoParapente from '../images/parapente-teaser.mp4'
 
@@ -170,14 +170,13 @@ export default function MasAllaDeLaVista() {
   const { t } = useTranslation()
   const [viaje, setViaje] = useState('personas-ciegas')
   const portada = useFoto('vista-portada')
-  const social = useImagenSocial(portada)
   const unico = useFoto('vista-unico')
 
   return (
     <div className="hn hn-col">
       {/* pageType editable desde /admin/seo (fila 'mas-alla-de-la-vista');
           estos son los valores de respaldo mientras no haya fila guardada. */}
-      <Seo pageType="mas-alla-de-la-vista" title={t('masAlla.seo.title')} description={t('masAlla.seo.description')} image={social.src} imageAlt={social.alt} />
+      <Seo pageType="mas-alla-de-la-vista" title={t('masAlla.seo.title')} description={t('masAlla.seo.description')} />
       <Portada ns="masAlla" foto={portada} />
       <Manifiesto />
       <Columnas id="descubre" ns="masAlla.unico" foto={unico} className="hn-blanca" />

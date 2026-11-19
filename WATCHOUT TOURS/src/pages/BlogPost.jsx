@@ -80,7 +80,7 @@ export default function BlogPost() {
   const portada    = urlImagen(post.og_image_url ?? post.cover_image_url, 1280)
   const coverImage = portada
     ? (portada.startsWith('/') ? `${SITE_URL}${portada}` : portada)
-    : `${SITE_URL}/og-image.jpg`
+    : `${SITE_URL}/og-logo.jpg`
 
   const articleJsonLd = {
     '@context': 'https://schema.org',

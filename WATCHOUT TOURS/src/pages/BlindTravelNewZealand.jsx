@@ -85,7 +85,6 @@ export default function BlindTravelNewZealand() {
         description="A practical guide to blind travel in New Zealand, based on 23 days travelling with blind travellers. Accessibility, independence and sensory travel."
         ogTitle="Blind Travel in New Zealand: A Practical Guide"
         ogDescription="What 23 days on the road with blind travellers taught us about accessibility, independence and experiencing New Zealand beyond sight."
-        image={HERO_OG_URL}
         robots="index, follow"
       />
 

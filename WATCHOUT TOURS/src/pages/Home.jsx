@@ -619,12 +619,10 @@ export default function Home() {
   }, [])
 
   const hero = useVideoHero()
-  // og:image: el póster del vídeo de la hero (hueco hero-poster)
-  const poster = useSiteImage('home', 'hero-poster', POSTER_DEFECTO, t('home.huecos.hero-poster'))
 
   return (
     <div className="hn">
-      <Seo pageType="home" title={t('home.seo.title')} description={t('home.seo.description')} image={poster.src} imageAlt={poster.alt} />
+      <Seo pageType="home" title={t('home.seo.title')} description={t('home.seo.description')} />
       <GranViajeJsonLd />
       <Hero area={hero.area} />
       <HeroIntro hayVideo={hero.hayVideo} enMarcha={hero.enMarcha} alternar={hero.alternar} />

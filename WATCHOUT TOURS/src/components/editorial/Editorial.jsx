@@ -7,7 +7,6 @@ import { ImagenHueco, defectoHueco } from '../ImagenHueco'
 import { CreditoFoto } from '../CreditoFoto'
 import { BotonVideollamada } from '../Videollamada'
 import { useSiteImage } from '../../lib/siteImages'
-import { urlImagen } from '../Imagen'
 import { L, useLang } from '../../i18n/routing'
 
 /* ── Piezas del sistema editorial ────────────────────────────────────────
@@ -74,13 +73,6 @@ export function FotoHueco({
       )}
     </div>
   )
-}
-
-/* Foto de un hueco (props de FotoHueco) para usarla como og:image de la
-   página: { src, alt } o src null si el hueco aún no tiene foto. */
-export function useImagenSocial({ seccion, clave, defecto, alt }) {
-  const img = useSiteImage(seccion, clave, defectoHueco(seccion, clave, defecto), alt ?? '')
-  return { src: img.src ? urlImagen(img.src, 1280) : null, alt: img.alt }
 }
 
 /* ── Formulario para pedir el itinerario (Formspree) ──────────────────── */

@@ -5,7 +5,6 @@ import { useSeo } from '../lib/useSeo'
 import { useLang, stripLang, localizePath } from '../i18n/routing'
 import { pickLocalized } from '../i18n/content'
 import { SITE_URL } from '../lib/site'
-import { urlImagen } from './Imagen'
 
 /* Las etiquetas hreflang y el lang del <html> se gestionan globalmente en el
    Layout; aquí solo emitimos título, descripción, canónica y metadatos
@@ -16,9 +15,7 @@ import { urlImagen } from './Imagen'
    procede y, si algún campo está vacío, cae a los valores por defecto que le
    pasa la página. Añade también las etiquetas hreflang para las dos versiones
    de idioma (fase 4). */
-/* `image`: foto de la portada de la página (URL absoluta o ruta del sitio)
-   y `imageAlt`, su texto alternativo. */
-export function Seo({ pageType, title, description, keywords, ogTitle, ogDescription, image, imageAlt, robots }) {
+export function Seo({ pageType, title, description, keywords, ogTitle, ogDescription, robots }) {
   const row = useSeo(pageType)
   const lang = useLang()
   const { pathname } = useLocation()
@@ -31,16 +28,13 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
   // siempre tiene prioridad sobre ambos.
   const resolvedOgTitle = pickLocalized(row, 'og_title', lang) || ogTitle || metaTitle
   const resolvedOgDesc  = pickLocalized(row, 'og_description', lang) || ogDescription || metaDesc
-  // Imagen social: fila de /admin/seo > imagen propia de la página (prop) >
-  // imagen por defecto (public/og-image.jpg, 1200 × 630: foto propia del
-  // géiser Pōhutu, sin logo ni texto), para que ninguna página se comparta
-  // nunca sin imagen.
+  // Imagen social: la del logo (public/og-logo.jpg, 1200 × 630, logo blanco
+  // sobre #15171A, centrado para que quepa también en el recorte cuadrado de
+  // WhatsApp) en todas las páginas, salvo que /admin/seo indique otra. Los
+  // artículos del diario usan su portada (BlogPost.jsx).
   const { t } = useTranslation()
-  const defaultImage = `${SITE_URL}/og-image.jpg`
-  // Imagen del repositorio (nombre o ruta antigua) → su versión WebP de 1280 px
-  const rutaImagen = urlImagen(image, 1280)
-  const imagenPagina = rutaImagen && rutaImagen.startsWith('/') ? `${SITE_URL}${rutaImagen}` : rutaImagen
-  const ogImage     = row?.og_image_url || imagenPagina || defaultImage
+  const defaultImage = `${SITE_URL}/og-logo.jpg`
+  const ogImage     = row?.og_image_url || defaultImage
   const esDefecto   = ogImage === defaultImage
   const twTitle     = pickLocalized(row, 'twitter_title', lang) || resolvedOgTitle
   const twDesc      = pickLocalized(row, 'twitter_description', lang) || resolvedOgDesc
@@ -70,14 +64,13 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
       <meta property="og:image" content={ogImage} />
       {esDefecto && <meta property="og:image:width" content="1200" />}
       {esDefecto && <meta property="og:image:height" content="630" />}
-      {esDefecto && <meta property="og:image:alt" content={t('home.heroImgAlt')} />}
-      {!esDefecto && !row?.og_image_url && imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+      {esDefecto && <meta property="og:image:alt" content={t('common.logoAlt')} />}
 
       <meta name="twitter:card" content={twImage ? 'summary_large_image' : 'summary'} />
       <meta name="twitter:title" content={twTitle} />
       {twDesc && <meta name="twitter:description" content={twDesc} />}
       {twImage && <meta name="twitter:image" content={twImage} />}
-      {twImage === defaultImage && <meta name="twitter:image:alt" content={t('home.heroImgAlt')} />}
+      {twImage === defaultImage && <meta name="twitter:image:alt" content={t('common.logoAlt')} />}
     </Helmet>
   )
 }
