@@ -54,57 +54,6 @@
   color: var(--hn-lectura);
 }
 
-/* ── Especialidades (home): dos tarjetas compactas bajo las tres maneras ── */
-.vj-especialidades {
-  margin-top: 96px;
-  padding-top: 56px;
-  border-top: 1px solid var(--line);
-}
-
-.vj-especialidades__titulo {
-  margin: 0;
-  font-family: var(--hn-serif);
-  font-variation-settings: "opsz" 144;
-  font-size: clamp(26px, 2.4vw, 34px);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.25;
-  letter-spacing: 0;
-  color: inherit;
-}
-
-.vj-especialidades__lista {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 48px;
-  margin: 40px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.vj-especialidad {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-  gap: 28px;
-  align-items: start;
-}
-
-.vj-especialidad__foto {
-  aspect-ratio: 4 / 5;
-}
-
-.vj-especialidad__nombre {
-  margin: 0;
-  font-size: clamp(22px, 1.8vw, 26px);
-}
-
-.vj-especialidad__texto p {
-  margin: 12px 0 0;
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--hn-lectura);
-}
-
 /* ── Ampliaciones ── */
 .vj-ampliaciones__intro {
   max-width: 720px;
@@ -184,14 +133,9 @@
 
 @media (max-width: 900px) {
   .vj-rejilla,
-  .vj-ampliaciones,
-  .vj-especialidades__lista {
+  .vj-ampliaciones {
     grid-template-columns: minmax(0, 1fr);
     gap: 64px;
-  }
-
-  .vj-especialidades {
-    margin-top: 72px;
   }
 
   .vj-franja__lista {
@@ -199,13 +143,3 @@
   }
 }
 
-@media (max-width: 520px) {
-  .vj-especialidad {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
-
-  .vj-especialidad__foto {
-    aspect-ratio: 4 / 3;
-  }
-}

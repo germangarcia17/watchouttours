@@ -71,41 +71,6 @@ export function TresManeras({ id = 'maneras', className = '', children }) {
   )
 }
 
-/* ── Nuestras especialidades: dos tarjetas compactas (home) ──────────── */
-const ESPECIALIDADES = [
-  { id: 'sesenta', clave: 'viajes-sesenta', to: '/sin-prisa' },
-  { id: 'ciegos', clave: 'viajes-ciegos', to: '/viajes-personas-ciegas-baja-vision' },
-]
-
-export function Especialidades() {
-  const { t } = useTranslation()
-  return (
-    <div className="vj-especialidades">
-      <h3 className="vj-especialidades__titulo">{t('viajes.especialidades.titulo')}</h3>
-      <ul className="vj-especialidades__lista" role="list">
-        {ESPECIALIDADES.map(e => <Especialidad key={e.id} {...e} />)}
-      </ul>
-    </div>
-  )
-}
-
-function Especialidad({ id, clave, to }) {
-  const { t } = useTranslation()
-  const foto = useFotoViajes(clave)
-  return (
-    <li className="vj-especialidad">
-      <FotoHueco {...foto} sizes="(min-width: 901px) 20vw, 100vw" className="vj-especialidad__foto" />
-      <div className="vj-especialidad__texto">
-        <h4 className="hn-h3 vj-especialidad__nombre">{t(`viajes.tarjetas.lista.${id}.titulo`)}</h4>
-        <p>{t(`viajes.tarjetas.lista.${id}.texto`)}</p>
-        <L to={to} className="hn-lnk hn-lnk--verde">
-          {t('viajes.tarjetas.descubre')}<span className="sr-only">{`: ${t(`viajes.tarjetas.lista.${id}.titulo`)}`}</span>
-        </L>
-      </div>
-    </li>
-  )
-}
-
 /* ── Ampliaciones: Islas Cook y Australia ────────────────────────────
    Tarjetas sin foto hasta que se añada una al hueco (sin bloque gris). */
 export function Ampliaciones({ className = '' }) {

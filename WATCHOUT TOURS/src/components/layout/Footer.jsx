@@ -53,7 +53,6 @@ export function Footer() {
           <h2 className="footer-col__heading">{t('footer.colViajes')}</h2>
           <ul role="list" className="footer-col__list">
             <li><L to="/viajes">{t('nav.todos')}</L></li>
-            <li><L to="/productos">{t('nav.privados')}</L></li>
             <li><L to="/#proxima-salida">{t('nav.salidas')}</L></li>
             <li><L to="/sin-prisa">{t('nav.sesenta')}</L></li>
             <li><L to="/viajes-personas-ciegas-baja-vision">{t('nav.ciegos')}</L></li>
