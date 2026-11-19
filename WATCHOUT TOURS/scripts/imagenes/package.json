@@ -1,0 +1,9 @@
+{
+  "name": "watchout-optimizar-imagenes",
+  "private": true,
+  "type": "module",
+  "description": "Herramienta local para generar las imágenes optimizadas (no forma parte de la web ni del build de Netlify).",
+  "dependencies": {
+    "sharp": "0.33.5"
+  }
+}

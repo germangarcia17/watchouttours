@@ -5,6 +5,7 @@ import { useSeo } from '../lib/useSeo'
 import { useLang, stripLang, localizePath } from '../i18n/routing'
 import { pickLocalized } from '../i18n/content'
 import { SITE_URL } from '../lib/site'
+import { urlImagen } from './Imagen'
 
 /* Las etiquetas hreflang y el lang del <html> se gestionan globalmente en el
    Layout; aquí solo emitimos título, descripción, canónica y metadatos
@@ -36,7 +37,9 @@ export function Seo({ pageType, title, description, keywords, ogTitle, ogDescrip
   // nunca sin imagen.
   const { t } = useTranslation()
   const defaultImage = `${SITE_URL}/og-image.jpg`
-  const imagenPagina = image && image.startsWith('/') ? `${SITE_URL}${image}` : image
+  // Imagen del repositorio (nombre o ruta antigua) → su versión WebP de 1280 px
+  const rutaImagen = urlImagen(image, 1280)
+  const imagenPagina = rutaImagen && rutaImagen.startsWith('/') ? `${SITE_URL}${rutaImagen}` : rutaImagen
   const ogImage     = row?.og_image_url || imagenPagina || defaultImage
   const esDefecto   = ogImage === defaultImage
   const twTitle     = pickLocalized(row, 'twitter_title', lang) || resolvedOgTitle

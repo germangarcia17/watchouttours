@@ -22,13 +22,15 @@
     "closeMenu": "Cerrar menú",
     "switchLang": "View this page in English",
     "privados": "Viajes privados",
-    "grandesViajes": "Grandes Viajes +60",
-    "masAlla": "Más allá de la vista",
     "fundadoras": "Fundadoras",
-    "disena": "Diseña tu viaje"
+    "disena": "Diseña tu viaje",
+    "sesenta": "Viajes +60",
+    "viajes": "Viajes",
+    "todos": "Todos nuestros viajes",
+    "salidas": "Salidas en grupo",
+    "ciegos": "Viajes para personas ciegas y con baja visión"
   },
   "footer": {
-    "colColecciones": "Colecciones",
     "colMarca": "WatchOut Tours",
     "colHablemos": "Hablemos",
     "colLegal": "Legal",
@@ -46,20 +48,21 @@
     "avisoLegal": "Aviso legal",
     "empresa": "WatchOut Tours Ltd. Empresa registrada en Nueva Zelanda.",
     "creditos": "Fotografías y vídeo: Tourism New Zealand (Miles Holden, Eric Hanson, Shaun Jeffers, Graeme Murray, Will Patino) y RealNZ. Tiaki: Tourism New Zealand.",
-    "idiomas": "Idioma"
+    "idiomas": "Idioma",
+    "colViajes": "Viajes"
   },
   "home": {
     "seo": {
-      "title": "WatchOut Tours · Viajes de autor por Nueva Zelanda",
-      "description": "Viajes privados y salidas en grupo reducido por Nueva Zelanda, diseñados y acompañados por sus fundadoras, dos barcelonesas que viven en el país. Hoteles de 4 y 5 estrellas y experiencias privadas."
+      "title": "WatchOut Tours · Agencia de viajes de autor en Nueva Zelanda",
+      "description": "Agencia de viajes de autor especializada en Nueva Zelanda. Lunas de miel, viajes en familia, lujo, esquí, salidas en grupo y viajes a medida, diseñados al detalle desde Nueva Zelanda."
     },
     "heroImgAlt": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
     "hero": {
       "etiqueta": "Viajes de autor · Nueva Zelanda, desde dentro",
       "titulo": "Donde la Tierra<br/><i>aún es mágica.</i>",
-      "sub": "El destino más soñado del mundo, vivido como solo puede vivirlo quien lo llama hogar. Viajes privados y grandes viajes en grupo reducido, diseñados y acompañados por sus fundadoras.",
-      "cta1": "Diseña tu viaje",
-      "cta2": "Descubre las colecciones",
+      "sub": "Agencia de viajes de autor especializada en Nueva Zelanda. Diseñamos cada viaje desde cero, al detalle y a la medida de quien lo vive.",
+      "cta1": "Descubre nuestros viajes",
+      "cta2": "Diseña tu viaje",
       "credito": "Milford Sound, Fiordland · Vídeo: RealNZ / Tourism New Zealand",
       "pausar": "Pausar vídeo",
       "reproducir": "Reproducir vídeo"
@@ -76,36 +79,8 @@
       "texto": "«Nueva Zelanda fue nuestro sueño. <i>Hoy es nuestro hogar.</i>»",
       "firma": "Sylvie y Mónica · Fundadoras de WatchOut Tours"
     },
-    "colecciones": {
-      "etiqueta": "Colecciones",
-      "titulo": "Tres maneras de vivir <i>Nueva Zelanda.</i>",
-      "privado": {
-        "etiqueta": "Viajes privados",
-        "titulo": "Tu Nueva Zelanda, <i>diseñada solo para ti.</i>",
-        "texto": "Un aniversario, una celebración en familia, esa promesa que os hicisteis hace años. Diseñamos tu viaje desde cero, en las fechas que elijas, con la ruta, los hoteles y las experiencias seleccionados personalmente por nuestras fundadoras.",
-        "modo1": "Con anfitrionas",
-        "modo1Texto": "Sylvie y Mónica os acompañan durante todo el viaje, abriendo puertas que no aparecen en ninguna guía.",
-        "modo2": "Self drive",
-        "modo2Texto": "Vosotros al volante y nosotras detrás de cada detalle: lo reservamos absolutamente todo y os asistimos antes, durante y después del viaje.",
-        "enlace": "Diseña tu viaje privado"
-      },
-      "sesenta": {
-        "etiqueta": "Grandes Viajes +60",
-        "titulo": "El viaje de tu vida, <i>sin prisa.</i>",
-        "texto": "Toda una vida soñando con este viaje. Ahora toca vivirlo como mereces: grandes rutas de norte a sur en grupo muy reducido, a ritmo pausado, con experiencias privadas, hoteles de 4 y 5 estrellas y dos anfitrionas cuidando de cada detalle, del primer abrazo al último brindis.",
-        "enlace": "Descubre los Grandes Viajes +60"
-      },
-      "ciegos": {
-        "etiqueta": "Más allá de la vista",
-        "titulo": "No toda visión <i>necesita ojos.</i>",
-        "texto": "Aotearoa a través de los sentidos: viajes para personas ciegas y con baja visión, pensados para sentir Nueva Zelanda con todo el cuerpo. El calor de la tierra volcánica bajo las manos, el rugido de un fiordo, el viento de los Alpes en la cara.",
-        "enlace": "Descubre esta colección"
-      }
-    },
     "salida": {
-      "etiqueta": "Próxima salida",
-      "titulo": "El Gran Viaje.<br/><i>Del 27 de febrero al 16 de marzo de 2027.</i>",
-      "texto": "Dieciocho días de norte a sur, de los valles geotérmicos de Rotorua a los fiordos de Milford Sound y las aguas de Kaikōura, donde los cachalotes emergen frente a montañas nevadas. Un grupo muy reducido, experiencias privadas y plazas muy limitadas.",
+      "etiqueta": "Próximas salidas en grupo",
       "itinerario": "Solicita el itinerario",
       "hablar": "Habla con nosotras",
       "aviso": "¿Quieres viajar con nosotras en grupo? Nuestra próxima salida es El Gran Viaje, del 27 de febrero al 16 de marzo de 2027.",
@@ -121,7 +96,7 @@
         },
         {
           "titulo": "Anfitrionas, no guías",
-          "texto": "Sylvie y Mónica os reciben en su país como se recibe en casa: con conocimiento, criterio y una atención que nunca se delega."
+          "texto": "Cuando viajáis con nosotras, Sylvie y Mónica os reciben en su país como se recibe en casa: con conocimiento, criterio y una atención que nunca se delega."
         },
         {
           "titulo": "Hecho a mano",
@@ -219,18 +194,18 @@
       "boton": "Diseña tu viaje"
     },
     "pie": {
-      "frase": "Viajes de autor por Nueva Zelanda, diseñados y acompañados por sus fundadoras."
+      "frase": "Viajes de autor por Nueva Zelanda, diseñados al detalle por sus fundadoras."
     },
     "faq": {
       "titulo": "Preguntas frecuentes",
       "items": [
         {
           "q": "¿Quiénes sois?",
-          "a": "Somos Sylvie y Mónica, dos barcelonesas que viven en Nueva Zelanda desde hace más de ocho años. WatchOut Tours es nuestra agencia de viajes de autor: diseñamos cada viaje y lo acompañamos personalmente."
+          "a": "Somos Sylvie y Mónica, dos barcelonesas que viven en Nueva Zelanda desde hace más de ocho años. WatchOut Tours es nuestra agencia de viajes de autor: diseñamos cada viaje desde cero y cuidamos de cada detalle antes, durante y después."
         },
         {
           "q": "¿Qué tipos de viaje ofrecéis?",
-          "a": "Viajes privados a medida, con nosotras como anfitrionas o en self drive; El Gran Viaje, nuestra salida en grupo reducido; Viajes +60, en grupo y con todo resuelto; y Más allá de la vista, viajes para personas ciegas y con baja visión."
+          "a": "Viajes de autor a medida (lunas de miel, familias, lujo, esquí, naturaleza, cultura maorí…), en privado con nosotras como anfitrionas o en self drive; salidas en grupo reducido como El Gran Viaje; Viajes +60, en grupo y con todo resuelto; y viajes para personas ciegas y con baja visión."
         },
         {
           "q": "¿Qué incluye El Gran Viaje?",
@@ -238,7 +213,7 @@
         },
         {
           "q": "¿Necesito hablar inglés?",
-          "a": "No. Nosotras os acompañamos en español en todo momento, y en las visitas guiadas en inglés usamos dispositivos de traducción simultánea al español que funcionan con vuestro propio móvil."
+          "a": "No. En las salidas en grupo y en los viajes privados con anfitrionas os acompañamos en español en todo momento, y en las visitas guiadas en inglés usamos dispositivos de traducción simultánea al español que funcionan con vuestro propio móvil."
         },
         {
           "q": "¿Cuántas personas viajan en el grupo?",
@@ -262,7 +237,7 @@
         },
         {
           "q": "¿Qué pasa antes, durante y después del viaje?",
-          "a": "Estamos con vosotros en cada etapa: os ayudamos a preparar el viaje, os acompañamos en Nueva Zelanda con asistencia las 24 horas y seguimos a vuestro lado cuando volvéis a casa."
+          "a": "Estamos con vosotros en cada etapa: os ayudamos a preparar el viaje, os asistimos las 24 horas mientras estáis en Nueva Zelanda y seguimos a vuestro lado cuando volvéis a casa."
         }
       ]
     },
@@ -274,13 +249,20 @@
       "nombre": "Nombre",
       "contacto": "Email o WhatsApp",
       "contactoAyuda": "Tu correo o tu número de móvil, para enviarte el itinerario.",
-      "viaje": "¿Qué viaje te interesa?",
+      "viaje": "¿Qué tipo de viaje te interesa?",
       "viajeElige": "Elige una opción",
       "opciones": {
+        "luna-de-miel": "Luna de miel o pareja",
+        "familia": "Familia",
+        "lujo": "Extra lujo",
+        "esqui": "Esquí",
+        "naturaleza": "Naturaleza y aventura",
+        "cultura-maori": "Cultura maorí",
+        "viajes-60": "Viaje +60",
+        "personas-ciegas": "Viaje para personas ciegas o con baja visión",
+        "amigos": "Viaje con amigos",
+        "privado": "Viaje en privado o self drive",
         "gran-viaje": "El Gran Viaje · 27 de febrero – 16 de marzo de 2027",
-        "viajes-60": "Viajes +60",
-        "personas-ciegas": "Viajes para personas ciegas y con baja visión",
-        "privado": "Viaje en privado",
         "no-se": "Aún no lo sé"
       },
       "fechas": "¿Qué fechas te vendrían bien?",
@@ -291,7 +273,7 @@
       "exito": "¡Recibido! Te enviaremos el itinerario muy pronto.",
       "errNombre": "Escribe tu nombre (al menos 2 letras).",
       "errContacto": "Escribe un correo o un número de móvil válido para poder enviarte el itinerario.",
-      "errViaje": "Elige qué viaje te interesa.",
+      "errViaje": "Elige qué tipo de viaje te interesa.",
       "videollamadaLinea": "¿Prefieres hablar con nosotras? Reserva una videollamada de 30 minutos con Mónica y Sylvie, sin compromiso.",
       "respuesta": "Te respondemos en menos de 24 horas."
     },
@@ -299,9 +281,6 @@
       "hero-poster": "Milford Sound, en Fiordland: decenas de cascadas bajan por las paredes del fiordo, cubiertas de selva y con las cumbres entre la niebla, y un pequeño barco navega a sus pies",
       "pais-vertical": "Una pequeña talla maorí entre helechos y vegetación nativa, iluminada por la luz que se filtra en el bosque",
       "pais-panoramica": "Aoraki / Mount Cook, nevado, sobre el agua turquesa del lago Pukaki",
-      "panel-privado": "El árbol solitario del lago Wanaka, con kayaks en el agua en calma y montañas al fondo",
-      "panel-sesenta": "Viajeros pasean por una pasarela de madera entre fumarolas y vapor geotérmico en Rotorua",
-      "panel-ciegos": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes",
       "salida-foto": "Una viajera abre los brazos en la proa de un barco mientras un cachalote sumerge la cola frente a la costa de Kaikōura",
       "tiaki-tohu": "Tohu de Tiaki, Care for New Zealand, sobre un delfín saltando en el mar",
       "destino-rotorua": "El géiser Pōhutu de Te Puia, en Rotorua, lanzando una columna de vapor caliente hacia un cielo azul con nubes, junto a una piscina termal turquesa entre vegetación nativa",
@@ -358,21 +337,44 @@
       "card4Tag": "Canto maorí al árbol más famoso",
       "card4Desc": "Un canto maorí de bienvenida al kauri, el árbol gigante y sagrado de Nueva Zelanda.",
       "card4Label": "Canto maorí de bienvenida al kauri"
+    },
+    "franja": {
+      "etiqueta": "Viajes de autor",
+      "titulo": "Cada viaje,<br/><i>una historia distinta.</i>",
+      "palabras": [
+        "Parejas",
+        "Lunas de miel",
+        "Familias",
+        "Amigos",
+        "Aventureros",
+        "Amantes de la naturaleza",
+        "Viajeros de lujo",
+        "Esquiadores",
+        "Mayores de 60",
+        "Personas ciegas y con baja visión"
+      ],
+      "enlace": "Descubre nuestros viajes"
+    },
+    "salidas": {
+      "gran-viaje": {
+        "titulo": "El Gran Viaje.<br/><i>Del 27 de febrero al 16 de marzo de 2027.</i>",
+        "texto": "Dieciocho días de norte a sur, de los valles geotérmicos de Rotorua a los fiordos de Milford Sound y las aguas de Kaikōura, donde los cachalotes emergen frente a montañas nevadas. Un grupo muy reducido, experiencias privadas y plazas muy limitadas."
+      }
     }
   },
   "masAlla": {
     "seo": {
-      "title": "Viajes para personas ciegas y con baja visión · WatchOut Tours",
-      "description": "Aotearoa a través de los sentidos: viajes por Nueva Zelanda para personas ciegas y con baja visión, con todo incluido, maquetas táctiles y acompañamiento las 24 horas."
+      "title": "Viajes para personas ciegas y con baja visión en Nueva Zelanda · WatchOut Tours",
+      "description": "Viajes a Nueva Zelanda para personas ciegas y con baja visión, en grupo o en privado: todo incluido, maquetas táctiles y acompañamiento las 24 horas."
     },
     "huecos": {
-      "vista-portada": "",
+      "vista-portada": "Una mujer apoya la mano sobre una figura maorí tallada mientras su acompañante, a su lado, se la describe con gestos",
       "vista-unico": "Una mano recorre los relieves de una talla maorí de madera en Te Puia, Rotorua",
       "vista-vivir": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes",
       "vista-nuria": "Nuria, consultora de accesibilidad de WatchOut Tours"
     },
     "portada": {
-      "etiqueta": "Más allá de la vista · Aotearoa a través de los sentidos",
+      "etiqueta": "Viajes para personas ciegas y con baja visión",
       "titulo": "No toda visión<br/><i>necesita ojos.</i>",
       "sub": "Viajes por Nueva Zelanda para personas ciegas y con baja visión, diseñados para sentirla con todo el cuerpo. Todo incluido, todo preparado y con nosotras a tu lado las 24 horas.",
       "boton": "Quiero descubrirlo"
@@ -484,8 +486,8 @@
       }
     },
     "nuria": {
-      "etiqueta": "Nuestra consultora de accesibilidad",
-      "titulo": "Nuria,<br/><i>la mirada que no necesita ojos.</i>",
+      "etiqueta": "Accesibilidad",
+      "titulo": "Nuria,<br/><i>nuestra experta en accesibilidad.</i>",
       "texto": "Nuria es viajera ciega, autora del blog Six Sense Travel y nuestra consultora de accesibilidad y representante en Europa. Participó en nuestro viaje piloto y revisa con nosotras cada ruta, cada actividad y cada detalle, para que lo que proponemos funcione de verdad para quien viaja sin ver. Nadie mejor que ella para contar cómo se vive Nueva Zelanda con los demás sentidos."
     },
     "resena": {
@@ -730,7 +732,8 @@
             "Asistencia antes, durante y después del viaje"
           ]
         }
-      ]
+      ],
+      "viajesEnlace": "Descubre todos nuestros viajes"
     },
     "pasos": {
       "etiqueta": "Paso a paso",
@@ -843,7 +846,7 @@
   "fundadoras": {
     "seo": {
       "title": "Las fundadoras · WatchOut Tours",
-      "description": "Sylvie y Mónica dejaron Barcelona hace más de ocho años y hicieron de Nueva Zelanda su hogar. Hoy diseñan y acompañan viajes de autor por el país que las enamoró."
+      "description": "Sylvie y Mónica dejaron Barcelona hace más de ocho años y hicieron de Nueva Zelanda su hogar. Hoy diseñan viajes de autor por el país que las enamoró."
     },
     "huecos": {
       "fundadoras-portada": "Sylvie y Mónica, fundadoras de WatchOut Tours, en Nueva Zelanda",
@@ -856,7 +859,7 @@
     "portada": {
       "etiqueta": "Las fundadoras",
       "titulo": "Nos enamoramos de un país.<br/><i>Y nos quedamos.</i>",
-      "sub": "Somos Sylvie y Mónica. Hace más de ocho años dejamos Barcelona detrás de un sueño, y hoy diseñamos y acompañamos viajes por el país que nos cambió la vida."
+      "sub": "Somos Sylvie y Mónica. Hace más de ocho años dejamos Barcelona detrás de un sueño, y hoy diseñamos viajes de autor por el país que nos cambió la vida."
     },
     "historia": {
       "etiqueta": "Nuestra historia",
@@ -1021,5 +1024,140 @@
     "leyPb": ") y de protección de las personas consumidoras.",
     "fecha": "Última actualización:",
     "fechaValor": "16 de julio de 2026"
+  },
+  "viajes": {
+    "seo": {
+      "title": "Viajes de autor a medida por Nueva Zelanda · WatchOut Tours",
+      "description": "Lunas de miel, viajes en familia, extra lujo, esquí, naturaleza, cultura maorí, viajes +60 y para personas ciegas. Diseñamos tu viaje a Nueva Zelanda al detalle."
+    },
+    "portada": {
+      "etiqueta": "Viajes de autor",
+      "titulo": "Cada viaje,<br/><i>una obra única.</i>",
+      "sub": "Lunas de miel, viajes en familia, escapadas de lujo, temporadas de esquí o salidas en grupo: diseñamos cada viaje a Nueva Zelanda desde cero, en grupo, en privado o en self drive. Cuéntanos qué sueñas.",
+      "boton": "Cuéntanos tu viaje"
+    },
+    "maneras": {
+      "etiqueta": "Cómo viajar",
+      "titulo": "Tú eliges<br/><i>cómo vivirla.</i>",
+      "grupo": {
+        "titulo": "En grupo",
+        "texto": "Salidas con fecha que publicamos cada temporada, en grupos muy reducidos y con todo incluido.",
+        "enlace": "Próximas salidas"
+      },
+      "privado": {
+        "titulo": "En privado",
+        "texto": "Solo para ti y los tuyos, en tus fechas. Si lo deseas, Sylvie y Mónica os acompañan como anfitrionas de principio a fin.",
+        "enlace": "Viajes privados"
+      },
+      "selfdrive": {
+        "titulo": "Self drive",
+        "texto": "Tú al volante y nosotras detrás de cada detalle: lo reservamos todo y te asistimos antes, durante y después.",
+        "enlace": "Viajes privados"
+      }
+    },
+    "especialidades": {
+      "titulo": "Y nuestras especialidades"
+    },
+    "tarjetas": {
+      "etiqueta": "Inspiración",
+      "titulo": "Viajes que diseñamos<br/><i>a medida.</i>",
+      "disena": "Diseña este viaje",
+      "descubre": "Descubre más",
+      "lista": {
+        "pareja": {
+          "titulo": "Lunas de miel y parejas",
+          "texto": "Lodges con encanto, cenas privadas y un glaciar solo para vosotros. El lugar más romántico del planeta."
+        },
+        "familia": {
+          "titulo": "Familias",
+          "texto": "De la Comarca a las ballenas de Kaikōura: un viaje que padres e hijos recordarán siempre."
+        },
+        "lujo": {
+          "titulo": "Viajes de extra lujo",
+          "texto": "Los lodges más exclusivos, helicópteros y experiencias imposibles de reservar por libre."
+        },
+        "esqui": {
+          "titulo": "Esquí en Nueva Zelanda",
+          "texto": "Nieve en pleno verano europeo: las mejores estaciones de la Isla Sur, de junio a septiembre."
+        },
+        "naturaleza": {
+          "titulo": "Naturaleza y aventura",
+          "texto": "Fiordos, glaciares, volcanes y una naturaleza que no se parece a ninguna otra."
+        },
+        "maori": {
+          "titulo": "Cultura maorí",
+          "texto": "Descubrir Aotearoa de la mano de sus anfitriones maoríes, con respeto y desde dentro."
+        },
+        "sesenta": {
+          "titulo": "Viajes +60",
+          "texto": "En grupo y con todo resuelto: hoteles de 4 y 5 estrellas, desayuno y cena cada día y dos anfitrionas."
+        },
+        "ciegos": {
+          "titulo": "Personas ciegas y con baja visión",
+          "texto": "En grupo o en privado, todo incluido y pensado para vivir Nueva Zelanda con todos los sentidos."
+        },
+        "amigos": {
+          "titulo": "Amigos y viajes en grupo",
+          "texto": "Nuestras salidas en grupo reducido, abiertas a todos, o vuestro propio grupo de amigos."
+        }
+      }
+    },
+    "pasos": {
+      "etiqueta": "Paso a paso",
+      "titulo": "Así nace<br/><i>tu viaje.</i>",
+      "items": [
+        {
+          "titulo": "Una conversación",
+          "texto": "Nos contáis qué soñáis, cuándo queréis viajar y cómo os gusta hacerlo. Por videollamada, con calma."
+        },
+        {
+          "titulo": "El diseño",
+          "texto": "Creamos una propuesta a vuestra medida, con la ruta, los alojamientos y las experiencias."
+        },
+        {
+          "titulo": "Los ajustes",
+          "texto": "La afinamos juntos hasta que sea exactamente el viaje que imaginabais."
+        },
+        {
+          "titulo": "El viaje",
+          "texto": "Lo reservamos todo y os acompañamos, en persona o a distancia, de principio a fin."
+        }
+      ]
+    },
+    "ampliaciones": {
+      "etiqueta": "Ampliaciones",
+      "titulo": "Y después,<br/><i>un poco más lejos.</i>",
+      "texto": "Y si quieres seguir viajando, ampliamos tu viaje a las Islas Cook o a Australia.",
+      "items": [
+        {
+          "id": "cook",
+          "titulo": "Islas Cook",
+          "texto": "¿Y si terminas el viaje en una laguna de Aitutaki? Rarotonga y Aitutaki, de 5 a 7 noches, con vuelo directo desde Auckland."
+        },
+        {
+          "id": "australia",
+          "titulo": "Australia",
+          "texto": "Sídney, la Gran Barrera de Coral o Uluru: el otro lado del mar de Tasmania, a un vuelo de distancia."
+        }
+      ]
+    },
+    "cierre": {
+      "titulo": "Cuéntanos tu viaje.<br/><i>Lo diseñamos contigo.</i>",
+      "texto": "Cada viaje es único. Escríbenos y trabajamos al detalle lo que necesitas y lo que sueñas."
+    },
+    "huecos": {
+      "viajes-portada": "Aoraki / Mount Cook, nevado, sobre el agua turquesa del lago Pukaki",
+      "viajes-pareja": "El árbol solitario del lago Wanaka, con kayaks en el agua en calma y montañas al fondo",
+      "viajes-familia": "Un agujero hobbit con la puerta roja redonda, la valla de madera y el jardín en flor, en Hobbiton",
+      "viajes-lujo": "Un lago en calma con montañas nevadas al fondo, en la región de Queenstown",
+      "viajes-esqui": "",
+      "viajes-naturaleza": "Dos personas saltan de alegría a orillas del lago Pukaki, frente a Aoraki / Mount Cook nevado",
+      "viajes-maori": "Mujeres maoríes con vestimenta tradicional preparan comida con agua caliente junto a una casa tallada, en Rotorua",
+      "viajes-sesenta": "Viajeros pasean por una pasarela de madera entre fumarolas y vapor geotérmico en Rotorua",
+      "viajes-ciegos": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes",
+      "viajes-amigos": "Una lancha navega entre icebergs en el lago glaciar Tasman, con montañas nevadas al fondo",
+      "ampliacion-cook": "",
+      "ampliacion-australia": ""
+    }
   }
 }

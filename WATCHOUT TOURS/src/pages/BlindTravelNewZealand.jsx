@@ -2,11 +2,8 @@ import { Helmet } from 'react-helmet-async'
 import { Seo } from '../components/Seo'
 import { L } from '../i18n/routing'
 import { SITE_URL } from '../lib/site'
-import heroFarmImg from '../images/blind-travel-hero-farm.webp'
 import heroFarmOgImg from '../images/blind-travel-hero-farm-og.jpg'
-import redwoodsImg from '../images/blind-travel-redwoods.webp'
-import maoriCarvingImg from '../images/blind-travel-maori-carving.webp'
-import groupGeyserImg from '../images/blind-travel-group-geyser.webp'
+import { Imagen } from '../components/Imagen'
 import '../styles/pagestyle/Estaticas.css'
 import '../styles/pagestyle/BlindTravelNewZealand.css'
 
@@ -110,12 +107,9 @@ export default function BlindTravelNewZealand() {
             </p>
           </div>
           <figure className="btnz-hero-photo">
-            <img
-              src={heroFarmImg}
-              alt="A man holds an audio recorder with a foam windscreen beside a woman holding a white cane, both standing at a wooden farm fence with sheep leaning over the rail."
-              width="1200"
-              height="1600"
-              fetchpriority="high"
+            <Imagen
+              src="granja-oyentes"
+              alt="A man holds an audio recorder with a foam windscreen beside a woman holding a white cane, both standing at a wooden farm fence with sheep leaning over the rail." sizes="(min-width: 901px) 45vw, 100vw" prioritaria
             />
           </figure>
         </div>
@@ -254,13 +248,10 @@ export default function BlindTravelNewZealand() {
           <section aria-labelledby="btnz-beyond-sight-heading">
             <h2 id="btnz-beyond-sight-heading">Experiencing New Zealand beyond sight</h2>
             <figure className="btnz-inline-photo">
-              <img
-                src={redwoodsImg}
-                alt="Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy."
-                width="844"
-                height="1125"
-                loading="lazy"
-              />
+              <Imagen
+              src="secuoyas"
+                alt="Three people stand beneath tall redwood trees, arms raised to touch a low branch as light filters through the canopy." sizes="(min-width: 901px) 45vw, 100vw"
+            />
             </figure>
             <p>This is where travelling with blind people changed the way we experienced New Zealand too.</p>
             <p>As sighted people, our instinct was often to describe what we could see.</p>
@@ -325,13 +316,10 @@ export default function BlindTravelNewZealand() {
           <section aria-labelledby="btnz-touch-heading">
             <h2 id="btnz-touch-heading">Touch can completely change an experience</h2>
             <figure className="btnz-inline-photo">
-              <img
-                src={maoriCarvingImg}
-                alt="A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it."
-                width="1000"
-                height="1333"
-                loading="lazy"
-              />
+              <Imagen
+              src="talla-maori"
+                alt="A woman rests her hand on a carved Māori figure while a companion beside her gestures as he describes it." sizes="(min-width: 901px) 45vw, 100vw"
+            />
             </figure>
             <p>One of the recurring challenges during our journey was the phrase:</p>
             <p>Please do not touch.</p>
@@ -447,13 +435,10 @@ export default function BlindTravelNewZealand() {
           <section aria-labelledby="btnz-rest-heading">
             <h2 id="btnz-rest-heading">Rest matters too</h2>
             <figure className="btnz-inline-photo">
-              <img
-                src={groupGeyserImg}
-                alt="Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them."
-                width="1000"
-                height="1333"
-                loading="lazy"
-              />
+              <Imagen
+              src="grupo-geiser"
+                alt="Seven travellers and guides gather on a boardwalk with steam from the Pōhutu Geyser rising behind them." sizes="(min-width: 901px) 45vw, 100vw"
+            />
             </figure>
             <p>New Zealand is exciting.</p>
             <p>Our travellers often finished days tired, highly stimulated and still wanting to do more.</p>

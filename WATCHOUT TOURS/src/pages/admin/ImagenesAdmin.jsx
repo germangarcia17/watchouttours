@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
-import { uploadImage } from '../../lib/storage'
+import indiceImagenes from '../../data/imagenes.json'
+import { urlImagen, nombreImagen } from '../../components/Imagen'
 
 import es from '../../i18n/locales/es.json'
 import en from '../../i18n/locales/en.json'
-import { CREDITOS_HOME, CREDITOS_SESENTA, CREDITOS_VISTA, CREDITOS_FUNDADORAS, CREDITOS_PRIVADOS } from '../../lib/creditos'
+import { CREDITOS_HOME, CREDITOS_SESENTA, CREDITOS_VISTA, CREDITOS_FUNDADORAS, CREDITOS_PRIVADOS, CREDITOS_VIAJES } from '../../lib/creditos'
 
 /* Huecos de imagen de la home: una fila por clave de home.huecos (es.json /
    en.json), con su texto alternativo por defecto en los dos idiomas. Así la
@@ -16,8 +17,7 @@ const HUECOS_HOME = Object.keys(es.home.huecos).map(key => ({
   credito: CREDITOS_HOME[key] ?? '',
 }))
 
-/* Lo mismo para Viajes +60 (sinPrisa.huecos) y Más allá de la vista
-   (masAlla.huecos). */
+/* Lo mismo para las demás páginas (sinPrisa.huecos, masAlla.huecos…). */
 const huecosDe = (section, ns, creditos) => Object.keys(es[ns].huecos).map(key => ({
   section, key,
   image_alt: es[ns].huecos[key],
@@ -30,6 +30,7 @@ const NUEVAS_IMAGENES_SUGERIDAS = [
   ...huecosDe('sin-prisa', 'sinPrisa', CREDITOS_SESENTA),
   ...huecosDe('mas-alla-de-la-vista', 'masAlla', CREDITOS_VISTA),
   ...huecosDe('privados', 'privados', CREDITOS_PRIVADOS),
+  ...huecosDe('viajes', 'viajes', CREDITOS_VIAJES),
   ...huecosDe('fundadoras', 'fundadoras', CREDITOS_FUNDADORAS),
   // ── Renovación visual: huecos de imagen nuevos ──────────────────────
   // Cada uno se puede sustituir sin tocar código. En la galería de
@@ -75,8 +76,8 @@ export default function ImagenesAdmin() {
   const [editingCred, setEditingCred] = useState({})
   const [saveError, setSaveError] = useState({})
   const [saving, setSaving]     = useState({})
-  const [uploading, setUploading] = useState({})
-  const [uploadError, setUploadError] = useState({})
+  const [cambiando, setCambiando] = useState({})
+  const [cambioError, setCambioError] = useState({})
   const [creating, setCreating] = useState({})
   const [createError, setCreateError] = useState({})
 
@@ -133,21 +134,18 @@ export default function ImagenesAdmin() {
     setSaving(prev => { const next = { ...prev }; delete next[image.id]; return next })
   }
 
-  async function handleFileUpload(image, file) {
-    if (!file) return
-    setUploading(prev => ({ ...prev, [image.id]: true }))
-    setUploadError(prev => { const next = { ...prev }; delete next[image.id]; return next })
-    try {
-      const { url } = await uploadImage(file, 'site')
-      const { error } = await supabase.from('site_images').update({ src: url }).eq('id', image.id)
-      if (error) throw error
-      setImages(prev => prev.map(img => img.id === image.id ? { ...img, src: url } : img))
-    } catch (err) {
-      console.error('[imagenes] error al subir:', err)
-      setUploadError(prev => ({ ...prev, [image.id]: err.message ?? 'Error al subir la imagen.' }))
-    } finally {
-      setUploading(prev => { const next = { ...prev }; delete next[image.id]; return next })
-    }
+  /* El archivo de cada hueco es una imagen del repositorio (nombre de
+     src/data/imagenes.json) o vacío (la foto por defecto del código). Nada
+     se sube a Supabase Storage: las fotos nuevas se añaden al repositorio
+     (imagenes/fuentes + npm run imagenes) y aparecen en esta lista. */
+  async function cambiarImagen(image, nombre) {
+    const src = nombre || null
+    setCambiando(prev => ({ ...prev, [image.id]: true }))
+    setCambioError(prev => { const next = { ...prev }; delete next[image.id]; return next })
+    const { error } = await supabase.from('site_images').update({ src }).eq('id', image.id)
+    if (error) setCambioError(prev => ({ ...prev, [image.id]: error.message ?? 'No se pudo guardar.' }))
+    else setImages(prev => prev.map(img => img.id === image.id ? { ...img, src } : img))
+    setCambiando(prev => { const next = { ...prev }; delete next[image.id]; return next })
   }
 
   async function crearImagen(nueva) {
@@ -180,12 +178,12 @@ export default function ImagenesAdmin() {
       <div className="admin-page-header">
         <h1>Imágenes del sitio</h1>
       </div>
-      <p>Sube una imagen nueva para reemplazarla en la web y edita su texto alternativo. Los archivos se guardan en el bucket <code>imagenes</code> de Supabase.</p>
+      <p>Elige qué imagen del repositorio usa cada espacio y edita su texto alternativo y su crédito. Las imágenes y los vídeos se guardan solo en el repositorio de GitHub, nunca en Supabase: para añadir una foto nueva, pídela a Claude y aparecerá en esta lista.</p>
 
       {pendientes.length > 0 && (
         <div className="admin-page-header" style={{ marginTop: '1.5rem' }}>
           <h2>Espacios de imagen nuevos por crear</h2>
-          <p>Estos espacios ya están referenciados en el código de la web pero aún no tienen fila en la base de datos. Créalos aquí para poder subirles foto.</p>
+          <p>Estos espacios ya están referenciados en el código de la web pero aún no tienen fila en la base de datos. Créalos aquí para poder editar su texto alternativo y su crédito.</p>
           <ul role="list" style={{ listStyle: 'none', padding: 0 }}>
             {pendientes.map(n => {
               const key = `${n.section}:${n.key}`
@@ -219,7 +217,7 @@ export default function ImagenesAdmin() {
 
               <div className="image-item__preview">
                 {img.src ? (
-                  <img src={img.src} alt={img.image_alt ?? ''} />
+                  <img src={urlImagen(img.src, 640)} alt={img.image_alt ?? ''} />
                 ) : (
                   <span className="image-item__placeholder" aria-hidden="true">Sin imagen</span>
                 )}
@@ -229,20 +227,22 @@ export default function ImagenesAdmin() {
                 <p className="image-item__key">{img.section} — {img.key}</p>
                 {img.src && <p className="image-item__src">{img.src}</p>}
 
-                <label htmlFor={`file-${img.id}`} className="form-label">Reemplazar imagen</label>
+                <label htmlFor={`archivo-${img.id}`} className="form-label">Imagen del repositorio</label>
                 <div className="image-item__upload-row">
-                  <input
-                    id={`file-${img.id}`}
-                    type="file"
-                    accept="image/jpeg,image/png,image/webp,image/gif,image/avif"
-                    onChange={e => handleFileUpload(img, e.target.files?.[0])}
-                    disabled={uploading[img.id]}
-                    className="form-control form-control--file"
-                  />
-                  {uploading[img.id] && <span className="image-item__status" role="status">Subiendo…</span>}
+                  <select
+                    id={`archivo-${img.id}`}
+                    value={nombreImagen(img.src) ?? ''}
+                    onChange={e => cambiarImagen(img, e.target.value)}
+                    disabled={cambiando[img.id]}
+                    className="form-control"
+                  >
+                    <option value="">{img.src && !nombreImagen(img.src) ? `Actual: ${img.src}` : 'La foto por defecto de la web'}</option>
+                    {Object.keys(indiceImagenes).sort().map(n => <option key={n} value={n}>{n}</option>)}
+                  </select>
+                  {cambiando[img.id] && <span className="image-item__status" role="status">Guardando…</span>}
                 </div>
-                {uploadError[img.id] && (
-                  <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{uploadError[img.id]}</p>
+                {cambioError[img.id] && (
+                  <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{cambioError[img.id]}</p>
                 )}
 
                 <label htmlFor={`alt-${img.id}`} className="form-label" style={{ marginTop: '14px' }}>Texto alternativo (español)</label>

@@ -48,13 +48,15 @@ export function Footer() {
           <p className="footer-brand__tagline">{t('home.pie.frase')}</p>
         </div>
 
-        {/* Colecciones */}
-        <nav aria-label={t('footer.colColecciones')} className="footer-col">
-          <h2 className="footer-col__heading">{t('footer.colColecciones')}</h2>
+        {/* Viajes */}
+        <nav aria-label={t('footer.colViajes')} className="footer-col">
+          <h2 className="footer-col__heading">{t('footer.colViajes')}</h2>
           <ul role="list" className="footer-col__list">
+            <li><L to="/viajes">{t('nav.todos')}</L></li>
             <li><L to="/productos">{t('nav.privados')}</L></li>
-            <li><L to="/sin-prisa">{t('nav.grandesViajes')}</L></li>
-            <li><L to="/mas-alla-de-la-vista">{t('nav.masAlla')}</L></li>
+            <li><L to="/#proxima-salida">{t('nav.salidas')}</L></li>
+            <li><L to="/sin-prisa">{t('nav.sesenta')}</L></li>
+            <li><L to="/viajes-personas-ciegas-baja-vision">{t('nav.ciegos')}</L></li>
           </ul>
         </nav>
 

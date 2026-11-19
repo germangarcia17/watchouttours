@@ -18,6 +18,7 @@ import NotFound        from './pages/NotFound'
 import BlindTravelNewZealand from './pages/BlindTravelNewZealand'
 import SinPrisa from './pages/SinPrisa'
 import MasAllaDeLaVista from './pages/MasAllaDeLaVista'
+import Viajes from './pages/Viajes'
 import { LOCALIZED_SLUGS } from './i18n/pageLanguages'
 
 /* Slug de una página en el idioma de `prefix` ('' = español, '/en' =
@@ -46,12 +47,17 @@ const AdminSeo        = lazy(() => import('./pages/admin/SeoAdmin'))
 function paginasPublicas(prefix) {
   return [
     <Route key="home"    index                    element={<Home />} />,
-    /* Las dos líneas de viaje: /sin-prisa ↔ /en/unhurried y
-       /mas-alla-de-la-vista ↔ /en/beyond-sight. */
+    /* Viajes de autor (/viajes ↔ /en/journeys) y las dos especialidades:
+       /sin-prisa ↔ /en/unhurried y /viajes-personas-ciegas-baja-vision ↔
+       /en/blind-low-vision-travel. */
+    <Route key="viajes"  path={slug(prefix, '/viajes')}               element={<Viajes />} />,
     <Route key="sinp"    path={slug(prefix, '/sin-prisa')}            element={<SinPrisa />} />,
-    <Route key="masa"    path={slug(prefix, '/mas-alla-de-la-vista')} element={<MasAllaDeLaVista />} />,
+    <Route key="masa"    path={slug(prefix, '/viajes-personas-ciegas-baja-vision')} element={<MasAllaDeLaVista />} />,
     <Route key="sn"      path={slug(prefix, '/sobre-nosotras')} element={<SobreNosotras />} />,
     <Route key="prod"    path={slug(prefix, '/productos')} element={<Productos />} />,
+    /* URL retiradas (en Netlify son 301; esto cubre la navegación interna) */
+    <Route key="rutas"   path={prefix ? 'routes/*' : 'rutas/*'} element={<Navigate to={`${prefix}${prefix ? '/journeys' : '/viajes'}`} replace />} />,
+    <Route key="masa-old" path={prefix ? 'beyond-sight' : 'mas-alla-de-la-vista'} element={<Navigate to={`${prefix}${prefix ? '/blind-low-vision-travel' : '/viajes-personas-ciegas-baja-vision'}`} replace />} />,
     <Route key="res"     path="resenas"           element={<Resenas />} />,
     <Route key="blog"    path="blog"              element={<Blog />} />,
     <Route key="post"    path="blog/:slug"        element={<BlogPost />} />,

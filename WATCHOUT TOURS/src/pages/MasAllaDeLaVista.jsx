@@ -1,19 +1,15 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '../components/Seo'
+import { urlImagen } from '../components/Imagen'
 import { L } from '../i18n/routing'
-import { variantes } from '../components/ImagenHueco'
 import { CREDITOS_VISTA } from '../lib/creditos'
 import { ResenasDestacadas, AudioClips } from '../components/home/BloquesHome'
 import { Texto, Etiqueta, FotoHueco, dos, useImagenSocial } from '../components/editorial/Editorial'
 import { Portada, Columnas, ProximaSalidaGrupo, CierreFormulario } from '../components/editorial/Colecciones'
-import ciegos600 from '../images/home/viaje-ciegos-600.webp'
-import ciegos1200 from '../images/home/viaje-ciegos-1200.webp'
 import videoParapente from '../images/parapente-teaser.mp4'
-import imgParapentePoster from '../images/parapente-poster.jpg'
-import imgNuria from '../images/vista-nuria.jpg'
 
-/* Huecos de imagen (sección "mas-alla-de-la-vista" en /admin/imagenes) y su
+/* Huecos de imagen (sección "mas-alla-de-la-vista" en /admin/imagenes; el nombre interno se mantiene) y su
    foto por defecto. Texto alternativo por defecto en masAlla.huecos.<clave>
    y crédito en CREDITOS_VISTA.
    null = la foto se sube desde el admin (hasta entonces, bloque gris):
@@ -24,8 +20,8 @@ const IMG = {
   'vista-portada': null,
   'vista-unico': null,
   // Foto propia de Nuria (la que tenía en el equipo de la antigua Sobre nosotras)
-  'vista-nuria': variantes([{ src: imgNuria, w: 800, h: 800 }]),
-  'vista-vivir': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
+  'vista-nuria': 'vista-nuria',
+  'vista-vivir': 'viaje-ciegos',
 }
 
 function useFoto(clave) {
@@ -93,7 +89,7 @@ function Parapente() {
       <div className="reel-frame">
         <video
           src={videoParapente}
-          poster={imgParapentePoster}
+          poster={urlImagen('parapente-poster', 1280)}
           controls
           playsInline
           preload="metadata"
@@ -162,7 +158,8 @@ function Nuria() {
   )
 }
 
-/* ── Más allá de la vista (/mas-alla-de-la-vista ↔ /en/beyond-sight) ────
+/* ── Viajes para personas ciegas y con baja visión ──────────────────────
+ * (/viajes-personas-ciegas-baja-vision ↔ /en/blind-low-vision-travel)
  * Viajes para personas ciegas y con baja visión. Portada → manifiesto →
  * lo que lo hace único (#descubre) → todo incluido en el viaje en grupo →
  * lo que vivirás → parapente (vídeo) → audios → dos maneras de viajar →

@@ -59,6 +59,39 @@
   to     = "/"
   status = 301
 
+# Rutas de autor retiradas: todo lleva a Viajes de autor (301)
+[[redirects]]
+  from   = "/rutas"
+  to     = "/viajes"
+  status = 301
+
+[[redirects]]
+  from   = "/rutas/*"
+  to     = "/viajes"
+  status = 301
+
+[[redirects]]
+  from   = "/en/routes"
+  to     = "/en/journeys"
+  status = 301
+
+[[redirects]]
+  from   = "/en/routes/*"
+  to     = "/en/journeys"
+  status = 301
+
+# «Más allá de la vista» pasa a «Viajes para personas ciegas y con baja
+# visión», con URL nueva (301)
+[[redirects]]
+  from   = "/mas-alla-de-la-vista"
+  to     = "/viajes-personas-ciegas-baja-vision"
+  status = 301
+
+[[redirects]]
+  from   = "/en/beyond-sight"
+  to     = "/en/blind-low-vision-travel"
+  status = 301
+
 # Fallback de la SPA. Las páginas públicas y los artículos de blog se
 # prerenderizan en build (scripts/prerender.mjs) como archivos estáticos en
 # su ruta exacta (p. ej. /productos/index.html): Netlify los sirve

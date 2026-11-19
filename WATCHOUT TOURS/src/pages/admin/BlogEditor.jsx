@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
-import { uploadImage } from '../../lib/storage'
+import indiceImagenes from '../../data/imagenes.json'
+import { urlImagen, nombreImagen } from '../../components/Imagen'
 
 const EMPTY = {
   title: '', slug: '', excerpt: '', content: '', status: 'draft',
@@ -20,8 +21,6 @@ export default function BlogEditor() {
   const [errors, setErrors] = useState({})
   const [saving, setSaving] = useState(false)
   const [loadingPost, setLoadingPost] = useState(isEdit)
-  const [uploading, setUploading] = useState({})
-  const [uploadError, setUploadError] = useState({})
 
   useEffect(() => {
     document.title = isEdit ? 'Editar artículo | WatchOut Tours Admin' : 'Nuevo artículo | WatchOut Tours Admin'
@@ -67,22 +66,6 @@ export default function BlogEditor() {
 
   function generateSlug() {
     setForm(prev => ({ ...prev, slug: slugify(prev.title) }))
-  }
-
-  /* Sube un archivo al bucket y rellena el campo de URL correspondiente */
-  async function handleImageUpload(field, file) {
-    if (!file) return
-    setUploading(prev => ({ ...prev, [field]: true }))
-    setUploadError(prev => { const next = { ...prev }; delete next[field]; return next })
-    try {
-      const { url } = await uploadImage(file, 'blog')
-      setForm(prev => ({ ...prev, [field]: url }))
-    } catch (err) {
-      console.error('[blog-editor] error al subir imagen:', err)
-      setUploadError(prev => ({ ...prev, [field]: err.message ?? 'Error al subir la imagen.' }))
-    } finally {
-      setUploading(prev => { const next = { ...prev }; delete next[field]; return next })
-    }
   }
 
   function validate() {
@@ -192,53 +175,26 @@ export default function BlogEditor() {
           <input id="keywords" name="keywords" type="text" value={form.keywords} onChange={handleChange} className="form-control" placeholder="nueva zelanda, viaje accesible, personas ciegas" />
         </Field>
 
-        <Field id="cover_image_file" label="Imagen de portada (subir archivo)">
-          <div className="editor-upload-row">
-            <input
-              id="cover_image_file"
-              type="file"
-              accept="image/jpeg,image/png,image/webp,image/gif,image/avif"
-              onChange={e => handleImageUpload('cover_image_url', e.target.files?.[0])}
-              disabled={uploading.cover_image_url}
-              className="form-control form-control--file"
-            />
-            {uploading.cover_image_url && <span className="editor-upload-status" role="status">Subiendo…</span>}
-          </div>
-          {uploadError.cover_image_url && (
-            <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{uploadError.cover_image_url}</p>
-          )}
+        <Field id="cover_image_url" label="Imagen de portada (del repositorio)">
+          <p id="cover_image_ayuda" style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: '0 0 0.5rem' }}>
+            Las imágenes se guardan solo en el repositorio de GitHub, nunca en Supabase. Para una foto nueva, pídela a Claude y aparecerá en esta lista.
+          </p>
+          <select id="cover_image_url" name="cover_image_url" aria-describedby="cover_image_ayuda"
+            value={nombreImagen(form.cover_image_url) ?? ''} onChange={handleChange} className="form-control">
+            <option value="">{form.cover_image_url && !nombreImagen(form.cover_image_url) ? `Actual: ${form.cover_image_url}` : 'Sin imagen'}</option>
+            {Object.keys(indiceImagenes).sort().map(n => <option key={n} value={n}>{n}</option>)}
+          </select>
           {form.cover_image_url && (
-            <img src={form.cover_image_url} alt={form.cover_image_alt || 'Vista previa de la imagen de portada subida'} className="editor-image-preview" />
+            <img src={urlImagen(form.cover_image_url, 640)} alt={form.cover_image_alt || 'Vista previa de la imagen de portada'} className="editor-image-preview" />
           )}
-        </Field>
-
-        <Field id="cover_image_url" label="URL de imagen de portada">
-          <input id="cover_image_url" name="cover_image_url" type="url" value={form.cover_image_url} onChange={handleChange} className="form-control" placeholder="https://… (se rellena sola al subir un archivo)" />
         </Field>
 
         <Field id="cover_image_alt" label="Texto alternativo de portada">
           <input id="cover_image_alt" name="cover_image_alt" type="text" value={form.cover_image_alt} onChange={handleChange} className="form-control" />
         </Field>
 
-        <Field id="og_image_file" label="Imagen Open Graph (subir archivo)">
-          <div className="editor-upload-row">
-            <input
-              id="og_image_file"
-              type="file"
-              accept="image/jpeg,image/png,image/webp,image/gif,image/avif"
-              onChange={e => handleImageUpload('og_image_url', e.target.files?.[0])}
-              disabled={uploading.og_image_url}
-              className="form-control form-control--file"
-            />
-            {uploading.og_image_url && <span className="editor-upload-status" role="status">Subiendo…</span>}
-          </div>
-          {uploadError.og_image_url && (
-            <p role="alert" className="form-error"><span aria-hidden="true">⚠ </span>{uploadError.og_image_url}</p>
-          )}
-        </Field>
-
         <Field id="og_image_url" label="URL imagen Open Graph">
-          <input id="og_image_url" name="og_image_url" type="url" value={form.og_image_url ?? ''} onChange={handleChange} className="form-control" placeholder="https://… (se rellena sola al subir un archivo)" />
+          <input id="og_image_url" name="og_image_url" type="text" value={form.og_image_url ?? ''} onChange={handleChange} className="form-control" placeholder="Opcional: vacío = la imagen de portada" />
         </Field>
 
         <fieldset style={{ border: '1px solid var(--line)', borderRadius: 8, padding: '1rem 1.25rem', margin: '0.5rem 0 1.5rem' }}>

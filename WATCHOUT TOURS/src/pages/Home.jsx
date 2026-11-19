@@ -4,76 +4,38 @@ import { Helmet } from 'react-helmet-async'
 import '../styles/pagestyle/Contacto.css'
 import '../styles/pagestyle/HomeNueva.css'
 import { Seo } from '../components/Seo'
-import { ImagenHueco, variantes } from '../components/ImagenHueco'
+import { ImagenHueco, defectoHueco } from '../components/ImagenHueco'
+import { urlImagen } from '../components/Imagen'
 import { ResenasDestacadas } from '../components/home/BloquesHome'
 import { BotonVideollamada } from '../components/Videollamada'
 import { Desplegable } from '../components/Desplegable'
 import { useSiteImage } from '../lib/siteImages'
 import { L, useLang } from '../i18n/routing'
 import { SITE_URL } from '../lib/site'
+import { TresManeras, Especialidades } from '../components/viajes/ViajesUI'
 import { Texto, Etiqueta, FotoHueco, PedirItinerario, dos } from '../components/editorial/Editorial'
 import { CreditoFoto } from '../components/CreditoFoto'
 import { CREDITOS_HOME } from '../lib/creditos'
-// Imágenes por defecto de algunos huecos (versiones a varios anchos en src/images/home)
-import hero900 from '../images/home/hero-900.webp'
-import hero1400 from '../images/home/hero-1400.webp'
-import hero1800 from '../images/home/hero-1800.webp'
-import qt600 from '../images/home/queenstown-600.webp'
-import qt1200 from '../images/home/queenstown-1200.webp'
-import ciegos600 from '../images/home/viaje-ciegos-600.webp'
-import ciegos1200 from '../images/home/viaje-ciegos-1200.webp'
-import nos600 from '../images/home/nosotras-600.webp'
-import nos1100 from '../images/home/nosotras-1100.webp'
-import secuoyas from '../images/blind-travel-redwoods.webp'
-import talla from '../images/blind-travel-maori-carving.webp'
-import parapente from '../images/parapente-poster.jpg'
-import kayak from '../images/kayak-kaikoura.jpg'
-import tiakiTohu from '../images/home/tiaki-tohu.jpg'
-// Fotos de Tourism New Zealand (licencia WorldWide: solo web y medios no
-// pagados; sin recortar en edición, sin retocar y sin nada encima; el
-// encuadre con object-fit: cover está permitido). Se sirven tal cual.
-import wanaka from '../images/home/tnz-233385-lake-wanaka.jpg'
-import aorakiPukaki from '../images/home/tnz-233933-aoraki-mt-cook.jpg'
-import aorakiIceberg from '../images/home/tnz-233937-aoraki-iceberg.jpg'
-import waitomo from '../images/home/tnz-232230-waitomo.jpg'
-
-const una = (src, w, h) => variantes([{ src, w, h }])
-const GEISER = variantes([{ src: hero900, w: 900, h: 675 }, { src: hero1400, w: 1400, h: 1050 }, { src: hero1800, w: 1800, h: 1350 }])
-const PARAPENTE = una(parapente, 1600, 1400)
 
 /* Huecos de imagen de la home (sección "home" en /admin/imagenes) y su foto
-   por defecto. null = la foto se sube desde el admin: hasta entonces el
-   hueco se ve como un bloque gris.
-   El texto alternativo por defecto de cada uno está en home.huecos.<clave>
-   (es.json / en.json) y se edita también desde el admin. */
+   por defecto: el nombre de una imagen del repositorio (src/data/imagenes.json).
+   Si no se indica, se usa la imagen "home--<clave>" (las fotos que estaban en
+   el admin, ya en el repositorio). null = bloque gris.
+   Las fotos de Tourism New Zealand se sirven sin recortar en edición, sin
+   retocar y sin nada encima (el encuadre con object-fit: cover está
+   permitido). El texto alternativo por defecto de cada hueco está en
+   home.huecos.<clave> (es.json / en.json) y se edita desde el admin. */
 const IMG = {
-  // Primer fotograma del vídeo de la hero (public/media), para que el paso
-  // de la imagen al vídeo no se note.
-  'hero-poster': { src: '/media/hero-poster.jpg', width: 1920, height: 1080 },
-  'pais-vertical': null,
-  'pais-panoramica': una(aorakiPukaki, 2000, 1334),
-  'panel-privado': una(wanaka, 1500, 1000),
-  'panel-sesenta': null,
-  'panel-ciegos': variantes([{ src: ciegos600, w: 600, h: 800 }, { src: ciegos1200, w: 1200, h: 1600 }]),
-  'salida-foto': null,
-  // Imagen oficial de Tiaki (Tourism New Zealand). Licencia WorldWide: solo
-  // web y medios no pagados. No se recorta, ni se retoca, ni lleva nada encima.
-  'tiaki-tohu': una(tiakiTohu, 2000, 1125),
-  'destino-rotorua': GEISER,
-  'destino-aoraki': una(aorakiIceberg, 1500, 1000),
-  'destino-queenstown': variantes([{ src: qt600, w: 600, h: 525 }, { src: qt1200, w: 1200, h: 1050 }]),
-  'destino-kaikoura': null,
-  'destino-waitomo': una(waitomo, 1500, 1001),
-  'galeria-01': null,
-  'galeria-02': una(talla, 1000, 1333),
-  'galeria-03': una(secuoyas, 844, 1125),
-  'galeria-04': null,
-  'galeria-05': una(kayak, 1312, 1755),
-  'galeria-06': null,
-  'galeria-07': null, 'galeria-08': null, 'galeria-09': null,
-  'galeria-10': null, 'galeria-11': null, 'galeria-12': null,
-  nosotras: variantes([{ src: nos600, w: 600, h: 800 }, { src: nos1100, w: 1100, h: 1467 }]),
-  cierre: null,
+  'pais-panoramica': 'tnz-233933-aoraki-mt-cook',
+  'tiaki-tohu': 'tiaki-tohu',
+  'destino-rotorua': 'geiser-pohutu',
+  'destino-aoraki': 'tnz-233937-aoraki-iceberg',
+  'destino-queenstown': 'queenstown-parapente',
+  'destino-waitomo': 'tnz-232230-waitomo',
+  'galeria-02': 'talla-maori',
+  'galeria-03': 'secuoyas',
+  'galeria-05': 'kayak-kaikoura',
+  nosotras: 'nosotras',
 }
 
 const TIAKI = 'https://www.tiakinewzealand.com'
@@ -194,12 +156,14 @@ function Hero({ area }) {
   // falla, se mantiene la de respaldo.
   useEffect(() => {
     const v = area.current?.querySelector('video')
-    if (!v || !poster.src || poster.src === POSTER_DEFECTO) return
+    // La imagen del admin se sirve desde el repositorio (versión de 1920 px)
+    const url = urlImagen(poster.src, 1920)
+    if (!v || !url || url === POSTER_DEFECTO) return
     let vivo = true
     const prueba = new Image()
-    prueba.onload = () => { if (vivo) v.setAttribute('poster', poster.src) }
+    prueba.onload = () => { if (vivo) v.setAttribute('poster', url) }
     prueba.onerror = () => { if (vivo) v.setAttribute('poster', POSTER_DEFECTO) }
-    prueba.src = poster.src
+    prueba.src = url
     return () => { vivo = false }
   }, [poster.src])
 
@@ -231,8 +195,8 @@ function HeroIntro({ hayVideo, enMarcha, alternar }) {
       <h1 id="hn-hero-titulo" className="hn-h1"><Texto k="home.hero.titulo" /></h1>
       <p className="hn-intro__sub">{t('home.hero.sub')}</p>
       <div className="hn-botones">
-        <a href="#itinerario" className="hn-btn">{t('home.hero.cta1')}</a>
-        <a href="#colecciones" className="hn-btn hn-btn--fantasma">{t('home.hero.cta2')}</a>
+        <L to="/viajes" className="hn-btn">{t('home.hero.cta1')}</L>
+        <a href="#itinerario" className="hn-btn hn-btn--fantasma">{t('home.hero.cta2')}</a>
       </div>
       {hayVideo && (
         <div className="hn-intro__video">
@@ -242,6 +206,30 @@ function HeroIntro({ hayVideo, enMarcha, alternar }) {
           </button>
         </div>
       )}
+    </section>
+  )
+}
+
+/* ── 1b. Franja «Cada viaje, una historia distinta»: una línea de
+   palabras, cada una enlazada a su tarjeta de /viajes (o a la página de
+   la especialidad) ─────────────────────────────────────────────────── */
+const FRANJA = [
+  '/viajes#viaje-pareja', '/viajes#viaje-pareja', '/viajes#viaje-familia', '/viajes#viaje-amigos',
+  '/viajes#viaje-naturaleza', '/viajes#viaje-naturaleza', '/viajes#viaje-lujo', '/viajes#viaje-esqui',
+  '/sin-prisa', '/viajes-personas-ciegas-baja-vision',
+]
+
+function Franja() {
+  const { t } = useTranslation()
+  const palabras = t('home.franja.palabras', { returnObjects: true })
+  return (
+    <section className="hn-sec hn-blanca vj-franja" aria-labelledby="hn-franja-titulo">
+      <Etiqueta>{t('home.franja.etiqueta')}</Etiqueta>
+      <h2 id="hn-franja-titulo" className="hn-h2"><Texto k="home.franja.titulo" /></h2>
+      <ul className="vj-franja__lista" role="list">
+        {palabras.map((p, i) => <li key={p}><L to={FRANJA[i]}>{p}</L></li>)}
+      </ul>
+      <L to="/viajes" className="hn-lnk hn-lnk--verde">{t('home.franja.enlace')}</L>
     </section>
   )
 }
@@ -274,7 +262,7 @@ function ElPais() {
 }
 
 function CreditoPanoramica() {
-  const img = useSiteImage('home', 'pais-panoramica', IMG['pais-panoramica']?.src ?? null, '', CREDITOS_HOME['pais-panoramica'])
+  const img = useSiteImage('home', 'pais-panoramica', defectoHueco('home', 'pais-panoramica', IMG['pais-panoramica']), '', CREDITOS_HOME['pais-panoramica'])
   if (!img.src) return null
   return <CreditoFoto credito={img.credito} className="hn-cap__credito" />
 }
@@ -292,67 +280,34 @@ function Cita() {
   )
 }
 
-/* ── 4. Colecciones: tres paneles ────────────────────────────────────
-   Cada panel es una foto a todo el ancho y, debajo, su texto. Las fotos de
-   Tourism New Zealand no pueden llevar texto ni velos encima (licencia). */
-const PANELES = [
-  { id: 'privado', clave: 'panel-privado', to: '/productos', modos: true },
-  { id: 'sesenta', clave: 'panel-sesenta', to: '/sin-prisa' },
-  { id: 'ciegos', clave: 'panel-ciegos', to: '/mas-alla-de-la-vista' },
+/* ── 5. Próximas salidas en grupo ─────────────────────────────────────
+   Una lista: cada salida publicada es un elemento (textos en
+   home.salidas.lista.<id>, foto en el hueco <clave>). Para añadir otra,
+   basta con una entrada aquí y sus textos. */
+const SALIDAS = [
+  { id: 'gran-viaje', clave: 'salida-foto' },
 ]
 
-function Colecciones() {
+function ProximasSalidas({ setViaje }) {
   const { t } = useTranslation()
   return (
-    <section id="colecciones" className="hn-colecciones" aria-labelledby="hn-colecciones-titulo">
-      <div className="hn-colecciones__cabecera">
-        <Etiqueta>{t('home.colecciones.etiqueta')}</Etiqueta>
-        <h2 id="hn-colecciones-titulo" className="hn-h2"><Texto k="home.colecciones.titulo" /></h2>
-      </div>
-      {PANELES.map(({ id, clave, to, modos }, i) => {
-        const ns = `home.colecciones.${id}`
-        return (
-          <article key={id} className="hn-panel" aria-labelledby={`hn-panel-${id}`}>
-            {/* Foto a todo el ancho sin nada encima; el texto, debajo */}
-            <Foto clave={clave} sizes="100vw" className="hn-panel__foto" sangre />
-            <div className="hn-panel__texto">
-              <Etiqueta>{dos(i + 1)} · {t(`${ns}.etiqueta`)}</Etiqueta>
-              <h3 id={`hn-panel-${id}`} className="hn-h2"><Texto k={`${ns}.titulo`} /></h3>
-              <p className="hn-panel__parrafo">{t(`${ns}.texto`)}</p>
-              {modos && (
-                <div className="hn-modos">
-                  {[1, 2].map(n => (
-                    <div key={n} className="hn-modo">
-                      <h4 className="hn-modo__titulo">{t(`${ns}.modo${n}`)}</h4>
-                      <p>{t(`${ns}.modo${n}Texto`)}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-              <L to={to} className="hn-lnk">{t(`${ns}.enlace`)}</L>
+    <section id="proxima-salida" className="hn-sec hn-blanca" aria-labelledby="hn-salidas-titulo">
+      <h2 id="hn-salidas-titulo" className="hn-lbl">{t('home.salida.etiqueta')}</h2>
+      <ul className="vj-salidas" role="list">
+        {SALIDAS.map(({ id, clave }) => (
+          <li key={id} className="hn-par">
+            <div className="hn-par__texto">
+              <h3 className="hn-h2"><Texto k={`home.salidas.${id}.titulo`} /></h3>
+              <p className="hn-body hn-body--primero">{t(`home.salidas.${id}.texto`)}</p>
+              <div className="hn-botones">
+                <a href="#itinerario" className="hn-btn" onClick={() => setViaje(id)}>{t('home.salida.itinerario')}</a>
+                <BotonVideollamada className="hn-btn hn-btn--tinta">{t('home.salida.hablar')}</BotonVideollamada>
+              </div>
             </div>
-          </article>
-        )
-      })}
-    </section>
-  )
-}
-
-/* ── 5. Próxima salida ───────────────────────────────────────────────── */
-function ProximaSalida({ setViaje }) {
-  const { t } = useTranslation()
-  return (
-    <section id="proxima-salida" className="hn-sec hn-par hn-blanca" aria-labelledby="hn-salida-titulo">
-      <div className="hn-par__texto">
-        <Etiqueta>{t('home.salida.etiqueta')}</Etiqueta>
-        <h2 id="hn-salida-titulo" className="hn-h2"><Texto k="home.salida.titulo" /></h2>
-        <p className="hn-body hn-body--primero">{t('home.salida.texto')}</p>
-        <div className="hn-botones">
-          <a href="#itinerario" className="hn-btn" onClick={() => setViaje('gran-viaje')}>{t('home.salida.itinerario')}</a>
-          <BotonVideollamada className="hn-btn hn-btn--tinta">{t('home.salida.hablar')}</BotonVideollamada>
-        </div>
-      </div>
-      <Foto clave="salida-foto" sizes="(min-width: 901px) 42vw, 100vw" className="hn-par__foto hn-par__foto--salida" />
+            <Foto clave={clave} sizes="(min-width: 901px) 42vw, 100vw" className="hn-par__foto hn-par__foto--salida" />
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
@@ -446,7 +401,7 @@ function Galeria() {
   const { t } = useTranslation()
   // Número fijo de huecos: los hooks se llaman siempre en el mismo orden.
   const todas = GALERIA.map(clave => ({
-    clave, ...useSiteImage('home', clave, IMG[clave]?.src ?? null, t(`home.huecos.${clave}`), CREDITOS_HOME[clave] ?? ''),
+    clave, ...useSiteImage('home', clave, defectoHueco('home', clave, IMG[clave]), t(`home.huecos.${clave}`), CREDITOS_HOME[clave] ?? ''),
   }))
   const fotos = todas.filter(f => f.src)
   const [abierta, setAbierta] = useState(null)
@@ -541,7 +496,7 @@ function Visor({ fotos, indice, setIndice, onCerrar }) {
         {t('home.galeria.cerrar')}<span aria-hidden="true"> ✕</span>
       </button>
       <figure className="hn-visor__figura">
-        <img src={foto.src} alt="" />
+        <img src={urlImagen(foto.src, 1920)} alt="" />
         <figcaption className="hn-visor__pie">
           <span lang={foto.lang}>{foto.alt}</span>
           <CreditoFoto credito={foto.credito} tono="oscuro" className="hn-visor__credito" />
@@ -674,10 +629,11 @@ export default function Home() {
       <GranViajeJsonLd />
       <Hero area={hero.area} />
       <HeroIntro hayVideo={hero.hayVideo} enMarcha={hero.enMarcha} alternar={hero.alternar} />
+      <Franja />
       <ElPais />
+      <TresManeras id="maneras" className="hn-blanca"><Especialidades /></TresManeras>
       <Cita />
-      <Colecciones />
-      <ProximaSalida setViaje={setViaje} />
+      <ProximasSalidas setViaje={setViaje} />
       <Pilares />
       <Tiaki />
       <Destinos />

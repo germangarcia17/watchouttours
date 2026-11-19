@@ -7,12 +7,63 @@ import { availableLangs } from '../../i18n/pageLanguages'
 
 /* Menú principal. Las rutas son siempre las españolas: LNav las traduce al
    slug inglés cuando toca (ver src/i18n/pageLanguages.js). */
-const navLinks = [
-  { to: '/productos',            key: 'privados' },
-  { to: '/sin-prisa',            key: 'grandesViajes' },
-  { to: '/mas-alla-de-la-vista', key: 'masAlla' },
-  { to: '/sobre-nosotras',       key: 'fundadoras' },
+const viajes = [
+  { to: '/viajes',                             key: 'todos' },
+  { to: '/productos',                          key: 'privados' },
+  { to: '/sin-prisa',                          key: 'sesenta' },
+  { to: '/viajes-personas-ciegas-baja-vision', key: 'ciegos' },
 ]
+
+/* Desplegable «Viajes»: un botón con aria-expanded que muestra la
+   lista de enlaces. Escape lo cierra y devuelve el foco al botón; también
+   se cierra al salir de él con el teclado o al hacer clic fuera. En el menú
+   móvil se abre dentro de la propia lista. */
+function MenuViajes({ onNavegar }) {
+  const { t } = useTranslation()
+  const { pathname } = useLocation()
+  const [abierto, setAbierto] = useState(false)
+  const caja = useRef(null)
+  const boton = useRef(null)
+  const base = stripLang(pathname)
+  const activo = viajes.some(({ to }) => to === base)
+
+  useEffect(() => { setAbierto(false) }, [pathname])
+
+  useEffect(() => {
+    if (!abierto) return
+    function fuera(e) { if (!caja.current?.contains(e.target)) setAbierto(false) }
+    function tecla(e) {
+      if (e.key === 'Escape') { e.stopPropagation(); setAbierto(false); boton.current?.focus() }
+    }
+    document.addEventListener('mousedown', fuera)
+    caja.current?.addEventListener('keydown', tecla)
+    const nodo = caja.current
+    return () => { document.removeEventListener('mousedown', fuera); nodo?.removeEventListener('keydown', tecla) }
+  }, [abierto])
+
+  return (
+    <div
+      ref={caja} className={`nav-desplegable${abierto ? ' nav-desplegable--abierto' : ''}`}
+      onBlur={e => { if (!caja.current?.contains(e.relatedTarget)) setAbierto(false) }}
+    >
+      <button
+        ref={boton} type="button"
+        className={`nav-link nav-desplegable__boton${activo ? ' nav-link--active' : ''}`}
+        aria-expanded={abierto} aria-controls="nav-viajes"
+        onClick={() => setAbierto(v => !v)}
+      >
+        {t('nav.viajes')}<span className="nav-desplegable__signo" aria-hidden="true" />
+      </button>
+      <ul id="nav-viajes" className="nav-desplegable__lista" hidden={!abierto}>
+        {viajes.map(({ to, key }) => (
+          <li key={key}>
+            <L to={to} className="nav-desplegable__enlace" onClick={() => { setAbierto(false); onNavegar() }}>{t(`nav.${key}`)}</L>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 /* Selector de idioma: enlaza a la misma página en el otro idioma,
    conservando la ruta, la query y el ancla. Si la página actual es
@@ -109,16 +160,14 @@ export function Header() {
           aria-label={t('nav.main')}
           className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}
         >
-          {navLinks.map(({ to, key }) => (
-            <LNav
-              key={to}
-              to={to}
-              className={({ isActive }) => `nav-link${isActive ? ' nav-link--active' : ''}`}
-              onClick={cerrar}
-            >
-              {t(`nav.${key}`)}
-            </LNav>
-          ))}
+          <MenuViajes onNavegar={cerrar} />
+          {/* Salidas en grupo: la sección de la home */}
+          {esHome
+            ? <a href="#proxima-salida" className="nav-link" onClick={cerrar}>{t('nav.salidas')}</a>
+            : <L to="/#proxima-salida" className="nav-link" onClick={cerrar}>{t('nav.salidas')}</L>}
+          <LNav to="/sobre-nosotras" className={({ isActive }) => `nav-link${isActive ? ' nav-link--active' : ''}`} onClick={cerrar}>
+            {t('nav.fundadoras')}
+          </LNav>
           {/* En la home, ancla al formulario; en el resto, a la home + ancla */}
           {esHome
             ? <a href="#itinerario" className="header-cta" onClick={cerrar}>{t('nav.disena')}</a>

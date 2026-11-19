@@ -13,10 +13,12 @@
 
 export const STATIC_ROUTES = [
   { path: '/',               changefreq: 'weekly',  priority: '1.0' },
-  // Las dos líneas de viaje. En inglés tienen otro slug (/en/unhurried,
-  // /en/beyond-sight): ver LOCALIZED_SLUGS en src/i18n/pageLanguages.js.
+  // Viajes de autor y las dos especialidades. En inglés tienen otro slug
+  // (/en/journeys, /en/unhurried, /en/blind-low-vision-travel): ver
+  // LOCALIZED_SLUGS en src/i18n/pageLanguages.js.
+  { path: '/viajes',               changefreq: 'weekly',  priority: '0.9' },
   { path: '/sin-prisa',            changefreq: 'monthly', priority: '0.9' },
-  { path: '/mas-alla-de-la-vista', changefreq: 'monthly', priority: '0.9' },
+  { path: '/viajes-personas-ciegas-baja-vision', changefreq: 'monthly', priority: '0.9' },
   { path: '/sobre-nosotras', changefreq: 'monthly', priority: '0.8' },
   { path: '/productos',      changefreq: 'weekly',  priority: '0.9' },
   { path: '/resenas',        changefreq: 'weekly',  priority: '0.7' },

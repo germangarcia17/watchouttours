@@ -7,6 +7,7 @@ import { supabase } from '../lib/supabase'
 import { L, useLang } from '../i18n/routing'
 import { pickLocalized, fieldLangAttr } from '../i18n/content'
 import { SITE_URL } from '../lib/site'
+import { Imagen, urlImagen } from '../components/Imagen'
 import { getPreload } from '../lib/preload'
 import '../styles/pagestyle/BlogPost.css'
 
@@ -75,7 +76,8 @@ export default function BlogPost() {
   // og:image y JSON-LD exigen URL absoluta. Las portadas servidas desde el
   // propio repositorio se guardan como ruta relativa (/media/...), así que
   // aquí se les antepone el dominio canónico.
-  const portada    = post.og_image_url ?? post.cover_image_url
+  // Portada del repositorio (nombre o ruta antigua) → su versión WebP de 1280 px
+  const portada    = urlImagen(post.og_image_url ?? post.cover_image_url, 1280)
   const coverImage = portada
     ? (portada.startsWith('/') ? `${SITE_URL}${portada}` : portada)
     : `${SITE_URL}/og-image.jpg`
@@ -157,7 +159,7 @@ export default function BlogPost() {
       {post.cover_image_url && (
         <div className="wrap">
           <figure className="post-cover">
-            <img src={post.cover_image_url} alt={coverAlt} lang={coverAltLang} />
+            <Imagen src={post.cover_image_url} alt={coverAlt} lang={coverAltLang} sizes="(min-width: 1000px) 960px, 100vw" prioritaria />
           </figure>
         </div>
       )}

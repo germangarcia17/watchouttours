@@ -24,11 +24,16 @@ export const MONOLINGUAL_ROUTES = {
 
 /* Ruta base española → slug inglés (sin el prefijo /en). */
 export const LOCALIZED_SLUGS = {
-  '/mas-alla-de-la-vista': '/beyond-sight',
-  '/sin-prisa':            '/unhurried',
-  '/sobre-nosotras':       '/about-us',
-  '/productos':            '/products',
+  '/viajes':                             '/journeys',
+  '/viajes-personas-ciegas-baja-vision': '/blind-low-vision-travel',
+  '/sin-prisa':                          '/unhurried',
+  '/sobre-nosotras':                     '/about-us',
+  '/productos':                          '/products',
 }
+
+/* Prefijos que cambian en inglés para todas sus subpáginas
+   (p. ej. { '/es/': '/en-slug/' }). Ahora no hay ninguno. */
+export const LOCALIZED_PREFIXES = {}
 
 /* Idiomas disponibles para una ruta base dada. ['es', 'en'] si no está
    listada como excepción. */
@@ -38,7 +43,10 @@ export function availableLangs(basePath) {
 
 /* URL inglesa completa (con /en) de una ruta base española. */
 export function enPathFor(basePath) {
-  const slug = LOCALIZED_SLUGS[basePath] ?? basePath
+  let slug = LOCALIZED_SLUGS[basePath] ?? basePath
+  for (const [es, en] of Object.entries(LOCALIZED_PREFIXES)) {
+    if (basePath.startsWith(es)) slug = en + basePath.slice(es.length)
+  }
   return slug === '/' ? '/en' : `/en${slug}`
 }
 
@@ -46,6 +54,9 @@ export function enPathFor(basePath) {
    de /en (p. ej. '/unhurried' → '/sin-prisa'). Si el slug no está
    traducido, es el mismo. */
 export function baseFromEnSlug(enSlug) {
+  for (const [es, en] of Object.entries(LOCALIZED_PREFIXES)) {
+    if (enSlug.startsWith(en)) return es + enSlug.slice(en.length)
+  }
   for (const [base, slug] of Object.entries(LOCALIZED_SLUGS)) {
     if (slug === enSlug) return base
   }
