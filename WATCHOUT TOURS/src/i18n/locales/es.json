@@ -190,8 +190,7 @@
     },
     "cierre": {
       "titulo": "Nueva Zelanda <i>te está esperando.</i>",
-      "texto": "Cuéntanos cómo la sueñas y empezaremos a diseñarla.",
-      "boton": "Diseña tu viaje"
+      "texto": "Cuéntanos cómo la sueñas y empezaremos a diseñarla."
     },
     "pie": {
       "frase": "Viajes de autor por Nueva Zelanda, diseñados al detalle por sus fundadoras."
@@ -202,10 +201,6 @@
         {
           "q": "¿Quiénes sois?",
           "a": "Somos Sylvie y Mónica, dos barcelonesas que viven en Nueva Zelanda desde hace más de ocho años. WatchOut Tours es nuestra agencia de viajes de autor: diseñamos cada viaje desde cero y cuidamos de cada detalle antes, durante y después."
-        },
-        {
-          "q": "¿Qué tipos de viaje ofrecéis?",
-          "a": "Viajes de autor a medida (lunas de miel, familias, lujo, esquí, naturaleza, cultura maorí…), en privado con nosotras como anfitrionas o en self drive; salidas en grupo reducido como El Gran Viaje; Viajes +60, en grupo y con todo resuelto; y viajes para personas ciegas y con baja visión."
         },
         {
           "q": "¿Qué incluye El Gran Viaje?",
@@ -243,7 +238,7 @@
     },
     "itinerario": {
       "titulo": "Empieza por el itinerario.",
-      "texto": "Te lo enviamos por email o WhatsApp, con cada día, cada visita y todo lo que incluye. Si la próxima salida no te encaja, dinos qué fechas prefieres. Sin compromiso.",
+      "texto": "Dinos qué tipo de viaje te interesa y te enviamos el itinerario por email o WhatsApp, con cada día, cada visita y todo lo que incluye. Sin compromiso.",
       "whatsapp": "O escríbenos por WhatsApp",
       "formAria": "Formulario para pedir el itinerario",
       "nombre": "Nombre",
@@ -352,8 +347,7 @@
         "Esquiadores",
         "Mayores de 60",
         "Personas ciegas y con baja visión"
-      ],
-      "enlace": "Descubre nuestros viajes"
+      ]
     },
     "salidas": {
       "gran-viaje": {
@@ -1150,11 +1144,11 @@
       "viajes-pareja": "El árbol solitario del lago Wanaka, con kayaks en el agua en calma y montañas al fondo",
       "viajes-familia": "Un agujero hobbit con la puerta roja redonda, la valla de madera y el jardín en flor, en Hobbiton",
       "viajes-lujo": "Un lago en calma con montañas nevadas al fondo, en la región de Queenstown",
-      "viajes-esqui": "",
+      "viajes-esqui": "Una persona baja esquiando por una pista nevada hacia una pequeña cabaña, con un lago turquesa y montañas nevadas al fondo",
       "viajes-naturaleza": "Dos personas saltan de alegría a orillas del lago Pukaki, frente a Aoraki / Mount Cook nevado",
       "viajes-maori": "Mujeres maoríes con vestimenta tradicional preparan comida con agua caliente junto a una casa tallada, en Rotorua",
       "viajes-sesenta": "Viajeros pasean por una pasarela de madera entre fumarolas y vapor geotérmico en Rotorua",
-      "viajes-ciegos": "Una viajera con bastón blanco y un compañero con un micrófono de grabación junto a una valla de madera donde asoman varias ovejas, en una granja entre colinas verdes",
+      "viajes-ciegos": "Una pareja sentada sobre una roca, abrazada y de espaldas, se sonríe frente a un volcán con la cima entre nubes",
       "viajes-amigos": "Una lancha navega entre icebergs en el lago glaciar Tasman, con montañas nevadas al fondo",
       "ampliacion-cook": "",
       "ampliacion-australia": ""
